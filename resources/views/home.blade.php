@@ -2,12 +2,14 @@
 
 @section('content')
     <!-- Header -->
-    <header class="masthead">
+    <header class="fondo">
+        <!-- titulos de bienvenida -->
+        <div class="intro-text">
+            <div class="intro-lead-in">Bienvenido al control del gimnasio </div>
+            <div class="intro-heading text-uppercase">UNAHTEC-Danli</div>
+        </div>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
-                <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
             </div>
         </div>
     </header>

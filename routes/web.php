@@ -15,6 +15,17 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+// rutas para retornar las vistas de los items del menu
 Route::get("/estudiantes",function (){
     return view("estudiantes");
+});
+Route::get("/docentes",function (){
+    return view("docentes");
+});
+Route::get("/particulares",function (){
+    return view("particulares");
+});
+Route::get("/estadisticas",function (){
+    return view("estadisticas");
 });
