@@ -94,7 +94,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <span class="copyright">Copyright &copy; Your Website 2019</span>
+                <span class="copyright">Copyright &copy; unah.edu.hn 2019</span>
             </div>
             <div class="col-md-4">
                 <ul class="list-inline social-buttons">
@@ -118,10 +118,10 @@
             <div class="col-md-4">
                 <ul class="list-inline quicklinks">
                     <li class="list-inline-item">
-                        <a href="#">Privacy Policy</a>
+                        <a href="#">Politica de Privacidad</a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="#">Terms of Use</a>
+                        <a href="#">Terminos de Uso</a>
                     </li>
                 </ul>
             </div>
