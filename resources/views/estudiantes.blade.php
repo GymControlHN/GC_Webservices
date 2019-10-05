@@ -52,7 +52,7 @@
                 <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                 <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                 <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
-                <button class="btn btn-info dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Medidas
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
