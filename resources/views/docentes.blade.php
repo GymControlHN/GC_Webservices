@@ -51,9 +51,9 @@
                     <td>
                         <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                         <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-danger "><i class="fas fa-trash-alt"></i>
+                        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i>
 
-                         <button class="btn btn-info dropdown-toggle ml-lg-1" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                         <button class="btn btn-info dropdown-toggle ml-lg-1 " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Medidas
                          </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -63,7 +63,6 @@
                             </div>
                         </button>
                     </td>
-
                 </tr>
 
                 <tr>
@@ -86,7 +85,6 @@
                             <button class="dropdown-item" type="button">Grasa Corporal</button>
                             <button class="dropdown-item" type="button">Ruffier</button>
                         </div>
-
                     </td>
                 </tr>
 
@@ -137,9 +135,23 @@
 
                     </td>
                 </tr>
+
 
                 </tbody>
             </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-end">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Siguiente</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 
