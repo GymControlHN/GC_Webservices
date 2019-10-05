@@ -12,7 +12,7 @@
 
     <div class="container">
         <div class="alert alert-dismissable mb-n4" role="alert">
-            <h2 style="all: revert">Lista de Estadísticas</h2>
+            <h2 style="all: revert">Lista de Todos los Clientes</h2>
             <button type="button"  class="btn btn-warning float-right" data-dismiss="alert" >
                 <i class="fas fa-user-plus"></i>
             </button>
