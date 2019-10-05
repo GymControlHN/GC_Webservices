@@ -1,0 +1,51 @@
+.fondo{
+    background-image: url("../img/gym.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+}
+.fondo1{
+    background-image: url("../img/principal-bg.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+}
+
+label{
+    color: #ffffff;
+}
+
+h4{
+    text-align:center;
+    font-size: 50px;
+    color: #ffffff;
+}
+header.fondo
+.intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
+}
+.intro-lead-in {
+    font-size: 45px;
+    font-style: italic;
+    line-height: 22px;
+    margin-bottom: 25px;
+    @include serif-font;
+    color: #ffffff;
+    text-align:center;
+    margin-top: 200px;
+
+}
+.intro-heading {
+    font-size: 85px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 25px;
+@include heading-font;
+    color: #ffffff;
+    text-align:center;
+}
+
+
+
+

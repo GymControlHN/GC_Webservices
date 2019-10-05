@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="fondo1">
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+      <div class="container">
+         <div class="row">
+             <div class="col-md-8 col-md-offset-2">
 
                 <h4 class="panel-heading">Iniciar Sesion</h4>
 
@@ -62,10 +62,9 @@
                             </div>
                         </div>
                     </form>
-            </div>
-        </div>
+                </div>
+          </div>
+         </div>
+      </div>
     </div>
-    </div>
-</div>
-</div>
 @endsection
