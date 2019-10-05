@@ -13,9 +13,6 @@
     <div class="container">
         <div class="alert alert-dismissable mb-n4" role="alert">
             <h2 style="all: revert">Lista De Todos Los Clientes</h2>
-            <button type="button"  class="btn btn-warning float-right" data-dismiss="alert" >
-                <i class="fas fa-user-plus"></i>
-            </button>
 
             <form class="form-inline">
 
