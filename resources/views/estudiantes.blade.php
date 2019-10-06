@@ -51,6 +51,7 @@
                                    <input type="cuenta" class="form-control" id="cuenta">
                                </div>
 
+
                                 <h6>Carrera</h6>
                                <div class="form-group">
                                    <select class="form-control" id="carrera" placeholder="seleccione">
@@ -71,6 +72,7 @@
                                <div class="form-group">
                                    <input type="date" class="form-control" id="fecha">
                                </div>
+
 
 
                            </form>

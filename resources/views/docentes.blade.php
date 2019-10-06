@@ -52,6 +52,8 @@
                                     <input type="number" class="form-control" id="numEmple">
                                 </div>
 
+
+
                                 <h6> Teléfono </h6>
                                 <div class="form-group">
                                     <input type="number" class="form-control" id="tel">
