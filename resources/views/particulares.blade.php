@@ -13,9 +13,88 @@
     <div class="container">
         <div class="alert alert-dismissable mb-n4" role="alert">
             <h2 style="all: revert">Listado de Particulares</h2>
-            <button type="button"  class="btn btn-warning float-right" data-dismiss="alert" >
+
+
+
+            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalScrollable">
                 <i class="fas fa-user-plus"></i>
             </button>
+
+            <!--button type="button"  class="btn btn-warning float-right" data-dismiss="alert"
+                    data-toggle="modal" data-target="#exampleModalScrollable">
+
+            </button-->
+
+            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Particulares</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <h6>Nombre Completo</h6>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="nombre">
+                                </div>
+
+                                <h6>Edad</h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="edad">
+                                </div>
+
+                                <h6>Número de Identidad</h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="numEmple">
+                                </div>
+
+                                <h6>Profesión</h6>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="profesion">
+                                </div>
+
+
+
+                                <h6> Teléfono </h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="tel">
+                                </div>
+
+                                <h6>Fecha</h6>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="fecha">
+                                </div>
+
+
+
+                            </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                <button type="submit"  class="btn btn-primary">Guardar</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <form class="form-inline">
 
