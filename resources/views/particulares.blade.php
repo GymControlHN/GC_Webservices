@@ -37,6 +37,7 @@
                         </div>
 
 
+
                         <div class="modal-body ">
                             <form>
                                 <h6>Nombre Completo</h6>
