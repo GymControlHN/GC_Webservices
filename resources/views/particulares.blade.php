@@ -35,7 +35,8 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+
+                        <div class="modal-body ">
                             <form>
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
