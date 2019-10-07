@@ -16,12 +16,13 @@ class CreateRuffierTable extends Migration
         Schema::create('ruffier', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha');
-            $table->double('pc_tricipital');
-            $table->double('pc_infraescapular');
-            $table->double('pc_supra_iliaco');
-            $table->double('pc_biciptal');
-            $table->double('porcentaje');
+            $table->double('pulso_r');
+            $table->double('pulso_1');
+            $table->double('pulso_2');
+            $table->double('ruffier');
             $table->string('clasificacion',20);
+            $table->double('MVO2');
+            $table->double('MVO2_real');
             $table->timestamps();
         });
     }

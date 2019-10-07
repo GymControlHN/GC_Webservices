@@ -35,3 +35,15 @@ Route::get("/perfil",function (){
     return view("perfil");
 });
 
+
+Route::get("/imc",function (){
+    return view("imc");
+});
+
+Route::get("/grasa",function (){
+    return view("grasa");
+});
+
+Route::get("/ruffiel",function (){
+    return view("ruffiel");
+});

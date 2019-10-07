@@ -20,7 +20,7 @@ class CreateParticularesTable extends Migration
             $table->integer('edad');
             $table->char('numero_de_identidad', 11)->unique();
             $table->string('profesion_u_oficio', 100);
-            $table->char('telefono', 8);
+            $table->char('celular', 8);
             $table->timestamps();
         });
     }

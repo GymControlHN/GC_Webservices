@@ -15,6 +15,12 @@ class CreateEstadisticasTable extends Migration
     {
         Schema::create('estadisticas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('fecha_de_ingreso');
+            $table->string('nombre',50);
+            $table->integer('edad');
+            $table->char('identificacion', 11)->unique();
+            $table->string('profesion', 100);
+            $table->char('celular', 8);;
             $table->timestamps();
         });
     }

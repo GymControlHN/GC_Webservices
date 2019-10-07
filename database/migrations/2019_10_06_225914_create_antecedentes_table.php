@@ -15,7 +15,6 @@ class CreateAntecedentesTable extends Migration
     {
         Schema::create('antecedentes', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fecha');
             $table->double('peso_kg');
             $table->double('talla');
             $table->double('imc');
@@ -27,6 +26,7 @@ class CreateAntecedentesTable extends Migration
             $table->double('cadera');
             $table->double('muslo');
             $table->double('pierna');
+            $table->date('fecha');
             $table->timestamps();
         });
     }
