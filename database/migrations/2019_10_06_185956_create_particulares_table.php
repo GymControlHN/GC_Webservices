@@ -15,6 +15,12 @@ class CreateParticularesTable extends Migration
     {
         Schema::create('particulares', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->date('fecha_de_ingreso');
+            $table->string('nombre',50);
+            $table->integer('edad');
+            $table->char('numero_de_identidad', 11)->unique();
+            $table->string('profesion_u_oficio', 100);
+            $table->char('telefono', 8);
             $table->timestamps();
         });
     }

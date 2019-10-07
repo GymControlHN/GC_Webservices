@@ -53,6 +53,9 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="/estadisticas">Estadisticas</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger"></a>
+                </li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ route('login') }}">Iniciar sesion</a></li>
@@ -65,8 +68,12 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li>
+                                <a href="/perfil">
+                                    Perfil
+                                </a>
+                                <br>
                                 <a href="{{ route('logout') }}"
-                                   style="background: #fff; color: #000;"
+                                   style="background: #fff;"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     Cerrar sesion

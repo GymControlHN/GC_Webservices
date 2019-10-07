@@ -14,7 +14,14 @@ class CreateGrasaCorporalTable extends Migration
     public function up()
     {
         Schema::create('grasa_corporal', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
+            $table->date('fecha');
+            $table->double('pc_tricipital');
+            $table->double('pc_infraescapular');
+            $table->double('pc_supra_iliaco');
+            $table->double('pc_biciptal');
+            $table->double('porcentaje');
+            $table->string('clasificacion');
             $table->timestamps();
         });
     }

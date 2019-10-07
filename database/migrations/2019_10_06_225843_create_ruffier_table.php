@@ -15,6 +15,13 @@ class CreateRuffierTable extends Migration
     {
         Schema::create('ruffier', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('fecha');
+            $table->double('pc_tricipital');
+            $table->double('pc_infraescapular');
+            $table->double('pc_supra_iliaco');
+            $table->double('pc_biciptal');
+            $table->double('porcentaje');
+            $table->string('clasificacion',20);
             $table->timestamps();
         });
     }

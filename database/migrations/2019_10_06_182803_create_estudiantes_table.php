@@ -19,7 +19,7 @@ class CreateEstudiantesTable extends Migration
             $table->integer('edad');
             $table->char('numero_de_cuenta', 11)->unique();
             $table->date('fecha_de_ingreso');
-            $table->string('profesion', 100);
+            $table->string('carrera', 100);
             $table->char('telefono', 8);
             $table->timestamps();
         });

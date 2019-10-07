@@ -29,14 +29,9 @@ Route::get("/particulares",function (){
 Route::get("/estadisticas",function (){
     return view("estadisticas");
 });
-Route::get("/imc",function (){
-    return view("imc");
+
+//ruta para retornar la vista del perfil
+Route::get("/perfil",function (){
+    return view("perfil");
 });
 
-Route::get("/grasa",function (){
-    return view("grasa");
-});
-
-Route::get("/ruffiel",function (){
-    return view("ruffiel");
-});
