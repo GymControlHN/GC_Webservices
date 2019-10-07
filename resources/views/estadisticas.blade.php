@@ -39,55 +39,18 @@
                 <tbody>
                 <tr>
                     <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>20162300165</td>
-                    <td>tuto</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>fruta</td>
+                    <td>Francisco López</td>
+                    <td>20162500169</td>
+                    <td>24</td>
+                    <td>Informática</td>
+                    <td>98-95-00-40</td>
+                    <td>2/9/2019</td>
                     <td>
                         <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
                     </td>
                 </tr>
 
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>20162300165</td>
-                    <td>tuto</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>fruta</td>
-                    <td>
-                        <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
-                    </td>
-                </tr>
 
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>20162300165</td>
-                    <td>tuto</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>fruta</td>
-                    <td>
-                        <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>20162300165</td>
-                    <td>tuto</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>fruta</td>
-                    <td>
-                        <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
-                    </td>
-                </tr>
 
                 </tbody>
             </table>

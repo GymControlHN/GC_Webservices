@@ -65,8 +65,6 @@
                                     <input type="date" class="form-control" id="fecha">
                                 </div>
 
-
-
                             </form>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -78,25 +76,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             <form class="form-inline">
@@ -112,49 +91,23 @@
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Numero de Identidad</th>
+                    <th scope="col">Id de Empleado</th>
                     <th scope="col">Edad</th>
-                    <th scope="col">Dirección</th>
-                    <th scope="col">Telefono</th>
-                    <th scope="col">Fecha</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
                 </thead>
 
                 <tbody>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>0703-1995-01957</td>
-                    <td>tuto</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>fruta</td>
-                    <td>
-                        <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i>
-
-                         <button class="btn btn-info dropdown-toggle ml-lg-1 " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Medidas
-                         </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button">Antecedentes</button>
-                                <button class="dropdown-item" type="button">Grasa Corporal</button>
-                                <button class="dropdown-item" type="button">Ruffier</button>
-                            </div>
-                        </button>
-                    </td>
-                </tr>
 
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>0703-1995-01957</td>
-                    <td>tuto</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>fruta</td>
+                    <th scope="row">1</th>
+                    <td>Jose Hernandez</td>
+                    <td>20102506002</td>
+                    <td>38</td>
+                    <td>87-95-68-45</td>
+                    <td>2/10/2019</td>
                     <td>
                         <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                         <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -170,58 +123,12 @@
                     </td>
                 </tr>
 
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>0703-1995-01957</td>
-                    <td>tuto</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>fruta</td>
-                    <td>
-                        <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
-                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Medidas
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Antecedentes</button>
-                            <button class="dropdown-item" type="button">Grasa Corporal</button>
-                            <button class="dropdown-item" type="button">Ruffier</button>
-                        </div>
 
-                    </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>0703-1995-01957</td>
-                    <td>tuto</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>fruta</td>
-                    <td>
-                        <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                        <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
-                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Medidas
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button">Antecedentes</button>
-                            <button class="dropdown-item" type="button">Grasa Corporal</button>
-                            <button class="dropdown-item" type="button">Ruffier</button>
-                        </div>
-
-                    </td>
-                </tr>
 
 
                 </tbody>
             </table>
-            <nav aria-label="Page navigation example">
+            <!--nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
                     <li class="page-item disabled">
                         <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
@@ -233,7 +140,8 @@
                         <a class="page-link" href="#">Siguiente</a>
                     </li>
                 </ul>
-            </nav>
+            </nav-->
+
         </div>
     </div>
 
