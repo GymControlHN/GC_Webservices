@@ -71,17 +71,25 @@
         <fieldset>
             <legend>CALCULO DEL PESO IDEAL IMC (Indice de Masa Corporal)</legend>
             <p>Peso en kg:
-                <input type="text" name="peso" id="peso" size="3" maxlength="4">
+                <input type="text" name="peso" id="peso" size="5" maxlength="4">
             </p>
             <p>Altura en cm:
                 <input type="text" name="altura"
                        id="altura" size="3"
                        maxlength="3">
-                <input type="button" value="Calcular IMC" onclick="calcularIMC()"></p>
+
             <P>IMC:
                 <input type="text" name="imc"
-                       id="imc" size="10" maxlength="15"> Leyenda:<input type="text" name="leyenda" id="leyenda" size="42">
+                       id="imc" size="11" maxlength="15">
             </P>
+
+            <p>
+                Leyenda:<input type="text" name="leyenda" id="leyenda" size="50">
+            </p>
+
+
+            <input type="button" value="Calcular IMC" onclick="calcularIMC()">  <input type="button" value="Guardar IMC" onclick="GuardarIMC()"></p></p>
+
 
 
 

@@ -66,19 +66,20 @@
         <fieldset>
             <legend>CALCULO DE LA GRASA CORPORAL</legend>
             <p>Imc:
-                <input type="text" name="imc" id="imc" size="3" maxlength="4">
+                <input type="text" name="imc" id="imc" size="6" maxlength="4">
             </p>
             <p>Edad:
                 <input type="text" name="edad"
-                       id="edad" size="3"
+                       id="edad" size="5"
                        maxlength="3">
-                <input type="button" value="Calcular Grasa" onclick="calcularGRASA()"></p>
+
             <P>Grasa:
                 <input type="text" name="grasa"
-                       id="grasa" size="10" maxlength="15"> Diagnostico:<input type="text" name="leyenda" id="leyenda" size="42">
+                       id="grasa" size="5" maxlength="15">
             </P>
+            <p>Diagnostico:<input type="text" name="leyenda" id="leyenda" size="42"></p>
 
-
+            <input type="button" value="Calcular Grasa" onclick="calcularGRASA()"> <input type="button" value="Guardar Grasa" onclick="guardarGRASA()"></p></p>
 
 
         </fieldset>

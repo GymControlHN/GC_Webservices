@@ -113,11 +113,10 @@
         <tr>
             <th scope="col">N°</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Numero de Cuenta</th>
+            <th scope="col">Número de Cuenta</th>
             <th scope="col">Edad</th>
-            <th scope="col">Dirección</th>
-            <th scope="col">Telefono</th>
-            <th scope="col">Fecha</th>
+            <th scope="col">Celular</th>
+            <th scope="col">Fecha de Ingreso</th>
             <th scope="col">Acciones</th>
         </tr>
         </thead>
@@ -125,12 +124,11 @@
         <tbody>
         <tr>
             <th scope="row">2</th>
-            <td>Jacob</td>
+            <td>Jacob Fernandez</td>
             <td>20162300165</td>
-            <td>tuto</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fruta</td>
+            <td>22</td>
+            <td>89-98-65-89</td>
+            <td>12/3/2016</td>
             <td>
                 <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                 <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
@@ -172,75 +170,6 @@
         </div>
 
 
-
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>20162300165</td>
-            <td>tuto</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fruta</td>
-            <td>
-                <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
-                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Medidas
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">Antecedentes</button>
-                    <button class="dropdown-item" type="button">Grasa Corporal</button>
-                    <button class="dropdown-item" type="button">Ruffier</button>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>20162300165</td>
-            <td>tuto</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fruta</td>
-            <td>
-                <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
-                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Medidas
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">Antecedentes</button>
-                    <button class="dropdown-item" type="button">Grasa Corporal</button>
-                    <button class="dropdown-item" type="button">Ruffier</button>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>20162300165</td>
-            <td>tuto</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>fruta</td>
-            <td>
-                <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
-                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Medidas
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <button class="dropdown-item" type="button">Antecedentes</button>
-                    <button class="dropdown-item" type="button">Grasa Corporal</button>
-                    <button class="dropdown-item" type="button">Ruffier</button></div>
-
-            </td>
-        </tr>
 
         </tbody>
     </table>

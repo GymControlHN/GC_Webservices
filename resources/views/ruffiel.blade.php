@@ -10,38 +10,100 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="alert alert-dismissable mb-n4" role="alert">
-            <h2 style="all: revert">Test de Ruffiel</h2><br>
-            <form  method="POST">
-                <table>
-                    <tr>
-                        <td>Ingrese pulso en reposo</td>
-                        <td><input type="number" placeholder="Ingrese su primer pulso"
-                                   name="pul1" ></td>
-                    </tr>
-                    <tr>
-                        <td>Ingrese pulso despues del ejercicio</td>
-                        <td><input type="number" placeholder="Ingrese su segundo pulso" name="pul2" ></td>
-                    </tr><br>
-
-                    <tr>
-                        <td>Ingrese pulso en descanso</td>
-                        <td><input type="number" placeholder="Ingrese su tercer pulso" name="pul3" ></td>
-                    </tr><br>
+    <html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
+        <title>FORMULARIO PESO IDEAL</title>
+        <script type="text/javascript">function calcularRuffiel(){
+                pulso1=document.getElementById("pulso1").value;
+                pulso2=document.getElementById("pulso2").value;
+                pulso3=document.getElementById("pulso3").value;
+                ruffiel= (pulso1+pulso2+pulso3-200)/10 ;
 
 
+                document.getElementById("ruffiel").value=ruffiel.toFixed(2);
+
+                if (ruffiel == 0 ) {
+                    leyenda="Muy bueno ";
+                }
+                else if (ruffiel<=5 ) {
+                    leyenda=
+                        "Muy bueno";
+
+                }
+
+                else if (ruffiel<=10 ) {
+                    leyenda=
+                        "Bueno";
+
+                }
+                else if (ruffiel<=15) {
+                    leyenda=
+                        "Mediano";
+
+                }
 
 
-                    <tr>
-                        <td><input type="submit" value="calcular"> </td>
-                        <td><input type="reset" value="limpia celdas"></td>
-                    </tr>
 
-                </table>
-            </form>
+                else if (ruffiel >= 15) {
+                    leyenda=
+                        "Bajo";
+
+                }
 
 
+                else{
+                    leyenda="Algo salio mal"
+                }
+                document.getElementById("leyenda").value=leyenda;
+
+            }</script>
+
+    </head>
+
+    <body>
+    <form name="f1" id="f1" action="">
+        <fieldset>
+            <legend>CALCULO DEL RUFFIEL</legend>
+            <p>Pulso en reposo:
+                <input type="text" name="pulso1" id="pulso1" size="4" maxlength="4">
+            </p>
+            <p>Pulso en acción:
+                <input type="text" name="pulso2" id="pulso2" size="4" maxlength="4">
+            </p>
+            <p>Pulso en descanso:
+                <input type="text" name="pulso3u"
+                       id="pulso3" size="2"
+                       maxlength="3">
+            <P>Ruffiel:
+                <input type="text" name="ruffiel"
+                       id="ruffiel" size="12" maxlength="15">
+            </P>
+
+            <p>Diagnostico:
+                <input type="text" name="leyenda" id="leyenda" size="42"></p>
+
+            <div>
+                <input type="button" value="Calcular Ruffiel"  onclick="calcularRuffiel()" ><input type="button" value="Guardar Ruffiel"  onclick="guardarRuffiel()" ></p>
+                </p>
+
+
+
+
+            </div>
+
+
+
+
+        </fieldset>
+    </form>
+
+
+
+
+
+    </body>
+    </html>
 
 
 
