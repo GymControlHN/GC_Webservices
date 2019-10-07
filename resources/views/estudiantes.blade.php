@@ -48,7 +48,7 @@
 
                                <h6>Número Cuenta</h6>
                                <div class="form-group">
-                                   <input type="cuenta" class="form-control" id="cuenta">
+                                   <input type="number" class="form-control" id="cuenta">
                                </div>
 
 
