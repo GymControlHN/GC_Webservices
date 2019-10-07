@@ -22,7 +22,7 @@
                 <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
             </form>
             <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-    box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+                box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">N°</th>
