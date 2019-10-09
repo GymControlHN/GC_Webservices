@@ -21,7 +21,7 @@
                 ruffiel= (pulso1+pulso2+pulso3-200)/10 ;
 
 
-                document.getElementById("ruffiel").value=ruffiel.toFixed(2);
+                document.getElementById("ruffiel").value=ruffiel.toFixed(2).slice(5);
 
                 if (ruffiel == 0 ) {
                     leyenda="Muy bueno ";
