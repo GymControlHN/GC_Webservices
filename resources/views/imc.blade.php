@@ -67,40 +67,89 @@
     </head>
 
     <body>
-    <form name="f1" id="f1" action="">
-        <fieldset>
-            <legend>CALCULO DEL PESO IDEAL IMC (Indice de Masa Corporal)</legend>
-            <p>Peso en kg:
-                <input type="text" name="peso" id="peso" size="5" maxlength="4">
-            </p>
-            <p>Altura en cm:
-                <input type="text" name="altura"
-                       id="altura" size="3"
-                       maxlength="3">
 
-            <P>IMC:
-                <input type="text" name="imc"
-                       id="imc" size="11" maxlength="15">
-            </P>
+    <form name="f1" id="f1">
+        <br><br>
+        <h5 class="label2">Agregar medidas antropometricas</h5>
+        <br>
+        <form class="form-horizontal" action="/action_page.php">
+            <div class="form-group">
+                <h6 class=" label2" for="email">Peso kg:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño" id="peso"
+                           name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos">
+                </div>
+            </div>
 
-            <p>
-                Leyenda:<input type="text" name="leyenda" id="leyenda" size="50">
-            </p>
+            <div class="form-group">
+                <h6 class="label2" for="email">Talla:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño"
+                           id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla">
+                </div>
+            </div>
 
+            <div class="form-group">
+                <h6 class="label2" for="email">Imc:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño"
+                           id="imc" name="imc" maxlength="3">
+                </div>
+            </div>
 
-            <input type="button" value="Calcular IMC" onclick="calcularIMC()">  <input type="button" value="Guardar IMC" onclick="GuardarIMC()"></p></p>
-
-
-
-
-
-        </fieldset>
+            <div class="form-group">
+                <h6 class="label2" for="email">Diagnostico:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño"
+                           id="leyenga" name="leyenda" maxlength="50">
+                </div>
+            </div>
+            <div class="form-group">
+                <h6 class="label2" for="email">Pecho:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño">
+                </div>
+            </div>
+            <div class="form-group">
+                <h6 class="label2" for="email">Brazo:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño">
+                </div>
+            </div>
+            <div class="form-group">
+                <h6 class="label2" for="email">ABD-A:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño">
+                </div>
+            </div>
+            <div class="form-group">
+                <h6 class="label2" for="email">ABD-B:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño">
+                </div>
+            </div>
+            <div class="form-group">
+                <h6 class="label2" for="email">Cadera:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño">
+                </div>
+            </div>
+            <div class="form-group">
+                <h6 class="label2" for="email">Muslo:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño">
+                </div>
+            </div>
+            <div class="form-group">
+                <h6 class="label2" for="email">Pierna:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño">
+                </div>
+            </div>
+            <input type="button" class="btn btn-primary my-4 boton" value="Calcular IMC" onclick="calcularIMC()">
+            <input type="button" class="btn btn-primary my-4 boton1" value="Guardar" onclick="calcularIMC()">
     </form>
-
-
-
-
-
+    </form>
     </body>
     </html>
 @endsection

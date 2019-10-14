@@ -4,9 +4,6 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Estadísticas</div>
-            </div>
         </div>
     </header>
 

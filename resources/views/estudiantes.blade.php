@@ -4,9 +4,6 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Estudiantes</div>
-            </div>
         </div>
     </header>
 
@@ -51,7 +48,6 @@
                                    <input type="number" class="form-control" id="cuenta">
                                </div>
 
-
                                 <h6>Carrera</h6>
                                <div class="form-group">
                                    <select class="form-control" id="carrera" placeholder="seleccione">
@@ -63,10 +59,6 @@
                                    </select>
                                </div>
 
-
-
-
-
                                <h6> Teléfono </h6>
                                <div class="form-group">
                                    <input type="number" class="form-control" id="tel">
@@ -76,9 +68,6 @@
                                <div class="form-group">
                                    <input type="date" class="form-control" id="fecha">
                                </div>
-
-
-
                            </form>
                            <div class="modal-footer">
                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -90,16 +79,6 @@
                    </div>
                </div>
            </div>
-
-
-
-
-
-
-
-
-
-
        <form class="form-inline">
 
         <div class="form-group mr-sm-4 my-sm-4 ">
@@ -130,14 +109,14 @@
             <td>89-98-65-89</td>
             <td>12/3/2016</td>
             <td>
-                <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
+                <button class="btn btn-success">
+                    <a class="" href="/pagose"><i class="fas fa-eye"></i></a>
+                </button>
                 <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                 <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Medidas
                 </button>
-
-
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/imc">Imc</a>
                     </button>
@@ -172,8 +151,8 @@
 
 
         </tbody>
-    </table>
-   </div>
+      </table>
+     </div>
    </div>
 
 @endsection

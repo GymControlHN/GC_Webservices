@@ -11,7 +11,6 @@
     background-position: center center;
 }
 
-
 label{
     color: #ffffff;
 }
@@ -51,15 +50,27 @@ header.fondo
     margin-left: 27%;
 
 }
+.inputtamaño2{
+    width: 40%;
+    margin-left: 60%;
+}
 
 .labeltamaño{
-    width: 45%;
+    width: 20%;
     margin-left: 28%;
 
+}
+.label2{
+    color: black;
+    margin-left: 23%;
 }
 
 .boton {
     margin-left: 43%;
+}
+
+.boton {
+    margin-left: 35%;
 }
 
 .botonrestablecer{
@@ -74,10 +85,23 @@ header.fondo
     padding-top: 10%;
     background-position: left;
 }
+.pumalogo{
+    background-image: url("../img/puma.png");
+    width: 30%;
+    height: 85vh;
+    background-position: center;
+}
 
 .textoprincipal{
     margin-right: 400%;
 }
+
+.h3centrado{
+    text-align: center;
+}
+
+
+
 
 
 
