@@ -57,6 +57,11 @@
                 else{
                     leyenda="Algo salio mal"
                 }
+
+
+
+
+
                 document.getElementById("leyenda").value=leyenda;
 
             }</script>

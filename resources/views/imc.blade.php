@@ -148,6 +148,22 @@
                     <input type="text" class="form-control inputtamaño3">
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <input type="button" class="btn btn-primary my-4 boton" value="Calcular IMC" onclick="calcularIMC()">
 
     </form>
