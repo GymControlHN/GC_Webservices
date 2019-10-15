@@ -22,7 +22,6 @@ class CreateDocentesTable extends Migration
             $table->string('profesion', 100);
             $table->char('telefono', 8);;
 
-
             $table->timestamps();
         });
     }

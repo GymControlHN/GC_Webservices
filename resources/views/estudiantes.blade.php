@@ -51,7 +51,6 @@
                                    <input type="number" class="form-control" id="cuenta">
                                </div>
 
-
                                 <h6>Carrera</h6>
                                <div class="form-group">
                                    <select class="form-control" id="carrera" placeholder="seleccione">

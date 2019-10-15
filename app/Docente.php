@@ -15,6 +15,5 @@ class Docente extends Model
         'fecha_ingreso',
         'carrera',
         'telefono'
-
     ];
 }

@@ -44,7 +44,7 @@ class EstudiantesController extends Controller
 
     public function show(Estudiante $estudiantes)
     {
-        //
+
     }
     public function edit($id) {
         $estudiante = Estudiante::findOrFail($id);

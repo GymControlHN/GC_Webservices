@@ -41,7 +41,6 @@ class ParticularesController extends Controller
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
         return redirect('/particulares');
-
     }
     public function show(Particular $particulares)
     {

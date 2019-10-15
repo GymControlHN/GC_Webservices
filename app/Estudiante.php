@@ -15,7 +15,6 @@ class Estudiante extends Model
         'fecha_ingreso',
         'carrera',
         'telefono'
-
     ];
 }
 

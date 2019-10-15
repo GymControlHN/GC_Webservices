@@ -22,6 +22,7 @@ class CreateEstudiantesTable extends Migration
             $table->string('carrera', 100);
             $table->char('telefono', 8);
             $table->timestamps();
+
         });
     }
 
