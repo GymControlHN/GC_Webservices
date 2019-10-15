@@ -20,7 +20,7 @@ class CreateDocentesTable extends Migration
             $table->integer('edad');
             $table->char('numero_de_empleado', 11)->unique();
             $table->string('profesion', 100);
-            $table->char('celular', 8);;
+            $table->char('telefono', 8);;
 
 
             $table->timestamps();
