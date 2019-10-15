@@ -62,28 +62,57 @@
     </head>
 
     <body>
-    <form name="f1" id="f1" action="">
-        <fieldset>
-            <legend>CALCULO DE LA GRASA CORPORAL</legend>
-            <p>Imc:
-                <input type="text" name="imc" id="imc" size="6" maxlength="4">
-            </p>
-            <p>Edad:
-                <input type="text" name="edad"
-                       id="edad" size="5"
-                       maxlength="3">
 
-            <P>Grasa:
-                <input type="text" name="grasa"
-                       id="grasa" size="5" maxlength="15">
-            </P>
-            <p>Diagnostico:<input type="text" name="leyenda" id="leyenda" size="42"></p>
+<div class="container">
+    <form name="f1" id="f1">
+        <br><br>
+        <h5 class="label2">Calculo de la Grasa Corporal</h5>
+        <br>
+        <form class="form-horizontal" action="/action_page.php">
+            <div class="form-group">
+                <h6 class=" label2" for="email">IMC</h6>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control inputtamaño3" id="imc"
+                           name="imc" maxlength="3" placeholder="Ingrese su masa corporal" onkeyup="calcularGRASA()">
+                </div>
 
-            <input type="button" value="Calcular Grasa" onclick="calcularGRASA()"> <input type="button" value="Guardar Grasa" onclick="guardarGRASA()"></p></p>
+            </div>
 
+            <div class="form-group">
+                <h6 class="label2" for="email">Edad:</h6>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control inputtamaño3"
+                           id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGRASA()">
+                </div>
+            </div>
 
-        </fieldset>
+            <div class="form-group">
+                <h6 class="label2" for="email">Grasa:</h6>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control inputtamaño3"
+                           id="grasa" name="grasa" maxlength="3"  disabled="true">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h6 class="label2" for="email">Diagnostico:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño3"
+                           id="leyenda" name="leyenda" maxlength="50"  disabled="true">
+                </div>
+            </div>
+
+            <input type="button" class="btn btn-primary my-4 boton" value="Guardar" onclick="calcularGRASA()">
+
+        </form>
     </form>
+</div>
+
+
+
+
+
+
 
 
 

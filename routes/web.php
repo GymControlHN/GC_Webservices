@@ -29,6 +29,12 @@ Route::get("/particulares",function (){
 Route::get("/estadisticas",function (){
     return view("estadisticas");
 });
+Route::get("/pagose",function (){
+    return view("pagosestudiantes");
+});
+Route::get("/pagosp",function (){
+    return view("pagosparticulares");
+});
 
 //ruta para retornar la vista del perfil
 Route::get("/perfil",function (){
