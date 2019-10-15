@@ -42,7 +42,6 @@ class ParticularesController extends Controller
         //Seccion::flash('message','Estudiante creado correctamente');
         return redirect('/particulares');
 
-
     }
     public function show(Particular $particulares)
     {

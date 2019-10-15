@@ -117,6 +117,7 @@
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
+
                 </thead>
 
                 <tbody>

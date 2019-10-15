@@ -15,5 +15,6 @@ class Particular extends Model
         'fecha_ingreso',
         'profesion_u_oficio',
         'telefono'
+
     ];
 }

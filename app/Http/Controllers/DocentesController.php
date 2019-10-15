@@ -15,6 +15,7 @@ class DocentesController extends Controller
         return view('docentes')->with('docentes', $docentes);
     }
 
+
     public function create()
     {
         return view('docentes');

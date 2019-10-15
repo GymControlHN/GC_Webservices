@@ -48,7 +48,6 @@
                        @endisset
                        <form class="modal-body" method="post" action="{{route('estudiante.guardar')}}">
 
-
                                        
                                <h6>Nombre Completo</h6>
                                <div class="form-group">

@@ -40,7 +40,6 @@ class EstudiantesController extends Controller
         //Seccion::flash('message','Estudiante creado correctamente');
         return redirect('estudiantes');
 
-
     }
 
     public function show(Estudiante $estudiantes)
