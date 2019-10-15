@@ -18,26 +18,28 @@
                 pulso1=document.getElementById("pulso1").value;
                 pulso2=document.getElementById("pulso2").value;
                 pulso3=document.getElementById("pulso3").value;
-                ruffiel= (pulso1+pulso2+pulso3-200)/10 ;
+                ruffiel= (pulso1+pulso2+pulso3-200)/10;
 
 
-                document.getElementById("ruffiel").value=ruffiel.toFixed(2).slice(5);
+                document.getElementById("ruffiel").value=ruffiel.toFixed(2).slice(4);
 
-                if (ruffiel == 0 ) {
+                if (ruffiel <=1 || ruffiel >= 0 ) {
                     leyenda="Muy bueno ";
+
+                   // grasa<=4 && grasa >= 2
                 }
-                else if (ruffiel<=5 ) {
+                else if (ruffiel<=5 || ruffiel >=1 ) {
                     leyenda=
                         "Muy bueno";
 
                 }
 
-                else if (ruffiel<=10 ) {
+                else if (ruffiel<=10  || ruffiel >=5 ) {
                     leyenda=
                         "Bueno";
 
                 }
-                else if (ruffiel<=15) {
+                else if (ruffiel<=15 || ruffiel >=10) {
                     leyenda=
                         "Mediano";
 
@@ -45,7 +47,7 @@
 
 
 
-                else if (ruffiel >= 15) {
+                else if (ruffiel <= 20 || ruffiel >=15) {
                     leyenda=
                         "Bajo";
 
@@ -62,45 +64,63 @@
     </head>
 
     <body>
-    <form name="f1" id="f1" action="">
-        <fieldset>
-            <legend>CALCULO DEL RUFFIEL</legend>
-            <p>Pulso en reposo:
-                <input type="text" name="pulso1" id="pulso1" size="4" maxlength="4">
-            </p>
-            <p>Pulso en acción:
-                <input type="text" name="pulso2" id="pulso2" size="4" maxlength="4">
-            </p>
-            <p>Pulso en descanso:
-                <input type="text" name="pulso3u"
-                       id="pulso3" size="2"
-                       maxlength="3">
-            <P>Ruffiel:
-                <input type="text" name="ruffiel"
-                       id="ruffiel" size="12" maxlength="15">
-            </P>
 
-            <p>Diagnostico:
-                <input type="text" name="leyenda" id="leyenda" size="42"></p>
+<div class="container">
 
-            <div>
-                <input type="button" value="Calcular Ruffiel"  onclick="calcularRuffiel()" ><input type="button" value="Guardar Ruffiel"  onclick="guardarRuffiel()" ></p>
-                </p>
-
-
-
+    <form name="f1" id="f1">
+        <br><br>
+        <h5 class="label2">Calculo de Ruffier</h5>
+        <br>
+        <form class="form-horizontal" action="/action_page.php">
+            <div class="form-group">
+                <h6 class=" label2" for="email">Pulso en reposo</h6>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control inputtamaño3" id="pulso1"
+                           name="pulso1" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()">
+                </div>
 
             </div>
 
+            <div class="form-group">
+                <h6 class="label2" for="email">Pulso en accion:</h6>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control inputtamaño3"
+                           id="pulso2" name="pulso2" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()">
+                </div>
+            </div>
 
+            <div class="form-group">
+                <h6 class="label2" for="email">Pulso en descanso:</h6>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control inputtamaño3"
+                           id="pulso3" name="pulso3" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()">
+                </div>
+            </div>
 
+            <div class="form-group">
+                <h6 class="label2" for="email">Ruffier:</h6>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control inputtamaño3"
+                           id="ruffiel" name="ruffiel" maxlength="3"  disabled="true" >
+                </div>
+            </div>
 
-        </fieldset>
+            <div class="form-group">
+                <h6 class="label2" for="email">Diagnostico:</h6>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control inputtamaño3"
+                           id="leyenda" name="leyenda" maxlength="50" disabled="true">
+                </div>
+            </div>
+
+            <input type="button" class="btn btn-primary my-4 boton" value="Guardar"   onclick="calcularRuffiel()">
+
+        </form>
     </form>
 
 
 
-
+</div>
 
     </body>
     </html>
