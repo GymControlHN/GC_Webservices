@@ -27,51 +27,92 @@
             </button-->
 
             <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
-                 aria-labelledby="exampleModalScrollableTitleD" aria-hidden="true">
+                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitleD">Ingrese los datos</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Docentes</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
 
-
                         <div class="modal-body">
-                            <form>
+                            <form method="post" action="{{route('docente.guardar')}}">
+                                <script>
+                                    @isset($docente)
+                                        action=" {{ route('docente.update', $docente->id) }}"
+                                    @else
+                                        action="{{route('docente.guardar')}}"
+                                    @endisset
+                                    @isset ($docente)
+                                        @method('put')
+                                    @endisset
+                                </script>
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nombreD">
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                           placeholder="Escriba el nombre completo"
+                                           @isset($docente)
+                                           value="{{$docente->nombre}}"
+                                            @endisset
+                                    >
+                                </div>
+                                <h6>Profesión</h6>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="profesion" name="profesion"
+                                           placeholder="Escriba la profesión"
+                                           @isset($docente)
+                                           value="{{$docente->profesion}}"
+                                            @endisset
+                                    >
                                 </div>
 
                                 <h6>Edad</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="edadD">
+                                    <input type="number" class="form-control" id="edad" name="edad"
+                                           placeholder="Escriba la edad "
+                                           @isset($docente)
+                                           value="{{$docente->edad}}"
+                                            @endisset
+                                    >
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="numEmple">
+                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
+                                           placeholder="Escriba el id del empleado"
+                                           @isset($docente)
+                                           value="{{$docente->numero_de_empleado}}"
+                                            @endisset
+                                    >
                                 </div>
 
 
-                                <h6>Celular</h6>
+                                <h6> Teléfono </h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="telD">
+                                    <input type="number" class="form-control" id="telefono" name="telefono"
+                                           @isset($docente)
+                                           value="{{$docente->telefono}}"
+                                            @endisset
+                                    >
                                 </div>
 
-                                <h6>Fecha de ingreso</h6>
+                                <h6>Fecha</h6>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" id="fechaD">
+                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                           @isset($docente)
+                                           value="{{$docente->fecha_de_ingreso}}"
+                                            @endisset
+                                    >
                                 </div>
 
-                            </form>
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit"  class="btn btn-primary">Guardar</button>
 
                             </div>
-
+                            </form>
                         </div>
 
                     </div>
@@ -92,26 +133,26 @@
                     <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Id de Empleado</th>
-                    <th scope="col">Edad</th>
-                    <th scope="col">Celular</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
                 </thead>
 
                 <tbody>
-
+                @foreach($docentes as $docente)
                 <tr>
                     <th scope="row">1</th>
-                    <td>Jose Hernandez</td>
-                    <td>20102506002</td>
-                    <td>38</td>
-                    <td>87-95-68-45</td>
-                    <td>2/10/2019</td>
-                    <td>
+                    <td>{{$docente->nombre}}</td>
+                    <td>{{$docente->numero_de_empleado}}</td>
+                    <td>{{$docente->fecha_de_ingreso}}</td>
+
+                    <td class="form-inline">
                         <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-warning"><a href="{{route('docente.editar', $docente->id)}}"><i class="fas fa-edit"></i></a></button>
+                        <form method="post" action="{{route('docente.borrar', $docente->id)}}">
                         <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
+                            {{method_field('delete')}}
+                        </form>
                         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Medidas
                         </button>
@@ -123,11 +164,12 @@
                     </td>
                 </tr>
 
-
+@endforeach
 
 
                 </tbody>
             </table>
+        {{ $docentes->links() }}
             <!--nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
                     <li class="page-item disabled">
