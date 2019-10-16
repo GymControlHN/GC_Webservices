@@ -57,15 +57,7 @@
                                            value="{{$docente->nombre}}"
                                             @endisset
                                     >
-                                </div>
-                                <h6>Profesión</h6>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="profesion" name="profesion"
-                                           placeholder="Escriba la profesión"
-                                           @isset($docente)
-                                           value="{{$docente->profesion}}"
-                                            @endisset
-                                    >
+
                                 </div>
 
                                 <h6>Edad</h6>
