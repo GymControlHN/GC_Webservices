@@ -57,15 +57,7 @@
                                            value="{{$docente->nombre}}"
                                             @endisset
                                     >
-                                </div>
-                                <h6>Profesión</h6>
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="profesion" name="profesion"
-                                           placeholder="Escriba la profesión"
-                                           @isset($docente)
-                                           value="{{$docente->profesion}}"
-                                            @endisset
-                                    >
+
                                 </div>
 
                                 <h6>Edad</h6>
@@ -130,9 +122,11 @@
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col">N°</th>
+
                     <th scope="col">Nombre</th>
                     <th scope="col">Id de Empleado</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Edad</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
@@ -141,9 +135,11 @@
                 <tbody>
                 @foreach($docentes as $docente)
                 <tr>
-                    <th scope="row">1</th>
+
                     <td>{{$docente->nombre}}</td>
                     <td>{{$docente->numero_de_empleado}}</td>
+                    <td>{{$docente->telefono}}</td>
+                    <td>{{$docente->edad}}</td>
                     <td>{{$docente->fecha_de_ingreso}}</td>
 
                     <td class="form-inline">

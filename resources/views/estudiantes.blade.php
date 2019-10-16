@@ -148,10 +148,11 @@
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
         <thead class="thead-light">
         <tr>
-            <th scope="col">N°</th>
             <th scope="col">Nombre</th>
             <th scope="col">Número de Cuenta</th>
             <th scope="col">Carrera</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Edad</th>
             <th scope="col">Fecha de Ingreso</th>
             <th scope="col">Acciones</th>
         </tr>
@@ -160,10 +161,12 @@
         <tbody>
         @foreach($estudiantes as $estudiante)
         <tr>
-            <th scope="row">1</th>
+
             <td>{{$estudiante->nombre}}</td>
             <td>{{$estudiante->numero_de_cuenta}}</td>
             <td>{{$estudiante->carrera}}</td>
+            <td>{{$estudiante->telefono}}</td>
+            <td>{{$estudiante->edad}}</td>
             <td>{{$estudiante->fecha_de_ingreso}}</td>
 
             <td class="form-inline">
