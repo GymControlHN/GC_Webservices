@@ -4,6 +4,9 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Estudiantes</div>
+            </div>
         </div>
     </header>
 
@@ -22,31 +25,36 @@
            </button-->
 
            <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                aria-labelledby="exampleModalScrollableTitleE" aria-hidden="true">
                <div class="modal-dialog modal-dialog-scrollable" role="document">
                    <div class="modal-content">
                        <div class="modal-header">
-                           <h5 class="modal-title" id="exampleModalScrollableTitle">Registro Estudiantes</h5>
+                           <h5 class="modal-title" id="exampleModalScrollableTitleE">Ingrese los datos</h5>
                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                <span aria-hidden="true">&times;</span>
                            </button>
                        </div>
+
+
+
                        <div class="modal-body">
                            <form>
                                <h6>Nombre Completo</h6>
                                <div class="form-group">
-                                   <input type="text" class="form-control" id="nombre">
+                                   <input type="text" class="form-control" id="nombreE">
+                               </div>
+
+                               <h6>Número de Cuenta</h6>
+                               <div class="form-group">
+                                   <input type="number" class="form-control" id="cuenta">
                                </div>
 
                                <h6>Edad</h6>
                                <div class="form-group">
-                                   <input type="number" class="form-control" id="edad">
+                                   <input type="number" class="form-control" id="edadE">
                                </div>
 
-                               <h6>Número Cuenta</h6>
-                               <div class="form-group">
-                                   <input type="number" class="form-control" id="cuenta">
-                               </div>
+
 
                                 <h6>Carrera</h6>
                                <div class="form-group">
@@ -59,15 +67,18 @@
                                    </select>
                                </div>
 
-                               <h6> Teléfono </h6>
+
+                               <h6> Celular </h6>
                                <div class="form-group">
                                    <input type="number" class="form-control" id="tel">
                                </div>
 
-                               <h6>Fecha</h6>
+                               <h6>Fecha de ingreso</h6>
                                <div class="form-group">
                                    <input type="date" class="form-control" id="fecha">
                                </div>
+
+
                            </form>
                            <div class="modal-footer">
                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -79,6 +90,16 @@
                    </div>
                </div>
            </div>
+
+
+
+
+
+
+
+
+
+
        <form class="form-inline">
 
         <div class="form-group mr-sm-4 my-sm-4 ">
@@ -109,14 +130,14 @@
             <td>89-98-65-89</td>
             <td>12/3/2016</td>
             <td>
-                <button class="btn btn-success">
-                    <a class="" href="/pagose"><i class="fas fa-eye"></i></a>
-                </button>
+                <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                 <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                 <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Medidas
                 </button>
+
+
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/imc">Imc</a>
                     </button>
@@ -151,8 +172,8 @@
 
 
         </tbody>
-      </table>
-     </div>
+    </table>
+   </div>
    </div>
 
 @endsection

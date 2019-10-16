@@ -21,11 +21,11 @@
             </button-->
 
             <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
-                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                 aria-labelledby="exampleModalScrollableTitleD" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Docentes</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitleD">Ingrese los datos</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -36,12 +36,12 @@
                             <form>
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nombre">
+                                    <input type="text" class="form-control" id="nombreD">
                                 </div>
 
                                 <h6>Edad</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="edad">
+                                    <input type="number" class="form-control" id="edadD">
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
@@ -49,14 +49,14 @@
                                 </div>
 
 
-                                <h6> Teléfono </h6>
+                                <h6>Celular</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="tel">
+                                    <input type="number" class="form-control" id="telD">
                                 </div>
 
-                                <h6>Fecha</h6>
+                                <h6>Fecha de ingreso</h6>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" id="fecha">
+                                    <input type="date" class="form-control" id="fechaD">
                                 </div>
 
                             </form>
@@ -65,6 +65,7 @@
                                 <button type="submit"  class="btn btn-primary">Guardar</button>
 
                             </div>
+
                         </div>
 
                     </div>

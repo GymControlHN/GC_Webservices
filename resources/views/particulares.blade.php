@@ -23,11 +23,11 @@
             </button-->
 
             <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
-                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                 aria-labelledby="exampleModalScrollableTitleP" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Particulares</h5>
+                            <h5 class="modal-title" id="exampleModalScrollableTitleP">Ingrese los datos</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -39,17 +39,17 @@
                             <form>
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nombre">
+                                    <input type="text" class="form-control" id="nombreP">
                                 </div>
 
                                 <h6>Edad</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="edad">
+                                    <input type="number" class="form-control" id="edadP">
                                 </div>
 
                                 <h6>Número de Identidad</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="numEmple">
+                                    <input type="number" class="form-control" id="numIde">
                                 </div>
 
                                 <h6>Profesión</h6>
@@ -59,14 +59,14 @@
 
 
 
-                                <h6> Teléfono </h6>
+                                <h6>Celular</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="tel">
+                                    <input type="number" class="form-control" id="telP">
                                 </div>
 
-                                <h6>Fecha</h6>
+                                <h6>Fecha de ingreso</h6>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" id="fecha">
+                                    <input type="date" class="form-control" id="fechaP">
                                 </div>
 
 
