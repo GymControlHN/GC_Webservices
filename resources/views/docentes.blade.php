@@ -133,7 +133,6 @@
 
                     <th scope="col">Nombre</th>
                     <th scope="col">Id de Empleado</th>
-                    <th scope="col">Profesión</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Fecha de Ingreso</th>
@@ -147,7 +146,6 @@
 
                     <td>{{$docente->nombre}}</td>
                     <td>{{$docente->numero_de_empleado}}</td>
-                    <td>{{$docente->profesion}}</td>
                     <td>{{$docente->telefono}}</td>
                     <td>{{$docente->edad}}</td>
                     <td>{{$docente->fecha_de_ingreso}}</td>
