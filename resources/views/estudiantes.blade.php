@@ -85,6 +85,7 @@
                                        <option>Lic. Enfermeria</option>
                                        <option>Ing. Agroindustrial</option>
                                        <option>TUAEC</option>
+                                       <option>Otros</option>
                                    </select>
                                </div>
 
@@ -159,7 +160,7 @@
         <tbody>
         @foreach($estudiantes as $estudiante)
         <tr>
-            <th scope="row"></th>
+            <th scope="row">1</th>
             <td>{{$estudiante->nombre}}</td>
             <td>{{$estudiante->numero_de_cuenta}}</td>
             <td>{{$estudiante->carrera}}</td>
