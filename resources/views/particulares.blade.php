@@ -4,6 +4,9 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Particulares</div>
+            </div>
         </div>
     </header>
 
@@ -82,6 +85,20 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <form class="form-inline">
 
                 <div class="form-group mr-sm-4 my-sm-4 ">
@@ -101,6 +118,7 @@
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
+                
                 </thead>
 
                 <tbody>
@@ -112,9 +130,7 @@
                     <td>98-69-52-12</td>
                     <td>7/10/2019</td>
                     <td>
-                        <button class="btn btn-success">
-                            <a class="" href="/pagosp"><i class="fas fa-eye"></i></a>
-                        </button>
+                        <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                         <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                         <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
 

@@ -22,6 +22,7 @@ class CreateParticularesTable extends Migration
             $table->string('profesion_u_oficio', 100);
             $table->char('celular', 8);
             $table->timestamps();
+
         });
     }
     /**

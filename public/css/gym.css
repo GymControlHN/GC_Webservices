@@ -54,6 +54,14 @@ header.fondo
     width: 40%;
     margin-left: 60%;
 }
+.inputtamaño3{
+    width: 40%;
+    margin-left: 40%;
+}
+
+
+
+
 
 .labeltamaño{
     width: 20%;
@@ -64,6 +72,9 @@ header.fondo
     color: black;
     margin-left: 23%;
 }
+
+
+
 
 .boton {
     margin-left: 43%;

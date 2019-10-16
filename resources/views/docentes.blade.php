@@ -4,12 +4,18 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Docentes</div>
+            </div>
         </div>
     </header>
 
     <div class="container">
         <div class="alert alert-dismissable mb-n4" role="alert">
             <h2 style="all: revert">Listado de Docentes</h2>
+
+
+
 
             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalScrollable">
                 <i class="fas fa-user-plus"></i>
@@ -72,7 +78,6 @@
                 </div>
             </div>
 
-
             <form class="form-inline">
 
                 <div class="form-group mr-sm-4 my-sm-4 ">
@@ -104,6 +109,7 @@
                     <td>87-95-68-45</td>
                     <td>2/10/2019</td>
                     <td>
+                        <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
                         <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
                         <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
                         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
