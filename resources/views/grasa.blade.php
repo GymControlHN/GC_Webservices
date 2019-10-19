@@ -101,6 +101,17 @@
                            id="leyenda" name="leyenda" maxlength="50"  disabled="true">
                 </div>
             </div>
+            <div class="container">
+                <div class="form-group">
+                    <input type="date" class="form-control3" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                           placeholder="Escriba la fecha de ingreso"
+                           @isset($estudiante)
+                           value="{{$estudiante->fecha_de_ingreso}}"
+                            @endisset
+                    >
+                </div>
+
+            </div>
 
             <input type="button" class="btn btn-primary my-4 boton" value="Guardar" onclick="calcularGRASA()">
 

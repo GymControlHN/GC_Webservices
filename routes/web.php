@@ -46,6 +46,10 @@ Route::get("/imc",function (){
     return view("imc");
 });
 
+Route::get("/verestadistica",function (){
+    return view("verestadistica");
+});
+
 Route::get("/grasa",function (){
     return view("grasa");
 });
