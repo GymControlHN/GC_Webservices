@@ -10,8 +10,7 @@
         </div>
     </header>
 
-   <div class="container">
-       <div class="alert alert-dismissable mb-n4" role="alert">
+   <div class="w3-container w3-teal mx-5" >
            <h2 style="all: revert">Listado de Estudiantes</h2>
 
 
@@ -89,6 +88,10 @@
                                    </select>
                                </div>
 
+
+
+
+
                                <h6> Teléfono </h6>
                                <div class="form-group">
                                    <input type="number" class="form-control" id="telefono" name="telefono"
@@ -109,6 +112,9 @@
                                    >
                                </div>
 
+
+
+
                            <div class="modal-footer">
                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                <button type="submit"  class="btn btn-primary">Guardar</button>
@@ -120,6 +126,16 @@
                    </div>
                </div>
            </div>
+
+
+
+
+
+
+
+
+
+
        <form class="form-inline">
 
         <div class="form-group mr-sm-4 my-sm-4 ">
@@ -143,27 +159,25 @@
 
         <tbody>
         @foreach($estudiantes as $estudiante)
-        <tr>
 
+        <tr>
             <td>{{$estudiante->nombre}}</td>
             <td>{{$estudiante->numero_de_cuenta}}</td>
             <td>{{$estudiante->carrera}}</td>
             <td>{{$estudiante->telefono}}</td>
             <td>{{$estudiante->edad}}</td>
             <td>{{$estudiante->fecha_de_ingreso}}</td>
+            <div  style="overflow: auto"></div>
 
-            <td class="form-inline">
-                <button class="btn btn-success">
-                    <a class="" href="/pagose"><i class="fas fa-eye"></i></a>
-                </button>
 
-                <button class="btn btn-warning"><a href="{{route('estudiante.editar', $estudiante->id)}}"><i class="fas fa-edit"></i></a></button>
+            <td class="form-inline " style="width: 300px">
+                <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
+                <button class="btn btn-warning mr-xl-2 "><a href="{{route('estudiante.editar', $estudiante->id)}}"><i class="fas fa-edit"></i></a></button>
                 <form method="post" action="{{route('estudiante.borrar', $estudiante->id)}}">
 
                 <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
                     {{method_field('delete')}}
                 </form>
-
                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Medidas
                 </button>
@@ -199,10 +213,13 @@
                 </div>
             </div>
         </div>
+
+
+
         </tbody>
     </table>
            {{ $estudiantes->links() }}
-   </div>
+
    </div>
 
 @endsection
