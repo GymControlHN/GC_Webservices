@@ -91,3 +91,7 @@ Route::post('particulares/guardar', 'ParticularesController@store')->name('parti
 Route::delete('particulares/{id}/borrar','ParticularesController@destroy')->name('particular.borrar');
 Route::get('particulares/{id}/editar','ParticularesController@edit')->name('particular.editar');
 Route::put('particulares/{id}/editar','ParticularesController@update')->name('particular.update');
+
+Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
+Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
+Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');

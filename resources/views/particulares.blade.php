@@ -35,8 +35,6 @@
                             </button>
                         </div>
 
-
-
                         <div class="modal-body ">
 
                             <form method="post" action="{{route('particular.guardar')}}">
@@ -110,10 +108,6 @@
                                             @endisset
                                     >
                                 </div>
-
-
-
-
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit"  class="btn btn-primary">Guardar</button>

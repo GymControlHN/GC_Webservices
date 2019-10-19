@@ -24,9 +24,8 @@
                         </button>
                     </div>
 
-
                     <div class="modal-body">
-                        <form>
+                        <form method="post" action="{{route('pagoestudiantes.guardar')}}">
                             <h6>Mes</h6>
                             <div class="form-group">
                                 <select class="form-control" id="carrera" placeholder="seleccione">
@@ -47,14 +46,17 @@
                             </div>
                             <h6>Fecha</h6>
                             <div class="form-group">
-                                <input type="date" class="form-control" id="fecha">
+                                <input type="date" class="form-control" id="fecha"
+                                       @isset($pagoestudiantes)
+                                       value="{{$pagoestudiantes->fecha_pago}}"
+                                        @endisset
+                                >
                             </div>
 
                         </form>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                             <button type="submit"  class="btn btn-primary">Guardar</button>
-
 
                         </div>
                     </div>
@@ -71,15 +73,26 @@
                 Registros del año 2019
             </div>
         </div>
+
         <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                       box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+            <thead>
+              <tr>
+                  <th>Mes</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+              <tr>
+            </thead>
             <tbody>
+            @foreach($pagoestudiantes as $pagoestudiante)
             <tr>
-                <td>Enero</td>
-                <td>05/01/19</td>
+                <td>{{$pagoestudiante->mes}}</td>
+                <td>{{$pagoestudiante->fecha_pago}}</td>
                 <td>cancelado</td>
             </tr>
+            @endforeach
             </tbody>
         </table>
+        {{$pagosestudiantes->links() }}
     </div>
 @endsection
