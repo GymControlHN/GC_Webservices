@@ -43,7 +43,7 @@
                     <td>98-95-00-40</td>
                     <td>2/9/2019</td>
                     <td>
-                        <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
+                        <button type="button" class="btn btn-secondary btn-sm"><a class="nav-link js-scroll-trigger" href="/verestadistica">Ver Estadística</a></button>
                     </td>
                 </tr>
 

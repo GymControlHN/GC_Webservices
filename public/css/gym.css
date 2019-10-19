@@ -111,6 +111,28 @@ header.fondo
     text-align: center;
 }
 
+.my-5{
+    width: 10%;
+    height: 10%;
+    margin-left: 78%;
+}
+.my-6{
+    width: 10%;
+    height: 10%;
+    margin-left: 60%;
+}
+.my-7{
+    width: 10%;
+    height: 10%;
+    margin-left: 70%;
+
+}
+
+.form-control3{
+    width: 10%;
+    height: 10%;
+}
+
 
 
 
