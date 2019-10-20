@@ -39,20 +39,10 @@
 
                         <div class="modal-body">
                             <form method="post" action="{{route('docente.guardar')}}">
-                                <script>
-                                    @isset($docente)
-                                        action=" {{ route('docente.update', $docente->id) }}"
-                                    @else
-                                        action="{{route('docente.guardar')}}"
-                                    @endisset
-                                    @isset ($docente)
-                                        @method('put')
-                                    @endisset
-                                </script>
+
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nombre" name="nombre"
-                                           placeholder="Escriba el nombre completo"
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required
                                            @isset($docente)
                                            value="{{$docente->nombre}}"
                                             @endisset
@@ -62,8 +52,7 @@
 
                                 <h6>Edad</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="edad" name="edad"
-                                           placeholder="Escriba la edad "
+                                    <input type="number" class="form-control" id="edad" name="edad" required
                                            @isset($docente)
                                            value="{{$docente->edad}}"
                                             @endisset
@@ -71,8 +60,7 @@
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
-                                           placeholder="Escriba el id del empleado"
+                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado" required
                                            @isset($docente)
                                            value="{{$docente->numero_de_empleado}}"
                                             @endisset
@@ -82,7 +70,7 @@
 
                                 <h6> Teléfono </h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="telefono" name="telefono"
+                                    <input type="number" class="form-control" id="telefono" name="telefono" required
                                            @isset($docente)
                                            value="{{$docente->telefono}}"
                                             @endisset
@@ -91,7 +79,7 @@
 
                                 <h6>Fecha</h6>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso" required
                                            @isset($docente)
                                            value="{{$docente->fecha_de_ingreso}}"
                                             @endisset
@@ -104,6 +92,83 @@
                                 <button type="submit"  class="btn btn-primary">Guardar</button>
 
                             </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <! -- modal editar -->
+
+            <div class="modal fade" id="edit" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Docentes</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <form method="post" action="{{route('docente.update' , 'docentes')}}">
+
+                                {{method_field('put')}}
+
+                                <h6>Nombre Completo</h6>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required
+                                           @isset($docente)
+                                           value="{{$docente->nombre}}"
+                                            @endisset
+                                    >
+
+                                </div>
+
+                                <h6>Edad</h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="edad" name="edad" required
+                                           @isset($docente)
+                                           value="{{$docente->edad}}"
+                                            @endisset
+                                    >
+                                </div>
+                                <h6>Número de Empleado</h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado" required
+                                           @isset($docente)
+                                           value="{{$docente->numero_de_empleado}}"
+                                            @endisset
+                                    >
+                                </div>
+
+
+                                <h6> Teléfono </h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="telefono" name="telefono" required
+                                           @isset($docente)
+                                           value="{{$docente->telefono}}"
+                                            @endisset
+                                    >
+                                </div>
+
+                                <h6>Fecha</h6>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso" required
+                                           @isset($docente)
+                                           value="{{$docente->fecha_de_ingreso}}"
+                                            @endisset
+                                    >
+                                </div>
+
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                    <button type="submit"  class="btn btn-primary">Guardar</button>
+
+                                </div>
                             </form>
                         </div>
 
@@ -124,7 +189,7 @@
                 <tr>
 
                     <th scope="col">Nombre</th>
-                    <th scope="col">Id de Empleado</th>
+                    <th scope="col">Numero de Empleado</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Fecha de Ingreso</th>
@@ -144,8 +209,10 @@
 
                     <td class="form-inline">
                         <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning"><a href="{{route('docente.editar', $docente->id)}}"><i class="fas fa-edit"></i></a></button>
-                        <form method="post" action="{{route('docente.borrar', $docente->id)}}">
+                        <button class="btn btn-warning" data-toggle="modal" data-target="#edit" data-mynombre="{{$docente->nombre}}" data-myedad="{{$docente->edad}}"
+                                data-mynempleado="{{$docente->numero_de_empleado}}" data-myfecha="{{$docente->fecha_de_ingreso}}"
+                                data-mytelefono="{{$docente->telefono}}" data-mycarrera="{{$docente->carrera}}"><i class="fas fa-edit"></i></button>
+                        <form method="post" action="{{route('docente.borrar', $docente->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al docente? ')">
                         <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
