@@ -6,7 +6,6 @@
         <div class="container">
         </div>
     </header>
-
     <div class="container">
         <div class="alert alert-dismissable mb-n4" role="alert">
             <h2 style="all: revert">Lista De Todos Los Clientes</h2>
@@ -46,9 +45,6 @@
                         <button type="button" class="btn btn-secondary btn-sm"><a class="nav-link js-scroll-trigger" href="/verestadistica">Ver Estadística</a></button>
                     </td>
                 </tr>
-
-
-
                 </tbody>
             </table>
         </div>

@@ -10,8 +10,7 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="alert alert-dismissable mb-n4" role="alert">
+    <div class="w3-container w3-teal mx-5">
             <h2 style="all: revert">Listado de Particulares</h2>
 
 
@@ -173,6 +172,7 @@
                     <td>{{$particular->telefono}}</td>
                     <td>{{$particular->edad}}</td>
                     <td>{{$particular->fecha_de_ingreso}}</td>
+                    <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
                         <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
@@ -196,7 +196,6 @@
                 </tbody>
             </table>
             {{ $particulares->links() }}
-        </div>
     </div>
 
 @endsection

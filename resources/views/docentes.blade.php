@@ -10,8 +10,7 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="alert alert-dismissable mb-n4" role="alert">
+    <div class="w3-container w3-teal mx-5">
             <h2 style="all: revert">Listado de Docentes</h2>
 
 
@@ -141,6 +140,7 @@
                     <td>{{$docente->telefono}}</td>
                     <td>{{$docente->edad}}</td>
                     <td>{{$docente->fecha_de_ingreso}}</td>
+                    <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
                         <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
@@ -179,8 +179,6 @@
                     </li>
                 </ul>
             </nav-->
-
-        </div>
     </div>
 
 @endsection
