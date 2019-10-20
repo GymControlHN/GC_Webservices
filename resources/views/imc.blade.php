@@ -1,4 +1,3 @@
-
 @extends("layouts.principal")
 
 @section("content")
@@ -10,164 +9,83 @@
             </div>
         </div>
     </header>
-    <!-- Header -->
 
-    <!DOCTYPE html public>
-    <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
-        <title>FORMULARIO PESO IDEAL</title>
-        <script type="text/javascript">function calcularIMC(){
-                peso=document.getElementById("peso").value;
-                altura=document.getElementById("altura").value/100;
-                imc=peso/(altura*altura);
-                document.getElementById("imc").value=imc.toFixed(2);
+    <div class="container">
+        <div class="alert alert-dismissable mb-n4" role="alert">
+            <h2 style="all: revert">Datos fisicos</h2>
 
-                if (imc>40) {
-                    leyenda="Tu diagnostico es problema de obesidad tipo III" + (altura* altura*40-peso).toFixed(1)+"kilos";
-                }
-                else if (imc>34.99) {
-                    leyenda=
-                        "Tu diagnostico es problema de obisidad tipo II" + (altura* altura*34.99-peso).toFixed(1)+"kilos";
+            <form class="form-inline">
 
-                }
-
-                else if (imc>29.99) {
-                    leyenda=
-                        "Tu diagnostico es problema de obisidad tipo I" + (altura* altura*29.99-peso).toFixed(1)+"kilos";
-
-                }
-
-                else if (imc>18.49) {
-                    leyenda=
-                        "Tu diagnostico es peso normal" + (altura* altura*18.49-peso).toFixed(1)+"kilos";
-
-                }
-
-                else if (imc>16.99) {
-                    leyenda=
-                        "Tu diagnostico es problema de delgadez" + (altura* altura*16.99-peso).toFixed(1)+"kilos";
-
-                }
-
-                else if (imc>16.00) {
-                    leyenda=
-                        "Tu diagnostico es problema de delgadez severa" + (altura* altura*16.00-peso).toFixed(1)+"kilos";
-
-                }
-                else{
-                    leyenda="Algo salio mal"
-                }
-                document.getElementById("leyenda").value=leyenda;
-
-
-
-            }</script>
-
-    </head>
-
-    <body>
-<div class="container">
-    <form name="f1" id="f1">
-        <br><br>
-        <h5 class="label2">Agregar medidas antropometricas</h5>
-        <br>
-        <form class="form-horizontal" action="/action_page.php">
-            <div class="form-group">
-                <h6 class=" label2" for="email">Peso kg:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3" id="peso"
-                           name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos" onkeyup="calcularIMC()">
+                <div class="form-group mr-sm-4 my-sm-4 ">
+                    <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
                 </div>
-            </div>
+                <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
+            </form>
 
-            <div class="form-group">
-                <h6 class="label2" for="email">Talla:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
-                           id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla" onkeyup="calcularIMC()">
-                </div>
-            </div>
+            <h2 style="all: revert">IMC <button type="submit" class="btn btn-primary my-5 "><a class="nav-link js-scroll-trigger" href="/botonimc">Nuevo</a></button></h2>
+            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+                box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="row">Fecha</th>
+                    <th scope="col">Peso kg°</th>
+                    <th scope="col">Talla</th>
+                    <th scope="col">Imc</th>
+                    <th scope="col">pecho cm</th>
+                    <th scope="col">Brazo cm</th>
+                    <th scope="col">ABD-A</th>
+                    <th scope="col">ABD-B</th>
+                    <th scope="col">Cadera cm</th>
+                    <th scope="col">Muslo cm</th>
+                    <th scope="col">Pierna cm</th>
+                </tr>
+                </thead>
 
-            <div class="form-group">
-                <h6 class="label2" for="email">Imc:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
-                           id="imc" name="imc" maxlength="3" disabled="true">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <h6 class="label2" for="email">Diagnostico:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
-                           id="leyenda" name="leyenda" maxlength="50" disabled="true" >
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <h6 class="label2" for="email">Pecho:</h6>
-                <div class="col-sm-10" >
-                    <input type="number" class="form-control inputtamaño3">
-                </div>
-            </div>
-            <div class="form-group">
-                <h6 class="label2" for="email">Brazo:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3">
-                </div>
-            </div>
-            <div class="form-group">
-                <h6 class="label2" for="email">ABD-A:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3">
-                </div>
-            </div>
-            <div class="form-group">
-                <h6 class="label2" for="email">ABD-B:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3">
-                </div>
-            </div>
-            <div class="form-group">
-                <h6 class="label2" for="email">Cadera:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3">
-                </div>
-            </div>
-            <div class="form-group">
-                <h6 class="label2" for="email">Muslo:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3">
-                </div>
-            </div>
-            <div class="form-group">
-                <h6 class="label2" for="email">Pierna:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3">
-                </div>
-            </div>
-            <div class="container">
-            <div class="form-group">
-                <input type="date" class="form-control3" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                       placeholder="Escriba la fecha de ingreso"
-                       @isset($estudiante)
-                       value="{{$estudiante->fecha_de_ingreso}}"
-                        @endisset
-                >
-            </div>
-
-            </div>
+                <tbody>
+                <tr>
+                    <th scope="row">2019/11/16</th>
+                    <th scope="row">70</th>
+                    <td>170</td>
+                    <td>24.5</td>
+                    <td>24</td>
+                    <td>60</td>
+                    <td></td>
+                    <td></td>
+                    <td>98</td>
+                    <td>90</td>
+                    <td>65</td>
 
 
-            <input type="button" class="btn btn-primary my-4 boton" value="Guardar" onclick="calcularIMC()">
+                <tbody>
+                <tr>
+                    <th scope="row">2019/10/16</th>
+                    <th scope="row">70</th>
+                    <td>170</td>
+                    <td>24.5</td>
+                    <td>24</td>
+                    <td>60</td>
+                    <td></td>
+                    <td></td>
+                    <td>98</td>
+                    <td>90</td>
+                    <td>65</td>
 
-    </form>
-    </form>
-</div>
-    </body>
+                </tbody>
+
+                </tbody>
+            </table>
 
 
-    </html>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
 @endsection

@@ -57,6 +57,15 @@ Route::get("/grasa",function (){
 Route::get("/ruffiel",function (){
     return view("ruffiel");
 });
+Route::get("/botonimc",function (){
+    return view("botonimc");
+});
+Route::get("/botongrasa",function (){
+    return view("botongrasa");
+});
+Route::get("/botonruffier",function (){
+    return view("botonruffier");
+});
 
 
 Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');
