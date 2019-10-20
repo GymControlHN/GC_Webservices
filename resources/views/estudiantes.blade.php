@@ -159,8 +159,8 @@
 
         <tbody>
         @foreach($estudiantes as $estudiante)
-        <tr>
 
+        <tr>
             <td>{{$estudiante->nombre}}</td>
             <td>{{$estudiante->numero_de_cuenta}}</td>
             <td>{{$estudiante->carrera}}</td>
@@ -168,6 +168,7 @@
             <td>{{$estudiante->edad}}</td>
             <td>{{$estudiante->fecha_de_ingreso}}</td>
             <div  style="overflow: auto"></div>
+
 
             <td class="form-inline " style="width: 300px">
                 <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
