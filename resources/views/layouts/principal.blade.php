@@ -161,7 +161,7 @@
             var nempleado = button.data('mynempleado');
             var nidentidad = button.data('myidentidad');
             var profesion = button.data('myprofesion');
-            //var cat_id = button.data('catid')
+            //var cat_id = button.data('catid');
             var modal = $(this);
 
             modal.find('.modal-body #nombre').val(nombre);

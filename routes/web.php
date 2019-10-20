@@ -54,7 +54,6 @@ Route::get("/ruffiel",function (){
     return view("ruffiel");
 });
 
-
 Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');
 Route::get('estudiantes/crear', 'EstudiantesController@create')->name('estudiantes.formulario');
 Route::post('estudiantes/guardar', 'EstudiantesController@store')->name('estudiante.guardar');

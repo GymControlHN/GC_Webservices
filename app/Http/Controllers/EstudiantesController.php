@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Estudiante;
+use Illuminate\Http\Request;
+
 class EstudiantesController extends Controller
 {
     public function index () {
@@ -16,25 +17,26 @@ class EstudiantesController extends Controller
     }
 
     public function store(Request $request) {
-        //$validatedData = $request->validate([
-           //  'nombre'=>'required',
-            // 'edad'=>'required|numeric|max:100|min:10',
-            // 'numero_de_cuenta'=>'required|numeric|max:11',
-           //  'fecha_de_ingreso'=>'required|max:12',
-           //  'carrera'=>'required',
-            // 'telefono'=>'required|numeric|max:8',
-         //]);
 
-        $nuevoEstudiante = new Estudiante();
+        $this -> validate ( $request ,[
+             'nombre'=>'required',
+             'edad'=>'required',
+             'numero_de_cuenta'=>'required',
+             'fecha_de_ingreso'=>'required',
+             'carrera'=>'required',
+             'telefono'=>'required',
+         ]);
 
-        $nuevoEstudiante->nombre = $request->input('nombre');
-        $nuevoEstudiante->edad = $request->input('edad');
-        $nuevoEstudiante->numero_de_cuenta = $request->input('numero_de_cuenta');
-        $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $nuevoEstudiante->carrera = $request->input('carrera');
-        $nuevoEstudiante->telefono = $request->input ('telefono');
+        $Nuevoestudiante = new Estudiante();
 
-        $nuevoEstudiante->save();
+        $Nuevoestudiante->nombre = $request->input('nombre');
+        $Nuevoestudiante->edad = $request->input('edad');
+        $Nuevoestudiante->numero_de_cuenta = $request->input('numero_de_cuenta');
+        $Nuevoestudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
+        $Nuevoestudiante->carrera = $request->input('carrera');
+        $Nuevoestudiante->telefono = $request->input('telefono');
+
+        $Nuevoestudiante->save();
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
@@ -42,50 +44,49 @@ class EstudiantesController extends Controller
 
     }
 
-    public function show(Estudiante $estudiantes)
+    public function edit($id)
+    {
+        $estudiante = Estudiante::findOrFail($id);
+        return view('estudiantes')->with('estudiantes', $estudiante);
+
+    }
+
+    public function update(Request $request, $id)
     {
 
-    }
-    public function edit($id) {
-        $estudiante = Estudiante::findOrFail($id);
-        return view('estudiantes')->with('estudiantes',$estudiante);
-
-    }
-
-    public function update(Request $request, $id) {
-
-        // Validar los datos
-
-        $validatedData = $request->validate([
+         //Validar los datos
+        $this -> validate ( $request ,[
             'nombre'=>'required',
-            'edad'=>'required|numeric|max:100|min:10',
-            'numero_de_cuenta'=>'required|unique',
-            'fecha_de_ingreso'=>'required|max:12',
+            'edad'=>'required',
+            'numero_de_cuenta'=>'numeric|digits:11|',
+            'fecha_de_ingreso'=>'required',
             'carrera'=>'required',
-            'telefono'=>'required|numeric|max:8',
-
+            'telefono'=>'required|min:8',
         ]);
 
         // Buscar la instancia en la base de datos.
         $estudiante = Estudiante::findOrFail($id);
+        $estudiante->update($request->all());
 
-        //Asignar los nuevos valores a los diferentes campos
-
+        // Asignar los nuevos valores a los diferentes campos
         $estudiante->nombre = $request->input('nombre');
         $estudiante->edad = $request->input('edad');
         $estudiante->numero_de_cuenta = $request->input('numero_de_cuenta');
         $estudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $estudiante->carrera = $request->input('carrera');
-        $estudiante->telefono = $request->input ('telefono');
+        $estudiante->telefono = $request->input('telefono');
 
         // Guardar los cambios
         $estudiante->save();
 
         // Redirigir a la lista de todos los estudiantes.
-        return redirect('estudiantes');
-
+        return redirect('estudiantes')->with('estudiantes', $estudiante);
 
     }
+
+        //$estudiante = Estudiante::findOrFail($id);
+        //$estudiante->update($request->all());
+//return back();
+
 
     public function destroy($id) {
         Estudiante::destroy($id);

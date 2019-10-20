@@ -61,6 +61,7 @@ class DocentesController extends Controller
     {
 
         // Validar los datos
+
         $this -> validate ( $request ,[
             'nombre'=>'required',
             'edad'=>'required',

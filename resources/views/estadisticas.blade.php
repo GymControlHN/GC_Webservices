@@ -11,7 +11,7 @@
         <div class="alert alert-dismissable mb-n4" role="alert">
             <h2 style="all: revert">Lista De Todos Los Clientes</h2>
 
-            <form class="form-inline">
+            <form  method="post" action="{{route('estadistica.guardar')}}" class="form-inline">
 
                 <div class="form-group mr-sm-4 my-sm-4 ">
                     <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
@@ -24,9 +24,9 @@
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Numero de Cuenta o Identidad</th>
+                    <th scope="col">Identificación</th>
                     <th scope="col">Edad</th>
-                    <th scope="col">Profesión</th>
+                    <th scope="col">Carrera o Profesión</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Acciones</th>
@@ -34,23 +34,28 @@
                 </thead>
 
                 <tbody>
+                @foreach($estadisticas as $estadistica)
                 <tr>
-                    <th scope="row">2</th>
-                    <td>Francisco López</td>
-                    <td>20162500169</td>
-                    <td>24</td>
-                    <td>Informática</td>
-                    <td>98-95-00-40</td>
-                    <td>2/9/2019</td>
+
+                    <td>{{$estadistica->nombre}}</td>
+                    <td>{{$estadistica->numero_de_cuenta}}</td>
+                    <td>{{$estadistica->numero_de_empleado}}</td>
+                    <td>{{$estadistica->numero_de_identidad}}</td>
+                    <td>{{$estadistica->carrera}}</td>
+                    <td>{{$estadistica->profesion_u_oficio}}</td>
+                    <td>{{$estadistica->telefono}}</td>
+                    <td>{{$estadistica->edad}}</td>
+                    <td><{{$estadistica->fecha_de_ingreso}}/td>
                     <td>
                         <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
                     </td>
                 </tr>
 
-
+    @endforeach
 
                 </tbody>
             </table>
+            {{ $estadisticas->links() }}
         </div>
     </div>
 

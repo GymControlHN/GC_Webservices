@@ -18,14 +18,14 @@ class ParticularesController extends Controller
     }
 
     public function store(Request $request) {
-        // $request->validate([
-        // 'nombre' =>'required',
-        //   'edad' =>'required',
-        //   'numero_de_cuenta' =>'required',
-        //  'fecha_de_ingreso' =>'required',
-        //  'profesion_u_oficio' =>'required',
-        //   'telefono' =>'required',
-        //  ]);
+        $this -> validate ( $request ,[
+            'nombre'=>'required',
+            'edad'=>'required',
+            'numero_de_identidad'=>'required',
+            'fecha_de_ingreso'=>'required',
+            'profesion_u_oficio'=>'required',
+            'telefono'=>'required',
+        ]);
 
         $nuevoParticular = new Particular();
 
@@ -56,14 +56,13 @@ class ParticularesController extends Controller
     public function update(Request $request, $id) {
 
         // Validar los datos
-        $validatedData = $request->validate([
-            'nombre'=>'required|max:50',
-            'edad'=>'required|numeric|max:100|min:10',
-            'numero_de_identidad'=>'required|numeric',
-            'fecha_de_ingreso'=>'required|max:10',
+        $this -> validate ( $request ,[
+            'nombre'=>'required',
+            'edad'=>'required',
+            'numero_de_identidad'=>'required',
+            'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
-            'telefono'=>'required|numeric|max:8',
-
+            'telefono'=>'required',
         ]);
 
         // Buscar la instancia en la base de datos.

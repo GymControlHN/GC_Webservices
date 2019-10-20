@@ -15,6 +15,5 @@ class Docente extends Model
         'telefono',
         'edad',
         'fecha_ingreso',
-
     ];
 }

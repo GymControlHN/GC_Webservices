@@ -24,6 +24,7 @@ class CreateDocentesTable extends Migration
         });
     }
 
+
     /**
      * Reverse the migrations.
      *
