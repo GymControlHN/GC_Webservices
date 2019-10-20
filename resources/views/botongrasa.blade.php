@@ -77,7 +77,7 @@
 
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="edad" name="edad">
                     <h6 class="label2" for="email">Edad:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
@@ -85,7 +85,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="grasa" name="grasa">
                     <h6 class="label2" for="email">Grasa:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
@@ -93,7 +93,7 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="diagnostico" name="diagnostico">
                     <h6 class="label2" for="email">Diagnostico:</h6>
                     <div class="col-sm-10">
                         <input type="text" class="form-control inputtamaño3"

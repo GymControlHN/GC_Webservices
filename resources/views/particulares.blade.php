@@ -10,7 +10,7 @@
         </div>
     </header>
 
-    <div class="w3-container w3-teal mx-5">
+    <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
             <h2 style="all: revert">Listado de Particulares</h2>
 
 
@@ -140,8 +140,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
             </form>
-            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+        <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+            <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>
 
@@ -191,5 +192,5 @@
             </table>
             {{ $particulares->links() }}
     </div>
-
+</div>
 @endsection
