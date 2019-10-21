@@ -4,13 +4,13 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
-            <div class="intro-text">
+            <!--div class="intro-text">
                 <div class="intro-lead-in">Estudiantes</div>
-            </div>
+            </div-->
         </div>
     </header>
 
-   <div class="w3-container w3-teal mx-5" >
+   <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
            <h2 style="all: revert">Listado de Estudiantes</h2>
 
 
@@ -143,10 +143,11 @@
         </div>
         <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
     </form>
-    <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+       <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
-        <thead class="thead-light">
-        <tr>
+           <table class="table ruler-vertical table-hover mx-sm-0 ">
+         <thead class="thead-light">
+         <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Número de Cuenta</th>
             <th scope="col">Carrera</th>
@@ -159,8 +160,8 @@
 
         <tbody>
         @foreach($estudiantes as $estudiante)
-        <tr>
 
+        <tr>
             <td>{{$estudiante->nombre}}</td>
             <td>{{$estudiante->numero_de_cuenta}}</td>
             <td>{{$estudiante->carrera}}</td>
@@ -169,12 +170,14 @@
             <td>{{$estudiante->fecha_de_ingreso}}</td>
             <div  style="overflow: auto"></div>
 
+
             <td class="form-inline " style="width: 300px">
                 <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
                 <button class="btn btn-warning mr-xl-2 "><a href="{{route('estudiante.editar', $estudiante->id)}}"><i class="fas fa-edit"></i></a></button>
-                <form method="post" action="{{route('estudiante.borrar', $estudiante->id)}}">
+                <div method="post" action="{{route('estudiante.borrar', $estudiante->id)}}">
                 <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
                     {{method_field('delete')}}
+                </div>
                 </form>
                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Medidas
@@ -218,6 +221,7 @@
     </table>
            {{ $estudiantes->links() }}
 
+   </div>
    </div>
 
 @endsection

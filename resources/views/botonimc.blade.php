@@ -69,9 +69,9 @@
 
 
     <div class="container">
-        <form name="f1" id="f1">
+        <form name="f1" id="f1" style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'">
             <br><br>
-            <h5 class="label2">Agregar medidas antropometricas</h5>
+            <h5 class="label2" >Agregar medidas antropometricas</h5>
             <br>
             <form class="form-horizontal" action="/action_page.php">
                 <div class="form-group">
