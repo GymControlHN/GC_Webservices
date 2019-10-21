@@ -40,8 +40,7 @@
 
                                <h6>Nombre Completo</h6>
                                <div class="form-group">
-                                   <input type="text" class="form-control" id="nombre" name="nombre" onkeypress="return sololetras
-                               (event)"required
+                                   <input type="text" class="form-control" id="nombre" name="nombre"
                                           @isset($estudiante)
                                           value="{{$estudiante->nombre}}"
                                            @endisset
@@ -50,7 +49,7 @@
 
                                <h6>Edad</h6>
                                <div class="form-group">
-                                   <input type="number" class="form-control" id="edad" name="edad" required
+                                   <input type="number" class="form-control" id="edad" name="edad"
                                           @isset($estudiante)
                                           value="{{$estudiante->edad}}"
                                            @endisset
@@ -68,7 +67,7 @@
 
                                 <h6>Carrera</h6>
                                <div class="form-group">
-                                   <select class="form-control" id="carrera" placeholder="seleccione" name="carrera" required>
+                                   <select class="form-control" id="carrera" placeholder="seleccione" name="carrera" >
                                        <option></option>
                                        <option>Lic. informática administrativa</option>
                                        <option>Lic. Enfermeria</option>
@@ -93,7 +92,7 @@
 
                                <h6>Fecha</h6>
                                <div class="form-group">
-                                   <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso" required
+                                   <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                           @isset($estudiante)
                                           value="{{$estudiante->fecha_de_ingreso}}"
                                            @endisset
@@ -152,7 +151,7 @@
 
                                <h6>Número Cuenta</h6>
                                <div class="form-group">
-                                   <input type="number" class="form-control" id="numero_de_cuenta" name="numero_de_cuenta" required
+                                   <input type="number" class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
                                           @isset($estudiante)
                                           value="{{$estudiante->numero_de_cuenta}}"
                                            @endisset
@@ -177,7 +176,7 @@
 
                                <h6> Teléfono </h6>
                                <div class="form-group">
-                                   <input type="number" class="form-control" id="telefono" name="telefono" required
+                                   <input type="number" class="form-control" id="telefono" name="telefono"
                                           @isset($estudiante)
                                           value="{{$estudiante->telefono}}"
                                            @endisset
@@ -305,5 +304,8 @@
    </div>
 
    </div>
+
+
+
 
 @endsection

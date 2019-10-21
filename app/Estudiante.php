@@ -10,7 +10,6 @@ class Estudiante extends Model
     protected $primaryKey='id';
 
     protected $fillable =[
-
        'nombre',
         'edad',
         'numero_de_cuenta',
