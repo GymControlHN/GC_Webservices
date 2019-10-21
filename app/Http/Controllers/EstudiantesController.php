@@ -44,6 +44,7 @@ class EstudiantesController extends Controller
 
     }
 
+
     public function edit($id)
     {
         $estudiante = Estudiante::findOrFail($id);
@@ -51,22 +52,26 @@ class EstudiantesController extends Controller
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request , $id)
     {
 
-         //Validar los datos
-        $this -> validate ( $request ,[
-            'nombre'=>'required',
-            'edad'=>'required',
-            'numero_de_cuenta'=>'numeric|digits:11|',
-            'fecha_de_ingreso'=>'required',
-            'carrera'=>'required',
-            'telefono'=>'required|min:8',
+        //Validar los datos
+        $this->validate($request, [
+            'nombre' => 'required',
+            'edad' => 'required',
+            'numero_de_cuenta' => 'numeric|digits:11|',
+            'fecha_de_ingreso' => 'required',
+            'carrera' => 'required',
+            'telefono' => 'required|min:8',
         ]);
 
         // Buscar la instancia en la base de datos.
         $estudiante = Estudiante::findOrFail($id);
         $estudiante->update($request->all());
+
+
+        //$estudiante = Estudiante::findOrFail($id);
+       // $estudiante->update($request->all());
 
         // Asignar los nuevos valores a los diferentes campos
         $estudiante->nombre = $request->input('nombre');
@@ -77,21 +82,19 @@ class EstudiantesController extends Controller
 
         // Guardar los cambios
         $estudiante->save();
+        return back();
 
         // Redirigir a la lista de todos los estudiantes.
         return redirect('estudiantes')->with('estudiantes', $estudiante);
 
+
     }
-
-        //$estudiante = Estudiante::findOrFail($id);
-        //$estudiante->update($request->all());
-//return back();
-
 
     public function destroy($id) {
         Estudiante::destroy($id);
 
         return redirect('estudiantes');
+
 
     }
 

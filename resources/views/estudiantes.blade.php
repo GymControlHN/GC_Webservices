@@ -126,18 +126,21 @@
                            </button>
                        </div>
                        <div class="modal-body">
-                           <!--<input type="hidden" name="estudiante_id" id="cat_id">-->
+                           <input type="hidden" name="estudiante_id" id="cat_id" value="">
 
 
-                           <form method="post" action="{{route('estudiante.update' , 'estudiantes')}}">
+                           <form method="post" action="{{route('estudiante.update' , 'editar')}}">
 
                                {{method_field('put')}}
 
                                <h6>Nombre Completo</h6>
                                <div class="form-group">
                                    <input type="text" class="form-control" id="nombre" name="nombre"
-
+                                          @isset($estudiante)
+                                          value="{{$estudiante->nombre}}"
+                                          @endisset value="{{old('nombre')}}"
                                    >
+
                                </div>
 
                                <h6>Edad</h6>
@@ -145,7 +148,7 @@
                                    <input type="number" class="form-control" id="edad" name="edad"
                                           @isset($estudiante)
                                           value="{{$estudiante->edad}}"
-                                           @endisset
+                                          @endisset value="{{old('edad')}}"
                                    >
                                </div>
 
@@ -154,7 +157,7 @@
                                    <input type="number" class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
                                           @isset($estudiante)
                                           value="{{$estudiante->numero_de_cuenta}}"
-                                           @endisset
+                                          @endisset value="{{old('numero_de_cuenta')}}"
                                    >
                                </div>
 
@@ -179,7 +182,7 @@
                                    <input type="number" class="form-control" id="telefono" name="telefono"
                                           @isset($estudiante)
                                           value="{{$estudiante->telefono}}"
-                                           @endisset
+                                          @endisset value="{{old('telefono')}}"
                                    >
                                </div>
 
@@ -188,7 +191,7 @@
                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                           @isset($estudiante)
                                           value="{{$estudiante->fecha_de_ingreso}}"
-                                           @endisset
+                                          @endisset value="{{old('fecha_de_ingreso')}}"
                                    >
                                </div>
 
@@ -291,6 +294,7 @@
                         <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
+
             </div>
 
         </div>

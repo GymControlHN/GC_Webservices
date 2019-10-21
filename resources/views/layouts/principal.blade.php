@@ -161,7 +161,7 @@
             var nempleado = button.data('mynempleado');
             var nidentidad = button.data('myidentidad');
             var profesion = button.data('myprofesion');
-            //var cat_id = button.data('catid');
+            var cat_id = button.data('catid');
             var modal = $(this);
 
             modal.find('.modal-body #nombre').val(nombre);
@@ -173,9 +173,8 @@
             modal.find('.modal-body #numero_de_empleado').val(nempleado);
             modal.find('.modal-body #numero_de_identidad').val(nidentidad);
             modal.find('.modal-body #profesion_u_oficio').val(profesion);
-            // modal.find('.modal-body #cat_id').val(cat_id);
+             modal.find('.modal-body #cat_id').val(cat_id);
         })
-
 
 </script>
 
