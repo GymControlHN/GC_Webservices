@@ -122,13 +122,16 @@ header.fondo
 }
 
 .form-control3{
-    width: 10%;
+    width: 33%;
     height: 10%;
-    margin-left: 42%;
+    margin-left: 33.5%;
 }
 
 .boton3{
-    margin: 80%;
+    margin-left: 1%;
+}
+.container1{
+    margin-left: 5%;
 }
 
 

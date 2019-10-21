@@ -174,6 +174,54 @@
 
 
 </script>
+<script>
+$('#editarDocente').on('show.bs.modal', function (event){
+var button = $(event.relatedTarget) // Button that triggered the modal
+var nombre = button.data('mynombre');
+var edad = button.data('myedad');
+var nempleado = button.data('mynumero');
+var fecha = button.data('myfecha');
+var telefono = button.data('mytelefono');
+var cat_id = button.data('catid');
+var modal = $(this);
+
+modal.find('.modal-body #nombre').val(nombre);
+modal.find('.modal-body #edad').val(edad);
+modal.find('.modal-body #numero_de_empleado').val(nempleado);
+modal.find('.modal-body #fecha_de_ingreso').val(fecha);
+modal.find('.modal-body #telefono').val(telefono);
+modal.find('.modal-body #id').val(cat_id);
+
+});
+
+
+
+</script>
+<script>
+    $('#editarParticular').on('show.bs.modal', function (event){
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var nombre = button.data('mynombre');
+        var edad = button.data('myedad');
+        var nidentidad = button.data('myidentidad');
+        var fecha = button.data('myfecha');
+        var profesion = button.data('myprofesion');
+        var telefono = button.data('mytelefono');
+        var cat_id = button.data('catid');
+        var modal = $(this);
+
+        modal.find('.modal-body #nombre').val(nombre);
+        modal.find('.modal-body #edad').val(edad);
+        modal.find('.modal-body #numero_de_identidad').val(nidentidad);
+        modal.find('.modal-body #fecha_de_ingreso').val(fecha);
+        modal.find('.modal-body #profesion_u_oficio').val(nidentidad);
+        modal.find('.modal-body #telefono').val(telefono);
+        modal.find('.modal-body #id').val(cat_id);
+
+    });
+
+
+
+</script>
 
 
 </body>

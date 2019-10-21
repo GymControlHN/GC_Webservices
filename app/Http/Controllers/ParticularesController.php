@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Particular;
 use Illuminate\Http\Request;
 
@@ -48,30 +47,28 @@ class ParticularesController extends Controller
     }
 
     public function edit($id) {
-        $particulares = Particular::findOrFail($id);
-        return view('particulares')->with('particulares',$particulares);
+        $particular = Particular::findOrFail($id);
+        return view('particulares')->with('particular',$particular);
 
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request) {
 
         // Validar los datos
-        $this -> validate ( $request ,[
+       /* $this -> validate ( $request ,[
             'nombre'=>'required',
             'edad'=>'required',
             'numero_de_identidad'=>'required',
             'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
             'telefono'=>'required',
-        ]);
-
-        // Buscar la instancia en la base de datos.
-        $particular = Particular::findOrFail($id);
+        ]); */
 
         // Asignar los nuevos valores a los diferentes campos
+        $particular = Particular::findOrFail($request->input("particular_id"));
         $particular->nombre = $request->input('nombre');
         $particular->edad = $request->input('edad');
-        $particular->numero_de_cuenta = $request->input('numero_de_identidad');
+        $particular->numero_de_identidad = $request->input('numero_de_identidad');
         $particular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $particular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $particular->telefono = $request->input ('telefono');
@@ -80,7 +77,8 @@ class ParticularesController extends Controller
         $particular->save();
 
         // Redirigir a la lista de todos los estudiantes.
-        return redirect('particulares');
+        $particular1 = Particular::paginate(10);
+        return back();
 
 
     }

@@ -22,7 +22,9 @@
                 <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
             </form>
 
-            <h2 style="all: revert">IMC <button type="submit" class="btn btn-primary my-5 "><a class="nav-link js-scroll-trigger" href="/botonimc">Nuevo</a></button></h2>
+
+            <h2 style="all: revert">IMC <button type="button" class="btn btn-primary my-5">
+                    <a style="color: white" class="nav-link js-scroll-trigger" href="/botonimc">Nuevo</a></button></h2>
             <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                 box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <thead class="thead-light">
@@ -38,6 +40,7 @@
                     <th scope="col">Cadera cm</th>
                     <th scope="col">Muslo cm</th>
                     <th scope="col">Pierna cm</th>
+                    <th scope="col" >Acciones</th>
                 </tr>
                 </thead>
 
@@ -54,6 +57,17 @@
                     <td>98</td>
                     <td>90</td>
                     <td>65</td>
+                    <td class="form-inline " style="width: 300px">
+                        <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
+                        <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
+
+                        <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
+
+                    </td>
+
+
+
+
 
 
                 <tbody>
@@ -69,11 +83,23 @@
                     <td>98</td>
                     <td>90</td>
                     <td>65</td>
+                    <td class="form-inline " style="width: 300px">
+                        <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
+                        <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
+
+                        <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
+
+                    </td>
+
+
 
                 </tbody>
+
+
 
                 </tbody>
             </table>
+
 
 
 
