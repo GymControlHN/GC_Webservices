@@ -95,5 +95,9 @@ Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoest
 Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
 Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
 
+Route::get('pagosparticulares/', 'PagoEstudianteController@index')->name('pagoparticulares');
+Route::get('pagosparticulares/crear', 'PagoEstudianteController@create')->name('pagoparticulares.formulario');
+Route::post('pagosparticulares/guardar', 'PagoEstudianteController@store')->name('pagoparticulares.guardar');
+
 Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
 Route::post('estadistica/guardar', 'EstadisticasController@store')->name('estadistica.guardar');

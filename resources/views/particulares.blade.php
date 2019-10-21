@@ -4,9 +4,6 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Particulares</div>
-            </div>
         </div>
     </header>
 
@@ -256,14 +253,14 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
+                        <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoparticulares")}}"><i class="fas fa-eye"></i></a> </button>
+                        <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
                                 data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
                                 data-mytelefono="{{$particular->telefono}}" data-myprofesion="{{$particular->profesion_u_oficio}}"
                                 data-catid="{{$particular->id}}"><i class="fas fa-edit"></i></button>
 
                         <form method="post" action="{{route('particular.borrar', $particular->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al cliente? ')">
-                        <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
                             <button class="btn btn-info dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

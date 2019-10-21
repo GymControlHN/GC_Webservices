@@ -4,9 +4,6 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Docentes</div>
-            </div>
         </div>
     </header>
 
@@ -209,13 +206,12 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myedad="{{$docente->edad}}"
+                        <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myedad="{{$docente->edad}}"
                                 data-mynumero="{{$docente->numero_de_empleado}}" data-myfecha="{{$docente->fecha_de_ingreso}}"
                                 data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}"><i class="fas fa-edit"></i></button>
 
                         <form method="post" action="{{route('docente.borrar', $docente->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al docente? ')">
-                        <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
                         <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

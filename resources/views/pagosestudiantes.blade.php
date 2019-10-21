@@ -28,7 +28,7 @@
                         <form method="post" action="{{route('pagoestudiantes.guardar')}}">
                             <h6>Mes</h6>
                             <div class="form-group">
-                                <select class="form-control" id="carrera" placeholder="seleccione">
+                                <select class="form-control" name="mes" id="carrera" placeholder="seleccione">
                                     <option></option>
                                     <option>Enero</option>
                                     <option>Febrero</option>
@@ -39,26 +39,24 @@
                                     <option>Julio</option>
                                     <option>Agosto</option>
                                     <option>Septiembre</option>
-                                    <option>Obtubre</option>
+                                    <option>Octubre</option>
                                     <option>Noviembre</option>
                                     <option>Diciembre</option>
                                 </select>
                             </div>
                             <h6>Fecha</h6>
                             <div class="form-group">
-                                <input type="date" class="form-control" id="fecha"
-                                       @isset($pagoestudiantes)
-                                       value="{{$pagoestudiantes->fecha_pago}}"
-                                        @endisset
+                                <input type="date" class="form-control" id="fecha" name="fecha_pago"
+
                                 >
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                <button type="submit"  class="btn btn-primary ">Guardar</button>
 
+                            </div>
                         </form>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                            <button type="submit"  class="btn btn-primary">Guardar</button>
 
-                        </div>
                     </div>
 
                 </div>
@@ -68,12 +66,6 @@
         <div>
             <h1> </h1>
         </div>
-        <div class="card">
-            <div class="card-body">
-                Registros del año 2019
-            </div>
-        </div>
-
         <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                       box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
             <thead>
@@ -84,15 +76,22 @@
               <tr>
             </thead>
             <tbody>
-            @foreach($pagoestudiantes as $pagoestudiante)
-            <tr>
-                <td>{{$pagoestudiante->mes}}</td>
-                <td>{{$pagoestudiante->fecha_pago}}</td>
-                <td>cancelado</td>
-            </tr>
+            @foreach ($pagos as $day => $users_list)
+                <tr>
+                    <th colspan="3"
+                        style="background-color: #7086f7; color: white;">Registros del año {{ $day }}</th>
+                </tr>
+                @foreach ($users_list as $user)
+                    <tr>
+                        <td>{{ $user->mes }}</td>
+                        <td>{{ $user->fecha_pago }}</td>
+                        <td>Cancelado</td>
+                    </tr>
+                @endforeach
             @endforeach
+
+
+
             </tbody>
-        </table>
-        {{$pagosestudiantes->links() }}
-    </div>
+        </table>    </div>
 @endsection

@@ -259,14 +259,14 @@
 
 
             <td class="form-inline">
-                <button class="btn btn-secondary" ><i class="fas fa-eye"></i></button>
-                <button class="btn btn-warning" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"
+                <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoestudiantes")}}"><i class="fas fa-eye"></i></a> </button>
+                <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"
                         data-mycuenta="{{$estudiante->numero_de_cuenta}}" data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                         data-mytelefono="{{$estudiante->telefono}}" data-mycarrera="{{$estudiante->carrera}}"
                 data-catid="{{$estudiante->id}}"><i class="fas fa-edit"></i></button>
 
                 <form method="post" action="{{route('estudiante.borrar', $estudiante->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al estudiante? ')">
-                <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
+                <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
 
 
 
