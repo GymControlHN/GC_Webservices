@@ -10,7 +10,7 @@
         </div>
     </header>
 
-   <div class="w3-container w3-teal mx-5" >
+   <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
            <h2 style="all: revert">Listado de Estudiantes</h2>
 
 
