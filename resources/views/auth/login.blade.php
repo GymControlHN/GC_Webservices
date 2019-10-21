@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="fondo1">
+    <div class="fondo1" style="font-family: 'Raleway', sans-serif">
       <div class="container">
          <div class="row">
              <div class="col-md-8 col-md-offset-2">
