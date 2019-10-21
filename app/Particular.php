@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Particular extends Model
 {
     protected $table = 'particulares';
+    protected $primaryKey='id';
 
     protected $fillable =[
         'nombre',

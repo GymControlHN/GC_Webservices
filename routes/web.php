@@ -67,14 +67,13 @@ Route::get("/botonruffier",function (){
     return view("botonruffier");
 });
 
-
 Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');
 Route::get('estudiantes/crear', 'EstudiantesController@create')->name('estudiantes.formulario');
 Route::post('estudiantes/guardar', 'EstudiantesController@store')->name('estudiante.guardar');
 
 Route::delete('estudiantes/{id}/borrar','EstudiantesController@destroy')->name('estudiante.borrar');
 Route::get('estudiantes/{id}/editar','EstudiantesController@edit')->name('estudiante.editar');
-Route::put('estudiantes/{id}/editar','EstudiantesController@update')->name('estudiante.update');
+Route::put('estudiantes/editar','EstudiantesController@update')->name('estudiante.update');
 
 Route::get('docentes/', 'DocentesController@index')->name('docentes');
 Route::get('docentes/crear', 'DocentesController@create')->name('docentes.formulario');
@@ -95,3 +94,6 @@ Route::put('particulares/{id}/editar','ParticularesController@update')->name('pa
 Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
 Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
 Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
+
+Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
+Route::post('estadistica/guardar', 'EstadisticasController@store')->name('estadistica.guardar');

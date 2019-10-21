@@ -52,7 +52,6 @@
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="nombre" name="nombre"
-                                           placeholder="Escriba el nombre completo"
                                            @isset($particular)
                                            value="{{$particular->cuenta}}"
                                             @endisset
@@ -62,7 +61,6 @@
                                 <h6>Edad</h6>
                                 <div class="form-group">
                                     <input type="number" class="form-control" id="edad" name="edad"
-                                           placeholder="Escriba la edad "
                                            @isset($particular)
                                            value="{{$particular->edad}}"
                                             @endisset
@@ -72,7 +70,6 @@
                                 <h6>Número de Identidad</h6>
                                 <div class="form-group">
                                     <input type="number" class="form-control" id="numero_de_identidad" name="numero_de_identidad"
-                                           placeholder="Escriba el número de identidad "
                                            @isset($particular)
                                            value="{{$particular->numero_de_identidad}}"
                                             @endisset
@@ -82,7 +79,6 @@
                                 <h6>Profesión</h6>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="profesion_u_oficio" name="profesion_u_oficio"
-                                           placeholder="Escriba la edad "
                                            @isset($particular)
                                            value="{{$particular->profesion_u_pficio}}"
                                             @endisset
@@ -120,8 +116,97 @@
                 </div>
             </div>
 
+            <!--Modal de editar -->
+
+            <div class="modal fade" id="edit" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Particulares</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
 
 
+
+                        <div class="modal-body ">
+
+                            <form method="post" action="{{route('particular.update' , 'particulares')}}">
+
+                                {{method_field('put')}}
+
+                                <h6>Nombre Completo</h6>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="nombre" name="nombre" required
+                                           @isset($particular)
+                                           value="{{$particular->cuenta}}"
+                                            @endisset
+                                    >
+                                </div>
+
+                                <h6>Edad</h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="edad" name="edad" required
+                                           @isset($particular)
+                                           value="{{$particular->edad}}"
+                                            @endisset
+                                    >
+                                </div>
+
+                                <h6>Número de Identidad</h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="numero_de_identidad" name="numero_de_identidad" required
+                                           @isset($particular)
+                                           value="{{$particular->numero_de_identidad}}"
+                                            @endisset
+                                    >
+                                </div>
+
+                                <h6>Profesión</h6>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="profesion_u_oficio" name="profesion_u_oficio" required
+                                           @isset($particular)
+                                           value="{{$particular->profesion_u_pficio}}"
+                                            @endisset
+                                    >
+                                </div>
+
+
+
+                                <h6> Teléfono </h6>
+                                <div class="form-group">
+                                    <input type="number" class="form-control" id="telefono" name="telefono" required
+                                           @isset($particular)
+                                           value="{{$particular->telefono}}"
+                                            @endisset
+                                    >
+                                </div>
+
+                                <h6>Fecha</h6>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso" required
+                                           @isset($particular)
+                                           value="{{$particular->fecha_de_ingreso}}"
+                                            @endisset
+                                    >
+                                </div>
+
+
+
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                    <button type="submit"  class="btn btn-primary">Guardar</button>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -171,8 +256,10 @@
 
                     <td class="form-inline">
                         <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning"><a href="{{route('particular.editar', $particular->id)}}"><i class="fas fa-edit"></i></a></button>
-                        <form method="post" action="{{route('particular.borrar', $particular->id)}}">
+                        <button class="btn btn-warning" data-toggle="modal" data-target="#edit" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
+                                data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
+                                data-mytelefono="{{$particular->telefono}}" data-myprofesion="{{$particular->profesion_u_oficio}}"><i class="fas fa-edit"></i></button>
+                        <form method="post" action="{{route('particular.borrar', $particular->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al cliente? ')">
                         <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
