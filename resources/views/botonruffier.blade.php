@@ -15,41 +15,46 @@
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
         <title>FORMULARIO PESO IDEAL</title>
         <script type="text/javascript">function calcularRuffiel(){
-                pulso1=document.getElementById("pulso1").value;
-                pulso2=document.getElementById("pulso2").value;
-                pulso3=document.getElementById("pulso3").value;
+                var pulso1= parseFloat(document.getElementById("pulso1").value);
+               var pulso2= parseFloat(document.getElementById("pulso2").value);
+               var pulso3= parseFloat(document.getElementById("pulso3").value);
+
                 ruffiel= (pulso1+pulso2+pulso3-200)/10;
 
 
-                document.getElementById("ruffiel").value=ruffiel.toFixed(2).slice(4);
+                document.getElementById("ruffiel").value=ruffiel.toFixed(2);
 
-                if (ruffiel <=1 || ruffiel >= 0 ) {
-                    leyenda="Muy bueno ";
+
+
+                if (ruffiel > 16 ) {
+                    leyenda="Bajo ";
 
                     // grasa<=4 && grasa >= 2
                 }
-                else if (ruffiel<=5 || ruffiel >=1 ) {
-                    leyenda=
-                        "Muy bueno";
-
-                }
-
-                else if (ruffiel<=10  || ruffiel >=5 ) {
-                    leyenda=
-                        "Bueno";
-
-                }
-                else if (ruffiel<=15 || ruffiel >=10) {
+                else if (ruffiel>11 ) {
                     leyenda=
                         "Mediano";
 
                 }
 
-
-
-                else if (ruffiel <= 20 || ruffiel >=15) {
+                else if (ruffiel>10 ) {
                     leyenda=
-                        "Bajo";
+                        "Bueno";
+
+                }
+
+
+                else if (ruffiel>5) {
+                    leyenda=
+                        "Muy bueno";
+
+                }
+
+
+
+                else if ( ruffiel>1) {
+                    leyenda=
+                        "Muy Bueno";
 
                 }
 
@@ -121,7 +126,7 @@
                     <h6 class="label2" for="email">MVO2:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="mvo" name="ruffiel" maxlength="3"   >
+                               id="mvo" name="mvo" maxlength="3"   >
                     </div>
                 </div>
 
@@ -129,12 +134,16 @@
                     <h6 class="label2" for="email">MVO2 Real:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="mvo2" name="ruffiel" maxlength="3"   >
+                               id="mvo2" name="mvor" maxlength="3"   >
                     </div>
                 </div>
                 <div class="container">
-                    <div class="form-group">
-                        <input type="date" class="form-control3" id="fecha_de_ingreso" name="fecha_de_ingreso"
+
+
+
+                    <h6 class="label2" for="email">Fecha:</h6>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
                                @isset($estudiante)
                                value="{{$estudiante->fecha_de_ingreso}}"
@@ -144,9 +153,11 @@
 
                 </div>
 
+                <div class="container1">
 
-                <input type="button" class="btn btn-primary my-4 boton" value="Guardar"   onclick="calcularRuffiel()">
-                <input type="button" class="btn btn-primary my-4 boton3" value="Cancelar"   onclick="cancelarRuffiel()">
+                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>
+                    <button type="button" class="btn btn-primary my-4 boton3">Guardar</button>
+                </div>
 
 
             </form>

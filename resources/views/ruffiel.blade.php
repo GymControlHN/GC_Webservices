@@ -29,7 +29,8 @@
 
 
 
-            <h2 style="all: revert">Ruffier <button type="submit" class="btn btn-primary my-7 "><a class="nav-link js-scroll-trigger" href="/botonruffier">Nuevo</a></button></h2>
+            <h2 style="all: revert">Ruffier <button type="button" class="btn btn-primary my-7">
+                    <a style="color: white" class="nav-link js-scroll-trigger" href="/botonruffier">Nuevo</a></button></h2>
 
             <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                 box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
@@ -40,6 +41,9 @@
                     <th scope="col">Pulso en acción</th>
                     <th scope="col">Pulso en descanso</th>
                     <th scope="col">Ruffier</th>
+                    <th scope="col">MVO2</th>
+                    <th scope="col">MVOReal</th>
+                    <th scope="col">Acciones</th>
 
                 </tr>
                 </thead>
@@ -51,6 +55,15 @@
                     <td>120</td>
                     <td>89</td>
                     <td>8.9</td>
+                    <td>7.2</td>
+                    <td>7.5</td>
+                    <td class="form-inline " style="width: 300px">
+                        <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
+                        <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
+
+                        <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
+
+                    </td>
 
 
                 </tbody>
@@ -62,6 +75,15 @@
                     <td>120</td>
                     <td>89</td>
                     <td>8.9</td>
+                    <td>7.4</td>
+                    <td>7.5</td>
+                    <td class="form-inline " style="width: 300px">
+                        <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
+                        <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
+
+                        <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
+
+                    </td>
 
 
                 </tbody>

@@ -10,10 +10,9 @@ class Docente extends Model
 
     protected $fillable =[
         'nombre',
+        'numero_de_empleado',
+        'telefono',
         'edad',
-        'numero_de_cuenta',
-        'fecha_ingreso',
-        'carrera',
-        'telefono'
+        'fecha_de_ingreso',
     ];
 }

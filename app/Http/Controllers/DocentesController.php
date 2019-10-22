@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Docente;
 
 
+
 use Illuminate\Http\Request;
 
 class DocentesController extends Controller
@@ -20,15 +21,15 @@ class DocentesController extends Controller
         return view('docentes');
     }
 
-    public function store(Request $request)
-    {
-        // $request->validate([
-        // 'nombre' =>'required',
-        //   'edad' =>'required',
-        //   'numero_de_empleado' =>'required',
-        //  'fecha_de_ingreso' =>'required',
-        //   'telefono' =>'required',
-        //  ]);
+    public function store(Request $request){
+
+      $this -> validate ( $request ,[
+             'nombre'=>'required',
+             'edad'=>'required',
+             'numero_de_empleado'=>'required',
+             'fecha_de_ingreso'=>'required',
+             'telefono'=>'required',
+         ]);
 
         $nuevoDocente = new Docente();
 
@@ -36,14 +37,13 @@ class DocentesController extends Controller
         $nuevoDocente->edad = $request->input('edad');
         $nuevoDocente->numero_de_empleado = $request->input('numero_de_empleado');
         $nuevoDocente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $nuevoDocente->profesion = $request->input('profesion');
         $nuevoDocente->telefono = $request->input('telefono');
 
         $nuevoDocente->save();
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
-        return redirect('/docentes');
+        return redirect('docentes');
 
 
     }
@@ -56,40 +56,41 @@ class DocentesController extends Controller
     public function edit($id)
     {
         $docentes = Docente::findOrFail($id);
-        return view('docentes')->with('docentes', $docentes);
+        return view('docentes')->with('docente', $docentes);
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
 
         // Validar los datos
-        $validatedData = $request->validate([
-            'nombre' => 'required|max:50',
-            'edad' => 'required|numeric|max:100|min:10',
-            'numero_de_empleado' => 'required|numeric',
-            'fecha_de_ingreso' => 'required|max:10',
-            'profesion' => 'required',
-            'telefono' => 'required|numeric|max:8',
 
+       /* $this -> validate ( $request ,[
+            'nombre'=>'required',
+            'edad'=>'required',
+            'numero_de_empleado'=>'required',
+            'fecha_de_ingreso'=>'required',
+            'telefono'=>'required',
         ]);
+*/
 
         // Buscar la instancia en la base de datos.
-        $docente = Docente::findOrFail($id);
+
 
         // Asignar los nuevos valores a los diferentes campos
+        $docente = Docente::findOrfail($request->input("docente_id"));
         $docente->nombre = $request->input('nombre');
         $docente->edad = $request->input('edad');
         $docente->numero_de_empleado = $request->input('numero_de_empleado');
         $docente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $docente->profesion = $request->input('profesion');
         $docente->telefono = $request->input('telefono');
 
         // Guardar los cambios
         $docente->save();
 
         // Redirigir a la lista de todos los estudiantes.
-        return redirect('docentes');
+       $docente = Docente::paginate(10);
+       return back();
 
 
     }

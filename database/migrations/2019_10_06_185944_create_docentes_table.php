@@ -16,12 +16,14 @@ class CreateDocentesTable extends Migration
         Schema::create('docentes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nombre',50);
+            $table->string('numero_de_empleado',11)->unique();
             $table->char('telefono', 8);;
             $table->integer('edad');
             $table->date('fecha_de_ingreso');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

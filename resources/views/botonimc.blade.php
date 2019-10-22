@@ -11,7 +11,7 @@
     </header>
     <!-- Header -->
 
-    <!DOCTYPE html public>
+    <!DOCTYPE html>
     <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
@@ -150,22 +150,37 @@
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3">
                     </div>
+
                 </div>
+
                 <div class="container">
-                    <div class="form-group">
-                        <input type="date" class="form-control3" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                               placeholder="Escriba la fecha de ingreso"
-                               @isset($estudiante)
-                               value="{{$estudiante->fecha_de_ingreso}}"
-                                @endisset
-                        >
-                    </div>
+
+
+
+                    <h6 class="label2" for="email">Fecha:</h6>
+                    <div class="col-sm-10">
+                    <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                           placeholder="Escriba la fecha de ingreso"
+                           @isset($estudiante)
+                           value="{{$estudiante->fecha_de_ingreso}}"
+                            @endisset
+                    >
+                </div>
 
                 </div>
 
 
-                <input type="button" class="btn btn-primary my-4 boton" value="Guardar" onclick="calcularIMC()">
-                <input type="button" class="btn btn-primary my-4 boton3" value="Guardar" onclick="calcelarGRASA()">
+
+
+                <div class="container1">
+
+                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/imc">Cancelar</a></button>
+                    <button type="button" class="btn btn-primary my-4 boton3">Guardar</button>
+                </div>
+
+
+
+
 
             </form>
         </form>
