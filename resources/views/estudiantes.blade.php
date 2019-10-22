@@ -249,7 +249,6 @@
             <div  style="overflow: auto"></div>
 
 
-
             <td class="form-inline">
                 <button class="btn btn-secondary" ><i class="fas fa-eye"></i></button>
                 <button class="btn btn-warning" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"

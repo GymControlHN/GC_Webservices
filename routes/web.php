@@ -89,7 +89,7 @@ Route::post('particulares/guardar', 'ParticularesController@store')->name('parti
 
 Route::delete('particulares/{id}/borrar','ParticularesController@destroy')->name('particular.borrar');
 Route::get('particulares/{id}/editar','ParticularesController@edit')->name('particular.editar');
-Route::put('particulares/{id}/editar','ParticularesController@update')->name('particular.update');
+Route::put('particulares/editar','ParticularesController@update')->name('particular.update');
 
 Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
 Route::post('estadistica/guardar', 'EstadisticasController@store')->name('estadistica.guardar');
