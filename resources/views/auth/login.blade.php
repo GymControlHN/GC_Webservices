@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="fondo1">
+    <div class="fondo1" style="font-family: 'Raleway', sans-serif">
       <div class="container">
          <div class="row">
              <div class="col-md-8 col-md-offset-2">
@@ -12,11 +12,11 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+
                             <label  for="email"  class="labeltamaño">Direccion de correo electrónico</label>
 
                             <div class="inputtamaño" >
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -30,7 +30,6 @@
 
                             <div class="inputtamaño">
                                 <input id="password" type="password" class="form-control" name="password" required>
-
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>

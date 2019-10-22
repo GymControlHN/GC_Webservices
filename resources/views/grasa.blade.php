@@ -11,102 +11,17 @@
         </div>
     </header>
 
-    <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
-        <title>FORMULARIO PESO IDEAL</title>
-        <script type="text/javascript">function calcularGRASA(){
-                imc=document.getElementById("imc").value;
-                edad=document.getElementById("edad").value;
-                grasa=((1.2*imc)+(0.23 * edad) -10.8 - 5.4);
-                document.getElementById("grasa").value=grasa.toFixed(2);
+    <div class="container">
+        <div class="alert alert-dismissable mb-n4" role="alert">
+            <h2 style="all: revert">Datos fisicos</h2>
 
-                if (grasa<=4 && grasa >= 2 ) {
-                    leyenda="Cantidad minima de grasa ";
-                }
-                else if (grasa<=13 && grasa >= 6) {
-                    leyenda=
-                        "Tienes la condicion de un atleta";
+            <form class="form-inline">
 
-                }
-
-                else if (grasa<=17 && grasa >= 14) {
-                    leyenda=
-                        "En forma";
-
-                }
-                else if (grasa<=25 && grasa >= 15) {
-                    leyenda=
-                        "Valores de grasas aceptables, pero no te descuides";
-
-                }
-
-
-
-                else if (grasa<=32 && grasa >= 26) {
-                    leyenda=
-                        "Estas obeso";
-
-                }
-
-
-                else{
-                    leyenda="Algo salio mal"
-                }
-                document.getElementById("leyenda").value=leyenda;
-
-
-
-            }</script>
-
-    </head>
-
-    <body>
-
-<div class="container">
-    <form name="f1" id="f1">
-        <br><br>
-        <h5 class="label2">Calculo de la Grasa Corporal</h5>
-        <br>
-        <form class="form-horizontal" action="/action_page.php">
-            <div class="form-group">
-                <h6 class=" label2" for="email">IMC</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3" id="imc"
-                           name="imc" maxlength="3" placeholder="Ingrese su masa corporal" onkeyup="calcularGRASA()">
+                <div class="form-group mr-sm-4 my-sm-4 ">
+                    <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
                 </div>
-
-            </div>
-
-            <div class="form-group">
-                <h6 class="label2" for="email">Edad:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
-                           id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGRASA()">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <h6 class="label2" for="email">Grasa:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
-                           id="grasa" name="grasa" maxlength="3"  disabled="true">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <h6 class="label2" for="email">Diagnostico:</h6>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control inputtamaño3"
-                           id="leyenda" name="leyenda" maxlength="50"  disabled="true">
-                </div>
-            </div>
-
-            <input type="button" class="btn btn-primary my-4 boton" value="Guardar" onclick="calcularGRASA()">
-
-        </form>
-    </form>
-</div>
+                <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
+            </form>
 
 
 
@@ -114,14 +29,51 @@
 
 
 
+            <h2 style="all: revert">Grasa Corporal <button type="submit" class="btn btn-primary my-6 "><a class="nav-link js-scroll-trigger" href="/botongrasa">Nuevo</a></button></h2>
+            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+                box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Imc</th>
+                    <th scope="col">edad</th>
+                    <th scope="col">%Grasa</th>
+
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <th scope="row">2019/11/16</th>
+                    <td>24.5</td>
+                    <td>45</td>
+                    <td>8.9</td>
+
+
+                </tbody>
+                <tbody>
+                <tr>
+                    <th scope="row">2019/10/16</th>
+                    <td>24.5</td>
+                    <td>45</td>
+                    <td>8.9</td>
+
+
+                </tbody>
+            </table>
 
 
 
 
-    </body>
-    </html>
 
 
 
+
+
+
+
+
+        </div>
+    </div>
 
 @endsection

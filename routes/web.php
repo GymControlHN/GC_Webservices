@@ -46,12 +46,25 @@ Route::get("/imc",function (){
     return view("imc");
 });
 
+Route::get("/verestadistica",function (){
+    return view("verestadistica");
+});
+
 Route::get("/grasa",function (){
     return view("grasa");
 });
 
 Route::get("/ruffiel",function (){
     return view("ruffiel");
+});
+Route::get("/botonimc",function (){
+    return view("botonimc");
+});
+Route::get("/botongrasa",function (){
+    return view("botongrasa");
+});
+Route::get("/botonruffier",function (){
+    return view("botonruffier");
 });
 
 Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');

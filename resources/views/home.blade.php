@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class=" fondo">
+<div class=" fondo" style="font-family: 'Raleway', sans-serif">
         <div class="container">
 
             <div class="intro-lead-in ">Bienvenido al control del gimnasio  </div>
