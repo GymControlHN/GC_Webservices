@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Docente;
 
 
+
 use Illuminate\Http\Request;
 
 class DocentesController extends Controller
@@ -53,27 +54,29 @@ class DocentesController extends Controller
     public function edit($id)
     {
         $docentes = Docente::findOrFail($id);
-        return view('docentes')->with('docentes', $docentes);
+        return view('docentes')->with('docente', $docentes);
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
 
         // Validar los datos
 
-        $this -> validate ( $request ,[
+       /* $this -> validate ( $request ,[
             'nombre'=>'required',
             'edad'=>'required',
             'numero_de_empleado'=>'required',
             'fecha_de_ingreso'=>'required',
             'telefono'=>'required',
         ]);
+*/
 
         // Buscar la instancia en la base de datos.
-        $docente = Docente::findOrFail($id);
+
 
         // Asignar los nuevos valores a los diferentes campos
+        $docente = Docente::findOrfail($request->input("docente_id"));
         $docente->nombre = $request->input('nombre');
         $docente->edad = $request->input('edad');
         $docente->numero_de_empleado = $request->input('numero_de_empleado');
@@ -84,7 +87,8 @@ class DocentesController extends Controller
         $docente->save();
 
         // Redirigir a la lista de todos los estudiantes.
-        return redirect('docentes');
+       $docente = Docente::paginate(10);
+       return back();
 
 
     }

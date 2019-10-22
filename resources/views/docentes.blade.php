@@ -10,8 +10,7 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="alert alert-dismissable mb-n4" role="alert">
+    <div class="w3-container w3-teal mx-5">
             <h2 style="all: revert">Listado de Docentes</h2>
 
 
@@ -42,7 +41,7 @@
 
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nombre" name="nombre" required
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
                                            @isset($docente)
                                            value="{{$docente->nombre}}"
                                             @endisset
@@ -53,7 +52,7 @@
 
                                 <h6>Edad</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="edad" name="edad" required
+                                    <input type="number" class="form-control" id="edad" name="edad"
                                            @isset($docente)
                                            value="{{$docente->edad}}"
                                             @endisset
@@ -61,7 +60,7 @@
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado" required
+                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
                                            @isset($docente)
                                            value="{{$docente->numero_de_empleado}}"
                                             @endisset
@@ -71,7 +70,7 @@
 
                                 <h6> Teléfono </h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="telefono" name="telefono" required
+                                    <input type="number" class="form-control" id="telefono" name="telefono"
                                            @isset($docente)
                                            value="{{$docente->telefono}}"
                                             @endisset
@@ -80,7 +79,7 @@
 
                                 <h6>Fecha</h6>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso" required
+                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                            @isset($docente)
                                            value="{{$docente->fecha_de_ingreso}}"
                                             @endisset
@@ -101,7 +100,7 @@
             </div>
             <! -- modal editar -->
 
-            <div class="modal fade" id="edit" tabindex="-1" role="dialog"
+            <div class="modal fade" id="editarDocente" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
@@ -114,53 +113,53 @@
 
                         <div class="modal-body">
 
-                            <form method="post" action="{{route('docente.update' , 'docentes')}}">
-
+                            <form method="post" action="{{route('docente.update')}}">
+                                <input type="hidden" name="docente_id" id="id" value="">
                                 {{method_field('put')}}
 
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="nombre" name="nombre" required
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
                                            @isset($docente)
                                            value="{{$docente->nombre}}"
-                                            @endisset
+                                            @endisset value="{{old('nombre')}}"
                                     >
 
                                 </div>
 
                                 <h6>Edad</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="edad" name="edad" required
+                                    <input type="number" class="form-control" id="edad" name="edad"
                                            @isset($docente)
                                            value="{{$docente->edad}}"
-                                            @endisset
+                                            @endisset value="{{old('edad')}}"
                                     >
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado" required
+                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
                                            @isset($docente)
                                            value="{{$docente->numero_de_empleado}}"
-                                            @endisset
+                                            @endisset value="{{old('numero_de_empleado')}}"
                                     >
                                 </div>
 
 
                                 <h6> Teléfono </h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="telefono" name="telefono" required
+                                    <input type="number" class="form-control" id="telefono" name="telefono"
                                            @isset($docente)
                                            value="{{$docente->telefono}}"
-                                            @endisset
+                                            @endisset value="{{old('telefono')}}"
                                     >
                                 </div>
 
                                 <h6>Fecha</h6>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso" required
+                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                            @isset($docente)
                                            value="{{$docente->fecha_de_ingreso}}"
-                                            @endisset
+                                            @endisset value="{{old('fecha_de_ingreso')}}"
                                     >
                                 </div>
 
@@ -207,12 +206,14 @@
                     <td>{{$docente->telefono}}</td>
                     <td>{{$docente->edad}}</td>
                     <td>{{$docente->fecha_de_ingreso}}</td>
+                    <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
                         <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning" data-toggle="modal" data-target="#edit" data-mynombre="{{$docente->nombre}}" data-myedad="{{$docente->edad}}"
-                                data-mynempleado="{{$docente->numero_de_empleado}}" data-myfecha="{{$docente->fecha_de_ingreso}}"
-                                data-mytelefono="{{$docente->telefono}}" data-mycarrera="{{$docente->carrera}}"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-warning" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myedad="{{$docente->edad}}"
+                                data-mynumero="{{$docente->numero_de_empleado}}" data-myfecha="{{$docente->fecha_de_ingreso}}"
+                                data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}"><i class="fas fa-edit"></i></button>
+
                         <form method="post" action="{{route('docente.borrar', $docente->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al docente? ')">
                         <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
@@ -247,8 +248,6 @@
                     </li>
                 </ul>
             </nav-->
-
-        </div>
     </div>
 
 @endsection

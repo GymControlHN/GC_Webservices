@@ -81,7 +81,7 @@ Route::post('docentes/guardar', 'DocentesController@store')->name('docente.guard
 
 Route::delete('docentes/{id}/borrar','DocentesController@destroy')->name('docente.borrar');
 Route::get('docentes/{id}/editar','DocentesController@edit')->name('docente.editar');
-Route::put('docentes/{id}/editar','DocentesController@update')->name('docente.update');
+Route::put('docentes/editar','DocentesController@update')->name('docente.update');
 
 Route::get('particulares/', 'ParticularesController@index')->name('particulares');
 Route::get('particulares/crear', 'ParticularesController@create')->name('particulares.formulario');
