@@ -115,6 +115,4 @@ class DocentesController extends Controller
     }
 
 
-
-
 }

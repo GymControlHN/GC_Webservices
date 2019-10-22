@@ -134,7 +134,6 @@
 
 
 
-
         <div class="table-responsive mb-4"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
