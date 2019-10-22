@@ -113,6 +113,8 @@ class  EstudiantesController extends Controller
         return view('estudiantes')->with('estudiantes', $estudiantes);
     }
 
+
+
     /*public function buscarEstudiante(Request $request){
         $busqueda = $request->input("busqueda");
 

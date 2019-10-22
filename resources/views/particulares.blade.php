@@ -141,6 +141,7 @@
 
 
 
+
         <form class="form-inline" method="get" action="{{route('particular.buscarPart')}}">
 
             <div class="form-group mr-sm-4 my-sm-4 ">

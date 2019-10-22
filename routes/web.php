@@ -98,3 +98,4 @@ Route::get("buscarPart","ParticularesController@buscarParticular")->name("partic
 
 Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscarDoc");
 
+

@@ -122,7 +122,6 @@
             </div>
 
 
-
         <form class="form-inline" method="get" action="{{route('docente.buscarDoc')}}">
 
             <div class="form-group mr-sm-4 my-sm-4 ">

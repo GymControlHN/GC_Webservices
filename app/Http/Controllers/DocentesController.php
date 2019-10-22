@@ -47,10 +47,12 @@ class DocentesController extends Controller
 
 
     }
+
     public function show(Docente $docentes)
     {
         //
     }
+
     public function edit($id)
     {
         $docentes = Docente::findOrFail($id);
@@ -94,17 +96,18 @@ class DocentesController extends Controller
 
     public function destroy($id)
     {
-       Docente::destroy($id);
+        Docente::destroy($id);
 
 
         return redirect('docentes');
     }
 
-    public function buscarDocente(Request $request){
+    public function buscarDocente(Request $request)
+    {
         $busquedaDoc = $request->input("busquedaDoc");
 
-        $docentes=Docente:: where("nombre","like","%".$busquedaDoc."%")
-            ->orWhere("fecha_de_ingreso","like","%".$busquedaDoc."%")
+        $docentes = Docente:: where("nombre", "like", "%" . $busquedaDoc . "%")
+            ->orWhere("fecha_de_ingreso", "like", "%" . $busquedaDoc . "%")
             ->paginate(10);
 
         return view('docentes')->with('docentes', $docentes);
