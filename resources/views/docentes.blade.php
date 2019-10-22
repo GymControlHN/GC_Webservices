@@ -4,9 +4,6 @@
     <!-- Header -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Docentes</div>
-            </div>
         </div>
     </header>
 
@@ -161,10 +158,9 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary"><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning"><a href="{{route('docente.editar', $docente->id)}}"><i class="fas fa-edit"></i></a></button>
+                        <button class="btn btn-warning mr-xl-2"><a href="{{route('docente.editar', $docente->id)}}"><i class="fas fa-edit"></i></a></button>
                         <div method="post" action="{{route('docente.borrar', $docente->id)}}">
-                        <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </div>
                         </form>

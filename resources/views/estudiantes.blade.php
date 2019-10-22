@@ -180,7 +180,7 @@
 
 
             <td class="form-inline " style="width: 300px">
-                <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
+                <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoestudiantes")}}"><i class="fas fa-eye"></i></a> </button>
                 <button class="btn btn-warning mr-xl-2 "><a href="{{route('estudiante.editar', $estudiante->id)}}"><i class="fas fa-edit"></i></a></button>
                 <div method="post" action="{{route('estudiante.borrar', $estudiante->id)}}">
                 <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
