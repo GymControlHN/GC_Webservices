@@ -93,5 +93,16 @@ class ParticularesController extends Controller
         return redirect('particulares');
     }
 
+    public function buscarParticular(Request $request){
+        $busquedaPart = $request->input("busquedaPart");
+
+        $particulares=Particular::where("nombre","like","%".$busquedaPart."%")
+            ->orWhere("fecha_de_ingreso","like","%".$busquedaPart."%")
+            ->paginate(10);
+
+        return view('particulares')->with('particulares', $particulares);
+
+    }
+
 
 }

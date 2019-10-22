@@ -100,6 +100,16 @@ class DocentesController extends Controller
         return redirect('docentes');
     }
 
+    public function buscarDocente(Request $request){
+        $busquedaDoc = $request->input("busquedaDoc");
+
+        $docentes=Docente:: where("nombre","like","%".$busquedaDoc."%")
+            ->orWhere("fecha_de_ingreso","like","%".$busquedaDoc."%")
+            ->paginate(10);
+
+        return view('docentes')->with('docentes', $docentes);
+    }
+
 
 
 

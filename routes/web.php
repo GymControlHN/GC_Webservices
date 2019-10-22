@@ -91,3 +91,10 @@ Route::post('particulares/guardar', 'ParticularesController@store')->name('parti
 Route::delete('particulares/{id}/borrar','ParticularesController@destroy')->name('particular.borrar');
 Route::get('particulares/{id}/editar','ParticularesController@edit')->name('particular.editar');
 Route::put('particulares/{id}/editar','ParticularesController@update')->name('particular.update');
+
+Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
+
+Route::get("buscarPart","ParticularesController@buscarParticular")->name("particular.buscarPart");
+
+Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscarDoc");
+

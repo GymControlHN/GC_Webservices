@@ -46,39 +46,45 @@
                                        @method('put')
                                    @endisset
                                </script>
+
                                <h6>Nombre Completo</h6>
                                <div class="form-group">
                                    <input type="text" class="form-control" id="nombre" name="nombre"
-                                          placeholder="Escriba el nombre completo"
                                           @isset($estudiante)
                                           value="{{$estudiante->cuenta}}"
                                            @endisset
+                                           required
                                    >
                                </div>
 
                                <h6>Edad</h6>
                                <div class="form-group">
-                                   <input type="number" class="form-control" id="edad" name="edad"
-                                          placeholder="Escriba la edad "
+                                   <input type="text"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
+                                          aria-valuemax="2"
+                                          title="Ingresa solo numeros entre 1 a 99 años"
                                           @isset($estudiante)
                                           value="{{$estudiante->edad}}"
-                                           @endisset
-                                   >
+                                          @endisset
+                                          required
+                                          minlength="1" maxlength="2" min="1" max="99">
                                </div>
 
                                <h6>Número Cuenta</h6>
                                <div class="form-group">
-                                   <input type="number" class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
-                                          placeholder="Escriba el número de cuenta"
+                                   <input type="text"  pattern="([0-9]{1,11})"  class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
+
+                                          title="Ingrese solo números"
                                           @isset($estudiante)
                                           value="{{$estudiante->numero_de_cuenta}}"
-                                           @endisset
-                                   >
+                                          @endisset
+                                          required
+                                          minlength="1" maxlength="11" aria-valuemax="11" max="99999999999">
                                </div>
 
-                                <h6>Carrera</h6>
+                               <h6>Carrera</h6>
                                <div class="form-group">
-                                   <select class="form-control" id="carrera" placeholder="seleccione" name="carrera">
+                                   <select class="form-control" id="carrera" name="carrera"
+                                           required>
                                        <option></option>
                                        <option>Lic. informática administrativa</option>
                                        <option>Lic. Enfermeria</option>
@@ -94,28 +100,30 @@
 
                                <h6> Teléfono </h6>
                                <div class="form-group">
-                                   <input type="number" class="form-control" id="telefono" name="telefono"
-                                   placeholder="Escriba el teléfono"
+                                   <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
+
+                                          title="Ingrese solo números"
                                           @isset($estudiante)
                                           value="{{$estudiante->telefono}}"
-                                           @endisset
-                                   >
+                                          @endisset
+                                          required
+                                          maxlength="8" minlength="1" aria-valuemax="8" max="99999999"  >
                                </div>
 
                                <h6>Fecha</h6>
                                <div class="form-group">
-                                   <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                          placeholder="Escriba la fecha de ingreso"
+                                   <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+
                                           @isset($estudiante)
                                           value="{{$estudiante->fecha_de_ingreso}}"
-                                           @endisset
-                                   >
+                                          @endisset
+                                          required>
                                </div>
 
 
 
 
-                           <div class="modal-footer">
+                               <div class="modal-footer">
                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                <button type="submit"  class="btn btn-primary">Guardar</button>
 
@@ -136,14 +144,20 @@
 
 
 
-       <form class="form-inline">
+       <form class="form-inline" method="get" action="{{route('estudiante.buscar')}}">
 
-        <div class="form-group mr-sm-4 my-sm-4 ">
-            <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
+
+       <div class="form-group mr-sm-4 my-sm-4 ">
+            <input type="text" class="form-control" id="inputText2" name="busqueda"
+                   placeholder="Buscar">
         </div>
-        <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
+        <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
     </form>
-       <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+
+
+
+       <div class="table-
+       responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
            <table class="table ruler-vertical table-hover mx-sm-0 ">
          <thead class="thead-light">

@@ -51,40 +51,50 @@
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
                                     <input type="text" class="form-control" id="nombre" name="nombre"
-                                           placeholder="Escriba el nombre completo"
+
                                            @isset($docente)
                                            value="{{$docente->nombre}}"
                                             @endisset
+                                            required
                                     >
 
                                 </div>
 
                                 <h6>Edad</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="edad" name="edad"
-                                           placeholder="Escriba la edad "
+                                    <input type="text"  pattern="([0-9]{1,3})" class="form-control" id="edad" name="edad"
+                                           title="Ingrese solo números entre 1 a 99 años"
                                            @isset($docente)
                                            value="{{$docente->edad}}"
                                             @endisset
+
+                                           required
+                                           minlength="1" maxlength="2" min="1" max="99"
                                     >
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
-                                           placeholder="Escriba el id del empleado"
+                                    <input type="text" pattern="([0-9]{1,3})" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
+                                           title="Ingrese solo números"
                                            @isset($docente)
                                            value="{{$docente->numero_de_empleado}}"
                                             @endisset
+                                            required
+                                           minlength="1" maxlength="4" min="1" max="9999"
                                     >
                                 </div>
 
 
                                 <h6> Teléfono </h6>
                                 <div class="form-group">
-                                    <input type="number" class="form-control" id="telefono" name="telefono"
+                                    <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
+                                           title="Ingrese solo números"
                                            @isset($docente)
                                            value="{{$docente->telefono}}"
                                             @endisset
+                                           required
+                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
+
                                     >
                                 </div>
 
@@ -94,6 +104,7 @@
                                            @isset($docente)
                                            value="{{$docente->fecha_de_ingreso}}"
                                             @endisset
+                                            required
                                     >
                                 </div>
 
@@ -110,13 +121,21 @@
                 </div>
             </div>
 
-            <form class="form-inline">
 
-                <div class="form-group mr-sm-4 my-sm-4 ">
-                    <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
-                </div>
-                <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
-            </form>
+
+        <form class="form-inline" method="get" action="{{route('docente.buscarDoc')}}">
+
+            <div class="form-group mr-sm-4 my-sm-4 ">
+                <input type="text" class="form-control" name="busquedaDoc"
+                       id="inputText2" placeholder="Buscar">
+            </div>
+            <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
+        </form>
+
+
+
+
+
         <div class="table-responsive mb-4"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">

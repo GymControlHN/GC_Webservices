@@ -4,26 +4,30 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Estudiante;
-class EstudiantesController extends Controller
+
+class  EstudiantesController extends Controller
 {
-    public function index () {
+    public function index()
+    {
         $estudiantes = Estudiante::paginate(10);
-        return view('estudiantes')->with('estudiantes' , $estudiantes);
+        return view('estudiantes')->with('estudiantes', $estudiantes);
     }
 
-    public function create() {
+    public function create()
+    {
         return view('estudiantes');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         //$validatedData = $request->validate([
-           //  'nombre'=>'required',
-            // 'edad'=>'required|numeric|max:100|min:10',
-            // 'numero_de_cuenta'=>'required|numeric|max:11',
-           //  'fecha_de_ingreso'=>'required|max:12',
-           //  'carrera'=>'required',
-            // 'telefono'=>'required|numeric|max:8',
-         //]);
+        //  'nombre'=>'required',
+        // 'edad'=>'required|numeric|max:100|min:10',
+        // 'numero_de_cuenta'=>'required|numeric|max:11',
+        //  'fecha_de_ingreso'=>'required|max:12',
+        //  'carrera'=>'required',
+        // 'telefono'=>'required|numeric|max:8',
+        //]);
 
         $nuevoEstudiante = new Estudiante();
 
@@ -32,7 +36,7 @@ class EstudiantesController extends Controller
         $nuevoEstudiante->numero_de_cuenta = $request->input('numero_de_cuenta');
         $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoEstudiante->carrera = $request->input('carrera');
-        $nuevoEstudiante->telefono = $request->input ('telefono');
+        $nuevoEstudiante->telefono = $request->input('telefono');
 
         $nuevoEstudiante->save();
 
@@ -46,23 +50,26 @@ class EstudiantesController extends Controller
     {
 
     }
-    public function edit($id) {
+
+    public function edit($id)
+    {
         $estudiante = Estudiante::findOrFail($id);
-        return view('estudiantes')->with('estudiantes',$estudiante);
+        return view('estudiantes')->with('estudiantes', $estudiante);
 
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
 
         // Validar los datos
 
         $validatedData = $request->validate([
-            'nombre'=>'required',
-            'edad'=>'required|numeric|max:100|min:10',
-            'numero_de_cuenta'=>'required|unique',
-            'fecha_de_ingreso'=>'required|max:12',
-            'carrera'=>'required',
-            'telefono'=>'required|numeric|max:8',
+            'nombre' => 'required',
+            'edad' => 'required|numeric|max:100|min:10',
+            'numero_de_cuenta' => 'required|unique',
+            'fecha_de_ingreso' => 'required|max:12',
+            'carrera' => 'required',
+            'telefono' => 'required|numeric|max:8',
 
         ]);
 
@@ -76,7 +83,7 @@ class EstudiantesController extends Controller
         $estudiante->numero_de_cuenta = $request->input('numero_de_cuenta');
         $estudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $estudiante->carrera = $request->input('carrera');
-        $estudiante->telefono = $request->input ('telefono');
+        $estudiante->telefono = $request->input('telefono');
 
         // Guardar los cambios
         $estudiante->save();
@@ -87,7 +94,8 @@ class EstudiantesController extends Controller
 
     }
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
         Estudiante::destroy($id);
 
         return redirect('estudiantes');
@@ -95,6 +103,25 @@ class EstudiantesController extends Controller
 
     }
 
+    public function buscarEstudiante(Request $request){
+        $busqueda = $request->input("busqueda");
+
+        $estudiantes = Estudiante::where("nombre","like","%".$busqueda."%")
+            ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
+            ->paginate(10);
+
+        return view('estudiantes')->with('estudiantes', $estudiantes);
+    }
+
+    /*public function buscarEstudiante(Request $request){
+        $busqueda = $request->input("busqueda");
+
+        $estudiantes = Estudiante::where("nombre","like","%".$busqueda."%")
+            ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
+            ->paginate(10);
+
+        return view('estudiantes')->with('estudiantes', $estudiantes);
+    }*/
 
 
 
