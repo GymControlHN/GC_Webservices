@@ -150,7 +150,7 @@
 <script>
 
 
-        $('#edit').on('show.bs.modal', function (event){
+        $('#editarEstudiante').on('show.bs.modal', function (event){
             var button = $(event.relatedTarget) // Button that triggered the modal
             var nombre = button.data('mynombre');
             var edad = button.data('myedad');
@@ -158,9 +158,6 @@
             var fecha = button.data('myfecha');
             var telefono = button.data('mytelefono');
             var carrera = button.data('mycarrera');
-            var nempleado = button.data('mynempleado');
-            var nidentidad = button.data('myidentidad');
-            var profesion = button.data('myprofesion');
             var cat_id = button.data('catid');
             var modal = $(this);
 
@@ -170,13 +167,14 @@
             modal.find('.modal-body #fecha_de_ingreso').val(fecha);
             modal.find('.modal-body #telefono').val(telefono);
             modal.find('.modal-body #carrera').val(carrera);
-            modal.find('.modal-body #numero_de_empleado').val(nempleado);
-            modal.find('.modal-body #numero_de_identidad').val(nidentidad);
-            modal.find('.modal-body #profesion_u_oficio').val(profesion);
-             modal.find('.modal-body #cat_id').val(cat_id);
-        })
+             modal.find('.modal-body #id').val(cat_id);
+
+        });
+
+
 
 </script>
+
 
 </body>
 

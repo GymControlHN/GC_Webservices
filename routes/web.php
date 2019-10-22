@@ -73,7 +73,7 @@ Route::post('estudiantes/guardar', 'EstudiantesController@store')->name('estudia
 
 Route::delete('estudiantes/{id}/borrar','EstudiantesController@destroy')->name('estudiante.borrar');
 Route::get('estudiantes/{id}/editar','EstudiantesController@edit')->name('estudiante.editar');
-Route::put('estudiantes/{id}/editar','EstudiantesController@update')->name('estudiante.update');
+Route::put('estudiantes/editar','EstudiantesController@update')->name('estudiante.update');
 
 Route::get('docentes/', 'DocentesController@index')->name('docentes');
 Route::get('docentes/crear', 'DocentesController@create')->name('docentes.formulario');

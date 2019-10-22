@@ -10,8 +10,8 @@
         </div>
     </header>
 
-   <div class="container">
-       <div class="alert alert-dismissable mb-n4" role="alert">
+
+   <div class="w3-container w3-teal mx-5" >
            <h2 style="all: revert">Listado de Estudiantes</h2>
 
 
@@ -95,8 +95,7 @@
                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                           @isset($estudiante)
                                           value="{{$estudiante->fecha_de_ingreso}}"
-                                           @endisset
-                                   >
+                                           @endisset>
                                </div>
 
 
@@ -115,7 +114,7 @@
            </div>
 <!--Modal de editar -->
 
-           <div class="modal fade" id="edit" tabindex="-1" role="dialog"
+           <div class="modal fade show" id="editarEstudiante" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                <div class="modal-dialog modal-dialog-scrollable" role="document">
                    <div class="modal-content">
@@ -126,10 +125,10 @@
                            </button>
                        </div>
                        <div class="modal-body">
-                           <input type="hidden" name="estudiante_id" id="cat_id" value="">
 
 
-                           <form method="post" action="{{route('estudiante.update' , 'editar')}}">
+                           <form method="post" action="{{route('estudiante.update')}}">
+                               <input type="hidden" name="estudiante_id" id="id" value="">
 
                                {{method_field('put')}}
 
@@ -233,30 +232,36 @@
             <th scope="col">Teléfono</th>
             <th scope="col">Edad</th>
             <th scope="col">Fecha de Ingreso</th>
-            <th scope="col">Acciones</th>
+            <th scope="col" >Acciones</th>
         </tr>
         </thead>
 
         <tbody>
         @foreach($estudiantes as $estudiante)
-        <tr>
 
+        <tr>
             <td>{{$estudiante->nombre}}</td>
             <td>{{$estudiante->numero_de_cuenta}}</td>
             <td>{{$estudiante->carrera}}</td>
             <td>{{$estudiante->telefono}}</td>
             <td>{{$estudiante->edad}}</td>
             <td>{{$estudiante->fecha_de_ingreso}}</td>
+            <div  style="overflow: auto"></div>
+
+
 
             <td class="form-inline">
                 <button class="btn btn-secondary" ><i class="fas fa-eye"></i></button>
-                <button class="btn btn-warning" data-toggle="modal" data-target="#edit" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"
+                <button class="btn btn-warning" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"
                         data-mycuenta="{{$estudiante->numero_de_cuenta}}" data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                         data-mytelefono="{{$estudiante->telefono}}" data-mycarrera="{{$estudiante->carrera}}"
                 data-catid="{{$estudiante->id}}"><i class="fas fa-edit"></i></button>
 
                 <form method="post" action="{{route('estudiante.borrar', $estudiante->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al estudiante? ')">
                 <button class="btn btn-danger "><i class="fas fa-trash-alt"></i></button>
+
+
+
                     {{method_field('delete')}}
                 </form>
                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -306,6 +311,7 @@
 
 
    </div>
+
 
    </div>
 
