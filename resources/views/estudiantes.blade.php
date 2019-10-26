@@ -49,17 +49,18 @@
 
                                <h6>Nombre Completo</h6>
                                <div class="form-group">
-                                   <input type="text" class="form-control" id="nombre" name="nombre"
+                                   <input type="text"  class="form-control" id="nombre" name="nombre"
                                           @isset($estudiante)
                                           value="{{$estudiante->cuenta}}"
                                            @endisset
+
                                            required
                                    >
                                </div>
 
                                <h6>Edad</h6>
                                <div class="form-group">
-                                   <input type="text"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
+                                   <input type="number"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
                                           aria-valuemax="2"
                                           title="Ingresa solo numeros entre 1 a 99 años"
                                           @isset($estudiante)
