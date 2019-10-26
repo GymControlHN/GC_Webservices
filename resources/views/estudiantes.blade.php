@@ -147,11 +147,104 @@
         <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
     </form>
 
+       <div class="modal fade show" id="editarEstudiante" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+           <div class="modal-dialog modal-dialog-scrollable" role="document">
+               <div class="modal-content">
+                   <div class="modal-header">
+                       <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Estudiantes</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                           <span aria-hidden="true">&times;</span>
+                       </button>
+                   </div>
+                   <div class="modal-body">
 
+
+                       <form method="post" action="{{route('estudiante.update')}}">
+                           <input type="hidden" name="estudiante_id" id="id" value="">
+
+                           {{method_field('put')}}
+
+                           <h6>Nombre Completo</h6>
+                           <div class="form-group">
+                               <input type="text" class="form-control" id="nombre" name="nombre"
+                                      @isset($estudiante)
+                                      value="{{$estudiante->nombre}}"
+                                      @endisset value="{{old('nombre')}}"
+                               >
+
+                           </div>
+
+                           <h6>Edad</h6>
+                           <div class="form-group">
+                               <input type="number" class="form-control" id="edad" name="edad"
+                                      @isset($estudiante)
+                                      value="{{$estudiante->edad}}"
+                                      @endisset value="{{old('edad')}}"
+                               >
+                           </div>
+
+                           <h6>Número Cuenta</h6>
+                           <div class="form-group">
+                               <input type="number" class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
+                                      @isset($estudiante)
+                                      value="{{$estudiante->numero_de_cuenta}}"
+                                      @endisset value="{{old('numero_de_cuenta')}}"
+                               >
+                           </div>
+
+                           <h6>Carrera</h6>
+                           <div class="form-group">
+                               <select class="form-control" id="carrera" placeholder="seleccione" name="carrera">
+                                   <option></option>
+                                   <option>Lic. informática administrativa</option>
+                                   <option>Lic. Enfermeria</option>
+                                   <option>Ing. Agroindustrial</option>
+                                   <option>TUAEC</option>
+                                   <option>Otros</option>
+                               </select>
+                           </div>
+
+
+
+
+
+                           <h6> Teléfono </h6>
+                           <div class="form-group">
+                               <input type="number" class="form-control" id="telefono" name="telefono"
+                                      @isset($estudiante)
+                                      value="{{$estudiante->telefono}}"
+                                      @endisset value="{{old('telefono')}}"
+                               >
+                           </div>
+
+                           <h6>Fecha</h6>
+                           <div class="form-group">
+                               <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                      @isset($estudiante)
+                                      value="{{$estudiante->fecha_de_ingreso}}"
+                                      @endisset value="{{old('fecha_de_ingreso')}}"
+                               >
+                           </div>
+
+
+
+
+                           <div class="modal-footer">
+                               <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                               <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
+
+                           </div>
+                       </form>
+                   </div>
+
+               </div>
+           </div>
+       </div>
 
 
        <div class="table-
-       responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
            <table class="table ruler-vertical table-hover mx-sm-0 ">
          <thead class="thead-light">
@@ -181,15 +274,19 @@
 
             <td class="form-inline " style="width: 300px">
                 <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoestudiantes")}}"><i class="fas fa-eye"></i></a> </button>
-                <button class="btn btn-warning mr-xl-2 "><a href="{{route('estudiante.editar', $estudiante->id)}}"><i class="fas fa-edit"></i></a></button>
-                <div method="post" action="{{route('estudiante.borrar', $estudiante->id)}}">
-                <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
+                <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"
+                        data-mycuenta="{{$estudiante->numero_de_cuenta}}" data-myfecha="{{$estudiante->fecha_de_ingreso}}"
+                        data-mytelefono="{{$estudiante->telefono}}" data-mycarrera="{{$estudiante->carrera}}"
+                        data-catid="{{$estudiante->id}}"><i class="fas fa-edit"></i></button>
+
+                <form method="post" action="{{route('estudiante.borrar', $estudiante->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al estudiante? ')">
+                    <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
                     {{method_field('delete')}}
-                </div>
                 </form>
                 <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Medidas
                 </button>
+
 
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -203,7 +300,7 @@
             </td>
         </tr>
 @endforeach
-        <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal" tabindex="-1"  role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">

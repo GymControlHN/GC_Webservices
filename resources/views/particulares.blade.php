@@ -37,16 +37,7 @@
                         <div class="modal-body ">
 
                             <form method="post" action="{{route('particular.guardar')}}">
-                                <script>
-                                    @isset($particular)
-                                        action=" {{ route('particular.update', $particular->id) }}"
-                                    @else
-                                        action="{{route('particular.guardar')}}"
-                                    @endisset
-                                    @isset ($particular)
-                                        @method('put')
-                                    @endisset
-                                </script>
+
 
                                 <h6>Nombre Completo</h6>
                                 <div class="form-group">
@@ -145,6 +136,103 @@
             <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
         </form>
 
+        <div class="modal fade" id="editarParticular" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Particulares</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+
+
+                    <div class="modal-body ">
+
+                        <form method="post" action="{{route('particular.update')}}">
+                            <input type="hidden" name="particular_id" id="id" value="">
+
+                            {{method_field('put')}}
+
+                            <h6>Nombre Completo</h6>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="nombre" name="nombre"
+                                       @isset($particular)
+                                       value="{{$particular->nombre}}"
+                                       @endisset value="{{old('nombre')}}"
+                                >
+                            </div>
+
+                            <h6>Edad</h6>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="edad" name="edad"
+                                       @isset($particular)
+                                       value="{{$particular->edad}}"
+                                       @endisset value="{{old('edad')}}"
+                                >
+                            </div>
+
+                            <h6>Número de Identidad</h6>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="numero_de_identidad" name="numero_de_identidad"
+                                       @isset($particular)
+                                       value="{{$particular->numero_de_identidad}}"
+                                       @endisset value="{{old('numero_de_identidad')}}"
+                                >
+                            </div>
+
+                            <h6>Profesión</h6>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="profesion_u_oficio" name="profesion_u_oficio"
+                                       @isset($particular)
+                                       value="{{$particular->profesion_u_pficio}}"
+                                       @endisset value="{{old('profesion_u_oficio')}}"
+                                >
+                            </div>
+
+
+
+                            <h6> Teléfono </h6>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="telefono" name="telefono"
+                                       @isset($particular)
+                                       value="{{$particular->telefono}}"
+                                       @endisset value="{{old('telefono')}}"
+                                >
+                            </div>
+
+                            <h6>Fecha</h6>
+                            <div class="form-group">
+                                <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                       @isset($particular)
+                                       value="{{$particular->fecha_de_ingreso}}"
+                                       @endisset value="{{old('fecha_de_ingreso')}}"
+                                >
+                            </div>
+
+
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                <button type="submit"  class="btn btn-primary">Guardar</button>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
 
 
 
@@ -179,8 +267,12 @@
 
                     <td class="form-inline">
                         <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoparticulares")}}"><i class="fas fa-eye"></i></a> </button>
-                        <button class="btn btn-warning mr-xl-2"><a href="{{route('particular.editar', $particular->id)}}"><i class="fas fa-edit"></i></a></button>
-                        <form method="post" action="{{route('particular.borrar', $particular->id)}}">
+
+                        <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
+                                data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
+                                data-mytelefono="{{$particular->telefono}}" data-myprofesion="{{$particular->profesion_u_oficio}}"
+                                data-catid="{{$particular->id}}"><i class="fas fa-edit"></i></button>
+                        <form method="post" action="{{route('particular.borrar', $particular->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al cliente? ')">>
                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>

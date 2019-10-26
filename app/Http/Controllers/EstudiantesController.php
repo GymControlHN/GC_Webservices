@@ -54,42 +54,37 @@ class  EstudiantesController extends Controller
     public function edit($id)
     {
         $estudiante = Estudiante::findOrFail($id);
-        return view('estudiantes')->with('estudiantes', $estudiante);
+        return view('estudiantes')->with('estudiante', $estudiante);
 
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-
-        // Validar los datos
-
-        $validatedData = $request->validate([
-            'nombre' => 'required',
-            'edad' => 'required|numeric|max:100|min:10',
-            'numero_de_cuenta' => 'required|unique',
-            'fecha_de_ingreso' => 'required|max:12',
-            'carrera' => 'required',
-            'telefono' => 'required|numeric|max:8',
-
-        ]);
+        
 
         // Buscar la instancia en la base de datos.
-        $estudiante = Estudiante::findOrFail($id);
+        /* //Validar los datos
+               $this->validate($request, [
+                    'nombre' => 'required',
+                    'edad' => 'required',
+                   'numero_de_cuenta' => 'max:13',
+                    'carrera' => 'required',
+                    'telefono' => 'required|min:8',
+                   'fecha_de_ingreso' => 'requirer',
+                ]);
+        */
+        // Buscar la instancia en la base de datos.
+        $estudiantes = Estudiante::findOrfail($request->input("estudiante_id"));
+        $estudiantes->nombre=$request->input("nombre");
+        $estudiantes->edad = $request->input("edad");
+        $estudiantes->numero_de_cuenta =$request->input("numero_de_cuenta");
+        $estudiantes->carrera = $request->input("carrera");
+        $estudiantes->telefono = $request->input("telefono");
+        $estudiantes->fecha_de_ingreso = $request->input("fecha_de_ingreso");
+        $estudiantes->save();
 
-        //Asignar los nuevos valores a los diferentes campos
-
-        $estudiante->nombre = $request->input('nombre');
-        $estudiante->edad = $request->input('edad');
-        $estudiante->numero_de_cuenta = $request->input('numero_de_cuenta');
-        $estudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $estudiante->carrera = $request->input('carrera');
-        $estudiante->telefono = $request->input('telefono');
-
-        // Guardar los cambios
-        $estudiante->save();
-
-        // Redirigir a la lista de todos los estudiantes.
-        return redirect('estudiantes');
+        $estudiantes1 = Estudiante::paginate(10);
+        return back();
 
 
     }

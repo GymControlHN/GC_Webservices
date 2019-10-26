@@ -39,16 +39,13 @@ class ParticularesController extends Controller
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
-        return redirect('/particulares');
+        return redirect('particulares');
     }
-    public function show(Particular $particulares)
-    {
-        //
-    }
+
 
     public function edit($id) {
         $particular = Particular::findOrFail($id);
-        return view('particulares')->with('particular',$particular);
+        return view('particulares')->with('particulares',$particular);
 
     }
 

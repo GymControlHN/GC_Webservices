@@ -6,6 +6,7 @@ use App\Docente;
 
 
 
+use App\Particular;
 use Illuminate\Http\Request;
 
 class DocentesController extends Controller
@@ -31,8 +32,8 @@ class DocentesController extends Controller
              'telefono'=>'required',
          ]);
 
-        $nuevoDocente = new Docente();
 
+        $nuevoDocente = new Docente();
         $nuevoDocente->nombre = $request->input('nombre');
         $nuevoDocente->edad = $request->input('edad');
         $nuevoDocente->numero_de_empleado = $request->input('numero_de_empleado');
@@ -43,15 +44,11 @@ class DocentesController extends Controller
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
+
         return redirect('docentes');
-
-
     }
 
-    public function show(Docente $docentes)
-    {
-        //
-    }
+
 
     public function edit($id)
     {
@@ -85,10 +82,10 @@ class DocentesController extends Controller
         $docente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $docente->telefono = $request->input('telefono');
 
-        // Guardar los cambios
+
         $docente->save();
 
-        // Redirigir a la lista de todos los estudiantes.
+
        $docente = Docente::paginate(10);
        return back();
 

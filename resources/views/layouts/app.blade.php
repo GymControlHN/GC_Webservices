@@ -12,15 +12,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/gym.css') }}" rel="stylesheet">
-
 </head>
-<body>
 <div class="fondo1">
-    <div id="app">
+<body>
 
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+    <div id="app">
 
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -42,11 +38,10 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right ">
+
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Iniciar de sesion</a></li>
-                            <li><a href="{{ route('register') }}">Registro</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -70,15 +65,14 @@
                         @endif
                     </ul>
                 </div>
-            </div>
-        </nav>
-
+</body>
         @yield('content')
         </div>
 
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+</body>
 </div>
 </body>
 </html>

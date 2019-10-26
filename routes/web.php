@@ -74,7 +74,7 @@ Route::post('estudiantes/guardar', 'EstudiantesController@store')->name('estudia
 
 Route::delete('estudiantes/{id}/borrar','EstudiantesController@destroy')->name('estudiante.borrar');
 Route::get('estudiantes/{id}/editar','EstudiantesController@edit')->name('estudiante.editar');
-Route::put('estudiantes/{id}/editar','EstudiantesController@update')->name('estudiante.update');
+Route::put('estudiantes/editar','EstudiantesController@update')->name('estudiante.update');
 
 Route::get('docentes/', 'DocentesController@index')->name('docentes');
 Route::get('docentes/crear', 'DocentesController@create')->name('docentes.formulario');
@@ -82,7 +82,7 @@ Route::post('docentes/guardar', 'DocentesController@store')->name('docente.guard
 
 Route::delete('docentes/{id}/borrar','DocentesController@destroy')->name('docente.borrar');
 Route::get('docentes/{id}/editar','DocentesController@edit')->name('docente.editar');
-Route::put('docentes/{id}/editar','DocentesController@update')->name('docente.update');
+Route::put('docentes/editar','DocentesController@update')->name('docente.update');
 
 Route::get('particulares/', 'ParticularesController@index')->name('particulares');
 Route::get('particulares/crear', 'ParticularesController@create')->name('particulares.formulario');
@@ -90,7 +90,7 @@ Route::post('particulares/guardar', 'ParticularesController@store')->name('parti
 
 Route::delete('particulares/{id}/borrar','ParticularesController@destroy')->name('particular.borrar');
 Route::get('particulares/{id}/editar','ParticularesController@edit')->name('particular.editar');
-Route::put('particulares/{id}/editar','ParticularesController@update')->name('particular.update');
+Route::put('particulares/editar','ParticularesController@update')->name('particular.update');
 
 Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
 
