@@ -18,6 +18,7 @@ class Cliente extends Model
         'fecha_de_ingreso',
         'carrera',
         'tipo',
+        'genero',
         'telefono'
     ];
 }

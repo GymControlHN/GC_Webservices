@@ -62,13 +62,13 @@
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
-                                    <input type="text" pattern="([0-9]{1,3})" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
+                                    <input type="text" pattern="([0-9]{1,5})" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
                                            title="Ingrese solo números"
                                            @isset($docente)
                                            value="{{$docente->numero_de_empleado}}"
                                             @endisset
                                             required
-                                           minlength="1" maxlength="4" min="1" max="9999"
+                                           minlength="1" maxlength="5" min="1" max="99999"
                                     >
                                 </div>
 
@@ -85,6 +85,23 @@
 
                                     >
                                 </div>
+
+                                <h6>Sexo</h6>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Masculino
+                                    <label class="form-check-label" for="inlineRadio1"></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Femenino
+                                    <label class="form-check-label" for="inlineRadio2"></label>
+                                </div>
+
+
+
+
+
+
 
                                 <h6>Fecha</h6>
                                 <div class="form-group">
@@ -157,10 +174,11 @@
                             </div>
                             <h6>Número de Empleado</h6>
                             <div class="form-group">
-                                <input type="number" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
+                                <input type="number"  class="form-control" id="numero_de_empleado" name="numero_de_empleado"
                                        @isset($docente)
                                        value="{{$docente->numero_de_empleado}}"
                                        @endisset value="{{old('numero_de_empleado')}}"
+
                                 >
                             </div>
 

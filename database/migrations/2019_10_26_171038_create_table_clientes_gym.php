@@ -24,6 +24,7 @@ class CreateTableClientesGym extends Migration
             $table->date('fecha_de_ingreso');
             $table->string('carrera', 100);
             $table->string('tipo');
+            $table->String('genero');
             $table->char('telefono', 8);
             $table->timestamps();
 
