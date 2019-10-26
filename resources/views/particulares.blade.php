@@ -103,11 +103,11 @@
                                 <h6>Sexo</h6>
 
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="M" required>Masculino
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required>Masculino
                                     <label class="form-check-label" for="inlineRadio1"></label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="F" required>Femenino
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required>Femenino
                                     <label class="form-check-label" for="inlineRadio2"></label>
                                 </div>
 
@@ -261,6 +261,7 @@
                     <th scope="col">Número de Identidad</th>
                     <th scope="col">Profesión U Oficio</th>
                     <th scope="col">Teléfono</th>
+                    <th scope="col">Genero</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
@@ -278,6 +279,7 @@
                     <td>{{$particular->numero_de_identidad}}</td>
                     <td>{{$particular->profesion_u_oficio}}</td>
                     <td>{{$particular->telefono}}</td>
+                    <td>{{$particular->genero}}</td>
                     <td>{{$particular->edad}}</td>
                     <td>{{$particular->fecha_de_ingreso}}</td>
                     <div  style="overflow: auto"></div>

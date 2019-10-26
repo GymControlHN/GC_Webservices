@@ -89,11 +89,11 @@
                                 <h6>Sexo</h6>
 
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="M" required>Masculino
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required>Masculino
                                     <label class="form-check-label" for="inlineRadio1"></label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="F" required>Femenino
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required>Femenino
                                     <label class="form-check-label" for="inlineRadio2"></label>
                                 </div>
 
@@ -224,8 +224,9 @@
 
                     <th scope="col">Nombre</th>
                     <th scope="col">Id de Empleado</th>
-                    <th scope="col">Teléfono</th>
                     <th scope="col">Edad</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Sexo</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
@@ -238,8 +239,9 @@
 
                     <td>{{$docente->nombre}}</td>
                     <td>{{$docente->numero_de_empleado}}</td>
-                    <td>{{$docente->telefono}}</td>
                     <td>{{$docente->edad}}</td>
+                    <td>{{$docente->telefono}}</td>
+                    <td>{{$docente->genero}}</td>
                     <td>{{$docente->fecha_de_ingreso}}</td>
                     <div  style="overflow: auto"></div>
 

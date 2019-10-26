@@ -260,6 +260,7 @@ responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.7
             <th scope="col">Número de Cuenta</th>
             <th scope="col">Carrera</th>
             <th scope="col">Teléfono</th>
+             <th scope="col">Sexo</th>
             <th scope="col">Edad</th>
             <th scope="col">Fecha de Ingreso</th>
             <th scope="col" >Acciones</th>
@@ -275,6 +276,7 @@ responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.7
             <td>{{$estudiante->numero_de_cuenta}}</td>
             <td>{{$estudiante->carrera}}</td>
             <td>{{$estudiante->telefono}}</td>
+            <td>{{$estudiante->genero}}</td>
             <td>{{$estudiante->edad}}</td>
             <td>{{$estudiante->fecha_de_ingreso}}</td>
             <div  style="overflow: auto"></div>
