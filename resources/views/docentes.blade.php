@@ -89,11 +89,11 @@
                                 <h6>Sexo</h6>
 
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Masculino
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="M" required>Masculino
                                     <label class="form-check-label" for="inlineRadio1"></label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Femenino
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="F" required>Femenino
                                     <label class="form-check-label" for="inlineRadio2"></label>
                                 </div>
 

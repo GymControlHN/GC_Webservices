@@ -39,6 +39,7 @@ class  EstudiantesController extends Controller
         $nuevoEstudiante->carrera = $request->input('carrera');
         $nuevoEstudiante->telefono = $request->input('telefono');
         $nuevoEstudiante->tipo="Estudiante";
+        $nuevoEstudiante->genero = $request->input("genero");
 
         $nuevoEstudiante->save();
 
@@ -84,6 +85,8 @@ class  EstudiantesController extends Controller
         $estudiantes->telefono = $request->input("telefono");
         $estudiantes->fecha_de_ingreso = $request->input("fecha_de_ingreso");
         $estudiantes->tipo="Estudiante";
+        $estudiantes->genero = $request->input("genero");
+
         $estudiantes->save();
 
         $estudiantes1 = Cliente::paginate(10);

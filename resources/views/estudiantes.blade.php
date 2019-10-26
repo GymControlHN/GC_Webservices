@@ -40,7 +40,7 @@
 
                                <h6>Nombre Completo</h6>
                                <div class="form-group">
-                                   <input type="text"  class="form-control" pattern="[a-zA-Z]" id="nombre" name="nombre"
+                                   <input type="text"  class="form-control"  id="nombre" name="nombre"
                                           @isset($estudiante)
                                           value="{{$estudiante->nombre}}"
                                            @endisset
@@ -105,11 +105,11 @@
                                <h6>Sexo</h6>
 
                                <div class="form-check form-check-inline">
-                                   <input class="form-check-input" type="radio" name="sexo" id="sexo" value="option1">Masculino
+                                   <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required>Masculino
                                    <label class="form-check-label" for="inlineRadio1"></label>
                                </div>
                                <div class="form-check form-check-inline">
-                                   <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Femenino
+                                   <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required>Femenino
                                    <label class="form-check-label" for="inlineRadio2"></label>
                                </div>
 
