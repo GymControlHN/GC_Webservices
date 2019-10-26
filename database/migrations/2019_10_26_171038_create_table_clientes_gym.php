@@ -23,6 +23,7 @@ class CreateTableClientesGym extends Migration
             $table->string('profesion_u_oficio', 100);
             $table->date('fecha_de_ingreso');
             $table->string('carrera', 100);
+            $table->string('tipo');
             $table->char('telefono', 8);
             $table->timestamps();
 

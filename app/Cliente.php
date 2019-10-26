@@ -17,6 +17,7 @@ class Cliente extends Model
         'profesion_u_oficio',
         'fecha_de_ingreso',
         'carrera',
+        'tipo',
         'telefono'
     ];
 }
