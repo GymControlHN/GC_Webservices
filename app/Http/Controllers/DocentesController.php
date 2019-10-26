@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Docente;
-
-
-
-use App\Particular;
 use Illuminate\Http\Request;
+use App\Cliente;
 
 class DocentesController extends Controller
 {
     public function index()
     {
-        $docentes = Docente::paginate(10);
-        return view('docentes')->with('docentes', $docentes);
+        $clientes =Cliente::where("tipo","=","Docente")
+            ->paginate(10);
+        return view('docentes')->with('docentes', $clientes);
     }
 
     public function create()
@@ -33,12 +30,14 @@ class DocentesController extends Controller
          ]);
 
 
-        $nuevoDocente = new Docente();
+        $nuevoDocente = new Cliente();
         $nuevoDocente->nombre = $request->input('nombre');
         $nuevoDocente->edad = $request->input('edad');
         $nuevoDocente->numero_de_empleado = $request->input('numero_de_empleado');
         $nuevoDocente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoDocente->telefono = $request->input('telefono');
+        $nuevoDocente->tipo="Docente";
+
 
         $nuevoDocente->save();
 
@@ -52,8 +51,8 @@ class DocentesController extends Controller
 
     public function edit($id)
     {
-        $docentes = Docente::findOrFail($id);
-        return view('docentes')->with('docente', $docentes);
+        $clientes = Cliente::findOrFail($id);
+        return view('docentes')->with('docente', $clientes);
 
     }
 
@@ -75,18 +74,18 @@ class DocentesController extends Controller
 
 
         // Asignar los nuevos valores a los diferentes campos
-        $docente = Docente::findOrfail($request->input("docente_id"));
+        $docente = Cliente::findOrfail($request->input("docente_id"));
         $docente->nombre = $request->input('nombre');
         $docente->edad = $request->input('edad');
         $docente->numero_de_empleado = $request->input('numero_de_empleado');
         $docente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $docente->telefono = $request->input('telefono');
-
+        $docente->tipo="Docente";
 
         $docente->save();
 
 
-       $docente = Docente::paginate(10);
+       $docente = Cliente::paginate(10);
        return back();
 
 
@@ -94,7 +93,7 @@ class DocentesController extends Controller
 
     public function destroy($id)
     {
-        Docente::destroy($id);
+        Cliente::destroy($id);
 
 
         return redirect('docentes');
@@ -104,7 +103,7 @@ class DocentesController extends Controller
     {
         $busquedaDoc = $request->input("busquedaDoc");
 
-        $docentes = Docente:: where("nombre", "like", "%" . $busquedaDoc . "%")
+        $docentes = Cliente:: where("nombre", "like", "%" . $busquedaDoc . "%")
             ->orWhere("fecha_de_ingreso", "like", "%" . $busquedaDoc . "%")
             ->paginate(10);
 

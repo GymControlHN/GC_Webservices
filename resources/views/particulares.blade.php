@@ -254,7 +254,9 @@
                 </thead>
 
                 <tbody>
+                @if($particulares->count()>0)
                 @foreach($particulares as $particular)
+
                 <tr>
 
                     <td>{{$particular->nombre}}</td>
@@ -272,7 +274,7 @@
                                 data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
                                 data-mytelefono="{{$particular->telefono}}" data-myprofesion="{{$particular->profesion_u_oficio}}"
                                 data-catid="{{$particular->id}}"><i class="fas fa-edit"></i></button>
-                        <form method="post" action="{{route('particular.borrar', $particular->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al cliente? ')">>
+                        <form method="post" action="{{route('particular.borrar', $particular->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al cliente? ')">
                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
@@ -288,6 +290,11 @@
                     </td>
                 </tr>
 @endforeach
+                @else
+                    <tr>
+                        <td colspan="7" style="text-align: center">No hay particulares ingresados</td>
+                    </tr>
+                @endif
                 </tbody>
             </table>
             {{ $particulares->links() }}

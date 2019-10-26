@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Particular;
+use App\Cliente;
 use Illuminate\Http\Request;
 
 class ParticularesController extends Controller
 {
     public function index () {
-        $particulares = Particular::paginate(10);
-        return view('particulares')->with('particulares' , $particulares);
+        $clientes = Cliente::where("tipo","=","Particular")
+            ->paginate(10);
+        return view('particulares')->with('particulares' , $clientes);
     }
 
     public function create() {
@@ -26,7 +27,7 @@ class ParticularesController extends Controller
             'telefono'=>'required',
         ]);
 
-        $nuevoParticular = new Particular();
+        $nuevoParticular = new Cliente();
 
         $nuevoParticular->nombre = $request->input('nombre');
         $nuevoParticular->edad = $request->input('edad');
@@ -34,7 +35,7 @@ class ParticularesController extends Controller
         $nuevoParticular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoParticular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $nuevoParticular->telefono = $request->input ('telefono');
-
+        $nuevoParticular->tipo="Particular";
         $nuevoParticular->save();
 
         //TODO redireccionar a una página con sentido.
@@ -44,8 +45,8 @@ class ParticularesController extends Controller
 
 
     public function edit($id) {
-        $particular = Particular::findOrFail($id);
-        return view('particulares')->with('particulares',$particular);
+        $clientes = Cliente::findOrFail($id);
+        return view('particulares')->with('particulares',$clientes);
 
     }
 
@@ -62,26 +63,26 @@ class ParticularesController extends Controller
         ]); */
 
         // Asignar los nuevos valores a los diferentes campos
-        $particular = Particular::findOrFail($request->input("particular_id"));
+        $particular = Cliente::findOrFail($request->input("particular_id"));
         $particular->nombre = $request->input('nombre');
         $particular->edad = $request->input('edad');
         $particular->numero_de_identidad = $request->input('numero_de_identidad');
         $particular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $particular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $particular->telefono = $request->input ('telefono');
-
+        $particular->tipo="Particular";
         // Guardar los cambios
         $particular->save();
 
         // Redirigir a la lista de todos los estudiantes.
-        $particular1 = Particular::paginate(10);
+        $particular1 = Cliente::paginate(10);
         return back();
 
 
     }
 
     public function destroy($id) {
-         Particular::destroy($id);
+         Cliente::destroy($id);
 
 
         return redirect('particulares');
@@ -90,7 +91,7 @@ class ParticularesController extends Controller
     public function buscarParticular(Request $request){
         $busquedaPart = $request->input("busquedaPart");
 
-        $particulares=Particular::where("nombre","like","%".$busquedaPart."%")
+        $particulares=Cliente::where("nombre","like","%".$busquedaPart."%")
             ->orWhere("fecha_de_ingreso","like","%".$busquedaPart."%")
             ->paginate(10);
 

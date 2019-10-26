@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Estudiante;
+use App\Cliente;
 
 class  EstudiantesController extends Controller
 {
     public function index()
     {
-        $estudiantes = Estudiante::paginate(10);
-        return view('estudiantes')->with('estudiantes', $estudiantes);
+        $clientes = Cliente::where("tipo","=","Estudiante")
+            ->paginate(10);
+        return view('estudiantes')->with('estudiantes', $clientes);
     }
 
     public function create()
@@ -29,7 +30,7 @@ class  EstudiantesController extends Controller
         // 'telefono'=>'required|numeric|max:8',
         //]);
 
-        $nuevoEstudiante = new Estudiante();
+        $nuevoEstudiante = new Cliente();
 
         $nuevoEstudiante->nombre = $request->input('nombre');
         $nuevoEstudiante->edad = $request->input('edad');
@@ -37,6 +38,7 @@ class  EstudiantesController extends Controller
         $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoEstudiante->carrera = $request->input('carrera');
         $nuevoEstudiante->telefono = $request->input('telefono');
+        $nuevoEstudiante->tipo="Estudiante";
 
         $nuevoEstudiante->save();
 
@@ -46,14 +48,14 @@ class  EstudiantesController extends Controller
 
     }
 
-    public function show(Estudiante $estudiantes)
+    public function show(Cliente $estudiantes)
     {
 
     }
 
     public function edit($id)
     {
-        $estudiante = Estudiante::findOrFail($id);
+        $estudiante = Cliente::findOrFail($id);
         return view('estudiantes')->with('estudiante', $estudiante);
 
     }
@@ -74,16 +76,17 @@ class  EstudiantesController extends Controller
                 ]);
         */
         // Buscar la instancia en la base de datos.
-        $estudiantes = Estudiante::findOrfail($request->input("estudiante_id"));
+        $estudiantes = Cliente::findOrfail($request->input("estudiante_id"));
         $estudiantes->nombre=$request->input("nombre");
         $estudiantes->edad = $request->input("edad");
         $estudiantes->numero_de_cuenta =$request->input("numero_de_cuenta");
         $estudiantes->carrera = $request->input("carrera");
         $estudiantes->telefono = $request->input("telefono");
         $estudiantes->fecha_de_ingreso = $request->input("fecha_de_ingreso");
+        $estudiantes->tipo="Estudiante";
         $estudiantes->save();
 
-        $estudiantes1 = Estudiante::paginate(10);
+        $estudiantes1 = Cliente::paginate(10);
         return back();
 
 
@@ -91,7 +94,7 @@ class  EstudiantesController extends Controller
 
     public function destroy($id)
     {
-        Estudiante::destroy($id);
+        Cliente::destroy($id);
 
         return redirect('estudiantes');
 
@@ -101,7 +104,7 @@ class  EstudiantesController extends Controller
     public function buscarEstudiante(Request $request){
         $busqueda = $request->input("busqueda");
 
-        $estudiantes = Estudiante::where("nombre","like","%".$busqueda."%")
+        $estudiantes = Cliente::where("nombre","like","%".$busqueda."%")
             ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
             ->paginate(10);
 

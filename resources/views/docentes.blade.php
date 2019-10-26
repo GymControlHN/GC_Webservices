@@ -214,7 +214,8 @@
                 </thead>
 
                 <tbody>
-                @foreach($docentes as $docente)
+                @if($docentes->count()>0)
+                    @foreach($docentes as $docente)
                 <tr>
 
                     <td>{{$docente->nombre}}</td>
@@ -246,7 +247,11 @@
                 </tr>
 
 @endforeach
-
+                @else
+                    <tr>
+                        <td colspan="7" style="text-align: center">No hay docentes ingresados</td>
+                    </tr>
+                @endif
 
                 </tbody>
             </table>

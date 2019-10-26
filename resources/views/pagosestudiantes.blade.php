@@ -39,7 +39,7 @@
                                     <option>Julio</option>
                                     <option>Agosto</option>
                                     <option>Septiembre</option>
-                                    <option>Octubre</option>
+                                    <option>Obtubre</option>
                                     <option>Noviembre</option>
                                     <option>Diciembre</option>
                                 </select>
@@ -69,17 +69,17 @@
         <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                       box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
             <thead>
-              <tr>
-                  <th>Mes</th>
-                  <th>Fecha</th>
-                  <th>Estado</th>
-              <tr>
+            <tr>
+                <th>Mes</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+            <tr>
             </thead>
             <tbody>
             @foreach ($pagos as $day => $users_list)
                 <tr>
                     <th colspan="3"
-                        style="background-color: #7086f7; color: white;">Registros del año {{ $day }}</th>
+                        style="background-color: #7086f7; color: white;">Registro del año {{ $day }}</th>
                 </tr>
                 @foreach ($users_list as $user)
                     <tr>
@@ -95,3 +95,6 @@
             </tbody>
         </table>    </div>
 @endsection
+
+
+

@@ -94,6 +94,11 @@ Route::put('particulares/editar','ParticularesController@update')->name('particu
 
 Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
 
+Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
+Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
+Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
+
+
 Route::get("buscarPart","ParticularesController@buscarParticular")->name("particular.buscarPart");
 
 Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscarDoc");
