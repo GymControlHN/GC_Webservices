@@ -300,7 +300,6 @@ responsive mb-5" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76
                     </tr>
                 @endif
 
-
                 </tbody>
             </table>
             {{ $estudiantes->links() }}
