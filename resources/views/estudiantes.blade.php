@@ -41,9 +41,6 @@
                                <h6>Nombre Completo</h6>
                                <div class="form-group">
                                    <input type="text"  class="form-control"  id="nombre" name="nombre"
-                                          @isset($estudiante)
-                                          value="{{$estudiante->nombre}}"
-                                           @endisset
                                            required
                                    >
                                </div>
@@ -53,9 +50,6 @@
                                    <input type="number"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
                                           aria-valuemax="2"
                                           title="Ingresa solo numeros entre 1 a 99 años"
-                                          @isset($estudiante)
-                                          value="{{$estudiante->edad}}"
-                                          @endisset
                                           required
                                           minlength="1" maxlength="2" min="1" max="99">
                                </div>
@@ -63,11 +57,7 @@
                                <h6>Número Cuenta</h6>
                                <div class="form-group">
                                    <input type="text"  pattern="([0-9]{1,11})"  class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
-
                                           title="Ingrese solo números"
-                                          @isset($estudiante)
-                                          value="{{$estudiante->numero_de_cuenta}}"
-                                          @endisset
                                           required
                                           minlength="1" maxlength="11" aria-valuemax="11" max="99999999999">
                                </div>
@@ -92,11 +82,7 @@
                                <h6> Teléfono </h6>
                                <div class="form-group">
                                    <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
-
                                           title="Ingrese solo números"
-                                          @isset($estudiante)
-                                          value="{{$estudiante->telefono}}"
-                                          @endisset
                                           required
                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999"  >
                                </div>
@@ -120,10 +106,6 @@
                                <h6>Fecha</h6>
                                <div class="form-group">
                                    <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-
-                                          @isset($estudiante)
-                                          value="{{$estudiante->fecha_de_ingreso}}"
-                                          @endisset
                                           required>
                                </div>
 
@@ -223,6 +205,24 @@
                                       value="{{$estudiante->telefono}}"
                                       @endisset value="{{old('telefono')}}"
                                >
+                           </div>
+                           <h6>Sexo</h6>
+
+                           <div class="form-check form-check-inline">
+                               <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
+                                      @isset($estudiante)
+                                      value="{{$estudiante->sexo1}}"
+                                      @endisset value="{{old('sexo1')}}"
+                               >Masculino
+                               <label class="form-check-label" for="inlineRadio1"></label>
+                           </div>
+                           <div class="form-check form-check-inline">
+                               <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required
+                                      @isset($estudiante)
+                                      value="{{$estudiante->sexo2}}"
+                                      @endisset value="{{old('sexo2')}}"
+                               >Femenino
+                               <label class="form-check-label" for="inlineRadio2"></label>
                            </div>
 
                            <h6>Fecha</h6>

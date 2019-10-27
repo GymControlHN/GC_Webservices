@@ -22,11 +22,10 @@
                 box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Numero de Cuenta o Identidad</th>
                     <th scope="col">Edad</th>
-                    <th scope="col">Profesión</th>
+                    <th scope="col">Carrera_u_Profesión</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Acciones</th>
@@ -34,23 +33,24 @@
                 </thead>
 
                 <tbody>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Francisco López</td>
-                    <td>20162500169</td>
-                    <td>24</td>
-                    <td>Informática</td>
-                    <td>98-95-00-40</td>
-                    <td>2/9/2019</td>
-                    <td>
-                        <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
-                    </td>
-                </tr>
 
-
+                @foreach($estadisticas as $estadistica)
+                    <tr>
+                        <td>{{$estadistica->nombre}}</td>
+                        <td>{{$estadistica->numero_de_cuenta}}</td>
+                        <td>{{$estadistica->edad}}</td>
+                        <td>{{$estadistica->carrera}}</td>
+                        <td>{{$estadistica->telefono}}</td>
+                        <td>{{$estadistica->fecha_de_ingreso}}</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
+                        </td>
+                    </tr>
+                @endforeach
 
                 </tbody>
             </table>
+            {{ $estadisticas->links() }}
         </div>
     </div>
 

@@ -19,7 +19,7 @@ class CreateEstadisticasTable extends Migration
             $table->string('nombre',50);
             $table->integer('edad');
             $table->char('identificacion', 11)->unique();
-            $table->string('profesion', 100);
+            $table->string('carrera_u_profesion', 100);
             $table->char('celular', 8);;
             $table->timestamps();
         });
