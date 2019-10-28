@@ -9,7 +9,6 @@
             </div>
         </div>
     </header>
-
     <div class="card text-center">
         <div class="card-header">
 
@@ -157,7 +156,5 @@
                 </form>
             </div>
         </div>
-
     </div>
-
 @endsection
