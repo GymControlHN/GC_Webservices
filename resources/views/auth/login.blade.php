@@ -6,6 +6,7 @@
          <div class="row ">
              <div class="col-md-8 col-md-offset-1">
                 <div class="panel-body top-left">
+
                     <h4 class="panel-heading ">Iniciar Sesion</h4>
                     <form  method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}

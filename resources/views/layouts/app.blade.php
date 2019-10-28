@@ -14,6 +14,7 @@
     <link href="{{ asset('css/gym.css') }}" rel="stylesheet">
 </head>
 <div class="fondo2">
+
 <body>
 
     <div id="app">

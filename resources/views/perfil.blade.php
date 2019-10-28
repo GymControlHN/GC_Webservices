@@ -142,7 +142,6 @@
                                    name="password_confirmation" required>
                         </div>
                     </div>
-
                     <div class="form-group">
                         <div class="boton2">
                             <button type="submit" class="btn btn-primary">
