@@ -13,7 +13,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/gym.css') }}" rel="stylesheet">
 </head>
-<div class="fondo1">
+<div class="fondo2">
 <body>
 
     <div id="app">

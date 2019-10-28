@@ -2,18 +2,15 @@
 
 @section('content')
 
-    <div class="fondo1" style="font-family: 'Raleway', sans-serif">
       <div class="container">
-         <div class="row">
-             <div class="col-md-8 col-md-offset-2">
-                <h4 class="panel-heading">Iniciar Sesion</h4>
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+         <div class="row ">
+             <div class="col-md-8 col-md-offset-1">
+                <div class="panel-body top-left">
+                    <h4 class="panel-heading ">Iniciar Sesion</h4>
+                    <form  method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
-
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-
-                            <label  for="email"  class="labeltamaño">Direccion de correo electrónico</label>
+                            <label  for="email"  class="labeltamañodir">Direccion de correo electrónico</label>
 
                             <div class="inputtamaño" >
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -56,15 +53,14 @@
                                 <button type="submit" class="btn btn-primary ">
                                     Iniciar sesion
                                 </button>
-
-
                             </div>
                         </div>
                     </form>
+                    </div>
                 </div>
-          </div>
-             <div class="logopuma"></div>
+         <div class="logopuma"></div>
+
          </div>
       </div>
-    </div>
+
 @endsection
