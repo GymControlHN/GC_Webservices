@@ -107,11 +107,12 @@ class  EstudiantesController extends Controller
     public function buscarEstudiante(Request $request){
         $busqueda = $request->input("busqueda");
 
-        $estudiantes = Cliente::where("nombre","like","%".$busqueda."%")
+        $clientes = Cliente:: where("tipo","=","Estudiante")
+        ->where("nombre","like","%".$busqueda."%")
             ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
             ->paginate(10);
 
-        return view('estudiantes')->with('estudiantes', $estudiantes);
+        return view('estudiantes')->with('estudiantes', $clientes);
     }
 
 

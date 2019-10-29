@@ -25,17 +25,25 @@ class DocentesController extends Controller
              'nombre'=>'required',
              'edad'=>'required',
              'numero_de_empleado'=>'required',
+          'telefono'=>'required',
+          'genero'=>'required',
              'fecha_de_ingreso'=>'required',
-             'telefono'=>'required',
+
+
          ]);
 
 
         $nuevoDocente = new Cliente();
         $nuevoDocente->nombre = $request->input('nombre');
-        $nuevoDocente->edad = $request->input('edad');
         $nuevoDocente->numero_de_empleado = $request->input('numero_de_empleado');
-        $nuevoDocente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
+        $nuevoDocente->edad = $request->input('edad');
         $nuevoDocente->telefono = $request->input('telefono');
+        $nuevoDocente->genero = $request->input('genero');
+        $nuevoDocente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
+
+
+
+
         $nuevoDocente->tipo="Docente";
 
 
@@ -80,6 +88,7 @@ class DocentesController extends Controller
         $docente->numero_de_empleado = $request->input('numero_de_empleado');
         $docente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $docente->telefono = $request->input('telefono');
+        $docente->genero = $request->input('genero');
         $docente->tipo="Docente";
 
         $docente->save();
@@ -103,7 +112,8 @@ class DocentesController extends Controller
     {
         $busquedaDoc = $request->input("busquedaDoc");
 
-        $docentes = Cliente:: where("nombre", "like", "%" . $busquedaDoc . "%")
+        $docentes = Cliente::where("tipo","=","Docente")
+        ->where("nombre", "like", "%" . $busquedaDoc . "%")
             ->orWhere("fecha_de_ingreso", "like", "%" . $busquedaDoc . "%")
             ->paginate(10);
 

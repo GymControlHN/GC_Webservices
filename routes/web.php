@@ -100,7 +100,7 @@ Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name(
 
 
 Route::get("buscarPart","ParticularesController@buscarParticular")->name("particular.buscarPart");
-
+Route::get("buscarCliente","EstadisticasController@buscarCliente")->name("cliente.buscarCliente");
 Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscarDoc");
 
 Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
@@ -110,6 +110,8 @@ Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name(
 Route::get('pagosparticulares/', 'PagoEstudianteController@index')->name('pagoparticulares');
 Route::get('pagosparticulares/crear', 'PagoEstudianteController@create')->name('pagoparticulares.formulario');
 Route::post('pagosparticulares/guardar', 'PagoEstudianteController@store')->name('pagoparticulares.guardar');
+
+Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
 
 
 

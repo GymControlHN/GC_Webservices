@@ -25,6 +25,7 @@ class ParticularesController extends Controller
             'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
             'telefono'=>'required',
+            'genero'=>'required',
         ]);
 
         $nuevoParticular = new Cliente();
@@ -35,6 +36,7 @@ class ParticularesController extends Controller
         $nuevoParticular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoParticular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $nuevoParticular->telefono = $request->input ('telefono');
+        $nuevoParticular->genero = $request->input ('genero');
         $nuevoParticular->tipo="Particular";
         $nuevoParticular->save();
 
@@ -70,6 +72,7 @@ class ParticularesController extends Controller
         $particular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $particular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $particular->telefono = $request->input ('telefono');
+        $particular->genero = $request->input ('genero');
         $particular->tipo="Particular";
         // Guardar los cambios
         $particular->save();
@@ -91,7 +94,8 @@ class ParticularesController extends Controller
     public function buscarParticular(Request $request){
         $busquedaPart = $request->input("busquedaPart");
 
-        $particulares=Cliente::where("nombre","like","%".$busquedaPart."%")
+        $particulares=Cliente::where("tipo","=","Particular")
+        ->where("nombre","like","%".$busquedaPart."%")
             ->orWhere("fecha_de_ingreso","like","%".$busquedaPart."%")
             ->paginate(10);
 
