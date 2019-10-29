@@ -19,10 +19,10 @@ class CreateTableClientesGym extends Migration
             $table->integer('edad');
             $table->char('numero_de_cuenta', 11)->unique()->nullable();
             $table->string('numero_de_empleado',11)->unique()->nullable();
-            $table->char('numero_de_identidad', 11)->unique()->nullable();
+            $table->char('numero_de_identidad', 13)->unique()->nullable();
             $table->string('profesion_u_oficio', 100)->nullable();
             $table->date('fecha_de_ingreso');
-            $table->string('carrera', 100);
+            $table->string('carrera', 100)->nullable();
             $table->string('tipo');
             $table->String('genero');
             $table->char('telefono', 8);
