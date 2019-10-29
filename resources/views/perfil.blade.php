@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <h6 for="email" class="labeltamañodir">Direccion de correo electronico</h6>
+                        <h6 for="email" class="labeltamañodir1">Direccion de correo electronico</h6>
 
                         <div class="inputtamaño">
                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"

@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-      <div class="container">
-         <div class="row ">
-             <div class="col-md-8 col-md-offset-1">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-8 col-md-offset-1">
                 <div class="panel-body top-left">
-
                     <h4 class="panel-heading ">Iniciar Sesion</h4>
                     <form  method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
@@ -56,12 +55,11 @@
                             </div>
                         </div>
                     </form>
-                    </div>
-
                 </div>
-         <div class="logopuma"></div>
+            </div>
+            <div class="logopuma"></div>
 
-         </div>
-      </div>
+        </div>
+    </div>
 
 @endsection
