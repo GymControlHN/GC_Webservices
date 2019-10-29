@@ -47,7 +47,7 @@
 
                                <h6>Edad</h6>
                                <div class="form-group">
-                                   <input type="number"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
+                                   <input type="text"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
                                           aria-valuemax="2"
                                           title="Ingresa solo numeros entre 1 a 99 años"
                                           required
@@ -164,12 +164,16 @@
 
                            </div>
 
+
                            <h6>Edad</h6>
                            <div class="form-group">
-                               <input type="number" class="form-control" id="edad" name="edad"
+                               <input type="text" pattern="([0-9]{1,3})"  class="form-control" id="edad" name="edad"
                                       @isset($estudiante)
                                       value="{{$estudiante->edad}}"
                                       @endisset value="{{old('edad')}}"
+                                      title="Ingresa solo numeros entre 1 a 99 años"
+                                      required
+                                      minlength="1" maxlength="2" min="1" max="99"
                                >
                            </div>
 
