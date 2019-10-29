@@ -28,6 +28,8 @@ class CreateTableClientesGym extends Migration
             $table->char('telefono', 8);
             $table->timestamps();
 
+
+
         });
         //
     }

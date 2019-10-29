@@ -22,3 +22,4 @@ class Cliente extends Model
         'telefono'
     ];
 }
+

@@ -164,6 +164,7 @@
 
                            </div>
 
+
                            <h6>Edad</h6>
                            <div class="form-group">
                                <input type="text" pattern="([0-9]{1,3})"  class="form-control" id="edad" name="edad"
