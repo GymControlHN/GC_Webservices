@@ -73,20 +73,21 @@
 
     </head>
 
-    <body>
 
-    <div class="container">
+      <div class="container">
 
-        <form name="f1" id="f1">
+        <form method="POST"  action="{{route('ruffier.guardar')}}" name="formularioruffier" >
+            {!! csrf_field() !!}
             <br><br>
             <h5 class="label2">Calculo de Ruffier</h5>
             <br>
-            <form class="form-horizontal" action="/action_page.php">
                 <div class="form-group">
                     <h6 class=" label2" for="email">Pulso en reposo</h6>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3" id="pulso1"
-                               name="pulso1" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()">
+                        <input type="number" class="form-control inputtamaño3" id="pulso_r"
+                               name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
+
+                        >
                     </div>
 
                 </div>
@@ -95,7 +96,9 @@
                     <h6 class="label2" for="email">Pulso en accion:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="pulso2" name="pulso2" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()">
+                               id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
+
+                        >
                     </div>
                 </div>
 
@@ -103,7 +106,9 @@
                     <h6 class="label2" for="email">Pulso en descanso:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="pulso3" name="pulso3" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()">
+                               id="pulso_d" name="pulso_d" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
+
+                        >
                     </div>
                 </div>
 
@@ -111,7 +116,9 @@
                     <h6 class="label2" for="email">Ruffier:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="ruffiel" name="ruffiel" maxlength="3"  disabled="true" >
+                               id="ruffier" name="ruffier" maxlength="3"  disabled="true"
+
+                        >
                     </div>
                 </div>
 
@@ -119,14 +126,16 @@
                     <h6 class="label2" for="email">Diagnostico:</h6>
                     <div class="col-sm-10">
                         <input type="text" class="form-control inputtamaño3"
-                               id="leyenda" name="leyenda" maxlength="50" disabled="true">
+                               id="clasificacion" name="clasificacion" maxlength="50" disabled="true">
                     </div>
                 </div>
                 <div class="form-group">
                     <h6 class="label2" for="email">MVO2:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="mvo" name="mvo" maxlength="3"   >
+                               id="mvo2" name="mvo3" maxlength="3"
+
+                        >
                     </div>
                 </div>
 
@@ -134,20 +143,20 @@
                     <h6 class="label2" for="email">MVO2 Real:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="mvo2" name="mvor" maxlength="3"   >
+                               id="mvoreal" name="mvoreal" maxlength="3"
+
+                        >
                     </div>
                 </div>
                 <div class="container">
 
 
 
-                    <h6 class="label2" for="email">Fecha:</h6>
+                    <h6 class="label2">Fecha:</h6>
                     <div class="col-sm-10">
                         <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
-                               @isset($estudiante)
-                               value="{{$estudiante->fecha_de_ingreso}}"
-                                @endisset
+
                         >
                     </div>
 
@@ -155,21 +164,15 @@
 
                 <div class="container1">
 
-                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>
-                    <button type="button" class="btn btn-primary my-4 boton3">Guardar</button>
+                    <button type="button" class="btn btn-primary my-4 boton"><a style= "color: white " href="/ruffiel">Cancelar</a></button>
+                    <button type="submit" class="btn btn-primary my-4 boton3"><a href=""></a>Guardar</button>
                 </div>
 
 
-            </form>
         </form>
-
-
-
-    </div>
-
-    </body>
-    </html>
-
+        </body>
+      </div>
+</html>
 
 
 @endsection
