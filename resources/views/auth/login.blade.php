@@ -9,7 +9,7 @@
                     <form  method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label  for="email"  class="labeltamañodir">Direccion de correo electrónico</label>
+                            <label  for="email"  class="labeltamañodir1">Direccion de correo electrónico</label>
 
                             <div class="inputtamaño" >
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
@@ -58,8 +58,6 @@
                 </div>
             </div>
             <div class="logopuma"></div>
-
         </div>
     </div>
-
 @endsection

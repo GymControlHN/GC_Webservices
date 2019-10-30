@@ -10,13 +10,14 @@
     height: 100vh;
     background-position: center center;
 }
+.fondo2{
 
-.fondo12{
     background-image: url("../img/gyminicio.jpg");
     width: 100%;
     height: 100vh;
     background-position: center center;
 }
+
 
 label{
     color: #ffffff;
