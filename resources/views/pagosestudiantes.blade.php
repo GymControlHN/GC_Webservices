@@ -10,9 +10,11 @@
     <div class=" w3-container w3-teal mx-5">
         <h2 class="h3centrado">Registro de pagos mensuales</h2>
 
-
         <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2" >
             <i class="fas fa-dollar-sign"></i> Agregar pago </button>
+
+
+
 
 
         <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog"
@@ -75,6 +77,16 @@
             </div>
             <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
         </form>
+
+        @if(session("exito"))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ session('exito') }}
+            </div>
+
+        @endif
 
         <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
         box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">

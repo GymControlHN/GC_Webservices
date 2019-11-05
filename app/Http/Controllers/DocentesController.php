@@ -52,7 +52,7 @@ class DocentesController extends Controller
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
 
-        return redirect('docentes');
+        return back()->with(["exito"=>"Se agregó exitosamente"]);
     }
 
 
@@ -103,9 +103,7 @@ class DocentesController extends Controller
     public function destroy($id)
     {
         Cliente::destroy($id);
-
-
-        return redirect('docentes');
+        return back()->with(["exito"=>"Se elimino exitosamente"]);
     }
 
     public function buscarDocente(Request $request)

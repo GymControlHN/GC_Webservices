@@ -33,7 +33,7 @@ class PagoEstudianteController extends Controller
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
-        return redirect('pagosestudiantes');
+        return back()->with(["exito"=>"Se agregó exitosamente"]);
 
     }
     public function show(PagoClientesp $pagoClientes)
@@ -44,7 +44,9 @@ class PagoEstudianteController extends Controller
     public function destroy($id) {
         PagoClientesP::destroy($id);
 
-        return redirect('pagosestudiantes');
+        return back()->with(["exito"=>"Se elimino exitosamente"]);
+
     }
+
 }
 
