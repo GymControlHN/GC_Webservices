@@ -11,6 +11,7 @@ class EstadisticasController extends Controller
         $clientes = Cliente::where("tipo","=","Estudiante")
             ->orwhere("tipo", "=", "Docente")
             ->paginate(10);
+
         return view('estadisticas')->with('estadisticas', $clientes);
     }
     public function create() {
