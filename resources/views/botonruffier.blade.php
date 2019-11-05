@@ -22,7 +22,7 @@
                 ruffiel= (pulso1+pulso2+pulso3-200)/10;
 
 
-                document.getElementById("ruffiel").value=ruffiel.toFixed(2);
+                document.getElementById("ruffiel").value=ruffiel.toFixed(0);
 
 
 
@@ -111,7 +111,7 @@
                     <h6 class="label2" for="email">Ruffier:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="ruffiel" name="ruffiel" maxlength="3"  disabled="true" >
+                               id="ruffiel" name="ruffiel" maxlength="3" >
                     </div>
                 </div>
 
@@ -119,7 +119,7 @@
                     <h6 class="label2" for="email">Diagnostico:</h6>
                     <div class="col-sm-10">
                         <input type="text" class="form-control inputtamaño3"
-                               id="leyenda" name="leyenda" maxlength="50" disabled="true">
+                               id="leyenda" name="clasificacion" maxlength="50" >
                     </div>
                 </div>
                 <div class="form-group">
@@ -162,8 +162,6 @@
 
 
         </form>
-
-
 
     </div>
 

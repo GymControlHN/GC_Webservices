@@ -33,11 +33,11 @@ class RuffierController extends Controller
 
         $nuevosDatos = new Ruffier();
 
-        $nuevosDatos->fecha = $request->input('fecha_de_ingreso');
+        $nuevosDatos->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevosDatos->pulso_r = $request->input('pulso1');
         $nuevosDatos->pulso_a = $request->input('pulso2');
         $nuevosDatos->pulso_d = $request->input('pulso3');
-        $nuevosDatos->ruffier = $request->input('ruffiel');
+        $nuevosDatos->ruffiel = $request->input('ruffiel');
         $nuevosDatos->clasificacion = $request->input('leyenda');
         $nuevosDatos->mvo2 = $request->input('mvo');
         $nuevosDatos->mvoreal = $request->input('mvor');
@@ -72,8 +72,8 @@ class RuffierController extends Controller
             'pulso_r' => 'required|numeric',
             'pulso_a' => 'required|numeric',
             'pulso_d' => 'required|numeric',
-            'ruffier' => 'required|numeric',
-            'clasificacion' => 'required',
+            'ruffiel' => 'required|float',
+            'clasificacion' => 'string',
             'mvo2' => 'required|numeric',
             'mvoreal' => 'required|numeric',
 
@@ -84,11 +84,11 @@ class RuffierController extends Controller
 
         //Asignar los nuevos valores a los diferentes campos
 
-        $datonuevo->fecha = $request->input('fecha');
+        $datonuevo->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $datonuevo->pulso_r = $request->input('pulso_r');
         $datonuevo->pulso_a = $request->input('pulso_a');
         $datonuevo->pulso_d = $request->input('pulso_d');
-        $datonuevo->ruffier = $request->input('ruffier');
+        $datonuevo->ruffiel = $request->input('ruffiel');
         $datonuevo->clasificacion = $request->input('clasificacion');
         $datonuevo->mvo2 = $request->input('mvo2');
         $datonuevo->mvoreal = $request->input('mvoreal');

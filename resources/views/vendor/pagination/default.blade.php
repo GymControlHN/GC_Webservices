@@ -4,9 +4,9 @@
     <ul class="pagination pagination-sm">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <li class="page-item "><span ></span></li>
+            <li class="page-item "><span></span></li>
         @else
-            <li  class="page-item"><a class="page-link"href="{{ $paginator->previousPageUrl() }}" rel="prev" tabindex="-1">Anterior</a></li>
+            <li  class="page-item"><a class="page-link"href="{{ $paginator->previousPageUrl()}}" rel="prev" tabindex="-1">Anterior</a></li>
         @endif
 
         {{-- Pagination Elements --}}

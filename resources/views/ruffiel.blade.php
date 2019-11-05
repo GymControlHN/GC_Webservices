@@ -13,15 +13,6 @@
     <div class="w3-container w3-teal mx-5">
        <h2 style="all: revert">Datos fisicos</h2>
 
-            <form class="form-inline">
-
-                <div class="form-group mr-sm-4 my-sm-4 ">
-                    <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
-                </div>
-                <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
-            </form>
-
-
 
 
             <h2 style="all: revert">Ruffier <button type="button" class="btn btn-primary mb-4 float-right">
@@ -55,7 +46,7 @@
                     <td>{{$dato->pulso_r}}</td>
                     <td>{{$dato->pulso_a}}</td>
                     <td>{{$dato->pulso_d}}</td>
-                    <td>{{$dato->ruffier}}</td>
+                    <td>{{$dato->ruffiel}}</td>
                     <td>{{$dato->clasificacion}}</td>
                     <td>{{$dato->mvo2}}</td>
                     <td>{{$dato->mvoreal}}</td>

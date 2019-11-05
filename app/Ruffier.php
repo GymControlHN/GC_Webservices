@@ -10,11 +10,11 @@ class Ruffier extends Model
     protected $table='ruffier';
 
     protected $fillable =[
-        'fecha',
+        'fecha_de_ingreso',
         'pulso_r',
         'pulso_a',
         'pulso_d',
-        'ruffier',
+        'ruffiel',
         'clasificacion',
         'mvo2',
         'mvoreal'
