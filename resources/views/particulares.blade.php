@@ -293,7 +293,7 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary "><a href="{{route("pagoparticulares")}}"><i class="fas fa-eye"></i></a> </button>
+                        <button class="btn btn-secondary "><a href="{{route("pagoparticulares")}}"><i class="fas fa-dollar-sign"></i></a> </button>
 
                         <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
                                 data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"

@@ -16,8 +16,8 @@
         <title>FORMULARIO PESO IDEAL</title>
         <script type="text/javascript">function calcularRuffiel(){
                 var pulso1= parseFloat(document.getElementById("pulso1").value);
-               var pulso2= parseFloat(document.getElementById("pulso2").value);
-               var pulso3= parseFloat(document.getElementById("pulso3").value);
+                var pulso2= parseFloat(document.getElementById("pulso2").value);
+                var pulso3= parseFloat(document.getElementById("pulso3").value);
 
                 ruffiel= (pulso1+pulso2+pulso3-200)/10;
 
@@ -77,11 +77,11 @@
 
     <div class="container">
 
-        <form name="f1" id="f1">
+        <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}">
+            {{!! csrf_token()}}
             <br><br>
             <h5 class="label2">Calculo de Ruffier</h5>
             <br>
-            <form class="form-horizontal" action="/action_page.php">
                 <div class="form-group">
                     <h6 class=" label2" for="email">Pulso en reposo</h6>
                     <div class="col-sm-10">
@@ -145,8 +145,8 @@
                     <div class="col-sm-10">
                         <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
-                               @isset($estudiante)
-                               value="{{$estudiante->fecha_de_ingreso}}"
+                               @isset($dato)
+                               value="{{$dato->fecha_de_ingreso}}"
                                 @endisset
                         >
                     </div>
@@ -156,11 +156,11 @@
                 <div class="container1">
 
                     <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>
-                    <button type="button" class="btn btn-primary my-4 boton3">Guardar</button>
+                    <button type="submit" class="btn btn-primary my-4 boton3">Guardar</button>
                 </div>
 
 
-            </form>
+
         </form>
 
 
@@ -173,3 +173,4 @@
 
 
 @endsection
+

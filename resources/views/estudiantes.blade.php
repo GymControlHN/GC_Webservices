@@ -295,7 +295,7 @@
 
 
             <td class="form-inline " style="width: 300px">
-                <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoestudiantes")}}"><i class="fas fa-eye"></i></a> </button>
+                <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoestudiantes")}}"><i class="fas fa-dollar-sign"></i></a> </button>
                 <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"
                         data-mycuenta="{{$estudiante->numero_de_cuenta}}" data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                         data-mytelefono="{{$estudiante->telefono}}" data-mycarrera="{{$estudiante->carrera}}"

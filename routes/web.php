@@ -92,6 +92,14 @@ Route::delete('particulares/{id}/borrar','ParticularesController@destroy')->name
 Route::get('particulares/{id}/editar','ParticularesController@edit')->name('particular.editar');
 Route::put('particulares/editar','ParticularesController@update')->name('particular.update');
 
+Route::get('ruffiel/', 'RuffierController@index')->name('ruffiel');
+Route::get('ruffiel/crear', 'RuffierController@create')->name('ruffiel');
+Route::post('ruffiel/guardar', 'RuffierController@store')->name('ruffier.guardar');
+
+Route::delete('ruffiel/{id}/borrar','RuffierController@destroy')->name('ruffier.borrar');
+//Route::get('ruffiel/{id}/editar','RuffierController@edit')->name('ruffier.editar');
+//Route::put('riffiel/{id}/editar','RuffierController@update')->name('ruffier.update');
+
 Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
 
 Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
