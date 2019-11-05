@@ -141,28 +141,35 @@
 
                             <h6>Nombre Completo</h6>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="nombre" name="nombre"
+                                <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                        @isset($docente)
                                        value="{{$docente->nombre}}"
                                        @endisset value="{{old('nombre')}}"
+                                       required
                                 >
 
                             </div>
 
                             <h6>Edad</h6>
                             <div class="form-group">
-                                <input type="number" class="form-control" id="edad" name="edad"
+                                <input type="text"  pattern="([0-9]{1,3})"  class="form-control" id="edad" name="edad"
                                        @isset($docente)
                                        value="{{$docente->edad}}"
                                        @endisset value="{{old('edad')}}"
+                                       title="Ingrese solo números entre 1 a 99 años"
+                                       required
+                                       minlength="1" maxlength="2" min="1" max="99"
                                 >
                             </div>
                             <h6>Número de Empleado</h6>
                             <div class="form-group">
-                                <input type="number"  class="form-control" id="numero_de_empleado" name="numero_de_empleado"
+                                <input type="text"  pattern="([0-9]{1,5})"  class="form-control" id="numero_de_empleado" name="numero_de_empleado"
                                        @isset($docente)
                                        value="{{$docente->numero_de_empleado}}"
                                        @endisset value="{{old('numero_de_empleado')}}"
+                                       title="Ingrese solo números "
+                                       required
+                                       minlength="1" maxlength="5" min="1" max="99999"
 
                                 >
                             </div>
@@ -170,10 +177,13 @@
 
                             <h6> Teléfono </h6>
                             <div class="form-group">
-                                <input type="number" class="form-control" id="telefono" name="telefono"
+                                <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
                                        @isset($docente)
                                        value="{{$docente->telefono}}"
                                        @endisset value="{{old('telefono')}}"
+                                       title="Ingrese solo números"
+                                       required
+                                       maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
                                 >
                             </div>
                             <h6>Sexo</h6>
@@ -201,6 +211,7 @@
                                        @isset($docente)
                                        value="{{$docente->fecha_de_ingreso}}"
                                        @endisset value="{{old('fecha_de_ingreso')}}"
+                                       required
                                 >
                             </div>
 

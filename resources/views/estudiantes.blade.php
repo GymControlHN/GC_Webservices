@@ -40,7 +40,7 @@
 
                                <h6>Nombre Completo</h6>
                                <div class="form-group">
-                                   <input type="text"  class="form-control"  id="nombre" name="nombre"
+                                   <input type="text"  class="form-control solo-letras"  id="nombre" name="nombre"
                                            required
                                    >
                                </div>
@@ -156,11 +156,10 @@
 
                            <h6>Nombre Completo</h6>
                            <div class="form-group">
-                               <input type="text" class="form-control" id="nombre" name="nombre"
+                               <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                       @isset($estudiante)
                                       value="{{$estudiante->nombre}}"
-                                      @endisset value="{{old('nombre')}}"
-                               >
+                                      @endisset value="{{old('nombre')}}">
 
                            </div>
 
@@ -179,16 +178,19 @@
 
                            <h6>Número Cuenta</h6>
                            <div class="form-group">
-                               <input type="number" class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
+                               <input  type="text"  pattern="([0-9]{1,11})"  class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
                                       @isset($estudiante)
                                       value="{{$estudiante->numero_de_cuenta}}"
                                       @endisset value="{{old('numero_de_cuenta')}}"
+                                      title="Ingrese solo números"
+                                      required
+                                      minlength="1" maxlength="11" aria-valuemax="11" max="99999999999"
                                >
                            </div>
 
                            <h6>Carrera</h6>
                            <div class="form-group">
-                               <select class="form-control" id="carrera" placeholder="seleccione" name="carrera">
+                               <select class="form-control" id="carrera" placeholder="seleccione" name="carrera" required>
                                    <option></option>
                                    <option>Lic. informática administrativa</option>
                                    <option>Lic. Enfermeria</option>
@@ -204,12 +206,18 @@
 
                            <h6> Teléfono </h6>
                            <div class="form-group">
-                               <input type="number" class="form-control" id="telefono" name="telefono"
+                               <input input="text"  pattern="([0-9]{1,8})"   class="form-control"   id="telefono" name="telefono"
+
                                       @isset($estudiante)
                                       value="{{$estudiante->telefono}}"
                                       @endisset value="{{old('telefono')}}"
+                                      title="Ingrese solo números"
+                                      required
+                                      maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
                                >
                            </div>
+
+
                            <h6>Sexo</h6>
 
                            <div class="form-check form-check-inline">
@@ -232,6 +240,7 @@
                            <h6>Fecha</h6>
                            <div class="form-group">
                                <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                      required
                                       @isset($estudiante)
                                       value="{{$estudiante->fecha_de_ingreso}}"
                                       @endisset value="{{old('fecha_de_ingreso')}}"

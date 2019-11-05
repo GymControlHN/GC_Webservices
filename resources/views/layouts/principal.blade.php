@@ -204,14 +204,14 @@ modal.find('.modal-body #id').val(cat_id);
         modal.find('.modal-body #edad').val(edad);
         modal.find('.modal-body #numero_de_identidad').val(nidentidad);
         modal.find('.modal-body #fecha_de_ingreso').val(fecha);
-        modal.find('.modal-body #profesion_u_oficio').val(nidentidad);
+        modal.find('.modal-body #profesion_u_oficio').val(profesion);
         modal.find('.modal-body #telefono').val(telefono);
         modal.find('.modal-body #id').val(cat_id);
 
     });
 
 
-    $("#nombre").keydown( function (e) {
+    $(".solo-letras").keydown( function (e) {
         if (e.shiftKey || e.ctrlKey || e.altKey) {
             e.preventDefault();
         } else {
