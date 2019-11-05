@@ -9,7 +9,6 @@
             </div>
         </div>
     </header>
-
     <div class="card text-center">
         <div class="card-header">
 
@@ -73,6 +72,7 @@
 
                                 </div>
                             </div>
+                        </div>
                     </nav>
                 </li>
             </ul>
@@ -105,7 +105,7 @@
                     </div>
 
                     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                        <h6 for="email" class="labeltamaño">Direccion de correo electronico</h6>
+                        <h6 for="email" class="labeltamañodir1">Direccion de correo electronico</h6>
 
                         <div class="inputtamaño">
                             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"
@@ -141,11 +141,10 @@
                                    name="password_confirmation" required>
                         </div>
                     </div>
-
                     <div class="form-group">
-                        <div class="boton">
+                        <div class="boton2">
                             <button type="submit" class="btn btn-primary">
-                                Registrarse
+                                Registrar
                             </button>
                         </div>
                     </div>
@@ -157,7 +156,5 @@
                 </form>
             </div>
         </div>
-
     </div>
-
 @endsection

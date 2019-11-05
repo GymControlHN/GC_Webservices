@@ -7,11 +7,13 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class=" w3-container w3-teal mx-5">
         <h2 class="h3centrado">Registro de pagos mensuales</h2>
 
-        <button class="btn btn-danger botonpago" data-toggle="modal" data-target="#exampleModalScrollable2">
+
+        <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2" >
             <i class="fas fa-dollar-sign"></i> Agregar pago </button>
+
 
         <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -63,29 +65,47 @@
             </div>
 
         </div>
-        <div>
-            <h1> </h1>
-        </div>
-        <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-                      box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
-            <thead>
+
+        <form class="form-inline">
+
+
+            <div class="form-group mr-sm-4 my-sm-4 ">
+                <input type="text" class="form-control" id="inputText2" name="busqueda"
+                       placeholder="Buscar">
+            </div>
+            <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
+        </form>
+
+        <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+        box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+        <table class="table ruler-vertical table-hover mx-sm-0 " >
+            <thead class="thead-light">
             <tr>
                 <th>Mes</th>
                 <th>Fecha</th>
                 <th>Estado</th>
+                <th>Acciones</th>
             <tr>
             </thead>
             <tbody>
             @foreach ($pagos as $day => $users_list)
                 <tr>
-                    <th colspan="3"
+                    <th colspan="4"
                         style="background-color: #7086f7; color: white;">Registro del año {{ $day }}</th>
                 </tr>
                 @foreach ($users_list as $user)
                     <tr>
-                        <td>{{ $user->mes }}</td>
-                        <td>{{ $user->fecha_pago }}</td>
-                        <td>Cancelado</td>
+                        <th>{{ $user->mes }}</th>
+                        <th>{{ $user->fecha_pago }}</th>
+                        <th>Cancelado</th>
+                        <th class="form-inline mr-xl-n2 ">
+                            <button class="btn btn-warning mr-xl-1">
+                                <i class="fas fa-edit"></i></button>
+                            <form method="post" action="{{route('pagoestudiante.borrar', $user->id)}}" onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
+                                <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
+                                {{method_field('delete')}}
+                            </form>
+                        </th>
                     </tr>
                 @endforeach
             @endforeach
@@ -93,7 +113,9 @@
 
 
             </tbody>
-        </table>    </div>
+        </table>
+        </div>
+    </div>
 @endsection
 
 

@@ -12,6 +12,7 @@ class CreateClientespTable extends Migration
             $table->increments('id');
             $table->string('mes');
             $table->date('fecha_pago');
+            $table->string('tipo_pago');
             $table->timestamps();
         });
     }

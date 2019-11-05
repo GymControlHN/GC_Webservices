@@ -52,14 +52,7 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="/estadisticas">Estadisticas</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger"></a>
-                </li>
-                <!-- Authentication Links -->
-                @if (Auth::guest())
-                    <li><a href="{{ route('login') }}">Iniciar sesion</a></li>
-                    <li><a href="{{ route('register') }}">Registro</a></li>
-                @else
+
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -82,7 +75,6 @@
 
                         </div>
                     </li>
-                @endif
 
             </ul>
         </div>
