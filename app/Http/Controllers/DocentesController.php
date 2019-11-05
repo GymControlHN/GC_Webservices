@@ -32,7 +32,6 @@ class DocentesController extends Controller
 
          ]);
 
-
         $nuevoDocente = new Cliente();
         $nuevoDocente->nombre = $request->input('nombre');
         $nuevoDocente->numero_de_empleado = $request->input('numero_de_empleado');
