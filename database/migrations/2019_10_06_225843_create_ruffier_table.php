@@ -24,8 +24,9 @@ class CreateRuffierTable extends Migration
             $table->double('mvo2')->nullable();
             $table->double('mvoreal')->nullable();
             $table->unsignedInteger('id_cliente');
-            $table->foreign('id_cliente')->references("id")->on("cliente_gym");
+            $table->foreign('id_cliente')->references("id")->on("clientes_gym")->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+
         });
     }
 

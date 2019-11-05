@@ -50,19 +50,19 @@
                 <tbody>
                 @foreach($datos as $dato)
 
-                <tr href="/botonruffier" onclick="">
+                <tr>
                     <td>{{$dato->fecha_de_ingreso}}</td>
                     <td>{{$dato->pulso_r}}</td>
                     <td>{{$dato->pulso_a}}</td>
                     <td>{{$dato->pulso_d}}</td>
                     <td>{{$dato->ruffier}}</td>
                     <td>{{$dato->clasificacion}}</td>
-                    <td>{{$dato->mvo3}}</td>
+                    <td>{{$dato->mvo2}}</td>
                     <td>{{$dato->mvoreal}}</td>
                     <td class="form-inline ">
                         <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
                         <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
-                       <form method="post" action="{{route('ruffier.borrar', $dato->id)}}" class="pull-left">
+                       <form method="post" action="{{route('ruffier.borrar', $dato->id_cliente)}}" class="pull-left">
                            {{method_field('delete')}}
                         <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
                        </form>

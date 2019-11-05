@@ -11,7 +11,7 @@ class RuffierController extends Controller
 
     public function index()
     {
-        $dato = Ruffier::paginate(10);
+        $dato = Ruffier::paginate();
         return view('ruffiel')->with('datos',$dato);;
     }
 
@@ -33,14 +33,14 @@ class RuffierController extends Controller
 
         $nuevosDatos = new Ruffier();
 
-        $nuevosDatos->fecha = $request->input('fecha');
-        $nuevosDatos->pulso_r = $request->input('pulso_r');
-        $nuevosDatos->pulso_a = $request->input('pulso_a');
-        $nuevosDatos->pulso_d = $request->input('pulso_d');
-        $nuevosDatos->ruffier = $request->input('ruffier');
-        $nuevosDatos->clasificacion = $request->input('clasificacion');
-        $nuevosDatos->mvo2 = $request->input('mvo2');
-        $nuevosDatos->mvoreal = $request->input('mvoreal');
+        $nuevosDatos->fecha = $request->input('fecha_de_ingreso');
+        $nuevosDatos->pulso_r = $request->input('pulso1');
+        $nuevosDatos->pulso_a = $request->input('pulso2');
+        $nuevosDatos->pulso_d = $request->input('pulso3');
+        $nuevosDatos->ruffier = $request->input('ruffiel');
+        $nuevosDatos->clasificacion = $request->input('leyenda');
+        $nuevosDatos->mvo2 = $request->input('mvo');
+        $nuevosDatos->mvoreal = $request->input('mvor');
 
         $nuevosDatos->save();
 

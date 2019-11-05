@@ -15,6 +15,7 @@ class Ruffier extends Model
         'pulso_a',
         'pulso_d',
         'ruffier',
+        'clasificacion',
         'mvo2',
         'mvoreal'
         ];
