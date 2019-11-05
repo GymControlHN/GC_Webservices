@@ -51,7 +51,9 @@
                     <td>{{$dato->mvo2}}</td>
                     <td>{{$dato->mvoreal}}</td>
                     <td class="form-inline ">
-                        <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
+
+                        <button class="btn btn-warning mr-xl-2 "><a style="color: white" href="{{route('ruffier.editar',$dato->id)}}"></a>
+                        <i class="fas fa-edit"></i></button>
                        <form method="post" action="{{route('ruffier.borrar', $dato->id_cliente)}}" class="pull-left">
                            {{method_field('delete')}}
                         <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
@@ -61,6 +63,7 @@
                     @endforeach
                 </tbody>
              </table>
+                    {{$datos->links()}}
             </div>
           </form>
     </div>
