@@ -74,6 +74,7 @@ class GrasaController extends Controller
         $medida->grasa = $request->input('grasa');
         $medida->leyenda = $request->input('leyenda');
 
+
         $medida->save();
         return redirect('grasa');
     }
