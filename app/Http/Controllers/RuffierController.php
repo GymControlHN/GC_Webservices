@@ -12,7 +12,9 @@ class RuffierController extends Controller
     public function index()
     {
         $dato = Ruffier::paginate();
-        return view('ruffiel')->with('datos',$dato);;
+        return view('ruffiel')->with('datos',$dato);
+
+
     }
 
     public function create()
@@ -85,13 +87,13 @@ class RuffierController extends Controller
         //Asignar los nuevos valores a los diferentes campos
 
         $datonuevo->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $datonuevo->pulso_r = $request->input('pulso_r');
-        $datonuevo->pulso_a = $request->input('pulso_a');
-        $datonuevo->pulso_d = $request->input('pulso_d');
+        $datonuevo->pulso_r = $request->input('pulso1');
+        $datonuevo->pulso_a = $request->input('pulso2');
+        $datonuevo->pulso_d = $request->input('pulso3');
         $datonuevo->ruffiel = $request->input('ruffiel');
         $datonuevo->clasificacion = $request->input('clasificacion');
-        $datonuevo->mvo2 = $request->input('mvo2');
-        $datonuevo->mvoreal = $request->input('mvoreal');
+        $datonuevo->mvo2 = $request->input('mvo');
+        $datonuevo->mvoreal = $request->input('mvor');
 
         // Guardar los cambios
         $datonuevo->save();

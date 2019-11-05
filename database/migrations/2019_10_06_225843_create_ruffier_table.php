@@ -23,8 +23,8 @@ class CreateRuffierTable extends Migration
             $table->string('clasificacion',20)->nullable();
             $table->double('mvo2')->nullable();
             $table->double('mvoreal')->nullable();
-            $table->unsignedInteger('id_cliente');
-            $table->foreign('id_cliente')->references("id")->on("clientes_gym")->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedInteger('cliente_id');
+            $table->foreign('cliente_id')->references("id")->on("clientes_gym")->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
 
         });
