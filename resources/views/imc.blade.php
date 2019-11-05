@@ -14,20 +14,14 @@
 
     <div class="container">
         <div class="alert alert-dismissable mb-n4" role="alert">
-            <h2 style="all: revert">Datos fisicos</h2>
-
-            <form class="form-inline" >
-
-                <div class="form-group mr-sm-4 my-sm-4 ">
-                    <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
-                </div>
-                <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
-            </form>
+            <h2 style="all: revert" class="h3centrado">Medidas Antropometricas</h2>
 
 
 
 
-            <h2 style="all: revert">IMC<button type="button" class="btn btn-primary my-5">
+
+
+            <h2 style="all: revert">   <button type="button" class="btn btn-primary my-5 float-right" >
                     <a style="color: white" class="nav-link js-scroll-trigger" href="/botonimc">Nuevo</a></button></h2>
 
             <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
