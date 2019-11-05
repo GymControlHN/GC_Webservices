@@ -40,10 +40,6 @@ class DocentesController extends Controller
         $nuevoDocente->telefono = $request->input('telefono');
         $nuevoDocente->genero = $request->input('genero');
         $nuevoDocente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-
-
-
-
         $nuevoDocente->tipo="Docente";
 
 
