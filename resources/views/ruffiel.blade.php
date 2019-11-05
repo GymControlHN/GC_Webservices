@@ -60,7 +60,6 @@
                     <td>{{$dato->mvo2}}</td>
                     <td>{{$dato->mvoreal}}</td>
                     <td class="form-inline ">
-                        <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
                         <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
                        <form method="post" action="{{route('ruffier.borrar', $dato->id_cliente)}}" class="pull-left">
                            {{method_field('delete')}}
