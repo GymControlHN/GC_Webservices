@@ -8,10 +8,9 @@ use App\PagoClientesP;
 
 class PagoParticularController extends Controller
 {
-
-    public function index()
-    {
-        $pagos = PagoClientesP::orderBy("fecha_pago", "asc")
+    public function index(){
+        $pagos = PagoClientesP::where("tipo_pago","=","Pago_Particular")
+            ->orderBy("fecha_pago", "asc")
             ->get()
             ->groupBy(function ($item) {
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
@@ -26,12 +25,14 @@ class PagoParticularController extends Controller
 
     public function store(Request $request)
     {
-        $nuevoPagoCliente = new PagoClientesp();
+        $nuevoPagoClientee = new PagoClientesp();
 
-        $nuevoPagoCliente->mes = $request->input('mes');
-        $nuevoPagoCliente->fecha_pago = $request->input('fecha_pago');
+        $nuevoPagoClientee->mes = $request->input('mes');
+        $nuevoPagoClientee->fecha_pago = $request->input('fecha_pago');
+        $nuevoPagoClientee->tipo_pago = "Pago_Particular";
 
-        $nuevoPagoCliente->save();
+
+            $nuevoPagoClientee->save();
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
@@ -46,7 +47,7 @@ class PagoParticularController extends Controller
 
     public function destroy($id)
     {
-        Estudiante::destroy($id);
+        PagoClientesP::destroy($id);
 
         return redirect('pagosparticulares');
     }

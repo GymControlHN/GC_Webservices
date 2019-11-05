@@ -279,7 +279,7 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoparticulares")}}"><i class="fas fa-eye"></i></a> </button>
+                        <button class="btn btn-secondary "><a href="{{route("pagoparticulares")}}"><i class="fas fa-eye"></i></a> </button>
 
                         <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
                                 data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
@@ -289,7 +289,7 @@
                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
-                            <button class="btn btn-info dropdown-toggle " type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Medidas
                             </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
