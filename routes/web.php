@@ -42,14 +42,17 @@ Route::get("/perfil",function (){
 });
 
 
-Route::get("/imc",function (){
-    return view("imc");
-});
 
 Route::get("/verestadistica",function (){
     return view("verestadistica");
 });
 
+
+
+
+Route::get("/imc",function (){
+    return view("imc");
+});
 Route::get("/grasa",function (){
     return view("grasa");
 });
@@ -60,6 +63,11 @@ Route::get("/ruffiel",function (){
 Route::get("/botonimc",function (){
     return view("botonimc");
 });
+
+Route::get("/botonimceditar",function (){
+    return view("botonimceditar");
+});
+
 Route::get("/botongrasa",function (){
     return view("botongrasa");
 });
@@ -121,6 +129,19 @@ Route::get('pagosparticulares/crear', 'PagoParticularController@create')->name('
 Route::post('pagosparticulares/guardar', 'PagoParticularController@store')->name('pagoparticulares.guardar');
 
 Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
+
+
+
+
+Route::get('imc','ImcController@index')->name('imc.ini');
+Route::get('imc/nuevo','ImcController@create')->name('botonimc');
+Route::post('imc/crear','ImcController@store')->name('imc.guardar');
+
+Route::delete('imc/{id}/borrar','ImcController@destroy')->name('imc.borrar');
+
+Route::get('imc/{id}/editar','ImcController@edit')->name('imc.editar');
+Route::put('imc/{id}/edit','ImcController@update')->name('imc.update');
+//Route::get('imc/{id}/mostrar','ImcController@mostrarIMCCliente')->name('botomostrar');
 
 
 

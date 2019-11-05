@@ -15,18 +15,20 @@ class CreateAntecedentesTable extends Migration
     {
         Schema::create('antecedentes', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('peso_kg');
-            $table->double('talla');
+            $table->double('peso');
+            $table->double('altura');
             $table->double('imc');
-            $table->string('clasificacion',20);
+            $table->string('leyenda',20);
             $table->double('pecho');
             $table->double('brazo');
-            $table->double('ABD-A');
-            $table->double('ABD-B');
+            $table->double('ABD_A');
+            $table->double('ABD_B');
             $table->double('cadera');
             $table->double('muslo');
             $table->double('pierna');
-            $table->date('fecha');
+            $table->unsignedInteger("id_cliente");
+            $table->date('fecha_de_ingreso');
+            $table->foreign("id_cliente")->references("id")->on("clientes_gym");
             $table->timestamps();
         });
     }

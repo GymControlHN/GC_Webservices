@@ -273,7 +273,7 @@
                             Medidas
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                            <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/imc">Imc</a></button>
+                            <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$docente->id)}}">Imc</a></button>
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/grasa">Grasa Corporal</a></button>
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/ruffiel">Ruffiel</a></button>
                         </div>
