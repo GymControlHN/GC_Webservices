@@ -141,6 +141,8 @@ Route::get('imc/{id}/{cliente}/editar','ImcController@edit')->name('imc.editar')
 Route::put('imc/{id}/edit','ImcController@update')->name('imc.update');
 //Route::get('imc/{id}/mostrar','ImcController@mostrarIMCCliente')->name('botomostrar');
 
+Route::post('nuevousuario/', 'AuthController@crear_usuario')->name('nuevo.usuario');
+
 
 
 
