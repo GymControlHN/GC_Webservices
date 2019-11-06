@@ -23,9 +23,9 @@
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Numero de Cuenta o Identidad</th>
+                    <th scope="col">Numero de Cuenta</th>
                     <th scope="col">Edad</th>
-                    <th scope="col">Carrera_u_Profesión</th>
+                    <th scope="col">Carrera</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Fecha</th>
                     <th scope="col">Acciones</th>
@@ -34,14 +34,14 @@
 
                 <tbody>
 
-                @foreach($estadisticas as $estadistica)
+                @foreach($estadisticas as $estudiante)
                     <tr>
-                        <td>{{$estadistica->nombre}}</td>
-                        <td>{{$estadistica->numero_de_cuenta}}</td>
-                        <td>{{$estadistica->edad}}</td>
-                        <td>{{$estadistica->carrera}}</td>
-                        <td>{{$estadistica->telefono}}</td>
-                        <td>{{$estadistica->fecha_de_ingreso}}</td>
+                        <td>{{$estudiante->nombre}}</td>
+                        <td>{{$estudiante->numero_de_cuenta}}</td>
+                        <td>{{$estudiante->edad}}</td>
+                        <td>{{$estudiante->carrera}}</td>
+                        <td>{{$estudiante->telefono}}</td>
+                        <td>{{$estudiante->fecha_de_ingreso}}</td>
                         <td>
                             <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
                         </td>
@@ -50,6 +50,71 @@
 
                 </tbody>
             </table>
+
+            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+                box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Numero de Empleado</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                @foreach($estadisticas as $docente)
+                    <tr>
+                        <td>{{$docente->nombre}}</td>
+                        <td>{{$docente->numero_de_empleado}}</td>
+                        <td>{{$docente->edad}}</td>
+                        <td>{{$docente->telefono}}</td>
+                        <td>{{$docente->fecha_de_ingreso}}</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
+                        </td>
+                    </tr>
+                @endforeach
+
+                </tbody>
+            </table>
+
+            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+                box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Numero de Identidad</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Profesión U Oficio </th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                @foreach($estadisticas as $particular)
+                    <tr>
+                        <td>{{$particular->nombre}}</td>
+                        <td>{{$particular->numero_de_identidad}}</td>
+                        <td>{{$particular->edad}}</td>
+                        <td>{{$particular->profesion_u_oficio}}</td>
+                        <td>{{$particular->telefono}}</td>
+                        <td>{{$particular->fecha_de_ingreso}}</td>
+                        <td>
+                            <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
+                        </td>
+                    </tr>
+                @endforeach
+
+                </tbody>
+            </table>
+
             {{ $estadisticas->links() }}
         </div>
     </div>

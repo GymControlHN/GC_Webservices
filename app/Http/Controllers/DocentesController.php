@@ -32,7 +32,6 @@ class DocentesController extends Controller
 
          ]);
 
-
         $nuevoDocente = new Cliente();
         $nuevoDocente->nombre = $request->input('nombre');
         $nuevoDocente->numero_de_empleado = $request->input('numero_de_empleado');
@@ -40,10 +39,6 @@ class DocentesController extends Controller
         $nuevoDocente->telefono = $request->input('telefono');
         $nuevoDocente->genero = $request->input('genero');
         $nuevoDocente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-
-
-
-
         $nuevoDocente->tipo="Docente";
 
 
