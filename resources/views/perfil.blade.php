@@ -86,7 +86,7 @@
                 <h6 style="text-align: center">Crear un usuario nuevo</h6>
             </div>
             <div class="card-body">
-                <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                <form class="form-horizontal" method="POST" action="{{ route('nuevo.usuario') }}">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

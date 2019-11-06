@@ -128,6 +128,16 @@
             <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
         </form>
 
+        @if(session("exito"))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ session('exito') }}
+            </div>
+
+        @endif
+
         <div class="modal fade" id="editarParticular" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -293,7 +303,12 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary "><a href="{{route("pagoparticulares")}}"><i class="fas fa-dollar-sign"></i></a> </button>
+                        <form style="display: none" id="pago2_form" method="GET" action="{{route("pagoparticulares")}}">
+                            <input name="id_cliente" value="{{$particular->id}}" type="hidden">
+                            {{ csrf_field() }}
+                        </form>
+                        <button class="btn btn-secondary mr-xl-2"
+                                onclick="document.getElementById('pago2_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
 
                         <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
                                 data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"

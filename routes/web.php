@@ -92,6 +92,14 @@ Route::delete('particulares/{id}/borrar','ParticularesController@destroy')->name
 Route::get('particulares/{id}/editar','ParticularesController@edit')->name('particular.editar');
 Route::put('particulares/editar','ParticularesController@update')->name('particular.update');
 
+Route::get('ruffiel/', 'RuffierController@index')->name('ruffiel');
+Route::get('ruffiel/crear', 'RuffierController@create')->name('ruffiel');
+Route::post('ruffiel/guardar', 'RuffierController@store')->name('ruffier.guardar');
+
+Route::delete('ruffiel/{id}/borrar','RuffierController@destroy')->name('ruffier.borrar');
+Route::get('ruffiel/{id}/editar','RuffierController@edit')->name('ruffier.editar');
+Route::put('riffiel/{id}/edit','RuffierController@update')->name('ruffier.update');
+
 Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
 
 Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
@@ -106,10 +114,11 @@ Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscar
 Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
 Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
 Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
+Route::delete('pagosestudiantes/{id}/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
 
-Route::get('pagosparticulares/', 'PagoEstudianteController@index')->name('pagoparticulares');
-Route::get('pagosparticulares/crear', 'PagoEstudianteController@create')->name('pagoparticulares.formulario');
-Route::post('pagosparticulares/guardar', 'PagoEstudianteController@store')->name('pagoparticulares.guardar');
+Route::get('pagosparticulares/', 'PagoParticularController@index')->name('pagoparticulares');
+Route::get('pagosparticulares/crear', 'PagoParticularController@create')->name('pagoparticulares.formulario');
+Route::post('pagosparticulares/guardar', 'PagoParticularController@store')->name('pagoparticulares.guardar');
 
 Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
 Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas');
@@ -117,7 +126,6 @@ Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadis
 Route::get('grasa/{id}', 'GrasaController@index')->name('grasa.uni');
 Route::get('grasa/nuevo/{id}', 'GrasaController@Create')->name('botongrasa');
 Route::post('grasa/crear', 'GrasaController@store')->name('grasa.guardar');
-
 
 Route::delete('grasa/{id}/borrar','GrasaController@destroy')->name('grasa.borrar');
 Route::get('grasa/{id}/{cliente}/editar','GrasaController@edit')->name('grasa.editar');
@@ -132,6 +140,8 @@ Route::delete('imc/{id}/borrar','ImcController@destroy')->name('imc.borrar');
 Route::get('imc/{id}/{cliente}/editar','ImcController@edit')->name('imc.editar');
 Route::put('imc/{id}/edit','ImcController@update')->name('imc.update');
 //Route::get('imc/{id}/mostrar','ImcController@mostrarIMCCliente')->name('botomostrar');
+
+Route::post('nuevousuario/', 'AuthController@crear_usuario')->name('nuevo.usuario');
 
 
 

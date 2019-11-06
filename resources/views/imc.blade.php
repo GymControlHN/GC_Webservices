@@ -5,7 +5,7 @@
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Estudiantes</div>
+
             </div>
         </div>
     </header>
@@ -74,7 +74,7 @@
                                             class="fas fa-edit"></i> </a></button>
 
 
-                            <form method="post" action="{{route('imc.borrar', $antecedente->id)}}"
+                            <form method="post" action="{{route('imc.borrar',$antecedente->id)}}"
                                   onclick="return confirm('Estas seguro que deseas eliminar las medidas antropometricas? ')">
                                 <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
                                 </button>
