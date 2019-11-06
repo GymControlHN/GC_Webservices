@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use\App\Cliente;
+
 use Illuminate\Http\Request;
 use App\Grasa;
 class GrasaController extends Controller
 {
     public function index()
     {
-        $grasa = Grasa::all();
+        $grasa = Grasa::paginate(10);
         return view('grasa')->with('grasa_corporal', $grasa);
     }
 
@@ -19,14 +19,14 @@ class GrasaController extends Controller
     }
     public function store(Request $request) {
 
-       /* $this -> validate ( $request ,[
+        $this -> validate ( $request ,[
             'fecha_de_ingreso'=>'required|numeric',
             'edad'=>'required|numeric|max:100|min:10',
             'imc'=>'required',
             'grasa'=>'',
             'leyenda'=>'',
 
-        ]); */
+        ]);
 
         $nuevoMedida = new Grasa();
 
@@ -43,7 +43,7 @@ class GrasaController extends Controller
 
         // TODO redireccionar a una página con sentido.
 
-        return redirect('grasa');
+        return view('grasa');
 
     }
     public function edit($id) {

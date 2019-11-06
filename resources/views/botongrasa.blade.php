@@ -63,10 +63,11 @@
 
     <div class="container" >
 
-        <br><br>
+
         <div>
             <h5 class="label2">Calculo de la grasa corporal</h5>
             <br>
+
             <form method="post" action="
            @isset($grasa)
             {{ route('grasa.update', $grasa->id ) }}
@@ -78,11 +79,16 @@
                     ">
 
                 {{method_field('put')}}
+
                 <div class="form-group">
                     <h6 class=" label2" for="email">IMC:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3" id="imc"
-                               name="imc" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()">
+                               name="imc" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()"
+                               @isset($grasa)
+                               value="{{$grasa->imc}}"
+                                @endisset
+                        >
                     </div>
 
                 </div>
@@ -91,17 +97,23 @@
                     <h6 class="label2" for="email">Edad:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="edad" name="edad" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()">
+                               id="edad" name="edad" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()"
+                               @isset($grasa)
+                               value="{{$grasa->edad}}"
+                                @endisset
+                        >
                     </div>
                 </div>
-
-
 
                 <div class="form-group">
                     <h6 class="label2" for="email">%Grasa:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="grasa" name="grasa" maxlength="3"  disabled="true" >
+                               id="grasa" name="grasa" maxlength="3"  disabled="true"
+                               @isset($grasa)
+                               value="{{$grasa->grasa}}"
+                                @endisset
+                        >
                     </div>
                 </div>
 
@@ -109,7 +121,59 @@
                     <h6 class="label2" for="email">Diagnostico:</h6>
                     <div class="col-sm-10">
                         <input type="text" class="form-control inputtamaño3"
-                               id="leyenda" name="leyenda" maxlength="50" disabled="true">
+                               id="leyenda" name="leyenda" maxlength="50" disabled="true"
+                               @isset($grasa)
+                               value="{{$grasa->leyenda}}"
+                                @endisset
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="label2" for="email">Pc_tricipital:</h6>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control inputtamaño3"
+                               id="pc_tricipital" name="pc_tricipital" maxlength="3"
+                               @isset($grasa)
+                               value="{{$grasa->pc_tricipital}}"
+                                @endisset
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="label2" for="email">Pc_Infraescrupural:</h6>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control inputtamaño3"
+                               id="pc_infraescapular" name="pc_infraescapular" maxlength="50"
+                               @isset($grasa)
+                               value="{{$grasa->pc_infraescapular}}"
+                               @endisset
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="label2" for="email">Pc_Biciptal:</h6>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control inputtamaño3"
+                               id="pc_biciptal" name="pc_biciptal" maxlength="3"
+                               @isset($grasa)
+                               value="{{$grasa->pc_biciptal}}"
+                               @endisset
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="label2" for="email">Pc_supra_Iliaco:</h6>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control inputtamaño3"
+                               id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50"
+                               @isset($grasa)
+                               value="{{$grasa->pc_supra_iliaco}}"
+                               @endisset
+                        >
                     </div>
                 </div>
 
@@ -121,8 +185,8 @@
                     <div class="col-sm-10">
                         <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
-                               @isset($estudiante)
-                               value="{{$estudiante->fecha_de_ingreso}}"
+                               @isset($grasa)
+                               value="{{$grasa->fecha_de_ingreso}}"
                                 @endisset
                         >
                     </div>
@@ -132,7 +196,7 @@
                 <div class="container1">
 
                     <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href=" {{ route('grasa') }} ">Cancelar</a></button>
-                    <button type="button" class="btn btn-primary my-4 boton3">Guardar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
                 </div>
 
 
