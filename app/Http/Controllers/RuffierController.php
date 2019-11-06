@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Ruffier;
 use Illuminate\Http\Request;
 
+
 class RuffierController extends Controller
 {
     //
@@ -91,7 +92,7 @@ class RuffierController extends Controller
         $datonuevo->pulso_a = $request->input('pulso2');
         $datonuevo->pulso_d = $request->input('pulso3');
         $datonuevo->ruffiel = $request->input('ruffiel');
-        $datonuevo->clasificacion = $request->input('clasificacion');
+        $datonuevo->clasificacion = $request->input('leyenda');
         $datonuevo->mvo2 = $request->input('mvo');
         $datonuevo->mvoreal = $request->input('mvor');
 

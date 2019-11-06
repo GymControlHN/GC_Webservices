@@ -19,7 +19,7 @@
                     <a style="color: white" class="nav-link js-scroll-trigger " href="/botonruffier">Nuevo</a></button></h2>
 
 
-            <form action="">
+
                 <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px
                 rgba(189,178,189,0.76); box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
@@ -52,9 +52,11 @@
                     <td>{{$dato->mvoreal}}</td>
                     <td class="form-inline ">
 
-                        <button class="btn btn-warning mr-xl-2 "><a style="color: white" href="{{route('ruffier.editar',$dato->id)}}"></a>
-                        <i class="fas fa-edit"></i></button>
-                       <form method="post" action="{{route('ruffier.borrar', $dato->id_cliente)}}" class="pull-left">
+                        <form method="GET" action="{{route('ruffier.editar',$dato->id)}}" class="pull-left">
+                            {{method_field('put')}}
+                            <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
+                        </form>
+                       <form method="post" action="{{route('ruffier.borrar', $dato->id)}}" class="pull-left">
                            {{method_field('delete')}}
                         <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
                        </form>
@@ -65,7 +67,6 @@
              </table>
                     {{$datos->links()}}
             </div>
-          </form>
     </div>
 
 
