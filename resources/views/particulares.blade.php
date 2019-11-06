@@ -303,7 +303,12 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary mr-xl-2 "><a href="{{route("pagoparticulares")}}"><i class="fas fa-dollar-sign"></i></a> </button>
+                        <form style="display: none" id="pago2_form" method="GET" action="{{route("pagoparticulares")}}">
+                            <input name="id_cliente" value="{{$particular->id}}" type="hidden">
+                            {{ csrf_field() }}
+                        </form>
+                        <button class="btn btn-secondary mr-xl-2"
+                                onclick="document.getElementById('pago2_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
 
                         <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
                                 data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"

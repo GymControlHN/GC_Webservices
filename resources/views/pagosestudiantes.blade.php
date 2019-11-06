@@ -8,7 +8,7 @@
     </header>
 
     <div class=" w3-container w3-teal mx-5">
-        <h2 class="h3centrado">Registro de pagos mensuales</h2>
+        <h3 class="h3centrado">Registro de pagos mensuales de <strong>{{$nombre->nombre}}</strong></h3>
 
         <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2" >
             <i class="fas fa-dollar-sign"></i> Agregar pago </button>
@@ -55,6 +55,7 @@
                                 >
                             </div>
                             <div class="modal-footer">
+                                <input name="id" value="{{$nombre->id}}" type="hidden">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit"  class="btn btn-primary ">Guardar</button>
 
@@ -100,6 +101,7 @@
             <tr>
             </thead>
             <tbody>
+            @if($pagos->count()>0)
             @foreach ($pagos as $day => $users_list)
                 <tr>
                     <th colspan="4"
@@ -118,9 +120,14 @@
                                 {{method_field('delete')}}
                             </form>
                         </th>
+
                     </tr>
                 @endforeach
             @endforeach
+            @else
+                <tr>
+                    <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
+            @endif
 
 
 
