@@ -42,9 +42,9 @@ Route::get("/perfil",function (){
 });
 
 
-Route::get("/imc",function (){
-    return view("imc");
-});
+//Route::get("/imc",function (){
+  //  return view("imc");
+//});
 
 Route::get("/verestadistica",function (){
     return view("verestadistica");
@@ -122,13 +122,13 @@ Route::delete('grasa/{id}/borrar','GrasaController@destroy')->name('grasa.borrar
 Route::get('grasa/{id}/editar','GrasaController@edit')->name('grasa.editar');
 Route::put('grasa/editar','GrasaController@update')->name('grasa.update');
 
-Route::get('imc','ImcController@index')->name('imc.ini');
-Route::get('imc/nuevo','ImcController@create')->name('botonimc');
+Route::get('imc/{id}','ImcController@index')->name('imc.ini');
+Route::get('imc/nuevo/{id}','ImcController@create')->name('botonimc');
 Route::post('imc/crear','ImcController@store')->name('imc.guardar');
 
 Route::delete('imc/{id}/borrar','ImcController@destroy')->name('imc.borrar');
 
-Route::get('imc/{id}/editar','ImcController@edit')->name('imc.editar');
+Route::get('imc/{id}/{cliente}/editar','ImcController@edit')->name('imc.editar');
 Route::put('imc/{id}/edit','ImcController@update')->name('imc.update');
 //Route::get('imc/{id}/mostrar','ImcController@mostrarIMCCliente')->name('botomostrar');
 

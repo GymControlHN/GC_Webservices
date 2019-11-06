@@ -62,7 +62,7 @@
 
         <form name="f1" id="f1"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
-              method="post" action="{{route('imc.guardar')}}"
+              method="POST" action="{{route('imc.guardar')}}"
                >
             {{csrf_field()}}
 
@@ -181,6 +181,7 @@
 
 
 
+            <input name="id" value="{{$id}}" type="hidden">
             <div class="container1">
 
                 <button type="button" class="btn btn-primary my-4 boton"><a style="color: white"
