@@ -225,6 +225,29 @@ modal.find('.modal-body #id').val(cat_id);
 
 </script>
 
+<script>
+$('#editarMedidad').on('show.bs.modal', function (event){
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var edad = button.data('myedad');
+    var grasa = button.data('mygrasa');
+    var fecha = button.data('myfecha');
+    var imc = button.data('myimc');
+    var leyenda = button.data('myileyenda');
+    var cat_id = button.data('mycat');
+    var modal = $(this);
+
+    modal.find('.modal-body #edad').val(edad);
+    modal.find('.modal-body #grasa').val(grasa);
+    modal.find('.modal-body #fecha_de_ingreso').val(fecha);
+    modal.find('.modal-body #imc').val(imc);
+    modal.find('.modal-body #leyenda').val(leyenda);
+    modal.find('.modal-body #id').val(cat_id);
+
+});
+
+
+
+</script>
 
 </body>
 

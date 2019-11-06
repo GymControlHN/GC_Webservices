@@ -106,7 +106,7 @@ Route::post('ruffiel/guardar', 'RuffierController@store')->name('ruffier.guardar
 
 Route::delete('ruffiel/{id}/borrar','RuffierController@destroy')->name('ruffier.borrar');
 Route::get('ruffiel/{id}/editar','RuffierController@edit')->name('ruffier.editar');
-Route::put('ruffiel/{id}/edit','RuffierController@update')->name('ruffier.update');
+Route::put('riffiel/{id}/edit','RuffierController@update')->name('ruffier.update');
 
 Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
 

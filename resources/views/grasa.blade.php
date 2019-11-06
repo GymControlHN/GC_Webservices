@@ -11,31 +11,23 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container" >
         <div class="alert alert-dismissable mb-n4" role="alert">
-            <h2 style="all: revert">Datos fisicos</h2>
+<h2 class="h3centrado ">Grasa Corporal</h2>
 
-            <form class="form-inline">
+            <button type="button" class="btn btn-primary my-5">
+                <a style="color: white" href=" {{ route('grasa.crear') }} ">Nuevo</a></button>
+            <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+            box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+                <table class="table ruler-vertical table-hover mx-sm-0 ">
 
-                <div class="form-group mr-sm-4 my-sm-4 ">
-                    <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
-                </div>
-                <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
-            </form>
-
-
-
-
-
-
-
-            <h2 style="all: revert">Grasa Corporal <button type="button" class="btn btn-primary my-5">
-                    <a style="color: white" class="nav-link js-scroll-trigger" href="/botongrasa">Nuevo</a></button></h2>
-            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-                box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">Fecha</th>
+                    <th scope="col">PC_Tricipital</th>
+                    <th scope="col">PC_Infraescupular</th>
+                    <th scope="col">PC_Supra_Iliaco</th>
+                    <th scope="col">PC_Biciptal</th>
                     <th scope="col">Imc</th>
                     <th scope="col">edad</th>
                     <th scope="col">%Grasa</th>
@@ -46,48 +38,31 @@
 
                 <tbody>
                 <tr>
-                    <th scope="row">2019/11/16</th>
-                    <td>24.5</td>
-                    <td>45</td>
-                    <td>8.9</td>
+                    @foreach($grasa_corporal as $grasa)
+                        <th>{{$grasa->fecha_de_ingreso}}</th>
+                        <th>{{$grasa->pc_tricipital}}</th>
+                        <td>{{$grasa->pc_infraescapular}}</td>
+                        <td>{{$grasa->pc_supra_iliaco}}</td>
+                        <td>{{$grasa->pc_biciptal}}</td>
+                    <td>{{$grasa->imc}}</td>
+                    <td>{{$grasa->edad}}</td>
+                        <td>{{$grasa->grasa}}</td>
                     <td class="form-inline " style="width: 300px">
-                        <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
-
+                        <button class="btn btn-warning mr-xl-2 " ><a href="{{route('grasa.editar', $grasa->id)}}"><i class="fas fa-edit"></i></a></button>
+                        <form method="post" action="{{route('grasa.borrar', $grasa->id)}}"onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
                         <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
-
+                            {{method_field('delete')}}
+                        </form>
                     </td>
 
-
-                </tbody>
-                <tbody>
-                <tr>
-                    <th scope="row">2019/10/16</th>
-                    <td>24.5</td>
-                    <td>45</td>
-                    <td>8.9</td>
-                    <td class="form-inline " style="width: 300px">
-                        <button class="btn btn-secondary mr-xl-2" ><i class="fas fa-eye"></i></button>
-                        <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
-
-                        <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
-
-                    </td>
+                </tr>
+                @endforeach
 
 
                 </tbody>
             </table>
 
-
-
-
-
-
-
-
-
-
-
+</div>
 
         </div>
     </div>
