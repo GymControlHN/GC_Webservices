@@ -63,31 +63,22 @@
 
     <div class="container" >
 
+        <form name="f1" id="f1"
+              style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
+              method="POST" action="{{route('grasa.guardar')}}"
+        >
+            {{csrf_field()}}
 
-        <div>
+        <br><br>
             <h5 class="label2">Calculo de la grasa corporal</h5>
             <br>
-
-            <form method="post" action="
-           @isset($grasa)
-            {{ route('grasa.update', $grasa->id ) }}
-            @endisset
-
-            @empty($grasa)
-            {{ route('grasa.guardar') }}
-            @endempty
-                    ">
-
-                {{method_field('put')}}
 
                 <div class="form-group">
                     <h6 class=" label2" for="email">IMC:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3" id="imc"
                                name="imc" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()"
-                               @isset($grasa)
-                               value="{{$grasa->imc}}"
-                                @endisset
+                               value="{{old('imc')}}"
                         >
                     </div>
 
@@ -98,9 +89,8 @@
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
                                id="edad" name="edad" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()"
-                               @isset($grasa)
-                               value="{{$grasa->edad}}"
-                                @endisset
+                               value="{{old('edad')}}"
+
                         >
                     </div>
                 </div>
@@ -110,9 +100,8 @@
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
                                id="grasa" name="grasa" maxlength="3"  disabled="true"
-                               @isset($grasa)
-                               value="{{$grasa->grasa}}"
-                                @endisset
+                               value="{{old('grasa')}}"
+
                         >
                     </div>
                 </div>
@@ -122,9 +111,8 @@
                     <div class="col-sm-10">
                         <input type="text" class="form-control inputtamaño3"
                                id="leyenda" name="leyenda" maxlength="50" disabled="true"
-                               @isset($grasa)
-                               value="{{$grasa->leyenda}}"
-                                @endisset
+                               value="{{old('leyenda')}}"
+
                         >
                     </div>
                 </div>
@@ -134,9 +122,8 @@
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
                                id="pc_tricipital" name="pc_tricipital" maxlength="3"
-                               @isset($grasa)
-                               value="{{$grasa->pc_tricipital}}"
-                                @endisset
+                               value="{{old('pc_tricipital')}}"
+
                         >
                     </div>
                 </div>
@@ -146,9 +133,8 @@
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
                                id="pc_infraescapular" name="pc_infraescapular" maxlength="50"
-                               @isset($grasa)
-                               value="{{$grasa->pc_infraescapular}}"
-                               @endisset
+                               value="{{old('pc_infraescapular')}}"
+
                         >
                     </div>
                 </div>
@@ -158,9 +144,8 @@
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
                                id="pc_biciptal" name="pc_biciptal" maxlength="3"
-                               @isset($grasa)
-                               value="{{$grasa->pc_biciptal}}"
-                               @endisset
+                               value="{{old('pc_biciptal')}}"
+
                         >
                     </div>
                 </div>
@@ -170,9 +155,8 @@
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
                                id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50"
-                               @isset($grasa)
-                               value="{{$grasa->pc_supra_iliaco}}"
-                               @endisset
+                               value="{{old('pc_supra_iliaco')}}"
+
                         >
                     </div>
                 </div>
@@ -185,9 +169,8 @@
                     <div class="col-sm-10">
                         <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
-                               @isset($grasa)
-                               value="{{$grasa->fecha_de_ingreso}}"
-                                @endisset
+                               value="{{old('fecha_de_ingreso')}}"
+
                         >
                     </div>
 
@@ -195,15 +178,16 @@
 
                 <div class="container1">
 
-                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href=" {{ route('grasa') }} ">Cancelar</a></button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/grasa">Cancelar</a></button>
+                    <button type="submit" class="btn btn-primary" >Guardar</button>
                 </div>
 
 
 
-        </form>
 
-        </div>
+
+
+    </form>
 
     </div>
 

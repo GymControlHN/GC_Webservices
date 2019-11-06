@@ -18,7 +18,8 @@ class Grasa extends Model
         'imc',
         'grasa',
         'leyenda',
-        'tipo'
+        'tipo',
+        "id_cliente"
 
     ];
 

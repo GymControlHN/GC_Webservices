@@ -18,6 +18,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
             </form>
+            <h5 class="h3centrado">Listado de Estudiantes</h5>
             <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                 box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <thead class="thead-light">
@@ -33,8 +34,8 @@
                 </thead>
 
                 <tbody>
-
-                @foreach($estadisticas as $estudiante)
+                @if($estudiantes->count()>0)
+                @foreach($estudiantes as $estudiante)
                     <tr>
                         <td>{{$estudiante->nombre}}</td>
                         <td>{{$estudiante->numero_de_cuenta}}</td>
@@ -47,10 +48,13 @@
                         </td>
                     </tr>
                 @endforeach
-
+                @else
+                    <tr>
+                        <td colspan="7" style="text-align: center">No hay estudiantes ingresados</td>
+                @endif
                 </tbody>
             </table>
-
+            <h5 class="h3centrado">Listado de Docentes</h5>
             <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                 box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <thead class="thead-light">
@@ -65,8 +69,8 @@
                 </thead>
 
                 <tbody>
-
-                @foreach($estadisticas as $docente)
+                @if($docentes->count()>0)
+                @foreach($docentes as $docente)
                     <tr>
                         <td>{{$docente->nombre}}</td>
                         <td>{{$docente->numero_de_empleado}}</td>
@@ -78,10 +82,13 @@
                         </td>
                     </tr>
                 @endforeach
-
+                @else
+                    <tr>
+                        <td colspan="7" style="text-align: center">No hay docentes ingresados </td>
+                @endif
                 </tbody>
             </table>
-
+            <h5 class="h3centrado">Listado de Particulares</h5>
             <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                 box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <thead class="thead-light">
@@ -97,8 +104,8 @@
                 </thead>
 
                 <tbody>
-
-                @foreach($estadisticas as $particular)
+                @if($particulares->count()>0)
+                @foreach($particulares as $particular)
                     <tr>
                         <td>{{$particular->nombre}}</td>
                         <td>{{$particular->numero_de_identidad}}</td>
@@ -111,11 +118,13 @@
                         </td>
                     </tr>
                 @endforeach
-
+                @else
+                    <tr>
+                        <td colspan="7" style="text-align: center">No hay particulares ingresados</td>
+                @endif
                 </tbody>
             </table>
 
-            {{ $estadisticas->links() }}
         </div>
     </div>
 
