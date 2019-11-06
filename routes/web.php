@@ -111,12 +111,13 @@ Route::get('pagosparticulares/', 'PagoEstudianteController@index')->name('pagopa
 Route::get('pagosparticulares/crear', 'PagoEstudianteController@create')->name('pagoparticulares.formulario');
 Route::post('pagosparticulares/guardar', 'PagoEstudianteController@store')->name('pagoparticulares.guardar');
 
-Route::get('grasa/', 'EstadisticasController@index')->name('estadisticas');
-Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas.crear');
+Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
+Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas');
 
-Route::get('grasa/', 'GrasaController@index')->name('grasa');
-Route::get('grasa/crear', 'GrasaController@create')->name('grasa.crear');
+Route::get('grasa', 'GrasaController@index')->name('grasa');
+Route::get('grasacrear', 'GrasaController@create')->name('grasa.crear');
 Route::post('grasa/guardar', 'GrasaController@store')->name('grasa.guardar');
+
 
 Route::delete('grasa/{id}/borrar','GrasaController@destroy')->name('grasa.borrar');
 Route::get('grasa/{id}/editar','GrasaController@edit')->name('grasa.editar');
