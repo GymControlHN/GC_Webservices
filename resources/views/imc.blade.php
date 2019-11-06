@@ -24,12 +24,12 @@
             <h2 style="all: revert">   <button type="button" class="btn btn-primary my-5 float-right" >
                     <a style="color: white" class="nav-link js-scroll-trigger" href="/botonimc">Nuevo</a></button></h2>
 
-            <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+            <div class="table-responsive  mx-sm-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
-                <table class="table ruler-vertical table-hover mx-sm-0 ">
+                <table class="table ruler-vertical    table-hover mx-sm-0 ">
 
 
-                <thead class="thead-light">
+                <thead class="thead-light " >
                 <tr>
                     <th scope="row">Peso kg</th>
                     <th scope="col">Altura°</th>
@@ -48,6 +48,8 @@
                 </thead>
 
                 <tbody>
+                @if($antecedentes->count()>0)
+
                 @foreach($antecedentes as $antecedente)
                 <tr>
 
@@ -82,7 +84,11 @@
 
 
 
-
+                @else
+                    <tr>
+                        <td colspan="13" style="text-align: center">No hay medidas ingresadas</td>
+                    </tr>
+                @endif
 
 
 
@@ -94,7 +100,9 @@
 
 
 
-        </div>
+
+
+    </div>
     </div>
     </div>
     </div>
