@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
 use Illuminate\Http\Request;
+use App\Cliente;
 class EstadisticasController extends Controller
 {
     public function index()
