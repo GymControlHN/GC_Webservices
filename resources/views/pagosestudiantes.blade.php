@@ -8,14 +8,13 @@
     </header>
 
     <div class=" w3-container w3-teal mx-5">
-        <h3 class="h3centrado">Registro de pagos mensuales de <strong>{{$nombre->nombre}}</strong></h3>
+        <div>
+                <h3>Registro de pago mensuales</h3>
+                <h6>Nombre:  {{$nombre->nombre}}</h6>
+        </div>
 
         <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2" >
             <i class="fas fa-dollar-sign"></i> Agregar pago </button>
-
-
-
-
 
         <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -80,7 +79,7 @@
         </form>
 
         @if(session("exito"))
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

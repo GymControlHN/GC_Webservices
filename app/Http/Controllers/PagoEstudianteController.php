@@ -21,7 +21,8 @@ class PagoEstudianteController extends Controller
 
         $nombre = Cliente::findOrfail($request->input("id_cliente"));
 
-        return view('pagosestudiantes', compact("pagos"))->with("nombre", $nombre);
+        return view('pagosestudiantes', compact("pagos"))
+            ->with("nombre", $nombre);
     }
 
     public function create() {

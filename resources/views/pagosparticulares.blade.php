@@ -8,7 +8,11 @@
     </header>
 
     <div class="w3-container w3-teal mx-5">
-        <h3 class="h3centrado">Registro de pagos mensuales de <strong>{{$nombre->nombre}}</strong></h3>
+        <h3>Registro de pagos mensuales</h3>
+
+        <div>
+            <h6>Nombre:  {{$nombre->nombre}}</h6>
+        </div>
 
 
         <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2">
