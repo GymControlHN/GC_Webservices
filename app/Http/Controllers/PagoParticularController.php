@@ -18,7 +18,9 @@ class PagoParticularController extends Controller
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
         $nombre = Cliente::findOrfail($request->input("id_cliente"));
-        return view('pagosparticulares', compact("pagos"))->with("nombre", $nombre);
+
+        return view('pagosparticulares', compact("pagos"))
+            ->with("nombre", $nombre);
     }
 
     public function create()
