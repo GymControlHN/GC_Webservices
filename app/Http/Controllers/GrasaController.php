@@ -7,6 +7,7 @@ use App\Cliente;
 
 use Illuminate\Http\Request;
 use App\Grasa;
+use DB;
 
 class GrasaController extends Controller
 {
@@ -62,7 +63,7 @@ class GrasaController extends Controller
     public function edit($id,$id_cliente)
 
     {
-        $grasa = Imc::findOrfail($id);
+        $grasa = Grasa::findOrfail($id);
         $id_cliente= Cliente::findOrFail($id_cliente);
         return view('botongrasaeditar')-> with("grasa", $grasa)->with("id",$id_cliente);
 

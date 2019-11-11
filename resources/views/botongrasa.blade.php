@@ -77,7 +77,7 @@
                     <h6 class=" label2" for="email">IMC:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3" id="imc"
-                               name="imc" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()"
+                               name="imc" maxlength="3" placeholder="Ingrese su imc" onkeyup="calcularGrasa()"
                                value="{{old('imc')}}"
                         >
                     </div>
@@ -88,7 +88,7 @@
                     <h6 class="label2" for="email">Edad:</h6>
                     <div class="col-sm-10">
                         <input type="number" class="form-control inputtamaño3"
-                               id="edad" name="edad" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()"
+                               id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGrasa()"
                                value="{{old('edad')}}"
 
                         >
@@ -175,7 +175,7 @@
                     </div>
 
                 </div>
-
+            <input name="id" value="{{$id}}" type="hidden">
                 <div class="container1">
 
                     <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/grasa">Cancelar</a></button>

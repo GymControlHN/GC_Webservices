@@ -49,7 +49,7 @@
                     <td>{{$grasa->edad}}</td>
                         <td>{{$grasa->grasa}}</td>
                     <td class="form-inline " style="width: 300px">
-                        <button class="btn btn-warning mr-xl-2 " ><a href="{{route('imc.editar',[$grasa->id,$grasa->id_cliente])}}"><i class="fas fa-edit"></i></a></button>
+                        <button class="btn btn-warning mr-xl-2 " ><a href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i class="fas fa-edit"></i></a></button>
                         <form method="post" action="{{route('grasa.borrar', $grasa->id)}}"onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
                         <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}

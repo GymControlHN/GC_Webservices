@@ -332,7 +332,7 @@
 @endforeach
                 @else
                     <tr>
-                        <td colspan="7" style="text-align: center">No hay particulares ingresados</td>
+                        <td colspan="8" style="text-align: center">No hay particulares ingresados</td>
                     </tr>
                 @endif
                 </tbody>

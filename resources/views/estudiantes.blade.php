@@ -324,7 +324,7 @@
 @endforeach
         @else
             <tr>
-                <td colspan="7" style="text-align: center">No hay estudiantes ingresados</td>
+                <td colspan="8" style="text-align: center">No hay estudiantes ingresados</td>
         @endif
 
 
