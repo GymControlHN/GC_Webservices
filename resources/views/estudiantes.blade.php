@@ -11,6 +11,7 @@
     </header>
 
    <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
+
            <h2 style="all: revert">Listado de Estudiantes</h2>
 
 
@@ -34,6 +35,10 @@
                            </button>
                        </div>
                        <div class="modal-body">
+
+                           <div class="container">
+
+                           </div>
 
                            <form method="post" action="{{route('estudiante.guardar')}}">
 
@@ -109,15 +114,14 @@
                                           required>
                                </div>
 
+                                   <div class="modal-footer">
+                                       <button type="button" class="btn btn-secondary" data-dismiss="modal" >cerrar</button>
+                                       <button type="submit"  class="btn btn-primary">Guardar</button>
 
+                                   </div>
 
-
-                               <div class="modal-footer">
-                               <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                               <button type="submit"  class="btn btn-primary">Guardar</button>
-
-                           </div>
                            </form>
+
                        </div>
 
                    </div>
@@ -136,8 +140,18 @@
         <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
     </form>
 
-       <div class="modal fade show" id="editarEstudiante" tabindex="-1" role="dialog"
-            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+       @if(session("exito"))
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+               {{ session('exito') }}
+           </div>
+
+       @endif
+
+       <div class="modal fade" id="editarEstudiante" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" >
            <div class="modal-dialog modal-dialog-scrollable" role="document">
                <div class="modal-content">
                    <div class="modal-header">
@@ -247,15 +261,12 @@
                                >
                            </div>
 
-
-
-
-                           <div class="modal-footer">
-                               <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                               <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
-
-                           </div>
                        </form>
+                       <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                           <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
+
+                       </div>
                    </div>
 
                </div>
@@ -295,7 +306,12 @@
 
 
             <td class="form-inline " style="width: 300px">
-                <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoestudiantes")}}"><i class="fas fa-dollar-sign"></i></a> </button>
+                <form style="display: none" id="pago_form" method="GET" action="{{route("pagoestudiantes")}}">
+                    <input name="id_cliente" value="{{$estudiante->id}}" type="hidden">
+                    {{ csrf_field() }}
+                </form>
+                <button class="btn btn-secondary mr-xl-2"
+                        onclick="document.getElementById('pago_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
                 <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"
                         data-mycuenta="{{$estudiante->numero_de_cuenta}}" data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                         data-mytelefono="{{$estudiante->telefono}}" data-mycarrera="{{$estudiante->carrera}}"

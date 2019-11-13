@@ -231,6 +231,7 @@
 
 
 
+            <input name="id_cliente" value="{{$id->id}}" type="hidden">
 
             <div class="container1">
 

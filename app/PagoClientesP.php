@@ -11,5 +11,6 @@ class PagoClientesP extends Model
     protected $fillable =[
         'mes',
         'fecha_pago',
+        "id_cliente"
     ];
 }

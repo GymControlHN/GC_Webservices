@@ -2,20 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\PagoClientesP;
 
 class PagoParticularController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
         $pagos = PagoClientesP::where("tipo_pago","=","Pago_Particular")
+            ->where("id_cliente", "=", $request->input("id_cliente"))
             ->orderBy("fecha_pago", "asc")
             ->get()
             ->groupBy(function ($item) {
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
-        return view('pagosparticulares', compact("pagos"));
+        $nombre = Cliente::findOrfail($request->input("id_cliente"));
+
+        return view('pagosparticulares', compact("pagos"))
+            ->with("nombre", $nombre);
     }
 
     public function create()

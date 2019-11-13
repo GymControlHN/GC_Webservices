@@ -8,7 +8,11 @@
     </header>
 
     <div class="w3-container w3-teal mx-5">
-        <h2 class="h3centrado">Registro de pagos mensuales</h2>
+        <h3>Registro de pagos mensuales</h3>
+
+        <div>
+            <h6>Nombre:  {{$nombre->nombre}}</h6>
+        </div>
 
 
         <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2">
@@ -79,7 +83,7 @@
         </div>
         <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
                       box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
-            <thead>
+            <thead class="thead-light">
             <tr>
                 <th>Mes</th>
                 <th>Fecha</th>
@@ -88,6 +92,8 @@
             <tr>
             </thead>
             <tbody>
+
+            @if($pagos->count()>0)
             @foreach ($pagos as $day => $users_list)
                 <tr>
                     <th colspan="4"
@@ -109,6 +115,10 @@
                     </tr>
                 @endforeach
             @endforeach
+            @else
+                <tr>
+                    <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
+            @endif
 
 
 
