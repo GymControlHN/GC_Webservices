@@ -92,7 +92,7 @@ class GrasaController extends Controller
         $medida->imc = $request->input('imc');
         $medida->grasa = $request->input('grasa');
         $medida->leyenda = $request->input('leyenda');
-        $medida->id_cliente=$request->input("id");
+        $medida->id_cliente=$request->input("id_cliente");
 
 
         $medida->save();
