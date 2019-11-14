@@ -15,7 +15,7 @@
         <div class="alert alert-dismissable mb-n4" role="alert">
         <h2 class="h3centrado ">Grasa Corporal <strong>{{$nombre->nombre}}</strong></h2>
 
-            <button type="button" class="btn btn-primary my-5 float-right">
+            <button type="button" class="btn btn-primary my-4 float-right">
                 <a style="color: white" class="nav-link js-scroll-trigger" href="{{route("botongrasa",["id"=>$nombre->id])}}">Nuevo</a></button>
             <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
             box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
