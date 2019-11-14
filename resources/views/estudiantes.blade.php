@@ -11,8 +11,7 @@
     </header>
 
    <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-
-           <h2 style="all: revert">Listado de Estudiantes</h2>
+           <h2 class="h3centrado">Listado de Estudiantes</h2>
 
 
            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalScrollable">
@@ -35,10 +34,6 @@
                            </button>
                        </div>
                        <div class="modal-body">
-
-                           <div class="container">
-
-                           </div>
 
                            <form method="post" action="{{route('estudiante.guardar')}}">
 
@@ -118,10 +113,8 @@
                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" >cerrar</button>
                                        <button type="submit"  class="btn btn-primary">Guardar</button>
 
-                                   </div>
-
+                           </div>
                            </form>
-
                        </div>
 
                    </div>
@@ -266,7 +259,8 @@
                            <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                            <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
 
-                       </div>
+                           </div>
+                       </form>
                    </div>
 
                </div>
@@ -330,7 +324,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$estudiante->id)}}">Imc</a>
                     </button>
-                    <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/grasa">Grasa Corporal</a>
+                    <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("grasa.uni",["id"=>$estudiante->id])}}">Grasa Corporal</a>
                     </button>
                     <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/ruffiel">Ruffier</a>
                     </button>
@@ -340,7 +334,7 @@
 @endforeach
         @else
             <tr>
-                <td colspan="7" style="text-align: center">No hay estudiantes ingresados</td>
+                <td colspan="8" style="text-align: center">No hay estudiantes ingresados</td>
         @endif
 
 

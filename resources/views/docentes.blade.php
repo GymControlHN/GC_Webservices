@@ -8,7 +8,7 @@
     </header>
 
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-            <h2 style="all: revert">Listado de Docentes</h2>
+            <h2 class="h3centrado">Listado de Docentes</h2>
 
 
 
@@ -283,7 +283,7 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$docente->id)}}">Imc</a></button>
-                            <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/grasa">Grasa Corporal</a></button>
+                            <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("grasa.uni",["id"=>$docente->id])}}">Grasa Corporal</a></button>
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/ruffiel">Ruffiel</a></button>
                         </div>
                     </td>

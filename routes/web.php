@@ -51,7 +51,7 @@ Route::get("/verestadistica",function (){
 });
 
 Route::get("/grasa",function (){
-    return view("grasa");
+    //return view("grasa");
 });
 
 Route::get("/ruffiel",function (){
@@ -114,14 +114,14 @@ Route::post('pagosparticulares/guardar', 'PagoEstudianteController@store')->name
 Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
 Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas');
 
-Route::get('grasa', 'GrasaController@index')->name('grasa');
-Route::get('grasacrear', 'GrasaController@create')->name('grasa.crear');
-Route::post('grasa/guardar', 'GrasaController@store')->name('grasa.guardar');
+Route::get('grasa/{id}', 'GrasaController@index')->name('grasa.uni');
+Route::get('grasa/nuevo/{id}', 'GrasaController@Create')->name('botongrasa');
+Route::post('grasa/crear', 'GrasaController@store')->name('grasa.guardar');
 
 
 Route::delete('grasa/{id}/borrar','GrasaController@destroy')->name('grasa.borrar');
-Route::get('grasa/{id}/editar','GrasaController@edit')->name('grasa.editar');
-Route::put('grasa/editar','GrasaController@update')->name('grasa.update');
+Route::get('grasa/{id}/{cliente}/editar','GrasaController@edit')->name('grasa.editar');
+Route::put('grasa/{id}/edit','GrasaController@update')->name('grasa.update');
 
 Route::get('imc','ImcController@index')->name('imc.ini');
 Route::get('imc/nuevo','ImcController@create')->name('botonimc');
