@@ -15,16 +15,16 @@ class CreateRuffierTable extends Migration
     {
         Schema::create('ruffier', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fecha_de_ingreso')->nullable();
-            $table->double('pulso_r')->nullable();
-            $table->double('pulso_a')->nullable();
-            $table->double('pulso_d')->nullable();
-            $table->float('ruffiel')->nullable();
-            $table->string('clasificacion',20)->nullable();
-            $table->double('mvo2')->nullable();
-            $table->double('mvoreal')->nullable();
-            $table->unsignedInteger('cliente_id');
-            $table->foreign('cliente_id')->references("id")->on("clientes_gym")->onDelete('cascade')->onUpdate('cascade');
+            $table->date('fecha_de_ingreso');
+            $table->double('pulso_r');
+            $table->double('pulso_a');
+            $table->double('pulso_d');
+            $table->float('ruffiel');
+            $table->string('clasificacion',20);
+            $table->double('mvo2');
+            $table->double('mvoreal');
+            $table->unsignedInteger('id_cliente');
+            $table->foreign('id_cliente')->references("id")->on("clientes_gym");
             $table->timestamps();
 
         });

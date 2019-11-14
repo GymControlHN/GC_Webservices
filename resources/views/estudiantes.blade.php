@@ -326,7 +326,7 @@
                     </button>
                     <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("grasa.uni",["id"=>$estudiante->id])}}">Grasa Corporal</a>
                     </button>
-                    <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/ruffiel">Ruffier</a>
+                    <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("ruffier.uni",["id"=>$estudiante->id])}}">Ruffier</a>
                     </button>
                 </div>
             </td>

@@ -163,6 +163,7 @@
 
                 </div>
 
+                <input name="id" value="{{$id}}" type="hidden">
                 <div class="container1">
 
                     <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>

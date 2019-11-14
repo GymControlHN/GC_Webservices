@@ -54,7 +54,8 @@
                         <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
-                    </td>
+                     </td>
+                </td>
 
                 </tr>
                 @endforeach

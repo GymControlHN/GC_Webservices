@@ -64,9 +64,10 @@
     <div class="container" >
         <form name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
-              method="post" action="@isset($grasa){{route('grasa.update', $grasa->id)}}
-        @endisset
-                ">
+              method="post"
+              action="@isset($grasa)
+              {{route('grasa.update', $grasa->id)}}
+                     @endisset ">
 
             {{method_field('put')}}
         <br><br>

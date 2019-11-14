@@ -123,6 +123,15 @@ Route::delete('grasa/{id}/borrar','GrasaController@destroy')->name('grasa.borrar
 Route::get('grasa/{id}/{cliente}/editar','GrasaController@edit')->name('grasa.editar');
 Route::put('grasa/{id}/edit','GrasaController@update')->name('grasa.update');
 
+Route::get('ruffier/{id}', 'RuffierController@index')->name('ruffier.uni');
+Route::get('ruffier/nuevo/{id}', 'RuffierController@Create')->name('botonruffier');
+Route::post('ruffier/crear', 'RuffierController@store')->name('ruffier.guardar');
+
+
+Route::delete('ruffier/{id}/borrar','RuffierController@destroy')->name('ruffier.borrar');
+Route::get('ruffier/{id}/{cliente}/editar','RuffierController@edit')->name('ruffier.editar');
+Route::put('ruffier/{id}/edit','RuffierController@update')->name('ruffier.update');
+
 Route::get('imc','ImcController@index')->name('imc.ini');
 Route::get('imc/nuevo','ImcController@create')->name('botonimc');
 Route::post('imc/crear','ImcController@store')->name('imc.guardar');

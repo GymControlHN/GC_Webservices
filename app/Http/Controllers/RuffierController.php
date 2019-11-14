@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\Ruffier;
 use Illuminate\Http\Request;
 
@@ -10,29 +11,22 @@ class RuffierController extends Controller
 {
     //
 
-    public function index()
+    public function index($id)
     {
-        $dato = Ruffier::paginate();
-        return view('ruffiel')->with('datos',$dato);
+        $datos = Ruffier::where("id_cliente","=",$id)->paginate(10);
+        $nombre = Cliente::findOrfail($id);
+        return view('ruffiel',compact("datos"))->with("nombre",$nombre);
 
 
     }
 
-    public function create()
+    public function create($id)
     {
-        return view('ruffiel');
+        return view('ruffiel')->with("id",$id);
     }
 
     public function store(Request $request)
     {
-        //$validatedData = $request->validate([
-        //  'nombre'=>'required',
-        // 'edad'=>'required|numeric|max:100|min:10',
-        // 'numero_de_cuenta'=>'required|numeric|max:11',
-        //  'fecha_de_ingreso'=>'required|max:12',
-        //  'carrera'=>'required',
-        // 'telefono'=>'required|numeric|max:8',
-        //]);
 
         $nuevosDatos = new Ruffier();
 
@@ -49,14 +43,16 @@ class RuffierController extends Controller
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','ingreso correcto');
-        return redirect('ruffiel');
+     //   return redirect('ruffiel');
+
+        return back();
 
     }
 
-    public function show(Ruffier $ruffier)
+ /*   public function show(Ruffier $ruffier)
     {
 
-    }
+    }*/
 
     public function edit($id)
     {
@@ -70,7 +66,7 @@ class RuffierController extends Controller
 
         // Validar los datos
 
-        $validatedData = $request->validate([
+       /* $validatedData = $request->validate([
             'fecha_de_ingreso' => 'required|max:12|not null',
             'pulso_r' => 'required|numeric',
             'pulso_a' => 'required|numeric',
@@ -79,10 +75,9 @@ class RuffierController extends Controller
             'clasificacion' => 'string',
             'mvo2' => 'required|numeric',
             'mvoreal' => 'required|numeric',
+        ]);*/
+       // Buscar la instancia en la base de datos.
 
-        ]);
-
-        // Buscar la instancia en la base de datos.
         $datonuevo = Ruffier::findOrFail($id);
 
         //Asignar los nuevos valores a los diferentes campos
@@ -100,7 +95,8 @@ class RuffierController extends Controller
         $datonuevo->save();
 
         // Redirigir a la lista de todos los estudiantes.
-        return redirect('ruffiel');
+        //return redirect('ruffiel');
+        return $this->index($request->input("id_cliente"));
 
 
     }
@@ -109,19 +105,9 @@ class RuffierController extends Controller
     {
      Ruffier::destroy($id);
 
-        return redirect('ruffiel');
+       // return redirect('ruffiel');
+        return $this->index($id);
 
-
-    }
-
-    public function buscarEstudiante(Request $request){
-        $busqueda = $request->input("busqueda");
-
-        $estudiantes = Estudiante::where("nombre","like","%".$busqueda."%")
-            ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
-            ->paginate(10);
-
-        return view('estudiantes')->with('estudiantes', $estudiantes);
     }
 
 

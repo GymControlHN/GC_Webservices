@@ -10,14 +10,13 @@
         </div>
     </header>
 
-    <div class="w3-container w3-teal mx-5">
-       <h2 style="all: revert">Datos fisicos</h2>
+    <div class="w3-container w3-teal mx-4">
+        <div class="alert alert-dismissable mb-n4" role="alert">
+            <h2 class="h3centrado">Ruffier de <strong>{{$nombre->nombre}}</strong></h2>
 
 
-
-            <h2 style="all: revert">Ruffier <button type="button" class="btn btn-primary mb-4 float-right">
-                    <a style="color: white" class="nav-link js-scroll-trigger " href="/botonruffier">Nuevo</a></button></h2>
-
+            <button type="button" class="btn btn-primary my-4 float-right">
+                <a style="color: white" class="nav-link js-scroll-trigger" href="{{route("botonruffier",["id"=>$nombre->id])}}">Nuevo</a></button>
 
 
                 <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px
@@ -39,10 +38,14 @@
                 </thead>
 
                 <tbody>
-                @foreach($datos as $dato)
 
                 <tr>
-                    <td>{{$dato->fecha_de_ingreso}}</td>
+                    @if($datos->count()>0)
+                    @foreach($datos as $dato)
+                    <th>{{$dato->fecha_de_ingreso}}</th>
+                            <td>{{$dato->imc}}</td>
+                            <td>{{$dato->edad}}</td>
+                            <td>{{$dato->grasa}}</td>
                     <td>{{$dato->pulso_r}}</td>
                     <td>{{$dato->pulso_a}}</td>
                     <td>{{$dato->pulso_d}}</td>
@@ -51,23 +54,24 @@
                     <td>{{$dato->mvo2}}</td>
                     <td>{{$dato->mvoreal}}</td>
                     <td class="form-inline ">
-
-                        <form method="GET" action="{{route('ruffier.editar',$dato->id)}}" class="pull-left">
-                            {{method_field('put')}}
-                            <button class="btn btn-warning mr-xl-2 "><i class="fas fa-edit"></i></button>
-                        </form>
-                       <form method="post" action="{{route('ruffier.borrar', $dato->id)}}" class="pull-left">
-                           {{method_field('delete')}}
+                        <button class="btn btn-warning mr-xl-2 "><a href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i class="fas fa-edit"></i></a></button>
+                       <form method="post" action="{{route('ruffier.borrar', $dato->id)}}" class="pull-left"
+                             onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
                         <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
+                           {{method_field('delete')}}
                        </form>
                     </td>
                 </tr>
                     @endforeach
+                @else
+                        <td colspan="9" style="text-align: center">No hay medidas ingresados</td>
+                @endif
+
                 </tbody>
              </table>
-                    {{$datos->links()}}
-            </div>
+          </div>
     </div>
+</div>
 
 
 @endsection
