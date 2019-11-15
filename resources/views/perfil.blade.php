@@ -97,44 +97,44 @@
                                     </div>
                             </div>
         </div>
-
-
-        <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+    </div>
+    <div>
+    <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
         box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
-            <table class="table ruler-vertical table-hover mx-sm-0 " >
-                <thead class="thead-light">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Correo electronico</th>
-                    <th>Contraseña</th>
-                    <th>Acciones</th>
-                <tr>
-                </thead>
-                <tbody>
-                @if($errors->count()>0)
-                    @foreach($errors as $usuario)
-                <tr>
-                    <th>{{$usuario->name}}</th>
-                    <th>{{$usuario->email}}</th>
-                    <th>{{$usuario->password}}</th>
-                    <th class="form-inline mr-xl-n2 ">
-                        <button class="btn btn-warning mr-xl-1">
-                            <i class="fas fa-edit"></i></button>
-                        <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
-                        </form>
-                    </th>
-
-                </tr>
-                    @endforeach
-                @else
+        <table class="table ruler-vertical table-hover mx-sm-0 " >
+            <thead class="thead-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Correo electronico</th>
+                <th>Contraseña</th>
+                <th>Acciones</th>
+            <tr>
+            </thead>
+            <tbody>
+            @if($errors->count()>0)
+                @foreach($errors as $usuario)
                     <tr>
-                        <td colspan="4" style="text-align: center">No hay usuarios ingresados</td>
-                @endif
+                        <th>{{$usuario->name}}</th>
+                        <th>{{$usuario->email}}</th>
+                        <th>{{$usuario->password}}</th>
+                        <th class="form-inline mr-xl-n2 ">
+                            <button class="btn btn-warning mr-xl-1">
+                                <i class="fas fa-edit"></i></button>
+                            <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                        </th>
 
-                </tbody>
-            </table>
+                    </tr>
+                @endforeach
+            @else
+                <tr>
+                    <td colspan="4" style="text-align: center">No hay usuarios ingresados</td>
+            @endif
 
-        </div>
+            </tbody>
+        </table>
+
+    </div>
     </div>
 
 @endsection
