@@ -44,6 +44,12 @@
                                     >
 
                                 </div>
+                                <h6>Profesión</h6>
+                                <div class="form-group">
+                                    <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                           required
+                                    >
+                                </div>
 
                                 <h6>Edad</h6>
                                 <div class="form-group">
@@ -56,7 +62,7 @@
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
-                                    <input type="text" pattern="([0-9]{1,5})" class="form-control" id="numero_de_empleado" name="numero_de_empleado"
+                                    <input type="text" pattern="([0-9]{1,5})" class="form-control" id="numero_de_empleado" name="identificacion"
                                            title="Ingrese solo números"
                                             required
                                            minlength="1" maxlength="5" min="1" max="99999"
@@ -250,6 +256,8 @@
                     <th scope="col">Edad</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Sexo</th>
+
+                    <th scope="col">Profesion</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
@@ -261,18 +269,20 @@
                 <tr>
 
                     <td>{{$docente->nombre}}</td>
-                    <td>{{$docente->numero_de_empleado}}</td>
+                    <td>{{$docente->identificacion}}</td>
                     <td>{{$docente->edad}}</td>
                     <td>{{$docente->telefono}}</td>
                     <td>{{$docente->genero}}</td>
+                    <td>{{$docente->profesion_u_oficio}}</td>
+
                     <td>{{$docente->fecha_de_ingreso}}</td>
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
                         <button class="btn btn-secondary mr-2"><i class="fas fa-dollar-sign"></i></button>
                         <button class="btn btn-warning  mr-2" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myedad="{{$docente->edad}}"
-                                data-mynumero="{{$docente->numero_de_empleado}}" data-myfecha="{{$docente->fecha_de_ingreso}}"
-                                data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}" data-sexo="{{$docente->genero}}" ><i class="fas fa-edit"></i></button>
+                                data-mynumero="{{$docente->identificacion}}" data-myfecha="{{$docente->fecha_de_ingreso}}"
+                                data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}"><i class="fas fa-edit"></i></button>
 
                         <form method="post" action="{{route('docente.borrar', $docente->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al docente? ')">
                             <button class="btn btn-danger  mr-2"><i class="fas fa-trash-alt"></i></button>

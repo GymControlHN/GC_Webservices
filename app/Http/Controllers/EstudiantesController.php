@@ -9,7 +9,7 @@ class  EstudiantesController extends Controller
 {
     public function index()
     {
-        $clientes = Cliente::where("tipo","=","Estudiante")
+        $clientes = Cliente::where("id_tipo_cliente","=","1")
             ->paginate(10);
         return view('estudiantes')->with('estudiantes', $clientes);
     }

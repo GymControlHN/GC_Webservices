@@ -14,18 +14,17 @@ class CreateTableClientesGym extends Migration
     public function up()
     {
         Schema::create('clientes_gym', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nombre',50);
             $table->integer('edad');
-            $table->char('numero_de_cuenta', 11)->unique()->nullable();
-            $table->string('numero_de_empleado',11)->unique()->nullable();
-            $table->char('numero_de_identidad', 13)->unique()->nullable();
+            $table->char('identificacion', 13)->unique()->nullable();
             $table->string('profesion_u_oficio', 100)->nullable();
             $table->date('fecha_de_ingreso');
             $table->string('carrera', 100)->nullable();
-            $table->string('tipo');
+            $table->unsignedInteger('id_tipo_cliente');
             $table->String('genero');
             $table->char('telefono', 8);
+            $table->foreign("id_tipo_cliente")->references("id")->on("tipo_clientes");
             $table->timestamps();
 
 
