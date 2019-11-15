@@ -218,7 +218,7 @@
                             <div class="form-group">
                                 <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                        @isset($docente)
-                                       value="{{$docente->fecha_de_ingreso}}"
+                                       value="{{$docente->fecha_de_ingreso,$now->format('Y-m-d')}}"
                                        @endisset value="{{old('fecha_de_ingreso')}}"
                                        required
                                 >
@@ -278,8 +278,9 @@
                             <button class="btn btn-danger  mr-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
-                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Medidas
+                        <button class="btn btn-info mr-xl-2 " type="button">
+                            <a href="{{route("imc.ini",$docente->id)}}" style="color: white">Medidas</a>
+
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$docente->id)}}">Imc</a></button>

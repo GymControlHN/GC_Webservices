@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Cliente;
 use App\Imc;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 
@@ -28,8 +29,12 @@ class ImcController extends Controller
 
     {
 
+        $now = Carbon::now();
 
-        return view('botonimc' )->with("id",$id);
+
+
+
+        return view('botonimc' )->with("id",$id)->with("now", $now );
 
     }
 

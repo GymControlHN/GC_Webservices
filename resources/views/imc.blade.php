@@ -11,36 +11,70 @@
     </header>
 
 
-    <div class="container">
-        <div class="alert alert-dismissable mb-n4" role="alert">
-            <h2 style="all: revert" class="h3centrado">Medidas Antropometricas de {{$cliente->nombre}}</h2>
 
+    <div class="w3-container w3-teal mx-5"  >
 
-            <h2 style="all: revert">
-                <button type="button" class="btn btn-primary my-5 float-right">
-                    <a style="color: white" class="nav-link js-scroll-trigger" href="{{route("botonimc",["id"=>$cliente->id])}}">Nuevo</a></button>
-            </h2>
+        <div class="card">
+
+    <h2 style="all: revert" >Medidas Antropometricas</h2>
+
+    <div>
+    <H2> Expediente Estudiante</H2>
+    <h5>Nombre: {{$cliente->nombre}}</h5>
+
+    </div>
         </div>
     </div>
 
 
-    <div class="table-responsive " style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-        box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
-        <table class="table table-striped table-hover ">
+
+
+    <br><br>
+
+        <div class="w3-container w3-teal mx-5"  >
+
+<div class="card">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="{{route("pagoestudiantes",[$cliente->id])}}">Pagos</a>
+        <a class="navbar-brand" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
+        <a class="navbar-brand" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
+        <a class="navbar-brand" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
+
+
+        <!-- Toggler/collapsibe Button -->
+
+    </nav>
+    <button class="btn btn-primary my-8" type="button">
+        <a href="{{route("botonimc",["id"=>$cliente->id])}}" style="color: white">Nuevo</a>
+
+    </button>
+
+
+
+
+
+
+    <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px
+                rgba(189,178,189,0.76); box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+        <table class="table ruler-vertical table-hover mx-sm-0 ">
             <thead class="thead-light">
             <tr>
-                <th scope="row">Peso_kg</th>
+
+
+                <th scope="row">Peso Kg</th>
                 <th scope="col">Altura°</th>
                 <th scope="col">Imc</th>
                 <th scope="col">Diagnostico</th>
-                <th scope="col">Pecho_cm</th>
-                <th scope="col">Brazo_cm</th>
-                <th scope="col">ABD_A</th>
-                <th scope="col">ABD_B</th>
-                <th scope="col">Cadera_cm</th>
-                <th scope="col">Muslo_cm</th>
-                <th scope="col">Pierna_cm</th>
-                <th scope="col">Fecha_de_ingreso</th>
+                <th scope="col">Pecho cm</th>
+                <th scope="col">Brazo cm</th>
+                <th scope="col">ABD A</th>
+                <th scope="col">ABD B</th>
+                <th scope="col">Cadera cm</th>
+                <th scope="col">Muslo cm</th>
+                <th scope="col">Pierna cm</th>
+                <th scope="col">Fecha de medision</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
@@ -69,8 +103,8 @@
                         <td class="form-inline " style="width: 300px">
 
 
-                            <button class="btn btn-warning mr-xl-2 "><a style="color: white"
-                                                                        href="{{route('imc.editar',[$antecedente->id,$antecedente->id_cliente])}}"><i
+                            <button class="btn btn-warning mr-xl-2 ">
+                                <a style="color: white" href="{{route('imc.editar',[$antecedente->id,$antecedente->id_cliente])}}"><i
                                             class="fas fa-edit"></i> </a></button>
 
 
@@ -99,5 +133,8 @@
 
 
     </div>
+</div>
+    </div>
+
 
 @endsection

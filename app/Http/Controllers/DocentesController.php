@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Cliente;
 
@@ -15,7 +16,10 @@ class DocentesController extends Controller
     }
 
     public function create()
+
     {
+
+
         return view('docentes');
     }
 

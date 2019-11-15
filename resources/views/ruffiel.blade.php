@@ -10,15 +10,40 @@
         </div>
     </header>
 
-    <div class="w3-container w3-teal mx-4">
-        <div class="alert alert-dismissable mb-n4" role="alert">
-            <h2 class="h3centrado">Ruffier de <strong>{{$nombre->nombre}}</strong></h2>
+    <div class="w3-container w3-teal mx-5"  >
+
+        <div class="card">
+
+            <h2 style="all: revert" >Ruffier</h2>
+
+            <div>
+                <H2> Expediente Estudiante</H2>
+                <h5>Nombre: {{$nombre->nombre}}</h5>
+
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="w3-container w3-teal mx-5"  >
+
+        <div class="card">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="{{route("pagoestudiantes",[$nombre->id])}}">Pagos</a>
+                <a class="navbar-brand" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+                <a class="navbar-brand" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+                <a class="navbar-brand" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
 
-            <button type="button" class="btn btn-primary my-4 float-right">
-                <a style="color: white" class="nav-link js-scroll-trigger" href="{{route("botonruffier",["id"=>$nombre->id])}}">Nuevo</a></button>
+                <!-- Toggler/collapsibe Button -->
 
+            </nav>
+            <button class="btn btn-primary my-8" type="button">
+                <a href="{{route("botonruffier",["id"=>$nombre->id])}}" style="color: white">Nuevo</a>
 
+            </button>
                 <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px
                 rgba(189,178,189,0.76); box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">

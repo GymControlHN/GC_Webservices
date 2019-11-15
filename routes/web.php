@@ -51,7 +51,7 @@ Route::get("/verestadistica",function (){
 });
 
 Route::get("/grasa",function (){
-    //return view("grasa");
+    return view("grasa");
 });
 
 Route::get("/ruffiel",function (){
@@ -132,8 +132,8 @@ Route::delete('ruffier/{id}/borrar','RuffierController@destroy')->name('ruffier.
 Route::get('ruffier/{id}/{cliente}/editar','RuffierController@edit')->name('ruffier.editar');
 Route::put('ruffier/{id}/edit','RuffierController@update')->name('ruffier.update');
 
-Route::get('imc','ImcController@index')->name('imc.ini');
-Route::get('imc/nuevo','ImcController@create')->name('botonimc');
+Route::get('imc/{id}','ImcController@index')->name('imc.ini');
+Route::get('imc/nuevo/{id}','ImcController@create')->name('botonimc');
 Route::post('imc/crear','ImcController@store')->name('imc.guardar');
 
 Route::delete('imc/{id}/borrar','ImcController@destroy')->name('imc.borrar');

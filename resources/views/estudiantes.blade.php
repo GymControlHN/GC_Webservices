@@ -315,10 +315,13 @@
                     <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
                     {{method_field('delete')}}
                 </form>
-                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Medidas
-                </button>
 
+
+
+                <button class="btn btn-info mr-xl-2 " type="button">
+                    <a href="{{route("imc.ini",$estudiante->id)}}" style="color: white">Medidas</a>
+
+                </button>
 
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">

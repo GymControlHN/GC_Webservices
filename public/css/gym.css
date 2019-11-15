@@ -69,7 +69,18 @@ header.fondo
 }
 .inputtamaño3{
     width: 40%;
-    margin-left: 40%;
+  margin-left: 10%;
+}
+.label8{
+    mso-space-above: yes;
+    color: black ;
+    margin-left: 70%;
+
+
+}
+.inputtamaño8{
+    width: 40%;
+    margin-left: 70%;
 }
 
 
@@ -90,8 +101,14 @@ header.fondo
 
 .label2{
     color: black;
-    margin-left: 23%;
+    margin-left: 10%;
 }
+.label6{
+    color: black;
+    margin-left: 10%;
+}
+
+
 .boton2 {
     margin-left: 45%;
 }
@@ -129,11 +146,6 @@ header.fondo
     text-align: center;
 }
 
-.my-5{
-    width: 10%;
-    height: 10%;
-
-}
 
 .my-6{
     width: 10%;
@@ -147,6 +159,7 @@ header.fondo
 
 }
 
+
 .form-control3{
     width: 33%;
     height: 10%;
@@ -159,6 +172,38 @@ header.fondo
 .container1{
     margin-left: 5%;
 }
+
+.my-8{
+    width: 10%;
+    height: 10%;
+    margin-left: 90%;
+}
+.container4{
+    margin-left: 10%;
+}
+
+.container8{
+
+    height: 20%;
+
+
+}
+div#move{
+    width: 40%;
+    height: 40%;
+    float-displace: 600px;
+
+
+
+
+}
+
+
+
+
+
+
+
 
 
 

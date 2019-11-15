@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Grasa;
 use DB;
@@ -30,8 +31,10 @@ class GrasaController extends Controller
 
     {
 
+        $now = Carbon::now();
 
-        return view('botongrasa' )->with("id",$id);
+
+        return view('botongrasa' )->with("id",$id)->with("now", $now);
 
     }
 

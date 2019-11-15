@@ -10,6 +10,7 @@
         </div>
     </header>
 
+
     <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
@@ -17,26 +18,19 @@
         <script type="text/javascript">function calcularGrasa(){
                 imc= document.getElementById("imc").value;
                 edad= document.getElementById("edad").value;
-
-
-
                 grasa=((1.2*imc)+(0.23*edad)-10.8-5.4);
-
-
-                document.getElementById("grasa").value=grasa.toFixed(2);
-
-
+                document.getElementById("grasa").value=grasa.toFixed(0);
 
                 if (grasa >  26) {
                     leyenda="Estas Obeso";
                 }
                 else if (grasa> 18 ) {
                     leyenda =
-                        "Tienes que cuidarte y comenzar un plan de perdida de grasa";
+                        "Tienes que perder grasa";
                 }
                 else if (grasa> 14 ) {
                     leyenda =
-                        "Se consideran valores de grasas adecuados, pero no nos podemos descuidar";
+                        "Porcentaje aceptable";
                 }
                 else if (grasa> 6 ) {
                     leyenda =
@@ -54,8 +48,7 @@
 
 
                 document.getElementById("leyenda").value=leyenda;
-
-            }</script>
+        }</script>
 
     </head>
 
@@ -76,10 +69,10 @@
                 <div class="form-group">
                     <h6 class=" label2" for="email">IMC:</h6>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3" id="imc"
+                        <input type="number" class="form-control inputtamaño3" required
+                               id="imc"
                                name="imc" maxlength="3" placeholder="Ingrese su imc" onkeyup="calcularGrasa()"
-                               value="{{old('imc')}}"
-                        >
+                               value="{{old('imc')}}">
                     </div>
 
                 </div>
@@ -87,104 +80,93 @@
                 <div class="form-group">
                     <h6 class="label2" for="email">Edad:</h6>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input type="number" class="form-control inputtamaño3" required
                                id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGrasa()"
-                               value="{{old('edad')}}"
-
-                        >
+                               value="{{old('edad')}}">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <h6 class="label2" for="email">%Grasa:</h6>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
-                               id="grasa" name="grasa" maxlength="3"  disabled="true"
-                               value="{{old('grasa')}}"
-
-                        >
+                        <input type="number" class="form-control inputtamaño3" required
+                               id="grasa" name="grasa" maxlength="3"
+                               value="{{old('grasa')}}">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <h6 class="label2" for="email">Diagnostico:</h6>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control inputtamaño3"
-                               id="leyenda" name="leyenda" maxlength="50" disabled="true"
-                               value="{{old('leyenda')}}"
-
-                        >
+                        <input type="text" class="form-control inputtamaño3" required
+                               id="leyenda" name="leyenda" maxlength="50"
+                               value="{{old('leyenda')}}">
                     </div>
                 </div>
+
 
                 <div class="form-group">
                     <h6 class="label2" for="email">Pc_tricipital:</h6>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input type="number" class="form-control inputtamaño3" required
                                id="pc_tricipital" name="pc_tricipital" maxlength="3"
-                               value="{{old('pc_tricipital')}}"
+                               value="{{old('pc_tricipital')}}">
 
-                        >
                     </div>
                 </div>
+
 
                 <div class="form-group">
                     <h6 class="label2" for="email">Pc_Infraescrupural:</h6>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input type="number" class="form-control inputtamaño3" required
                                id="pc_infraescapular" name="pc_infraescapular" maxlength="50"
-                               value="{{old('pc_infraescapular')}}"
+                               value="{{old('pc_infraescapular')}}">
 
-                        >
                     </div>
                 </div>
 
                 <div class="form-group">
                     <h6 class="label2" for="email">Pc_Biciptal:</h6>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input type="number" class="form-control inputtamaño3" required
                                id="pc_biciptal" name="pc_biciptal" maxlength="3"
-                               value="{{old('pc_biciptal')}}"
+                               value="{{old('pc_biciptal')}}">
 
-                        >
                     </div>
                 </div>
+
 
                 <div class="form-group">
                     <h6 class="label2" for="email">Pc_supra_Iliaco:</h6>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input type="number" class="form-control inputtamaño3" required
                                id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50"
-                               value="{{old('pc_supra_iliaco')}}"
+                               value="{{old('pc_supra_iliaco')}}">
 
-                        >
                     </div>
                 </div>
-
-                <div class="container">
-
 
 
                     <h6 class="label2" for="email">Fecha:</h6>
                     <div class="col-sm-10">
-                        <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                        <input type="date" class="form-control inputtamaño3" required
+                               id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
-                               value="{{old('fecha_de_ingreso')}}"
+                               value="{{old('fecha_de_ingreso',$now->format('Y-m-d'))}}">
 
-                        >
                     </div>
 
-                </div>
+
+
             <input name="id" value="{{$id}}" type="hidden">
+
+
                 <div class="container1">
 
-                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/grasa">Cancelar</a></button>
+                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="route{{'grasa'}}">Cancelar</a></button>
                     <button type="submit" class="btn btn-primary" >Guardar</button>
                 </div>
-
-
-
-
 
 
     </form>
