@@ -8,8 +8,10 @@
     </header>
 
     <div class=" w3-container w3-teal mx-5">
-        <h2 class="h3centrado">Registro de pagos mensuales</h2>
-
+        <div>
+                <h3>Registro de pago mensuales</h3>
+                <h6>Nombre:  {{$nombre->nombre}}</h6>
+        </div>
 
         <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2" >
             <i class="fas fa-dollar-sign"></i> Agregar pago </button>
@@ -53,6 +55,7 @@
                                 >
                             </div>
                             <div class="modal-footer">
+                                <input name="id" value="{{$nombre->id}}" type="hidden">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit"  class="btn btn-primary ">Guardar</button>
 
@@ -142,6 +145,16 @@
 
 
 
+        @if(session("exito"))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ session('exito') }}
+            </div>
+
+        @endif
+
         <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
         box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
         <table class="table ruler-vertical table-hover mx-sm-0 " >
@@ -176,9 +189,14 @@
                                 {{method_field('delete')}}
                             </form>
                         </th>
+
                     </tr>
                         @endforeach
             @endforeach
+            @else
+                <tr>
+                    <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
+            @endif
 
 
 

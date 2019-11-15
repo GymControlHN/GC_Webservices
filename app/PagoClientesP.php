@@ -12,5 +12,6 @@ class PagoClientesP extends Model
         'mes',
         'fecha_pago',
 
+        "id_cliente"
     ];
 }

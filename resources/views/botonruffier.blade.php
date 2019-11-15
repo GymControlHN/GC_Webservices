@@ -9,6 +9,16 @@
             </div>
         </div>
     </header>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Brand -->
+        <a class="navbar-brand" href="/imc">Imc</a>
+        <a class="navbar-brand" href="/grasa">Grasa</a>
+        <a class="navbar-brand" href="/ruffiel">Ruffier</a>
+
+        <!-- Toggler/collapsibe Button -->
+
+    </nav>
+
 
     <html>
     <head>
@@ -78,8 +88,8 @@
     <div class="container">
 
         <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}">
-            {{method_field('put')}}
-{{!! csrf_token()}}
+
+            {{!! csrf_token()}}
             <br><br>
             <h5 class="label2">Calculo de Ruffier</h5>
             <br>
@@ -163,6 +173,7 @@
 
                 </div>
 
+                <input name="id" value="{{$id}}" type="hidden">
                 <div class="container1">
 
                     <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>

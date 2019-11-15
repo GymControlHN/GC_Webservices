@@ -19,9 +19,14 @@ class CreateGrasaCorporalTable extends Migration
             $table->double('pc_infraescapular');
             $table->double('pc_supra_iliaco');
             $table->double('pc_biciptal');
-            $table->double('porcentaje');
-            $table->date('fecha');
-            $table->string('clasificacion');
+            $table->integer('edad');
+            $table->integer('tipo');
+            $table->double('imc');
+            $table->double('grasa')->nullable();
+            $table->date('fecha_de_ingreso');
+            $table->string('leyenda')->nullable();
+            $table->unsignedInteger('id_cliente');
+            $table->foreign('id_cliente')->references('id')->on('clientes_gym');
             $table->timestamps();
         });
     }

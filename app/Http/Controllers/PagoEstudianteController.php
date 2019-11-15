@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use App\PagoClientes;
 use App\PagoClientesP;
 use Carbon\Carbon;
@@ -9,14 +10,20 @@ use Illuminate\Http\Request;
 
 class PagoEstudianteController extends Controller
 {
-    public function index () {
-        $pagos = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")
-            ->orderBy("fecha_pago","asc")
+    public function index (Request $request)
+    {
+        $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Estudiante")
+            ->where("id_cliente", "=", $request->input("id_cliente"))
+            ->orderBy("fecha_pago", "asc")
             ->get()
-            ->groupBy(function ($item){
-                return  strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago,null)->year);
+            ->groupBy(function ($item) {
+                return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
-        return view('pagosestudiantes',compact("pagos"));
+
+        $nombre = Cliente::findOrfail($request->input("id_cliente"));
+
+        return view('pagosestudiantes', compact("pagos"))
+            ->with("nombre", $nombre);
     }
 
     public function create() {
@@ -29,12 +36,13 @@ class PagoEstudianteController extends Controller
         $nuevoPagoCliente->mes = $request->input('mes');
         $nuevoPagoCliente->fecha_pago = $request->input('fecha_pago');
         $nuevoPagoCliente->tipo_pago = "Pago_Estudiante";
+        $nuevoPagoCliente->id_cliente= $request->input("id");
 
         $nuevoPagoCliente->save();
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
-        return redirect('pagosestudiantes');
+        return back()->with(["exito"=>"Se agregó exitosamente"]);
 
     }
     public function show(PagoClientesp $pagoClientes)
@@ -71,6 +79,8 @@ class PagoEstudianteController extends Controller
 
         return redirect('pagosestudiantes');
 
+        return back()->with(["exito"=>"Se elimino exitosamente"]);
+
     }
 
 
@@ -100,6 +110,7 @@ class PagoEstudianteController extends Controller
         return view('pagoestudiantes')->with('pagoestudiantes', $pagoestudiantes);
 
     }
+
 
 
 

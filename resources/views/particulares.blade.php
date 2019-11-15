@@ -8,7 +8,7 @@
     </header>
 
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-            <h2 style="all: revert">Listado de Particulares</h2>
+            <h2 class="h3centrado">Listado de Particulares</h2>
 
 
 
@@ -127,6 +127,16 @@
             </div>
             <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
         </form>
+
+        @if(session("exito"))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ session('exito') }}
+            </div>
+
+        @endif
 
         <div class="modal fade" id="editarParticular" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -293,7 +303,12 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary "><a href="{{route("pagoparticulares")}}"><i class="fas fa-dollar-sign"></i></a> </button>
+                        <form style="display: none" id="pago2_form" method="GET" action="{{route("pagoparticulares")}}">
+                            <input name="id_cliente" value="{{$particular->id}}" type="hidden">
+                            {{ csrf_field() }}
+                        </form>
+                        <button class="btn btn-secondary mr-xl-2"
+                                onclick="document.getElementById('pago2_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
 
                         <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
                                 data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
@@ -303,13 +318,15 @@
                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
-                            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Medidas
-                            </button>
+
+                        <button class="btn btn-info mr-xl-2 " type="button">
+                            <a href="{{route("imc.ini",$particular->id)}}" style="color: white">Medidas</a>
+
+                        </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button" > <a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$particular->id)}}">Imc</a>
                             </button>
-                            <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/grasa">Grasa Corporal</a></button>
+                            <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("grasa.uni",["id"=>$particular->id])}}">Grasa Corporal</a></button>
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/ruffiel">Ruffier</a></button>
                         </div>
                     </td>
@@ -317,7 +334,7 @@
 @endforeach
                 @else
                     <tr>
-                        <td colspan="7" style="text-align: center">No hay particulares ingresados</td>
+                        <td colspan="8" style="text-align: center">No hay particulares ingresados</td>
                     </tr>
                 @endif
                 </tbody>

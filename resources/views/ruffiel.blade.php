@@ -10,16 +10,40 @@
         </div>
     </header>
 
-    <div class="w3-container w3-teal mx-5">
-       <h2 style="all: revert">Datos fisicos</h2>
+    <div class="w3-container w3-teal mx-5"  >
+
+        <div class="card">
+
+            <h2 style="all: revert" >Ruffier</h2>
+
+            <div>
+                <H2> Expediente Estudiante</H2>
+                <h5>Nombre: {{$nombre->nombre}}</h5>
+
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="w3-container w3-teal mx-5"  >
+
+        <div class="card">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="{{route("pagoestudiantes",[$nombre->id])}}">Pagos</a>
+                <a class="navbar-brand" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+                <a class="navbar-brand" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+                <a class="navbar-brand" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
 
+                <!-- Toggler/collapsibe Button -->
 
-            <h2 style="all: revert">Ruffier <button type="button" class="btn btn-primary mb-4 float-right">
-                    <a style="color: white" class="nav-link js-scroll-trigger " href="/botonruffier">Nuevo</a></button></h2>
+            </nav>
+            <button class="btn btn-primary my-8" type="button">
+                <a href="{{route("botonruffier",["id"=>$nombre->id])}}" style="color: white">Nuevo</a>
 
-
-            <form action="">
+            </button>
                 <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px
                 rgba(189,178,189,0.76); box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
@@ -39,10 +63,14 @@
                 </thead>
 
                 <tbody>
-                @foreach($datos as $dato)
 
                 <tr>
-                    <td>{{$dato->fecha_de_ingreso}}</td>
+                    @if($datos->count()>0)
+                    @foreach($datos as $dato)
+                    <th>{{$dato->fecha_de_ingreso}}</th>
+                            <td>{{$dato->imc}}</td>
+                            <td>{{$dato->edad}}</td>
+                            <td>{{$dato->grasa}}</td>
                     <td>{{$dato->pulso_r}}</td>
                     <td>{{$dato->pulso_a}}</td>
                     <td>{{$dato->pulso_d}}</td>
@@ -51,22 +79,24 @@
                     <td>{{$dato->mvo2}}</td>
                     <td>{{$dato->mvoreal}}</td>
                     <td class="form-inline ">
-
-                        <button class="btn btn-warning mr-xl-2 "><a style="color: white" href="{{route('ruffier.editar',$dato->id)}}"></a>
-                        <i class="fas fa-edit"></i></button>
-                       <form method="post" action="{{route('ruffier.borrar', $dato->id_cliente)}}" class="pull-left">
-                           {{method_field('delete')}}
+                        <button class="btn btn-warning mr-xl-2 "><a href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i class="fas fa-edit"></i></a></button>
+                       <form method="post" action="{{route('ruffier.borrar', $dato->id)}}" class="pull-left"
+                             onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
                         <button class="btn btn-danger mr-xl-2" ><i class="fas fa-trash-alt"></i></button>
+                           {{method_field('delete')}}
                        </form>
                     </td>
                 </tr>
                     @endforeach
+                @else
+                        <td colspan="9" style="text-align: center">No hay medidas ingresados</td>
+                @endif
+
                 </tbody>
              </table>
-                    {{$datos->links()}}
-            </div>
-          </form>
+          </div>
     </div>
+</div>
 
 
 @endsection

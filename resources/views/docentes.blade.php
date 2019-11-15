@@ -8,7 +8,7 @@
     </header>
 
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-            <h2 style="all: revert">Listado de Docentes</h2>
+            <h2 class="h3centrado">Listado de Docentes</h2>
 
 
 
@@ -120,6 +120,15 @@
             </div>
             <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
         </form>
+        @if(session("exito"))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ session('exito') }}
+            </div>
+
+        @endif
 
 
         <div class="modal fade" id="editarDocente" tabindex="-1" role="dialog"
@@ -209,7 +218,7 @@
                             <div class="form-group">
                                 <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                        @isset($docente)
-                                       value="{{$docente->fecha_de_ingreso}}"
+                                       value="{{$docente->fecha_de_ingreso,$now->format('Y-m-d')}}"
                                        @endisset value="{{old('fecha_de_ingreso')}}"
                                        required
                                 >
@@ -269,12 +278,13 @@
                             <button class="btn btn-danger  mr-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
-                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Medidas
+                        <button class="btn btn-info mr-xl-2 " type="button">
+                            <a href="{{route("imc.ini",$docente->id)}}" style="color: white">Medidas</a>
+
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$docente->id)}}">Imc</a></button>
-                            <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/grasa">Grasa Corporal</a></button>
+                            <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("grasa.uni",["id"=>$docente->id])}}">Grasa Corporal</a></button>
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/ruffiel">Ruffiel</a></button>
                         </div>
                     </td>

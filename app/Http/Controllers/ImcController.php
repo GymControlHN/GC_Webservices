@@ -1,43 +1,44 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Cliente;
 use App\Imc;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use DB;
 
 class ImcController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $antecedentes = Imc::paginate(10);
-        //return view('imc', compact('antecedentes'));
-       //antecedentes =DB::table('antecedentes')
-       // ->join('antecedente','id_cliente','=','clientes_gym');
+         $antecedentes = Imc::where("id_cliente","=",$id)->paginate(10);
 
-    return view('imc', compact('antecedentes'));
+         $cliente = Cliente::findOrfail($id);
+         return view('imc',compact("antecedentes"))->with("cliente",$cliente);
 
     }
 
     //public function mostrarIMCCliente($id){
-
-      // $antecedentes = Imc::where("id_cliente","=",$id)->paginate(10);
-       // return view('imc',compact("antecedentes"));
 
    // }
 
 
 
 
-    public function create()
+    public function create($id)
 
     {
 
+        $now = Carbon::now();
 
-        return view('botonimc' );
+
+
+
+        return view('botonimc' )->with("id",$id)->with("now", $now );
 
     }
 
-    public function store(Request $request )
+    public function store(Request $request)
 
     {
     //   $antecedentes = request()->all();
@@ -58,12 +59,13 @@ class ImcController extends Controller
         $nuevoImc->cadera = $request->input('cadera');
         $nuevoImc->muslo = $request->input('muslo');
         $nuevoImc->pierna = $request->input('pierna');
-        //$nuevoImc->id_cliente=$request->input("id_cliente");
+        $nuevoImc->id_cliente=$request->input("id");
         $nuevoImc->fecha_de_ingreso = $request->input('fecha_de_ingreso');
 
 
         $nuevoImc->save();
-        return redirect('imc');//->route('imc.ini');
+
+        return back();//->route('imc.ini');
     }
 
    // public function show(Imc $antecedenes)
@@ -74,11 +76,12 @@ class ImcController extends Controller
   //  }
 
 
-    public function edit($id )
+    public function edit($id,$id_cliente)
 
     {
         $antecedente = Imc::findOrfail($id);
-        return view('botonimceditar')-> with("antecedente", $antecedente);
+        $id_cliente= Cliente::findOrFail($id_cliente);
+        return view('botonimceditar')-> with("antecedente", $antecedente)->with("id",$id_cliente);
         //   $antecedentes = request()->all();
         //  if(empty($antecedentes['id_cliente'])){
 
@@ -101,8 +104,8 @@ class ImcController extends Controller
         //$nuevoImc->fecha_de_ingreso = $request->input('fecha_de_ingreso');
 
 
-        $nuevoImc->save();
-        return redirect('imc');
+       // $nuevoImc->save();
+        //return back();
 
 
 
@@ -128,11 +131,11 @@ class ImcController extends Controller
         $nuevoImc->cadera = $request->input('cadera');
         $nuevoImc->muslo = $request->input('muslo');
         $nuevoImc->pierna = $request->input('pierna');
-        // $nuevoImc->id_cliente=$request->input("id_cliente");
+         $nuevoImc->id_cliente=$request->input("id_cliente");
         $nuevoImc->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoImc->save();
-       return redirect('imc');
 
+         return $this->index($request->input("id_cliente"));
 
 
     }
@@ -140,7 +143,9 @@ class ImcController extends Controller
     {
         Imc::destroy($id);
 
-        return redirect('imc');
+        return $this->index($id);
+
+
 
 
     }

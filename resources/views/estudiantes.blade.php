@@ -11,7 +11,7 @@
     </header>
 
    <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-           <h2 style="all: revert">Listado de Estudiantes</h2>
+           <h2 class="h3centrado">Listado de Estudiantes</h2>
 
 
            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalScrollable">
@@ -109,12 +109,9 @@
                                           required>
                                </div>
 
-
-
-
-                               <div class="modal-footer">
-                               <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                               <button type="submit"  class="btn btn-primary">Guardar</button>
+                                   <div class="modal-footer">
+                                       <button type="button" class="btn btn-secondary" data-dismiss="modal" >cerrar</button>
+                                       <button type="submit"  class="btn btn-primary">Guardar</button>
 
                            </div>
                            </form>
@@ -136,6 +133,18 @@
         <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
     </form>
 
+       @if(session("exito"))
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+               {{ session('exito') }}
+           </div>
+
+       @endif
+
+       <div class="modal fade" id="editarEstudiante" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" >
 
 
 
@@ -250,12 +259,10 @@
                                >
                            </div>
 
-
-
-
-                           <div class="modal-footer">
-                               <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                               <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
+                       </form>
+                       <div class="modal-footer">
+                           <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                           <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
 
                            </div>
                        </form>
@@ -298,7 +305,12 @@
 
 
             <td class="form-inline " style="width: 300px">
-                <button class="btn btn-secondary mr-xl-2"><a href="{{route("pagoestudiantes")}}"><i class="fas fa-dollar-sign"></i></a> </button>
+                <form style="display: none" id="pago_form" method="GET" action="{{route("pagoestudiantes")}}">
+                    <input name="id_cliente" value="{{$estudiante->id}}" type="hidden">
+                    {{ csrf_field() }}
+                </form>
+                <button class="btn btn-secondary mr-xl-2"
+                        onclick="document.getElementById('pago_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
                 <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}" data-myedad="{{$estudiante->edad}}"
                         data-mycuenta="{{$estudiante->numero_de_cuenta}}" data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                         data-mytelefono="{{$estudiante->telefono}}" data-mycarrera="{{$estudiante->carrera}}"
@@ -308,8 +320,12 @@
                     <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
                     {{method_field('delete')}}
                 </form>
-                <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Medidas
+
+
+
+                <button class="btn btn-info mr-xl-2 " type="button">
+                    <a href="{{route("imc.ini",$estudiante->id)}}" style="color: white">Medidas</a>
+
                 </button>
 
 
@@ -317,9 +333,9 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$estudiante->id)}}">Imc</a>
                     </button>
-                    <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/grasa">Grasa Corporal</a>
+                    <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("grasa.uni",["id"=>$estudiante->id])}}">Grasa Corporal</a>
                     </button>
-                    <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="/ruffiel">Ruffier</a>
+                    <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("ruffier.uni",["id"=>$estudiante->id])}}">Ruffier</a>
                     </button>
                 </div>
             </td>
@@ -327,7 +343,7 @@
 @endforeach
         @else
             <tr>
-                <td colspan="7" style="text-align: center">No hay estudiantes ingresados</td>
+                <td colspan="8" style="text-align: center">No hay estudiantes ingresados</td>
         @endif
 
 
