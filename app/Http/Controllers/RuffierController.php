@@ -22,7 +22,8 @@ class RuffierController extends Controller
 
     public function create($id)
     {
-        return view('ruffiel')->with("id",$id);
+        $nombre = Cliente::findOrfail($id);
+        return view('botonruffier')->with("id",$id)->with("nombre",$nombre);
     }
 
     public function store(Request $request)

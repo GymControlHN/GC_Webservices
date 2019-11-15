@@ -24,4 +24,17 @@ class EstadisticasController extends Controller
         return view('estadisticas');
     }
 
+    public function buscarCliente(Request $request){
+        $busquedaCliente = $request->input("busquedaCliente");
+
+        $clientes = Cliente::join("tipo_clientes",
+            "clientes_gym.id_tipo_cliente", "=", "tipo_clientes.id")
+            ->select("clientes_gym.*", "tipo_clientes.descripcion")
+            ->where("nombre","like","%".$busquedaCliente."%")
+            ->orWhere("fecha_de_ingreso","like","%".$busquedaCliente."%")
+            ->paginate(10);
+
+        return view('estadisticas')->with('clientes', $clientes);
+    }
+
 }

@@ -52,8 +52,8 @@
 
         <form name="f1" id="f1"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
-              method="POST" action="{{route('grasa.guardar')}}"
-        >
+              method="POST" action="{{route('grasa.guardar')}}">
+
             {{csrf_field()}}
 
             <br><br>
@@ -66,7 +66,7 @@
                     <input type="number" class="form-control inputtamaño3" required
                            id="imc"
                            name="imc" maxlength="3" placeholder="Ingrese su imc" onkeyup="calcularGrasa()"
-                           value="{{$imc->imc}}">
+                           @isset($imc)value="{{$imc->imc}}" @endisset>
                 </div>
 
             </div>
