@@ -331,6 +331,7 @@
                         </div>
                     </td>
                 </tr>
+
 @endforeach
                 @else
                     <tr>

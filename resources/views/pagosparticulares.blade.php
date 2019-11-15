@@ -15,6 +15,7 @@
         </div>
 
 
+
         <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2">
             <i class="fas fa-dollar-sign"></i> Agregar pago </button>
 
@@ -151,7 +152,7 @@
             <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
         box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <table class="table ruler-vertical table-hover mx-sm-0 " >
-                    <thead class="thead-light">
+                    <div class="thead-light">
         <div>
             <h1> </h1>
         </div>
@@ -201,8 +202,9 @@
 
             </tbody>
         </table>
-            </div>
+                    </div>
 
-        </div>
+
+
 
 @endsection

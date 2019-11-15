@@ -100,6 +100,7 @@ class PagoEstudianteController extends Controller
 
 
 
+
     public function buscarPagos(Request $request){
         $busquedaPagos = $request->input("busquedaPago");
 

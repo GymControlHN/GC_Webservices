@@ -116,9 +116,6 @@ Route::get('pagoestudiantes/{id}/editar', 'PagoEstudianteController@edit')->name
 Route::put('pagoestudiantes/editar', 'PagoEstudianteController@update')->name('pagoestudiantes.update');
 Route::delete('pagosestudiantes/{id}/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
 
-    Route::get('pagosparticulares/', 'PagoEstudianteController@index')->name('pagoparticulares');
-    Route::get('pagosparticulares/crear', 'PagoEstudianteController@create')->name('pagoparticulares.formulario');
-    Route::post('pagosparticulares/guardar', 'PagoEstudianteController@store')->name('pagoparticulares.guardar');
 
 
 Route::get('pagosparticulares/', 'PagoParticularController@index')->name('pagoparticulares');
@@ -154,6 +151,10 @@ Route::get("buscarPago","PagoEstudianteController@buscarPagos")->name("pagosestu
     Route::get('imc/{id}','ImcController@index')->name('imc.ini');
     Route::get('imc/nuevo/{id}','ImcController@create')->name('botonimc');
     Route::post('imc/crear','ImcController@store')->name('imc.guardar');
+
+Route::get('imc','ImcController@index')->name('imc.ini');
+Route::get('imc/nuevo','ImcController@create')->name('botonimc');
+Route::post('imc/crear','ImcController@store')->name('imc.guardar');
 
     Route::delete('imc/{id}/borrar','ImcController@destroy')->name('imc.borrar');
 

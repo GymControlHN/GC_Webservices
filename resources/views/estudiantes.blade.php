@@ -330,6 +330,7 @@
 
 
 
+
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                     <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$estudiante->id)}}">Imc</a>
                     </button>
