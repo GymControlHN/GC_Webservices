@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ParticularesController extends Controller
 {
     public function index () {
-        $clientes = Cliente::where("tipo","=","Particular")
+        $clientes = Cliente::where("id_tipo_cliente","=","3")
             ->paginate(10);
         return view('particulares')->with('particulares' , $clientes);
     }
@@ -21,7 +21,7 @@ class ParticularesController extends Controller
         $this -> validate ( $request ,[
             'nombre'=>'required',
             'edad'=>'required',
-            'numero_de_identidad'=>'required',
+            'identificacion'=>'required',
             'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
             'telefono'=>'required',
@@ -32,12 +32,12 @@ class ParticularesController extends Controller
 
         $nuevoParticular->nombre = $request->input('nombre');
         $nuevoParticular->edad = $request->input('edad');
-        $nuevoParticular->numero_de_identidad = $request->input('numero_de_identidad');
+        $nuevoParticular->identificacion = $request->input('identificacion');
         $nuevoParticular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoParticular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $nuevoParticular->telefono = $request->input ('telefono');
         $nuevoParticular->genero = $request->input ('genero');
-        $nuevoParticular->tipo="Particular";
+        $nuevoParticular->id_tipo_cliente="3";
         $nuevoParticular->save();
 
         //TODO redireccionar a una página con sentido.
@@ -68,12 +68,12 @@ class ParticularesController extends Controller
         $particular = Cliente::findOrFail($request->input("particular_id"));
         $particular->nombre = $request->input('nombre');
         $particular->edad = $request->input('edad');
-        $particular->numero_de_identidad = $request->input('numero_de_identidad');
+        $particular->identificacion = $request->input('identificacion');
         $particular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $particular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $particular->telefono = $request->input ('telefono');
         $particular->genero = $request->input ('genero');
-        $particular->tipo="Particular";
+        $particular->id_tipo_cliente="3";
         // Guardar los cambios
         $particular->save();
 

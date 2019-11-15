@@ -11,13 +11,11 @@ class Cliente extends Model
     protected $fillable =[
         'nombre',
         'edad',
-        'numero_de_cuenta',
-        'numero_de_empleado',
-        'numero_de_identidad',
+        'identificacion',
         'profesion_u_oficio',
         'fecha_de_ingreso',
         'carrera',
-        'tipo',
+        'id_tipo_cliente',
         'genero ',
         'telefono'
     ];

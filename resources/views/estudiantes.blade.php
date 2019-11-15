@@ -291,15 +291,15 @@
                 @if($estudiantes->count()>0)
                     @foreach($estudiantes as $estudiante)
 
-                        <tr>
-                            <td>{{$estudiante->nombre}}</td>
-                            <td>{{$estudiante->numero_de_cuenta}}</td>
-                            <td>{{$estudiante->carrera}}</td>
-                            <td>{{$estudiante->telefono}}</td>
-                            <td>{{$estudiante->genero}}</td>
-                            <td>{{$estudiante->edad}}</td>
-                            <td>{{$estudiante->fecha_de_ingreso}}</td>
-                            <div style="overflow: auto"></div>
+        <tr>
+            <td>{{$estudiante->nombre}}</td>
+            <td>{{$estudiante->identificacion}}</td>
+            <td>{{$estudiante->carrera}}</td>
+            <td>{{$estudiante->telefono}}</td>
+            <td>{{$estudiante->genero}}</td>
+            <td>{{$estudiante->edad}}</td>
+            <td>{{$estudiante->fecha_de_ingreso}}</td>
+            <div  style="overflow: auto"></div>
 
 
                             <td class="form-inline " style="width: 300px">
