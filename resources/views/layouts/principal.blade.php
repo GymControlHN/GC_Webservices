@@ -142,13 +142,14 @@
 
 
         $('#editarEstudiante').on('show.bs.modal', function (event){
-            var button = $(event.relatedTarget) // Button that triggered the modal
+            var button = $(event.relatedTarget); // Button that triggered the modal
             var nombre = button.data('mynombre');
             var edad = button.data('myedad');
             var cuenta = button.data('mycuenta');
             var fecha = button.data('myfecha');
             var telefono = button.data('mytelefono');
             var carrera = button.data('mycarrera');
+            var genero = button.data("sexo");
             var cat_id = button.data('catid');
             var modal = $(this);
 
@@ -160,6 +161,13 @@
             modal.find('.modal-body #carrera').val(carrera);
              modal.find('.modal-body #id').val(cat_id);
 
+            if(genero ==="M"){
+                modal.find(".modal-body #sexo1").prop("checked",true);
+            }
+
+            if(genero==="F"){
+                modal.find(".modal-body #sexo2").prop("checked",true);
+            }
         });
 
 
@@ -174,6 +182,7 @@ var nempleado = button.data('mynumero');
 var fecha = button.data('myfecha');
 var telefono = button.data('mytelefono');
 var cat_id = button.data('catid');
+var genero = button.data("sexo");
 var modal = $(this);
 
 modal.find('.modal-body #nombre').val(nombre);
@@ -182,6 +191,14 @@ modal.find('.modal-body #numero_de_empleado').val(nempleado);
 modal.find('.modal-body #fecha_de_ingreso').val(fecha);
 modal.find('.modal-body #telefono').val(telefono);
 modal.find('.modal-body #id').val(cat_id);
+
+    if(genero ==="M"){
+        modal.find(".modal-body #sexo1").prop("checked",true);
+    }
+
+    if(genero==="F"){
+        modal.find(".modal-body #sexo2").prop("checked",true);
+    }
 
 });
 
@@ -197,7 +214,8 @@ modal.find('.modal-body #id').val(cat_id);
         var fecha = button.data('myfecha');
         var profesion = button.data('myprofesion');
         var telefono = button.data('mytelefono');
-        var cat_id = button.data('catid');
+        var cat_id = button.data('cat_id');
+        var genero = button.data("sexo");
         var modal = $(this);
 
         modal.find('.modal-body #nombre').val(nombre);
@@ -208,7 +226,17 @@ modal.find('.modal-body #id').val(cat_id);
         modal.find('.modal-body #telefono').val(telefono);
         modal.find('.modal-body #id').val(cat_id);
 
+        if(genero ==="M"){
+            modal.find(".modal-body #sexo1").prop("checked",true);
+        }
+
+        if(genero==="F"){
+            modal.find(".modal-body #sexo2").prop("checked",true);
+        }
+
     });
+
+
 
 
     $(".solo-letras").keydown( function (e) {
@@ -222,6 +250,48 @@ modal.find('.modal-body #id').val(cat_id);
             }
         }
     })
+
+</script>
+
+
+
+<script>
+    $('#editarPagosEstudiantes').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var mes = button.data('mymes');
+        var fecha_pago = button.data('myfecha');
+        var cat_id =  button.data('cat_id');
+        var modal = $(this);
+
+        modal.find('.modal-body #mes').val(mes);
+        modal.find('.modal-body #fecha_pago').val(fecha_pago);
+        modal.find('.modal-body #id').val(cat_id);
+
+
+
+
+
+    });
+
+</script>
+
+<script>
+    $('#editarPagosParticulares').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var mes = button.data('mymes');
+        var fecha_pago = button.data('myfecha');
+        var cat_id =  button.data('cat_id');
+        var modal = $(this);
+
+        modal.find('.modal-body #mes').val(mes);
+        modal.find('.modal-body #fecha_pago').val(fecha_pago);
+        modal.find('.modal-body #id').val(cat_id);
+
+
+
+
+
+    });
 
 </script>
 

@@ -110,9 +110,8 @@ Route::put('riffiel/{id}/edit','RuffierController@update')->name('ruffier.update
 
 Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
 
-Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
-Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
-Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
+
+
 
 
 Route::get("buscarPart","ParticularesController@buscarParticular")->name("particular.buscarPart");
@@ -122,13 +121,22 @@ Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscar
 Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
 Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
 Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
+Route::get('pagoestudiantes/{id}/editar', 'PagoEstudianteController@edit')->name('pagoestudiantes.editar');
+Route::put('pagoestudiantes/editar', 'PagoEstudianteController@update')->name('pagoestudiantes.update');
 Route::delete('pagosestudiantes/{id}/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
+
+
 
 Route::get('pagosparticulares/', 'PagoParticularController@index')->name('pagoparticulares');
 Route::get('pagosparticulares/crear', 'PagoParticularController@create')->name('pagoparticulares.formulario');
 Route::post('pagosparticulares/guardar', 'PagoParticularController@store')->name('pagoparticulares.guardar');
+Route::delete('pagosparticulares/{id}/borrar','PagoParticularController@destroy')->name('pagoparticulares.borrar');
+Route::get('pagosparticulares/{id}/editar','PagoParticularController@edit')->name('pagoparticulares.editar');
+Route::put('pagosparticulares/editar','PagoParticularController@update')->name('pagoparticulares.update');
 
 Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
+
+Route::get("buscarPago","PagoEstudianteController@buscarPagos")->name("pagosestudiantes.buscarPago");
 
 
 
