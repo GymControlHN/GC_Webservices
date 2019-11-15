@@ -314,12 +314,17 @@
                 @else
                     <tr>
                         <td colspan="7" style="text-align: center">No hay docentes ingresados</td>
-                    </tr>
+
                 @endif
 
                 </tbody>
             </table>
-        {{ $docentes->links() }}
+            <div class="border-top my-3"></div>
+            @if($docentes->count()>10)
+                <div class="panel">
+                    {{ $docentes->links() }}
+                </div>
+            @endif
             <!--nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-end">
                     <li class="page-item disabled">

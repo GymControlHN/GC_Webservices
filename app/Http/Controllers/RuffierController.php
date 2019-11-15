@@ -22,8 +22,9 @@ class RuffierController extends Controller
 
     public function create($id)
     {
-        $nombre = Cliente::findOrfail($id);
-        return view('botonruffier')->with("id",$id)->with("nombre",$nombre);
+        $cliente = Cliente::find($id);
+        return view('botonruffier')->with("id",$id)->with("cliente",$cliente);
+
     }
 
     public function store(Request $request)
@@ -36,7 +37,7 @@ class RuffierController extends Controller
         $nuevosDatos->pulso_a = $request->input('pulso2');
         $nuevosDatos->pulso_d = $request->input('pulso3');
         $nuevosDatos->ruffiel = $request->input('ruffiel');
-        $nuevosDatos->clasificacion = $request->input('leyenda');
+        $nuevosDatos->clasificacion = $request->input('clasificacion');
         $nuevosDatos->mvo2 = $request->input('mvo');
         $nuevosDatos->mvoreal = $request->input('mvor');
 
@@ -55,10 +56,11 @@ class RuffierController extends Controller
 
     }*/
 
-    public function edit($id)
+    public function edit($id,$id_cliente)
     {
-        $ruffier = Ruffier::findOrFail($id);
-        return view('ruffiel')->with('ruffiel', $ruffier);
+        $antecedentes = Ruffier::findOrFail($id);
+        $id_cliente = Cliente::findOrFail($id_cliente);
+        return view('botonruffiereditar')-> with("antecedentes", $id_cliente)->with("id",$id_cliente);
 
     }
 

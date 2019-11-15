@@ -68,6 +68,8 @@ Route::group(["middleware"=>"auth"],function (){
         return view("botonruffier");
     });
 
+    Route::post('/nuevousuario','AuthController@crear_usuario')->name('nuevo.usuario');
+    Route::get('/perfil','AuthController@index')->name('usuarios');
 
     Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');
     Route::get('estudiantes/crear', 'EstudiantesController@create')->name('estudiantes.formulario');

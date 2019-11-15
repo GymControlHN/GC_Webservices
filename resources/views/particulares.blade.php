@@ -56,7 +56,7 @@
 
                                 <h6>Número de Identidad</h6>
                                 <div class="form-group"  >
-                                    <input type="text"  pattern="([0-9]{1,13})" class="form-control" id="identificacion" name="identificacion"
+                                    <input type="text"  pattern="([0-9]{1,13})" class="form-control" id="numero_de_identidad" name="numero_de_identidad"
                                            title="Ingrese solo números "
                                            required
                                            minlength="1" maxlength="13" aria-valuemax="13" max="9999999999999"
@@ -181,10 +181,10 @@
 
                             <h6>Número de Identidad</h6>
                             <div class="form-group">
-                                <input type="text" pattern="([0-9]{1,13})" class="form-control" id="identificacion" name="identificacion"
+                                <input type="text" pattern="([0-9]{1,13})" class="form-control" id="numero_de_identidad" name="numero_de_identidad"
                                        @isset($particular)
                                        value="{{$particular->numero_de_identidad}}"
-                                       @endisset value="{{old('identificacion')}}"
+                                       @endisset value="{{old('numero_de_identidad')}}"
                                        required
                                        minlength="1" maxlength="13" aria-valuemax="13" max="9999999999999"
 
@@ -294,7 +294,7 @@
                 <tr>
 
                     <td>{{$particular->nombre}}</td>
-                    <td>{{$particular->identificacion}}</td>
+                    <td>{{$particular->numero_de_identidad}}</td>
                     <td>{{$particular->profesion_u_oficio}}</td>
                     <td>{{$particular->telefono}}</td>
                     <td>{{$particular->genero}}</td>
@@ -307,18 +307,20 @@
                             <input name="id_cliente" value="{{$particular->id}}" type="hidden">
                             {{ csrf_field() }}
                         </form>
+                        <button class="btn btn-secondary mr-xl-2"
+                                onclick="document.getElementById('pago2_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
 
                         <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
-                                data-myidentidad="{{$particular->identificacion}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
+                                data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
                                 data-mytelefono="{{$particular->telefono}}" data-myprofesion="{{$particular->profesion_u_oficio}}"
-                                data-catid="{{$particular->id}}" data-sexo="{{$particular->genero}}"><i class="fas fa-edit"></i></button>
+                                data-catid="{{$particular->id}}"><i class="fas fa-edit"></i></button>
                         <form method="post" action="{{route('particular.borrar', $particular->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al cliente? ')">
                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
                         </form>
 
                         <button class="btn btn-info mr-xl-2 " type="button">
-                            <a href="{{route("imc.ini",$particular->id)}}" style="color: white">Expediente</a>
+                            <a href="{{route("imc.ini",$particular->id)}}" style="color: white">Medidas</a>
 
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -334,11 +336,18 @@
                 @else
                     <tr>
                         <td colspan="8" style="text-align: center">No hay particulares ingresados</td>
-                    </tr>
+
                 @endif
                 </tbody>
             </table>
-            {{ $particulares->links() }}
+
+            <div class="border-top my-3"></div>
+
+            @if($particulares->count()>10)
+                <div class="panel">
+                    {{ $particulares->links() }}
+                </div>
+                @endif
     </div>
 </div>
 @endsection

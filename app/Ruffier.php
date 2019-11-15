@@ -17,6 +17,7 @@ class Ruffier extends Model
         'ruffiel',
         'clasificacion',
         'mvo2',
-        'mvoreal'
+        'mvoreal',
+        "id_cliente"
         ];
 }
