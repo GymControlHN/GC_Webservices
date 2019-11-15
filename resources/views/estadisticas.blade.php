@@ -11,10 +11,10 @@
         <div class="alert alert-dismissable mb-n4" role="alert">
             <h2 style="all: revert">Lista De Todos Los Clientes</h2>
 
-            <form class="form-inline">
+            <form class="form-inline" method="get" action="{{route('cliente.buscarCliente')}}">
 
                 <div class="form-group mr-sm-4 my-sm-4 ">
-                    <input type="text" class="form-control" id="inputText2" placeholder="Buscar">
+                    <input type="text" class="form-control" id="inputText2" placeholder="Buscar" name="busquedaCliente">
                 </div>
                 <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
             </form>
