@@ -145,8 +145,7 @@
              aria-labelledby="exampleModalScrollableTitle">
 
 
-            <div class="modal fade show" id="editarEstudiante" tabindex="-1" role="dialog"
-                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -272,7 +271,6 @@
                 </div>
             </div>
         </div>
-
         <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
     box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
