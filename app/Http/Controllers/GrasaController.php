@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 
+use App\Imc;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Grasa;
@@ -12,18 +13,18 @@ use DB;
 
 class GrasaController extends Controller
 {
-    public function index( $id)
+    public function index($id)
     {
 
-        $grasa_corporal = Grasa::where("id_cliente","=",$id)->paginate(10);
+        $grasa_corporal = Grasa::where("id_cliente", "=", $id)->paginate(10);
 
         $nombre = Cliente::findOrfail($id);
-        return view('grasa',compact("grasa_corporal"))->with("nombre",$nombre);
+        return view('grasa', compact("grasa_corporal"))->with("nombre", $nombre);
 
         //$grasa_corporal = Grasa
-           // ::where("id_cliente", "=", $request->input("id_cliente"));
+        // ::where("id_cliente", "=", $request->input("id_cliente"));
         //$nombre = Cliente::findOrfail($id);
-       // return view('grasa', compact("grasa_corporal"))->with("nombre", $nombre);
+        // return view('grasa', compact("grasa_corporal"))->with("nombre", $nombre);
     }
 
 
@@ -32,9 +33,8 @@ class GrasaController extends Controller
     {
 
         $now = Carbon::now();
-
-
-        return view('botongrasa' )->with("id",$id)->with("now", $now);
+        $imc = Imc::where("id_cliente", "=", $id)->latest("updated_at")->first();
+        return view('botongrasa')->with("id", $id)->with("now", $now)->with("imc", $imc);
 
     }
 
@@ -53,7 +53,7 @@ class GrasaController extends Controller
         $nuevoMedida->edad = $request->input('edad');
         $nuevoMedida->imc = $request->input('imc');
         $nuevoMedida->grasa = $request->input('grasa');
-        $nuevoMedida->id_cliente=$request->input("id");
+        $nuevoMedida->id_cliente = $request->input("id");
         $nuevoMedida->leyenda = $request->input('leyenda');
         $nuevoMedida->save();
 
@@ -63,12 +63,12 @@ class GrasaController extends Controller
 
     }
 
-    public function edit($id,$id_cliente)
+    public function edit($id, $id_cliente)
 
     {
         $grasa = Grasa::findOrfail($id);
-        $id_cliente= Cliente::findOrFail($id_cliente);
-        return view('botongrasaeditar')-> with("grasa", $grasa)->with("id",$id_cliente);
+        $id_cliente = Cliente::findOrFail($id_cliente);
+        return view('botongrasaeditar')->with("grasa", $grasa)->with("id", $id_cliente);
 
     }
 
@@ -95,7 +95,7 @@ class GrasaController extends Controller
         $medida->imc = $request->input('imc');
         $medida->grasa = $request->input('grasa');
         $medida->leyenda = $request->input('leyenda');
-        $medida->id_cliente=$request->input("id_cliente");
+        $medida->id_cliente = $request->input("id_cliente");
 
 
         $medida->save();

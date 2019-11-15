@@ -10,17 +10,17 @@ use Illuminate\Http\Request;
 
 class PagoEstudianteController extends Controller
 {
-    public function index (Request $request)
+    public function index (Request $request,$id)
     {
         $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Estudiante")
-            ->where("id_cliente", "=", $request->input("id_cliente"))
+            ->where("id_cliente", "=",$id)
             ->orderBy("fecha_pago", "asc")
             ->get()
             ->groupBy(function ($item) {
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
 
-        $nombre = Cliente::findOrfail($request->input("id_cliente"));
+        $nombre = Cliente::findOrfail($id);
 
         return view('pagosestudiantes', compact("pagos"))
             ->with("nombre", $nombre);

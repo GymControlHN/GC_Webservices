@@ -7,11 +7,32 @@
         </div>
     </header>
 
-    <div class=" w3-container w3-teal mx-5">
-        <div>
-                <h3>Registro de pago mensuales</h3>
-                <h6>Nombre:  {{$nombre->nombre}}</h6>
+    <div class="w3-container w3-teal mx-5">
+
+        <div class="card">
+
+            <h2 style="all: revert">Pagos</h2>
+
+            <div>
+
+                <H2> Expediente Estudiante</H2>
+                <h5>Nombre: {{$nombre->nombre}}</h5>
+
+            </div>
         </div>
+    </div>
+    <br><br>
+    <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+
+        <a class="btn btn-secondary" href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
+        <a class="btn btn-primary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+
+    </div>
+
+    <div class=" w3-container w3-teal mx-5">
+
 
         <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2" >
             <i class="fas fa-dollar-sign"></i> Agregar pago </button>
@@ -155,10 +176,11 @@
 
         @endif
 
-        <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-        box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
-        <table class="table ruler-vertical table-hover mx-sm-0 " >
-            <thead class="thead-light">
+        <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
+            box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+            <table class="table ruler-vertical table-hover mx-sm-0 ">
+
+                <thead class="thead-light">
             <tr>
                 <th>Mes</th>
                 <th>Fecha</th>
@@ -202,6 +224,7 @@
             </tbody>
         </table>
         </div>
+
     </div>
 @endsection
 

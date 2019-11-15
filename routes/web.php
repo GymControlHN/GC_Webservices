@@ -32,9 +32,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get("/estadisticas",function (){
         return view("estadisticas");
     });
-    Route::get("/pagose",function (){
-        return view("pagosestudiantes");
-    });
+
     Route::get("/pagosp",function (){
         return view("pagosparticulares");
     });
@@ -97,7 +95,7 @@ Route::group(["middleware"=>"auth"],function (){
 
     Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
 
-    Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
+    Route::get('pagosestudiantes/{id}', 'PagoEstudianteController@index')->name('pagoestudiantes');
     Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
     Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
 
@@ -106,24 +104,9 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get("buscarCliente","EstadisticasController@buscarCliente")->name("cliente.buscarCliente");
     Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscarDoc");
 
-    Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
-    Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
-    Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
-Route::get('pagosestudiantes/', 'PagoEstudianteController@index')->name('pagoestudiantes');
-Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
-Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
-Route::get('pagoestudiantes/{id}/editar', 'PagoEstudianteController@edit')->name('pagoestudiantes.editar');
-Route::put('pagoestudiantes/editar', 'PagoEstudianteController@update')->name('pagoestudiantes.update');
-Route::delete('pagosestudiantes/{id}/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
-
-
-
-Route::get('pagosparticulares/', 'PagoParticularController@index')->name('pagoparticulares');
-Route::get('pagosparticulares/crear', 'PagoParticularController@create')->name('pagoparticulares.formulario');
-Route::post('pagosparticulares/guardar', 'PagoParticularController@store')->name('pagoparticulares.guardar');
-Route::delete('pagosparticulares/{id}/borrar','PagoParticularController@destroy')->name('pagoparticulares.borrar');
-Route::get('pagosparticulares/{id}/editar','PagoParticularController@edit')->name('pagoparticulares.editar');
-Route::put('pagosparticulares/editar','PagoParticularController@update')->name('pagoparticulares.update');
+    Route::get('pagosparticulares/', 'PagoEstudianteController@index')->name('pagoparticulares');
+    Route::get('pagosparticulares/crear', 'PagoEstudianteController@create')->name('pagoparticulares.formulario');
+    Route::post('pagosparticulares/guardar', 'PagoEstudianteController@store')->name('pagoparticulares.guardar');
 
     Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
     Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas');

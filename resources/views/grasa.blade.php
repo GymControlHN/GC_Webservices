@@ -12,13 +12,15 @@
     </header>
 
 
-    <div class="w3-container w3-teal mx-5"  >
+
+    <div class="w3-container w3-teal mx-5">
 
         <div class="card">
 
-            <h2 style="all: revert" >Grasa Corporal</h2>
+            <h2 style="all: revert">Grasa Corporal</h2>
 
             <div>
+
                 <H2> Expediente Estudiante</H2>
                 <h5>Nombre: {{$nombre->nombre}}</h5>
 
@@ -26,22 +28,19 @@
         </div>
     </div>
     <br><br>
+    <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+
+        <a class="btn btn-secondary" href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
+        <a class="btn btn-primary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+
+    </div>
 
     <div class="w3-container w3-teal mx-5"  >
 
         <div class="card">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
 
-                <!-- Brand -->
-                <a class="navbar-brand" href="{{route("pagoestudiantes",[$nombre->id])}}">Pagos</a>
-                <a class="navbar-brand" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
-                <a class="navbar-brand" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
-                <a class="navbar-brand" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
-
-
-                <!-- Toggler/collapsibe Button -->
-
-            </nav>
             <button class="btn btn-primary my-8" type="button">
                 <a href="{{route("botongrasa",["id"=>$nombre->id])}}" style="color: white">Nuevo</a>
 
