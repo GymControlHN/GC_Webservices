@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
+    public function index()
+    {
+        $user = User::all();
+        return view('perfil')->with('usuarios', $user);
+    }
     public function  crear_usuario(Request $request){
 
         $this->validate($request, [
@@ -26,4 +31,5 @@ class AuthController extends Controller
 
         return redirect("perfil");
     }
+
 }

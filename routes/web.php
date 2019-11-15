@@ -70,6 +70,8 @@ Route::group(["middleware"=>"auth"],function (){
         return view("botonruffier");
     });
 
+    Route::post('/nuevousuario','AuthController@crear_usuario')->name('nuevo.usuario');
+    Route::get('/perfil','AuthController@index')->name('usuarios');
 
     Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');
     Route::get('estudiantes/crear', 'EstudiantesController@create')->name('estudiantes.formulario');
@@ -161,7 +163,6 @@ Route::post('imc/crear','ImcController@store')->name('imc.guardar');
     Route::get('imc/{id}/editar','ImcController@edit')->name('imc.editar');
     Route::put('imc/{id}/edit','ImcController@update')->name('imc.update');
 //Route::get('imc/{id}/mostrar','ImcController@mostrarIMCCliente')->name('botomostrar');
-
 
 
 
