@@ -14,8 +14,8 @@ class RuffierController extends Controller
     public function index($id)
     {
         $datos = Ruffier::where("id_cliente","=",$id)->paginate(10);
-        $nombre = Cliente::findOrfail($id);
-        return view('ruffiel',compact("datos"))->with("nombre",$nombre);
+        $cliente = Cliente::findOrfail($id);
+        return view('ruffiel',compact("datos"))->with("cliente",$cliente);
 
 
     }
@@ -60,7 +60,7 @@ class RuffierController extends Controller
     {
         $antecedentes = Ruffier::findOrFail($id);
         $id_cliente = Cliente::findOrFail($id_cliente);
-        return view('botonruffiereditar')-> with("antecedentes", $id_cliente)->with("id",$id_cliente);
+        return view('botonruffiereditar')-> with("antecedentes", $antecedentes)->with("id",$id_cliente);
 
     }
 

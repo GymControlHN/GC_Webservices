@@ -18,7 +18,7 @@
 
             <div>
                 <H2> Expediente Estudiante</H2>
-                <h5>Nombre: {{$nombre->nombre}}</h5>
+                <h5>Nombre: {{$cliente->nombre}}</h5>
 
             </div>
         </div>
