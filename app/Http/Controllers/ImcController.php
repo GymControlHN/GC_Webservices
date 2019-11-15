@@ -30,9 +30,7 @@ class ImcController extends Controller
     {
 
         $now = Carbon::now();
-
-
-
+        
 
         return view('botonimc' )->with("id",$id)->with("now", $now );
 

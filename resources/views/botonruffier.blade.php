@@ -89,7 +89,7 @@
 
         <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}">
 
-            {{!! csrf_token()}}
+
             <br><br>
             <h5 class="label2">Calculo de Ruffier</h5>
             <br>
