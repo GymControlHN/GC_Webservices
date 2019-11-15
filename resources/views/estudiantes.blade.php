@@ -362,7 +362,7 @@
 
            <div class="border-top my-3"></div>
 
-           @if($estudiantess->count()>10)
+           @if($estudiantes->count()>10)
                <div class="panel">
                    {{ $estudiantes->links() }}
                </div>
