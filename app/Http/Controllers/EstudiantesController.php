@@ -34,11 +34,11 @@ class  EstudiantesController extends Controller
 
         $nuevoEstudiante->nombre = $request->input('nombre');
         $nuevoEstudiante->edad = $request->input('edad');
-        $nuevoEstudiante->numero_de_cuenta = $request->input('numero_de_cuenta');
+        $nuevoEstudiante->identificacion = $request->input('identificacion');
         $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoEstudiante->carrera = $request->input('carrera');
         $nuevoEstudiante->telefono = $request->input('telefono');
-        $nuevoEstudiante->tipo="Estudiante";
+        $nuevoEstudiante->id_tipo_cliente="1";
         $nuevoEstudiante->genero = $request->input("genero");
 
         $nuevoEstudiante->save();
@@ -81,11 +81,11 @@ class  EstudiantesController extends Controller
         $estudiantes = Cliente::findOrfail($request->input("estudiante_id"));
         $estudiantes->nombre=$request->input("nombre");
         $estudiantes->edad = $request->input("edad");
-        $estudiantes->numero_de_cuenta =$request->input("numero_de_cuenta");
+        $estudiantes->identificacion =$request->input("identificacion");
         $estudiantes->carrera = $request->input("carrera");
         $estudiantes->telefono = $request->input("telefono");
         $estudiantes->fecha_de_ingreso = $request->input("fecha_de_ingreso");
-        $estudiantes->tipo="Estudiante";
+        $estudiantes->id_tipo_cliente="1";
         $estudiantes->genero = $request->input("genero");
 
         $estudiantes->save();
@@ -108,7 +108,7 @@ class  EstudiantesController extends Controller
     public function buscarEstudiante(Request $request){
         $busqueda = $request->input("busqueda");
 
-        $clientes = Cliente:: where("tipo","=","Estudiante")
+        $clientes = Cliente:: where("id_tipo_cliente","=","1")
         ->where("nombre","like","%".$busqueda."%")
             ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
             ->paginate(10);

@@ -62,7 +62,7 @@
                                 </div>
                                 <h6>Número de Empleado</h6>
                                 <div class="form-group">
-                                    <input type="text" pattern="([0-9]{1,5})" class="form-control" id="numero_de_empleado" name="identificacion"
+                                    <input type="text" pattern="([0-9]{1,5})" class="form-control" id="identificacion" name="identificacion"
                                            title="Ingrese solo números"
                                             required
                                            minlength="1" maxlength="5" min="1" max="99999"
@@ -178,10 +178,10 @@
                             </div>
                             <h6>Número de Empleado</h6>
                             <div class="form-group">
-                                <input type="text"  pattern="([0-9]{1,5})"  class="form-control" id="numero_de_empleado" name="numero_de_empleado"
+                                <input type="text"  pattern="([0-9]{1,5})"  class="form-control" id="identificacion" name="identificacion"
                                        @isset($docente)
                                        value="{{$docente->numero_de_empleado}}"
-                                       @endisset value="{{old('numero_de_empleado')}}"
+                                       @endisset value="{{old('identificacion')}}"
                                        title="Ingrese solo números "
                                        required
                                        minlength="1" maxlength="5" min="1" max="99999"
@@ -218,6 +218,15 @@
                                        @endisset value="{{old('sexo2')}}"
                                 >Femenino
                                 <label class="form-check-label" for="inlineRadio2"></label>
+                            </div>
+                            <h6>Profesión</h6>
+                            <div class="form-group">
+                                <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                       @isset($docente)
+                                       value="{{$docente->profesion_u_oficio}}"
+                                       @endisset value="{{old('profesion_u_oficio')}}"
+                                       required
+                                >
                             </div>
 
                             <h6>Fecha</h6>

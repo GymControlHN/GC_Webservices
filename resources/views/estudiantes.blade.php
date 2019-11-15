@@ -57,8 +57,8 @@
 
                             <h6>Número Cuenta</h6>
                             <div class="form-group">
-                                <input type="text" pattern="([0-9]{1,11})" class="form-control" id="numero_de_cuenta"
-                                       name="numero_de_cuenta"
+                                <input type="text" pattern="([0-9]{1,11})" class="form-control" id="identificacion"
+                                       name="identificacion"
                                        title="Ingrese solo números"
                                        required
                                        minlength="1" maxlength="11" aria-valuemax="11" max="99999999999">
@@ -187,10 +187,10 @@
                                 <h6>Número Cuenta</h6>
                                 <div class="form-group">
                                     <input type="text" pattern="([0-9]{1,11})" class="form-control"
-                                           id="numero_de_cuenta" name="numero_de_cuenta"
+                                           id="identificacion" name="identificacion"
                                            @isset($estudiante)
-                                           value="{{$estudiante->numero_de_cuenta}}"
-                                           @endisset value="{{old('numero_de_cuenta')}}"
+                                           value="{{$estudiante->identificacion}}"
+                                           @endisset value="{{old('identificacion')}}"
                                            title="Ingrese solo números"
                                            required
                                            minlength="1" maxlength="11" aria-valuemax="11" max="99999999999"
@@ -314,7 +314,7 @@
                                 <button class="btn btn-warning mr-xl-2" data-toggle="modal"
                                         data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
                                         data-myedad="{{$estudiante->edad}}"
-                                        data-mycuenta="{{$estudiante->numero_de_cuenta}}"
+                                        data-mycuenta="{{$estudiante->identificacion}}"
                                         data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                                         data-mytelefono="{{$estudiante->telefono}}"
                                         data-mycarrera="{{$estudiante->carrera}}"

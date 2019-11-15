@@ -111,7 +111,7 @@ class DocentesController extends Controller
     {
         $busquedaDoc = $request->input("busquedaDoc");
 
-        $docentes = Cliente::where("tipo","=","Docente")
+        $docentes = Cliente::where("id_tipo_cliente","=","2")
         ->where("nombre", "like", "%" . $busquedaDoc . "%")
             ->orWhere("fecha_de_ingreso", "like", "%" . $busquedaDoc . "%")
             ->paginate(10);

@@ -155,7 +155,7 @@
 
             modal.find('.modal-body #nombre').val(nombre);
             modal.find('.modal-body #edad').val(edad);
-            modal.find('.modal-body #numero_de_cuenta').val(cuenta);
+            modal.find('.modal-body #identificacion').val(cuenta);
             modal.find('.modal-body #fecha_de_ingreso').val(fecha);
             modal.find('.modal-body #telefono').val(telefono);
             modal.find('.modal-body #carrera').val(carrera);
@@ -187,7 +187,7 @@ var modal = $(this);
 
 modal.find('.modal-body #nombre').val(nombre);
 modal.find('.modal-body #edad').val(edad);
-modal.find('.modal-body #numero_de_empleado').val(nempleado);
+modal.find('.modal-body #identificacion').val(nempleado);
 modal.find('.modal-body #fecha_de_ingreso').val(fecha);
 modal.find('.modal-body #telefono').val(telefono);
 modal.find('.modal-body #id').val(cat_id);
@@ -220,7 +220,7 @@ modal.find('.modal-body #id').val(cat_id);
 
         modal.find('.modal-body #nombre').val(nombre);
         modal.find('.modal-body #edad').val(edad);
-        modal.find('.modal-body #numero_de_identidad').val(nidentidad);
+        modal.find('.modal-body #identificacion').val(nidentidad);
         modal.find('.modal-body #fecha_de_ingreso').val(fecha);
         modal.find('.modal-body #profesion_u_oficio').val(profesion);
         modal.find('.modal-body #telefono').val(telefono);
