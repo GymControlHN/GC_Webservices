@@ -14,7 +14,7 @@
 
         <div class="card">
 
-            <h2 style="all: revert">Grasa Corporal</h2>
+            <h2 style="all: revert">Ruffier</h2>
 
             <div>
 
@@ -28,9 +28,9 @@
     <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
         <a class="btn btn-secondary" href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
-        <a class="btn btn-primary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+        <a class="btn btn-primary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
     </div>
 
