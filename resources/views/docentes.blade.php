@@ -288,7 +288,7 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <button class="btn btn-secondary mr-2"><i class="fas fa-dollar-sign"></i></button>
+
                         <button class="btn btn-warning  mr-2" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myedad="{{$docente->edad}}"
                                 data-mynumero="{{$docente->identificacion}}" data-myfecha="{{$docente->fecha_de_ingreso}}"
                                 data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}"><i class="fas fa-edit"></i></button>
@@ -298,7 +298,7 @@
                             {{method_field('delete')}}
                         </form>
                         <button class="btn btn-info mr-xl-2 " type="button">
-                            <a href="{{route("imc.ini",$docente->id)}}" style="color: white">Medidas</a>
+                            <a href="{{route("imc.ini",$docente->id)}}" style="color: white">Expediente</a>
 
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">

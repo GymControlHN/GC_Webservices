@@ -304,13 +304,11 @@
 
                             <td class="form-inline " style="width: 300px">
                                 <form style="display: none" id="pago_form" method="GET"
-                                      action="{{route("pagoestudiantes")}}">
+                                      action="{{route("pagoestudiantes",["id"=>$estudiante->id])}}">
                                     <input name="id_cliente" value="{{$estudiante->id}}" type="hidden">
                                     {{ csrf_field() }}
                                 </form>
-                                <button class="btn btn-secondary mr-xl-2"
-                                        onclick="document.getElementById('pago_form').submit();"><a><i
-                                                class="fas fa-dollar-sign"></i></a></button>
+
                                 <button class="btn btn-warning mr-xl-2" data-toggle="modal"
                                         data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
                                         data-myedad="{{$estudiante->edad}}"
@@ -330,7 +328,7 @@
 
 
                                 <button class="btn btn-info mr-xl-2 " type="button">
-                                    <a href="{{route("imc.ini",$estudiante->id)}}" style="color: white">Medidas</a>
+                                    <a href="{{route("imc.ini",$estudiante->id)}}" style="color: white">Expediente</a>
 
                                 </button>
 
