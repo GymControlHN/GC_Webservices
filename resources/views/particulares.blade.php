@@ -303,7 +303,7 @@
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-                        <form style="display: none" id="pago2_form" method="GET" action="{{route("pagoparticulares")}}">
+                        <form style="display: none" id="pago2_form" method="GET" action="{{route("pagoparticulares",["id"=>$particular->id])}}">
                             <input name="id_cliente" value="{{$particular->id}}" type="hidden">
                             {{ csrf_field() }}
                         </form>

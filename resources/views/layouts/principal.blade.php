@@ -294,6 +294,20 @@ modal.find('.modal-body #id').val(cat_id);
 
     });
 
+   $("#fecha").on("change",function () {
+       const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+           "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+       ];
+
+
+       var valorfecha= $(this).val();
+       const partesfecha = valorfecha.split("-");
+       const d = new Date(partesfecha[0], partesfecha[1] - 1, partesfecha[2]);
+       $("#mes").val(monthNames[d.getMonth()]);
+
+   });
+
+
 </script>
 
 

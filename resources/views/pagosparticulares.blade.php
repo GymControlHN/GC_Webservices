@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="modal-body">
-                            <form method="post" action="{{route('pagoparticulares.update')}}">
+                            <form method="post">
                                 <input type="hidden" name="pagoPart_id" id="id" value="">
 
                                 {{method_field('put')}}
@@ -110,6 +110,7 @@
                                 <h6>Fecha</h6>
                                 <div class="form-group">
                                     <input type="date" class="form-control" id="fecha_pago" name="fecha_pago"
+                                           max="{{ date("Y-m-d")}}"
                                            @isset($user)
                                            value="{{$user->fecha_pago}}"
                                            @endisset value="{{old('fecha_pago')}}"

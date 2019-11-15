@@ -9,14 +9,15 @@ use App\PagoClientesP;
 
 class PagoParticularController extends Controller
 {
-    public function index(){
+    public function index($id){
         $pagos = PagoClientesP::where("tipo_pago","=","Pago_Particular")
+            ->where("id_cliente","=",$id)
             ->orderBy("fecha_pago", "asc")
             ->get()
             ->groupBy(function ($item) {
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
-        $nombre = Cliente::findOrfail($request->input("id_cliente"));
+        $nombre = Cliente::findOrfail($id);
 
         return view('pagosparticulares', compact("pagos"))
             ->with("nombre", $nombre);

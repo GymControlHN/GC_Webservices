@@ -68,8 +68,6 @@ Route::group(["middleware"=>"auth"],function (){
         return view("botonruffier");
     });
 
-    Route::post('/nuevousuario','AuthController@crear_usuario')->name('nuevo.usuario');
-    Route::get('/perfil','AuthController@index')->name('usuarios');
 
     Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');
     Route::get('estudiantes/crear', 'EstudiantesController@create')->name('estudiantes.formulario');
@@ -100,15 +98,16 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('pagosestudiantes/{id}', 'PagoEstudianteController@index')->name('pagoestudiantes');
     Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
     Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
+    Route::delete('pagosestudiantes/{id}/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
 
 
     Route::get("buscarPart","ParticularesController@buscarParticular")->name("particular.buscarPart");
     Route::get("buscarCliente","EstadisticasController@buscarCliente")->name("cliente.buscarCliente");
     Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscarDoc");
 
-    Route::get('pagosparticulares/', 'PagoEstudianteController@index')->name('pagoparticulares');
-    Route::get('pagosparticulares/crear', 'PagoEstudianteController@create')->name('pagoparticulares.formulario');
-    Route::post('pagosparticulares/guardar', 'PagoEstudianteController@store')->name('pagoparticulares.guardar');
+    Route::get('pagosparticulares/{id}', 'PagoParticularController@index')->name('pagoparticulares');
+    Route::get('pagosparticulares/crear', 'PagoParticularController@create')->name('pagoparticulares.formulario');
+    Route::post('pagosparticulares/guardar', 'PagoParticularController@store')->name('pagoparticulares.guardar');
 
     Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
     Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas');
@@ -147,6 +146,8 @@ Route::post('imc/crear','ImcController@store')->name('imc.guardar');
     Route::put('imc/{id}/edit','ImcController@update')->name('imc.update');
 //Route::get('imc/{id}/mostrar','ImcController@mostrarIMCCliente')->name('botomostrar');
 
+    Route::post('/perfil','AuthController@crear_usuario')->name('nuevo.usuario');
+    Route::get('/perfil','AuthController@index');
 
 
 

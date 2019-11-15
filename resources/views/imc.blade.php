@@ -20,7 +20,12 @@
 
             <div>
 
+                @if($cliente->id_tipo_cliente!==1)
+
+                    <H2> Expediente Particulares</H2>
+                    @else
                 <H2> Expediente Estudiante</H2>
+                @endif
                 <h5>Nombre: {{$cliente->nombre}}</h5>
 
             </div>
@@ -34,7 +39,10 @@
 
     <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
-        <a class="btn btn-secondary" href="{{route("pagoestudiantes",["id"=>$cliente->id])}}">Pagos</a>
+        <a class="btn btn-secondary" @if($cliente->id_tipo_cliente!==1)
+        href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+        @else
+        href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif >Pagos</a>
         <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>

@@ -34,11 +34,11 @@
     <div class=" w3-container w3-teal mx-5">
 
 
-        <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2" >
+        <button class="btn btn-danger float-right" data-toggle="modal" data-target="#modalPagoEstudiante" >
             <i class="fas fa-dollar-sign"></i> Agregar pago </button>
 
 
-        <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog"
+        <div class="modal fade" id="modalPagoEstudiante" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -51,29 +51,13 @@
 
                     <div class="modal-body">
                         <form method="post" action="{{route('pagoestudiantes.guardar')}}">
-                            <h6>Mes</h6>
-                            <div class="form-group">
-                                <select class="form-control" name="mes" id="carrera" placeholder="seleccione">
-                                    <option></option>
-                                    <option>Enero</option>
-                                    <option>Febrero</option>
-                                    <option>Marzo</option>
-                                    <option>Abril</option>
-                                    <option>Mayo</option>
-                                    <option>Junio</option>
-                                    <option>Julio</option>
-                                    <option>Agosto</option>
-                                    <option>Septiembre</option>
-                                    <option>Obtubre</option>
-                                    <option>Noviembre</option>
-                                    <option>Diciembre</option>
-                                </select>
-                            </div>
                             <h6>Fecha</h6>
                             <div class="form-group">
-                                <input type="date" class="form-control" id="fecha" name="fecha_pago"
-
-                                >
+                                <input type="date" class="form-control"
+                                       min="{{ date("Y-m-d")}}"
+                                       max="{{ date("Y-m-d")}}"
+                                       id="fecha" name="fecha_pago">
+                                <input type="hidden" id="mes" name="mes">
                             </div>
                             <div class="modal-footer">
                                 <input name="id" value="{{$nombre->id}}" type="hidden">
@@ -136,7 +120,7 @@
                                     data-mymes="{{$user->mes}}" data-myfecha="{{$user->fecha_pago}}"
                                     data-cat_id="{{$user->id}}">
                                 <i class="fas fa-edit" ></i></button>
-                            <form method="post" action="{{route('pagoestudiante.borrar', $user->id)}}"
+                            <form method="post" action="{{route('pagoestudiante.borrar', ["id"=>$user->id])}}"
                                   onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
                                 <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
                                 {{method_field('delete')}}
