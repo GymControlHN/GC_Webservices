@@ -127,7 +127,7 @@
                     <input type="number" class="form-control inputtamaño3"
                            id="ruffiel" name="ruffiel" maxlength="3"
                            @isset($dato)
-                           value="{{$dato->ruffier}}"
+                           value="{{$dato->ruffiel}}"
                             @endisset>
                 </div>
             </div>
@@ -185,7 +185,7 @@
             <input name="id" value="{{$id->id}}" type="hidden">
             <div class="container1">
 
-                <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>
+                <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="ruffiel">Cancelar</a></button>
                 <button type="submit" class="btn btn-primary my-4 boton3">Guardar</button>
             </div>
 

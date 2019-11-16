@@ -135,7 +135,13 @@
 
                     </tbody>
                 </table>
-                {{$antecedentes->links()}}
+                <div class="border-top my-3"></div>
+
+                @if($antecedentes->count()>10)
+                    <div class="panel">
+                        {{ $antecedentes->links() }}
+                    </div>
+                @endif
 
 
             </div>
