@@ -8,16 +8,36 @@
     </header>
 
     <div class="w3-container w3-teal mx-5">
-        <h3>Registro de pagos mensuales</h3>
 
-        <div>
-            <h6>Nombre:  {{$nombre->nombre}}</h6>
+        <div class="card">
+
+            <h2 style="all: revert">Pagos</h2>
+
+            <div>
+
+                <H2> Expediente Particalares</H2>
+                <h5>Nombre: {{$nombre->nombre}}</h5>
+
+            </div>
         </div>
+    </div>
+    <br><br>
+    <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+
+        <a class="btn btn-primary" href="{{route("pagoparticulares",["id"=>$nombre->id])}}">Pagos</a>
+        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+
+    </div>
 
 
+    <div class="w3-container w3-teal mx-5">
 
-        <button class="btn btn-danger float-right" data-toggle="modal" data-target="#exampleModalScrollable2">
-            <i class="fas fa-dollar-sign"></i> Agregar pago </button>
+
+        <div class="card">
+            <button class="btn btn-danger float-right" data-toggle="modal" data-target="#modalPagoEstudiante" >
+                <i class="fas fa-dollar-sign"></i> Agregar pago </button>
 
         <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -131,34 +151,11 @@
                 </div>
 
             </div>
-            <form class="form-inline">
-
-
-
-
-
-
-            <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control" id="inputText2" name="busqueda"
-                       placeholder="Buscar">
-            </div>
-            <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
-        </form>
-
-
-
-
-
 
             <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
         box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <table class="table ruler-vertical table-hover mx-sm-0 " >
-                    <div class="thead-light">
-        <div>
-            <h1> </h1>
-        </div>
-        <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-                      box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+
             <thead class="thead-light">
             <tr>
                 <th>Mes</th>
@@ -177,9 +174,9 @@
                 </tr>
                 @foreach ($users_list as $user)
                     <tr>
-                        <td>{{ $user->mes }}</td>
-                        <td>{{ $user->fecha_pago }}</td>
-                        <td>Cancelado</td>
+                        <th>{{ $user->mes }}</th>
+                        <th>{{ $user->fecha_pago }}</th>
+                        <th>Cancelado</th>
                         <th class="form-inline mr-xl-n2 ">
                             <button class="btn btn-warning mr-xl-1"  data-toggle="modal"
                                     data-target="#editarPagosParticulares"
@@ -203,9 +200,14 @@
 
             </tbody>
         </table>
-                    </div>
+
+            </div>
 
 
 
+     </div>
+
+    </div>
+    </div>
 
 @endsection

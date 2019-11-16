@@ -14,9 +14,10 @@
 
         <div class="card">
 
-            <h2 style="all: revert" >Ruffier</h2>
+            <h2 style="all: revert">Grasa Corporal</h2>
 
             <div>
+
                 <H2> Expediente Estudiante</H2>
                 <h5>Nombre: {{$cliente->nombre}}</h5>
 
@@ -24,27 +25,26 @@
         </div>
     </div>
     <br><br>
+    <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
-    <div class="w3-container w3-teal mx-5"  >
+        <a class="btn btn-secondary" href="{{route("pagoestudiantes",["id"=>$cliente->id])}}">Pagos</a>
+        <a class="btn btn-secondary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
+        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
+        <a class="btn btn-primary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
-        <div class="card" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-
-                <!-- Brand -->
-                <a class="navbar-brand" href="{{route("pagoestudiantes",["id"=>$cliente->id])}}">Pagos</a>
-                <a class="navbar-brand" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
-                <a class="navbar-brand" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
-                <a class="navbar-brand" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
+    </div>
 
 
-                <!-- Toggler/collapsibe Button -->
+    <div class="w3-container w3-teal mx-5">
 
-            </nav>
-            <button class="btn btn-primary my-8 mb-2 mr-1 float-right" style="height: 40px; width: 100px" type="button">
+        <div class="card">
+
+        <button class="btn btn-primary my-8 mb-2 mr-1 float-right" style="height: 40px; width: 100px" type="button">
                 <a href="{{route("botonruffier",["id"=>$cliente->id])}}" style="color: white">Nuevo</a>
 
             </button>
+
+
             <div class="table-responsive mb-5" >
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
                     <thead class="thead-light">
