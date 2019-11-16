@@ -8,7 +8,7 @@
     </header>
 
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-            <h2 class="h3centrado">Listado de Particulares</h2>
+            <h2 class="h3centrado mt-3">Listado de Particulares</h2>
 
 
 
@@ -269,8 +269,8 @@
 
 
 
-        <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-    box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+        <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>

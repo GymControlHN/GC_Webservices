@@ -7,9 +7,8 @@
         </div>
     </header>
 
-    <div class="container">
-        <div class="alert alert-dismissable mb-n4" role="alert">
-            <h2 style="all: revert">Lista De Todos Los Clientes</h2>
+    <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
+            <h2 class="h3centrado  mt-3" >Lista De Todos Los Clientes</h2>
 
             <form class="form-inline" method="get" action="{{route('cliente.buscarCliente')}}">
 
@@ -18,8 +17,8 @@
                 </div>
                 <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
             </form>
-            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-                box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">Nombre</th>
@@ -66,8 +65,13 @@
                 @endif
                 </tbody>
             </table>
+            <div class="border-top my-3"></div>
 
-        </div>
+            @if($clientes->count()>10)
+                <div class="panel">
+                    {{ $clientes->links() }}
+                </div>
+            @endif
     </div>
 
 @endsection

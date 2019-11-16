@@ -94,6 +94,13 @@
 
                 </tbody>
             </table>
+                <div class="border-top my-3"></div>
+
+                @if($grasa_corporal->count()>10)
+                    <div class="panel">
+                        {{ $grasa_corporal->links() }}
+                    </div>
+                @endif
 
 </div>
 

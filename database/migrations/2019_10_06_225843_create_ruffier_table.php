@@ -15,12 +15,12 @@ class CreateRuffierTable extends Migration
     {
         Schema::create('ruffier', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fecha_de_ingreso');
+            $table->date('fecha_de_ingreso')->nullable();
             $table->double('pulso_r');
             $table->double('pulso_a');
             $table->double('pulso_d');
             $table->float('ruffiel');
-            $table->string('clasificacion',20);
+            $table->string('clasificacion',20)->nullable();
             $table->double('mvo2');
             $table->double('mvoreal');
             $table->unsignedInteger('id_cliente');
