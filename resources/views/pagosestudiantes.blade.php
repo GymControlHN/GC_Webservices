@@ -39,7 +39,7 @@
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
     </div>
-    <button class="btn btn-danger float-right" style="margin-right: 50px" data-toggle="modal" data-target="#modalPagoParticular" >
+    <button class="btn btn-danger float-right" style="margin-right: 50px" data-toggle="modal" data-target="#modalPagoEstudiante" >
         <i class="fas fa-dollar-sign"></i> Agregar pago
     </button>
 
@@ -131,7 +131,7 @@
                                     data-mymes="{{$user->mes}}" data-myfecha="{{$user->fecha_pago}}"
                                     data-cat_id="{{$user->id}}">
                                 <i class="fas fa-edit" ></i></button>
-                            <form method="post" action="{{route('pagoestudiante.borrar', ["id"=>$user->id])}}"
+                            <form method="post" action="{{route('pagoestudiante.borrar', [$user->id,$user->id_cliente])}}"
                                   onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
                                 <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
                                 {{method_field('delete')}}

@@ -29,7 +29,6 @@
                     <h3 style="all: revert">Pagos</h3>
                 <h5>Nombre: {{$nombre->nombre}}</h5>
 
-
             </div>
         </div>
     </div>
@@ -140,6 +139,19 @@
 
                 </div>
 
+            @if(session("exito"))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    {{ session('exito') }}
+                </div>
+
+            @endif
+
+
+            <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                 <div class="table  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
         box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
                     <table class="table ruler-vertical table-hover mx-sm-0 ">
@@ -154,38 +166,36 @@
                         </thead>
                         <tbody>
 
-                        @if($pagos->count()>0)
-                            @foreach ($pagos as $day => $users_list)
-                                <tr>
-                                    <th colspan="4"
-                                        style="background-color: #7086f7; color: white;">Registros del
-                                        año {{ $day }}</th>
-                                </tr>
-                                @foreach ($users_list as $user)
-                                    <tr>
-                                        <th>{{ $user->mes }}</th>
-                                        <th>{{ $user->fecha_pago }}</th>
-                                        <th>Cancelado</th>
-                                        <th class="form-inline mr-xl-n2 ">
-                                            <button class="btn btn-warning mr-xl-1" data-toggle="modal"
-                                                    data-target="#editarPagosParticulares"
-                                                    data-mymes="{{$user->mes}}" data-myfecha="{{$user->fecha_pago}}"
-                                                    data-cat_id="{{$user->id}}">
-                                                <i class="fas fa-edit"></i></button>
-                                            <form method="post" action="{{route('pagoparticulares.borrar', $user->id)}}"
-                                                  onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
-                                                <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
-                                                </button>
-                                                {{method_field('delete')}}
-                                            </form>
-                                        </th>
-                                    </tr>
-                                @endforeach
-                            @endforeach
-                        @else
-                            <tr>
-                                <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
-                        @endif
+            @if($pagos->count()>0)
+            @foreach ($pagos as $day => $users_list)
+                <tr>
+                    <th colspan="4"
+                        style="background-color: #7086f7; color: white;">Registros del año {{ $day }}</th>
+                </tr>
+                @foreach ($users_list as $user)
+                    <tr>
+                        <th>{{ $user->mes }}</th>
+                        <th>{{ $user->fecha_pago }}</th>
+                        <th>Cancelado</th>
+                        <th class="form-inline mr-xl-n2 ">
+                            <button class="btn btn-warning mr-xl-1"  data-toggle="modal"
+                                    data-target="#editarPagosParticulares"
+                                    data-mymes="{{$user->mes}}" data-myfecha="{{$user->fecha_pago}}"
+                                    data-cat_id="{{$user->id}}">
+                                <i class="fas fa-edit"></i></button>
+                            <form method="post" action="{{route('pagoparticulares.borrar', [$user->id,$user->id_cliente])}}"
+                                  onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
+                                <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
+                                {{method_field('delete')}}
+                            </form>
+                        </th>
+                    </tr>
+                @endforeach
+            @endforeach
+            @else
+                <tr>
+                    <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
+            @endif
 
 
                         </tbody>

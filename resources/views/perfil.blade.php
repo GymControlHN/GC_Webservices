@@ -10,7 +10,7 @@
         </div>
     </header>
     <div class=" w3-container w3-teal mx-5">
-        <h2 style="all: revert">Listado de Usuarios</h2>
+        <h3 style="all: revert">Listado de Usuarios</h3>
 
 
         <button class="btn btn-success float-right" data-toggle="modal" data-target="#exampleModalScrollable">

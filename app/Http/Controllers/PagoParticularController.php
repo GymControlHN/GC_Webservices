@@ -35,13 +35,14 @@ class PagoParticularController extends Controller
         $nuevoPagoClientee->mes = $request->input('mes');
         $nuevoPagoClientee->fecha_pago = $request->input('fecha_pago');
         $nuevoPagoClientee->tipo_pago = "Pago_Particular";
-
+        $nuevoPagoClientee->id_cliente = $request->input("id");
 
             $nuevoPagoClientee->save();
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
-        return redirect('pagosparticulares');
+        return back()->with(["exito"=>"Se agregó exitosamente"]);
+        return $this->index($request->input("id"));
 
     }
 
@@ -71,11 +72,12 @@ class PagoParticularController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy($id,$id_cliente)
     {
         PagoClientesP::destroy($id);
+        return $this->index($id_cliente);
 
-        return redirect('pagosparticulares');
+        return back()->with(["exito"=>"Se elimino exitosamente"]);
     }
 
 }

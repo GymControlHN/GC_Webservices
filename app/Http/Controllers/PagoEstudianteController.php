@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class PagoEstudianteController extends Controller
 {
-    public function index (Request $request,$id)
+    public function index ($id)
     {
         $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Estudiante")
             ->where("id_cliente", "=",$id)
@@ -42,6 +42,7 @@ class PagoEstudianteController extends Controller
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
         return back()->with(["exito"=>"Se agregó exitosamente"]);
+        return $this->index($request->input("id"));
 
     }
     public function show(PagoClientesp $pagoClientes)
@@ -73,10 +74,10 @@ class PagoEstudianteController extends Controller
 
     }
 
-    public function destroy($id) {
-        PagoClientesP::destroy($id);
+    public function destroy($id, $id_cliente) {
 
-        return redirect('pagosestudiantes');
+        PagoClientesP::destroy($id);
+        return $this->index($id_cliente);
 
         return back()->with(["exito"=>"Se elimino exitosamente"]);
 
