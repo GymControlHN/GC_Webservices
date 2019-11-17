@@ -112,8 +112,9 @@ Route::group(["middleware"=>"auth"],function (){
     Route::post('pagosparticulares/guardar', 'PagoParticularController@store')->name('pagoparticulares.guardar');
 
     Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
-    Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas');
+    Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas.crear');
 
+    Route::get("estadisticas/{id}","EstadisticasController@show")->name("estadistica.ver");
     Route::get('grasa/{id}', 'GrasaController@index')->name('grasa.uni');
     Route::get('grasa/nuevo/{id}', 'GrasaController@Create')->name('botongrasa');
     Route::post('grasa/crear', 'GrasaController@store')->name('grasa.guardar');

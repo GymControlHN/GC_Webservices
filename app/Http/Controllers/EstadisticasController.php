@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Grasa;
+use App\Imc;
+use App\PagoClientesP;
+use App\Ruffier;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Cliente;
 
@@ -22,6 +27,25 @@ class EstadisticasController extends Controller
     {
 
         return view('estadisticas');
+    }
+
+    public  function  show($id){
+
+        $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Estudiante")
+            ->where("id_cliente", "=", $id)
+            ->orderBy("fecha_pago", "asc")
+            ->get()
+            ->groupBy(function ($item) {
+                return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
+            });
+
+
+        $imc = Imc::where("id_cliente","=",$id);
+        $grasas = Grasa::where("id_cliente","=",$id);
+            $ruffier = Ruffier::where("id_cliente","=",$id);
+            $cliente = Cliente::findOrfail($id);
+
+       return view('verestadistica',compact("pagos","imc","ruffier","cliente"))->with("grasas",$grasas);
     }
 
     public function buscarCliente(Request $request){

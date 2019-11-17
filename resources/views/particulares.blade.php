@@ -56,7 +56,7 @@
 
                                 <h6>Número de Identidad</h6>
                                 <div class="form-group"  >
-                                    <input type="text"  pattern="([0-9]{1,13})" class="form-control" id="numero_de_identidad" name="numero_de_identidad"
+                                    <input type="text"  pattern="([0-9]{1,13})" class="form-control" id="identificacion" name="identificacion"
                                            title="Ingrese solo números "
                                            required
                                            minlength="1" maxlength="13" aria-valuemax="13" max="9999999999999"
@@ -181,10 +181,10 @@
 
                             <h6>Número de Identidad</h6>
                             <div class="form-group">
-                                <input type="text" pattern="([0-9]{1,13})" class="form-control" id="numero_de_identidad" name="numero_de_identidad"
+                                <input type="text" pattern="([0-9]{1,13})" class="form-control" id="identificacion" name="identificacion"
                                        @isset($particular)
-                                       value="{{$particular->numero_de_identidad}}"
-                                       @endisset value="{{old('numero_de_identidad')}}"
+                                       value="{{$particular->identificacion}}"
+                                       @endisset value="{{old('identificacion')}}"
                                        required
                                        minlength="1" maxlength="13" aria-valuemax="13" max="9999999999999"
 
@@ -294,7 +294,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 <tr>
 
                     <td>{{$particular->nombre}}</td>
-                    <td>{{$particular->numero_de_identidad}}</td>
+                    <td>{{$particular->identificacion}}</td>
                     <td>{{$particular->profesion_u_oficio}}</td>
                     <td>{{$particular->telefono}}</td>
                     <td>{{$particular->genero}}</td>
@@ -311,7 +311,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                 onclick="document.getElementById('pago2_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
 
                         <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
-                                data-myidentidad="{{$particular->numero_de_identidad}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
+                                data-myidentidad="{{$particular->identificacion}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
                                 data-mytelefono="{{$particular->telefono}}" data-myprofesion="{{$particular->profesion_u_oficio}}"
                                 data-catid="{{$particular->id}}"><i class="fas fa-edit"></i></button>
                         <form method="post" action="{{route('particular.borrar', $particular->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al cliente? ')">

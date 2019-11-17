@@ -186,10 +186,10 @@
 
                            <h6>Número Cuenta</h6>
                            <div class="form-group">
-                               <input  type="text"  pattern="([0-9]{1,11})"  class="form-control" id="numero_de_cuenta" name="numero_de_cuenta"
+                               <input  type="text"  pattern="([0-9]{1,11})"  class="form-control" id="identificacion" name="identificacion"
                                       @isset($estudiante)
-                                      value="{{$estudiante->numero_de_cuenta}}"
-                                      @endisset value="{{old('numero_de_cuenta')}}"
+                                      value="{{$estudiante->identificacion}}"
+                                      @endisset value="{{old('identificacion')}}"
                                       title="Ingrese solo números"
                                       required
                                       minlength="1" maxlength="11" aria-valuemax="11" max="99999999999"
@@ -291,7 +291,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
 
         <tr>
             <td>{{$estudiante->nombre}}</td>
-            <td>{{$estudiante->numero_de_cuenta}}</td>
+            <td>{{$estudiante->identificacion}}</td>
             <td>{{$estudiante->carrera}}</td>
             <td>{{$estudiante->telefono}}</td>
             <td>{{$estudiante->genero}}</td>

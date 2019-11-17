@@ -7,6 +7,7 @@
         </div>
     </header>
 
+    <div class="container">
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
             <h2 class="h3centrado  mt-3" >Lista De Todos Los Clientes</h2>
 
@@ -22,9 +23,9 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 <thead class="thead-light">
                 <tr>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Numero de Cuenta</th>
+                    <th scope="col">Identificación</th>
                     <th scope="col">Edad</th>
-                    <th scope="col">Carrera o profesion u oficio</th>
+                    <th scope="col">Carrera o Profesión u Oficio</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Tipo de Cliente</th>
                     <th scope="col">Fecha</th>
@@ -54,9 +55,9 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                             <td>{{$estudiante->descripcion}}</td>
                             <td>{{$estudiante->fecha_de_ingreso}}</td>
                             <td>
-                                <button type="button" class="btn btn-secondary btn-sm">Ver Estadística</button>
-                                <a  href="{{route("imc.ini",$estudiante->id)}}" ></a>
-                            </td>
+                                <a type="button" class="btn btn-secondary btn-sm"
+                                        href="{{route("estadistica.ver",["id"=>$estudiante->id])}}">Ver Estadística</a>
+                              </td>
                         </tr>
                     @endforeach
                 @else
@@ -65,13 +66,8 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 @endif
                 </tbody>
             </table>
-            <div class="border-top my-3"></div>
 
-            @if($clientes->count()>10)
-                <div class="panel">
-                    {{ $clientes->links() }}
-                </div>
-            @endif
+        </div>
     </div>
 
 @endsection
