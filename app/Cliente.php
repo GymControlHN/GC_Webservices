@@ -14,7 +14,7 @@ class Cliente extends Model
         'identificacion',
         'profesion_u_oficio',
         'fecha_de_ingreso',
-        'carrera',
+        'id_carrera',
         'id_tipo_cliente',
         'genero ',
         'telefono'

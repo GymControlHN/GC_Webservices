@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoCarreraTable extends Migration
+class CreateCarrerasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateTipoCarreraTable extends Migration
      */
     public function up()
     {
-        Schema::create('carrera', function (Blueprint $table) {
+        Schema::create('carreras', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('carrera');
             $table->timestamps();
-            $table->string('informatica_administrativa');
-            $table->string('agroindustria');
-            $table->string('enfermeria');
-            $table->string('TUATEC');
-            $table->string('otros');
         });
     }
 
@@ -31,6 +27,6 @@ class CreateTipoCarreraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carrera');
+        Schema::dropIfExists('carreras');
     }
 }
