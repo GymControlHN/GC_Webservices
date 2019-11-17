@@ -75,7 +75,7 @@
 
     <body>
 
-    <div class="container">
+    <div class="container mr-5">
 
         <form name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
@@ -83,13 +83,13 @@
         @endisset ">
 
             {{method_field('put')}}
-            <br><br>
-            <h5 class="label2">Calculo de Ruffier</h5>
-            <br>
-            <div class="form-group">
+
+            <h5 class=" ml-5 mt-4" >Calculo de Ruffier</h5>
+
+            <div class="form-row mt-4">
+                <div class="form-group col-md-6">
                 <h6 class=" label2" for="email">Pulso en reposo</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3" id="pulso1"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso1"
                            name="pulso1" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso1}}"
@@ -97,12 +97,9 @@
                     >
                 </div>
 
-            </div>
-
-            <div class="form-group">
+                <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pulso en accion:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="pulso2" name="pulso2" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso2}}"
@@ -110,21 +107,19 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pulso en descanso:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="pulso3" name="pulso3" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso3}}"
                             @endisset>
                 </div>
-            </div>
 
-            <div class="form-group">
+                <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Ruffier:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="ruffiel" name="ruffiel" maxlength="3"
                            @isset($dato)
                            value="{{$dato->ruffiel}}"
@@ -132,21 +127,20 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Diagnostico:</h6>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="text" class="form-control inputtamaño3"
                            id="leyenda" name="clasificacion" maxlength="50"
                            @isset($dato)
                            value="{{$dato->clasificacion}}"
                             @endisset
                     >
                 </div>
-            </div>
-            <div class="form-group">
+
+                <div class="form-group col-md-6">
                 <h6 class="label2" for="email">MVO2:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="mvo" name="mvo" maxlength="3"
                            @isset($dato)
                            value="{{$dato->mvo}}"
@@ -154,32 +148,30 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-6">
                 <h6 class="label2" for="email">MVO2 Real:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="mvo2" name="mvor" maxlength="3"
 
                            @isset($dato)
                            value="{{$dato->mvor}}"
                             @endisset>
                 </div>
-            </div>
-            <div class="container">
 
 
-
+                <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Fecha:</h6>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                    <input style="width: 310px" type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                            placeholder="Escriba la fecha de ingreso"
 
                            @isset($dato)
                            value="{{$dato->fecha_de_ingreso}}"
                             @endisset
                     >
-                </div>
 
+
+                   </div>
             </div>
 
             <input name="id" value="{{$id->id}}" type="hidden">
@@ -192,7 +184,6 @@
 
 
         </form>
-
     </div>
 
     </body>

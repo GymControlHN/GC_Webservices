@@ -9,7 +9,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="w3-container w3-teal mx-5">
         <div class="alert alert-dismissable mb-n4" role="alert">
             <h2 style="all: revert">Datos fisicos</h2>
             <h5>Nombre: {{$cliente->nombre}}</h5>
@@ -18,8 +18,8 @@
         </div>
         <br><br>
         <h2 class="h3centrado  mt-3" >Pagos</h2>
-        <div class="table-responsive  mx-sm-0" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-        box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+            box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>
@@ -66,8 +66,8 @@
         </div>
 
         <h2 class="h3centrado  mt-3" >IMC</h2>
-        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 3px 50px 20px
-                rgba(189,178,189,0.76); box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+            box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>
@@ -137,8 +137,8 @@
         </div>
 
             <h2 class="h3centrado  mt-3" >Grasa</h2>
-            <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-            box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+                box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
 
                     <thead class="thead-light">
@@ -190,7 +190,8 @@
             </div>
 
                 <h2 class="h3centrado  mt-3" >Ruffier</h2>
-                <div class="table-responsive mb-5">
+        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+                box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <table class="table ruler-vertical table-hover mx-sm-0 ">
                         <thead class="thead-light">
                         <tr>

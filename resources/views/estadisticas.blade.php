@@ -7,7 +7,6 @@
         </div>
     </header>
 
-    <div class="container">
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
             <h2 class="h3centrado  mt-3" >Lista De Todos Los Clientes</h2>
 
@@ -18,7 +17,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
             </form>
-            <table class="table  mx-sm-0" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+            <table class="table ruler-vertical table-hover mx-sm-0 " style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
 box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 <thead class="thead-light">
                 <tr>

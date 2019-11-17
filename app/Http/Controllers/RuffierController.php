@@ -14,8 +14,8 @@ class RuffierController extends Controller
     public function index($id)
     {
         $datos = Ruffier::where("id_cliente","=",$id)->paginate(10);
-        $cliente = Cliente::findOrfail($id);
-        return view('ruffiel',compact("datos"))->with("cliente",$cliente);
+        $cliente = Cliente::find($id);
+        return view('ruffiel',compact("datos","cliente"));
 
 
     }
@@ -40,27 +40,28 @@ class RuffierController extends Controller
         $nuevosDatos->clasificacion = $request->input('clasificacion');
         $nuevosDatos->mvo2 = $request->input('mvo');
         $nuevosDatos->mvoreal = $request->input('mvor');
+        $nuevosDatos->id_cliente=$request->input("id");
 
         $nuevosDatos->save();
 
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','ingreso correcto');
-     //   return redirect('ruffiel');
+        //   return redirect('ruffiel');
 
         return back();
 
     }
 
- /*   public function show(Ruffier $ruffier)
-    {
+    /*   public function show(Ruffier $ruffier)
+       {
 
-    }*/
+       }*/
 
     public function edit($id,$id_cliente)
     {
         $antecedentes = Ruffier::findOrFail($id);
         $id_cliente = Cliente::findOrFail($id_cliente);
-        return view('botonruffiereditar')-> with("antecedentes", $antecedentes)->with("id",$id_cliente);
+        return view('botonruffiereditar')-> with("antecedentes", $id_cliente)->with("id",$id_cliente);
 
     }
 
@@ -69,17 +70,17 @@ class RuffierController extends Controller
 
         // Validar los datos
 
-       /* $validatedData = $request->validate([
-            'fecha_de_ingreso' => 'required|max:12|not null',
-            'pulso_r' => 'required|numeric',
-            'pulso_a' => 'required|numeric',
-            'pulso_d' => 'required|numeric',
-            'ruffiel' => 'required|float',
-            'clasificacion' => 'string',
-            'mvo2' => 'required|numeric',
-            'mvoreal' => 'required|numeric',
-        ]);*/
-       // Buscar la instancia en la base de datos.
+        /* $validatedData = $request->validate([
+             'fecha_de_ingreso' => 'required|max:12|not null',
+             'pulso_r' => 'required|numeric',
+             'pulso_a' => 'required|numeric',
+             'pulso_d' => 'required|numeric',
+             'ruffiel' => 'required|float',
+             'clasificacion' => 'string',
+             'mvo2' => 'required|numeric',
+             'mvoreal' => 'required|numeric',
+         ]);*/
+        // Buscar la instancia en la base de datos.
 
         $datonuevo = Ruffier::findOrFail($id);
 
@@ -106,9 +107,9 @@ class RuffierController extends Controller
 
     public function destroy($id)
     {
-     Ruffier::destroy($id);
+        Ruffier::destroy($id);
 
-       // return redirect('ruffiel');
+        // return redirect('ruffiel');
         return $this->index($id);
 
     }
@@ -128,3 +129,5 @@ class RuffierController extends Controller
 
 
 }
+
+

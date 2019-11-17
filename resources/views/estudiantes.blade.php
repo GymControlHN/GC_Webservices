@@ -14,7 +14,7 @@
            <h2 class="h3centrado  mt-3" >Listado de Estudiantes</h2>
 
 
-           <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalScrollable">
+           <button type="button" class="btn btn-primary float-right"  data-toggle="modal" data-target=".bd-example-modal-lg">
                <i class="fas fa-user-plus"></i>
            </button>
 
@@ -23,9 +23,9 @@
 
            </button-->
 
-           <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+           <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-               <div class="modal-dialog modal-dialog-scrollable" role="document">
+               <div class="modal-dialog modal-lg" role="document">
                    <div class="modal-content">
                        <div class="modal-header">
                            <h5 class="modal-title" id="exampleModalScrollableTitle">Registro Estudiantes</h5>
@@ -37,34 +37,37 @@
 
                            <form method="post" action="{{route('estudiante.guardar')}}">
 
-
+                               <div class="form-row">
+                                   <div class="form-group col-md-6">
                                <h6>Nombre Completo</h6>
-                               <div class="form-group">
                                    <input type="text"  class="form-control solo-letras"  id="nombre" name="nombre"
                                            required
                                    >
                                </div>
 
+                                   <div class="form-group col-md-6">
                                <h6>Edad</h6>
-                               <div class="form-group">
-                                   <input type="text"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
+                                       <input type="text"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
                                           aria-valuemax="2"
                                           title="Ingresa solo numeros entre 1 a 99 años"
                                           required
                                           minlength="1" maxlength="2" min="1" max="99">
                                </div>
+                               </div>
 
+                               <div class="form-row">
+                               <div class="form-group col-md-6">
                             <h6>Número Cuenta</h6>
-                            <div class="form-group">
                                 <input type="text" pattern="([0-9]{1,11})" class="form-control" id="identificacion"
                                        name="identificacion"
                                        title="Ingrese solo números"
                                        required
                                        minlength="1" maxlength="11" aria-valuemax="11" max="99999999999">
-                            </div>
+                               </div>
 
+
+                       <div class="form-group col-md-6">
                                <h6>Carrera</h6>
-                               <div class="form-group">
                                    <select class="form-control" id="carrera" name="carrera"
                                            required>
                                        <option></option>
@@ -75,13 +78,13 @@
                                        <option>Otros</option>
                                    </select>
                                </div>
+                               </div>
 
 
 
-
-
-                               <h6> Teléfono </h6>
-                               <div class="form-group">
+                               <div class="form-row">
+                               <div class="form-group col-md-6">
+                                   <h6> Teléfono </h6>
                                    <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
                                           title="Ingrese solo números"
                                           required
@@ -89,6 +92,15 @@
                                </div>
 
 
+
+                                   <div class="form-group col-md-6">
+                                       <h6>Fecha</h6>
+
+                                       <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                              required>
+                                   </div>
+
+                               <div class="form-group col-md-6">
                                <h6>Sexo</h6>
 
                                <div class="form-check form-check-inline">
@@ -99,17 +111,12 @@
                                    <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required>Femenino
                                    <label class="form-check-label" for="inlineRadio2"></label>
                                </div>
-
-
-
-
-
-                               <h6>Fecha</h6>
-                               <div class="form-group">
-                                   <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                          required >
-
                                </div>
+                               </div>
+
+
+
+
 
                                    <div class="modal-footer">
                                        <button type="button" class="btn btn-secondary" data-dismiss="modal" >cerrar</button>
@@ -253,7 +260,6 @@
                                       @isset($estudiante)
                                       value="{{$estudiante->fecha_de_ingreso}}"
                                       @endisset value="{{old('fecha_de_ingreso')}}"
-
                                >
                            </div>
 

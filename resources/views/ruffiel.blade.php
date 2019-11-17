@@ -12,7 +12,7 @@
 
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card">
+        <div class="card" style="border: none">
 
 
 
@@ -63,7 +63,8 @@
 
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card">
+        <div class="card"  style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
 
 
 

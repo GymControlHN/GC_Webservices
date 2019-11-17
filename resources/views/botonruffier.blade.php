@@ -11,7 +11,6 @@
     </header>
 
 
-
     <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
@@ -77,100 +76,91 @@
 
     <body>
 
-    <div class="container">
+<div class="container mr-5">
 
         <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}">
 
             <input name="_token" value="{{csrf_token()}}" type="hidden">
-            <br><br>
-            <h5 class="label2">Calculo de Ruffier</h5>
-            <br>
-                <div class="form-group">
+
+
+            <h5 class="ml-5 mt-4">Calculo de Ruffier</h5>
+
+            <div class="form-row mt-4">
+                <div class="form-group col-md-6">
                     <h6 class=" label2" for="email">Pulso en reposo</h6>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3" id="pulso1"
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso1"
                                name="pulso1" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                               value="{{old('pulso1')}}"
 
                         >
                     </div>
 
-                </div>
 
-                <div class="form-group">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pulso en accion:</h6>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="pulso2" name="pulso2" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                               value="{{old('pulso2')}}">
                     </div>
                 </div>
 
-                <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pulso en descanso:</h6>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="pulso3" name="pulso3" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
                               value="{{old('pulso3')}}">
-                    </div>
                 </div>
 
-                <div class="form-group">
+                    <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Ruffier:</h6>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="ruffiel" name="ruffiel" maxlength="3"
                              value="{{old('ruffiel')}}" >
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Diagnostico:</h6>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control inputtamaño3"
+                        <input style="width: 310px" type="text" class="form-control inputtamaño3"
                                id="leyenda" name="clasificacion" maxlength="50"
                             value="{{old('clasificacion')}}">
                     </div>
-                </div>
-                <div class="form-group">
+
+                   <div class="form-group col-md-6">
                     <h6 class="label2" for="email">MVO2:</h6>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="mvo" name="mvo" maxlength="3"
                               value="{{old('mvo')}}" >
                     </div>
                 </div>
 
-                <div class="form-group">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
                     <h6 class="label2" for="email">MVO2 Real:</h6>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control inputtamaño3"
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="mvo2" name="mvor" maxlength="3"
 
                                value="{{old('mvor')}}" >
                     </div>
-                </div>
-                <div class="container">
 
-
-
+                        <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Fecha:</h6>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                        <input style="width: 310px" type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
 
                                value="{{old('fecha_de_ingreso')}}"
                         >
-                    </div>
 
+                        </div>
                 </div>
 
                 <input name="id" value="{{$id}}" type="hidden">
-                <div class="container1">
 
                     <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>
                     <button type="submit" class="btn btn-primary my-4 boton3">Guardar</button>
-                </div>
+
 
 
 
