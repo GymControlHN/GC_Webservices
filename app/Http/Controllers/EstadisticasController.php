@@ -40,12 +40,13 @@ class EstadisticasController extends Controller
             });
 
 
-        $imc = Imc::where("id_cliente","=",$id);
-        $grasas = Grasa::where("id_cliente","=",$id);
-            $ruffier = Ruffier::where("id_cliente","=",$id);
+        $antecedentes = Imc::where("id_cliente","=",$id)->get();
+        $grasas = Grasa::where("id_cliente","=",$id)->get();
+            $datos = Ruffier::where("id_cliente","=",$id)->get();
             $cliente = Cliente::findOrfail($id);
 
-       return view('verestadistica',compact("pagos","imc","ruffier","cliente"))->with("grasas",$grasas);
+       return view('verestadistica',compact("pagos","antecedentes","datos","cliente"))
+           ->with("grasa_corporal",$grasas);
     }
 
     public function buscarCliente(Request $request){

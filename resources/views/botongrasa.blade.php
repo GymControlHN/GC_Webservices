@@ -158,7 +158,7 @@
             <div class="container1">
 
                 <button type="button" class="btn btn-primary my-4 boton"><a style="color: white"
-                                                                            href="route{{'grasa'}}">Cancelar</a>
+                                                                            href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
                 </button>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>

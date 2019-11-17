@@ -122,7 +122,7 @@ Route::group(["middleware"=>"auth"],function (){
 Route::get("buscarPago","PagoEstudianteController@buscarPagos")->name("pagosestudiantes.buscarPago");
 
 
-    Route::delete('grasa/{id}/borrar','GrasaController@destroy')->name('grasa.borrar');
+    Route::delete('grasa/{id}/{id_cliente}/borrar','GrasaController@destroy')->name('grasa.borrar');
     Route::get('grasa/{id}/{cliente}/editar','GrasaController@edit')->name('grasa.editar');
     Route::put('grasa/{id}/edit','GrasaController@update')->name('grasa.update');
 

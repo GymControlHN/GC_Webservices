@@ -16,7 +16,8 @@ class GrasaController extends Controller
     public function index($id)
     {
 
-        $grasa_corporal = Grasa::where("id_cliente", "=", $id)->paginate(10);
+        $grasa_corporal = Grasa::where("id_cliente", "=", $id)
+            ->orderBy("created_at","desc")->paginate(10);
 
         $nombre = Cliente::findOrfail($id);
         return view('grasa', compact("grasa_corporal"))->with("nombre", $nombre);
@@ -59,7 +60,7 @@ class GrasaController extends Controller
 
         // TODO redireccionar a una página con sentido.
 
-        return back();
+        return $this->index( $request->input("id"));
 
     }
 
@@ -102,11 +103,11 @@ class GrasaController extends Controller
         return $this->index($request->input("id_cliente"));
     }
 
-    public function destroy($id)
+    public function destroy($id,$id_cliente)
     {
         Grasa::destroy($id);
 
-        return redirect('grasa');
+        return $this->index($id_cliente);
     }
 
 }
