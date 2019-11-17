@@ -263,6 +263,7 @@ modal.find('.modal-body #id').val(cat_id);
         var cat_id =  button.data('cat_id');
         var modal = $(this);
 
+
         modal.find('.modal-body #mes').val(mes);
         modal.find('.modal-body #fecha_pago').val(fecha_pago);
         modal.find('.modal-body #id').val(cat_id);

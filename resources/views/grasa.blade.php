@@ -16,20 +16,36 @@
 
         <div class="card">
 
-            <h2 style="all: revert">Grasa Corporal</h2>
 
-            <div>
+            @if($nombre->id_tipo_cliente==3 )
 
-                <H2> Expediente Estudiante</H2>
-                <h5>Nombre: {{$nombre->nombre}}</h5>
+                <H3> Expediente Particular</H3>
+            @endif
+            @if($nombre->id_tipo_cliente==2)
+                <H3> Expediente Docente</H3>
 
-            </div>
+            @endif
+            @if($nombre->id_tipo_cliente==1)
+                <H3> Expediente Estudiante</H3>
+            @endif
+            <h3 style="all: revert">Grasa Corporal</h3>
+            <h5>Nombre: {{$nombre->nombre}}</h5>
+
+        </div>
         </div>
     </div>
     <br><br>
     <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
-        <a class="btn btn-secondary" href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
+        <a class="btn btn-secondary" @if($nombre->id_tipo_cliente==3)
+        href="{{route("pagoparticulares",["id"=>$nombre->id])}}"
+           @endif
+           @if($nombre->id_tipo_cliente ==1)
+           href="{{route("pagoestudiantes",["id"=>$nombre->id])}}" @endif
+
+           @if($nombre->id_tipo_cliente ==2)
+           style="display: none;"
+                @endif >Pagos</a>
         <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
         <a class="btn btn-primary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>

@@ -11,11 +11,19 @@
 
         <div class="card">
 
-            <h2 style="all: revert">Pagos</h2>
-
             <div>
+                @if($nombre->id_tipo_cliente==3 )
 
-                <H2> Expediente Estudiante</H2>
+                    <H3> Expediente Particular</H3>
+                @endif
+                @if($nombre->id_tipo_cliente==2)
+                    <H3> Expediente Docente</H3>
+
+                @endif
+                @if($nombre->id_tipo_cliente==1)
+                    <H3> Expediente Estudiante</H3>
+                @endif
+                <h3 style="all: revert">Pago</h3>
                 <h5>Nombre: {{$nombre->nombre}}</h5>
 
             </div>
@@ -31,12 +39,14 @@
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
     </div>
+    <button class="btn btn-danger float-right" style="margin-right: 50px" data-toggle="modal" data-target="#modalPagoParticular" >
+        <i class="fas fa-dollar-sign"></i> Agregar pago
+    </button>
+
 
     <div class=" w3-container w3-teal mx-5">
 
 
-        <button class="btn btn-danger float-right" data-toggle="modal" data-target="#modalPagoEstudiante" >
-            <i class="fas fa-dollar-sign"></i> Agregar pago </button>
 
 
         <div class="modal fade" id="modalPagoEstudiante" tabindex="-1" role="dialog"
