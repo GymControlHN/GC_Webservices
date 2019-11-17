@@ -36,6 +36,7 @@ class ParticularesController extends Controller
         $nuevoParticular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoParticular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $nuevoParticular->telefono = $request->input ('telefono');
+        $nuevoParticular->id_carrera=1;
         $nuevoParticular->genero = $request->input ('genero');
         $nuevoParticular->id_tipo_cliente="3";
         $nuevoParticular->save();
@@ -72,6 +73,7 @@ class ParticularesController extends Controller
         $particular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $particular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $particular->telefono = $request->input ('telefono');
+        $particular->id_carrera=1;
         $particular->genero = $request->input ('genero');
         $particular->id_tipo_cliente="3";
         // Guardar los cambios

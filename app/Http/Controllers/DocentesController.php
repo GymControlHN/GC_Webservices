@@ -43,6 +43,7 @@ class DocentesController extends Controller
         $nuevoDocente->telefono = $request->input('telefono');
         $nuevoDocente->profesion_u_oficio=$request->input("profesion_u_oficio");
         $nuevoDocente->genero = $request->input('genero');
+        $nuevoDocente->id_carrera=1;
         $nuevoDocente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoDocente->id_tipo_cliente="2";
 
@@ -90,6 +91,7 @@ class DocentesController extends Controller
         $docente->telefono = $request->input('telefono');
         $docente->profesion_u_oficio=$request->input("profesion_u_oficio");
         $docente->genero = $request->input('genero');
+        $docente->id_carrera=1;
         $docente->id_tipo_cliente="2";
 
         $docente->save();

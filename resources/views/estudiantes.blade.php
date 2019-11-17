@@ -55,64 +55,66 @@
                                        minlength="1" maxlength="2" min="1" max="99">
                             </div>
 
-                               <div class="form-row">
-                               <div class="form-group col-md-6">
-                            <h6>Número Cuenta</h6>
-                                <input type="text" pattern="([0-9]{1,11})" class="form-control" id="identificacion"
-                                       name="identificacion"
-                                       title="Ingrese solo números"
-                                       required
-                                       minlength="1" maxlength="11" aria-valuemax="11" max="99999999999">
-                               </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <h6>Número Cuenta</h6>
+                                    <input type="text" pattern="([0-9]{1,11})" class="form-control" id="identificacion"
+                                           name="identificacion"
+                                           title="Ingrese solo números"
+                                           required
+                                           minlength="1" maxlength="11" aria-valuemax="11" max="99999999999">
+                                </div>
 
-                            <h6>Carrera</h6>
-                            <div class="form-group">
-                                <select class="form-control" id="carrera" name="carrera"
-                                        required>
-                                    @foreach($carreras as $carrera)
-                                        <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
-                                    @endforeach
-
-
-                                </select>
-                            </div>
+                                <h6>Carrera</h6>
+                                <div class="form-group">
+                                    <select class="form-control" id="carrera" name="carrera"
+                                            required>
+                                        @foreach($carreras as $carrera)
+                                            <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
+                                        @endforeach
 
 
-                            <h6> Teléfono </h6>
-                            <div class="form-group">
-                                <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono"
-                                       name="telefono"
-                                       title="Ingrese solo números"
-                                       required
-                                       maxlength="8" minlength="1" aria-valuemax="8" max="99999999">
-                            </div>
+                                    </select>
+                                </div>
 
 
-                            <h6>Sexo</h6>
-
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M"
-                                       required>Masculino
-                                <label class="form-check-label" for="inlineRadio1"></label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F"
-                                       required>Femenino
-                                <label class="form-check-label" for="inlineRadio2"></label>
-                            </div>
+                                <h6> Teléfono </h6>
+                                <div class="form-group">
+                                    <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono"
+                                           name="telefono"
+                                           title="Ingrese solo números"
+                                           required
+                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999">
+                                </div>
 
 
-                            <h6>Fecha</h6>
-                            <div class="form-group">
-                                <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                       required>
+                                <h6>Sexo</h6>
 
-                            </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M"
+                                           required>Masculino
+                                    <label class="form-check-label" for="inlineRadio1"></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F"
+                                           required>Femenino
+                                    <label class="form-check-label" for="inlineRadio2"></label>
+                                </div>
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
 
+                                <h6>Fecha</h6>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="fecha_de_ingreso"
+                                           name="fecha_de_ingreso"
+                                           required>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+
+                                </div>
                             </div>
                                </div>
                         </form>
@@ -317,12 +319,11 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                         data-catid="{{$estudiante->id}}" data-sexo="{{$estudiante->genero}}"><i
                                             class="fas fa-edit"></i></button>
 
-                                <form method="post" action="{{route('estudiante.borrar', $estudiante->id)}}"
-                                      onclick="return confirm('Estas seguro que deseas eliminar al estudiante? ')">
-                                    <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
+                                    <button class="btn btn-danger mr-xl-2 "
+                                            data-id="{{$estudiante->id}}"
+                                            data-toggle="modal"
+                                            data-target="#modalBorrarEstudiante"><i class="fas fa-trash-alt"></i>
                                     </button>
-                                    {{method_field('delete')}}
-                                </form>
 
 
                                 <button class="btn btn-info mr-xl-2 " type="button">
@@ -369,23 +370,31 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
         </div>
     </div>
 
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarEstudiante">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Atencion Eliminacion</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <form method="post" action="{{route('estudiante.borrar')}}">
+                    {{method_field('delete')}}
+
+                    <div class="modal-body">
+                        <input name="id" id="id" type="hidden">
+
+                        <p>Esta seguro que desea borrar el estudiante?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Aceptar</button>
+                    </div>
+
+                </form>
             </div>
+
         </div>
     </div>
 @endsection

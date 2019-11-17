@@ -75,7 +75,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('estudiantes/crear/{id}', 'EstudiantesController@create')->name('estudiantes.formulario');
     Route::post('estudiantes/guardar', 'EstudiantesController@store')->name('estudiante.guardar');
 
-    Route::delete('estudiantes/{id}/borrar','EstudiantesController@destroy')->name('estudiante.borrar');
+    Route::delete('estudiantes/borrar','EstudiantesController@destroy')->name('estudiante.borrar');
     Route::get('estudiantes/{id}/editar','EstudiantesController@edit')->name('estudiante.editar');
     Route::put('estudiantes/editar','EstudiantesController@update')->name('estudiante.update');
 

@@ -16,7 +16,8 @@
     <link href="{{asset("/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Raleway+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
@@ -31,7 +32,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Gym Control</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
             Menu
             <i class="fas fa-bars"></i>
         </button>
@@ -53,28 +56,29 @@
                     <a class="nav-link js-scroll-trigger" href="/estadisticas">Estadisticas</a>
                 </li>
 
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown" role="button"
+                       aria-expanded="false">
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/perfil">
+                            Perfil
                         </a>
-                        <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/perfil">
-                                    Perfil
-                                </a>
 
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   style="background: #fff;"
-                                   onclick="event.preventDefault();
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           style="background: #fff;"
+                           onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    Cerrar sesion
-                                </a>
+                            Cerrar sesion
+                        </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
 
-                        </div>
-                    </li>
+                    </div>
+                </li>
 
             </ul>
         </div>
@@ -141,72 +145,70 @@
 <script>
 
 
-        $('#editarEstudiante').on('show.bs.modal', function (event){
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var nombre = button.data('mynombre');
-            var edad = button.data('myedad');
-            var cuenta = button.data('mycuenta');
-            var fecha = button.data('myfecha');
-            var telefono = button.data('mytelefono');
-            var carrera = button.data('mycarrera');
-            var genero = button.data("sexo");
-            var cat_id = button.data('catid');
-            var modal = $(this);
+    $('#editarEstudiante').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var nombre = button.data('mynombre');
+        var edad = button.data('myedad');
+        var cuenta = button.data('mycuenta');
+        var fecha = button.data('myfecha');
+        var telefono = button.data('mytelefono');
+        var carrera = button.data('mycarrera');
+        var genero = button.data("sexo");
+        var cat_id = button.data('catid');
+        var modal = $(this);
 
-            modal.find('.modal-body #nombre').val(nombre);
-            modal.find('.modal-body #edad').val(edad);
-            modal.find('.modal-body #identificacion').val(cuenta);
-            modal.find('.modal-body #fecha_de_ingreso').val(fecha);
-            modal.find('.modal-body #telefono').val(telefono);
-            modal.find('.modal-body #carrera').val(carrera);
-             modal.find('.modal-body #id').val(cat_id);
+        modal.find('.modal-body #nombre').val(nombre);
+        modal.find('.modal-body #edad').val(edad);
+        modal.find('.modal-body #identificacion').val(cuenta);
+        modal.find('.modal-body #fecha_de_ingreso').val(fecha);
+        modal.find('.modal-body #telefono').val(telefono);
+        modal.find('.modal-body #carrera').val(carrera);
+        modal.find('.modal-body #id').val(cat_id);
 
-            if(genero ==="M"){
-                modal.find(".modal-body #sexo1").prop("checked",true);
-            }
+        if (genero === "M") {
+            modal.find(".modal-body #sexo1").prop("checked", true);
+        }
 
-            if(genero==="F"){
-                modal.find(".modal-body #sexo2").prop("checked",true);
-            }
-        });
-
-
-
-</script>
-<script>
-$('#editarDocente').on('show.bs.modal', function (event){
-var button = $(event.relatedTarget) // Button that triggered the modal
-var nombre = button.data('mynombre');
-var edad = button.data('myedad');
-var nempleado = button.data('mynumero');
-var fecha = button.data('myfecha');
-var telefono = button.data('mytelefono');
-var cat_id = button.data('catid');
-var genero = button.data("sexo");
-var modal = $(this);
-
-modal.find('.modal-body #nombre').val(nombre);
-modal.find('.modal-body #edad').val(edad);
-modal.find('.modal-body #identificacion').val(nempleado);
-modal.find('.modal-body #fecha_de_ingreso').val(fecha);
-modal.find('.modal-body #telefono').val(telefono);
-modal.find('.modal-body #id').val(cat_id);
-
-    if(genero ==="M"){
-        modal.find(".modal-body #sexo1").prop("checked",true);
-    }
-
-    if(genero==="F"){
-        modal.find(".modal-body #sexo2").prop("checked",true);
-    }
-
-});
-
+        if (genero === "F") {
+            modal.find(".modal-body #sexo2").prop("checked", true);
+        }
+    });
 
 
 </script>
 <script>
-    $('#editarParticular').on('show.bs.modal', function (event){
+    $('#editarDocente').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var nombre = button.data('mynombre');
+        var edad = button.data('myedad');
+        var nempleado = button.data('mynumero');
+        var fecha = button.data('myfecha');
+        var telefono = button.data('mytelefono');
+        var cat_id = button.data('catid');
+        var genero = button.data("sexo");
+        var modal = $(this);
+
+        modal.find('.modal-body #nombre').val(nombre);
+        modal.find('.modal-body #edad').val(edad);
+        modal.find('.modal-body #identificacion').val(nempleado);
+        modal.find('.modal-body #fecha_de_ingreso').val(fecha);
+        modal.find('.modal-body #telefono').val(telefono);
+        modal.find('.modal-body #id').val(cat_id);
+
+        if (genero === "M") {
+            modal.find(".modal-body #sexo1").prop("checked", true);
+        }
+
+        if (genero === "F") {
+            modal.find(".modal-body #sexo2").prop("checked", true);
+        }
+
+    });
+
+
+</script>
+<script>
+    $('#editarParticular').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var nombre = button.data('mynombre');
         var edad = button.data('myedad');
@@ -214,7 +216,7 @@ modal.find('.modal-body #id').val(cat_id);
         var fecha = button.data('myfecha');
         var profesion = button.data('myprofesion');
         var telefono = button.data('mytelefono');
-        var cat_id = button.data('cat_id');
+        var id = button.data('id');
         var genero = button.data("sexo");
         var modal = $(this);
 
@@ -224,22 +226,20 @@ modal.find('.modal-body #id').val(cat_id);
         modal.find('.modal-body #fecha_de_ingreso').val(fecha);
         modal.find('.modal-body #profesion_u_oficio').val(profesion);
         modal.find('.modal-body #telefono').val(telefono);
-        modal.find('.modal-body #id').val(cat_id);
+        modal.find('.modal-body #id').val(id);
 
-        if(genero ==="M"){
-            modal.find(".modal-body #sexo1").prop("checked",true);
+        if (genero === "M") {
+            modal.find(".modal-body #sexo1").prop("checked", true);
         }
 
-        if(genero==="F"){
-            modal.find(".modal-body #sexo2").prop("checked",true);
+        if (genero === "F") {
+            modal.find(".modal-body #sexo2").prop("checked", true);
         }
 
     });
 
 
-
-
-    $(".solo-letras").keydown( function (e) {
+    $(".solo-letras").keydown(function (e) {
         if (e.shiftKey || e.ctrlKey || e.altKey) {
             e.preventDefault();
         } else {
@@ -254,22 +254,18 @@ modal.find('.modal-body #id').val(cat_id);
 </script>
 
 
-
 <script>
     $('#editarPagosEstudiantes').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var mes = button.data('mymes');
         var fecha_pago = button.data('myfecha');
-        var cat_id =  button.data('cat_id');
+        var cat_id = button.data('cat_id');
         var modal = $(this);
 
 
         modal.find('.modal-body #mes').val(mes);
         modal.find('.modal-body #fecha_pago').val(fecha_pago);
         modal.find('.modal-body #id').val(cat_id);
-
-
-
 
 
     });
@@ -277,11 +273,20 @@ modal.find('.modal-body #id').val(cat_id);
 </script>
 
 <script>
+    $('#modalBorrarEstudiante').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            var id = button.data('id');
+        var modal = $(this);
+
+        modal.find('.modal-body #id').val(id);
+        });
+
+
     $('#editarPagosParticulares').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var mes = button.data('mymes');
         var fecha_pago = button.data('myfecha');
-        var cat_id =  button.data('cat_id');
+        var cat_id = button.data('cat_id');
         var modal = $(this);
 
         modal.find('.modal-body #mes').val(mes);
@@ -289,29 +294,23 @@ modal.find('.modal-body #id').val(cat_id);
         modal.find('.modal-body #id').val(cat_id);
 
 
+    });
+
+    $("#fecha").on("change", function () {
+        const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
 
 
-
+        var valorfecha = $(this).val();
+        const partesfecha = valorfecha.split("-");
+        const d = new Date(partesfecha[0], partesfecha[1] - 1, partesfecha[2]);
+        $("#mes").val(monthNames[d.getMonth()]);
 
     });
 
-   $("#fecha").on("change",function () {
-       const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-           "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-       ];
-
-
-       var valorfecha= $(this).val();
-       const partesfecha = valorfecha.split("-");
-       const d = new Date(partesfecha[0], partesfecha[1] - 1, partesfecha[2]);
-       $("#mes").val(monthNames[d.getMonth()]);
-
-   });
-
 
 </script>
-
-
 
 
 </body>

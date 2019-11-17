@@ -317,10 +317,15 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                         <button class="btn btn-secondary mr-xl-2"
                                 onclick="document.getElementById('pago2_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
 
-                        <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarParticular" data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
-                                data-myidentidad="{{$particular->identificacion}}" data-myfecha="{{$particular->fecha_de_ingreso}}"
-                                data-mytelefono="{{$particular->telefono}}" data-myprofesion="{{$particular->profesion_u_oficio}}"
-                                data-catid="{{$particular->id}}"><i class="fas fa-edit"></i></button>
+                        <button class="btn btn-warning mr-xl-2" data-toggle="modal"
+                                data-target="#editarParticular"
+                                data-mynombre="{{$particular->nombre}}" data-myedad="{{$particular->edad}}"
+                                data-myidentidad="{{$particular->identificacion}}"
+                                data-myfecha="{{$particular->fecha_de_ingreso}}"
+                                data-mytelefono="{{$particular->telefono}}"
+                                data-sexo="{{$particular->genero}}"
+                                data-myprofesion="{{$particular->profesion_u_oficio}}"
+                                data-id="{{$particular->id}}"><i class="fas fa-edit"></i></button>
                         <form method="post" action="{{route('particular.borrar', $particular->id)}}" onclick="return confirm('Estas seguro que deseas eliminar al cliente? ')">
                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                             {{method_field('delete')}}
