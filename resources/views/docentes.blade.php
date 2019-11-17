@@ -135,6 +135,7 @@
             </div>
             <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
         </form>
+
         @if(session("exito"))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">

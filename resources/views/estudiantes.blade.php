@@ -34,6 +34,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
                     <div class="modal-body">
 
                         <form method="post" action="{{route('estudiante.guardar')}}">
@@ -42,8 +43,7 @@
                             <h6>Nombre Completo</h6>
                             <div class="form-group">
                                 <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
-                                       required
-                                >
+                                       required>
                             </div>
 
                             <h6>Edad</h6>
@@ -114,8 +114,11 @@
                                 <button type="submit" class="btn btn-primary">Guardar</button>
 
                             </div>
+                               </div>
                         </form>
-                    </div>
+
+                </div>
+
 
                 </div>
             </div>
