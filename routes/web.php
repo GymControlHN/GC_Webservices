@@ -100,7 +100,9 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('pagosestudiantes/{id}', 'PagoEstudianteController@index')->name('pagoestudiantes');
     Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
     Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
-    Route::delete('pagosestudiantes/{id}/{id_cliente}/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
+    Route::delete('pagosestudiantes/{id}/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
+    Route::get('pagosestudiantes/{id}/editar','PagoEstudianteController@edit')->name('pagoestudiantes.editar');
+    Route::put('pagosestudiantes/editar','PagoEstudianteController@update')->name('pagoestudiantes.update');
 
 
     Route::get("buscarPart","ParticularesController@buscarParticular")->name("particular.buscarPart");

@@ -16,6 +16,7 @@
 
         <div class="card">
 
+            <h2 style="all: revert">Medidas Antropometricas</h2>
 
             <div>
 
@@ -73,6 +74,8 @@
         <div class="card">
 
 
+            <button class="btn btn-primary my-8" type="button" >
+                <a href="{{route("botonimc",["id"=>$cliente->id])}}" style="color: white">Nuevo</a>
 
 
 

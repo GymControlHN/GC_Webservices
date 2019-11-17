@@ -63,7 +63,6 @@ class PagoEstudianteController extends Controller
     {
 
         $user = PagoClientesP::findOrfail($request->input("pagoEst_id"));
-        $user->mes=$request->input("mes");
         $user->fecha_pago = $request->input("fecha_pago");
 
         $user->save();

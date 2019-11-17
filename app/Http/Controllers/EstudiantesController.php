@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Carrera;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Cliente;
 
@@ -10,8 +12,12 @@ class  EstudiantesController extends Controller
     public function index()
     {
         $clientes = Cliente::where("id_tipo_cliente","=","1")
+            ->join("carreras","clientes_gym.id_carrera","=","carreras.id")
+            ->select("clientes_gym.*","carreras.carrera")
             ->paginate(10);
-        return view('estudiantes')->with('estudiantes', $clientes);
+
+        $carrera = Carrera::all();
+        return view('estudiantes')->with('estudiantes', $clientes)->with("carreras",$carrera);
     }
 
     public function create($id)
@@ -37,7 +43,7 @@ class  EstudiantesController extends Controller
         $nuevoEstudiante->edad = $request->input('edad');
         $nuevoEstudiante->identificacion = $request->input('identificacion');
         $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $nuevoEstudiante->carrera = $request->input('carrera');
+        $nuevoEstudiante->id_carrera = $request->input('carrera');
         $nuevoEstudiante->telefono = $request->input('telefono');
         $nuevoEstudiante->id_tipo_cliente="1";
         $nuevoEstudiante->genero = $request->input("genero");
@@ -83,7 +89,7 @@ class  EstudiantesController extends Controller
         $estudiantes->nombre=$request->input("nombre");
         $estudiantes->edad = $request->input("edad");
         $estudiantes->identificacion =$request->input("identificacion");
-        $estudiantes->carrera = $request->input("carrera");
+        $estudiantes->id_carrera = $request->input("carrera");
         $estudiantes->telefono = $request->input("telefono");
         $estudiantes->fecha_de_ingreso = $request->input("fecha_de_ingreso");
         $estudiantes->id_tipo_cliente="1";
