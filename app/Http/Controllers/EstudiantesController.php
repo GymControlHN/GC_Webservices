@@ -14,9 +14,10 @@ class  EstudiantesController extends Controller
         return view('estudiantes')->with('estudiantes', $clientes);
     }
 
-    public function create()
+    public function create($id)
     {
-        return view('estudiantes');
+        $now = Carbon::now();
+        return view('estudiantes')->with("id", $id)->with("now", $now);
     }
 
     public function store(Request $request)

@@ -16,16 +16,21 @@
 
         <div class="card">
 
-            <h2 style="all: revert">Medidas Antropometricas</h2>
 
             <div>
 
-                @if($cliente->id_tipo_cliente!==1)
+                @if($cliente->id_tipo_cliente==3 )
 
-                    <H2> Expediente Particulares</H2>
-                    @else
-                <H2> Expediente Estudiante</H2>
+                    <H3> Expediente Particular</H3>
                 @endif
+                @if($cliente->id_tipo_cliente==2)
+                    <H3> Expediente Docente</H3>
+
+                @endif
+                @if($cliente->id_tipo_cliente==1)
+                    <H3> Expediente Estudiante</H3>
+                @endif
+                <h3 style="all: revert">Medida Antropometrica</h3>
                 <h5>Nombre: {{$cliente->nombre}}</h5>
 
             </div>
@@ -39,15 +44,28 @@
 
     <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
-        <a class="btn btn-secondary" @if($cliente->id_tipo_cliente!==1)
+        <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
-        @else
-        href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif >Pagos</a>
+           @endif
+        @if($cliente->id_tipo_cliente ==1)
+        href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+
+        @if($cliente->id_tipo_cliente ==2)
+            style="display: none;"
+            @endif
+
+        >Pagos</a>
         <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
     </div>
+
+    <a class="btn btn-primary"  href="{{route("botongrasa",["id"=>$cliente->id])}}"
+       style="float: right; margin-right: 50px; color: white">Nuevo
+
+    </a>
+    <br><br>
 
 
     <div class="w3-container w3-teal mx-5">
@@ -55,10 +73,7 @@
         <div class="card">
 
 
-            <button class="btn btn-primary my-8" type="button">
-                <a href="{{route("botonimc",["id"=>$cliente->id])}}" style="color: white">Nuevo</a>
 
-            </button>
 
 
             <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 3px 50px 20px

@@ -72,7 +72,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('/perfil','AuthController@index')->name('usuarios');
 
     Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');
-    Route::get('estudiantes/crear', 'EstudiantesController@create')->name('estudiantes.formulario');
+    Route::get('estudiantes/crear/{id}', 'EstudiantesController@create')->name('estudiantes.formulario');
     Route::post('estudiantes/guardar', 'EstudiantesController@store')->name('estudiante.guardar');
 
     Route::delete('estudiantes/{id}/borrar','EstudiantesController@destroy')->name('estudiante.borrar');

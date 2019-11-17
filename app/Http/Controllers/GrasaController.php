@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 
+use App\Estudiante;
 use App\Imc;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -35,7 +36,9 @@ class GrasaController extends Controller
 
         $now = Carbon::now();
         $imc = Imc::where("id_cliente", "=", $id)->latest("updated_at")->first();
-        return view('botongrasa')->with("id", $id)->with("now", $now)->with("imc", $imc);
+        $edad = Cliente::where("id_tipo_cliente", "=",$id )->latest("updated_at")->first();
+        return view('botongrasa')->with("id", $id)->with("now", $now)->with("imc", $imc)->with("now", $now)
+            ->with("edad", $edad);
 
     }
 

@@ -76,7 +76,8 @@
                 <div class="col-sm-10">
                     <input type="number" class="form-control inputtamaño3" required
                            id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGrasa()"
-                           value="{{old('edad')}}">
+
+                           @isset($edad)value="{{$edad->edad}}" @endisset>
                 </div>
             </div>
 

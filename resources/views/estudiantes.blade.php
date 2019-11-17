@@ -107,7 +107,8 @@
                                <h6>Fecha</h6>
                                <div class="form-group">
                                    <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                          required>
+                                          required >
+
                                </div>
 
                                    <div class="modal-footer">
@@ -252,6 +253,7 @@
                                       @isset($estudiante)
                                       value="{{$estudiante->fecha_de_ingreso}}"
                                       @endisset value="{{old('fecha_de_ingreso')}}"
+
                                >
                            </div>
 
