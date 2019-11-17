@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
-use App\PagoClientes;
 use App\PagoClientesP;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -82,24 +81,6 @@ class PagoEstudianteController extends Controller
         return back()->with(["exito"=>"Se elimino exitosamente"]);
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function buscarPagos(Request $request){
         $busquedaPagos = $request->input("busquedaPago");

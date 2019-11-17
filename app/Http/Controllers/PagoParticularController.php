@@ -45,7 +45,7 @@ class PagoParticularController extends Controller
 
     }
 
-    public function show(PagoClientes $pagoClientes)
+    public function show(PagoClientesp $pagoClientes)
     {
 
     }

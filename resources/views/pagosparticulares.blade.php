@@ -15,7 +15,7 @@
 
             <div>
 
-                <H2> Expediente Particalares</H2>
+                <H2> Expediente Particulares</H2>
                 <h5>Nombre: {{$nombre->nombre}}</h5>
 
             </div>
@@ -36,10 +36,10 @@
 
 
         <div class="card">
-            <button class="btn btn-danger float-right" data-toggle="modal" data-target="#modalPagoEstudiante" >
+            <button class="btn btn-danger float-right" data-toggle="modal" data-target="#modalPagoParticular" >
                 <i class="fas fa-dollar-sign"></i> Agregar pago </button>
 
-        <div class="modal fade" id="exampleModalScrollable2" tabindex="-1" role="dialog"
+        <div class="modal fade" id="modalPagoParticular" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -52,31 +52,16 @@
 
                     <div class="modal-body">
                         <form method="post" action="{{route('pagoparticulares.guardar')}}">
-                            <h6>Mes</h6>
-                            <div class="form-group">
-                                <select class="form-control" name="mes" id="carrera" placeholder="seleccione">
-                                    <option></option>
-                                    <option>Enero</option>
-                                    <option>Febrero</option>
-                                    <option>Marzo</option>
-                                    <option>Abril</option>
-                                    <option>Mayo</option>
-                                    <option>Junio</option>
-                                    <option>Julio</option>
-                                    <option>Agosto</option>
-                                    <option>Septiembre</option>
-                                    <option>Octubre</option>
-                                    <option>Noviembre</option>
-                                    <option>Diciembre</option>
-                                </select>
-                            </div>
                             <h6>Fecha</h6>
                             <div class="form-group">
-                                <input type="date" class="form-control" id="fecha" name="fecha_pago"
-
-                                >
+                                <input type="date" class="form-control"
+                                       min="{{ date("Y-m-d")}}"
+                                       max="{{ date("Y-m-d")}}"
+                                       id="fecha" name="fecha_pago">
+                                <input type="hidden" id="mes" name="mes">
                             </div>
                             <div class="modal-footer">
+                                <input name="id" value="{{$nombre->id}}" type="hidden">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit"  class="btn btn-primary ">Guardar</button>
 
@@ -109,24 +94,6 @@
 
                                 {{method_field('put')}}
 
-                                <h6>Mes</h6>
-                                <div class="form-group">
-                                    <select class="form-control" name="mes" id="mes" placeholder="seleccione">
-                                        <option></option>
-                                        <option>Enero</option>
-                                        <option>Febrero</option>
-                                        <option>Marzo</option>
-                                        <option>Abril</option>
-                                        <option>Mayo</option>
-                                        <option>Junio</option>
-                                        <option>Julio</option>
-                                        <option>Agosto</option>
-                                        <option>Septiembre</option>
-                                        <option>Octubre</option>
-                                        <option>Noviembre</option>
-                                        <option>Diciembre</option>
-                                    </select>
-                                </div>
                                 <h6>Fecha</h6>
                                 <div class="form-group">
                                     <input type="date" class="form-control" id="fecha_pago" name="fecha_pago"
