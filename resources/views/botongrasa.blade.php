@@ -105,17 +105,17 @@
             <h5 class="label2">Calculo de la grasa corporal</h5>
             <br>
 
-            <div class="form-group">
+            <div class="form-row">
+                <div class="form-group col-md-6">
                 <h6 class=" label2" for="email">IMC:</h6>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="imc"
                            name="imc" maxlength="3" placeholder="Ingrese su imc" onkeyup="calcularGrasa()"
                            @isset($imc)value="{{$imc->imc}}" readonly @endisset>
                 </div>
 
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Edad:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGrasa()"
@@ -124,26 +124,26 @@
                 </div>
             </div>
 
-
-                <div class="form-group col-md-4">
+            <div class="form-row">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">%Grasa:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="grasa" name="grasa" maxlength="3"
                            value="{{old('grasa')}}">
-                </div>
+
             </div>
 
 
-            <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Diagnostico:</h6>
                     <input style="width: 310px" type="text" class="form-control inputtamaño3" required
                            id="leyenda" name="leyenda" maxlength="50"
                            value="{{old('leyenda')}}">
                 </div>
+            </div>
 
-
-                <div class="form-group col-md-4">
+            <div class="form-row">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pc_tricipital:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="pc_tricipital" name="pc_tricipital" maxlength="3"
@@ -152,9 +152,8 @@
                 </div>
 
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pc_Infraescrupural:</h6>
-
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50"
                            value="{{old('pc_infraescapular')}}">
@@ -163,7 +162,7 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pc_Biciptal:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="pc_biciptal" name="pc_biciptal" maxlength="3"
@@ -172,18 +171,18 @@
                 </div>
 
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pc_supra_Iliaco:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50"
                            value="{{old('pc_supra_iliaco')}}">
 
                 </div>
+            </div>
 
-
+            <div class="form-group col-md-6">
             <h6 class="label2" for="email">Fecha:</h6>
-            <div class="col-sm-10">
-                <input type="date" class="form-control inputtamaño3" required
+                <input  style="width: 310px"  type="date" class="form-control inputtamaño3" required
                        id="fecha_de_ingreso" name="fecha_de_ingreso"
                        placeholder="Escriba la fecha de ingreso"
                        readonly
@@ -193,12 +192,9 @@
 
 
             <input name="id" value="{{$id}}" type="hidden">
-
-
             <div class="container1">
 
-                <button type="button" class="btn btn-primary my-4 boton"><a style="color: white"
-                                                                            href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
+                <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
                 </button>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
