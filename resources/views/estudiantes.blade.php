@@ -11,6 +11,8 @@
     </header>
 
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
+
+
         <h2 class="  mt-3" >Listado de Estudiantes</h2>
 
 
@@ -97,7 +99,7 @@
                                     <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                            required>
                                 </div>
-
+                            //que no se duplique el texto
                                 <div class="form-group col-md-6">
                                     <h6>Sexo</h6>
 
