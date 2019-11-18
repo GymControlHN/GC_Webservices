@@ -86,9 +86,13 @@ class ParticularesController extends Controller
 
     }
 
-    public function destroy($id) {
-         Cliente::destroy($id);
+    public function destroy(Request $request)
+    {
+        Cliente::destroy($request->input("id"));
+
         return back()->with(["exito"=>"Se elimino exitosamente"]);
+
+
     }
 
     public function buscarParticular(Request $request){

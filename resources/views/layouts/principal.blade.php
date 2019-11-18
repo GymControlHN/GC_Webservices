@@ -281,6 +281,29 @@
         modal.find('.modal-body #id').val(id);
         });
 
+    $('#modalBorrarDocente').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var id = button.data('id');
+        var modal = $(this);
+
+        modal.find('.modal-body #id').val(id);
+    });
+
+    $('#modalBorrarParticular').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var id = button.data('id');
+        var modal = $(this);
+
+        modal.find('.modal-body #id').val(id);
+    });
+
+    $('#modalBorrarGrasa').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var id = button.data('id');
+        var modal = $(this);
+
+        modal.find('.modal-body #id').val(id);
+    });
 
     $('#editarPagosParticulares').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal

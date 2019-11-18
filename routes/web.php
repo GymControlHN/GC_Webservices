@@ -83,7 +83,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('docentes/crear', 'DocentesController@create')->name('docentes.formulario');
     Route::post('docentes/guardar', 'DocentesController@store')->name('docente.guardar');
 
-    Route::delete('docentes/{id}/borrar','DocentesController@destroy')->name('docente.borrar');
+    Route::delete('docentes/borrar','DocentesController@destroy')->name('docente.borrar');
     Route::get('docentes/{id}/editar','DocentesController@edit')->name('docente.editar');
     Route::put('docentes/editar','DocentesController@update')->name('docente.update');
 
@@ -91,7 +91,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('particulares/crear', 'ParticularesController@create')->name('particulares.formulario');
     Route::post('particulares/guardar', 'ParticularesController@store')->name('particular.guardar');
 
-    Route::delete('particulares/{id}/borrar','ParticularesController@destroy')->name('particular.borrar');
+    Route::delete('particulares/borrar','ParticularesController@destroy')->name('particular.borrar');
     Route::get('particulares/{id}/editar','ParticularesController@edit')->name('particular.editar');
     Route::put('particulares/editar','ParticularesController@update')->name('particular.update');
 

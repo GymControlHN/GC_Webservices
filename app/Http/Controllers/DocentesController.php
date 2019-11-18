@@ -103,10 +103,13 @@ class DocentesController extends Controller
 
     }
 
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        Cliente::destroy($id);
+        Cliente::destroy($request->input("id"));
+
         return back()->with(["exito"=>"Se elimino exitosamente"]);
+
+
     }
 
     public function buscarDocente(Request $request)

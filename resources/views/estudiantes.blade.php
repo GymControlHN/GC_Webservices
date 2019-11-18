@@ -328,13 +328,11 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                         data-catid="{{$estudiante->id}}" data-sexo="{{$estudiante->genero}}"><i
                                             class="fas fa-edit"></i></button>
 
-                                <form method="post" action="{{route('estudiante.borrar', $estudiante->id)}}"
-                                      onclick="return confirm('Estas seguro que deseas eliminar al estudiante? ')">
-                                    <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
+                                    <button class="btn btn-danger mr-xl-2 "
+                                            data-id="{{$estudiante->id}}"
+                                            data-toggle="modal"
+                                            data-target="#modalBorrarEstudiante"><i class="fas fa-trash-alt"></i>
                                     </button>
-                                    {{method_field('delete')}}
-                                </form>
-
 
 
                                 <button class="btn btn-info mr-xl-2 " type="button">
@@ -382,23 +380,31 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
         </div>
     </div>
 
-    <div class="modal" tabindex="-1"  role="dialog">
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarEstudiante">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Atencion Eliminacion</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                <form method="post" action="{{route('estudiante.borrar')}}">
+                    {{method_field('delete')}}
+
+                    <div class="modal-body">
+                        <input name="id" id="id" type="hidden">
+
+                        <p>Esta seguro que desea borrar el estudiante?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Aceptar</button>
+                    </div>
+
+                </form>
             </div>
+
         </div>
     </div>
 @endsection

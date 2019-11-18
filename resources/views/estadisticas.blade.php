@@ -40,7 +40,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                         <td>{{$estudiante->identificacion}}</td>
                         <td>{{$estudiante->edad}}</td>
                         @if($estudiante->id_tipo_cliente ==1)
-                            <td>{{$estudiante->carrera}}</td>
+                            <td>{{$estudiante->id_carrera }}</td>
                         @else
                             <td>{{$estudiante->profesion_u_oficio}}</td>
                         @endif
