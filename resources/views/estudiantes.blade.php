@@ -70,12 +70,10 @@
                                     <h6>Carrera</h6>
                                     <select class="form-control" id="carrera" name="carrera"
                                             required>
-                                        <option></option>
-                                        <option>Lic. informática administrativa</option>
-                                        <option>Lic. Enfermeria</option>
-                                        <option>Ing. Agroindustrial</option>
-                                        <option>TUAEC</option>
-                                        <option>Otros</option>
+                                        @foreach($carreras as $carrera)
+                                            <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
+                                        @endforeach
+
                                     </select>
                                 </div>
                             </div>
@@ -206,13 +204,12 @@
 
                             <h6>Carrera</h6>
                             <div class="form-group">
-                                <select class="form-control" id="carrera" placeholder="seleccione" name="carrera" required>
-                                    <option></option>
-                                    <option>Lic. informática administrativa</option>
-                                    <option>Lic. Enfermeria</option>
-                                    <option>Ing. Agroindustrial</option>
-                                    <option>TUAEC</option>
-                                    <option>Otros</option>
+                                <select class="form-control" id="carrera" placeholder="seleccione" name="carrera"
+                                        required>
+                                    @foreach($carreras as $carrera)
+                                        <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
+                                    @endforeach
+
                                 </select>
                             </div>
 
@@ -263,7 +260,6 @@
                                 >
                             </div>
 
-                        </form>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                             <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
@@ -321,7 +317,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                         data-mycuenta="{{$estudiante->identificacion}}"
                                         data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                                         data-mytelefono="{{$estudiante->telefono}}"
-                                        data-mycarrera="{{$estudiante->carrera}}"
+                                        data-mycarrera="{{$estudiante->id_carrera}}"
                                         data-catid="{{$estudiante->id}}" data-sexo="{{$estudiante->genero}}"><i
                                             class="fas fa-edit"></i></button>
 
