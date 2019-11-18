@@ -5,7 +5,7 @@
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Estudiantes</div>
+                <!--div class="intro-lead-in">Estudiantes</div-->
             </div>
         </div>
     </header>
@@ -91,7 +91,7 @@
 
     <body>
 
-    <div class="container">
+    <div class="container mr-5">
 
         <input id="sexo" value="{{$edad->genero}}" type="hidden">
 
@@ -102,11 +102,12 @@
 
             {{csrf_field()}}
 
-            <br><br>
-            <h5 class="label2">Calculo de la grasa corporal</h5>
-            <br>
 
-            <div class="form-row">
+
+
+        <div class="container">
+            <h5 class="mt-4 ml-5">Calculo de la grasa corporal</h5>
+            <div class="form-row  mt-4">
                 <div class="form-group col-md-6">
                 <h6 class=" label2" for="email">IMC:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
@@ -181,9 +182,9 @@
                 </div>
             </div>
 
-            <div class="form-group col-md-6">
-            <h6 class="label2" for="email">Fecha:</h6>
-                <input  style="width: 310px"  type="date" class="form-control inputtamaño3" required
+            <div class="form-group col-md-5 ">
+            <h6 class="label2 " for="email">Fecha:</h6>
+                <input  style="width: 310px"  type="date" class="form-control inputtamaño3 " required
                        id="fecha_de_ingreso" name="fecha_de_ingreso"
                        placeholder="Escriba la fecha de ingreso"
                        readonly
@@ -203,6 +204,7 @@
 
         </form>
 
+    </div>
     </div>
 
     </body>

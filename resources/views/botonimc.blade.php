@@ -62,14 +62,11 @@
               method="POST" action="{{route('imc.guardar')}}">
             {{csrf_field()}}
 
-            <div class=" h">
-                <h5 class="label2">Agregar medidas antropometricas</h5>
-            </div>
 
 
-            <div class=" top">
-
-                <div class="form-row">
+            <div class=" container">
+                <h5 class="mt-4 ml-4">Agregar medidas antropometricas</h5>
+                <div class="form-row mt-4">
                     <div class="form-group col-md-4">
                         <h6 class=" label2" for="email">Peso kg:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" id="peso" required
@@ -182,9 +179,7 @@
 
         </form>
     </div>
-
     </body>
-
     </div>
     </html>
 @endsection

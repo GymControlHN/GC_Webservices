@@ -14,7 +14,7 @@
 
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card">
+        <div class="card" style=" border: none">
 
 
             @if($nombre->id_tipo_cliente==3 )
@@ -34,8 +34,8 @@
         </div>
     </div>
     </div>
-    <br><br>
-    <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+
+    <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
         <a class="btn btn-secondary" @if($nombre->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$nombre->id])}}"
@@ -56,14 +56,14 @@
        style="float: right; margin-right: 50px; color: white">Nuevo
 
     </a>
-    <br><br>
+
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card">
+        <div class="card" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+        box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
 
 
-            <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);
-            box-shadow: 1px 3px 50px 20px rgba(189,178,189,0.76);">
+            <div class="table-responsive mb-5" >
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
 
                     <thead class="thead-light">
@@ -99,7 +99,7 @@
                                 <td class="form-inline " style="width: 300px">
                                     <button class="btn btn-warning mr-xl-2 "><a
                                                 href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i
-                                                    class="fas fa-edit"></i></a></button>
+                                                    class="fas fa-edit" style="color: #1b1e21"></i></a></button>
                                     <form method="post"
                                           action="{{route('grasa.borrar', [$grasa->id,$grasa->id_cliente])}}"
                                           onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">

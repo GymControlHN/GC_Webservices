@@ -12,7 +12,7 @@
 
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card" style="border: none">
+        <div class="card" style=" border: none">
 
 
 
@@ -36,8 +36,8 @@
         </div>
     </div>
     </div>
-    <br><br>
-    <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+
+    <div class="btn-group mt-3 mb-5 " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
         <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
@@ -47,6 +47,7 @@
 
            @if($cliente->id_tipo_cliente ==2)
            style="display: none;"
+
                 @endif>Pagos</a>
         <a class="btn btn-secondary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
@@ -58,13 +59,13 @@
        style="float: right; margin-right: 50px; color: white">Nuevo
 
     </a>
-    <br><br>
+
 
 
     <div class="w3-container w3-teal mx-5">
 
         <div class="card"  style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
+                box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
 
 
 
@@ -102,11 +103,10 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
                                 <td>{{$dato->mvoreal}}</td>
                                 <th>{{$dato->fecha_de_ingreso}}</th>
                                 <td class="form-inline ">
-                                    <button class="btn btn-warning mr-xl-2 "><a
+                                    <button class="btn btn-warning mr-xl-2"><a
                                                 href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i
-                                                    class="fas fa-edit"></i></a></button>
-                                    <form method="post" action="{{route('ruffier.borrar', $dato->id)}}"
-                                          class="pull-left"
+                                                    class="fas fa-edit" style="color: #1b1e21"></i></a></button>
+                                    <form method="post" action="{{route('ruffier.borrar', [$dato->id,$dato->id_cliente])}}"
                                           onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
                                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                                         {{method_field('delete')}}

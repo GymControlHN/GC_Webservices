@@ -5,7 +5,7 @@
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Estudiantes</div>
+                <!--<div class="intro-lead-in">Estudiantes</div-->
             </div>
         </div>
     </header>
@@ -94,6 +94,7 @@
                            @isset($dato)
                            value="{{$dato->pulso1}}"
                             @endisset
+                           value="{{old('pulso1')}}"
                     >
                 </div>
 
@@ -103,7 +104,8 @@
                            id="pulso2" name="pulso2" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso2}}"
-                            @endisset>
+                            @endisset
+                            value="{{old('pulso2')}}">
                 </div>
             </div>
 
@@ -114,7 +116,9 @@
                            id="pulso3" name="pulso3" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso3}}"
-                            @endisset>
+                            @endisset
+                    value="{{old('pulso3')}}"
+                    >
                 </div>
 
                 <div class="form-group col-md-6">
@@ -123,7 +127,9 @@
                            id="ruffiel" name="ruffiel" maxlength="3"
                            @isset($dato)
                            value="{{$dato->ruffiel}}"
-                            @endisset>
+                            @endisset
+                    value="{{old('ruffiel')}}"
+                    >
                 </div>
             </div>
 
@@ -135,6 +141,7 @@
                            @isset($dato)
                            value="{{$dato->clasificacion}}"
                             @endisset
+                           value="{{old('clasificacion')}}"
                     >
                 </div>
 
@@ -144,7 +151,9 @@
                            id="mvo" name="mvo" maxlength="3"
                            @isset($dato)
                            value="{{$dato->mvo}}"
-                            @endisset >
+                            @endisset
+                    value="{{old('mvo')}}"
+                    >
                 </div>
             </div>
 
@@ -156,7 +165,9 @@
 
                            @isset($dato)
                            value="{{$dato->mvor}}"
-                            @endisset>
+                            @endisset
+                    value="{{old('mvor')}}"
+                    >
                 </div>
 
 
@@ -168,16 +179,17 @@
                            @isset($dato)
                            value="{{$dato->fecha_de_ingreso}}"
                             @endisset
+                           value="{{old('fecha_de_ingreso')}}"
                     >
 
 
                    </div>
             </div>
 
-            <input name="id" value="{{$id->id}}" type="hidden">
+            <input name="id_cliente" value="{{$id->id}}" type="hidden">
             <div class="container1">
 
-                <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="ruffiel">Cancelar</a></button>
+                <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>
                 <button type="submit" class="btn btn-primary my-4 boton3">Guardar</button>
             </div>
 

@@ -68,15 +68,15 @@
 
             {{method_field('put')}}
 
-            <br><br>
-            <h5 class="label2">Editar medidas antropometricas</h5>
-            <br>
 
 
+
+          <div class="container">
+              <h5 class="mt-4 ml-4">Editar medidas antropometricas</h5>
+              <div class="form-row mt-4">
+                  <div class="form-group col-md-4">
             <h6 class=" label2" for="email">Peso kg:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3" id="peso"
+                    <input  style="width:310px" type="number" class="form-control inputtamaño3" id="peso"
                            name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos"
                            onkeyup="calcularIMC()"
                            @isset($antecedente)
@@ -84,14 +84,11 @@
                            @endisset
                            value="{{old('peso')}}">
                 </div>
-            </div>
 
-
-            <h6 class="label2" for="email">Altura:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
-                           id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla"
+                      <div class="form-group col-md-4">
+                        <h6 class="label2" for="email">Altura:</h6>
+                                <input  style="width:310px" type="number" class="form-control inputtamaño3"
+                               id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla"
                            onkeyup="calcularIMC()"
                            @isset($antecedente)
                            value="{{$antecedente->altura}}"
@@ -99,14 +96,10 @@
                            value="{{old('altura')}}">
                 </div>
 
-            </div>
 
-
-
-            <h6 class="label2" for="email">Imc:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                      <div class="form-group col-md-4">
+                    <h6 class="label2" for="email">Imc:</h6>
+                          <input  style="width:310px" type="number" class="form-control inputtamaño3"
                            id="imc" name="imc" maxlength="3"
                            @isset($antecedente)
                            value="{{$antecedente->imc}}"
@@ -115,37 +108,32 @@
                 </div>
             </div>
 
-
-            <h6 class="label2" for="email">Diagnostico:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="text" class="form-control inputtamaño3"
+                  <div class="form-row mt-4">
+                      <div class="form-group col-md-4">
+                        <h6 class="label2" for="email">Diagnostico:</h6>
+                                <input  style="width:310px" type="text" class="form-control inputtamaño3"
                            id="leyenda" name="leyenda" maxlength="50"
                            @isset($antecedente)
                            value="{{$antecedente->leyenda}}"
                            @endisset
                            value="{{old('leyenda')}}" >
-                </div>
-            </div>
+                        </div>
 
 
-
-            <h6 class="label2" for="email">Pecho:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                      <div class="form-group col-md-4">
+                          <h6 class="label2" for="email">Pecho:</h6>
+                         <input  style="width:310px" type="number" class="form-control inputtamaño3"
                            name="pecho" id="pecho"
                            @isset($antecedente)
                            value="{{$antecedente->pecho}}"
                            @endisset
                            value="{{old('pecho')}}">
-                </div>
-            </div>
+                    </div>
 
-            <h6 class="label2" for="email">Brazo:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3" name="brazo" id="brazo"
+
+                          <div class="form-group col-md-4">
+                        <h6 class="label2" for="email">Brazo:</h6>
+                                <input  style="width:310px" type="number" class="form-control inputtamaño3" name="brazo" id="brazo"
                            @isset($antecedente)
                            value="{{$antecedente->brazo}}"
                            @endisset
@@ -153,34 +141,31 @@
                 </div>
             </div>
 
-            <h6 class="label2" for="email">ABD-A:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                  <div class="form-row mt-4">
+                      <div class="form-group col-md-4">
+                    <h6 class="label2" for="email">ABD-A:</h6>
+                            <input  style="width:310px" type="number" class="form-control inputtamaño3"
                            name="ABD_A" id="ABD_A"
                            @isset($antecedente)
                            value="{{$antecedente->ABD_A}}"
                            @endisset
                            value="{{old('ABD_A')}}">
-                </div>
-            </div>
 
-            <h6 class="label2" for="email">ABD-B:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                     </div>
+
+                          <div class="form-group col-md-4">
+                        <h6 class="label2" for="email">ABD-B:</h6>
+                                <input  style="width:310px" type="number" class="form-control inputtamaño3"
                            name="ABD_B" id="ABD_B"
                            @isset($antecedente)
                            value="{{$antecedente->ABD_B}}"
                            @endisset
                            value="{{old('ABD_B')}}">
-                </div>
-            </div>
+                   </div>
 
-            <h6 class="label2" for="email">Cadera:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                      <div class="form-group col-md-4">
+                          <h6 class="label2" for="email">Cadera:</h6>
+                             <input  style="width:310px" type="number" class="form-control inputtamaño3"
                            name="cadera" id="cadera"
                            @isset($antecedente)
                            value="{{$antecedente->cadera}}"
@@ -189,45 +174,39 @@
                 </div>
             </div>
 
-            <h6 class="label2" for="email">Muslo:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
-                           name="muslo" id="muslo"
-                           @isset($antecedente)
-                           value="{{$antecedente->muslo}}"
-                           @endisset
-                           value="{{old('muslo')}}">
-                </div>
-            </div>
 
-            <h6 class="label2" for="email">Pierna:</h6>
-            <div class="form-group">
-                <div class="col-sm-10">
-                    <input type="number" class="form-control inputtamaño3"
+                  <div class="form-row mt-4">
+                      <div class="form-group col-md-4">
+                            <h6 class="label2" for="email">Muslo:</h6>
+                          <input  style="width:310px" type="number" class="form-control inputtamaño3"
+                             name="muslo" id="muslo"
+                            @isset($antecedente)
+                            value="{{$antecedente->muslo}}"
+                            @endisset
+                               value="{{old('muslo')}}">
+                                </div>
+
+                      <div class="form-group col-md-4">
+                            <h6 class="label2" for="email">Pierna:</h6>
+                          <input  style="width:310px" type="number" class="form-control inputtamaño3"
                            name="pierna" id="pierna"
                            @isset($antecedente)
                            value="{{$antecedente->pierna}}"
                            @endisset
                            value="{{old('pierna')}}">
-                </div>
+                      </div>
 
-            </div>
-
-            <div class="container">
-
-
-                <h6 class="label2" for="email">Fecha:</h6>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                      <div class="form-group col-md-4">
+                             <h6 class="label2" for="email">Fecha:</h6>
+                              <input  style="width:310px" type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                            placeholder="Escriba la fecha de ingreso"
                            @isset($antecedente)
                            value="{{$antecedente->fecha_de_ingreso}}"
                            @endisset
                            value="{{old('fecha_de_ingreso')}}">
-                </div>
+                      </div>
 
-            </div>
+                  </div>
 
 
 
@@ -237,15 +216,15 @@
 
                 <button type="button" class="btn btn-primary my-4 boton"><a style="color: white"
                                                                             href="/imc">Cerrar</a></button>
-                <button type="submit" class="btn btn-primary my-4 boton3">Guardar Cambios</button>
+                <button style="width: 200px" type="submit" class="btn btn-primary my-4 boton3">Guardar Cambios</button>
             </div>
 
-
+          </div>
 
         </form>
     </div>
     </body>
-
+    </div>
 
     </html>
 @endsection

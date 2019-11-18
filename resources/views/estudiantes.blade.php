@@ -37,7 +37,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <form method="post" action="{{route('estudiante.guardar')}}">
+                        <form method="post" action="{{route('estudiante.guardar')}}" name="f2">
 
                             <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -47,7 +47,7 @@
                                     >
                                 </div>
 
-                                <div class="form-group col-md-6">
+                                    <div class="form-group col-md-6">
                                     <h6>Edad</h6>
                                     <input type="text"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
                                            aria-valuemax="2"
@@ -141,10 +141,10 @@
 
 
             <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control" id="inputText2" name="busqueda"
+                <input type="text" class="form-control mb-3" id="inputText2" name="busqueda"
                        placeholder="Buscar">
             </div>
-            <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
+            <button type="submit" class="btn btn-primary mb-3 "  >Buscar</button>
         </form>
 
         @if(session("exito"))
@@ -157,9 +157,9 @@
 
         @endif
 
-        <div class="modal fade" id="editarEstudiante" tabindex="-1" role="dialog"
+        <div class="modal fade  bd-example-modal-lg" id="editarEstudiante" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" >
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Estudiantes</h5>
@@ -175,8 +175,9 @@
 
                             {{method_field('put')}}
 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                             <h6>Nombre Completo</h6>
-                            <div class="form-group">
                                 <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                        @isset($estudiante)
                                        value="{{$estudiante->nombre}}"
@@ -184,9 +185,8 @@
 
                             </div>
 
-
+                         <div class="form-group col-md-6">
                             <h6>Edad</h6>
-                            <div class="form-group">
                                 <input type="text" pattern="([0-9]{1,3})"  class="form-control" id="edad" name="edad"
                                        @isset($estudiante)
                                        value="{{$estudiante->edad}}"
@@ -196,9 +196,11 @@
                                        minlength="1" maxlength="2" min="1" max="99"
                                 >
                             </div>
+                            </div>
 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                             <h6>Número Cuenta</h6>
-                            <div class="form-group">
                                 <input  type="text"  pattern="([0-9]{1,11})"  class="form-control" id="identificacion" name="identificacion"
                                         @isset($estudiante)
                                         value="{{$estudiante->identificacion}}"
@@ -209,8 +211,8 @@
                                 >
                             </div>
 
+                         <div class="form-group col-md-6">
                             <h6>Carrera</h6>
-                            <div class="form-group">
                                 <select class="form-control" id="carrera" placeholder="seleccione" name="carrera"
                                         required>
                                     @foreach($carreras as $carrera)
@@ -219,13 +221,14 @@
 
                                 </select>
                             </div>
+                            </div>
 
 
 
 
-
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                             <h6> Teléfono </h6>
-                            <div class="form-group">
                                 <input input="text"  pattern="([0-9]{1,8})"   class="form-control"   id="telefono" name="telefono"
 
                                        @isset($estudiante)
@@ -238,8 +241,19 @@
                             </div>
 
 
-                            <h6>Sexo</h6>
+                                <div class="form-group col-md-6">
+                                    <h6>Fecha</h6>
+                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                           required
+                                           @isset($estudiante)
+                                           value="{{$estudiante->fecha_de_ingreso}}"
+                                           @endisset value="{{old('fecha_de_ingreso')}}"
+                                    >
+                                </div>
+                            </div>
 
+                           <div class="form-group col-md-6">
+                            <h6>Sexo</h6>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
                                        @isset($estudiante)
@@ -256,16 +270,11 @@
                                 >Femenino
                                 <label class="form-check-label" for="inlineRadio2"></label>
                             </div>
+                           </div>
 
-                            <h6>Fecha</h6>
-                            <div class="form-group">
-                                <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                       required
-                                       @isset($estudiante)
-                                       value="{{$estudiante->fecha_de_ingreso}}"
-                                       @endisset value="{{old('fecha_de_ingreso')}}"
-                                >
-                            </div>
+
+
+
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -318,8 +327,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                     {{ csrf_field() }}
                                 </form>
 
-                                <button class="btn btn-warning mr-xl-2" data-toggle="modal"
-                                        data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
+                                <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
                                         data-myedad="{{$estudiante->edad}}"
                                         data-mycuenta="{{$estudiante->identificacion}}"
                                         data-myfecha="{{$estudiante->fecha_de_ingreso}}"

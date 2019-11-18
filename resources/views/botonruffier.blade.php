@@ -149,8 +149,10 @@
                     <h6 class="label2" for="email">Fecha:</h6>
                         <input style="width: 310px" type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
-
-                               value="{{old('fecha_de_ingreso',$now->format('Y-m-d'))}}" readonly required
+                               @isset($antecedente)
+                               value="{{$antecedente->fecha_de_ingreso}}"
+                               @endisset
+                               value="{{old('fecha_de_ingreso', $now->format('Y-m-d'))}}"
                         >
 
                         </div>
@@ -158,7 +160,7 @@
 
                 <input name="id" value="{{$id}}" type="hidden">
 
-                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>
+                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="route{{'ruffier.uni'}}">Cancelar</a></button>
                     <button type="submit" class="btn btn-primary my-4 boton3">Guardar</button>
 
 
