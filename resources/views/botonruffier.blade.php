@@ -90,7 +90,7 @@
                     <h6 class=" label2" for="email">Pulso en reposo</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso1"
                                name="pulso1" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
-                              value="{{old('pulso1')}}"
+                              value="{{old('pulso1')}}" required
 
                         >
                     </div>
@@ -100,7 +100,7 @@
                     <h6 class="label2" for="email">Pulso en accion:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="pulso2" name="pulso2" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
-                              value="{{old('pulso2')}}">
+                              value="{{old('pulso2')}}" required>
                     </div>
                 </div>
 
@@ -109,14 +109,14 @@
                     <h6 class="label2" for="email">Pulso en descanso:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="pulso3" name="pulso3" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
-                              value="{{old('pulso3')}}">
+                              value="{{old('pulso3')}}" required>
                 </div>
 
                     <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Ruffier:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="ruffiel" name="ruffiel" maxlength="3"
-                             value="{{old('ruffiel')}}" >
+                             value="{{old('ruffiel')}}" readonly required>
                     </div>
                 </div>
 
@@ -125,14 +125,14 @@
                     <h6 class="label2" for="email">Diagnostico:</h6>
                         <input style="width: 310px" type="text" class="form-control inputtamaño3"
                                id="leyenda" name="clasificacion" maxlength="50"
-                            value="{{old('clasificacion')}}">
+                            value="{{old('clasificacion')}}" readonly required>
                     </div>
 
                    <div class="form-group col-md-6">
                     <h6 class="label2" for="email">MVO2:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="mvo" name="mvo" maxlength="3"
-                              value="{{old('mvo')}}" >
+                              value="{{old('mvo')}}" required>
                     </div>
                 </div>
 
@@ -142,7 +142,7 @@
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="mvo2" name="mvor" maxlength="3"
 
-                               value="{{old('mvor')}}" >
+                               value="{{old('mvor')}}" required>
                     </div>
 
                         <div class="form-group col-md-6">
@@ -150,7 +150,7 @@
                         <input style="width: 310px" type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
 
-                               value="{{old('fecha_de_ingreso')}}"
+                               value="{{old('fecha_de_ingreso',$now->format('Y-m-d'))}}" readonly required
                         >
 
                         </div>

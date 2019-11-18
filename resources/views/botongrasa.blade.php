@@ -93,7 +93,8 @@
 
     <div class="container">
 
-        <input id="sexo" value="{{$edad->genero}}">
+        <input id="sexo" value="{{$edad->genero}}" type="hidden">
+
 
         <form name="f1" id="f1"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
@@ -129,7 +130,7 @@
                     <h6 class="label2" for="email">%Grasa:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="grasa" name="grasa" maxlength="3"
-                           value="{{old('grasa')}}">
+                           value="{{old('grasa')}}" readonly>
 
             </div>
 
@@ -138,7 +139,7 @@
                     <h6 class="label2" for="email">Diagnostico:</h6>
                     <input style="width: 310px" type="text" class="form-control inputtamaño3" required
                            id="leyenda" name="leyenda" maxlength="50"
-                           value="{{old('leyenda')}}">
+                           value="{{old('leyenda')}}"readonly>
                 </div>
             </div>
 

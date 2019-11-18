@@ -11,7 +11,10 @@ class ImcController extends Controller
 {
     public function index($id)
     {
-         $antecedentes = Imc::where("id_cliente","=",$id)->paginate(10);
+         $antecedentes = Imc::where("id_cliente","=",$id)
+             ->orderBy("created_at","desc")->paginate(10);
+
+
 
          $cliente = Cliente::findOrfail($id);
          return view('imc',compact("antecedentes"))->with("cliente",$cliente);

@@ -49,7 +49,7 @@
     <button class="btn btn-danger float-right" style="margin-right: 50px" data-toggle="modal" data-target="#modalPagoParticular" >
         <i class="fas fa-dollar-sign"></i> Agregar pago
     </button>
-
+    <br><br>
 
     <div class="w3-container w3-teal mx-5">
 

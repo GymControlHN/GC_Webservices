@@ -73,14 +73,15 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
                     <thead class="thead-light">
                     <tr>
-                        <th scope="col">Fecha</th>
+
                         <th scope="col">Pulso en reposo</th>
                         <th scope="col">Pulso en acción</th>
                         <th scope="col">Pulso en descanso</th>
                         <th scope="col">Ruffier</th>
-                        <th scope="col">Clasificacion</th>
+                        <th scope="col">Diagnostico</th>
                         <th scope="col">MVO2</th>
                         <th scope="col">MVOReal</th>
+                        <th scope="col">Fecha</th>
                         <th scope="col">Acciones</th>
 
                     </tr>
@@ -91,7 +92,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
                     <tr>
                         @if($datos->count()>0)
                             @foreach($datos as $dato)
-                                <th>{{$dato->fecha_de_ingreso}}</th>
+
                                 <td>{{$dato->pulso_r}}</td>
                                 <td>{{$dato->pulso_a}}</td>
                                 <td>{{$dato->pulso_d}}</td>
@@ -99,6 +100,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
                                 <td>{{$dato->clasificacion}}</td>
                                 <td>{{$dato->mvo2}}</td>
                                 <td>{{$dato->mvoreal}}</td>
+                                <th>{{$dato->fecha_de_ingreso}}</th>
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2 "><a
                                                 href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i

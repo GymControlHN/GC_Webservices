@@ -88,10 +88,19 @@
 
                                     <div class="form-group col-md-6">
                                         <h6>Fecha</h6>
+                                        <div class="form-group">
+                                            <input type="date" class="form-control"
+                                                   value="{{date("Y-m-d")}}"
+                                                   readonly
+                                                   id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                                   required
+                                            >
+                                        </div>
 
-                                        <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                               required>
                                     </div>
+
+
+
 
 
                                     <div class="form-group col-md-6">

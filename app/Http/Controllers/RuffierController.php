@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Ruffier;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
@@ -13,7 +14,8 @@ class RuffierController extends Controller
 
     public function index($id)
     {
-        $datos = Ruffier::where("id_cliente","=",$id)->paginate(10);
+        $datos = Ruffier::where("id_cliente","=",$id)
+            ->orderBy("created_at","desc")->paginate(10);
         $cliente = Cliente::find($id);
         return view('ruffiel',compact("datos","cliente"));
 
@@ -22,8 +24,10 @@ class RuffierController extends Controller
 
     public function create($id)
     {
+
+        $now = Carbon::now();
         $cliente = Cliente::find($id);
-        return view('botonruffier')->with("id",$id)->with("cliente",$cliente);
+        return view('botonruffier')->with("id",$id)->with("cliente",$cliente)->with("now", $now );
 
     }
 

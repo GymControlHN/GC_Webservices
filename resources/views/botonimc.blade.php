@@ -80,7 +80,7 @@
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">Altura:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                               id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla" required
+                               id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla en cm" required
                                onkeyup="calcularIMC()" value="{{old('altura')}}">
 
                     </div>
@@ -88,7 +88,7 @@
                         <h6 class="label2" for="email">Imc:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                                id="imc" name="imc" maxlength="3" value="
-                    {{old('imc')}}">
+                    {{old('imc')}}" readonly>
                     </div>
 
 
@@ -98,7 +98,7 @@
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">Diagnostico:</h6>
                         <input style="width: 310px" type="text" class="form-control inputtamaño3" required
-                               id="leyenda" name="leyenda" maxlength="50" value="{{old('leyenda')}}">
+                               id="leyenda" name="leyenda" maxlength="50" value="{{old('leyenda')}}" readonly>
 
                     </div>
 
@@ -106,13 +106,13 @@
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">Pecho:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                               name="pecho" id="pecho" value="{{old('peso')}}">
+                               name="pecho" id="pecho" value="{{old('peso')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">Brazo:</h6>
                         <input style="width:310px" type="number" class="form-control inputtamaño3" required
-                               name="brazo" id="brazo" value="{{old('brazo')}}">
+                               name="brazo" id="brazo" value="{{old('brazo')}}" placeholder="Ingrese la talla en cm">
                     </div>
                 </div>
 
@@ -121,18 +121,18 @@
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">ABD-A:</h6>
                         <input style="width:310px" type="number" class="form-control inputtamaño3" required
-                               name="ABD_A" id="ABD_A" value="{{old('ABD_A')}}">
+                               name="ABD_A" id="ABD_A" value="{{old('ABD_A')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">ABD-B:</h6>
                         <input style="width:310px" type="number" class="form-control inputtamaño3"
-                               required name="ABD_B" id="ABD_B" value="{{old('ABD_B')}}">
+                               required name="ABD_B" id="ABD_B" value="{{old('ABD_B')}}" placeholder="Ingrese la talla en cm">
                     </div>
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">Cadera:</h6>
                         <input style="width:310px" type="number" class="form-control inputtamaño3" required
-                               name="cadera" id="cadera" value="{{old('cadera')}}">
+                               name="cadera" id="cadera" value="{{old('cadera')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                 </div>
@@ -142,14 +142,14 @@
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">Muslo:</h6>
                         <input style="width:310px" type="number" class="form-control inputtamaño3" required
-                               name="muslo" id="muslo" value="{{old('muslo')}}">
+                               name="muslo" id="muslo" value="{{old('muslo')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email">Pierna:</h6>
                         <input style="width:310px" type="number" class="form-control inputtamaño3" required
-                               name="pierna" id="pierna" value="{{old('pierna')}}">
+                               name="pierna" id="pierna" value="{{old('pierna')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
@@ -161,7 +161,7 @@
                                @isset($antecedente)
                                value="{{$antecedente->fecha_de_ingreso}}"
                                @endisset
-                               value="{{old('fecha_de_ingreso', $now->format('Y-m-d'))}}">
+                               value="{{old('fecha_de_ingreso', $now->format('Y-m-d'))}}" readonly >
                     </div>
                 </div>
 

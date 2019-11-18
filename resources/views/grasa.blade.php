@@ -68,14 +68,15 @@
 
                     <thead class="thead-light">
                     <tr>
-                        <th scope="col">Fecha</th>
                         <th scope="col">Imc</th>
                         <th scope="col">edad</th>
                         <th scope="col">%Grasa</th>
-                        <th scope="col">PC_Tricipital</th>
-                        <th scope="col">PC_Infraescupular</th>
-                        <th scope="col">PC_Supra_Iliaco</th>
-                        <th scope="col">PC_Biciptal</th>
+                        <th scope="col">Diagnostico</th>
+                        <th scope="col">PC Tricipital</th>
+                        <th scope="col">PC Infraescapular</th>
+                        <th scope="col">PC Supra Iliaco</th>
+                        <th scope="col">PC Biciptal</th>
+                        <th scope="col">Fecha</th>
                         <th scope="col">Acciones</th>
 
                     </tr>
@@ -85,14 +86,16 @@
                     <tr>
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
-                                <th>{{$grasa->fecha_de_ingreso}}</th>
                                 <td>{{$grasa->imc}}</td>
                                 <td>{{$grasa->edad}}</td>
                                 <td>{{$grasa->grasa}}</td>
+                                <td>{{$grasa->leyenda}}</td>
+
                                 <th>{{$grasa->pc_tricipital}}</th>
                                 <td>{{$grasa->pc_infraescapular}}</td>
                                 <td>{{$grasa->pc_supra_iliaco}}</td>
                                 <td>{{$grasa->pc_biciptal}}</td>
+                                <th>{{$grasa->fecha_de_ingreso}}</th>
                                 <td class="form-inline " style="width: 300px">
                                     <button class="btn btn-warning mr-xl-2 "><a
                                                 href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i
