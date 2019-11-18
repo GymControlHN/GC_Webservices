@@ -16,7 +16,7 @@ class Cliente extends Model
         'fecha_de_ingreso',
         'id_carrera',
         'id_tipo_cliente',
-        'genero ',
+        'genero',
         'telefono'
     ];
 }

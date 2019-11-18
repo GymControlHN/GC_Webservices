@@ -54,7 +54,7 @@
 
     </div>
 
-    <a class="btn btn-primary"  href="{{route("botongrasa",["id"=>$cliente->id])}}"
+    <a class="btn btn-primary"  href="{{route("botonruffier",["id"=>$cliente->id])}}"
        style="float: right; margin-right: 50px; color: white">Nuevo
 
     </a>

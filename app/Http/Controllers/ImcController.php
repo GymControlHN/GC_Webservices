@@ -63,7 +63,9 @@ class ImcController extends Controller
 
         $nuevoImc->save();
 
-        return back();//->route('imc.ini');
+        return $this->index( $request->input("id"));
+
+       //->route('imc.ini');
     }
 
    // public function show(Imc $antecedenes)
@@ -137,14 +139,12 @@ class ImcController extends Controller
 
 
     }
-    public function destroy($id)
+    public function destroy($id,$id_cliente)
     {
         Imc::destroy($id);
 
-        return $this->index($id);
-
-
-
-
+        return $this->index($id_cliente);
     }
+
+
 }

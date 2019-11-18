@@ -97,6 +97,26 @@
                                     <div class="form-group col-md-6">
                                         <h6>Sexo</h6>
 
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required>Masculino
+                                    <label class="form-check-label" for="inlineRadio1"></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required>Femenino
+                                    <label class="form-check-label" for="inlineRadio2"></label>
+                                </div>
+
+
+
+                                <h6>Fecha</h6>
+                                <div class="form-group">
+                                    <input type="date" class="form-control"
+                                           value="{{date("Y-m-d")}}"
+                                           readonly
+                                           id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                           required
+                                    >
+                                </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required>Masculino
                                             <label class="form-check-label" for="inlineRadio1"></label>

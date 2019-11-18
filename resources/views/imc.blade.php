@@ -16,7 +16,6 @@
 
         <div class="card">
 
-            <h2 style="all: revert">Medidas Antropometricas</h2>
 
             <div>
 
@@ -48,12 +47,12 @@
         <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
            @endif
-        @if($cliente->id_tipo_cliente ==1)
-        href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+           @if($cliente->id_tipo_cliente ==1)
+           href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
 
-        @if($cliente->id_tipo_cliente ==2)
-            style="display: none;"
-            @endif
+           @if($cliente->id_tipo_cliente ==2)
+           style="display: none;"
+                @endif
 
         >Pagos</a>
         <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
@@ -62,7 +61,7 @@
 
     </div>
 
-    <a class="btn btn-primary"  href="{{route("botongrasa",["id"=>$cliente->id])}}"
+    <a class="btn btn-primary"  href="{{route("botonimc",["id"=>$cliente->id])}}"
        style="float: right; margin-right: 50px; color: white">Nuevo
 
     </a>
@@ -74,8 +73,6 @@
         <div class="card">
 
 
-            <button class="btn btn-primary my-8" type="button" >
-                <a href="{{route("botonimc",["id"=>$cliente->id])}}" style="color: white">Nuevo</a>
 
 
 
