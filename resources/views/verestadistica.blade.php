@@ -113,7 +113,7 @@
                             <td class="form-inline " style="width: 300px">
 
 
-                                <form method="post" action="{{route('imc.borrar',$antecedente->id)}}"
+                                <form method="post" action="{{route('imc.borrar',[$antecedente->id,$antecedente->id_cliente])}}"
                                       onclick="return confirm('Estas seguro que deseas eliminar las medidas antropometricas? ')">
                                     <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
                                     </button>
