@@ -44,7 +44,7 @@
                                 <th class="form-inline mr-xl-n2 ">
 
 
-                                    <form method="post" action="{{route('pagoestudiante.borrar', $user->id)}}"
+                                    <form method="post" action="{{route('pagoestudiante.borrar', [$user->id,$user->id_cliente])}}"
                                           onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
                                         <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
                                         </button>
