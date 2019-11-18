@@ -134,8 +134,8 @@ Route::get("buscarPago","PagoEstudianteController@buscarPagos")->name("pagosestu
     Route::post('ruffier/crear', 'RuffierController@store')->name('ruffier.guardar');
 
 
-    Route::delete('ruffier/{id}/borrar','RuffierController@destroy')->name('ruffier.borrar');
-    Route::get('ruffier/{id}/{cliente}/editar','RuffierController@edit')->name('ruffier.editar');
+    Route::delete('ruffier/{id}/{id_cliente}/borrar','RuffierController@destroy')->name('ruffier.borrar');
+    Route::get('ruffier/{id}/{id_cliente}/editar','RuffierController@edit')->name('ruffier.editar');
     Route::put('ruffier/{id}/edit','RuffierController@update')->name('ruffier.update');
 
     Route::get('imc/{id}','ImcController@index')->name('imc.ini');

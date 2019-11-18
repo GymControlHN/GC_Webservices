@@ -105,8 +105,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
                                     <button class="btn btn-warning mr-xl-2 "><a
                                                 href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i
                                                     class="fas fa-edit"></i></a></button>
-                                    <form method="post" action="{{route('ruffier.borrar', $dato->id)}}"
-                                          class="pull-left"
+                                    <form method="post" action="{{route('ruffier.borrar', [$dato->id,$dato->id_cliente])}}"
                                           onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
                                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                                         {{method_field('delete')}}

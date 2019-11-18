@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Ruffier;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 
@@ -17,7 +16,7 @@ class RuffierController extends Controller
         $datos = Ruffier::where("id_cliente","=",$id)
             ->orderBy("created_at","desc")->paginate(10);
         $cliente = Cliente::find($id);
-        return view('ruffiel',compact("datos","cliente"));
+        return view('ruffiel',compact("datos"))->with("cliente", $cliente);
 
 
     }
@@ -52,7 +51,7 @@ class RuffierController extends Controller
         //Seccion::flash('message','ingreso correcto');
         //   return redirect('ruffiel');
 
-        return back();
+        return $this->index( $request->input("id"));
 
     }
 
@@ -63,9 +62,9 @@ class RuffierController extends Controller
 
     public function edit($id,$id_cliente)
     {
-        $antecedentes = Ruffier::findOrFail($id);
+        $rufierr = Ruffier::findOrFail($id);
         $id_cliente = Cliente::findOrFail($id_cliente);
-        return view('botonruffiereditar')-> with("antecedentes", $id_cliente)->with("id",$id_cliente);
+        return view('botonruffiereditar')-> with("rufierr", $rufierr)->with("id",$id_cliente);
 
     }
 
@@ -104,17 +103,17 @@ class RuffierController extends Controller
 
         // Redirigir a la lista de todos los estudiantes.
         //return redirect('ruffiel');
-        return $this->index($request->input("id_cliente"));
+      return $this->index($request->input("id_cliente"));
 
 
     }
 
-    public function destroy($id)
+    public function destroy($id, $id_cliente)
     {
         Ruffier::destroy($id);
 
         // return redirect('ruffiel');
-        return $this->index($id);
+        return $this->index($id_cliente);
 
     }
 
