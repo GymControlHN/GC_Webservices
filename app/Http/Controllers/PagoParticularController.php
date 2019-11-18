@@ -33,16 +33,24 @@ class PagoParticularController extends Controller
         $nuevoPagoClientee = new PagoClientesp();
 
         $nuevoPagoClientee->mes = $request->input('mes');
-        $nuevoPagoClientee->fecha_pago = $request->input('fecha_pago');
-        $nuevoPagoClientee->tipo_pago = "Pago_Particular";
-        $nuevoPagoClientee->id_cliente = $request->input("id");
+        $verificarFecha = PagoClientesP::where("fecha_pago",
+            "like", "%" . $request->input('fecha_pago') . "%");
+
+        if ($verificarFecha->count() > 0) {
+            return back()->with("error", "La fecha ingresada de pago ya existe");
+        } else {
+
+            $nuevoPagoClientee->fecha_pago = $request->input('fecha_pago');
+            $nuevoPagoClientee->tipo_pago = "Pago_Particular";
+            $nuevoPagoClientee->id_cliente = $request->input("id");
 
             $nuevoPagoClientee->save();
 
-        //TODO redireccionar a una página con sentido.
-        //Seccion::flash('message','Estudiante creado correctamente');
-        return back()->with(["exito"=>"Se agregó exitosamente"]);
-        return $this->index($request->input("id"));
+            //TODO redireccionar a una página con sentido.
+            //Seccion::flash('message','Estudiante creado correctamente');
+            return back()->with(["exito" => "Se agregó exitosamente"]);
+            return $this->index($request->input("id"));
+        }
 
     }
 
