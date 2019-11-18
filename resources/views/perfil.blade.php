@@ -9,15 +9,16 @@
             </div>
         </div>
     </header>
-    <div class=" w3-container w3-teal mx-5">
+    <div class="container" >
+
         <h3 style="all: revert">Listado de Usuarios</h3>
 
 
-        <button class="btn btn-success float-right" data-toggle="modal" data-target="#exampleModalScrollable">
+        <button class="btn btn-success float-right" data-toggle="modal" data-target="#modalañadirnuevousuario">
             <i class="fas fa-user"></i> Agregar Usuario
         </button>
 
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+        <div class="modal fade" id="modalañadirnuevousuario" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitleE" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
@@ -100,7 +101,7 @@
             </div>
         </div>
     </div>
-    <div class="container" >
+<div class="container">
         <div class="table  mx-sm-0" style="margin: 50px">
             <br><br>
             <table class="table ruler-vertical table-hover mx-sm-0 " style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
@@ -124,9 +125,10 @@
                                    data-title="La contraseña no se puede mostrar"></i> confidencial
                             </th>
                             <th class="form-inline mr-xl-n2 ">
-                                <button class="btn btn-warning mr-xl-1">
-                                    <i class="fas fa-edit"></i></button>
-                                <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>
+                                <button class="btn btn-danger mr-xl-2 "
+                                        data-toggle="modal"
+                                        data-target="#modalBorrarUsuario">
+                                    <i class="fas fa-trash-alt"></i></button>
                             </th>
 
                         </tr>
@@ -140,7 +142,35 @@
             </table>
 
         </div>
+</div>
     </div>
 
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarUsuario">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Atención Eliminación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="{{route('usuario.borrar')}}">
+                    {{method_field('delete')}}
+
+                    <div class="modal-body">
+                        <input name="id" id="id" type="hidden">
+
+                        <p>Esta seguro que desea borrar el usuario?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Aceptar</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
 
 @endsection

@@ -87,51 +87,6 @@
                 </div>
 
             </div>
-            <div class="form-inline">
-
-
-                <div class="modal fade" id="editarPagosParticulares" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Pago</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-
-                            <div class="modal-body">
-                                <form method="post">
-                                    <input type="hidden" name="pagoPart_id" id="id" value="">
-
-                                    {{method_field('put')}}
-
-                                    <h6>Fecha</h6>
-                                    <div class="form-group">
-                                        <input type="date" class="form-control" id="fecha_pago" name="fecha_pago"
-                                               max="{{ date("Y-m-d")}}"
-                                               @isset($user)
-                                               value="{{$user->fecha_pago}}"
-                                               @endisset value="{{old('fecha_pago')}}"
-
-
-                                        >
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar
-                                        </button>
-                                        <button type="submit" class="btn btn-primary ">Guardar Cambios</button>
-
-                                    </div>
-                                </form>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
 
             @if(session("exito"))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -182,12 +137,7 @@
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
-                        <th class="form-inline mr-xl-n2 ">
-                            <button class="btn btn-warning mr-xl-1"  data-toggle="modal"
-                                    data-target="#editarPagosParticulares"
-                                    data-mymes="{{$user->mes}}" data-myfecha="{{$user->fecha_pago}}"
-                                    data-cat_id="{{$user->id}}">
-                                <i class="fas fa-edit"></i></button>
+                        <th >
                             <form method="post" action="{{route('pagoparticulares.borrar', [$user->id,$user->id_cliente])}}"
                                   onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
                                 <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>

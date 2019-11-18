@@ -137,13 +137,7 @@
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
-                        <th class="form-inline mr-xl-n2 ">
-
-                            <button class="btn btn-warning mr-xl-1" data-toggle="modal"
-                                    data-target="#editarPagosEstudiantes"
-                                    data-mymes="{{$user->mes}}" data-myfecha="{{$user->fecha_pago}}"
-                                    data-cat_id="{{$user->id}}">
-                                <i class="fas fa-edit" ></i></button>
+                        <th>
                             <form method="post" action="{{route('pagoestudiante.borrar', [$user->id,$user->id_cliente])}}"
                                   onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
                                 <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i></button>

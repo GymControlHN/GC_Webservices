@@ -32,4 +32,14 @@ class AuthController extends Controller
         return redirect("perfil");
     }
 
+    public function destroy(Request $request)
+    {
+        User::destroy($request->input("id"));
+
+        return back()->with(["exito"=>"Se elimino exitosamente"]);
+
+
+    }
+
+
 }

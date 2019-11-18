@@ -70,6 +70,7 @@ Route::group(["middleware"=>"auth"],function (){
 
     Route::post('/nuevousuario','AuthController@crear_usuario')->name('nuevo.usuario');
     Route::get('/perfil','AuthController@index')->name('usuarios');
+    Route::delete('usuario/borrar','AuthController@destroy')->name('usuario.borrar');
 
     Route::get('estudiantes/', 'EstudiantesController@index')->name('estudiantes');
     Route::get('estudiantes/crear/{id}', 'EstudiantesController@create')->name('estudiantes.formulario');
