@@ -99,7 +99,7 @@
                                     <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                            required>
                                 </div>
-                            //que no se duplique el texto
+
                                 <div class="form-group col-md-6">
                                     <h6>Sexo</h6>
 
