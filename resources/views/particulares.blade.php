@@ -8,7 +8,7 @@
     </header>
 
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-            <h2 class="h3centrado mt-3">Listado de Particulares</h2>
+            <h2 class=" mt-3">Listado de Particulares</h2>
 
 
 

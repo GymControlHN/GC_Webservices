@@ -11,11 +11,10 @@
     </header>
 
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-        <h2 class="h3centrado  mt-3">Listado de Estudiantes</h2>
+        <h2 class="  mt-3" >Listado de Estudiantes</h2>
 
 
-        <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                data-target="#exampleModalScrollable">
+        <button type="button" class="btn btn-primary float-right"  data-toggle="modal" data-target=".bd-example-modal-lg">
             <i class="fas fa-user-plus"></i>
         </button>
 
@@ -24,9 +23,9 @@
 
         </button-->
 
-        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+        <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Registro Estudiantes</h5>
@@ -34,25 +33,26 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-
                     <div class="modal-body">
 
                         <form method="post" action="{{route('estudiante.guardar')}}">
 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <h6>Nombre Completo</h6>
+                                    <input type="text"  class="form-control solo-letras"  id="nombre" name="nombre"
+                                           required
+                                    >
+                                </div>
 
-                            <h6>Nombre Completo</h6>
-                            <div class="form-group">
-                                <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
-                                       required>
-                            </div>
-
-                            <h6>Edad</h6>
-                            <div class="form-group">
-                                <input type="text" pattern="([0-9]{1,3})" class="form-control" id="edad" name="edad"
-                                       aria-valuemax="2"
-                                       title="Ingresa solo numeros entre 1 a 99 años"
-                                       required
-                                       minlength="1" maxlength="2" min="1" max="99">
+                                <div class="form-group col-md-6">
+                                    <h6>Edad</h6>
+                                    <input type="text"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
+                                           aria-valuemax="2"
+                                           title="Ingresa solo numeros entre 1 a 99 años"
+                                           required
+                                           minlength="1" maxlength="2" min="1" max="99">
+                                </div>
                             </div>
 
                             <div class="form-row">
@@ -65,66 +65,71 @@
                                            minlength="1" maxlength="11" aria-valuemax="11" max="99999999999">
                                 </div>
 
-                                <h6>Carrera</h6>
-                                <div class="form-group">
+
+                                <div class="form-group col-md-6">
+                                    <h6>Carrera</h6>
                                     <select class="form-control" id="carrera" name="carrera"
                                             required>
-                                        @foreach($carreras as $carrera)
-                                            <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
-                                        @endforeach
-
-
+                                        <option></option>
+                                        <option>Lic. informática administrativa</option>
+                                        <option>Lic. Enfermeria</option>
+                                        <option>Ing. Agroindustrial</option>
+                                        <option>TUAEC</option>
+                                        <option>Otros</option>
                                     </select>
                                 </div>
+                            </div>
 
 
-                                <h6> Teléfono </h6>
-                                <div class="form-group">
-                                    <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono"
-                                           name="telefono"
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <h6> Teléfono </h6>
+                                    <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
                                            title="Ingrese solo números"
                                            required
-                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999">
+                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999"  >
                                 </div>
 
 
-                                <h6>Sexo</h6>
 
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M"
-                                           required>Masculino
-                                    <label class="form-check-label" for="inlineRadio1"></label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F"
-                                           required>Femenino
-                                    <label class="form-check-label" for="inlineRadio2"></label>
-                                </div>
+                                <div class="form-group col-md-6">
+                                    <h6>Fecha</h6>
 
-
-                                <h6>Fecha</h6>
-                                <div class="form-group">
-                                    <input type="date" class="form-control" id="fecha_de_ingreso"
-                                           name="fecha_de_ingreso"
+                                    <input type= "date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                            required>
-
                                 </div>
 
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                <div class="form-group col-md-6">
+                                    <h6>Sexo</h6>
 
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required>Masculino
+                                        <label class="form-check-label" for="inlineRadio1"></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required>Femenino
+                                        <label class="form-check-label" for="inlineRadio2"></label>
+                                    </div>
                                 </div>
                             </div>
-                               </div>
+
+
+
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" >cerrar</button>
+                                <button type="submit"  class="btn btn-primary">Guardar</button>
+
+                            </div>
                         </form>
-
-                </div>
-
+                    </div>
 
                 </div>
             </div>
         </div>
+
 
 
         <form class="form-inline" method="get" action="{{route('estudiante.buscar')}}">
@@ -134,7 +139,7 @@
                 <input type="text" class="form-control" id="inputText2" name="busqueda"
                        placeholder="Buscar">
             </div>
-            <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
+            <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
         </form>
 
         @if(session("exito"))
@@ -148,7 +153,7 @@
         @endif
 
         <div class="modal fade" id="editarEstudiante" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalScrollableTitle">
+             aria-labelledby="exampleModalScrollableTitle" >
             <div class="modal-dialog modal-dialog-scrollable" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -177,7 +182,7 @@
 
                             <h6>Edad</h6>
                             <div class="form-group">
-                                <input type="text" pattern="([0-9]{1,3})" class="form-control" id="edad" name="edad"
+                                <input type="text" pattern="([0-9]{1,3})"  class="form-control" id="edad" name="edad"
                                        @isset($estudiante)
                                        value="{{$estudiante->edad}}"
                                        @endisset value="{{old('edad')}}"
@@ -189,33 +194,35 @@
 
                             <h6>Número Cuenta</h6>
                             <div class="form-group">
-                                <input type="text" pattern="([0-9]{1,11})" class="form-control" id="identificacion"
-                                       name="identificacion"
-                                       @isset($estudiante)
-                                       value="{{$estudiante->identificacion}}"
-                                       @endisset value="{{old('identificacion')}}"
-                                       title="Ingrese solo números"
-                                       required
-                                       minlength="1" maxlength="11" aria-valuemax="11" max="99999999999"
+                                <input  type="text"  pattern="([0-9]{1,11})"  class="form-control" id="identificacion" name="identificacion"
+                                        @isset($estudiante)
+                                        value="{{$estudiante->identificacion}}"
+                                        @endisset value="{{old('identificacion')}}"
+                                        title="Ingrese solo números"
+                                        required
+                                        minlength="1" maxlength="11" aria-valuemax="11" max="99999999999"
                                 >
                             </div>
 
                             <h6>Carrera</h6>
                             <div class="form-group">
-                                <select class="form-control" id="carrera" placeholder="seleccione" name="carrera"
-                                        required>
-                                    @foreach($carreras as $carrera)
-                                        <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
-                                    @endforeach
-
+                                <select class="form-control" id="carrera" placeholder="seleccione" name="carrera" required>
+                                    <option></option>
+                                    <option>Lic. informática administrativa</option>
+                                    <option>Lic. Enfermeria</option>
+                                    <option>Ing. Agroindustrial</option>
+                                    <option>TUAEC</option>
+                                    <option>Otros</option>
                                 </select>
                             </div>
 
 
+
+
+
                             <h6> Teléfono </h6>
                             <div class="form-group">
-                                <input input="text" pattern="([0-9]{1,8})" class="form-control" id="telefono"
-                                       name="telefono"
+                                <input input="text"  pattern="([0-9]{1,8})"   class="form-control"   id="telefono" name="telefono"
 
                                        @isset($estudiante)
                                        value="{{$estudiante->telefono}}"
@@ -253,16 +260,15 @@
                                        @isset($estudiante)
                                        value="{{$estudiante->fecha_de_ingreso}}"
                                        @endisset value="{{old('fecha_de_ingreso')}}"
-
                                 >
                             </div>
 
+                        </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                            <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-
-                            </div>
+                        </div>
                         </form>
                     </div>
 
@@ -283,7 +289,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <th scope="col">Sexo</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Fecha de Ingreso</th>
-                    <th scope="col">Acciones</th>
+                    <th scope="col" >Acciones</th>
                 </tr>
                 </thead>
 
@@ -299,7 +305,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                             <td>{{$estudiante->genero}}</td>
                             <td>{{$estudiante->edad}}</td>
                             <td>{{$estudiante->fecha_de_ingreso}}</td>
-                            <div style="overflow: auto"></div>
+                            <div  style="overflow: auto"></div>
 
 
                             <td class="form-inline " style="width: 300px">
@@ -315,15 +321,17 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                         data-mycuenta="{{$estudiante->identificacion}}"
                                         data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                                         data-mytelefono="{{$estudiante->telefono}}"
-                                        data-mycarrera="{{$estudiante->id_carrera}}"
+                                        data-mycarrera="{{$estudiante->carrera}}"
                                         data-catid="{{$estudiante->id}}" data-sexo="{{$estudiante->genero}}"><i
                                             class="fas fa-edit"></i></button>
 
-                                    <button class="btn btn-danger mr-xl-2 "
-                                            data-id="{{$estudiante->id}}"
-                                            data-toggle="modal"
-                                            data-target="#modalBorrarEstudiante"><i class="fas fa-trash-alt"></i>
+                                <form method="post" action="{{route('estudiante.borrar', $estudiante->id)}}"
+                                      onclick="return confirm('Estas seguro que deseas eliminar al estudiante? ')">
+                                    <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
                                     </button>
+                                    {{method_field('delete')}}
+                                </form>
+
 
 
                                 <button class="btn btn-info mr-xl-2 " type="button">
@@ -356,6 +364,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 @endif
 
 
+
                 </tbody>
             </table>
 
@@ -370,31 +379,23 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
         </div>
     </div>
 
-    <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarEstudiante">
+    <div class="modal" tabindex="-1"  role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Atencion Eliminacion</h5>
+                    <h5 class="modal-title">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="post" action="{{route('estudiante.borrar')}}">
-                    {{method_field('delete')}}
-
-                    <div class="modal-body">
-                        <input name="id" id="id" type="hidden">
-
-                        <p>Esta seguro que desea borrar el estudiante?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Aceptar</button>
-                    </div>
-
-                </form>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
-
         </div>
     </div>
 @endsection

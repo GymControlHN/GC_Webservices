@@ -8,7 +8,7 @@
     </header>
 
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
-        <h2 class="h3centrado  mt-3">Lista De Todos Los Clientes</h2>
+            <h2 class=" mt-3" >Lista De Todos Los Clientes</h2>
 
         <form class="form-inline" method="get" action="{{route('cliente.buscarCliente')}}">
 
@@ -66,6 +66,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             </tbody>
         </table>
 
+        </div>
     </div>
 
 @endsection

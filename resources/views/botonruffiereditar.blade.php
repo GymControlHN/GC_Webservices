@@ -75,9 +75,9 @@
 
     <body>
 
-    <div class="container mr-5">
+    <div class="container mr-5 ">
 
-        <form name="id_imc" id="id_imc"
+        <form  name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
               method="post" action="@isset($dato){{route('ruffier.update', $dato->id)}}
         @endisset ">
