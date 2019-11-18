@@ -145,7 +145,7 @@ Route::get("buscarPago","PagoEstudianteController@buscarPagos")->name("pagosestu
 
     Route::delete('imc/{id}/{id_cliente}/borrar','ImcController@destroy')->name('imc.borrar');
 
-    Route::get('imc/{id}/editar','ImcController@edit')->name('imc.editar');
+    Route::get('imc/{id}/{id_cliente}/editar','ImcController@edit')->name('imc.editar');
     Route::put('imc/{id}/edit','ImcController@update')->name('imc.update');
 //Route::get('imc/{id}/mostrar','ImcController@mostrarIMCCliente')->name('botomostrar');
 
