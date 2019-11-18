@@ -141,10 +141,10 @@
 
 
             <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control" id="inputText2" name="busqueda"
+                <input type="text" class="form-control mb-3" id="inputText2" name="busqueda"
                        placeholder="Buscar">
             </div>
-            <button type="submit" class="btn btn-primary my-4 "  >Buscar</button>
+            <button type="submit" class="btn btn-primary mb-3 "  >Buscar</button>
         </form>
 
         @if(session("exito"))
@@ -327,7 +327,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                     {{ csrf_field() }}
                                 </form>
 
-                                <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target=".bd-example-modal-lg" data-mynombre="{{$estudiante->nombre}}"
+                                <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
                                         data-myedad="{{$estudiante->edad}}"
                                         data-mycuenta="{{$estudiante->identificacion}}"
                                         data-myfecha="{{$estudiante->fecha_de_ingreso}}"

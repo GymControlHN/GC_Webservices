@@ -101,8 +101,6 @@
 
 
 
-
-
                                     <div class="form-group col-md-6">
                                         <h6>Sexo</h6>
 
@@ -115,10 +113,8 @@
                                     <label class="form-check-label" for="inlineRadio2"></label>
                                 </div>
 
-
-                                    </div>
-
-                                    </div>
+                                 </div>
+                                </div>
 
 
 
@@ -141,10 +137,10 @@
         <form class="form-inline" method="get" action="{{route('particular.buscarPart')}}">
 
             <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control" name="busquedaPart"
+                <input type="text" class="form-control mb-3" name="busquedaPart"
                        id="inputText2" placeholder="Buscar">
             </div>
-            <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
+            <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
 
         @if(session("exito"))
@@ -157,9 +153,9 @@
 
         @endif
 
-        <div class="modal fade" id="editarParticular" tabindex="-1" role="dialog"
+        <div class ="modal fade  bd-example-modal-lg" id="editarParticular" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Particulares</h5>
@@ -177,8 +173,9 @@
 
                             {{method_field('put')}}
 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                             <h6>Nombre Completo</h6>
-                            <div class="form-group">
                                 <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                        @isset($particular)
                                        value="{{$particular->nombre}}"
@@ -186,8 +183,8 @@
                                 >
                             </div>
 
+                                <div class="form-group col-md-6">
                             <h6>Edad</h6>
-                            <div class="form-group">
                                 <input type="text"  pattern="([0-9]{1,3})" class="form-control" id="edad" name="edad"
                                        @isset($particular)
                                        value="{{$particular->edad}}"
@@ -197,9 +194,11 @@
                                        minlength="1" maxlength="2" min="1" max="99"
                                 >
                             </div>
+                            </div>
 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                             <h6>Número de Identidad</h6>
-                            <div class="form-group">
                                 <input type="text" pattern="([0-9]{1,13})" class="form-control" id="identificacion" name="identificacion"
                                        @isset($particular)
                                        value="{{$particular->identificacion}}"
@@ -210,8 +209,8 @@
                                 >
                             </div>
 
+                                <div class="form-group col-md-6">
                             <h6>Profesión</h6>
-                            <div class="form-group">
                                 <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
                                        @isset($particular)
                                        value="{{$particular->profesion_u_oficio}}"
@@ -219,10 +218,11 @@
                                        required
                                 >
                             </div>
+                            </div>
 
-
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                             <h6> Teléfono </h6>
-                            <div class="form-group">
                                 <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
                                        @isset($particular)
                                        value="{{$particular->telefono}}"
@@ -233,8 +233,20 @@
                                        maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
                                 >
                             </div>
-                            <h6>Sexo</h6>
 
+                         <div class="form-group col-md-6">
+                            <h6>Fecha</h6>
+                                <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                       @isset($particular)
+                                       value="{{$particular->fecha_de_ingreso}}"
+                                       @endisset value="{{old('fecha_de_ingreso')}}"
+                                       required
+                                >
+                            </div>
+                            </div>
+
+                                <div class="form-group col-md-6">
+                            <h6>Sexo</h6>
                             <div class="form-check form-check-inline ">
                                 <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
 
@@ -253,16 +265,8 @@
                                 >Femenino
                                 <label class="form-check-label" for="inlineRadio2"></label>
                             </div>
+                          </div>
 
-                            <h6>Fecha</h6>
-                            <div class="form-group">
-                                <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                       @isset($particular)
-                                       value="{{$particular->fecha_de_ingreso}}"
-                                       @endisset value="{{old('fecha_de_ingreso')}}"
-                                       required
-                                >
-                            </div>
 
 
 
@@ -290,7 +294,7 @@
 
 
         <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
+                        box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>

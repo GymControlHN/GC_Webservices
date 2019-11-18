@@ -135,10 +135,10 @@
         <form class="form-inline" method="get" action="{{route('docente.buscarDoc')}}">
 
             <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control" name="busquedaDoc"
+                <input type="text" class="form-control mb-3" name="busquedaDoc"
                        id="inputText2" placeholder="Buscar">
             </div>
-            <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
+            <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
 
         @if(session("exito"))
@@ -152,9 +152,9 @@
         @endif
 
 
-        <div class="modal fade" id="editarDocente" tabindex="-1" role="dialog"
+        <div class="modal fade  bd-example-modal-lg" id="editarDocente" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Docentes</h5>
@@ -169,8 +169,9 @@
                             <input type="hidden" name="docente_id" id="id" value="">
                             {{method_field('put')}}
 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                             <h6>Nombre Completo</h6>
-                            <div class="form-group">
                                 <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                        @isset($docente)
                                        value="{{$docente->nombre}}"
@@ -180,8 +181,8 @@
 
                             </div>
 
+                            <div class="form-group col-md-6">
                             <h6>Edad</h6>
-                            <div class="form-group">
                                 <input type="text"  pattern="([0-9]{1,3})"  class="form-control" id="edad" name="edad"
                                        @isset($docente)
                                        value="{{$docente->edad}}"
@@ -191,9 +192,11 @@
                                        minlength="1" maxlength="2" min="1" max="99"
                                 >
                             </div>
+                            </div>
 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
                             <h6>Número de Empleado</h6>
-                            <div class="form-group">
                                 <input type="text"  pattern="([0-9]{1,5})"  class="form-control" id="identificacion" name="identificacion"
                                        @isset($docente)
                                        value="{{$docente->numero_de_empleado}}"
@@ -205,9 +208,8 @@
                                 >
                             </div>
 
-
+                                <div class="form-group col-md-6">
                             <h6> Teléfono </h6>
-                            <div class="form-group">
                                 <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
                                        @isset($docente)
                                        value="{{$docente->telefono}}"
@@ -217,8 +219,32 @@
                                        maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
                                 >
                             </div>
-                            <h6>Sexo</h6>
+                            </div>
 
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                <h6>Profesión</h6>
+                                    <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                           @isset($docente)
+                                           value="{{$docente->profesion_u_oficio}}"
+                                           @endisset value="{{old('profesion_u_oficio')}}"
+                                           required
+                                    >
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                <h6>Fecha</h6>
+                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
+                                           @isset($docente)
+                                           value="{{$docente->fecha_de_ingreso,$now->format('Y-m-d')}}"
+                                           @endisset value="{{old('fecha_de_ingreso')}}"
+                                           required
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                            <h6>Sexo</h6>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
                                        @isset($docente)
@@ -235,25 +261,10 @@
                                 >Femenino
                                 <label class="form-check-label" for="inlineRadio2"></label>
                             </div>
-                            <h6>Profesión</h6>
-                            <div class="form-group">
-                                <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
-                                       @isset($docente)
-                                       value="{{$docente->profesion_u_oficio}}"
-                                       @endisset value="{{old('profesion_u_oficio')}}"
-                                       required
-                                >
                             </div>
 
-                            <h6>Fecha</h6>
-                            <div class="form-group">
-                                <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                       @isset($docente)
-                                       value="{{$docente->fecha_de_ingreso,$now->format('Y-m-d')}}"
-                                       @endisset value="{{old('fecha_de_ingreso')}}"
-                                       required
-                                >
-                            </div>
+
+
 
 
                             <div class="modal-footer">
