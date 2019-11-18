@@ -9,7 +9,7 @@
 
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card">
+        <div class="card " style="border: none">
 
 
 
@@ -32,8 +32,8 @@
             </div>
         </div>
     </div>
-    <br><br>
-    <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+
+    <div class="btn-group mt-3 mb-5 " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
         <a class="btn btn-primary" @if($nombre->id_tipo_cliente!==1)
         href="{{route("pagoparticulares",["id"=>$nombre->id])}}"
            @else
@@ -49,7 +49,6 @@
     <button class="btn btn-danger float-right" style="margin-right: 50px" data-toggle="modal" data-target="#modalPagoParticular" >
         <i class="fas fa-dollar-sign"></i> Agregar pago
     </button>
-    <br><br>
 
     <div class="w3-container w3-teal mx-5">
 
