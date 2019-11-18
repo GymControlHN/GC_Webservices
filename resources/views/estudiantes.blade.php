@@ -384,7 +384,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Atencion Eliminacion</h5>
+                    <h5 class="modal-title">Atención Eliminación</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -398,7 +398,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                         <p>Esta seguro que desea borrar el estudiante?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                         <button type="submit" class="btn btn-primary">Aceptar</button>
                     </div>
 
