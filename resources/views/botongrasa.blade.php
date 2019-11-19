@@ -146,18 +146,18 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Pc_tricipital:</h6>
+                    <h6 class="label2" for="email">Pc tricipital:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                           id="pc_tricipital" name="pc_tricipital" maxlength="3"
+                           id="pc_tricipital" name="pc_tricipital" maxlength="3" placeholder="Ingrese medicas en cm"
                            value="{{old('pc_tricipital')}}">
 
                 </div>
 
 
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Pc_Infraescrupural:</h6>
+                    <h6 class="label2" for="email">Pc Infraescrupural:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                           id="pc_infraescapular" name="pc_infraescapular" maxlength="50"
+                           id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_infraescapular')}}">
 
                 </div>
@@ -165,18 +165,18 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Pc_Biciptal:</h6>
+                    <h6 class="label2" for="email">Pc Biciptal:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                           id="pc_biciptal" name="pc_biciptal" maxlength="3"
+                           id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medida en cm"
                            value="{{old('pc_biciptal')}}">
 
                 </div>
 
 
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Pc_supra_Iliaco:</h6>
+                    <h6 class="label2" for="email">Pc SupraIliaco:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                           id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50"
+                           id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_supra_iliaco')}}">
 
                 </div>

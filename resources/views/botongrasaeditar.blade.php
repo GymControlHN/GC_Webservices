@@ -85,7 +85,7 @@
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" id="imc"
                                name="imc" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()"
                                @isset($grasa)
-                               value="{{$grasa->imc}}"
+                               value="{{$grasa->imc}}" readonly
                                 @endisset
                         >
                     </div>
@@ -96,7 +96,7 @@
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGrasa()"
                                @isset($grasa)
-                               value="{{$grasa->edad}}"
+                               value="{{$grasa->edad}}" readonly
                                 @endisset
                         >
                     </div>
@@ -140,9 +140,9 @@
 
 
                     <div class="form-group col-md-6">
-                <h6 class="label2" for="email">Pc_Infraescrupural:</h6>
+                <h6 class="label2" for="email">Pc Infraescrupural:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                           id="pc_infraescapular" name="pc_infraescapular" maxlength="50"
+                           id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
                            value="{{$grasa->pc_infraescapular}}"
                             @endisset
@@ -152,9 +152,9 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <h6 class="label2" for="email">Pc_Biciptal:</h6>
+                <h6 class="label2" for="email">Pc Biciptal:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                           id="pc_biciptal" name="pc_biciptal" maxlength="3"
+                           id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
                            value="{{$grasa->pc_biciptal}}"
                             @endisset
@@ -163,10 +163,10 @@
 
 
                     <div class="form-group col-md-6">
-                <h6 class="label2" for="email">Pc_supra_Iliaco:</h6>
+                <h6 class="label2" for="email">Pc Suprailiaco:</h6>
 
                     <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                           id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50"
+                           id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
                            value="{{$grasa->pc_supra_iliaco}}"
                             @endisset

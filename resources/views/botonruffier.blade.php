@@ -137,7 +137,7 @@
                     <h6 class="label2" for="email">MVO2:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="mvo" name="mvo" maxlength="3"
-                              value="{{old('mvo')}}" required>
+                              value="{{old('mvo')}}" required placeholder="Ingrese fuerza pulmonar">
                     </div>
                 </div>
 
@@ -147,7 +147,7 @@
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="mvoreal" name="mvoreal" maxlength="3"
 
-                               value="{{old('mvoreal')}}" required>
+                               value="{{old('mvoreal')}}" required placeholder="Ingrese fuerza pulmonar">
                     </div>
 
                         <div class="form-group col-md-6">

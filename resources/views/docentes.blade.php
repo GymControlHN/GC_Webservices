@@ -239,6 +239,7 @@
                                            value="{{$docente->fecha_de_ingreso,$now->format('Y-m-d')}}"
                                            @endisset value="{{old('fecha_de_ingreso')}}"
                                            required
+                                           readonly
                                     >
                                 </div>
                             </div>

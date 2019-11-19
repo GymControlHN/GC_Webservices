@@ -241,6 +241,7 @@
                                        value="{{$particular->fecha_de_ingreso}}"
                                        @endisset value="{{old('fecha_de_ingreso')}}"
                                        required
+                                       readonly
                                 >
                             </div>
                             </div>

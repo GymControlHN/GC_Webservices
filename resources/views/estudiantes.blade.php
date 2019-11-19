@@ -101,6 +101,7 @@
                                                readonly
                                                id="fecha_de_ingreso" name="fecha_de_ingreso"
                                                required
+
                                         >
                                     </div>
                                 </div>
@@ -246,7 +247,7 @@
                                 <div class="form-group col-md-6">
                                     <h6>Fecha</h6>
                                     <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                           required
+                                           required readonly
                                            @isset($estudiante)
                                            value="{{$estudiante->fecha_de_ingreso}}"
                                            @endisset value="{{old('fecha_de_ingreso')}}"
