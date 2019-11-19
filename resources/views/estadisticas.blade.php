@@ -15,7 +15,7 @@
             <div class="form-group mr-sm-4 my-sm-4 ">
                 <input type="text" class="form-control" id="inputText2" placeholder="Buscar" name="busquedaCliente">
             </div>
-            <button type="submit" class="btn btn-primary my-4 ">Buscar</button>
+            <button type="submit" class="btn btn-primary my-3 ">Buscar</button>
         </form>
         <table class="table ruler-vertical table-hover mx-sm-0 " style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
 box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
