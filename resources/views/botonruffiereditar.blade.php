@@ -52,7 +52,12 @@
 
 
 
-                else if ( ruffiel>1) {
+                else if ( ruffiel>=1) {
+                    leyenda=
+                        "Muy Bueno";
+
+                }
+                else if ( ruffiel == 0) {
                     leyenda=
                         "Muy Bueno";
 
@@ -73,9 +78,8 @@
 
     </head>
 
-    <body>
 
-    <div class="container mr-5 ">
+    <div class="container">
 
         <form  name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
@@ -84,7 +88,7 @@
 
             {{method_field('put')}}
 
-            <h5 class=" ml-5 mt-4" >Calculo de Ruffier</h5>
+            <h5 class=" ml-5 mt-4" >Editar Calculo de Ruffier</h5>
 
             <div class="form-row mt-4">
                 <div class="form-group col-md-6">
@@ -97,6 +101,7 @@
                            value="{{old('pulso1')}}"
                     >
                 </div>
+
 
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pulso en accion:</h6>
@@ -117,7 +122,7 @@
                            @isset($dato)
                            value="{{$dato->pulso3}}"
                             @endisset
-                    value="{{old('pulso3')}}"
+                    value="{{old('pulso3')}}" required
                     >
                 </div>
 
@@ -128,7 +133,7 @@
                            @isset($dato)
                            value="{{$dato->ruffiel}}"
                             @endisset
-                    value="{{old('ruffiel')}}"
+                    value="{{old('ruffiel')}}" readonly
                     >
                 </div>
             </div>
@@ -141,7 +146,7 @@
                            @isset($dato)
                            value="{{$dato->clasificacion}}"
                             @endisset
-                           value="{{old('clasificacion')}}"
+                           value="{{old('clasificacion')}}" readonly
                     >
                 </div>
 
@@ -161,7 +166,7 @@
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">MVO2 Real:</h6>
                 <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                           id="mvo2" name="mvor" maxlength="3"
+                           id="mvor" name="mvor" maxlength="3"
 
                            @isset($dato)
                            value="{{$dato->mvor}}"
@@ -187,18 +192,19 @@
             </div>
 
             <input name="id_cliente" value="{{$id->id}}" type="hidden">
-            <div class="container1">
+            <div class="container2">
 
-                <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/ruffiel">Cancelar</a></button>
-                <button type="submit" class="btn btn-primary my-4 boton3">Guardar</button>
+
+                <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
+                                                                            href="{{route("ruffier.uni",["id"=>$id])}}">Cancelar</a>
+
+                </button>
+
+                <button type="submit" class="btn btn-primary  boton3">Guardar</button>
             </div>
-
-
-
         </form>
     </div>
 
-    </body>
     </html>
 
 

@@ -53,9 +53,14 @@
 
 
 
-                else if ( ruffiel>1) {
+                else if ( ruffiel >=1) {
                     leyenda=
                         "Muy Bueno";
+
+                }
+                else if ( ruffiel==0) {
+                    leyenda=
+                        "Excelente";
 
                 }
 
@@ -74,9 +79,9 @@
 
     </head>
 
-    <body>
 
-<div class="container mr-5">
+
+<div class="container">
 
         <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}">
 
@@ -152,7 +157,7 @@
                                @isset($antecedente)
                                value="{{$antecedente->fecha_de_ingreso}}"
                                @endisset
-                               value="{{old('fecha_de_ingreso', $now->format('Y-m-d'))}}"
+                               value="{{old('fecha_de_ingreso', $now->format('Y-m-d'))}}" readonly
                         >
 
                         </div>
@@ -160,17 +165,20 @@
 
                 <input name="id" value="{{$id}}" type="hidden">
 
-                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="route{{'ruffier.uni'}}">Cancelar</a></button>
-                    <button type="submit" class="btn btn-primary my-4 boton3">Guardar</button>
+            <div class="container2">
 
 
+                <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
+                                                                            href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
 
+                </button>
 
+                <button type="submit" class="btn btn-primary  boton3">Guardar</button>
+            </div>
         </form>
+</div>
 
-    </div>
 
-    </body>
     </html>
 
 

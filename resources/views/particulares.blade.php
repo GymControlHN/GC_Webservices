@@ -332,8 +332,7 @@
                             <input name="id_cliente" value="{{$particular->id}}" type="hidden">
                             {{ csrf_field() }}
                         </form>
-                        <button class="btn btn-secondary mr-xl-2"
-                                onclick="document.getElementById('pago2_form').submit();"><a ><i class="fas fa-dollar-sign"></i></a> </button>
+
 
                         <button class="btn btn-warning mr-xl-2" data-toggle="modal"
                                 data-target="#editarParticular"

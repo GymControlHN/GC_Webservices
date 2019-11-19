@@ -91,12 +91,12 @@
                                 <td>{{$grasa->grasa}}</td>
                                 <td>{{$grasa->leyenda}}</td>
 
-                                <th>{{$grasa->pc_tricipital}}</th>
+                                <td>{{$grasa->pc_tricipital}}</td>
                                 <td>{{$grasa->pc_infraescapular}}</td>
                                 <td>{{$grasa->pc_supra_iliaco}}</td>
                                 <td>{{$grasa->pc_biciptal}}</td>
                                 <th>{{$grasa->fecha_de_ingreso}}</th>
-                                <td class="form-inline " style="width: 300px">
+                                <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2 "><a
                                                 href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i
                                                     class="fas fa-edit" style="color: #1b1e21"></i></a></button>

@@ -181,9 +181,8 @@ header.fondo
 .boton3{
     margin-left: 1%;
 }
-.container1{
-    margin-left: 5%;
-}
+
+
 .container2{
     align-items: center;
 }
@@ -195,9 +194,11 @@ header.fondo
     float: right;
 }
 
+
 .my-4{
     width: 10%;
     height: 10%;
+    margin-left: 20%;
 
 
 }

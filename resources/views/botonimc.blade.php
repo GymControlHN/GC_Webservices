@@ -24,14 +24,14 @@
 
 
                 if (imc > 40) {
-                    leyenda = "Problema de obesidad tipo III";
+                    leyenda = "Obesidad tipo III";
                 } else if (imc > 34.99) {
                     leyenda =
-                        "Prblema de obesidad tipo II";
+                        "Obesidad tipo II";
 
                 } else if (imc > 29.99) {
                     leyenda =
-                        "Problema de obesidad tipo I";
+                        "Obesidad tipo I";
 
                 } else if (imc > 18.49) {
                     leyenda =
@@ -39,7 +39,7 @@
 
                 } else if (imc > 16.99) {
                     leyenda =
-                        "Problema de delgadez";
+                        "Delgadez";
 
                 } else if (imc > 16.00) {
                     leyenda =
@@ -167,19 +167,18 @@
                 <div class="container2">
 
 
-                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white"
-                                                                                href="route{{'imc.ini'}}">Cancelar</a>
+                    <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
+                                                                                href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
+
                     </button>
 
-                    <button type="submit" class="btn btn-primary my-4 boton3">Guardar</button>
+                    <button type="submit" class="btn btn-primary  boton3">Guardar</button>
                 </div>
 
 
             </div>
 
         </form>
-    </div>
-    </body>
     </div>
     </html>
 @endsection

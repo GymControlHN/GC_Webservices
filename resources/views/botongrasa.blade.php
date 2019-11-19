@@ -89,9 +89,9 @@
 
     </head>
 
-    <body>
 
-    <div class="container mr-5">
+
+    <div class="container">
 
         <input id="sexo" value="{{$edad->genero}}" type="hidden">
 
@@ -194,21 +194,26 @@
 
 
             <input name="id" value="{{$id}}" type="hidden">
-            <div class="container1">
 
-                <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
+
+
+
+            <div class="container2">
+
+
+                <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
+                                                                            href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
+
                 </button>
-                <button type="submit" class="btn btn-primary">Guardar</button>
-            </div>
 
+                <button type="submit" class="btn btn-primary  boton3">Guardar</button>
+            </div>
+        </div>
 
         </form>
-
     </div>
-    </div>
-
-    </body>
     </html>
+
 
 
 

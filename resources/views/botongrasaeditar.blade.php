@@ -14,41 +14,46 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
         <title>FORMULARIO PESO IDEAL</title>
-        <script type="text/javascript">function calcularGrasa(){
+        <script type="text/javascript">
+
+            document.onreadystatechange= function () {
+
+                if(document.readyState==="complete"){
+                    calcularGrasa();
+                }
+            };
+
+            function calcularGrasa(){
                 imc= document.getElementById("imc").value;
                 edad= document.getElementById("edad").value;
-
-
-
                 grasa=((1.2*imc)+(0.23*edad)-10.8-5.4);
+                document.getElementById("grasa").value=grasa.toFixed(0);
 
 
-                document.getElementById("grasa").value=grasa.toFixed(2);
+                var genero = document.getElementById("sexo").value;
 
 
+                if(genero==="M") {
 
-                if (grasa >  26) {
-                    leyenda="Estas Obeso";
-                }
-                else if (grasa> 18 ) {
-                    leyenda =
-                        "Tienes que cuidarte y comenzar un plan de perdida de grasa";
-                }
-                else if (grasa> 14 ) {
-                    leyenda =
-                        "Se consideran valores de grasas adecuados, pero no nos podemos descuidar";
-                }
-                else if (grasa> 6 ) {
-                    leyenda =
-                        "En forma";
-                }
 
-                else if (grasa> 2 ) {
-                    leyenda =
-                        "Eres un atleta";
-                }
-                else{
-                    leyenda="Algo salio mal"
+                    if (grasa > 26) {
+                        leyenda = "Estas Obeso";
+                    } else if (grasa > 18) {
+                        leyenda =
+                            "Tienes que perder grasa";
+                    } else if (grasa > 14) {
+                        leyenda =
+                            "Porcentaje aceptable";
+                    } else if (grasa > 6) {
+                        leyenda =
+                            "En forma";
+                    } else if (grasa > 2) {
+                        leyenda =
+                            "Eres un atleta";
+                    } else {
+                        leyenda = "Algo salio mal"
+
+                    }
 
                 }
 
@@ -59,9 +64,8 @@
 
     </head>
 
-    <body>
 
-    <div class="container mr-5" >
+    <div class="container" >
         <form name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
               method="post"
@@ -104,22 +108,22 @@
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email">%Grasa:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                               id="grasa" name="grasa" maxlength="3"  disabled="true"
+                               id="grasa" name="grasa" maxlength="3"
                                @isset($grasa)
                                value="{{$grasa->grasa}}"
                                 @endisset
-                        >
+                               readonly >
                     </div>
 
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Diagnostico:</h6>
                         <input style="width: 310px" type="text" class="form-control inputtamaño3"
-                               id="leyenda" name="leyenda" maxlength="50" disabled="true"
+                               id="leyenda" name="leyenda" maxlength="50"
                                @isset($grasa)
                                value="{{$grasa->leyenda}}"
                                 @endisset
-                        >
+                               readonly>
                     </div>
                 </div>
 
@@ -176,28 +180,30 @@
                                placeholder="Escriba la fecha de ingreso"
                                @isset($grasa)
                                value="{{$grasa->fecha_de_ingreso}}"
-                                @endisset
+                                @endisset  readonly
                         >
                     </div>
 
                 </div>
             <input name="id_cliente" value="{{$id->id}}" type="hidden">
-                <div class="container1">
-
-                    <button type="button" class="btn btn-primary my-4 boton"><a style="color: white" href="/grasa">Cancelar</a></button>
-                    <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
-                </div>
 
 
-            </form>
+            <div class="container2">
 
 
+                <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
+                                                                            href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
 
-        </div>
+                </button>
+
+                <button type="submit" class="btn btn-primary  boton3">Guardar</button>
+            </div>
+
+    </form>
     </div>
 
-    </body>
     </html>
+
 
 
 

@@ -82,7 +82,7 @@
                     <tr>
 
 
-                        <th scope="row">Peso Kg</th>
+                        <th scope="col">Peso Kg</th>
                         <th scope="col">Altura°</th>
                         <th scope="col">Imc</th>
                         <th scope="col">Diagnostico</th>
@@ -119,7 +119,8 @@
                                 <td><strong>{{$antecedente->fecha_de_ingreso}}</strong></td>
 
 
-                                <td class="form-inline " style="width: 300px">
+
+                                <td class="form-inline ">
 
 
                                     <button class="btn btn-warning mr-xl-2 ">
