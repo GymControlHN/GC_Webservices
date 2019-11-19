@@ -183,6 +183,7 @@
         var edad = button.data('myedad');
         var nempleado = button.data('mynumero');
         var fecha = button.data('myfecha');
+        var profesion = button.data('myprofesion');
         var telefono = button.data('mytelefono');
         var cat_id = button.data('catid');
         var genero = button.data("sexo");
@@ -192,6 +193,7 @@
         modal.find('.modal-body #edad').val(edad);
         modal.find('.modal-body #identificacion').val(nempleado);
         modal.find('.modal-body #fecha_de_ingreso').val(fecha);
+        modal.find('.modal-body #profesion_u_oficio').val(profesion);
         modal.find('.modal-body #telefono').val(telefono);
         modal.find('.modal-body #id').val(cat_id);
 

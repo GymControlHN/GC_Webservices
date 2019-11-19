@@ -317,8 +317,8 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <td class="form-inline">
 
                         <button class="btn btn-warning  mr-2" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myedad="{{$docente->edad}}"
-                                data-mynumero="{{$docente->identificacion}}" data-myfecha="{{$docente->fecha_de_ingreso}}"
-                                data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}"><i class="fas fa-edit"></i></button>
+                                data-mynumero="{{$docente->identificacion}}" data-myfecha="{{$docente->fecha_de_ingreso}}" data-myprofesion="{{$docente->profesion_u_oficio}}"
+                                data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}" data-sexo="{{$docente->genero}}"><i class="fas fa-edit"></i></button>
 
                         <button class="btn btn-danger mr-xl-2 "
                                 data-id="{{$docente->id}}"
