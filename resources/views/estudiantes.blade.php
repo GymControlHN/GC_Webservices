@@ -137,6 +137,8 @@
 
 
 
+
+
         <form class="form-inline" method="get" action="{{route('estudiante.buscar')}}">
 
 

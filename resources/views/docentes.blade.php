@@ -40,7 +40,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                     <h6>Nombre Completo</h6>
-                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                    <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
 
                                             required
                                     >
