@@ -15,8 +15,8 @@ class Ruffier extends Model
         'pulso_a',
         'pulso_d',
         'ruffiel',
-        'clasificacion',
-        'mvo2',
+        'leyenda',
+        'mvo',
         'mvoreal',
         "id_cliente"
         ];

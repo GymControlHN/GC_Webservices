@@ -110,7 +110,7 @@
                             <td>{{$antecedente->fecha_de_ingreso}}</td>
 
 
-                            <td class="form-inline " style="width: 300px">
+                            <td class="form-inline " >
 
 
                                 <form method="post" action="{{route('imc.borrar',[$antecedente->id,$antecedente->id_cliente])}}"
@@ -168,7 +168,7 @@
                                 <td>{{$grasa->pc_infraescapular}}</td>
                                 <td>{{$grasa->pc_supra_iliaco}}</td>
                                 <td>{{$grasa->pc_biciptal}}</td>
-                                <td class="form-inline " style="width: 300px">
+                                <td class="form-inline " >
 
                                     <form method="post" action="{{route('grasa.borrar', [$grasa->id,$grasa->id_cliente])}}"
                                           onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
@@ -223,7 +223,7 @@
                                     <td>{{$dato->mvoreal}}</td>
                                     <td class="form-inline ">
 
-                                        <form method="post" action="{{route('ruffier.borrar', $dato->id)}}"
+                                        <form method="post" action="{{route('ruffier.borrar', [$dato->id,$dato->id_cliente])}}"
                                               class="pull-left"
                                               onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
                                             <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i>

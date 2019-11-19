@@ -37,13 +37,13 @@ class RuffierController extends Controller
         $nuevosDatos = new Ruffier();
 
         $nuevosDatos->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $nuevosDatos->pulso_r = $request->input('pulso1');
-        $nuevosDatos->pulso_a = $request->input('pulso2');
-        $nuevosDatos->pulso_d = $request->input('pulso3');
+        $nuevosDatos->pulso_r = $request->input('pulso_r');
+        $nuevosDatos->pulso_a = $request->input('pulso_a');
+        $nuevosDatos->pulso_d = $request->input('pulso_d');
         $nuevosDatos->ruffiel = $request->input('ruffiel');
-        $nuevosDatos->clasificacion = $request->input('clasificacion');
-        $nuevosDatos->mvo2 = $request->input('mvo');
-        $nuevosDatos->mvoreal = $request->input('mvor');
+        $nuevosDatos->leyenda = $request->input('leyenda');
+        $nuevosDatos->mvo = $request->input('mvo');
+        $nuevosDatos->mvoreal = $request->input('mvoreal');
         $nuevosDatos->id_cliente=$request->input("id");
 
         $nuevosDatos->save();
@@ -65,7 +65,7 @@ class RuffierController extends Controller
     {
         $rufierr = Ruffier::findOrFail($id);
         $id_cliente = Cliente::findOrFail($id_cliente);
-        return view('botonruffiereditar')-> with("rufierr", $rufierr)->with("id",$id_cliente);
+        return view('botonruffiereditar')-> with("dato", $rufierr)->with("id",$id_cliente);
 
     }
 
@@ -91,13 +91,13 @@ class RuffierController extends Controller
         //Asignar los nuevos valores a los diferentes campos
 
         $datonuevo->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $datonuevo->pulso_r = $request->input('pulso1');
-        $datonuevo->pulso_a = $request->input('pulso2');
-        $datonuevo->pulso_d = $request->input('pulso3');
+        $datonuevo->pulso_r = $request->input('pulso_r');
+        $datonuevo->pulso_a = $request->input('pulso_a');
+        $datonuevo->pulso_d = $request->input('pulso_d');
         $datonuevo->ruffiel = $request->input('ruffiel');
-        $datonuevo->clasificacion = $request->input('leyenda');
-        $datonuevo->mvo2 = $request->input('mvo');
-        $datonuevo->mvoreal = $request->input('mvor');
+        $datonuevo->leyenda = $request->input('leyenda');
+        $datonuevo->mvo = $request->input('mvo');
+        $datonuevo->mvoreal = $request->input('mvoreal');
 
         // Guardar los cambios
         $datonuevo->save();

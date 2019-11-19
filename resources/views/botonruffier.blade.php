@@ -93,9 +93,9 @@
             <div class="form-row mt-4">
                 <div class="form-group col-md-6">
                     <h6 class=" label2" for="email">Pulso en reposo</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso1"
-                               name="pulso1" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
-                              value="{{old('pulso1')}}" required
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso_r"
+                               name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
+                              value="{{old('pulso_r')}}" required
 
                         >
                     </div>
@@ -104,8 +104,8 @@
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pulso en accion:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                               id="pulso2" name="pulso2" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
-                              value="{{old('pulso2')}}" required>
+                               id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
+                              value="{{old('pulso_a')}}" required>
                     </div>
                 </div>
 
@@ -113,8 +113,8 @@
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pulso en descanso:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                               id="pulso3" name="pulso3" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
-                              value="{{old('pulso3')}}" required>
+                               id="pulso_d" name="pulso_d" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
+                              value="{{old('pulso_d')}}" required>
                 </div>
 
                     <div class="form-group col-md-6">
@@ -129,8 +129,8 @@
                     <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Diagnostico:</h6>
                         <input style="width: 310px" type="text" class="form-control inputtamaño3"
-                               id="leyenda" name="clasificacion" maxlength="50"
-                            value="{{old('clasificacion')}}" readonly required>
+                               id="leyenda" name="leyenda" maxlength="50"
+                            value="{{old('leyenda')}}" readonly required>
                     </div>
 
                    <div class="form-group col-md-6">
@@ -145,9 +145,9 @@
                         <div class="form-group col-md-6">
                     <h6 class="label2" for="email">MVO2 Real:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                               id="mvo2" name="mvor" maxlength="3"
+                               id="mvoreal" name="mvoreal" maxlength="3"
 
-                               value="{{old('mvor')}}" required>
+                               value="{{old('mvoreal')}}" required>
                     </div>
 
                         <div class="form-group col-md-6">

@@ -20,8 +20,8 @@ class CreateRuffierTable extends Migration
             $table->double('pulso_a');
             $table->double('pulso_d');
             $table->float('ruffiel');
-            $table->string('clasificacion',20)->nullable();
-            $table->double('mvo2');
+            $table->string('leyenda',20)->nullable();
+            $table->double('mvo');
             $table->double('mvoreal');
             $table->unsignedInteger('id_cliente');
             $table->foreign('id_cliente')->references("id")->on("clientes_gym");

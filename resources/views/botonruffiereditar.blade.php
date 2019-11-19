@@ -93,12 +93,12 @@
             <div class="form-row mt-4">
                 <div class="form-group col-md-6">
                 <h6 class=" label2" for="email">Pulso en reposo</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso1"
-                           name="pulso1" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso_r"
+                           name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
-                           value="{{$dato->pulso1}}"
+                           value="{{$dato->pulso_r}}"
                             @endisset
-                           value="{{old('pulso1')}}"
+                           value="{{old('pulso_r')}}"
                     >
                 </div>
 
@@ -106,11 +106,11 @@
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pulso en accion:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                           id="pulso2" name="pulso2" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
+                           id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
-                           value="{{$dato->pulso2}}"
+                           value="{{$dato->pulso_a}}"
                             @endisset
-                            value="{{old('pulso2')}}">
+                            value="{{old('pulso_a')}}">
                 </div>
             </div>
 
@@ -118,11 +118,11 @@
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pulso en descanso:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                           id="pulso3" name="pulso3" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
+                           id="pulso_d" name="pulso_d" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
-                           value="{{$dato->pulso3}}"
+                           value="{{$dato->pulso_d}}"
                             @endisset
-                    value="{{old('pulso3')}}" required
+                    value="{{old('pulso_d')}}" required
                     >
                 </div>
 
@@ -142,11 +142,11 @@
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Diagnostico:</h6>
                     <input style="width: 310px" type="text" class="form-control inputtamaño3"
-                           id="leyenda" name="clasificacion" maxlength="50"
+                           id="leyenda" name="leyenda" maxlength="50"
                            @isset($dato)
-                           value="{{$dato->clasificacion}}"
+                           value="{{$dato->leyenda}}"
                             @endisset
-                           value="{{old('clasificacion')}}" readonly
+                           value="{{old('leyenda')}}" readonly
                     >
                 </div>
 
@@ -166,12 +166,12 @@
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">MVO2 Real:</h6>
                 <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                           id="mvor" name="mvor" maxlength="3"
+                           id="mvoreal" name="mvoreal" maxlength="3"
 
                            @isset($dato)
-                           value="{{$dato->mvor}}"
+                           value="{{$dato->mvoreal}}"
                             @endisset
-                    value="{{old('mvor')}}"
+                    value="{{old('mvoreal')}}"
                     >
                 </div>
 

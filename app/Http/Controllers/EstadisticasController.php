@@ -16,7 +16,8 @@ class EstadisticasController extends Controller
     {
         $clientes = Cliente::join("tipo_clientes",
             "clientes_gym.id_tipo_cliente", "=", "tipo_clientes.id")
-            ->select("clientes_gym.*", "tipo_clientes.descripcion")
+            ->join('carreras','clientes_gym.id_carrera','=','carreras.id')
+            ->select("clientes_gym.*", "tipo_clientes.descripcion","carreras.carrera")
             ->paginate(10);
 
 
