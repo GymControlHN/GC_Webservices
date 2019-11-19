@@ -98,8 +98,8 @@
                                 <td>{{$dato->pulso_a}}</td>
                                 <td>{{$dato->pulso_d}}</td>
                                 <td>{{$dato->ruffiel}}</td>
-                                <td>{{$dato->clasificacion}}</td>
-                                <td>{{$dato->mvo2}}</td>
+                                <td>{{$dato->leyenda}}</td>
+                                <td>{{$dato->mvo}}</td>
                                 <td>{{$dato->mvoreal}}</td>
                                 <th>{{$dato->fecha_de_ingreso}}</th>
                                 <td class="form-inline ">

@@ -15,9 +15,9 @@
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
         <title>FORMULARIO PESO IDEAL</title>
         <script type="text/javascript">function calcularRuffiel(){
-                var pulso1= parseFloat(document.getElementById("pulso1").value);
-                var pulso2= parseFloat(document.getElementById("pulso2").value);
-                var pulso3= parseFloat(document.getElementById("pulso3").value);
+                var pulso1= parseFloat(document.getElementById("pulso_r").value);
+                var pulso2= parseFloat(document.getElementById("pulso_a").value);
+                var pulso3= parseFloat(document.getElementById("pulso_d").value);
 
                 ruffiel= (pulso1+pulso2+pulso3-200)/10;
 
