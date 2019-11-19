@@ -72,19 +72,7 @@ class RuffierController extends Controller
     public function update(Request $request, $id)
     {
 
-        // Validar los datos
 
-        /* $validatedData = $request->validate([
-             'fecha_de_ingreso' => 'required|max:12|not null',
-             'pulso_r' => 'required|numeric',
-             'pulso_a' => 'required|numeric',
-             'pulso_d' => 'required|numeric',
-             'ruffiel' => 'required|float',
-             'clasificacion' => 'string',
-             'mvo2' => 'required|numeric',
-             'mvoreal' => 'required|numeric',
-         ]);*/
-        // Buscar la instancia en la base de datos.
 
         $datonuevo = Ruffier::findOrFail($id);
 

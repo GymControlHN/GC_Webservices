@@ -9,6 +9,9 @@
         </div>
     </header>
 
+
+
+
     <div class="w3-container w3-teal mx-5">
         <div class="alert alert-dismissable mb-n4" role="alert">
             <h2 style="all: revert">Datos fisicos</h2>
@@ -17,19 +20,59 @@
 
         </div>
         <br><br>
-        <h2 class="h3centrado  mt-3" >Pagos</h2>
+
+
+
+
+        <h2 class="h3centrado  mt-3"  @if($cliente->id_tipo_cliente==3)
+        href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+            @endif
+            @if($cliente->id_tipo_cliente ==1)
+            href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+
+            @if($cliente->id_tipo_cliente ==2)
+            style="display: none;"
+                @endif>Pagos</h2>
+
         <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-            box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
-            <table class="table ruler-vertical table-hover mx-sm-0 ">
-                <thead class="thead-light">
-                <tr>
+            box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);" >
+            <table class="table ruler-vertical table-hover mx-sm-0 "  @if($cliente->id_tipo_cliente==3)
+            href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+                   @endif
+                   @if($cliente->id_tipo_cliente ==1)
+                   href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+
+                   @if($cliente->id_tipo_cliente ==2)
+                   style="display: none;"
+                    @endif>
+                <thead class="thead-light"  @if($cliente->id_tipo_cliente==3)
+                href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+                       @endif
+                       @if($cliente->id_tipo_cliente ==1)
+                       href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+
+                       @if($cliente->id_tipo_cliente ==2)
+                       style="display: none;"
+                        @endif>
+
+
+
+                <tr  @if($cliente->id_tipo_cliente==3)
+                     href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+                     @endif
+                     @if($cliente->id_tipo_cliente ==1)
+                     href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+
+                     @if($cliente->id_tipo_cliente ==2)
+                     style="display: none;"
+                        @endif>
                     <th>Mes</th>
                     <th>Fecha</th>
                     <th>Estado</th>
                     <th>Acciones</th>
                 <tr>
                 </thead>
-                <tbody>
+                <tbody >
                 @if($pagos->count()>0)
                     @foreach ($pagos as $day => $users_list)
                         <tr>
@@ -37,11 +80,11 @@
                                 style="background-color: #7086f7; color: white;">Registro del año {{ $day }}</th>
                         </tr>
                         @foreach ($users_list as $user)
-                            <tr>
+                            <tr >
                                 <th>{{ $user->mes }}</th>
                                 <th>{{ $user->fecha_pago }}</th>
                                 <th>Cancelado</th>
-                                <th class="form-inline mr-xl-n2 ">
+                                <th class="form-inline mr-xl-n2 " >
 
 
                                     <form method="post" action="{{route('pagoestudiante.borrar', [$user->id,$user->id_cliente])}}"
@@ -56,7 +99,15 @@
                         @endforeach
                     @endforeach
                 @else
-                    <tr>
+                    <tr  @if($cliente->id_tipo_cliente==3)
+                         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+                         @endif
+                         @if($cliente->id_tipo_cliente ==1)
+                         href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+
+                         @if($cliente->id_tipo_cliente ==2)
+                         style="display: none;"
+                            @endif>
                         <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
                 @endif
 
