@@ -9,9 +9,9 @@
             </div>
         </div>
     </header>
-    <div class="container" >
+    <div class="container">
 
-        <h3 style="all: revert">Listado de Usuarios</h3>
+        <h3 class="mt-4" style="all: revert">Listado de Usuarios</h3>
 
 
         <button class="btn btn-success float-right" data-toggle="modal" data-target="#modalañadirnuevousuario">
@@ -101,14 +101,15 @@
             </div>
         </div>
     </div>
-<div class="container">
+    <div class="container">
         <div class="table  mx-sm-0" style="margin: 50px">
             <br><br>
-            <table class="table ruler-vertical table-hover mx-sm-0 " style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <table class="table ruler-vertical table-hover mx-sm-0 "
+                   style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-light">
                 <tr>
                     <th>Nombre</th>
-                    <th>Correo electronico</th>
+                    <th>Correo electrónico</th>
                     <th>Contraseña</th>
                     <th>Acciones</th>
                 </tr>
@@ -129,6 +130,11 @@
                                         data-toggle="modal"
                                         data-target="#modalBorrarUsuario">
                                     <i class="fas fa-trash-alt"></i></button>
+                                <button class="btn btn-info mr-xl-2 " type="button"
+                                        data-correo="{{$usuario->email}}"
+                                        data-toggle="modal"
+                                        data-target="#modalRecuperar">Restablecer
+                                </button>
                             </th>
 
                         </tr>
@@ -142,7 +148,7 @@
             </table>
 
         </div>
-</div>
+    </div>
     </div>
 
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarUsuario">
@@ -170,6 +176,40 @@
                 </form>
             </div>
 
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalRecuperar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Recuperar Contraseña</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="{{ route('password.email') }}">
+
+                    <div class="modal-body">
+                        <div class="form-group ">
+                            <label style="color: #1b1e21" for="inputEmail4">Correo Electrónico</label>
+                            <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="email" placeholder="ingrese el correo"
+                                   required>
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Recuperar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 

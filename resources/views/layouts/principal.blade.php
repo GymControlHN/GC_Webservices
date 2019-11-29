@@ -370,6 +370,14 @@
 
     });
 
+    $('#modalRecuperar').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget); // Button that triggered the modal
+        var correo = button.data('correo');
+        var modal = $(this);
+
+        modal.find('.modal-body #email').val(correo);
+    });
+
 
 </script>
 
