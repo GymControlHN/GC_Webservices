@@ -103,7 +103,7 @@ class ParticularesController extends Controller
         if($imc->count()>0||$grasa->count()>0||$ruffier->count()>0||$pagos->count()>0){
 
             return back()->with(["error"=>"No se puede borrar
-             el particular porque tiene registros de pagos, imc,grasa o ruffier"]);
+             el particular porque tiene datos ingresados"]);
 
         }else {
             Cliente::destroy($request->input("id"));
