@@ -68,11 +68,11 @@
                                 <h6>Fecha</h6>
                                 <div class="form-group">
                                     <input type="date" class="form-control"
-                                           min="{{ date("Y-m-d")}}"
-                                           max="{{ date("Y-m-d")}}"
                                            id="fecha" name="fecha_pago">
                                     <input type="hidden" id="mes" name="mes">
                                 </div>
+
+
                                 <div class="modal-footer">
                                     <input name="id" value="{{$nombre->id}}" type="hidden">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>

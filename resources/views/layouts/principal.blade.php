@@ -63,7 +63,7 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/perfil">
-                            Perfil
+                            Usuarios
                         </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"

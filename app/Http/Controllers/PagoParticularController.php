@@ -34,7 +34,9 @@ class PagoParticularController extends Controller
 
         $nuevoPagoClientee->mes = $request->input('mes');
         $verificarFecha = PagoClientesP::where("fecha_pago",
-            "like", "%" . $request->input('fecha_pago') . "%");
+            "like", "%" . $request->input('fecha_pago') . "%")
+
+            ->where("id_cliente","=",$request->input("id"));
 
         if ($verificarFecha->count() > 0) {
             return back()->with("error", "La fecha ingresada de pago ya existe");

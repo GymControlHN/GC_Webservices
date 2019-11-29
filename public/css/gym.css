@@ -18,6 +18,12 @@
     background-position: center center;
 }
 
+.usuario{
+    background-image: url("../img/user.png");
+    width:23%;
+    height: 10vh;
+}
+
 
 label{
     color: #ffffff;
@@ -45,7 +51,7 @@ header.fondo
     margin-bottom: 25px;
     @include serif-font;
     color: #ffffff;
-    padding-top: 20%;
+    padding-top: 15%;
     margin-left: 30px;
 }
 .intro-heading {
@@ -94,6 +100,11 @@ header.fondo
     margin-left: 28%;
 
 }
+
+.margentitulo{
+
+}
+
 
 .div{
     color: black;

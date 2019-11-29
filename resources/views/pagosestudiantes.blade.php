@@ -65,8 +65,7 @@
                             <h6>Fecha</h6>
                             <div class="form-group">
                                 <input type="date" class="form-control"
-                                       min="{{ date("Y-m-d")}}"
-                                       max="{{ date("Y-m-d")}}"
+                                       required
                                        id="fecha" name="fecha_pago">
                                 <input type="hidden" id="mes" name="mes">
                             </div>
