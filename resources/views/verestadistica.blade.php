@@ -194,14 +194,15 @@
 
                     <thead class="thead-light">
                     <tr>
-                        <th scope="col">Fecha</th>
                         <th scope="col">Imc</th>
                         <th scope="col">edad</th>
                         <th scope="col">%Grasa</th>
-                        <th scope="col">PC_Tricipital</th>
-                        <th scope="col">PC_Infraescupular</th>
-                        <th scope="col">PC_Supra_Iliaco</th>
-                        <th scope="col">PC_Biciptal</th>
+                        <th scope="col">Diagnostico</th>
+                        <th scope="col">PC Tricipital</th>
+                        <th scope="col">PC Infraescapular</th>
+                        <th scope="col">PC Supra Iliaco</th>
+                        <th scope="col">PC Biciptal</th>
+                        <th scope="col">Fecha</th>
                         <th scope="col">Acciones</th>
 
                     </tr>
@@ -211,14 +212,16 @@
                     <tr style="text-align:right">
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
-                                <th>{{$grasa->fecha_de_ingreso}}</th>
                                 <td>{{$grasa->imc}}</td>
                                 <td>{{$grasa->edad}}</td>
                                 <td>{{$grasa->grasa}}</td>
-                                <th>{{$grasa->pc_tricipital}}</th>
+                                <td>{{$grasa->leyenda}}</td>
+
+                                <td>{{$grasa->pc_tricipital}}</td>
                                 <td>{{$grasa->pc_infraescapular}}</td>
                                 <td>{{$grasa->pc_supra_iliaco}}</td>
                                 <td>{{$grasa->pc_biciptal}}</td>
+                                <th>{{$grasa->fecha_de_ingreso}}</th>
                                 <td class="form-inline " >
 
                                     <form method="post" action="{{route('grasa.borrar', [$grasa->id,$grasa->id_cliente])}}"
@@ -246,14 +249,14 @@
                     <table class="table ruler-vertical table-hover mx-sm-0 ">
                         <thead class="thead-light">
                         <tr>
-                            <th scope="col">Fecha</th>
+                            <th scope="col">Ruffier</th>
                             <th scope="col">Pulso en reposo</th>
                             <th scope="col">Pulso en acción</th>
                             <th scope="col">Pulso en descanso</th>
-                            <th scope="col">Ruffier</th>
-                            <th scope="col">Clasificacion</th>
+                            <th scope="col">Diagnostico</th>
                             <th scope="col">MVO2</th>
                             <th scope="col">MVOReal</th>
+                            <th scope="col">Fecha</th>
                             <th scope="col">Acciones</th>
 
                         </tr>
@@ -264,14 +267,14 @@
                         <tr style="text-align:right">
                             @if($datos->count()>0)
                                 @foreach($datos as $dato)
-                                    <th>{{$dato->fecha_de_ingreso}}</th>
+                                    <td>{{$dato->ruffiel}}</td>
                                     <td>{{$dato->pulso_r}}</td>
                                     <td>{{$dato->pulso_a}}</td>
                                     <td>{{$dato->pulso_d}}</td>
-                                    <td>{{$dato->ruffiel}}</td>
                                     <td>{{$dato->leyenda}}</td>
                                     <td>{{$dato->mvo}}</td>
                                     <td>{{$dato->mvoreal}}</td>
+                                    <th>{{$dato->fecha_de_ingreso}}</th>
                                     <td class="form-inline ">
 
                                         <form method="post" action="{{route('ruffier.borrar', [$dato->id,$dato->id_cliente])}}"

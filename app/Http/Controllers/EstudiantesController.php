@@ -115,6 +115,9 @@ class  EstudiantesController extends Controller
     public function buscarEstudiante(Request $request){
         $busqueda = $request->input("busqueda");
 
+
+        $carrera = Carrera::all();
+
         $clientes = Cliente:: where("id_tipo_cliente","=","1")
             ->join("carreras","clientes_gym.id_carrera","=","carreras.id")
             ->select("clientes_gym.*","carreras.carrera")
