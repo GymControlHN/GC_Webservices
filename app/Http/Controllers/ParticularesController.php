@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
+use App\Grasa;
+use App\Imc;
+use App\PagoClientesP;
+use App\Ruffier;
 use Illuminate\Http\Request;
 
 class ParticularesController extends Controller
@@ -88,10 +92,24 @@ class ParticularesController extends Controller
 
     public function destroy(Request $request)
     {
-        Cliente::destroy($request->input("id"));
 
-        return back()->with(["exito"=>"Se elimino exitosamente"]);
 
+
+        $imc=Imc::where("id_cliente","=",$request->input("id"));
+        $grasa = Grasa::where("id_cliente","=",$request->input("id"));
+        $ruffier = Ruffier::where("id_cliente","=",$request->input("id"));
+        $pagos = PagoClientesP::where("id_cliente","=",$request->input("id"));
+
+        if($imc->count()>0||$grasa->count()>0||$ruffier->count()>0||$pagos->count()>0){
+
+            return back()->with(["error"=>"No se puede borrar
+             el particular porque tiene registros de pagos, imc,grasa o ruffier"]);
+
+        }else {
+            Cliente::destroy($request->input("id"));
+
+            return back()->with(["exito" => "Se elimino exitosamente"]);
+        }
 
     }
 

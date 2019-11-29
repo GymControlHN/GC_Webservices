@@ -102,7 +102,7 @@
                                                     class="fas fa-edit" style="color: #1b1e21"></i></a></button>
                                     <form method="post"
                                           action="{{route('grasa.borrar', [$grasa->id,$grasa->id_cliente])}}"
-                                          onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
+                                          onclick="return confirm('¿Estas seguro que deseas eliminar la medida? ')">
                                         <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
                                         {{method_field('delete')}}
                                     </form>

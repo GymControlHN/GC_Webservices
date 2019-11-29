@@ -152,6 +152,16 @@
         @endif
 
 
+        @if(session("error"))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ session('error') }}
+            </div>
+
+        @endif
+
         <div class="modal fade  bd-example-modal-lg" id="editarDocente" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -384,7 +394,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <div class="modal-body">
                         <input name="id" id="id" type="hidden">
 
-                        <p>Esta seguro que desea borrar el docente?</p>
+                        <p>¿Esta seguro que desea borrar el docente?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

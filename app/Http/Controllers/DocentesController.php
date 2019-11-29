@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Grasa;
+use App\Imc;
+use App\PagoClientesP;
+use App\Ruffier;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Cliente;
@@ -105,13 +109,23 @@ class DocentesController extends Controller
 
     public function destroy(Request $request)
     {
-        Cliente::destroy($request->input("id"));
+        $imc=Imc::where("id_cliente","=",$request->input("id"));
+        $grasa = Grasa::where("id_cliente","=",$request->input("id"));
+        $ruffier = Ruffier::where("id_cliente","=",$request->input("id"));
+        $pagos = PagoClientesP::where("id_cliente","=",$request->input("id"));
 
-        return back()->with(["exito"=>"Se elimino exitosamente"]);
+        if($imc->count()>0||$grasa->count()>0||$ruffier->count()>0||$pagos->count()>0){
 
+            return back()->with(["error"=>"No se puede borrar
+             el docente porque tiene registros de pagos, imc,grasa o ruffier"]);
+
+        }else {
+            Cliente::destroy($request->input("id"));
+
+            return back()->with(["exito" => "Se elimino exitosamente"]);
+        }
 
     }
-
     public function buscarDocente(Request $request)
     {
         $busquedaDoc = $request->input("busquedaDoc");
