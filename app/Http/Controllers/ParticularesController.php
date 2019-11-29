@@ -25,10 +25,10 @@ class ParticularesController extends Controller
         $this -> validate ( $request ,[
             'nombre'=>'required',
             'edad'=>'required',
-            'identificacion'=>'required',
+            'identificacion'=>'required|unique:clientes_gym|max:13',
             'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
-            'telefono'=>'required',
+            'telefono'=>'required|unique:clientes_gym|max:99999999',
             'genero'=>'required',
         ]);
 

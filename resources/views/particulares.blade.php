@@ -12,7 +12,7 @@
 
 
 
-            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalScrollable">
+            <button type="button" class="btn btn-primary float-right" id="crearNuevo" data-toggle="modal" data-target="#exampleModalScrollable">
                 <i class="fas fa-user-plus"></i>
             </button>
 
@@ -20,6 +20,17 @@
                     data-toggle="modal" data-target="#exampleModalScrollable">
 
             </button-->
+        @if(session("errors"))
+            <script>
+                document.onreadystatechange= function () {
+
+                    if(document.readyState==="complete"){
+                        document.getElementById("crearNuevo").click();
+                    }
+                };
+
+            </script>
+        @endif
 
             <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -39,50 +50,80 @@
                             <form method="post" action="{{route('particular.guardar')}}">
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
                                         <h6>Nombre Completo</h6>
                                             <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                                    required
+                                                   value="{{old("nombre")}}"
                                             >
+                                        @if ($errors->has('nombre'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                    </span>
+                                        @endif
                                 </div>
 
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group{{ $errors->has('edad') ? ' has-error' : '' }} col-md-6">
                                         <h6>Edad</h6>
                                             <input type="text"  pattern="([0-9]{1,3})" class="form-control" id="edad" name="edad"
                                                    title="Ingrese solo números entre 1 a 99 años"
                                                    required
+                                                   value="{{old("edad")}}"
                                                    minlength="1" maxlength="2" min="1" max="99">
+                                        @if ($errors->has('edad'))
+                                            <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('edad') }}</strong>
+                                    </span>
+                                        @endif
                                         </div>
                                 </div>
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
                                         <h6>Número de Identidad</h6>
                                             <input type="text"  pattern="([0-9]{1,13})" class="form-control" id="identificacion" name="identificacion"
                                                    title="Ingrese solo números "
                                                    required
+                                                   value="{{old("identificacion")}}"
                                                    minlength="1" maxlength="13" aria-valuemax="13" max="9999999999999"
                                             >
+                                        @if ($errors->has('identificacion'))
+                                            <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('identificacion') }}</strong>
+                                    </span>
+                                        @endif
                                 </div>
 
 
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group{{ $errors->has('profesion_u_oficio') ? ' has-error' : '' }} col-md-6">
                                     <h6>Profesión</h6>
                                         <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
                                                required
+                                               value="{{old("profesion_u_oficio")}}"
                                         >
+                                        @if ($errors->has('profesion_u_oficio'))
+                                            <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('profesion_u_oficio') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
                                 </div>
 
                                 <div class="form-row">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} col-md-6">
                                 <h6> Teléfono </h6>
                                     <input type="text" pattern="([0-9]{1,8})" class="form-control"
                                            id="telefono" name="telefono"
                                                    title="Ingrese solo números"
                                            required
+                                           value="{{old("telefono")}}"
                                            maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
                                     >
+                                        @if ($errors->has('telefono'))
+                                            <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                    </span>
+                                        @endif
                                 </div>
 
 
@@ -101,15 +142,21 @@
 
 
 
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
                                         <h6>Sexo</h6>
 
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required>Masculino
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
+                                           @if(old("genero")==='M')
+                                           checked
+                                            @endif>Masculino
                                     <label class="form-check-label" for="inlineRadio1"></label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required>Femenino
+                                    <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required
+                                           @if(old("genero")==='F')
+                                           checked
+                                            @endif>Femenino
                                     <label class="form-check-label" for="inlineRadio2"></label>
                                 </div>
 

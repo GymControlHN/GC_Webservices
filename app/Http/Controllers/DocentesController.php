@@ -32,8 +32,8 @@ class DocentesController extends Controller
       $this -> validate ( $request ,[
              'nombre'=>'required',
              'edad'=>'required',
-             'identificacion'=>'required',
-          'telefono'=>'required',
+             'identificacion'=>'required|unique:clientes_gym|max:13',
+          'telefono'=>'required|unique:clientes_gym|mmax:99999999',
           'genero'=>'required',
              'fecha_de_ingreso'=>'required',
 
@@ -74,14 +74,15 @@ class DocentesController extends Controller
 
         // Validar los datos
 
-       /* $this -> validate ( $request ,[
+        $this -> validate ($request ,[
+            'identificacion'=>'required|unique:clientes_gym|max:13',
             'nombre'=>'required',
             'edad'=>'required',
-            'numero_de_empleado'=>'required',
-            'fecha_de_ingreso'=>'required',
-            'telefono'=>'required',
+            'telefono'=>'required|unique:clientes_gym|max:99999999',
+            'profesion_u_oficio'=>'required',
+            'genero'=>'required',
         ]);
-*/
+
 
         // Buscar la instancia en la base de datos.
 

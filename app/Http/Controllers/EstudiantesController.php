@@ -33,14 +33,14 @@ class  EstudiantesController extends Controller
 
     public function store(Request $request)
     {
-        //$validatedData = $request->validate([
-        //  'nombre'=>'required',
-        // 'edad'=>'required|numeric|max:100|min:10',
-        // 'numero_de_cuenta'=>'required|numeric|max:11',
-        //  'fecha_de_ingreso'=>'required|max:12',
-        //  'carrera'=>'required',
-        // 'telefono'=>'required|numeric|max:8',
-        //]);
+      $this->validate($request,[
+          'identificacion'=>'required|unique:clientes_gym|max:13',
+         'telefono'=>'required|unique:clientes_gym|max:99999999',
+          'nombre'=>'required',
+          'carrera'=>'required',
+          'genero'=>'required',
+          'edad'=>'required',
+        ]);
 
         $nuevoEstudiante = new Cliente();
 
@@ -76,19 +76,17 @@ class  EstudiantesController extends Controller
 
     public function update(Request $request)
     {
-        
 
-        // Buscar la instancia en la base de datos.
-        /* //Validar los datos
-               $this->validate($request, [
-                    'nombre' => 'required',
-                    'edad' => 'required',
-                   'numero_de_cuenta' => 'max:13',
-                    'carrera' => 'required',
-                    'telefono' => 'required|min:8',
-                   'fecha_de_ingreso' => 'requirer',
-                ]);
-        */
+
+        $this->validate($request,[
+            'identificacion'=>'required|unique:clientes_gym|max:13',
+            'telefono'=>'required|unique:clientes_gym|max:99999999',
+            'nombre'=>'required',
+            'carrera'=>'required',
+            'genero'=>'required',
+            'edad'=>'required',
+        ]);
+
         // Buscar la instancia en la base de datos.
         $estudiantes = Cliente::findOrfail($request->input("estudiante_id"));
         $estudiantes->nombre=$request->input("nombre");
