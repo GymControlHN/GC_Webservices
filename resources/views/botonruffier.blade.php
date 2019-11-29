@@ -5,7 +5,7 @@
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Estudiantes</div>
+                <!--div class="intro-lead-in">Estudiantes</div-->
             </div>
         </div>
     </header>
@@ -79,11 +79,13 @@
 
     </head>
 
+<script type="text/javascript">
 
+</script>
 
 <div class="container">
 
-        <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}">
+        <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}" onsubmit="return medir()">
 
             <input name="_token" value="{{csrf_token()}}" type="hidden">
 
@@ -169,11 +171,11 @@
 
 
                 <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
-                                                                            href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
+                                                                            href="{{route("ruffier.uni",["id"=>$id])}}">Cancelar</a>
 
                 </button>
 
-                <button type="submit" class="btn btn-primary  boton3">Guardar</button>
+                <button type="submit" class="btn btn-primary  boton3" onclick="medir()">Guardar</button>
             </div>
         </form>
 </div>

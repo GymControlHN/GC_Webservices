@@ -17,8 +17,9 @@
             </div>
             <button type="submit" class="btn btn-primary my-3 ">Buscar</button>
         </form>
-        <table class="table ruler-vertical table-hover mx-sm-0 " style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
+        <div class="table-responsive mb-5"  style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+                        box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
+            <table class="table ruler-vertical table-hover mx-sm-0 ">
             <thead class="thead-light">
             <tr>
                 <th scope="col">Nombre</th>

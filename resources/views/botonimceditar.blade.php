@@ -112,7 +112,7 @@
                 </div>
             </div>
 
-                  <div class="form-row mt-4">
+                  <div class="form-row">
                       <div class="form-group col-md-4">
                         <h6 class="label2" for="email">Diagnostico:</h6>
                                 <input  style="width:310px" type="text" class="form-control inputtamaño3"
@@ -145,7 +145,7 @@
                 </div>
             </div>
 
-                  <div class="form-row mt-4">
+                  <div class="form-row">
                       <div class="form-group col-md-4">
                     <h6 class="label2" for="email">ABD-A:</h6>
                             <input  style="width:310px" type="number" class="form-control inputtamaño3"
@@ -179,7 +179,7 @@
             </div>
 
 
-                  <div class="form-row mt-4">
+                  <div class="form-row">
                       <div class="form-group col-md-4">
                             <h6 class="label2" for="email">Muslo:</h6>
                           <input  style="width:310px" type="number" class="form-control inputtamaño3"

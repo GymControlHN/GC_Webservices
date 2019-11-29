@@ -107,7 +107,7 @@
 
         <div class="container">
             <h5 class="mt-4 ml-5">Calculo de la grasa corporal</h5>
-            <div class="form-row  mt-4">
+            <div class="form-row">
                 <div class="form-group col-md-6">
                 <h6 class=" label2" for="email">IMC:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
