@@ -160,9 +160,12 @@ header.fondo
  .h{
      margin-top: 2%;
      margin-left: -0.5%;
-
  }
 
+.margencard{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
 
 
 .h3centrado{

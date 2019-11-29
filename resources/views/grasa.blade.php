@@ -14,7 +14,7 @@
 
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card" style=" border: none">
+        <div class="card margencard" style=" border: none">
 
 
             @if($nombre->id_tipo_cliente==3 )
