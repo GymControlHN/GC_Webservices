@@ -20,7 +20,7 @@ class CreateGrasaCorporalTable extends Migration
             $table->double('pc_supra_iliaco');
             $table->double('pc_biciptal');
             $table->integer('edad');
-            $table->integer('tipo');
+            $table->integer('tipo')->nullable();
             $table->double('imc');
             $table->double('grasa')->nullable();
             $table->date('fecha_de_ingreso');
