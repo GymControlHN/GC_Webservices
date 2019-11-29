@@ -23,6 +23,7 @@ class CreateRuffierTable extends Migration
             $table->string('leyenda',20)->nullable();
             $table->double('mvo');
             $table->double('mvoreal');
+            $table->double('mvodiagnostico');
             $table->unsignedInteger('id_cliente');
             $table->foreign('id_cliente')->references("id")->on("clientes_gym");
             $table->timestamps();

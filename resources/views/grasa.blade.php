@@ -19,16 +19,16 @@
 
             @if($nombre->id_tipo_cliente==3 )
 
-                <H3> Expediente Particular</H3>
+                <H5> Expediente Particular</H5>
             @endif
             @if($nombre->id_tipo_cliente==2)
-                <H3> Expediente Docente</H3>
+                <H5> Expediente Docente</H5>
 
             @endif
             @if($nombre->id_tipo_cliente==1)
-                <H3> Expediente Estudiante</H3>
+                <H5> Expediente Estudiante</H5>
             @endif
-            <h3 style="all: revert">Grasa Corporal</h3>
+            <h5 style="all: revert">Grasa Corporal</h5>
             <h5>Nombre: {{$nombre->nombre}}</h5>
 
         </div>
@@ -67,7 +67,7 @@
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
 
                     <thead class="thead-light">
-                    <tr>
+                    <tr >
                         <th scope="col">Imc</th>
                         <th scope="col">edad</th>
                         <th scope="col">%Grasa</th>
@@ -83,9 +83,10 @@
                     </thead>
 
                     <tbody>
-                    <tr style="text-align:right">
+
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
+                                <tr style="text-align:right">
                                 <td>{{$grasa->imc}}</td>
                                 <td>{{$grasa->edad}}</td>
                                 <td>{{$grasa->grasa}}</td>

@@ -84,12 +84,12 @@
                                 <th>{{ $user->mes }}</th>
                                 <th>{{ $user->fecha_pago }}</th>
                                 <th>Cancelado</th>
-                                <th class="form-inline mr-xl-n2 " >
+                                <th  >
 
 
                                     <form method="post" action="{{route('pagoestudiante.borrar', [$user->id,$user->id_cliente])}}"
                                           onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
-                                        <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
+                                        <button class="btn btn-danger mr-xl-2 " ><i class="fas fa-trash-alt"></i>
                                         </button>
                                         {{method_field('delete')}}
                                     </form>
@@ -236,9 +236,10 @@
                     </thead>
 
                     <tbody>
-                    <tr style="text-align:right">
+
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
+                                <tr style="text-align:right">
                                 <td>{{$grasa->imc}}</td>
                                 <td>{{$grasa->edad}}</td>
                                 <td>{{$grasa->grasa}}</td>
@@ -318,9 +319,10 @@
 
                         <tbody>
 
-                        <tr style="text-align:right">
+
                             @if($datos->count()>0)
                                 @foreach($datos as $dato)
+                                    <tr style="text-align:right">
                                     <td>{{$dato->ruffiel}}</td>
                                     <td>{{$dato->pulso_r}}</td>
                                     <td>{{$dato->pulso_a}}</td>

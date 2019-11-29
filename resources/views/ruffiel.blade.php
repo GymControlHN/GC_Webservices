@@ -20,16 +20,16 @@
 
                 @if($cliente->id_tipo_cliente==3 )
 
-                    <H3> Expediente Particular</H3>
+                    <H5> Expediente Particular</H5>
                 @endif
                 @if($cliente->id_tipo_cliente==2)
-                    <H3> Expediente Docente</H3>
+                    <H5> Expediente Docente</H5>
 
                 @endif
                 @if($cliente->id_tipo_cliente==1)
-                    <H3> Expediente Estudiante</H3>
+                    <H5> Expediente Estudiante</H5>
                 @endif
-                <h3 style="all: revert">Ruffier</h3>
+                <h5 style="all: revert">Ruffier</h5>
                 <h5>Nombre: {{$cliente->nombre}}</h5>
             </div>
 
@@ -82,6 +82,7 @@
                         <th scope="col">Diagnostico</th>
                         <th scope="col">MVO2</th>
                         <th scope="col">MVOReal</th>
+                        <th scope="col">Diagnostico MVO2</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Acciones</th>
 
@@ -90,9 +91,10 @@
 
                     <tbody>
 
-                    <tr style="text-align:right">
+
                         @if($datos->count()>0)
                             @foreach($datos as $dato)
+                                <tr style="text-align:right">
 
                                 <td>{{$dato->pulso_r}}</td>
                                 <td>{{$dato->pulso_a}}</td>
@@ -101,6 +103,7 @@
                                 <td>{{$dato->leyenda}}</td>
                                 <td>{{$dato->mvo}}</td>
                                 <td>{{$dato->mvoreal}}</td>
+                                    <td>{{$dato->mvodiagnostico}}</td>
                                 <th>{{$dato->fecha_de_ingreso}}</th>
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2"><a

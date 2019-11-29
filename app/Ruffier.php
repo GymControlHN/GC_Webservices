@@ -18,6 +18,7 @@ class Ruffier extends Model
         'leyenda',
         'mvo',
         'mvoreal',
-        "id_cliente"
+        "id_cliente",
+        "mvodiagnostico"
         ];
 }

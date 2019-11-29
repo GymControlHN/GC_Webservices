@@ -17,16 +17,16 @@
 
                 @if($nombre->id_tipo_cliente==3 )
 
-                    <H3> Expediente Particular</H3>
+                    <H5> Expediente Particular</H5>
                 @endif
                 @if($nombre->id_tipo_cliente==2)
-                    <H3> Expediente Docente</H3>
+                    <H5> Expediente Docente</H5>
 
                 @endif
                 @if($nombre->id_tipo_cliente==1)
-                    <H3> Expediente Estudiante</H3>
+                    <H5> Expediente Estudiante</H5>
                 @endif
-                    <h3 style="all: revert">Pagos</h3>
+                    <h5 style="all: revert">Pagos</h5>
                 <h5>Nombre: {{$nombre->nombre}}</h5>
 
             </div>

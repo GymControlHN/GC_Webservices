@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
+use App\Imc;
 use App\Ruffier;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -27,7 +28,8 @@ class RuffierController extends Controller
 
         $now = Carbon::now();
         $cliente = Cliente::find($id);
-        return view('botonruffier')->with("id",$id)->with("cliente",$cliente)->with("now", $now );
+        $imc = Imc::where("id_cliente", "=", $id)->latest("updated_at")->first();
+        return view('botonruffier')->with("id",$id)->with("cliente",$cliente)->with("imc",$imc)->with("now", $now );
 
     }
 
@@ -44,6 +46,7 @@ class RuffierController extends Controller
         $nuevosDatos->leyenda = $request->input('leyenda');
         $nuevosDatos->mvo = $request->input('mvo');
         $nuevosDatos->mvoreal = $request->input('mvoreal');
+        $nuevosDatos->mvodiagnostico = $request->input('mvodiagnostico');
         $nuevosDatos->id_cliente=$request->input("id");
 
         $nuevosDatos->save();
@@ -86,6 +89,7 @@ class RuffierController extends Controller
         $datonuevo->leyenda = $request->input('leyenda');
         $datonuevo->mvo = $request->input('mvo');
         $datonuevo->mvoreal = $request->input('mvoreal');
+        $datonuevo->mvodiagnostico = $request->input('mvodiagnostico');
 
         // Guardar los cambios
         $datonuevo->save();

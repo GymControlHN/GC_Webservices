@@ -23,6 +23,7 @@
                 ruffiel= (pulso1+pulso2+pulso3-200)/10;
 
 
+
                 document.getElementById("ruffiel").value=ruffiel.toFixed(0);
 
 
@@ -75,7 +76,21 @@
 
                 document.getElementById("leyenda").value=leyenda;
 
-            }</script>
+            }
+
+        function calcularMVO2() {
+            var mvo= parseFloat(document.getElementById("mvo").value);
+            var mvoreal= parseFloat(document.getElementById("mvoreal").value);
+
+           var  mvodiagnostico= mvoreal - mvo;
+
+            document.getElementById("mvodiagnostico").value=mvodiagnostico.toFixed(0);
+
+
+
+        }
+
+        </script>
 
     </head>
 
@@ -147,12 +162,24 @@
                         <div class="form-group col-md-6">
                     <h6 class="label2" for="email">MVO2 Real:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                               id="mvoreal" name="mvoreal" maxlength="3"
+                               id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
 
                                value="{{old('mvoreal')}}" required placeholder="Ingrese fuerza pulmonar">
                     </div>
 
                         <div class="form-group col-md-6">
+                            <h6 class="label2" for="email">Diagnostico MVO:</h6>
+                            <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                                   id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
+                                   value="{{old(' mvodiagnostico')}}" readonly required >
+                        </div>
+                    </div>
+
+
+
+
+
+                        <div class="form-group col-md-5">
                     <h6 class="label2" for="email">Fecha:</h6>
                         <input style="width: 310px" type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
                                placeholder="Escriba la fecha de ingreso"
@@ -164,6 +191,7 @@
 
                         </div>
                 </div>
+
 
                 <input name="id" value="{{$id}}" type="hidden">
 
