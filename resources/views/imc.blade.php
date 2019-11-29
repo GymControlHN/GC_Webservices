@@ -102,7 +102,7 @@
                     @if($antecedentes->count()>0)
 
                         @foreach($antecedentes as $antecedente)
-                            <tr>
+                            <tr style="text-align:right">
 
                                 <td>{{$antecedente->peso}}</td>
                                 <td>{{$antecedente->altura}}</td>

@@ -24,7 +24,7 @@
 
 
 
-        <h2 class="h3centrado  mt-3"  @if($cliente->id_tipo_cliente==3)
+        <h2 class="mt-3"  @if($cliente->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
             @endif
             @if($cliente->id_tipo_cliente ==1)
@@ -116,12 +116,12 @@
             </table>
         </div>
 
-        <h2 class="h3centrado  mt-3" >IMC</h2>
+        <h2 class="mt-3" >IMC</h2>
         <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
             box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
-                <tr>
+                <tr >
 
 
                     <th scope="row">Peso Kg</th>
@@ -144,7 +144,7 @@
                 @if($antecedentes->count()>0)
 
                     @foreach($antecedentes as $antecedente)
-                        <tr>
+                        <tr style="text-align:right">
 
                             <td>{{$antecedente->peso}}</td>
                             <td>{{$antecedente->altura}}</td>
@@ -187,7 +187,7 @@
             </table>
         </div>
 
-            <h2 class="h3centrado  mt-3" >Grasa</h2>
+            <h2 class="mt-3" >Grasa</h2>
         <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
                 box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
@@ -208,7 +208,7 @@
                     </thead>
 
                     <tbody>
-                    <tr>
+                    <tr style="text-align:right">
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
                                 <th>{{$grasa->fecha_de_ingreso}}</th>
@@ -240,7 +240,7 @@
                 </table>
             </div>
 
-                <h2 class="h3centrado  mt-3" >Ruffier</h2>
+                <h2 class="mt-3" >Ruffier</h2>
         <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
                 box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <table class="table ruler-vertical table-hover mx-sm-0 ">
@@ -261,7 +261,7 @@
 
                         <tbody>
 
-                        <tr>
+                        <tr style="text-align:right">
                             @if($datos->count()>0)
                                 @foreach($datos as $dato)
                                     <th>{{$dato->fecha_de_ingreso}}</th>

@@ -83,7 +83,7 @@
                     </thead>
 
                     <tbody>
-                    <tr>
+                    <tr style="text-align:right">
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
                                 <td>{{$grasa->imc}}</td>

@@ -33,6 +33,10 @@
                     leyenda =
                         "Obesidad tipo I";
 
+                } else if (imc > 24.99) {
+                    leyenda =
+                        "Preobesidad";
+
                 } else if (imc > 18.49) {
                     leyenda =
                         "Peso normal";

@@ -19,6 +19,9 @@ class ImcController extends Controller
          $cliente = Cliente::findOrfail($id);
          return view('imc',compact("antecedentes"))->with("cliente",$cliente);
 
+
+
+
     }
 
     //public function mostrarIMCCliente($id){

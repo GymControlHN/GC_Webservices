@@ -90,7 +90,7 @@
 
                     <tbody>
 
-                    <tr>
+                    <tr style="text-align:right">
                         @if($datos->count()>0)
                             @foreach($datos as $dato)
 
