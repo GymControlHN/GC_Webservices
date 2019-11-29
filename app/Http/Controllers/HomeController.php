@@ -29,7 +29,7 @@ class HomeController extends Controller
         $totalDocentes= Cliente::where("id_tipo_cliente","=",2)->count();
         $totalParticulares= Cliente::where("id_tipo_cliente","=",3)->count();
         $totalPagosEstudiantes = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
-        $totalPagosParticulares  =PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
+        $totalPagosParticulares  =PagoClientesP::where("tipo_pago","=","Pago_Particular")->count();
 
         $totalIngresoEstudiante= $totalPagosEstudiantes *100;
         $totalIngresoParticulares= $totalPagosParticulares *200;
