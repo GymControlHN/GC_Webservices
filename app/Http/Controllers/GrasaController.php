@@ -106,11 +106,11 @@ class GrasaController extends Controller
         return $this->index($request->input("id_cliente"));
     }
 
-    public function destroy($id,$id_cliente)
+    public function destroy(Request $request)
     {
-        Grasa::destroy($id);
+        Grasa::destroy($request->input("id"));
 
-        return $this->index($id_cliente);
+        return $this->index($request->input("id_cliente"));
     }
 
 }

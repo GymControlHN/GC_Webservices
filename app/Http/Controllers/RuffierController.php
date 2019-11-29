@@ -97,14 +97,14 @@ class RuffierController extends Controller
 
     }
 
-    public function destroy($id, $id_cliente)
+    public function destroy(Request $request)
     {
-        Ruffier::destroy($id);
+        Ruffier::destroy($request->input("id"));
 
-        // return redirect('ruffiel');
-        return $this->index($id_cliente);
-
+        return $this->index($request->input("id_cliente"));
     }
+
+
 
 
 

@@ -145,11 +145,11 @@ class ImcController extends Controller
 
 
     }
-    public function destroy($id,$id_cliente)
+    public function destroy(Request $request)
     {
-        Imc::destroy($id);
+        Imc::destroy($request->input("id"));
 
-        return $this->index($id_cliente);
+        return $this->index($request->input("id_cliente"));
     }
 
 

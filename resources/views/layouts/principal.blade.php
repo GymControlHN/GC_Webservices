@@ -302,9 +302,45 @@
     $('#modalBorrarGrasa').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var id = button.data('id');
+        var id_cliente =button.data("id_cliente")
         var modal = $(this);
 
         modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #id_cliente').val(id_cliente);
+
+    });
+
+    $('#modalBorrarImc').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var id = button.data('id');
+        var id_cliente =button.data("id_cliente")
+        var modal = $(this);
+
+        modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #id_cliente').val(id_cliente);
+
+    });
+
+    $('#modalBorrarRuffier').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var id = button.data('id');
+        var id_cliente =button.data("id_cliente")
+        var modal = $(this);
+
+        modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #id_cliente').val(id_cliente);
+
+    });
+
+    $('#modalBorrarPago').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var id = button.data('id');
+        var id_cliente =button.data("id_cliente")
+        var modal = $(this);
+
+        modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #id_cliente').val(id_cliente);
+
     });
 
     $('#editarPagosParticulares').on('show.bs.modal', function (event) {

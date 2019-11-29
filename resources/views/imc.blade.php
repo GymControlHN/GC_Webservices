@@ -129,12 +129,12 @@
                                                     class="fas fa-edit" style="color: #1b1e21"></i> </a></button>
 
 
-                                    <form method="post" action="{{route('imc.borrar',[$antecedente->id,$antecedente->id_cliente])}}"
-                                          onclick="return confirm('¿Estas seguro que deseas eliminar las medidas antropometricas? ')">
-                                        <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
-                                        </button>
-                                        {{method_field('delete')}}
-                                    </form>
+                                    <button class="btn btn-danger mr-xl-2"
+                                            data-id="{{$antecedente->id}}"
+                                            data-id_cliente="{{$antecedente->id_cliente}}"
+                                            data-toggle="modal" data-target="#modalBorrarImc"><i class="fas fa-trash-alt"></i></button>
+
+
 
                                 </td>
                         @endforeach
@@ -160,6 +160,35 @@
 
 
             </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarImc">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Atención Eliminación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" action="{{route('imc.borrar')}}">
+                    {{method_field('delete')}}
+
+                    <div class="modal-body">
+                        <input name="id" id="id" type="hidden">
+                        <input name="id_cliente" id="id_cliente" type="hidden">
+
+                        <p>¿Está seguro que desea borrar el estudiante?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Aceptar</button>
+                    </div>
+
+                </form>
+            </div>
+
         </div>
     </div>
 

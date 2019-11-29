@@ -164,12 +164,11 @@
                             <td class="form-inline " >
 
 
-                                <form method="post" action="{{route('imc.borrar',[$antecedente->id,$antecedente->id_cliente])}}"
-                                      onclick="return confirm('Estas seguro que deseas eliminar las medidas antropometricas? ')">
-                                    <button class="btn btn-danger mr-xl-2 "><i class="fas fa-trash-alt"></i>
-                                    </button>
-                                    {{method_field('delete')}}
-                                </form>
+                                <button class="btn btn-danger mr-xl-2"
+                                        data-id="{{$antecedente->id}}"
+                                        data-id_cliente="{{$antecedente->id_cliente}}"
+                                        data-toggle="modal" data-target="#modalBorrarImc"><i class="fas fa-trash-alt"></i></button>
+
 
                             </td>
                     @endforeach
@@ -181,6 +180,34 @@
                         <td colspan="13" style="text-align: center">No hay medidas ingresadas</td>
                     </tr>
                 @endif
+                <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarImc">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Atención Eliminación</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form method="post" action="{{route('imc.borrar')}}">
+                                {{method_field('delete')}}
+
+                                <div class="modal-body">
+                                    <input name="id" id="id" type="hidden">
+                                    <input name="id_cliente" id="id_cliente" type="hidden">
+
+                                    <p>¿Está seguro que desea borrar la medida?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Aceptar</button>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
 
 
                 </tbody>
@@ -224,12 +251,11 @@
                                 <th>{{$grasa->fecha_de_ingreso}}</th>
                                 <td class="form-inline " >
 
-                                    <form method="post" action="{{route('grasa.borrar', [$grasa->id,$grasa->id_cliente])}}"
-                                          onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
-                                        <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i></button>
-                                        {{method_field('delete')}}
-                                    </form>
-                                </td>
+                                    <button class="btn btn-danger mr-xl-2"
+                                            data-id="{{$grasa->id}}"
+                                            data-id_cliente="{{$grasa->id_cliente}}"
+                                            data-toggle="modal" data-target="#modalBorrarGrasa"><i class="fas fa-trash-alt"></i></button>
+
                                 </td>
 
                     </tr>
@@ -238,6 +264,34 @@
                         <tr>
                             <td colspan="9" style="text-align: center">No hay medidas ingresados</td>
                     @endif
+                            <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarGrasa">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Atención Eliminación</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <form method="post" action="{{route('grasa.borrar')}}">
+                                            {{method_field('delete')}}
+
+                                            <div class="modal-body">
+                                                <input name="id" id="id" type="hidden">
+                                                <input name="id_cliente" id="id_cliente" type="hidden">
+
+                                                <p>¿Está seguro que desea borrar la medida?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                <button type="submit" class="btn btn-primary">Aceptar</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
 
                     </tbody>
                 </table>
@@ -277,19 +331,46 @@
                                     <th>{{$dato->fecha_de_ingreso}}</th>
                                     <td class="form-inline ">
 
-                                        <form method="post" action="{{route('ruffier.borrar', [$dato->id,$dato->id_cliente])}}"
-                                              class="pull-left"
-                                              onclick="return confirm('Estas seguro que deseas eliminar la medida? ')">
-                                            <button class="btn btn-danger mr-xl-2"><i class="fas fa-trash-alt"></i>
-                                            </button>
-                                            {{method_field('delete')}}
-                                        </form>
+                                        <button class="btn btn-danger mr-xl-2"
+                                                data-id="{{$dato->id}}"
+                                                data-id_cliente="{{$dato->id_cliente}}"
+                                                data-toggle="modal" data-target="#modalBorrarRuffier"><i class="fas fa-trash-alt"></i></button>
+
                                     </td>
                         </tr>
                         @endforeach
                         @else
                             <td colspan="9" style="text-align: center">No hay medidas ingresados</td>
                         @endif
+                        <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarRuffier">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Atención Eliminación</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form method="post" action="{{route('ruffier.borrar')}}">
+                                        {{method_field('delete')}}
+
+                                        <div class="modal-body">
+                                            <input name="id" id="id" type="hidden">
+                                            <input name="id_cliente" id="id_cliente" type="hidden">
+
+                                            <p>¿Está seguro que desea borrar la medida?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                            <button type="submit" class="btn btn-primary">Aceptar</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
 
                         </tbody>
                     </table>
