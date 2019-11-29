@@ -352,7 +352,7 @@
                         </button>
 
                         <button class="btn btn-info mr-xl-2 " type="button">
-                            <a href="{{route("imc.ini",$particular->id)}}" style="color: white">Medidas</a>
+                            <a href="{{route("imc.ini",$particular->id)}}" style="color: white">Expediente</a>
 
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">

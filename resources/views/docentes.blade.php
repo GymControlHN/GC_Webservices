@@ -294,7 +294,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <th scope="col">Teléfono</th>
                     <th scope="col">Sexo</th>
 
-                    <th scope="col">Profesion</th>
+                    <th scope="col">Profesión</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
