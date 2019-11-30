@@ -103,7 +103,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('pagosestudiantes/{id}', 'PagoEstudianteController@index')->name('pagoestudiantes');
     Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
     Route::post('pagosestudiantes/guardar', 'PagoEstudianteController@store')->name('pagoestudiantes.guardar');
-    Route::delete('pagosestudiantes/{id}/{id_cliente}/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
+    Route::delete('pagosestudiantes/borrar','PagoEstudianteController@destroy')->name('pagoestudiante.borrar');
     Route::get('pagosestudiantes/{id}/editar','PagoEstudianteController@edit')->name('pagoestudiantes.editar');
     Route::put('pagosestudiantes/editar','PagoEstudianteController@update')->name('pagoestudiantes.update');
 
@@ -115,7 +115,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('pagosparticulares/{id}', 'PagoParticularController@index')->name('pagoparticulares');
     Route::get('pagosparticulares/crear', 'PagoParticularController@create')->name('pagoparticulares.formulario');
     Route::post('pagosparticulares/guardar', 'PagoParticularController@store')->name('pagoparticulares.guardar');
-    Route::delete('pagosparticulares/{id}/{id_cliente}/borrar', 'PagoParticularController@destroy')->name('pagoparticulares.borrar');
+    Route::delete('pagosparticulares/borrar', 'PagoParticularController@destroy')->name('pagoparticulares.borrar');
 
     Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
     Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas.crear');

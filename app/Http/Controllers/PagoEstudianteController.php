@@ -84,13 +84,12 @@ class PagoEstudianteController extends Controller
 
     }
 
-    public function destroy($id, $id_cliente)
+    public function destroy(Request $request)
     {
 
-        PagoClientesP::destroy($id);
-        return $this->index($id_cliente);
+        PagoClientesP::destroy($request->input("id"));
 
-        return back()->with(["exito" => "Se elimino exitosamente"]);
+        return $this->index($request->input("id_cliente"));
 
     }
 

@@ -469,7 +469,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <div class="modal-body">
                         <input name="id" id="id" type="hidden">
 
-                        <p>¿Está seguro que desea borrar el estudiante?</p>
+                        <p>¿Está seguro que desea borrar al estudiante</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
