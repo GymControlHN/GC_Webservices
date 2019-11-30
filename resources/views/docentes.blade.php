@@ -415,7 +415,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>
-
+                    <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Id de Empleado</th>
                     <th scope="col">Edad</th>
@@ -432,7 +432,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                 @if($docentes->count()>0)
                     @foreach($docentes as $docente)
                 <tr>
-
+                    <td>{{$estudiante->id_tipo_cliente}}</td>
                     <td>{{$docente->nombre}}</td>
                     <td>{{$docente->identificacion}}</td>
                     <td>{{$docente->edad}}</td>
@@ -470,7 +470,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
 @endforeach
                 @else
                     <tr>
-                        <td colspan="7" style="text-align: center">No hay docentes ingresados</td>
+                        <td colspan="9" style="text-align: center">No hay docentes ingresados</td>
 
                 @endif
 

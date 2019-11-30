@@ -5,10 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Notifications\PasswordResetNotification;
 use App\Notifications\PasswordResetSuccess;
+use App\PasswordReset;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
 
 class ResetPasswordController extends Controller
 {
@@ -44,35 +45,35 @@ class ResetPasswordController extends Controller
 
     public function create(Request $request)
     {
-        $request->validate([
+        $this->validate($request,[
             'email' => 'required|string|email',
         ]);
         $user = User::where('email', $request->email)->first();
         if (!$user)
-            return response()->json(["mensaje"=>array([
-                'error' => trans("passwords.user")
-            ])], 404);
+            return response()->json([
+                'message' => "We can't find a user with that e-mail address."
+            ], 404);
         $passwordReset = PasswordReset::updateOrCreate(
             ['email' => $user->email],
             [
                 'email' => $user->email,
                 'token' => str_random(60)
-            ]
+             ]
         );
         if ($user && $passwordReset)
             $user->notify(
                 new PasswordResetNotification($passwordReset->token)
             );
-        return response()->json([
-            'mensaje' => '¡Te enviamos el correo de peticion de restablecimiento!'
-        ]);
+        return back()->with("exito",'Se envio la solicitud de recuperacion al correo');
     }
+
     /**
      * Find token password reset
      *
      * @param  [string] $token
      * @return [string] message
      * @return [json] passwordReset object
+     * @throws \Exception
      */
     public function find($token)
     {
@@ -90,6 +91,7 @@ class ResetPasswordController extends Controller
         }
         return response()->json($passwordReset);
     }
+
     /**
      * Reset password
      *
@@ -99,27 +101,21 @@ class ResetPasswordController extends Controller
      * @param  [string] token
      * @return [string] message
      * @return [json] user object
+     * @throws \Exception
      */
     public function reset(Request $request)
     {
-        $request->validate([
+        $this->validate($request,[
             'email' => 'required|string|email',
             'password' => 'required|string|confirmed',
             'token' => 'required|string'
         ]);
-        $passwordReset = PasswordReset::where([
-            ['token', $request->token],
-            ['email', $request->email]
-        ])->first();
-        if (!$passwordReset)
-            return view('fracaso',["json"=>"Ya se agoto el tiempo de restablecimiento de su contraseña"]);
-        $user = User::where('email', $passwordReset->email)->first();
+        $user = User::where('email', $request->input("email"))->first();
         if (!$user)
-            return view('fracaso',["json"=>"No pudimos encontrar ese usuario con el correo ingresado"]);
+            return view('errorReset',["json"=>"No pudimos encontrar ese usuario con el correo ingresado"]);
         $user->password = bcrypt($request->password);
         $user->save();
-        $passwordReset->delete();
-        $user->notify(new PasswordResetSuccess($passwordReset));
+        $user->notify(new PasswordResetSuccess());
         return view('exito',["json"=>"Contraseña restablecida exitosamente, te mandamos un correo de confirmacion"]);
     }
 }

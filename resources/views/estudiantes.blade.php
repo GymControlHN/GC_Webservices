@@ -427,6 +427,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>
+                    <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Número de Cuenta</th>
                     <th scope="col">Carrera</th>
@@ -443,6 +444,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     @foreach($estudiantes as $estudiante)
 
                         <tr>
+                            <td>{{$estudiante->id}}</td>
                             <td>{{$estudiante->nombre}}</td>
                             <td>{{$estudiante->identificacion}}</td>
                             <td>{{$estudiante->carrera}}</td>
@@ -502,7 +504,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="8" style="text-align: center">No hay estudiantes ingresados</td>
+                        <td colspan="9" style="text-align: center">No hay estudiantes ingresados</td>
                 @endif
 
 

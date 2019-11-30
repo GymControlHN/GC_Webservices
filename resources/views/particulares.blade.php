@@ -423,7 +423,7 @@
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>
-
+                    <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Número de Identidad</th>
                     <th scope="col">Profesión U Oficio</th>
@@ -441,7 +441,7 @@
                 @foreach($particulares as $particular)
 
                 <tr>
-
+                    <td>{{$particular->id}}</td>
                     <td>{{$particular->nombre}}</td>
                     <td>{{$particular->identificacion}}</td>
                     <td>{{$particular->profesion_u_oficio}}</td>
@@ -491,7 +491,7 @@
 @endforeach
                 @else
                     <tr>
-                        <td colspan="8" style="text-align: center">No hay particulares ingresados</td>
+                        <td colspan="9" style="text-align: center">No hay particulares ingresados</td>
 
                 @endif
                 </tbody>
