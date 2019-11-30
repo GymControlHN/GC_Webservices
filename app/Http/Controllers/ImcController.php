@@ -35,10 +35,9 @@ class ImcController extends Controller
 
     {
 
+        $cliente = Cliente::find($id);
         $now = Carbon::now();
-        
-
-        return view('botonimc' )->with("id",$id)->with("now", $now );
+        return view('botonimc' )->with("id",$id)->with("now", $now )->with("cliente",$cliente);
 
     }
 
@@ -85,9 +84,11 @@ class ImcController extends Controller
     public function edit($id,$id_cliente)
 
     {
+
+        $cliente = Cliente::find($id);
         $antecedente = Imc::findOrfail($id);
         $id_cliente= Cliente::findOrFail($id_cliente);
-        return view('botonimceditar')-> with("antecedente", $antecedente)->with("id",$id_cliente);
+        return view('botonimceditar')-> with("antecedente", $antecedente)->with("id",$id_cliente)->with("cliente",$cliente);
         //   $antecedentes = request()->all();
         //  if(empty($antecedentes['id_cliente'])){
 

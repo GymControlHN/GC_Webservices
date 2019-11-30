@@ -34,11 +34,16 @@ class GrasaController extends Controller
 
     {
 
+
+
+
+
         $now = Carbon::now();
+        $nombre = Cliente::find($id);
         $imc = Imc::where("id_cliente", "=", $id)->latest("updated_at")->first();
         $edad = Cliente::findOrfail($id);
         return view('botongrasa')->with("id", $id)->with("now", $now)->with("imc", $imc)->with("now", $now)
-            ->with("edad", $edad);
+            ->with("edad", $edad)->with("nombre",$nombre);
 
     }
 
@@ -70,9 +75,11 @@ class GrasaController extends Controller
     public function edit($id, $id_cliente)
 
     {
+
+        $nombre = Cliente::find($id);
         $grasa = Grasa::findOrfail($id);
         $id_cliente = Cliente::findOrFail($id_cliente);
-        return view('botongrasaeditar')->with("grasa", $grasa)->with("id", $id_cliente);
+        return view('botongrasaeditar')->with("grasa", $grasa)->with("id", $id_cliente)->with("nombre",$nombre);
 
     }
 
