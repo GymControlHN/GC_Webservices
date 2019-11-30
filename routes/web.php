@@ -121,6 +121,10 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas.crear');
 
     Route::get("estadisticas/{id}","EstadisticasController@show")->name("estadistica.ver");
+    Route::delete("pago/borrar","EstadisticasController@borrarPagoEstadistica")->name("pago.estadistica.borrar");
+    Route::delete("grasa/estadistica/borrar","EstadisticasController@borrarGrasaEstadistica")->name("grasa.estadistica.borrar");
+    Route::delete("imc/estadistica/borrar","EstadisticasController@borrarImcEstadistica")->name("imc.estadistica.borrar");
+    Route::delete("ruffier/estadistica/borrar","EstadisticasController@borrarRuffierEstadistica")->name("ruffier.estadistica.borrar");
     Route::get('grasa/{id}', 'GrasaController@index')->name('grasa.uni');
     Route::get('grasa/nuevo/{id}', 'GrasaController@Create')->name('botongrasa');
     Route::post('grasa/crear', 'GrasaController@store')->name('grasa.guardar');

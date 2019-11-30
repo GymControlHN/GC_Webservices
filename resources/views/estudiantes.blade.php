@@ -473,6 +473,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
 
                                     <button class="btn btn-danger mr-xl-2 "
                                             data-id="{{$estudiante->id}}"
+                                            data-nombre="{{$estudiante->nombre}}"
                                             data-toggle="modal"
                                             data-target="#modalBorrarEstudiante"><i class="fas fa-trash-alt"></i>
                                     </button>
@@ -538,7 +539,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <div class="modal-body">
                         <input name="id" id="id" type="hidden">
 
-                        <p>¿Está seguro que desea borrar al estudiante</p>
+                        <div>¿Está seguro que desea borrar a <label style="color: black;font-weight: bold" id="nombreBorrar"></label> ?</div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

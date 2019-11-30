@@ -69,12 +69,12 @@
                     <thead class="thead-light">
                     <tr >
                         <th scope="col">Imc</th>
-                        <th scope="col">edad</th>
+                        <th scope="col">Edad</th>
                         <th scope="col">%Grasa</th>
-                        <th scope="col">Diagnostico</th>
+                        <th scope="col">Diagnóstico</th>
                         <th scope="col">PC Tricipital</th>
                         <th scope="col">PC Infraescapular</th>
-                        <th scope="col">PC Supra Iliaco</th>
+                        <th scope="col">PC Supra Ilíaco</th>
                         <th scope="col">PC Biciptal</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Acciones</th>
@@ -146,7 +146,7 @@
                         <input name="id" id="id" type="hidden">
                         <input name="id_cliente" id="id_cliente" type="hidden">
 
-                        <p>¿Está seguro que desea borrar la medida?</p>
+                        <p>¿Está seguro que desea borrar la medida la grasa?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
