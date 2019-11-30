@@ -34,8 +34,12 @@
             style="display: none;"
                 @endif>Pagos</h2>
 
-        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-            box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);" >
+        <div class="table-responsive mb-5"
+
+             @if($cliente->id_tipo_cliente==1||$cliente->id_tipo_cliente==3)
+             style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
+            box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);" @endif
+                >
             <table class="table ruler-vertical table-hover mx-sm-0 "  @if($cliente->id_tipo_cliente==3)
             href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
                    @endif
@@ -118,7 +122,7 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form method="post" action="{{route('pagoestudiante.borrar')}}">
+                                    <form method="post" action="{{route('pago.estadistica.borrar')}}">
                                         {{method_field('delete')}}
 
                                         <div class="modal-body">
@@ -215,14 +219,14 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form method="post" action="{{route('imc.borrar')}}">
+                            <form method="post" action="{{route('imc.estadistica.borrar')}}">
                                 {{method_field('delete')}}
 
                                 <div class="modal-body">
                                     <input name="id" id="id" type="hidden">
                                     <input name="id_cliente" id="id_cliente" type="hidden">
 
-                                    <p>¿Está seguro que desea borrar la medida?</p>
+                                    <p>¿Está seguro que desea borrar la medida de imc?</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -250,10 +254,10 @@
                         <th scope="col">Imc</th>
                         <th scope="col">edad</th>
                         <th scope="col">%Grasa</th>
-                        <th scope="col">Diagnostico</th>
+                        <th scope="col">Diagnóstico</th>
                         <th scope="col">PC Tricipital</th>
                         <th scope="col">PC Infraescapular</th>
-                        <th scope="col">PC Supra Iliaco</th>
+                        <th scope="col">PC Supra Ilíaco</th>
                         <th scope="col">PC Biciptal</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Acciones</th>
@@ -300,14 +304,14 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <form method="post" action="{{route('grasa.borrar')}}">
+                                        <form method="post" action="{{route('grasa.estadistica.borrar')}}">
                                             {{method_field('delete')}}
 
                                             <div class="modal-body">
                                                 <input name="id" id="id" type="hidden">
                                                 <input name="id_cliente" id="id_cliente" type="hidden">
 
-                                                <p>¿Está seguro que desea borrar la medida?</p>
+                                                <p>¿Está seguro que desea borrar la medida de grasa?</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -379,14 +383,14 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form method="post" action="{{route('ruffier.borrar')}}">
+                                    <form method="post" action="{{route('ruffier.estadistica.borrar')}}">
                                         {{method_field('delete')}}
 
                                         <div class="modal-body">
                                             <input name="id" id="id" type="hidden">
                                             <input name="id_cliente" id="id_cliente" type="hidden">
 
-                                            <p>¿Está seguro que desea borrar la medida?</p>
+                                            <p>¿Está seguro que desea borrar la medida de ruffier?</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

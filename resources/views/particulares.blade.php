@@ -471,6 +471,7 @@
 
                         <button class="btn btn-danger mr-xl-2 "
                                 data-id="{{$particular->id}}"
+                                data-nombre="{{$particular->nombre}}"
                                 data-toggle="modal"
                                 data-target="#modalBorrarParticular"><i class="fas fa-trash-alt"></i>
                         </button>
@@ -521,7 +522,7 @@
                     <div class="modal-body">
                         <input name="id" id="id" type="hidden">
 
-                        <p>¿Esta seguro que desea borrar el cliente?</p>
+                        <div>¿Está seguro que desea borrar a <label style="color: black;font-weight: bold" id="nombreBorrar"></label> ?</div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

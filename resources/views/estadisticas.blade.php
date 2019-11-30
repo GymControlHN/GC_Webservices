@@ -26,7 +26,7 @@
                 <th scope="col">Identificación</th>
                 <th scope="col">Edad</th>
                 <th scope="col">Carrera o Profesión u Oficio</th>
-                <th scope="col">Telefono</th>
+                <th scope="col">Teléfono</th>
                 <th scope="col">Tipo de Cliente</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Acciones</th>

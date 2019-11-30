@@ -31,20 +31,45 @@ class EstadisticasController extends Controller
     }
 
     public  function  show($id){
+        $cliente = Cliente::findOrfail($id);
 
-        $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Estudiante")
-            ->where("id_cliente", "=", $id)
-            ->orderBy("fecha_pago", "asc")
-            ->get()
-            ->groupBy(function ($item) {
-                return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
-            });
+        if($cliente->id_tipo_cliente==1){
 
+            $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Estudiante")
+                ->where("id_cliente", "=", $id)
+                ->orderBy("fecha_pago", "asc")
+                ->get()
+                ->groupBy(function ($item) {
+                    return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
+                });
+
+        }
+        if($cliente->id_tipo_cliente==3){
+
+            $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Particular")
+                ->where("id_cliente", "=", $id)
+                ->orderBy("fecha_pago", "asc")
+                ->get()
+                ->groupBy(function ($item) {
+                    return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
+                });
+
+        }
+        if($cliente->id_tipo_cliente==2){
+
+            $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Docente")
+                ->where("id_cliente", "=", $id)
+                ->orderBy("fecha_pago", "asc")
+                ->get()
+                ->groupBy(function ($item) {
+                    return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
+                });
+
+        }
 
         $antecedentes = Imc::where("id_cliente","=",$id)->get();
         $grasas = Grasa::where("id_cliente","=",$id)->get();
             $datos = Ruffier::where("id_cliente","=",$id)->get();
-            $cliente = Cliente::findOrfail($id);
 
        return view('verestadistica',compact("pagos","antecedentes","datos","cliente"))
            ->with("grasa_corporal",$grasas);
@@ -63,4 +88,30 @@ class EstadisticasController extends Controller
         return view('estadisticas')->with('clientes', $clientes);
     }
 
+    public function borrarPagoEstadistica(Request $request)
+    {
+        PagoClientesP::destroy($request->input("id"));
+
+        return $this->show($request->input("id_cliente"));
+    }
+
+
+    public function borrarGrasaEstadistica(Request $request)
+    {
+        Grasa::destroy($request->input("id"));
+
+        return $this->show($request->input("id_cliente"));
+    }
+    public function borrarImcEstadistica(Request $request)
+    {
+        Imc::destroy($request->input("id"));
+
+        return $this->show($request->input("id_cliente"));
+    }
+    public function borrarRuffierEstadistica(Request $request)
+    {
+        Ruffier::destroy($request->input("id"));
+
+        return $this->show($request->input("id_cliente"));
+    }
 }

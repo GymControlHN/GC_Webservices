@@ -276,25 +276,32 @@
     $('#modalBorrarEstudiante').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget) // Button that triggered the modal
             var id = button.data('id');
+            var nombre =button.data("nombre");
         var modal = $(this);
 
         modal.find('.modal-body #id').val(id);
-        });
+        modal.find('.modal-body #nombreBorrar').text(nombre);
+
+    });
 
     $('#modalBorrarDocente').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var id = button.data('id');
+        var nombre =button.data("nombre");
         var modal = $(this);
 
         modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #nombreBorrar').text(nombre);
     });
 
     $('#modalBorrarParticular').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var id = button.data('id');
+        var nombre =button.data("nombre");
         var modal = $(this);
 
         modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #nombreBorrar').text(nombre);
     });
 
     $('#modalBorrarGrasa').on('show.bs.modal', function (event) {
@@ -361,6 +368,7 @@
         modal.find('.modal-body #id_cliente').val(id_cliente);
 
     });
+
 
     $('#editarPagosParticulares').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
