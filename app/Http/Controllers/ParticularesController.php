@@ -31,8 +31,10 @@ class ParticularesController extends Controller
             'telefono'=>'required|unique:clientes_gym|max:99999999',
             'genero'=>'required',
         ]);
+        if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
-        $nuevoParticular = new Cliente();
+
+            $nuevoParticular = new Cliente();
 
         $nuevoParticular->nombre = $request->input('nombre');
         $nuevoParticular->edad = $request->input('edad');
@@ -48,6 +50,10 @@ class ParticularesController extends Controller
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','Estudiante creado correctamente');
         return back()->with(["exito"=>"Se agregó exitosamente"]);
+        }else{
+            return back()->with("error","El genero ingresado no es el correcto");
+
+        }
     }
 
 
@@ -68,9 +74,11 @@ class ParticularesController extends Controller
             'profesion_u_oficio'=>'required',
             'genero'=>'required',
         ]);
+        if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
 
-        // Asignar los nuevos valores a los diferentes campos
+
+            // Asignar los nuevos valores a los diferentes campos
         $particular = Cliente::findOrFail($request->input("particular_id"));
         $particular->nombre = $request->input('nombre');
         $particular->edad = $request->input('edad');
@@ -89,6 +97,9 @@ class ParticularesController extends Controller
         return back();
 
 
+        }else{
+            return back()->with("error","El genero ingresado no es el correcto");
+        }
     }
 
     public function destroy(Request $request)

@@ -112,6 +112,7 @@ class  EstudiantesController extends Controller
            $estudiantes1 = Cliente::paginate(10);
            return back();
 
+
        }else{
            return back()->with("error","El genero ingresado no es el correcto");
        }

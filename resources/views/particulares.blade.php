@@ -32,13 +32,28 @@
             </script>
         @endif
 
+        <script>
+            function limpiarDatosModal() {
+                document.getElementById("nombre").value='';
+                document.getElementById("edad").value='';
+                document.getElementById("identificacion").value='';
+                document.getElementById("profesion_u_oficio").value='';
+                document.getElementById("telefono").value='';
+                document.getElementById("sexo1").checked=false;
+                document.getElementById("sexo2").checked=false;
+
+
+
+            }
+        </script>
+
             <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Particulares</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" onclick="limpiarDatosModal()" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -149,14 +164,16 @@
                                     <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
                                            @if(old("genero")==='M')
                                            checked
-                                            @endif>Masculino
+                                            @endif>
+                                    <label style="color:black; margin-top: 5px"  for="sexo1">Masculino</label>
                                     <label class="form-check-label" for="inlineRadio1"></label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required
                                            @if(old("genero")==='F')
                                            checked
-                                            @endif>Femenino
+                                            @endif>
+                                    <label style="color:black; margin-top: 5px"  for="sexo2">Femenino</label>
                                     <label class="form-check-label" for="inlineRadio2"></label>
                                 </div>
 
@@ -167,7 +184,7 @@
 
 
                                 <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit"  class="btn btn-primary">Guardar</button>
 
                                     </div>
@@ -349,7 +366,7 @@
                                 <div class="form-group col-md-6">
                             <h6>Sexo</h6>
                             <div class="form-check form-check-inline ">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
+                                <input class="form-check-input" type="radio" name="genero" id="sexo1P" value="M" required
 
                                        @isset($particular)
                                        value="{{$particular->sexo1}}"
@@ -357,11 +374,11 @@
                                        @if(old("genero")==='M')
                                        checked
                                         @endif
-                                >Masculino
+                                > <label style="color:black; margin-top: 5px"  for="sexo1P">Masculino</label>
                                 <label class="form-check-label" for="inlineRadio1"></label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required
+                                <input class="form-check-input" type="radio" name="genero" id="sexo2P" value="F" required
 
                                        @isset($particular)
                                        value="{{$particular->sexo2 }}"
@@ -369,7 +386,8 @@
                                        @if(old("genero")==='F')
                                        checked
                                         @endif
-                                >Femenino
+                                >
+                                <label style="color:black; margin-top: 5px"  for="sexo2P">Femenino</label>
                                 <label class="form-check-label" for="inlineRadio2"></label>
                             </div>
                           </div>

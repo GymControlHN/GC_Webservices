@@ -66,9 +66,9 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
                                     <h6>Nombre Completo</h6>
-                                    <input type="text"
+                                    <input
                                            value="{{old("nombre")}}"
-                                           class="form-control solo-letras"  id="nombre" name="nombre"
+                                           class="form-control solo-letras"   id="nombre" name="nombre"
                                            required
                                     >
                                     @if ($errors->has('nombre'))
@@ -195,7 +195,7 @@
 
 
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" >cerrar</button>
+                                <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary" data-dismiss="modal" >cerrar</button>
                                 <button type="submit"  class="btn btn-primary">Guardar</button>
 
                             </div>
@@ -379,26 +379,29 @@
                            <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
                             <h6>Sexo</h6>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
+                                <input class="form-check-input" type="radio" name="genero" id="sexo1E" value="M" required
                                        @isset($estudiante)
                                        value="{{$estudiante->sexo1}}"
                                        @endisset value="{{old('sexo1')}}"
                                        @if(old("genero")==='M')
                                        checked
-                                        @endif
-                                >Masculino
-                                <label class="form-check-label" for="inlineRadio1"></label>
+                                        @endif>
+                                <label style="color:black; margin-top: 5px"  for="sexo1E">Masculino</label>
+
+
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required
+                                <input class="form-check-input" type="radio" name="genero" id="sexo2E" value="F" required
                                        @isset($estudiante)
                                        value="{{$estudiante->sexo2}}"
                                        @endisset value="{{old('sexo2')}}"
                                        @if(old("genero")==='F')
                                        checked
                                         @endif
-                                >Femenino
-                                <label class="form-check-label" for="inlineRadio2"></label>
+                                >
+                                <label style="color:black; margin-top: 5px"  for="sexo2E">Femenino</label>
+
+
                             </div>
                            </div>
 

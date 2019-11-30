@@ -166,11 +166,11 @@
         modal.find('.modal-body #id').val(cat_id);
 
         if (genero === "M") {
-            modal.find(".modal-body #sexo1").prop("checked", true);
+            modal.find(".modal-body #sexo1E").prop("checked", true);
         }
 
         if (genero === "F") {
-            modal.find(".modal-body #sexo2").prop("checked", true);
+            modal.find(".modal-body #sexo2E").prop("checked", true);
         }
     });
 
@@ -198,11 +198,11 @@
         modal.find('.modal-body #id').val(cat_id);
 
         if (genero === "M") {
-            modal.find(".modal-body #sexo1").prop("checked", true);
+            modal.find(".modal-body #sexo1D").prop("checked", true);
         }
 
         if (genero === "F") {
-            modal.find(".modal-body #sexo2").prop("checked", true);
+            modal.find(".modal-body #sexo2D").prop("checked", true);
         }
 
     });
@@ -231,27 +231,25 @@
         modal.find('.modal-body #id').val(id);
 
         if (genero === "M") {
-            modal.find(".modal-body #sexo1").prop("checked", true);
+            modal.find(".modal-body #sexo1P").prop("checked", true);
         }
 
         if (genero === "F") {
-            modal.find(".modal-body #sexo2").prop("checked", true);
+            modal.find(".modal-body #sexo2P").prop("checked", true);
         }
 
     });
 
 
     $(".solo-letras").keydown(function (e) {
-        if (e.shiftKey || e.ctrlKey || e.altKey) {
-            e.preventDefault();
-        } else {
+
             var key = e.keyCode;
 
-            if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+            if (!((key == 8) || (key == 32) || (key == 46) ||(key==9)|| (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
                 e.preventDefault();
             }
-        }
-    })
+
+    });
 
 </script>
 

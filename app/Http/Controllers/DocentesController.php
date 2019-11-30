@@ -87,9 +87,8 @@ class DocentesController extends Controller
             'genero'=>'required',
             'fecha_de_ingreso'=>'required',
 
-
-
         ]);
+        if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
 
         // Buscar la instancia en la base de datos.
@@ -114,6 +113,9 @@ class DocentesController extends Controller
        return back();
 
 
+        }else{
+            return back()->with("error","El genero ingresado no es el correcto");
+        }
     }
 
     public function destroy(Request $request)
