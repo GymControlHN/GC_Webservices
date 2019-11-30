@@ -146,7 +146,7 @@
                         <input name="id" id="id" type="hidden">
                         <input name="id_cliente" id="id_cliente" type="hidden">
 
-                        <p>¿Está seguro que desea borrar el estudiante?</p>
+                        <p>¿Está seguro que desea borrar la medida?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

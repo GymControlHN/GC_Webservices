@@ -85,14 +85,13 @@
                                 <th>{{ $user->fecha_pago }}</th>
                                 <th>Cancelado</th>
                                 <th  >
+                                    <button class="btn btn-danger mr-xl-2"
+                                            data-id="{{$user->id}}"
+                                            data-id_cliente="{{$user->id_cliente}}"
+                                            data-toggle="modal" data-target="#modalBorrarPagoEstudiante"><i class="fas fa-trash-alt"></i></button>
 
 
-                                    <form method="post" action="{{route('pagoestudiante.borrar', [$user->id,$user->id_cliente])}}"
-                                          onclick="return confirm('Estas seguro que deseas eliminar este pago? ')">
-                                        <button class="btn btn-danger mr-xl-2 " ><i class="fas fa-trash-alt"></i>
-                                        </button>
-                                        {{method_field('delete')}}
-                                    </form>
+
                                 </th>
 
                             </tr>
@@ -110,7 +109,34 @@
                             @endif>
                         <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
                 @endif
+                        <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarPagoEstudiante">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Atención Eliminación</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form method="post" action="{{route('pagoestudiante.borrar')}}">
+                                        {{method_field('delete')}}
 
+                                        <div class="modal-body">
+                                            <input name="id" id="id" type="hidden">
+                                            <input name="id_cliente" id="id_cliente" type="hidden">
+
+                                            <p>¿Está seguro que desea borrar el pago?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                            <button type="submit" class="btn btn-primary">Aceptar</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
 
                 </tbody>
             </table>
