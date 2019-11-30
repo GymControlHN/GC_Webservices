@@ -31,14 +31,14 @@ class DocentesController extends Controller
 
       $this -> validate ( $request ,[
              'nombre'=>'required',
-             'edad'=>'required',
+             'edad'=>'required|numeric',
              'identificacion'=>'required|unique:clientes_gym|max:13',
-          'telefono'=>'required|unique:clientes_gym|mmax:99999999',
+          'telefono'=>'required|unique:clientes_gym|max:99999999',
           'genero'=>'required',
              'fecha_de_ingreso'=>'required',
 
-
          ]);
+        if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
         $nuevoDocente = new Cliente();
         $nuevoDocente->nombre = $request->input('nombre');
@@ -58,7 +58,12 @@ class DocentesController extends Controller
         //Seccion::flash('message','Estudiante creado correctamente');
 
         return back()->with(["exito"=>"Se agregó exitosamente"]);
+        }else{
+            return back()->with("error","El genero ingresado no es el correcto");
+
+        }
     }
+
 
 
 
@@ -74,13 +79,16 @@ class DocentesController extends Controller
 
         // Validar los datos
 
-        $this -> validate ($request ,[
-            'identificacion'=>'required|unique:clientes_gym|max:13',
+        $this -> validate ( $request ,[
+            'identificacion'=>'required|max:13|unique:clientes_gym,identificacion,'.$request->input("docente_id"),
+            'telefono'=>'required|max:99999999|unique:clientes_gym,telefono,'.$request->input("docente_id"),
             'nombre'=>'required',
-            'edad'=>'required',
-            'telefono'=>'required|unique:clientes_gym|max:99999999',
-            'profesion_u_oficio'=>'required',
+            'edad'=>'required|numeric',
             'genero'=>'required',
+            'fecha_de_ingreso'=>'required',
+
+
+
         ]);
 
 

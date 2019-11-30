@@ -150,7 +150,7 @@
                                     <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M"
                                            @if(old("genero")==='M')
                                            checked
-                                            @endif>
+                                            @endif
                                            required>Masculino
 
                                     <label class="form-check-label" for="inlineRadio1"></label>
@@ -193,7 +193,7 @@
 
         @if(session("exito"))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <button type="button"  class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 {{ session('exito') }}
@@ -202,14 +202,28 @@
         @endif
 
 
+
+
         @if(session("error"))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <button type="button" id="crearNuevo" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 {{ session('error') }}
             </div>
 
+        @endif
+
+        @if(session("errors"))
+            <script>
+                document.onreadystatechange= function () {
+
+                    if(document.readyState==="complete"){
+                        document.getElementById("crearNuevo").click();
+                    }
+                };
+
+            </script>
         @endif
 
         <div class="modal fade  bd-example-modal-lg" id="editarDocente" tabindex="-1" role="dialog"
@@ -230,20 +244,27 @@
                             {{method_field('put')}}
 
                             <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
                             <h6>Nombre Completo</h6>
                                 <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
+                                       value="{{old("nombre")}}"
                                        @isset($docente)
                                        value="{{$docente->nombre}}"
                                        @endisset value="{{old('nombre')}}"
                                        required
                                 >
+                                    @if ($errors->has('nombre'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                    </span>
+                                    @endif
 
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group{{ $errors->has('edad') ? ' has-error' : '' }} col-md-6">
                             <h6>Edad</h6>
                                 <input type="text"  pattern="([0-9]{1,3})"  class="form-control" id="edad" name="edad"
+                                       value="{{old("edad")}}"
                                        @isset($docente)
                                        value="{{$docente->edad}}"
                                        @endisset value="{{old('edad')}}"
@@ -251,13 +272,19 @@
                                        required
                                        minlength="1" maxlength="2" min="1" max="99"
                                 >
+                                @if ($errors->has('edad'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('edad') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
                             <h6>Número de Empleado</h6>
                                 <input type="text"  pattern="([0-9]{1,5})"  class="form-control" id="identificacion" name="identificacion"
+                                       value="{{old("identificacion")}}"
                                        @isset($docente)
                                        value="{{$docente->numero_de_empleado}}"
                                        @endisset value="{{old('identificacion')}}"
@@ -266,11 +293,17 @@
                                        minlength="1" maxlength="5" min="1" max="99999"
 
                                 >
+                                    @if ($errors->has('identificacion'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('identificacion') }}</strong>
+                                    </span>
+                                    @endif
                             </div>
 
-                                <div class="form-group col-md-6">
+                                <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} col-md-6">
                             <h6> Teléfono </h6>
                                 <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
+                                       value="{{old("telefono")}}"
                                        @isset($docente)
                                        value="{{$docente->telefono}}"
                                        @endisset value="{{old('telefono')}}"
@@ -278,18 +311,29 @@
                                        required
                                        maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
                                 >
+                                    @if ($errors->has('telefono'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                    </span>
+                                    @endif
                             </div>
                             </div>
 
                             <div class="form-row">
-                                <div class="form-group col-md-6">
+                                <div class="form-group{{ $errors->has('profesion_u_oficio') ? ' has-error' : '' }} col-md-6">
                                 <h6>Profesión</h6>
                                     <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                           value="{{old("profesion_u_oficio")}}"
                                            @isset($docente)
                                            value="{{$docente->profesion_u_oficio}}"
                                            @endisset value="{{old('profesion_u_oficio')}}"
                                            required
                                     >
+                                    @if ($errors->has('profesion_u_oficio'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('profesion_u_oficio') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
 
                                 <div class="form-group col-md-6">
@@ -304,13 +348,16 @@
                                 </div>
                             </div>
 
-                            <div class="form-group col-md-6">
+                            <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
                             <h6>Sexo</h6>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="genero" id="sexo1" value="M" required
                                        @isset($docente)
                                        value="{{$docente->sexo1}}"
                                        @endisset value="{{old('sexo1')}}"
+                                       @if(old("genero")==='M')
+                                       checked
+                                        @endif
                                 >Masculino
                                 <label class="form-check-label" for="inlineRadio1"></label>
                             </div>
@@ -319,6 +366,9 @@
                                        @isset($docente)
                                        value="{{$docente->sexo2}}"
                                        @endisset value="{{old('sexo2')}}"
+                                       @if(old("genero")==='M')
+                                       checked
+                                        @endif
                                 >Femenino
                                 <label class="form-check-label" for="inlineRadio2"></label>
                             </div>

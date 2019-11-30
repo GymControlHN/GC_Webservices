@@ -41,25 +41,31 @@ class  EstudiantesController extends Controller
           'genero'=>'required',
           'edad'=>'required',
         ]);
+        if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
-        $nuevoEstudiante = new Cliente();
 
-        $nuevoEstudiante->nombre = $request->input('nombre');
-        $nuevoEstudiante->edad = $request->input('edad');
-        $nuevoEstudiante->identificacion = $request->input('identificacion');
-        $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
-        $nuevoEstudiante->id_carrera = $request->input('carrera');
-        $nuevoEstudiante->telefono = $request->input('telefono');
-        $nuevoEstudiante->id_tipo_cliente="1";
-        $nuevoEstudiante->genero = $request->input("genero");
+            $nuevoEstudiante = new Cliente();
 
-        $nuevoEstudiante->save();
+            $nuevoEstudiante->nombre = $request->input('nombre');
+            $nuevoEstudiante->edad = $request->input('edad');
+            $nuevoEstudiante->identificacion = $request->input('identificacion');
+            $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
+            $nuevoEstudiante->id_carrera = $request->input('carrera');
+            $nuevoEstudiante->telefono = $request->input('telefono');
+            $nuevoEstudiante->id_tipo_cliente = "1";
+            $nuevoEstudiante->genero = strtoupper($request->input("genero"));
 
-        //TODO redireccionar a una página con sentido.
-        //Seccion::flash('message','Estudiante creado correctamente');
+            $nuevoEstudiante->save();
 
-        return back()->with(["exito"=>"Se agregó exitosamente"]);
+            //TODO redireccionar a una página con sentido.
+            //Seccion::flash('message','Estudiante creado correctamente');
 
+            return back()->with(["exito" => "Se agregó exitosamente"]);
+
+        }else{
+            return back()->with("error","El genero ingresado no es el correcto");
+
+        }
     }
 
     public function show(Cliente $estudiantes)
@@ -78,32 +84,37 @@ class  EstudiantesController extends Controller
     {
 
 
-        $this->validate($request,[
-            'identificacion'=>'required|unique:clientes_gym|max:13',
-            'telefono'=>'required|unique:clientes_gym|max:99999999',
+       $this->validate($request,[
+            'identificacion'=>'required|max:13|unique:clientes_gym,identificacion,'.$request->input("estudiante_id"),
+            'telefono'=>'required|max:99999999|unique:clientes_gym,telefono,'.$request->input("estudiante_id"),
             'nombre'=>'required',
             'carrera'=>'required',
             'genero'=>'required',
-            'edad'=>'required',
+            'edad'=>'required|numeric',
         ]);
 
-        // Buscar la instancia en la base de datos.
-        $estudiantes = Cliente::findOrfail($request->input("estudiante_id"));
-        $estudiantes->nombre=$request->input("nombre");
-        $estudiantes->edad = $request->input("edad");
-        $estudiantes->identificacion =$request->input("identificacion");
-        $estudiantes->id_carrera = $request->input("carrera");
-        $estudiantes->telefono = $request->input("telefono");
-        $estudiantes->fecha_de_ingreso = $request->input("fecha_de_ingreso");
-        $estudiantes->id_tipo_cliente="1";
-        $estudiantes->genero = $request->input("genero");
-
-        $estudiantes->save();
-
-        $estudiantes1 = Cliente::paginate(10);
-        return back();
+       if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
 
+           // Buscar la instancia en la base de datos.
+           $estudiantes = Cliente::findOrfail($request->input("estudiante_id"));
+           $estudiantes->nombre = $request->input("nombre");
+           $estudiantes->edad = $request->input("edad");
+           $estudiantes->identificacion = $request->input("identificacion");
+           $estudiantes->id_carrera = $request->input("carrera");
+           $estudiantes->telefono = $request->input("telefono");
+           $estudiantes->fecha_de_ingreso = $request->input("fecha_de_ingreso");
+           $estudiantes->id_tipo_cliente = "1";
+           $estudiantes->genero = strtoupper($request->input("genero"));
+
+           $estudiantes->save();
+
+           $estudiantes1 = Cliente::paginate(10);
+           return back();
+
+       }else{
+           return back()->with("error","El genero ingresado no es el correcto");
+       }
     }
 
     public function destroy(Request $request)

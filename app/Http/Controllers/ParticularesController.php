@@ -59,15 +59,16 @@ class ParticularesController extends Controller
 
     public function update(Request $request) {
 
-        // Validar los datos
-       /* $this -> validate ( $request ,[
+        $this -> validate ( $request ,[
+            'identificacion'=>'required|max:13|unique:clientes_gym,identificacion,'.$request->input("particular_id"),
+            'telefono'=>'required|max:99999999|unique:clientes_gym,telefono,'.$request->input("particular_id"),
             'nombre'=>'required',
-            'edad'=>'required',
-            'numero_de_identidad'=>'required',
+            'edad'=>'required|numeric',
             'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
-            'telefono'=>'required',
-        ]); */
+            'genero'=>'required',
+        ]);
+
 
         // Asignar los nuevos valores a los diferentes campos
         $particular = Cliente::findOrFail($request->input("particular_id"));
