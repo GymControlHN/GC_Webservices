@@ -433,6 +433,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     @foreach($docentes as $docente)
                 <tr>
                     <td></td>
+
                     <td>{{$docente->nombre}}</td>
                     <td>{{$docente->identificacion}}</td>
                     <td>{{$docente->edad}}</td>

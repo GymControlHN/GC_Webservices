@@ -441,7 +441,7 @@
                 @foreach($particulares as $particular)
 
                 <tr>
-                    <td>{{$particular->id}}</td>
+                    <td></td>
                     <td>{{$particular->nombre}}</td>
                     <td>{{$particular->identificacion}}</td>
                     <td>{{$particular->profesion_u_oficio}}</td>
