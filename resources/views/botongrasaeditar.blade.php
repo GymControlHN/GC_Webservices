@@ -10,13 +10,12 @@
         </div>
     </header>
 
-    <header class="fondo" style="max-height: 100px;">
-        <div class="container">
-            <div class="intro-text">
-                <!--div class="intro-lead-in">Estudiantes</div-->
-            </div>
+    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+        <div class="card-header" style="background: transparent;height: 50px;">
+            <a class="btn btn-default" href="{{route("grasa.uni",[$nombre->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
         </div>
-    </header>
+    </div>
 
     <div class="w3-container w3-teal mx-5">
 

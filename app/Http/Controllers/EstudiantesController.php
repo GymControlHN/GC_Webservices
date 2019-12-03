@@ -39,7 +39,7 @@ class  EstudiantesController extends Controller
           'nombre'=>'required',
           'carrera'=>'required',
           'genero'=>'required',
-          'edad'=>'required',
+          'fecha_nacimiento'=>'required',
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
@@ -47,7 +47,7 @@ class  EstudiantesController extends Controller
             $nuevoEstudiante = new Cliente();
 
             $nuevoEstudiante->nombre = $request->input('nombre');
-            $nuevoEstudiante->edad = $request->input('edad');
+            $nuevoEstudiante->fecha_nacimiento = $request->input('fecha_nacimiento');
             $nuevoEstudiante->identificacion = $request->input('identificacion');
             $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
             $nuevoEstudiante->id_carrera = $request->input('carrera');
@@ -90,7 +90,7 @@ class  EstudiantesController extends Controller
             'nombre'=>'required',
             'carrera'=>'required',
             'genero'=>'required',
-            'edad'=>'required|numeric',
+            'fecha_nacimiento'=>'required',
         ]);
 
        if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
@@ -99,7 +99,7 @@ class  EstudiantesController extends Controller
            // Buscar la instancia en la base de datos.
            $estudiantes = Cliente::findOrfail($request->input("estudiante_id"));
            $estudiantes->nombre = $request->input("nombre");
-           $estudiantes->edad = $request->input("edad");
+           $estudiantes->fecha_nacimiento = $request->input("fecha_nacimiento");
            $estudiantes->identificacion = $request->input("identificacion");
            $estudiantes->id_carrera = $request->input("carrera");
            $estudiantes->telefono = $request->input("telefono");

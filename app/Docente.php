@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Docente extends Model
 {
     protected $table = 'docentes';
-
+    protected $appends =["edad"];
     protected $fillable =[
         'nombre',
         'numero_de_empleado',
         'telefono',
-        'edad',
+        'fecha_nacimiento',
         'fecha_de_ingreso',
     ];
 }

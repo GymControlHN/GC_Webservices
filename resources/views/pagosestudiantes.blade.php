@@ -7,6 +7,23 @@
         </div>
     </header>
 
+    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+        <div class="card-header" style="background: transparent;height: 50px;" >
+            @if($nombre->id_tipo_cliente==3 )
+                <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
+            @endif
+            @if($nombre->id_tipo_cliente==2)
+                <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
+            @endif
+            @if($nombre->id_tipo_cliente==1)
+                <a class="btn btn-default" href="/estudiantes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+            @endif
+
+        </div>
+    </div>
+
     <div class="w3-container w3-teal mx-5">
 
         <div class="card margencard" style="border: none" >

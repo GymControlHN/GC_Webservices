@@ -10,10 +10,21 @@
         </div>
     </header>
 
+    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+        <div class="card-header" style="background: transparent;height: 50px;">
+            <a class="btn btn-default" href="{{route("ruffier.uni",[$cliente->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
+        </div>
+    </div>
+
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card" style=" border: none">
 
+
+                <div class="card margencard" style=" border: none">
+
+
+                    <div>
 
             @if($cliente->id_tipo_cliente==3 )
 
@@ -26,7 +37,7 @@
             @if($cliente->id_tipo_cliente==1)
                 <H5> Expediente Estudiante</H5>
             @endif
-            <h5 style="all: revert">Grasa Corporal</h5>
+            <h5 style="all: revert">Ruffier</h5>
             <h5>Nombre: {{$cliente->nombre}}</h5>
 
         </div>
@@ -123,7 +134,7 @@
             var mvo= parseFloat(document.getElementById("mvo").value);
             var mvoreal= parseFloat(document.getElementById("mvoreal").value);
 
-           var  mvodiagnostico= mvoreal - mvo;
+           var  mvodiagnostico=   mvo - mvoreal;
 
             document.getElementById("mvodiagnostico").value=mvodiagnostico.toFixed(0);
 

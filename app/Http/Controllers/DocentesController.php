@@ -31,7 +31,7 @@ class DocentesController extends Controller
 
       $this -> validate ( $request ,[
              'nombre'=>'required',
-             'edad'=>'required|numeric',
+             'fecha_nacimiento'=>'required',
              'identificacion'=>'required|unique:clientes_gym|max:13',
           'telefono'=>'required|unique:clientes_gym|max:99999999',
           'genero'=>'required',
@@ -43,7 +43,7 @@ class DocentesController extends Controller
         $nuevoDocente = new Cliente();
         $nuevoDocente->nombre = $request->input('nombre');
         $nuevoDocente->identificacion = $request->input('identificacion');
-        $nuevoDocente->edad = $request->input('edad');
+        $nuevoDocente->fecha_nacimiento = $request->input('fecha_nacimiento');
         $nuevoDocente->telefono = $request->input('telefono');
         $nuevoDocente->profesion_u_oficio=$request->input("profesion_u_oficio");
         $nuevoDocente->genero = $request->input('genero');
@@ -83,7 +83,7 @@ class DocentesController extends Controller
             'identificacion'=>'required|max:13|unique:clientes_gym,identificacion,'.$request->input("docente_id"),
             'telefono'=>'required|max:99999999|unique:clientes_gym,telefono,'.$request->input("docente_id"),
             'nombre'=>'required',
-            'edad'=>'required|numeric',
+            'fecha_nacimiento'=>'required',
             'genero'=>'required',
             'fecha_de_ingreso'=>'required',
 
@@ -97,7 +97,7 @@ class DocentesController extends Controller
         // Asignar los nuevos valores a los diferentes campos
         $docente = Cliente::findOrfail($request->input("docente_id"));
         $docente->nombre = $request->input('nombre');
-        $docente->edad = $request->input('edad');
+        $docente->fecha_nacimiento = $request->input('fecha_nacimiento');
         $docente->identificacion = $request->input('identificacion');
         $docente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $docente->telefono = $request->input('telefono');

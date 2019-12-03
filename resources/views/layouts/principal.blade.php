@@ -148,7 +148,7 @@
     $('#editarEstudiante').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget); // Button that triggered the modal
         var nombre = button.data('mynombre');
-        var edad = button.data('myedad');
+        var fecha_nacimiento = button.data('myfecha_nacimiento');
         var cuenta = button.data('mycuenta');
         var fecha = button.data('myfecha');
         var telefono = button.data('mytelefono');
@@ -158,7 +158,7 @@
         var modal = $(this);
 
         modal.find('.modal-body #nombre').val(nombre);
-        modal.find('.modal-body #edad').val(edad);
+        modal.find('.modal-body #fecha_nacimiento').val(fecha_nacimiento);
         modal.find('.modal-body #identificacion').val(cuenta);
         modal.find('.modal-body #fecha_de_ingreso').val(fecha);
         modal.find('.modal-body #telefono').val(telefono);
@@ -180,7 +180,7 @@
     $('#editarDocente').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var nombre = button.data('mynombre');
-        var edad = button.data('myedad');
+        var fecha_nacimiento = button.data('myfecha_nacimiento');
         var nempleado = button.data('mynumero');
         var fecha = button.data('myfecha');
         var profesion = button.data('myprofesion');
@@ -190,7 +190,7 @@
         var modal = $(this);
 
         modal.find('.modal-body #nombre').val(nombre);
-        modal.find('.modal-body #edad').val(edad);
+        modal.find('.modal-body #fecha_nacimiento').val(fecha_nacimiento);
         modal.find('.modal-body #identificacion').val(nempleado);
         modal.find('.modal-body #fecha_de_ingreso').val(fecha);
         modal.find('.modal-body #profesion_u_oficio').val(profesion);
@@ -213,7 +213,7 @@
     $('#editarParticular').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var nombre = button.data('mynombre');
-        var edad = button.data('myedad');
+        var fecha_nacimiento = button.data('myfecha_nacimiento');
         var nidentidad = button.data('myidentidad');
         var fecha = button.data('myfecha');
         var profesion = button.data('myprofesion');
@@ -223,7 +223,7 @@
         var modal = $(this);
 
         modal.find('.modal-body #nombre').val(nombre);
-        modal.find('.modal-body #edad').val(edad);
+        modal.find('.modal-body #fecha_nacimiento').val(fecha_nacimiento);
         modal.find('.modal-body #identificacion').val(nidentidad);
         modal.find('.modal-body #fecha_de_ingreso').val(fecha);
         modal.find('.modal-body #profesion_u_oficio').val(profesion);

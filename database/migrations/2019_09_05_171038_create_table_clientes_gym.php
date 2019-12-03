@@ -16,7 +16,7 @@ class CreateTableClientesGym extends Migration
         Schema::create('clientes_gym', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',50);
-            $table->integer('edad');
+            $table->date('fecha_nacimiento');
             $table->char('identificacion', 13)->unique()->nullable();
             $table->string('profesion_u_oficio', 100)->nullable();
             $table->date('fecha_de_ingreso');

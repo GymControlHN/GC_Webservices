@@ -10,6 +10,8 @@
         </div>
     </header>
 
+
+
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
 
 
@@ -38,7 +40,7 @@
         <script>
             function limpiarDatosModal() {
                 document.getElementById("nombre").value='';
-                document.getElementById("edad").value='';
+                document.getElementById("fecha_nacimiento").value='';
                 document.getElementById("identificacion").value='';
                 document.getElementById("carrera").value=1;
                 document.getElementById("telefono").value='';
@@ -78,17 +80,15 @@
                                     @endif
                                 </div>
 
-                                    <div class="form-group {{ $errors->has('edad') ? ' has-error' : '' }} col-md-6">
-                                    <h6>Edad</h6>
-                                    <input type="text"  pattern="([0-9]{1,3})"   class="form-control" id="edad" name="edad"
-                                           aria-valuemax="2"
-                                           title="Ingresa solo numeros entre 1 a 99 años"
+                                    <div class="form-group {{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
+                                    <h6>Fecha de nacimiento</h6>
+                                    <input type="date"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+
                                            required
-                                           value="{{old("edad")}}"
-                                           minlength="1" maxlength="2" min="1" max="99">
-                                        @if ($errors->has('edad'))
+                                           value="{{old("fecha_nacimiento")}}">
+                                        @if ($errors->has('fecha_nacimiento'))
                                             <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('edad') }}</strong>
+                                        <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
                                     </span>
                                         @endif
 
@@ -285,21 +285,21 @@
 
                             </div>
 
-                         <div class="form-group{{ $errors->has('edad') ? ' has-error' : '' }} col-md-6">
-                            <h6>Edad</h6>
-                                <input type="text" pattern="([0-9]{1,3})"  class="form-control" id="edad" name="edad"
-                                       value="{{old("edad")}}"
+                         <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
+                            <h6>Fecha de nacimiento</h6>
+                                <input type="date" pattern="([0-9]{1,3})"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                       value="{{old("fecha_nacimiento")}}"
 
                                        @isset($estudiante)
-                                       value="{{$estudiante->edad}}"
-                                       @endisset value="{{old('edad')}}"
+                                       value="{{$estudiante->fecha_nacimiento}}"
+                                       @endisset value="{{old('fecha_nacimiento')}}"
                                        title="Ingresa solo numeros entre 1 a 99 años"
                                        required
                                        minlength="1" maxlength="2" min="1" max="99"
                                 >
-                             @if ($errors->has('edad'))
+                             @if ($errors->has('fecha_nacimiento'))
                                  <span class="help-block">
-                                        <strong>{{ $errors->first('edad') }}</strong>
+                                        <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
                                     </span>
                              @endif
                             </div>
@@ -450,7 +450,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                             <td>{{$estudiante->carrera}}</td>
                             <td>{{$estudiante->telefono}}</td>
                             <td>{{$estudiante->genero}}</td>
-                            <td>{{$estudiante->edad}}</td>
+                            <td>{{$estudiante->edad}}
                             <td>{{$estudiante->fecha_de_ingreso}}</td>
                             <div  style="overflow: auto"></div>
 
@@ -463,7 +463,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                 </form>
 
                                 <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
-                                        data-myedad="{{$estudiante->edad}}"
+                                        data-myfecha_nacimiento="{{$estudiante->fecha_nacimiento}}"
                                         data-mycuenta="{{$estudiante->identificacion}}"
                                         data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                                         data-mytelefono="{{$estudiante->telefono}}"

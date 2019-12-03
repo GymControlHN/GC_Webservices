@@ -24,7 +24,7 @@ class ParticularesController extends Controller
     public function store(Request $request) {
         $this -> validate ( $request ,[
             'nombre'=>'required',
-            'edad'=>'required',
+            'fecha_nacimiento'=>'required',
             'identificacion'=>'required|unique:clientes_gym|max:13',
             'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
@@ -37,7 +37,7 @@ class ParticularesController extends Controller
             $nuevoParticular = new Cliente();
 
         $nuevoParticular->nombre = $request->input('nombre');
-        $nuevoParticular->edad = $request->input('edad');
+        $nuevoParticular->fecha_nacimiento = $request->input('fecha_nacimiento');
         $nuevoParticular->identificacion = $request->input('identificacion');
         $nuevoParticular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoParticular->profesion_u_oficio = $request->input('profesion_u_oficio');
@@ -69,7 +69,7 @@ class ParticularesController extends Controller
             'identificacion'=>'required|max:13|unique:clientes_gym,identificacion,'.$request->input("particular_id"),
             'telefono'=>'required|max:99999999|unique:clientes_gym,telefono,'.$request->input("particular_id"),
             'nombre'=>'required',
-            'edad'=>'required|numeric',
+            'fecha_nacimiento'=>'required',
             'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
             'genero'=>'required',
@@ -81,7 +81,7 @@ class ParticularesController extends Controller
             // Asignar los nuevos valores a los diferentes campos
         $particular = Cliente::findOrFail($request->input("particular_id"));
         $particular->nombre = $request->input('nombre');
-        $particular->edad = $request->input('edad');
+        $particular->fecha_nacimiento = $request->input('fecha_nacimiento');
         $particular->identificacion = $request->input('identificacion');
         $particular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $particular->profesion_u_oficio = $request->input('profesion_u_oficio');

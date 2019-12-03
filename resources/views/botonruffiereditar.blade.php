@@ -10,11 +10,23 @@
         </div>
     </header>
 
+    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+        <div class="card-header" style="background: transparent;height: 50px;">
+            <a class="btn btn-default" href="{{route("ruffier.uni",[$cliente->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
+        </div>
+    </div>
+
     <html>
     <head>
         <div class="w3-container w3-teal mx-5">
 
-            <div class="card" style=" border: none">
+
+
+                    <div class="card margencard" style=" border: none">
+
+
+                        <div>
 
 
                 @if($cliente->id_tipo_cliente==3 )
@@ -28,7 +40,7 @@
                 @if($cliente->id_tipo_cliente==1)
                     <H5> Expediente Estudiante</H5>
                 @endif
-                <h5 style="all: revert">Grasa Corporal</h5>
+                <h5 style="all: revert">Ruffier</h5>
                 <h5>Nombre: {{$cliente->nombre}}</h5>
 
             </div>
@@ -55,65 +67,59 @@
 
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
         <title>FORMULARIO PESO IDEAL</title>
-        <script type="text/javascript">function calcularRuffiel(){
-                var pulso1= parseFloat(document.getElementById("pulso_r").value);
-                var pulso2= parseFloat(document.getElementById("pulso_a").value);
-                var pulso3= parseFloat(document.getElementById("pulso_d").value);
+        <script type="text/javascript">function calcularRuffiel() {
+                var pulso1 = parseFloat(document.getElementById("pulso_r").value);
+                var pulso2 = parseFloat(document.getElementById("pulso_a").value);
+                var pulso3 = parseFloat(document.getElementById("pulso_d").value);
 
-                ruffiel= (pulso1+pulso2+pulso3-200)/10;
-
-
-                document.getElementById("ruffiel").value=ruffiel.toFixed(0);
+                ruffiel = (pulso1 + pulso2 + pulso3 - 200) / 10;
 
 
+                document.getElementById("ruffiel").value = ruffiel.toFixed(0);
 
-                if (ruffiel > 16 ) {
-                    leyenda="Bajo ";
+
+                if (ruffiel > 16) {
+                    leyenda = "Bajo ";
 
                     // grasa<=4 && grasa >= 2
-                }
-                else if (ruffiel>11 ) {
-                    leyenda=
+                } else if (ruffiel > 11) {
+                    leyenda =
                         "Mediano";
 
-                }
-
-                else if (ruffiel>10 ) {
-                    leyenda=
+                } else if (ruffiel > 10) {
+                    leyenda =
                         "Bueno";
 
-                }
-
-
-                else if (ruffiel>5) {
-                    leyenda=
+                } else if (ruffiel > 5) {
+                    leyenda =
                         "Muy bueno";
 
-                }
-
-
-
-                else if ( ruffiel>=1) {
-                    leyenda=
+                } else if (ruffiel >= 1) {
+                    leyenda =
                         "Muy Bueno";
 
-                }
-                else if ( ruffiel == 0) {
-                    leyenda=
+                } else if (ruffiel == 0) {
+                    leyenda =
                         "Muy Bueno";
 
+                } else {
+                    leyenda = "Algo salio mal"
                 }
 
 
-                else{
-                    leyenda="Algo salio mal"
-                }
+                document.getElementById("leyenda").value = leyenda;
+            }
+            function calcularMVO2() {
+                var mvo= parseFloat(document.getElementById("mvo").value);
+                var mvoreal= parseFloat(document.getElementById("mvoreal").value);
+
+                var  mvodiagnostico=  mvo-mvoreal;
+
+                document.getElementById("mvodiagnostico").value=mvodiagnostico.toFixed(0);
 
 
 
 
-
-                document.getElementById("leyenda").value=leyenda;
 
             }</script>
 
@@ -207,7 +213,7 @@
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">MVO2 Real:</h6>
                 <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                           id="mvoreal" name="mvoreal" maxlength="3"
+                           id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
 
                            @isset($dato)
                            value="{{$dato->mvoreal}}"
@@ -216,7 +222,15 @@
                     >
                 </div>
 
+                <div class="form-group col-md-6">
+                    <h6 class="label2" for="email">Diagnostico MVO:</h6>
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                           id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
+                           value="{{old(' mvodiagnostico')}}" readonly required >
+                </div>
+            </div>
 
+            <div class="form-row">
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Fecha:</h6>
                     <input style="width: 310px" type="date" class="form-control inputtamaño3" id="fecha_de_ingreso" name="fecha_de_ingreso"
