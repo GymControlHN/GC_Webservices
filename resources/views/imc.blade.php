@@ -97,7 +97,7 @@
                     <thead class="thead-light">
                     <tr>
 
-
+                        <th scope="col">N°</th>
                         <th scope="col">Peso Kg</th>
                         <th scope="col">Altura°</th>
                         <th scope="col">Imc</th>
@@ -119,7 +119,7 @@
 
                         @foreach($antecedentes as $antecedente)
                             <tr style="text-align:right">
-
+                                <td></td>
                                 <td>{{$antecedente->peso}}</td>
                                 <td>{{$antecedente->altura}}</td>
                                 <td>{{$antecedente->imc}}</td>
@@ -159,7 +159,7 @@
 
                     @else
                         <tr>
-                            <td colspan="13" style="text-align: center">No hay medidas ingresadas</td>
+                            <td colspan="14" style="text-align: center">No hay medidas ingresadas</td>
                         </tr>
                     @endif
 

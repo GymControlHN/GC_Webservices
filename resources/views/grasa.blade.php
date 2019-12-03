@@ -85,6 +85,7 @@
 
                     <thead class="thead-light">
                     <tr >
+                        <th scope="col">N°</th>
                         <th scope="col">Imc</th>
                         <th scope="col">Edad</th>
                         <th scope="col">%Grasa</th>
@@ -104,6 +105,7 @@
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
                                 <tr style="text-align:right">
+                                    <td></td>
                                 <td>{{$grasa->imc}}</td>
                                 <td>{{$grasa->edad}}</td>
                                 <td>{{$grasa->grasa}}</td>
@@ -129,7 +131,7 @@
                     @endforeach
                     @else
                         <tr>
-                            <td colspan="9" style="text-align: center">No hay medidas ingresados</td>
+                            <td colspan="11" style="text-align: center">No hay medidas ingresados</td>
                     @endif
 
                     </tbody>

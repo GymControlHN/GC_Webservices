@@ -135,6 +135,7 @@
 
                 <thead class="thead-light">
             <tr>
+                <th>N°</th>
                 <th>Mes</th>
                 <th>Fecha</th>
                 <th>Estado</th>
@@ -150,6 +151,7 @@
                 </tr>
                 @foreach ($users_list as $user)
                     <tr>
+                        <th></th>
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>

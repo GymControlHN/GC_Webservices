@@ -91,7 +91,7 @@
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
                     <thead class="thead-light">
                     <tr>
-
+                        <th scope="col">N°</th>
                         <th scope="col">Pulso en reposo</th>
                         <th scope="col">Pulso en acción</th>
                         <th scope="col">Pulso en descanso</th>
@@ -112,7 +112,7 @@
                         @if($datos->count()>0)
                             @foreach($datos as $dato)
                                 <tr style="text-align:right">
-
+                                    <td></td>
                                 <td>{{$dato->pulso_r}}</td>
                                 <td>{{$dato->pulso_a}}</td>
                                 <td>{{$dato->pulso_d}}</td>
@@ -136,7 +136,7 @@
                     </tr>
                     @endforeach
                     @else
-                        <td colspan="9" style="text-align: center">No hay medidas ingresados</td>
+                        <td colspan="11" style="text-align: center">No hay medidas ingresados</td>
                     @endif
 
                     </tbody>

@@ -108,6 +108,7 @@
                    style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-light">
                 <tr>
+                    <th >N°</th>
                     <th>Nombre</th>
                     <th>Correo electrónico</th>
                     <th>Contraseña</th>
@@ -118,6 +119,7 @@
                 @if($usuarios->count()>0)
                     @foreach($usuarios as $usuario)
                         <tr>
+                            <th></th>
                             <th>{{$usuario->name}}</th>
                             <th>{{$usuario->email}}</th>
                             <th><i class="fas fa-exclamation-triangle" data-toggle="tooltip"

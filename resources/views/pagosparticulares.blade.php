@@ -180,6 +180,7 @@
 
                         <thead class="thead-light">
                         <tr>
+                            <th >N°</th>
                             <th>Mes</th>
                             <th>Fecha</th>
                             <th>Estado</th>
@@ -196,15 +197,11 @@
                 </tr>
                 @foreach ($users_list as $user)
                     <tr>
+                        <td></td>
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
                         <th class="form-inline mr-xl-n2 ">
-                            <button class="btn btn-warning mr-xl-1"  data-toggle="modal"
-                                    data-target="#editarPagosParticulares"
-                                    data-mymes="{{$user->mes}}" data-myfecha="{{$user->fecha_pago}}"
-                                    data-cat_id="{{$user->id}}">
-                                <i class="fas fa-edit"></i></button>
                             <button class="btn btn-danger mr-xl-2"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"
@@ -216,7 +213,7 @@
             @endforeach
             @else
                 <tr>
-                    <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
+                    <td colspan="5" style="text-align: center">No hay pagos ingresados</td>
             @endif
 
 

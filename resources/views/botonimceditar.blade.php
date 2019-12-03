@@ -10,10 +10,61 @@
         </div>
     </header>
     <!-- Header -->
+    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
+        <div class="card-header" style="background: transparent;height: 50px;">
+            <a class="btn btn-default" href="{{route("imc.ini",[$cliente->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
+        </div>
+    </div>
 
     <!DOCTYPE html>
     <html>
     <head>
+        <div class="w3-container w3-teal mx-5">
+
+
+
+            <div class="card margencard" style=" border: none">
+
+
+                <div>
+
+
+                    @if($cliente->id_tipo_cliente==3 )
+
+                        <H5> Expediente Particular</H5>
+                    @endif
+                    @if($cliente->id_tipo_cliente==2)
+                        <H5> Expediente Docente</H5>
+
+                    @endif
+                    @if($cliente->id_tipo_cliente==1)
+                        <H5> Expediente Estudiante</H5>
+                    @endif
+                    <h5 style="all: revert">Medida antropometrica</h5>
+                    <h5>Nombre: {{$cliente->nombre}}</h5>
+
+                </div>
+            </div>
+        </div>
+        <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+
+            <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
+            href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+               @endif
+               @if($cliente->id_tipo_cliente ==1)
+               href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+
+               @if($cliente->id_tipo_cliente ==2)
+               style="display: none;"
+                    @endif >Pagos</a>
+            <a class="btn btn-secondary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
+            <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
+            <a class="btn btn-primary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
+
+
+        </div>
+
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
         <title>FORMULARIO PESO IDEAL</title>
         <script type="text/javascript">
@@ -62,7 +113,7 @@
     </head>
 
 
-    <div class="container">
+
 
         <form name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
@@ -75,8 +126,8 @@
 
 
 
-          <div class="container">
-              <h5 class="mt-4 ml-4">Editar medidas antropometricas</h5>
+
+              <h5 class=" label2" style="margin-left: 3%">Editar medidas antropometricas</h5>
               <div class="form-row mt-4">
                   <div class="form-group col-md-4">
             <h6 class=" label2" for="email">Peso kg:</h6>
