@@ -55,8 +55,8 @@
                         <td>{{$estudiante->descripcion}}</td>
                         <td>{{$estudiante->fecha_de_ingreso}}</td>
                         <td>
-                            <a type="button" class="btn btn-secondary btn-sm"
-                               href="{{route("estadistica.ver",["id"=>$estudiante->id])}}">Ver Estadística</a>
+                           <button class="btn btn-info mr-xl-2"> <a style="color: white"
+                               href="{{route("estadistica.ver",["id"=>$estudiante->id])}}">Ver Estadística</a></button>
                         </td>
                     </tr>
                 @endforeach

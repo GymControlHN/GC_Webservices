@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="pull-left btn-app"
@@ -11,7 +11,7 @@
                             <a href="/login">
                                 <span class="fa fa-arrow-left"></span> Volver</a></div>
 
-                        ¡Exito!
+                        <label class="mr-4">¡Exito!</label>
                     </div>
 
                     <div class="panel-body">
