@@ -13,12 +13,12 @@
 
 
     <div class="w3-container w3-teal mx-5">
-        <div class="alert alert-dismissable mb-n4" role="alert">
-            <h2  style="all: revert">Datos fisicos</h2>
+
+            <h2 class="card margencard"  style="all: revert;  border: none;">Datos fisicos</h2>
             <h5>Nombre: {{$cliente->nombre}}</h5>
 
 
-        </div>
+
         <br><br>
 
 

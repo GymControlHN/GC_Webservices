@@ -11,18 +11,20 @@
     </header>
     <!-- Header -->
 
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+
+
+    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
         <div class="card-header" style="background: transparent;height: 50px;">
             <a class="btn btn-default" href="{{route("imc.ini",[$cliente->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
 
         </div>
     </div>
 
-    <div class="w3-container w3-teal mx-5">
+    <div class="w3-container w3-teal mx-5;" >
 
 
 
-                <div class="card margencard" style=" border: none">
+                <div class="card margencard" style=" border: none; margin-left: 3%" >
 
 
                     <div>
@@ -44,7 +46,7 @@
     </div>
     </div>
 
-    <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group mt-3 mb-5" style="margin-left: 3%;" role="group" aria-label="Button group with nested dropdown">
 
         <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
@@ -111,7 +113,7 @@
     </head>
 
 
-    <div class="container">
+
         <form name="f1" id="f1"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
               method="POST" action="{{route('imc.guardar')}}">
@@ -119,8 +121,8 @@
 
 
 
-            <div class=" container">
-                <h5 class="mt-4 ml-4">Agregar medidas antropometricas</h5>
+            <div class="margeneditar">
+                <h5 class="label2" style="margin-left: 3%" >Agregar medidas antropometricas</h5>
                 <div class="form-row mt-4">
                     <div class="form-group col-md-4">
                         <h6 class=" label2" for="email">Peso kg:</h6>

@@ -17,7 +17,7 @@
         </div>
     </div>
 
-    <div class="w3-container w3-teal mx-5">
+    <div class="w3-container w3-teal mx-5" style="margin-left: 3%">
 
 
 
@@ -44,7 +44,7 @@
     </div>
     </div>
 
-    <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group mt-3 mb-5" style="margin-left: 3%;" role="group" aria-label="Button group with nested dropdown">
 
         <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
@@ -150,7 +150,7 @@
 
 </script>
 
-<div class="container">
+
 
         <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}" onsubmit="return medir()">
 

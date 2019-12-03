@@ -10,7 +10,7 @@
         </div>
     </header>
 
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+    <div class="card" style="width: 170px; border: none;background: transparent;margin-left:3%;margin-top: 5px">
         <div class="card-header" style="background: transparent;height: 50px;">
             <a class="btn btn-default" href="{{route("grasa.uni",[$nombre->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
 
@@ -19,7 +19,7 @@
 
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card margencard" style=" border: none">
+        <div class="card margencard" style=" border: none ">
 
 
             @if($nombre->id_tipo_cliente==3 )
@@ -139,7 +139,7 @@
 
 
 
-    <div class="container">
+
 
         <input id="sexo" value="{{$edad->genero}}" type="hidden">
 
@@ -153,9 +153,9 @@
 
 
 
-        <div class="container">
-            <h5 class="mt-4 ml-5">Calculo de la grasa corporal</h5>
-            <div class="form-row">
+            <div class="margeneditar" >
+            <h5 class="label2" style="margin-left: 4%">Calculo de la grasa corporal</h5>
+            <div class="form-row" >
                 <div class="form-group col-md-6">
                 <h6 class=" label2" for="email">IMC:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required

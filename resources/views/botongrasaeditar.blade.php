@@ -10,14 +10,14 @@
         </div>
     </header>
 
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
         <div class="card-header" style="background: transparent;height: 50px;">
             <a class="btn btn-default" href="{{route("grasa.uni",[$nombre->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
 
         </div>
     </div>
 
-    <div class="w3-container w3-teal mx-5">
+    <div class="w3-container w3-teal mx-5" style="margin-left: 3%">
 
         <div class="card margencard" style=" border: none">
 
@@ -112,7 +112,7 @@
     </head>
 
 
-    <div class="container" >
+
         <form name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
               method="post"
@@ -122,7 +122,7 @@
 
             {{method_field('put')}}
 
-        <div class="container">
+
             <h5 class="mt-4 ml-5">Editar medidas de la grasa corporal</h5>
 
 
