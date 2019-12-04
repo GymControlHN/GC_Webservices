@@ -165,6 +165,10 @@ header.fondo
      margin-left: -0.5%;
  }
 
+.margenusuario{
+    padding-left: 20%;
+}
+
 .margencard{
     margin-top: 2%;
     margin-bottom: 1%;

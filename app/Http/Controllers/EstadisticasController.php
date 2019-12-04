@@ -21,7 +21,7 @@ class EstadisticasController extends Controller
             ->paginate(10);
 
 
-        return view('estadisticas')->with('clientes', $clientes);
+        return view('estadisticas')->with('clientes', $clientes)->with('no',1);
     }
 
     public function create()
@@ -72,7 +72,7 @@ class EstadisticasController extends Controller
             $datos = Ruffier::where("id_cliente","=",$id)->get();
 
        return view('verestadistica',compact("pagos","antecedentes","datos","cliente"))
-           ->with("grasa_corporal",$grasas);
+           ->with("grasa_corporal",$grasas)->with('no',1);
     }
 
     public function buscarCliente(Request $request){

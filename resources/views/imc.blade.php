@@ -119,7 +119,7 @@
 
                         @foreach($antecedentes as $antecedente)
                             <tr style="text-align:right">
-                                <td></td>
+                                <td>{{$no++}}</td>
                                 <td>{{$antecedente->peso}}</td>
                                 <td>{{$antecedente->altura}}</td>
                                 <td>{{$antecedente->imc}}</td>

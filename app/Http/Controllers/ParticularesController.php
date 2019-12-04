@@ -14,7 +14,7 @@ class ParticularesController extends Controller
     public function index () {
         $clientes = Cliente::where("id_tipo_cliente","=",3)
             ->paginate(10);
-        return view('particulares')->with('particulares' , $clientes);
+        return view('particulares')->with('particulares' , $clientes)->with('no',1);
     }
 
     public function create() {

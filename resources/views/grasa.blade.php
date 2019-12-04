@@ -105,7 +105,7 @@
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
                                 <tr style="text-align:right">
-                                    <td></td>
+                                    <td>{{$no++}}</td>
                                 <td>{{$grasa->imc}}</td>
                                 <td>{{$grasa->edad}}</td>
                                 <td>{{$grasa->grasa}}</td>

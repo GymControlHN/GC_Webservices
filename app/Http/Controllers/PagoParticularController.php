@@ -20,7 +20,7 @@ class PagoParticularController extends Controller
         $nombre = Cliente::findOrfail($id);
 
         return view('pagosparticulares', compact("pagos"))
-            ->with("nombre", $nombre);
+            ->with("nombre", $nombre)->with('no',1);
     }
 
     public function create()

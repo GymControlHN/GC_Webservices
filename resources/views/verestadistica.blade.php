@@ -70,7 +70,8 @@
                      @if($cliente->id_tipo_cliente ==2)
                      style="display: none;"
                         @endif>
-                    <th>Mes</th>
+                    <th scope="col">N°</th>
+                    <th scope="col">Mes</th>
                     <th>Fecha</th>
                     <th>Estado</th>
                     <th>Acciones</th>
@@ -80,11 +81,12 @@
                 @if($pagos->count()>0)
                     @foreach ($pagos as $day => $users_list)
                         <tr>
-                            <th colspan="4"
+                            <th colspan="5"
                                 style="background-color: #7086f7; color: white;">Registro del año {{ $day }}</th>
                         </tr>
                         @foreach ($users_list as $user)
                             <tr >
+                                <td>{{$no++}}</td>
                                 <th>{{ $user->mes }}</th>
                                 <th>{{ $user->fecha_pago }}</th>
                                 <th>Cancelado</th>
@@ -151,9 +153,8 @@
             box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
-                <tr >
-
-
+                <tr>
+                    <th scope="col">N°</th>
                     <th scope="row">Peso Kg</th>
                     <th scope="col">Altura°</th>
                     <th scope="col">Imc</th>
@@ -175,7 +176,7 @@
 
                     @foreach($antecedentes as $antecedente)
                         <tr style="text-align:right">
-
+                            <td>{{$no++}}</td>
                             <td>{{$antecedente->peso}}</td>
                             <td>{{$antecedente->altura}}</td>
                             <td>{{$antecedente->imc}}</td>
@@ -207,7 +208,7 @@
 
                 @else
                     <tr>
-                        <td colspan="13" style="text-align: center">No hay medidas ingresadas</td>
+                        <td colspan="14" style="text-align: center">No hay medidas ingresadas</td>
                     </tr>
                 @endif
                 <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarImc">
@@ -251,6 +252,7 @@
 
                     <thead class="thead-light">
                     <tr>
+                        <th scope="col">N°</th>
                         <th scope="col">Imc</th>
                         <th scope="col">edad</th>
                         <th scope="col">%Grasa</th>
@@ -270,6 +272,7 @@
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
                                 <tr style="text-align:right">
+                                    <td>{{$no++}}</td>
                                 <td>{{$grasa->imc}}</td>
                                 <td>{{$grasa->edad}}</td>
                                 <td>{{$grasa->grasa}}</td>
@@ -334,6 +337,7 @@
                     <table class="table ruler-vertical table-hover mx-sm-0 ">
                         <thead class="thead-light">
                         <tr>
+                            <th scope="col">N°</th>
                             <th scope="col">Ruffier</th>
                             <th scope="col">Pulso en reposo</th>
                             <th scope="col">Pulso en acción</th>
@@ -353,6 +357,7 @@
                             @if($datos->count()>0)
                                 @foreach($datos as $dato)
                                     <tr style="text-align:right">
+                                        <td>{{$no++}}</td>
                                     <td>{{$dato->ruffiel}}</td>
                                     <td>{{$dato->pulso_r}}</td>
                                     <td>{{$dato->pulso_a}}</td>

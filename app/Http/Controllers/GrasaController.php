@@ -21,7 +21,7 @@ class GrasaController extends Controller
             ->orderBy("created_at","desc")->paginate(10);
 
         $nombre = Cliente::findOrfail($id);
-        return view('grasa', compact("grasa_corporal"))->with("nombre", $nombre);
+        return view('grasa', compact("grasa_corporal"))->with("nombre", $nombre)->with('no',1);
 
         //$grasa_corporal = Grasa
         // ::where("id_cliente", "=", $request->input("id_cliente"));

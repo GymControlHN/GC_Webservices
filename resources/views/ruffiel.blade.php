@@ -112,7 +112,7 @@
                         @if($datos->count()>0)
                             @foreach($datos as $dato)
                                 <tr style="text-align:right">
-                                    <td></td>
+                                    <td>{{$no++}}</td>
                                 <td>{{$dato->pulso_r}}</td>
                                 <td>{{$dato->pulso_a}}</td>
                                 <td>{{$dato->pulso_d}}</td>

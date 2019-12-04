@@ -22,7 +22,7 @@ class  EstudiantesController extends Controller
             ->paginate(10);
 
         $carrera = Carrera::all();
-        return view('estudiantes')->with('estudiantes', $clientes)->with("carreras",$carrera);
+        return view('estudiantes')->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1);
     }
 
     public function create($id)

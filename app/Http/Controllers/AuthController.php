@@ -11,7 +11,7 @@ class AuthController extends Controller
     public function index()
     {
         $user = User::all();
-        return view('perfil')->with('usuarios', $user);
+        return view('perfil')->with('usuarios', $user)->with('no',1);
     }
     public function  crear_usuario(Request $request){
 

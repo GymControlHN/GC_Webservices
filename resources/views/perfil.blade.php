@@ -9,7 +9,7 @@
             </div>
         </div>
     </header>
-    <div class="container">
+    <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
 
         <h3 class="mt-4" style="all: revert">Listado de Usuarios</h3>
 
@@ -101,9 +101,9 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="table  mx-sm-0" style="margin: 50px">
-            <br><br>
+
+        <div class="table  mx-sm-0" style="padding: 45px ">
+
             <table class="table ruler-vertical table-hover mx-sm-0 "
                    style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <thead class="thead-light">
@@ -119,7 +119,7 @@
                 @if($usuarios->count()>0)
                     @foreach($usuarios as $usuario)
                         <tr>
-                            <th></th>
+                            <td>{{$no++}}</td>
                             <th>{{$usuario->name}}</th>
                             <th>{{$usuario->email}}</th>
                             <th><i class="fas fa-exclamation-triangle" data-toggle="tooltip"
@@ -151,7 +151,7 @@
 
         </div>
     </div>
-    </div>
+
 
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarUsuario">
         <div class="modal-dialog" role="document">

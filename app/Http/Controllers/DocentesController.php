@@ -16,7 +16,7 @@ class DocentesController extends Controller
     {
         $clientes =Cliente::where("id_tipo_cliente","=","2")
             ->paginate(10);
-        return view('docentes')->with('docentes', $clientes);
+        return view('docentes')->with('docentes', $clientes)->with('no',1);
     }
 
     public function create()

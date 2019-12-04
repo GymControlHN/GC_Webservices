@@ -18,7 +18,7 @@ class RuffierController extends Controller
         $datos = Ruffier::where("id_cliente","=",$id)
             ->orderBy("created_at","desc")->paginate(10);
         $cliente = Cliente::find($id);
-        return view('ruffiel',compact("datos"))->with("cliente", $cliente);
+        return view('ruffiel',compact("datos"))->with("cliente", $cliente)->with("no", 1);
 
 
     }

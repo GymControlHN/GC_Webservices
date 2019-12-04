@@ -146,12 +146,12 @@
             @if($pagos->count()>0)
             @foreach ($pagos as $day => $users_list)
                 <tr>
-                    <th colspan="4"
+                    <th colspan="5"
                         style="background-color: #7086f7; color: white;">Registro del año {{ $day }}</th>
                 </tr>
                 @foreach ($users_list as $user)
                     <tr>
-                        <th></th>
+                        <td>{{$no++}}</td>
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
@@ -168,7 +168,7 @@
             @endforeach
             @else
                 <tr>
-                    <td colspan="7" style="text-align: center">No hay pagos ingresados</td>
+                    <td colspan="5" style="text-align: center">No hay pagos ingresados</td>
             @endif
 
 

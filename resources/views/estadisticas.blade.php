@@ -22,6 +22,7 @@
             <table class="table ruler-vertical table-hover mx-sm-0 ">
             <thead class="thead-light">
             <tr>
+                <th >N°</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Identificación</th>
                 <th scope="col">Edad</th>
@@ -37,6 +38,7 @@
             @if($clientes->count()>0)
                 @foreach($clientes as $estudiante)
                     <tr>
+                        <td>{{$no++}}</td>
                         <td>{{$estudiante->nombre}}</td>
                         <td>{{$estudiante->identificacion}}</td>
                         <td>{{$estudiante->edad}}</td>
