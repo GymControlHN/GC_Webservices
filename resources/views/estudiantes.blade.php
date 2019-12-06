@@ -432,7 +432,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                             <td>{{$estudiante->telefono}}</td>
                             <td>{{$estudiante->genero}}</td>
                             <td>{{$estudiante->edad}}
-                            <td>{{$estudiante->fecha_de_ingreso}}</td>
+                            <td>{{date("d-m-Y",strtotime($estudiante->created_at))}}</td>
                             <div  style="overflow: auto"></div>
 
 

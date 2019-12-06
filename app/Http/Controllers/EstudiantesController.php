@@ -48,7 +48,6 @@ class  EstudiantesController extends Controller
             $nuevoEstudiante->nombre = $request->input('nombre');
             $nuevoEstudiante->fecha_nacimiento = $request->input('fecha_nacimiento');
             $nuevoEstudiante->identificacion = $request->input('identificacion');
-            $nuevoEstudiante->fecha_de_ingreso = $request->input('fecha_de_ingreso');
             $nuevoEstudiante->id_carrera = $request->input('carrera');
             $nuevoEstudiante->telefono = $request->input('telefono');
             $nuevoEstudiante->id_tipo_cliente = "1";

@@ -429,7 +429,7 @@
                     <td>{{$particular->telefono}}</td>
                     <td>{{$particular->genero}}</td>
                     <td>{{$particular->edad}}</td>
-                    <td>{{$particular->fecha_de_ingreso}}</td>
+                    <td>{{date("d-m-Y",strtotime($particular->created_at))}}</td>
                     <div  style="overflow: auto"></div>
 
 

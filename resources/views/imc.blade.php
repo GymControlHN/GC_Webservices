@@ -132,7 +132,7 @@
                                 <td>{{$antecedente->muslo}}</td>
                                 <td>{{$antecedente->pierna}}</td>
 
-                                <td><strong>{{$antecedente->created_at}}</strong></td>
+                                <td><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
 
 
 

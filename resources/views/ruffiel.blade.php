@@ -121,7 +121,7 @@
                                 <td>{{$dato->mvo}}</td>
                                 <td>{{$dato->mvoreal}}</td>
                                     <td>{{$dato->mvodiagnostico}}</td>
-                                <th>{{$dato->created_at}}</th>
+                                <th>{{date("d-m-Y",strtotime($dato->created_at))}}</th>
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2"><a
                                                 href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i

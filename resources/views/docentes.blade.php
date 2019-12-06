@@ -426,7 +426,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <td>{{$docente->genero}}</td>
                     <td>{{$docente->profesion_u_oficio}}</td>
 
-                    <td>{{$docente->created_at}}</td>
+                    <td>{{date("d-m-Y",strtotime($docente->created_at))}}</td>
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
