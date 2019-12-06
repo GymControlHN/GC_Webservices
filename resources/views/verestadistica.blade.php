@@ -189,7 +189,7 @@
                             <td>{{$antecedente->muslo}}</td>
                             <td>{{$antecedente->pierna}}</td>
 
-                            <td>{{$antecedente->fecha_de_ingreso}}</td>
+                            <td>{{$antecedente->created_at}}</td>
 
 
                             <td class="form-inline " >
@@ -282,7 +282,7 @@
                                 <td>{{$grasa->pc_infraescapular}}</td>
                                 <td>{{$grasa->pc_supra_iliaco}}</td>
                                 <td>{{$grasa->pc_biciptal}}</td>
-                                <th>{{$grasa->fecha_de_ingreso}}</th>
+                                <th>{{$grasa->created_at}}</th>
                                 <td class="form-inline " >
 
                                     <button class="btn btn-danger mr-xl-2"
@@ -365,7 +365,7 @@
                                     <td>{{$dato->leyenda}}</td>
                                     <td>{{$dato->mvo}}</td>
                                     <td>{{$dato->mvoreal}}</td>
-                                    <th>{{$dato->fecha_de_ingreso}}</th>
+                                    <th>{{$dato->created_at}}</th>
                                     <td class="form-inline ">
 
                                         <button class="btn btn-danger mr-xl-2"

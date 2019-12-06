@@ -55,7 +55,7 @@
                         @endif
 
                         <td>{{$estudiante->descripcion}}</td>
-                        <td>{{$estudiante->fecha_de_ingreso}}</td>
+                        <td>{{$estudiante->created_at}}</td>
                         <td>
                             <a class="btn btn-info mr-xl-2 "
                                href="{{route("estadistica.ver",["id"=>$estudiante->id])}}">

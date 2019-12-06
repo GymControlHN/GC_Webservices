@@ -15,7 +15,6 @@ class CreateEstadisticasTable extends Migration
     {
         Schema::create('estadisticas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->date('fecha_de_ingreso');
             $table->string('nombre',50);
             $table->integer('edad');
             $table->char('identificacion', 11)->unique();
