@@ -58,8 +58,8 @@
                         <td>{{$estudiante->fecha_de_ingreso}}</td>
                         <td>
                             <a class="btn btn-info mr-xl-2 "
-                               href="{{route("imc.ini",$estudiante->id)}}">
-                                Expediente
+                               href="{{route("estadistica.ver",["id"=>$estudiante->id])}}">
+                                Ver Estadística
                             </a>
                         </td>
                     </tr>
