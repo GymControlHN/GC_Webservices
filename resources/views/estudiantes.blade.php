@@ -425,7 +425,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     @foreach($estudiantes as $estudiante)
 
                         <tr>
-                            <td></td>
+                            <td>{{$no++}}</td>
                             <td>{{$estudiante->nombre}}</td>
                             <td>{{$estudiante->identificacion}}</td>
                             <td>{{$estudiante->carrera}}</td>

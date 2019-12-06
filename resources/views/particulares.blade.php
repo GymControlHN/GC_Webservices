@@ -422,7 +422,7 @@
                 @foreach($particulares as $particular)
 
                 <tr>
-                    <td></td>
+                    <td>{{$no++}}</td>
                     <td>{{$particular->nombre}}</td>
                     <td>{{$particular->identificacion}}</td>
                     <td>{{$particular->profesion_u_oficio}}</td>
