@@ -79,55 +79,57 @@
 
                                 </div>
 
-
-                                    <div class="form-group{{ $errors->has('profesion_u_oficio') ? ' has-error' : '' }} col-md-6">
-                                        <h6>Profesión</h6>
-                                    <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
-                                           required
-                                           value="{{old("profesion_u_oficio")}}"
-                                    >
-                                        @if ($errors->has('profesion_u_oficio'))
-                                            <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('profesion_u_oficio') }}</strong>
-                                    </span>
-                                        @endif
-                                </div>
-                                </div>
-
-
-                                <div class="form-row">
                                     <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }}  col-md-6">
-                                    <h6>Fecha de nacimiento</h6>
-                                    <input type="date"  pattern="([0-9]{1,3})" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
-                                           title="Ingrese solo números entre 1 a 99 años"
+                                        <h6>Fecha de nacimiento</h6>
+                                        <input type="date"  pattern="([0-9]{1,3})" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                               title="Ingrese solo números entre 1 a 99 años"
 
-                                           required
-                                           minlength="1" maxlength="2" min="1"
-                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
-                                           value="{{old("fecha_nacimiento")}}"
-                                    >
+                                               required
+                                               minlength="1" maxlength="2" min="1"
+                                               max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+                                               value="{{old("fecha_nacimiento")}}"
+                                        >
                                         @if ($errors->has('fecha_nacimiento'))
                                             <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
                                     </span>
                                         @endif
+                                    </div>
                                 </div>
 
-                                <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
-                                    <h6>Número de Empleado</h6>
-                                    <input type="text" pattern="([0-9]{1,5})" class="form-control" id="identificacion" name="identificacion"
-                                           title="Ingrese solo números"
-                                            required
-                                           value="{{old("identificacion")}}"
-                                           minlength="1" maxlength="5" min="1" max="99999"
-                                    >
-                                    @if ($errors->has('identificacion'))
-                                        <span class="help-block" style="color: red">
+
+
+                                <div class="form-row">
+                                    <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
+                                        <h6>Número de Empleado</h6>
+                                        <input type="text" pattern="([0-9]{1,5})" class="form-control" id="identificacion" name="identificacion"
+                                               title="Ingrese solo números"
+                                               required
+                                               value="{{old("identificacion")}}"
+                                               minlength="1" maxlength="5" min="1" max="99999"
+                                        >
+                                        @if ($errors->has('identificacion'))
+                                            <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('identificacion') }}</strong>
                                     </span>
-                                    @endif
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group{{ $errors->has('profesion_u_oficio') ? ' has-error' : '' }} col-md-6">
+                                        <h6>Profesión</h6>
+                                        <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                               required
+                                               value="{{old("profesion_u_oficio")}}"
+                                        >
+                                        @if ($errors->has('profesion_u_oficio'))
+                                            <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('profesion_u_oficio') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
                                 </div>
-                             </div>
+
+
 
                                 <div class="form-row">
                                     <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} col-md-6">
