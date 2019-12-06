@@ -12,17 +12,20 @@
 
 
     <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
-        <div class="card-header" style="background: transparent;height: 50px;" >
+        <div class="card-header" style="background: transparent;height: 50px;">
             @if($cliente->id_tipo_cliente==3 )
-            <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+                <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span>
+                    Regresar</a>
 
             @endif
             @if($cliente->id_tipo_cliente==2)
-            <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+                <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span>
+                    Regresar</a>
 
             @endif
             @if($cliente->id_tipo_cliente==1)
-            <a class="btn btn-default" href="/estudiantes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+                <a class="btn btn-default" href="/estudiantes"><span><i class="fa fa-arrow-circle-left"></i></span>
+                    Regresar</a>
             @endif
 
         </div>
@@ -57,26 +60,35 @@
 
 
 
-    <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group"
+         aria-label="Button group with nested dropdown">
 
-        <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
-        href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
-           @endif
-           @if($cliente->id_tipo_cliente ==1)
-           href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
 
-           @if($cliente->id_tipo_cliente ==2)
-           style="display: none;"
-                @endif
 
-        >Pagos</a>
+
+        @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
+            <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
+            href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+               @endif
+               @if($cliente->id_tipo_cliente ==1)
+               href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
+
+               @if($cliente->id_tipo_cliente ==2)
+               style="display: none;"
+                    @endif
+
+            >Pagos</a>
+        @endif
+
+
+
         <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
     </div>
 
-    <a class="btn btn-primary"  href="{{route("botonimc",["id"=>$cliente->id])}}"
+    <a class="btn btn-primary" href="{{route("botonimc",["id"=>$cliente->id])}}"
        style="float: right; margin-right: 50px; color: white">Nuevo
 
     </a>
@@ -89,10 +101,7 @@
         box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
 
 
-
-
-
-            <div class="table-responsive mb-5" >
+            <div class="table-responsive mb-5">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
                     <thead class="thead-light">
                     <tr>
@@ -135,7 +144,6 @@
                                 <td><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
 
 
-
                                 <td class="form-inline ">
 
 
@@ -148,8 +156,8 @@
                                     <button class="btn btn-danger mr-xl-2"
                                             data-id="{{$antecedente->id}}"
                                             data-id_cliente="{{$antecedente->id_cliente}}"
-                                            data-toggle="modal" data-target="#modalBorrarImc"><i class="fas fa-trash-alt"></i></button>
-
+                                            data-toggle="modal" data-target="#modalBorrarImc"><i
+                                                class="fas fa-trash-alt"></i></button>
 
 
                                 </td>

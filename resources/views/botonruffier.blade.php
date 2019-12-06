@@ -45,6 +45,7 @@
     </div>
 
     <div class="btn-group mt-3 mb-5" style="margin-left: 3%;" role="group" aria-label="Button group with nested dropdown">
+        @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
 
         <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
@@ -55,6 +56,8 @@
            @if($cliente->id_tipo_cliente ==2)
            style="display: none;"
                 @endif >Pagos</a>
+
+        @endif
         <a class="btn btn-secondary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
         <a class="btn btn-primary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>

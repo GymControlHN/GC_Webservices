@@ -41,6 +41,8 @@
     </div>
     <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
+        @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
+
         <a class="btn btn-secondary" @if($nombre->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$nombre->id])}}"
            @endif
@@ -50,6 +52,8 @@
            @if($nombre->id_tipo_cliente ==2)
            style="display: none;"
                 @endif >Pagos</a>
+
+        @endif
         <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
         <a class="btn btn-primary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
@@ -71,12 +75,13 @@
             };
 
             function calcularGrasa(){
-                imc= document.getElementById("imc").value;
-                edad= document.getElementById("edad").value;
-                grasa=((1.2*imc)+(0.23*edad)-10.8-5.4);
-                document.getElementById("grasa").value=grasa.toFixed(0);
-
-
+                pc_tricipital = document.getElementById("pc_tricipital").value;
+                pc_infraescapular = document.getElementById("pc_infraescapular").value;
+                pc_biciptal = document.getElementById("pc_biciptal").value;
+                pc_supra_iliaco = document.getElementById("pc_supra_iliaco").value;
+                grasa = (2.745+ (0.0008 * pc_tricipital)+
+                    (0.002*pc_infraescapular)+(0.637*pc_supra_iliaco)+(0.809*pc_biciptal));
+                document.getElementById("grasa").value = grasa.toFixed(0);
                 var genero = document.getElementById("sexo").value;
 
 
@@ -126,58 +131,16 @@
             <h5 class="mt-4 ml-5">Editar medidas de la grasa corporal</h5>
 
 
-            <div class="form-row  mt-4">
-                <div class="form-group col-md-6">
-                    <h6 class=" label2" for="email">IMC:</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3" id="imc"
-                               name="imc" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularGrasa()"
-                               @isset($grasa)
-                               value="{{$grasa->imc}}" readonly
-                                @endisset
-                        >
-                    </div>
-
-
-                <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Edad:</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                               id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGrasa()"
-                               @isset($grasa)
-                               value="{{$grasa->edad}}" readonly
-                                @endisset
-                        >
-                    </div>
-                </div>
 
 
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">%Grasa:</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3"
-                               id="grasa" name="grasa" maxlength="3"
-                               @isset($grasa)
-                               value="{{$grasa->grasa}}"
-                                @endisset
-                               readonly >
-                    </div>
 
 
-                <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Diagnostico:</h6>
-                        <input style="width: 310px" type="text" class="form-control inputtamaño3"
-                               id="leyenda" name="leyenda" maxlength="50"
-                               @isset($grasa)
-                               value="{{$grasa->leyenda}}"
-                                @endisset
-                               readonly>
-                    </div>
-                </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pc_tricipital:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" onkeyup="calcularGrasa()"
                            id="pc_tricipital" name="pc_tricipital" maxlength="3"
                            @isset($grasa)
                            value="{{$grasa->pc_tricipital}}"
@@ -188,7 +151,7 @@
 
                     <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pc Infraescrupural:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" onkeyup="calcularGrasa()"
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
                            value="{{$grasa->pc_infraescapular}}"
@@ -200,7 +163,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pc Biciptal:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" onkeyup="calcularGrasa()"
                            id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
                            value="{{$grasa->pc_biciptal}}"
@@ -212,7 +175,7 @@
                     <div class="form-group col-md-6">
                 <h6 class="label2" for="email">Pc Suprailiaco:</h6>
 
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" onkeyup="calcularGrasa()"
                            id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
                            value="{{$grasa->pc_supra_iliaco}}"
@@ -221,8 +184,33 @@
                 </div>
             </div>
 
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <h6 class="label2" for="email">Porcentaje:</h6>
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                           id="grasa" name="grasa" maxlength="3"
+                           @isset($grasa)
+                           value="{{$grasa->grasa}}"
+                           @endisset
+                           readonly >
+                </div>
+
+
+                <div class="form-group col-md-6">
+                    <h6 class="label2" for="email">Diagnostico:</h6>
+                    <input style="width: 310px" type="text" class="form-control inputtamaño3"
+                           id="leyenda" name="leyenda" maxlength="50"
+                           @isset($grasa)
+                           value="{{$grasa->leyenda}}"
+                           @endisset
+                           readonly>
+                </div>
+            </div>
+
+
 
                 </div>
+
             <input name="id_cliente" value="{{$id->id}}" type="hidden">
 
 
