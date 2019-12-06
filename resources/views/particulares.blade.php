@@ -146,20 +146,6 @@
                                 </div>
 
 
-                                    <div class="form-group col-md-6">
-                                        <h6>Fecha</h6>
-                                        <div class="form-group">
-                                            <input type="date" class="form-control"
-                                                   value="{{date("Y-m-d")}}"
-                                                   readonly
-                                                   id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                                   required
-                                            >
-                                        </div>
-
-                                    </div>
-
-
 
                                     <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
                                         <h6>Sexo</h6>
@@ -282,7 +268,6 @@
                                 <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
                             <h6>Fecha de nacimiento</h6>
                                 <input type="date"  pattern="([0-9]{1,3})" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
-                                       max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                        value="{{old("fecha_nacimiento")}}"
                                        @isset($particular)
                                        value="{{$particular->fecha_nacimiento}}"
@@ -356,46 +341,37 @@
                                     @endif
                             </div>
 
-                         <div class="form-group col-md-6">
-                            <h6>Fecha</h6>
-                                <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                       @isset($particular)
-                                       value="{{$particular->fecha_de_ingreso}}"
-                                       @endisset value="{{old('fecha_de_ingreso')}}"
-                                       required
-                                       readonly
-                                >
-                            </div>
-                            </div>
-
                                 <div class="form-group col-md-6">
-                            <h6>Sexo</h6>
-                            <div class="form-check form-check-inline ">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo1P" value="M" required
+                                    <h6>Sexo</h6>
+                                    <div class="form-check form-check-inline ">
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo1P" value="M" required
 
-                                       @isset($particular)
-                                       value="{{$particular->sexo1}}"
-                                       @endisset value="{{old('sexo1 ')}}"
-                                       @if(old("genero")==='M')
-                                       checked
-                                        @endif
-                                > <label style="color:black; margin-top: 5px"  for="sexo1P">Masculino</label>
-                                <label class="form-check-label" for="inlineRadio1"></label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo2P" value="F" required
+                                               @isset($particular)
+                                               value="{{$particular->sexo1}}"
+                                               @endisset value="{{old('sexo1 ')}}"
+                                               @if(old("genero")==='M')
+                                               checked
+                                                @endif
+                                        > <label style="color:black; margin-top: 5px"  for="sexo1P">Masculino</label>
+                                        <label class="form-check-label" for="inlineRadio1"></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo2P" value="F" required
 
-                                       @isset($particular)
-                                       value="{{$particular->sexo2 }}"
-                                       @endisset value="{{old('sexo2')}}"
-                                       @if(old("genero")==='F')
-                                       checked
-                                        @endif
-                                >
-                                <label style="color:black; margin-top: 5px"  for="sexo2P">Femenino</label>
-                                <label class="form-check-label" for="inlineRadio2"></label>
+                                               @isset($particular)
+                                               value="{{$particular->sexo2 }}"
+                                               @endisset value="{{old('sexo2')}}"
+                                               @if(old("genero")==='F')
+                                               checked
+                                                @endif
+                                        >
+                                        <label style="color:black; margin-top: 5px"  for="sexo2P">Femenino</label>
+                                        <label class="form-check-label" for="inlineRadio2"></label>
+                                    </div>
+                                </div>
+
                             </div>
-                          </div>
+
 
 
 
@@ -446,13 +422,13 @@
                 @foreach($particulares as $particular)
 
                 <tr>
-                    <td>{{$no++}}</td>
+                    <td></td>
                     <td>{{$particular->nombre}}</td>
                     <td>{{$particular->identificacion}}</td>
                     <td>{{$particular->profesion_u_oficio}}</td>
                     <td>{{$particular->telefono}}</td>
                     <td>{{$particular->genero}}</td>
-                    <td width="100px">{{$particular->edad}}</td>
+                    <td>{{$particular->edad}}</td>
                     <td>{{$particular->fecha_de_ingreso}}</td>
                     <div  style="overflow: auto"></div>
 
@@ -481,10 +457,10 @@
                                 data-target="#modalBorrarParticular"><i class="fas fa-trash-alt"></i>
                         </button>
 
-                        <a class="btn btn-info mr-xl-2 "
-                           href="{{route("imc.ini",$particular->id)}}">
-                            Expediente
-                        </a>
+                        <button class="btn btn-info mr-xl-2 " type="button">
+                            <a href="{{route("imc.ini",$particular->id)}}" style="color: white">Expediente</a>
+
+                        </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button" > <a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$particular->id)}}">Imc</a>
                             </button>

@@ -132,7 +132,7 @@
                                 <td>{{$antecedente->muslo}}</td>
                                 <td>{{$antecedente->pierna}}</td>
 
-                                <td><strong>{{$antecedente->fecha_de_ingreso}}</strong></td>
+                                <td><strong>{{$antecedente->created_at}}</strong></td>
 
 
 

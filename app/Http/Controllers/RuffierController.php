@@ -38,7 +38,6 @@ class RuffierController extends Controller
 
         $nuevosDatos = new Ruffier();
 
-        $nuevosDatos->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevosDatos->pulso_r = $request->input('pulso_r');
         $nuevosDatos->pulso_a = $request->input('pulso_a');
         $nuevosDatos->pulso_d = $request->input('pulso_d');
@@ -83,7 +82,6 @@ class RuffierController extends Controller
 
         //Asignar los nuevos valores a los diferentes campos
 
-        $datonuevo->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $datonuevo->pulso_r = $request->input('pulso_r');
         $datonuevo->pulso_a = $request->input('pulso_a');
         $datonuevo->pulso_d = $request->input('pulso_d');

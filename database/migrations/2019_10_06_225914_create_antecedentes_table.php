@@ -27,7 +27,6 @@ class CreateAntecedentesTable extends Migration
             $table->double('muslo');
             $table->double('pierna');
             $table->unsignedInteger("id_cliente");
-            $table->date('fecha_de_ingreso');
             $table->foreign("id_cliente")->references("id")->on("clientes_gym");
             $table->timestamps();
         });

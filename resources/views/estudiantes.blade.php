@@ -153,18 +153,6 @@
 
 
 
-                                <div class="form-group col-md-6">
-                                    <h6>Fecha</h6>
-                                    <div class="form-group">
-                                        <input type="date" class="form-control"
-                                               value="{{date("Y-m-d")}}"
-                                               readonly
-                                               id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                               required
-
-                                        >
-                                    </div>
-                                </div>
 
                                 <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
                                     <h6>Sexo</h6>
@@ -289,7 +277,6 @@
                          <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
                             <h6>Fecha de nacimiento</h6>
                                 <input type="date" pattern="([0-9]{1,3})"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
-                                       max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                        value="{{old("fecha_nacimiento")}}"
 
                                        @isset($estudiante)
@@ -366,46 +353,38 @@
                                     @endif
                             </div>
 
+                                <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
+                                    <h6>Sexo</h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo1E" value="M" required
+                                               @isset($estudiante)
+                                               value="{{$estudiante->sexo1}}"
+                                               @endisset value="{{old('sexo1')}}"
+                                               @if(old("genero")==='M')
+                                               checked
+                                                @endif>
+                                        <label style="color:black; margin-top: 5px"  for="sexo1E">Masculino</label>
 
-                                <div class="form-group col-md-6">
-                                    <h6>Fecha</h6>
-                                    <input type="date" class="form-control" id="fecha_de_ingreso" name="fecha_de_ingreso"
-                                           required readonly
-                                           @isset($estudiante)
-                                           value="{{$estudiante->fecha_de_ingreso}}"
-                                           @endisset value="{{old('fecha_de_ingreso')}}"
-                                    >
+
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo2E" value="F" required
+                                               @isset($estudiante)
+                                               value="{{$estudiante->sexo2}}"
+                                               @endisset value="{{old('sexo2')}}"
+                                               @if(old("genero")==='F')
+                                               checked
+                                                @endif
+                                        >
+                                        <label style="color:black; margin-top: 5px"  for="sexo2E">Femenino</label>
+
+
+                                    </div>
                                 </div>
-                            </div>
-
-                           <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
-                            <h6>Sexo</h6>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo1E" value="M" required
-                                       @isset($estudiante)
-                                       value="{{$estudiante->sexo1}}"
-                                       @endisset value="{{old('sexo1')}}"
-                                       @if(old("genero")==='M')
-                                       checked
-                                        @endif>
-                                <label style="color:black; margin-top: 5px"  for="sexo1E">Masculino</label>
-
 
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="genero" id="sexo2E" value="F" required
-                                       @isset($estudiante)
-                                       value="{{$estudiante->sexo2}}"
-                                       @endisset value="{{old('sexo2')}}"
-                                       @if(old("genero")==='F')
-                                       checked
-                                        @endif
-                                >
-                                <label style="color:black; margin-top: 5px"  for="sexo2E">Femenino</label>
 
 
-                            </div>
-                           </div>
 
 
 
@@ -446,14 +425,16 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     @foreach($estudiantes as $estudiante)
 
                         <tr>
-                            <td>{{$no++}}</td>
+                            <td></td>
                             <td>{{$estudiante->nombre}}</td>
                             <td>{{$estudiante->identificacion}}</td>
                             <td>{{$estudiante->carrera}}</td>
                             <td>{{$estudiante->telefono}}</td>
                             <td>{{$estudiante->genero}}</td>
-                            <td width="100px">{{$estudiante->edad}}
+                            <td>{{$estudiante->edad}}
                             <td>{{$estudiante->fecha_de_ingreso}}</td>
+                            <div  style="overflow: auto"></div>
+
 
                             <td class="form-inline " style="width: 300px">
                                 <form style="display: none" id="pago_form" method="GET"
@@ -479,10 +460,10 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                     </button>
 
 
-                                <a class="btn btn-info mr-xl-2 "
-                                        href="{{route("imc.ini",$estudiante->id)}}">
-                                    Expediente
-                                </a>
+                                <button class="btn btn-info mr-xl-2 " type="button">
+                                    <a href="{{route("imc.ini",$estudiante->id)}}" style="color: white">Expediente</a>
+
+                                </button>
 
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">

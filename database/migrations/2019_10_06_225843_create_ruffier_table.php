@@ -15,7 +15,6 @@ class CreateRuffierTable extends Migration
     {
         Schema::create('ruffier', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fecha_de_ingreso')->nullable();
             $table->double('pulso_r');
             $table->double('pulso_a');
             $table->double('pulso_d');

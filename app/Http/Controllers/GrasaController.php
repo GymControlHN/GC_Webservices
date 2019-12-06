@@ -52,7 +52,6 @@ class GrasaController extends Controller
 
         $nuevoMedida = new Grasa();
 
-        $nuevoMedida->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoMedida->pc_tricipital = $request->input('pc_tricipital');
         $nuevoMedida->pc_infraescapular = $request->input('pc_infraescapular');
         $nuevoMedida->pc_supra_iliaco = $request->input('pc_supra_iliaco');
@@ -93,7 +92,7 @@ class GrasaController extends Controller
         $medida = Grasa::findOrfail($id);
 
 
-        $medida->fecha_de_ingreso = $request->input('fecha_de_ingreso');
+
         $medida->pc_tricipital = $request->input('pc_tricipital');
         $medida->pc_infraescapular = $request->input('pc_infraescapular');
         $medida->pc_supra_iliaco = $request->input('pc_supra_iliaco');

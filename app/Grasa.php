@@ -13,7 +13,6 @@ class Grasa extends Model
         'pc_infraescapular',
         'pc_supra_iliaco',
         'pc_biciptal',
-        'fecha_de_ingreso',
         'grasa',
         'leyenda',
         'tipo',

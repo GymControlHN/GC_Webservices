@@ -13,6 +13,5 @@ class Docente extends Model
         'numero_de_empleado',
         'telefono',
         'fecha_nacimiento',
-        'fecha_de_ingreso',
     ];
 }

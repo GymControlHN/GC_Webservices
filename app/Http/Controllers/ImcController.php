@@ -63,7 +63,6 @@ class ImcController extends Controller
         $nuevoImc->muslo = $request->input('muslo');
         $nuevoImc->pierna = $request->input('pierna');
         $nuevoImc->id_cliente=$request->input("id");
-        $nuevoImc->fecha_de_ingreso = $request->input('fecha_de_ingreso');
 
 
         $nuevoImc->save();
@@ -139,7 +138,6 @@ class ImcController extends Controller
         $nuevoImc->muslo = $request->input('muslo');
         $nuevoImc->pierna = $request->input('pierna');
          $nuevoImc->id_cliente=$request->input("id_cliente");
-        $nuevoImc->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoImc->save();
 
          return $this->index($request->input("id_cliente"));

@@ -39,7 +39,6 @@ class  EstudiantesController extends Controller
           'nombre'=>'required',
           'carrera'=>'required',
           'genero'=>'required',
-          'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
@@ -90,7 +89,6 @@ class  EstudiantesController extends Controller
             'nombre'=>'required',
             'carrera'=>'required',
             'genero'=>'required',
-            'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
         ]);
 
        if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
@@ -103,7 +101,6 @@ class  EstudiantesController extends Controller
            $estudiantes->identificacion = $request->input("identificacion");
            $estudiantes->id_carrera = $request->input("carrera");
            $estudiantes->telefono = $request->input("telefono");
-           $estudiantes->fecha_de_ingreso = $request->input("fecha_de_ingreso");
            $estudiantes->id_tipo_cliente = "1";
            $estudiantes->genero = strtoupper($request->input("genero"));
 
@@ -153,7 +150,7 @@ class  EstudiantesController extends Controller
             ->join("carreras","clientes_gym.id_carrera","=","carreras.id")
             ->select("clientes_gym.*","carreras.carrera")
         ->where("nombre","like","%".$busqueda."%")
-            ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
+            ->orWhere("created_at","like","%".$busqueda."%")
             ->paginate(10);
         $carrera = Carrera::all();
 

@@ -212,15 +212,6 @@
                     </div>
                 </div>
 
-            <div class="form-group col-md-5 ">
-            <h6 class="label2 " for="email">Fecha:</h6>
-                <input  style="width: 310px"  type="date" class="form-control inputtamaño3 " required
-                       id="fecha_de_ingreso" name="fecha_de_ingreso"
-                       placeholder="Escriba la fecha de ingreso"
-                       readonly
-                       value="{{old('fecha_de_ingreso',$now->format('Y-m-d'))}}">
-
-            </div>
 
 
             <input name="id" value="{{$id}}" type="hidden">

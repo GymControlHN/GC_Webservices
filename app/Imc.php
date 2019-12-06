@@ -20,7 +20,6 @@ class Imc extends Model
         'cadera',
         'muslo',
         'pierna',
-        'fecha_de_ingreso',
         "id_cliente"
     ];
 

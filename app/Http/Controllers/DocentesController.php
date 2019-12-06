@@ -35,7 +35,7 @@ class DocentesController extends Controller
              'identificacion'=>'required|unique:clientes_gym|max:13',
           'telefono'=>'required|unique:clientes_gym|max:99999999',
           'genero'=>'required',
-             'fecha_de_ingreso'=>'required',
+
 
          ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
@@ -48,7 +48,6 @@ class DocentesController extends Controller
         $nuevoDocente->profesion_u_oficio=$request->input("profesion_u_oficio");
         $nuevoDocente->genero = $request->input('genero');
         $nuevoDocente->id_carrera=1;
-        $nuevoDocente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoDocente->id_tipo_cliente="2";
 
 
@@ -85,7 +84,6 @@ class DocentesController extends Controller
             'nombre'=>'required',
             'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
             'genero'=>'required',
-            'fecha_de_ingreso'=>'required',
 
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
@@ -99,7 +97,6 @@ class DocentesController extends Controller
         $docente->nombre = $request->input('nombre');
         $docente->fecha_nacimiento = $request->input('fecha_nacimiento');
         $docente->identificacion = $request->input('identificacion');
-        $docente->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $docente->telefono = $request->input('telefono');
         $docente->profesion_u_oficio=$request->input("profesion_u_oficio");
         $docente->genero = $request->input('genero');
@@ -147,7 +144,7 @@ class DocentesController extends Controller
 
         $docentes = Cliente::where("id_tipo_cliente","=","2")
         ->where("nombre", "like", "%" . $busquedaDoc . "%")
-            ->orWhere("fecha_de_ingreso", "like", "%" . $busquedaDoc . "%")
+            ->orWhere("created_at", "like", "%" . $busquedaDoc . "%")
             ->paginate(10);
 
         return view('docentes')->with('docentes', $docentes);

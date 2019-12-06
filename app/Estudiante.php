@@ -13,7 +13,6 @@ class Estudiante extends Model
        'nombre',
         'fecha_nacimiento',
         'numero_de_cuenta',
-        'fecha_de_ingreso',
         'carrera',
         'telefono'
     ];

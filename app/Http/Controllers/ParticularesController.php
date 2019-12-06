@@ -26,7 +26,6 @@ class ParticularesController extends Controller
             'nombre'=>'required',
             'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
             'identificacion'=>'required|unique:clientes_gym|max:13',
-            'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
             'telefono'=>'required|unique:clientes_gym|max:99999999',
             'genero'=>'required',
@@ -39,7 +38,6 @@ class ParticularesController extends Controller
         $nuevoParticular->nombre = $request->input('nombre');
         $nuevoParticular->fecha_nacimiento = $request->input('fecha_nacimiento');
         $nuevoParticular->identificacion = $request->input('identificacion');
-        $nuevoParticular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $nuevoParticular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $nuevoParticular->telefono = $request->input ('telefono');
         $nuevoParticular->id_carrera=1;
@@ -70,7 +68,6 @@ class ParticularesController extends Controller
             'telefono'=>'required|max:99999999|unique:clientes_gym,telefono,'.$request->input("particular_id"),
             'nombre'=>'required',
             'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
-            'fecha_de_ingreso'=>'required',
             'profesion_u_oficio'=>'required',
             'genero'=>'required',
         ]);
@@ -83,7 +80,6 @@ class ParticularesController extends Controller
         $particular->nombre = $request->input('nombre');
         $particular->fecha_nacimiento = $request->input('fecha_nacimiento');
         $particular->identificacion = $request->input('identificacion');
-        $particular->fecha_de_ingreso = $request->input('fecha_de_ingreso');
         $particular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $particular->telefono = $request->input ('telefono');
         $particular->id_carrera=1;
@@ -134,7 +130,7 @@ class ParticularesController extends Controller
 
         $particulares=Cliente::where("id_tipo_cliente","=","3")
         ->where("nombre","like","%".$busquedaPart."%")
-            ->orWhere("fecha_de_ingreso","like","%".$busquedaPart."%")
+            ->orWhere("created_at","like","%".$busquedaPart."%")
             ->paginate(10);
 
         return view('particulares')->with('particulares', $particulares);

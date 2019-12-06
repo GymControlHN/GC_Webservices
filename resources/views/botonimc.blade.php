@@ -206,17 +206,6 @@
                                name="pierna" id="pierna" value="{{old('pierna')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
-                    <div class="form-group col-md-4">
-                        <h6 class="label2" for="email">Fecha:</h6>
-                        <input style="width:310px" type="date" class="form-control inputtamaño3" id="fecha_de_ingreso"
-                               required
-                               name="fecha_de_ingreso"
-                               placeholder="Escriba la fecha de ingreso"
-                               @isset($antecedente)
-                               value="{{$antecedente->fecha_de_ingreso}}"
-                               @endisset
-                               value="{{old('fecha_de_ingreso', $now->format('Y-m-d'))}}" readonly >
-                    </div>
                 </div>
 
 

@@ -115,7 +115,7 @@
 
                                     <td>{{$grasa->grasa}}</td>
                                     <td>{{$grasa->leyenda}}</td>
-                                <th>{{$grasa->fecha_de_ingreso}}</th>
+                                <th>{{$grasa->created_at}}</th>
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2 "><a
                                                 href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i
