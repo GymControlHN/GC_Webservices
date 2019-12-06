@@ -84,7 +84,7 @@
         box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
 
 
-            <div class="table-responsive mb-5" >
+            <div class="table-responsive" >
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
 
                     <thead class="thead-light">
@@ -118,7 +118,7 @@
                                 <td>{{$grasa->pc_biciptal}}</td>
 
                                     <td>{{$grasa->grasa}}</td>
-                                    <td>{{$grasa->leyenda}}</td>
+                                    <td style="text-align: center">{{$grasa->diagnostico}}</td>
                                 <th>{{date("d-m-Y",strtotime($grasa->created_at))}}</th>
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2 "><a

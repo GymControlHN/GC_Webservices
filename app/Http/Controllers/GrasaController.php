@@ -17,7 +17,10 @@ class GrasaController extends Controller
     public function index($id)
     {
 
-        $grasa_corporal = Grasa::where("id_cliente", "=", $id)
+        $grasa_corporal = Grasa::
+        join("diagnostico_grasas","grasa_corporal.id_diagnostico","=","diagnostico_grasas.id")
+            ->where("id_cliente", "=", $id)
+            ->select("diagnostico_grasas.diagnostico","grasa_corporal.*")
             ->orderBy("created_at","desc")->paginate(10);
 
         $nombre = Cliente::findOrfail($id);
@@ -57,8 +60,8 @@ class GrasaController extends Controller
         $nuevoMedida->pc_supra_iliaco = $request->input('pc_supra_iliaco');
         $nuevoMedida->pc_biciptal = $request->input('pc_biciptal');
         $nuevoMedida->grasa = $request->input('grasa');
+        $nuevoMedida->id_diagnostico = $request->input('id_diagnostico');
         $nuevoMedida->id_cliente = $request->input("id");
-        $nuevoMedida->leyenda = $request->input('leyenda');
         $nuevoMedida->save();
 
         // TODO redireccionar a una página con sentido.
@@ -98,8 +101,8 @@ class GrasaController extends Controller
         $medida->pc_supra_iliaco = $request->input('pc_supra_iliaco');
         $medida->pc_biciptal = $request->input('pc_biciptal');
         $medida->grasa = $request->input('grasa');
-        $medida->leyenda = $request->input('leyenda');
         $medida->id_cliente = $request->input("id_cliente");
+        $medida->id_diagnostico = $request->input('id_diagnostico');
 
 
         $medida->save();

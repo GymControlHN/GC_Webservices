@@ -64,6 +64,7 @@
 
     </div>
 
+    <input id="sexo" value="{{$nombre->genero}}" type="hidden">
 
     <html>
     <head>
@@ -88,40 +89,40 @@
 
                 if(genero==="M"){
                     if (grasa > 26) {
-                        leyenda = "Estas Obeso";
+                        leyenda = 1;
                     } else if (grasa > 18) {
                         leyenda =
-                            "Tienes que perder grasa";
+                            2;
                     } else if (grasa > 14) {
                         leyenda =
-                            "Porcentaje aceptable";
+                           3;
                     } else if (grasa > 6) {
                         leyenda =
-                            "En forma";
+                           4;
                     } else if (grasa > 2) {
                         leyenda =
-                            "Eres un atleta";
+                           5;
                     } else {
-                        leyenda = "Algo salio mal"
+                        leyenda = 6;
 
                     }
                 }else {
                     if (grasa > 32) {
-                        leyenda = "Estas Obeso";
+                        leyenda = 1;
                     } else if (grasa > 25) {
                         leyenda =
-                            "Tienes que perder grasa";
+                           2;
                     } else if (grasa > 21) {
                         leyenda =
-                            "Porcentaje aceptable";
+                           3;
                     } else if (grasa > 14) {
                         leyenda =
-                            "En forma";
+                           4;
                     } else if (grasa > 10) {
                         leyenda =
-                            "Eres un atleta";
+                            5;
                     } else {
-                        leyenda = "Algo salio mal"
+                        leyenda =6
 
                     }
 
@@ -133,7 +134,7 @@
 
 
 
-                document.getElementById("leyenda").value = leyenda;
+                document.getElementById("id_diagnostico").value = leyenda;
             }
 
 
@@ -211,10 +212,9 @@
 
 
                     <div class="form-group col-md-6">
-                        <h6 class="label2" for="email">Clasificacion:</h6>
-                        <input style="width: 310px" type="text" class="form-control inputtamaño3" required
-                               id="leyenda" name="leyenda" maxlength="50"
-                               value="{{old('leyenda')}}"readonly>
+                        <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3"
+                               id="id_diagnostico" name="id_diagnostico"
+                               value="{{old('id_diagnostico')}}" >
                     </div>
                 </div>
 

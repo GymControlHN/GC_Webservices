@@ -14,12 +14,16 @@ class Grasa extends Model
         'pc_supra_iliaco',
         'pc_biciptal',
         'grasa',
-        'leyenda',
+        'id_diagnostico',
         'tipo',
         "id_cliente"
 
     ];
 
+    public function diagnostico()
+    {
+        return $this->belongsTo("\App\Grasa","id_diagnostico");
+    }
 
 
 }

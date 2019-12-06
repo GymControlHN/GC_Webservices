@@ -21,9 +21,11 @@ class CreateGrasaCorporalTable extends Migration
             $table->double('pc_biciptal');
             $table->integer('tipo')->nullable();
             $table->double('grasa')->nullable();
-            $table->string('leyenda')->nullable();
+            $table->unsignedInteger('id_diagnostico');
             $table->unsignedInteger('id_cliente');
             $table->foreign('id_cliente')->references('id')->on('clientes_gym');
+            $table->foreign('id_diagnostico')->references('id')->on('diagnostico_grasas');
+
             $table->timestamps();
         });
     }

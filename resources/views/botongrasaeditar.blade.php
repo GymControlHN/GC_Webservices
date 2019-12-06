@@ -85,38 +85,56 @@
                 var genero = document.getElementById("sexo").value;
 
 
-                if(genero==="M") {
-
-
+                if(genero==="M"){
                     if (grasa > 26) {
-                        leyenda = "Estas Obeso";
+                        leyenda = 1;
                     } else if (grasa > 18) {
                         leyenda =
-                            "Tienes que perder grasa";
+                            2;
                     } else if (grasa > 14) {
                         leyenda =
-                            "Porcentaje aceptable";
+                            3;
                     } else if (grasa > 6) {
                         leyenda =
-                            "En forma";
+                            4;
                     } else if (grasa > 2) {
                         leyenda =
-                            "Eres un atleta";
+                            5;
                     } else {
-                        leyenda = "Algo salio mal"
+                        leyenda = 6;
+
+                    }
+                }else {
+                    if (grasa > 32) {
+                        leyenda = 1;
+                    } else if (grasa > 25) {
+                        leyenda =
+                            2;
+                    } else if (grasa > 21) {
+                        leyenda =
+                            3;
+                    } else if (grasa > 14) {
+                        leyenda =
+                            4;
+                    } else if (grasa > 10) {
+                        leyenda =
+                            5;
+                    } else {
+                        leyenda =6
 
                     }
 
                 }
 
-
-                document.getElementById("leyenda").value=leyenda;
+                document.getElementById("id_diagnostico").value=leyenda;
 
             }</script>
 
     </head>
 
 
+
+    <input id="sexo" value="{{$nombre->genero}}" type="hidden">
 
         <form name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
@@ -197,9 +215,8 @@
 
 
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Diagnostico:</h6>
-                    <input style="width: 310px" type="text" class="form-control inputtamaño3"
-                           id="leyenda" name="leyenda" maxlength="50"
+                    <input style="width: 310px; display: none " type="hidden" class="form-control inputtamaño3"
+                           id="id_diagnostico" name="id_diagnostico" maxlength="50"
                            @isset($grasa)
                            value="{{$grasa->leyenda}}"
                            @endisset
