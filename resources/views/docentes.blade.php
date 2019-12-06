@@ -102,7 +102,7 @@
                                            title="Ingrese solo números entre 1 a 99 años"
 
                                            required
-                                           minlength="1" maxlength="2" min="1" max="99"
+                                           minlength="1" maxlength="2" min="1"
                                            max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                            value="{{old("fecha_nacimiento")}}"
                                     >

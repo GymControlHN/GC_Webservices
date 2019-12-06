@@ -57,8 +57,10 @@
                         <td>{{$estudiante->descripcion}}</td>
                         <td>{{$estudiante->fecha_de_ingreso}}</td>
                         <td>
-                           <button class="btn btn-info mr-xl-2"> <a style="color: white"
-                               href="{{route("estadistica.ver",["id"=>$estudiante->id])}}">Ver Estadística</a></button>
+                            <a class="btn btn-info mr-xl-2 "
+                               href="{{route("imc.ini",$estudiante->id)}}">
+                                Expediente
+                            </a>
                         </td>
                     </tr>
                 @endforeach

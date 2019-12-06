@@ -39,7 +39,7 @@ class  EstudiantesController extends Controller
           'nombre'=>'required',
           'carrera'=>'required',
           'genero'=>'required',
-          'fecha_nacimiento'=>'required',
+          'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
@@ -90,7 +90,7 @@ class  EstudiantesController extends Controller
             'nombre'=>'required',
             'carrera'=>'required',
             'genero'=>'required',
-            'fecha_nacimiento'=>'required',
+            'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
         ]);
 
        if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
