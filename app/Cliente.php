@@ -26,7 +26,13 @@ class Cliente extends Model
     public function getEdadAttribute(){
         $anioActual= Carbon::now()->format("Y") ;
         $anioEst=date("Y",strtotime($this->fecha_nacimiento));
-        return   "".$anioActual-$anioEst;
+
+        $edad=$anioActual-$anioEst;
+        if($edad==1){
+            return "".$edad." año";
+        }else{
+            return "".$edad." años";
+        }
     }
 }
 

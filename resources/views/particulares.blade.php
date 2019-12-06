@@ -86,6 +86,7 @@
                                                    name="fecha_nacimiento"
                                                    title="Ingrese solo números entre 1 a 99 años"
                                                    required
+                                                   max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                                    value="{{old("fecha_nacimiento")}}"
                                                    minlength="1" maxlength="2" min="1" max="99">
                                         @if ($errors->has('fecha_nacimiento'))
@@ -281,6 +282,7 @@
                                 <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
                             <h6>Fecha de nacimiento</h6>
                                 <input type="date"  pattern="([0-9]{1,3})" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                       max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                        value="{{old("fecha_nacimiento")}}"
                                        @isset($particular)
                                        value="{{$particular->fecha_nacimiento}}"
@@ -450,7 +452,7 @@
                     <td>{{$particular->profesion_u_oficio}}</td>
                     <td>{{$particular->telefono}}</td>
                     <td>{{$particular->genero}}</td>
-                    <td>{{$particular->edad}}</td>
+                    <td width="100px">{{$particular->edad}}</td>
                     <td>{{$particular->fecha_de_ingreso}}</td>
                     <div  style="overflow: auto"></div>
 
@@ -479,10 +481,10 @@
                                 data-target="#modalBorrarParticular"><i class="fas fa-trash-alt"></i>
                         </button>
 
-                        <button class="btn btn-info mr-xl-2 " type="button">
-                            <a href="{{route("imc.ini",$particular->id)}}" style="color: white">Expediente</a>
-
-                        </button>
+                        <a class="btn btn-info mr-xl-2 "
+                           href="{{route("imc.ini",$particular->id)}}">
+                            Expediente
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button" > <a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$particular->id)}}">Imc</a>
                             </button>

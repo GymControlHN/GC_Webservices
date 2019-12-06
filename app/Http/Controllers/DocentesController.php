@@ -131,9 +131,13 @@ class DocentesController extends Controller
              el docente porque tiene datos ingresados"]);
 
         }else {
-            Cliente::destroy($request->input("id"));
+            $cliente=  Cliente::destroy($request->input("id"));
 
-            return back()->with(["exito" => "Se elimino exitosamente"]);
+            if ($cliente){
+                return back()->with(["exito" => "Se elimino exitosamente"]);
+            }else{
+                return back()->with(["error" => "El docente ingresado no existe"]);
+            }
         }
 
     }

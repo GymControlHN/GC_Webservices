@@ -85,6 +85,7 @@
                                     <input type="date"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
 
                                            required
+                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                            value="{{old("fecha_nacimiento")}}">
                                         @if ($errors->has('fecha_nacimiento'))
                                             <span class="help-block" style="color: red">
@@ -288,6 +289,7 @@
                          <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
                             <h6>Fecha de nacimiento</h6>
                                 <input type="date" pattern="([0-9]{1,3})"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                       max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                        value="{{old("fecha_nacimiento")}}"
 
                                        @isset($estudiante)
@@ -450,10 +452,8 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                             <td>{{$estudiante->carrera}}</td>
                             <td>{{$estudiante->telefono}}</td>
                             <td>{{$estudiante->genero}}</td>
-                            <td>{{$estudiante->edad}}
+                            <td width="100px">{{$estudiante->edad}}
                             <td>{{$estudiante->fecha_de_ingreso}}</td>
-                            <div  style="overflow: auto"></div>
-
 
                             <td class="form-inline " style="width: 300px">
                                 <form style="display: none" id="pago_form" method="GET"
@@ -479,10 +479,10 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                     </button>
 
 
-                                <button class="btn btn-info mr-xl-2 " type="button">
-                                    <a href="{{route("imc.ini",$estudiante->id)}}" style="color: white">Expediente</a>
-
-                                </button>
+                                <a class="btn btn-info mr-xl-2 "
+                                        href="{{route("imc.ini",$estudiante->id)}}">
+                                    Expediente
+                                </a>
 
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">

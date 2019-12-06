@@ -103,6 +103,7 @@
 
                                            required
                                            minlength="1" maxlength="2" min="1" max="99"
+                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                            value="{{old("fecha_nacimiento")}}"
                                     >
                                         @if ($errors->has('fecha_nacimiento'))
@@ -282,6 +283,7 @@
                             <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
                             <h6>Fecha de nacimiento</h6>
                                 <input type="date"  pattern="([0-9]{1,3})"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                       max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                        value="{{old("fecha_nacimiento")}}"
                                        @isset($docente)
                                        value="{{$docente->fecha_nacimiento}}"
@@ -423,7 +425,6 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <th scope="col">Edad</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Sexo</th>
-
                     <th scope="col">Profesión</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
@@ -437,7 +438,7 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                     <td>{{$no++}}</td>
                     <td>{{$docente->nombre}}</td>
                     <td>{{$docente->identificacion}}</td>
-                    <td>{{$docente->edad}}</td>
+                    <td width="100px">{{$docente->edad}}</td>
                     <td>{{$docente->telefono}}</td>
                     <td>{{$docente->genero}}</td>
                     <td>{{$docente->profesion_u_oficio}}</td>
@@ -457,10 +458,10 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                 data-toggle="modal"
                                 data-target="#modalBorrarDocente"><i class="fas fa-trash-alt"></i>
                         </button>
-                        <button class="btn btn-info mr-xl-2 " type="button">
-                            <a href="{{route("imc.ini",$docente->id)}}" style="color: white">Expediente</a>
-
-                        </button>
+                        <a class="btn btn-info mr-xl-2 "
+                           href="{{route("imc.ini",$docente->id)}}">
+                            Expediente
+                        </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$docente->id)}}">Imc</a></button>
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("grasa.uni",["id"=>$docente->id])}}">Grasa Corporal</a></button>
