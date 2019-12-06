@@ -176,7 +176,7 @@
 
                     @foreach($antecedentes as $antecedente)
                         <tr style="text-align:right">
-                            <td>{{$no++}}</td>
+                            <td>{{$no2++ }}</td>
                             <td>{{$antecedente->peso}}</td>
                             <td>{{$antecedente->altura}}</td>
                             <td>{{$antecedente->imc}}</td>
@@ -272,7 +272,7 @@
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
                                 <tr style="text-align:right">
-                                    <td>{{$no++}}</td>
+                                    <td>{{$no3++}}</td>
                                 <td>{{$grasa->imc}}</td>
                                 <td>{{$grasa->edad}}</td>
                                 <td>{{$grasa->grasa}}</td>
@@ -357,7 +357,7 @@
                             @if($datos->count()>0)
                                 @foreach($datos as $dato)
                                     <tr style="text-align:right">
-                                        <td>{{$no++}}</td>
+                                        <td>{{$no4++}}</td>
                                     <td>{{$dato->ruffiel}}</td>
                                     <td>{{$dato->pulso_r}}</td>
                                     <td>{{$dato->pulso_a}}</td>

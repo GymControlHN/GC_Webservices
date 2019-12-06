@@ -72,7 +72,8 @@ class EstadisticasController extends Controller
             $datos = Ruffier::where("id_cliente","=",$id)->get();
 
        return view('verestadistica',compact("pagos","antecedentes","datos","cliente"))
-           ->with("grasa_corporal",$grasas)->with('no',1);
+           ->with("grasa_corporal",$grasas)->with('no',1)
+           ->with('no2',1)->with('no3',1)->with('no4',1);
     }
 
     public function buscarCliente(Request $request){

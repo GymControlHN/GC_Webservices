@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="/">Principal</a>
+                    <a class="nav-link js-scroll-trigger" href="/">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="/estudiantes">Estudiantes</a>
@@ -67,7 +67,7 @@
                         </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"
-                           style="background: #fff;"
+
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             Cerrar sesion
