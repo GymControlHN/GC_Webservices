@@ -460,10 +460,10 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
                                     </button>
 
 
-                                <button class="btn btn-info mr-xl-2 " type="button">
-                                    <a href="{{route("imc.ini",$estudiante->id)}}" style="color: white">Expediente</a>
-
-                                </button>
+                                <a class="btn btn-info mr-xl-2 "
+                                   href="{{route("imc.ini",$estudiante->id)}}">
+                                    Expediente
+                                </a>
 
 
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
