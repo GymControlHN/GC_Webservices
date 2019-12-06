@@ -64,19 +64,17 @@
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
         <title>FORMULARIO PESO IDEAL</title>
         <script type="text/javascript">
-            document.onreadystatechange= function () {
 
-                if(document.readyState==="complete"){
-                    calcularGrasa();
-                }
-            };
 
 
 
             function calcularGrasa() {
-                imc = document.getElementById("imc").value;
-                edad = document.getElementById("edad").value;
-                grasa = ((1.2 * imc) + (0.23 * edad) - 10.8 - 5.4);
+                pc_tricipital = document.getElementById("pc_tricipital").value;
+                pc_infraescapular = document.getElementById("pc_infraescapular").value;
+                pc_biciptal = document.getElementById("pc_biciptal").value;
+                pc_supra_iliaco = document.getElementById("pc_supra_iliaco").value;
+                grasa = (2.745+ (0.0008 * pc_tricipital)+
+                    (0.002*pc_infraescapular)+(0.637*pc_supra_iliaco)+(0.809*pc_biciptal));
                 document.getElementById("grasa").value = grasa.toFixed(0);
 
                 var genero = document.getElementById("sexo").value;
@@ -141,7 +139,7 @@
 
 
 
-        <input id="sexo" value="{{$edad->genero}}" type="hidden">
+
 
 
         <form name="f1" id="f1"
@@ -155,49 +153,16 @@
 
             <div class="margeneditar" >
             <h5 class="label2" style="margin-left: 4%">Calculo de la grasa corporal</h5>
-            <div class="form-row" >
-                <div class="form-group col-md-6">
-                <h6 class=" label2" for="email">IMC:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                           id="imc"
-                           name="imc" maxlength="3" placeholder="Ingrese su imc" onkeyup="calcularGrasa()"
-                           @isset($imc)value="{{$imc->imc}}" readonly @endisset>
-                </div>
 
 
-                <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Edad:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                           id="edad" name="edad" maxlength="3" placeholder="Ingrese su edad" onkeyup="calcularGrasa()"
 
-                           @isset($edad)value="{{$edad->edad}}" readonly @endisset>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">%Grasa:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                           id="grasa" name="grasa" maxlength="3"
-                           value="{{old('grasa')}}" readonly>
-
-            </div>
-
-
-                <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Diagnostico:</h6>
-                    <input style="width: 310px" type="text" class="form-control inputtamaño3" required
-                           id="leyenda" name="leyenda" maxlength="50"
-                           value="{{old('leyenda')}}"readonly>
-                </div>
-            </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Pc tricipital:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="pc_tricipital" name="pc_tricipital" maxlength="3" placeholder="Ingrese medicas en cm"
-                           value="{{old('pc_tricipital')}}">
+                           value="{{old('pc_tricipital')}}" onkeyup="calcularGrasa()">
 
                 </div>
 
@@ -206,7 +171,7 @@
                     <h6 class="label2" for="email">Pc Infraescrupural:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medida en cm"
-                           value="{{old('pc_infraescapular')}}">
+                           value="{{old('pc_infraescapular')}}"  onkeyup="calcularGrasa()">
 
                 </div>
             </div>
@@ -216,7 +181,7 @@
                     <h6 class="label2" for="email">Pc Biciptal:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medida en cm"
-                           value="{{old('pc_biciptal')}}">
+                           value="{{old('pc_biciptal')}}"  onkeyup="calcularGrasa()">
 
                 </div>
 
@@ -225,10 +190,27 @@
                     <h6 class="label2" for="email">Pc SupraIliaco:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50" placeholder="Ingrese medida en cm"
-                           value="{{old('pc_supra_iliaco')}}">
+                           value="{{old('pc_supra_iliaco')}}"  onkeyup="calcularGrasa()">
 
                 </div>
             </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <h6 class="label2" for="email">Porcentaje:</h6>
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                               id="grasa" name="grasa" maxlength="3"
+                               value="{{old('grasa')}}" readonly>
+
+                    </div>
+
+
+                    <div class="form-group col-md-6">
+                        <h6 class="label2" for="email">Clasificacion:</h6>
+                        <input style="width: 310px" type="text" class="form-control inputtamaño3" required
+                               id="leyenda" name="leyenda" maxlength="50"
+                               value="{{old('leyenda')}}"readonly>
+                    </div>
+                </div>
 
             <div class="form-group col-md-5 ">
             <h6 class="label2 " for="email">Fecha:</h6>

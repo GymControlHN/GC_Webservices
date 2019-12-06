@@ -40,10 +40,8 @@ class GrasaController extends Controller
 
         $now = Carbon::now();
         $nombre = Cliente::find($id);
-        $imc = Imc::where("id_cliente", "=", $id)->latest("updated_at")->first();
-        $edad = Cliente::findOrfail($id);
-        return view('botongrasa')->with("id", $id)->with("now", $now)->with("imc", $imc)->with("now", $now)
-            ->with("edad", $edad)->with("nombre",$nombre);
+        return view('botongrasa')->with("id", $id)->with("now", $now)->with("now", $now)
+            ->with("nombre",$nombre);
 
     }
 
@@ -59,8 +57,6 @@ class GrasaController extends Controller
         $nuevoMedida->pc_infraescapular = $request->input('pc_infraescapular');
         $nuevoMedida->pc_supra_iliaco = $request->input('pc_supra_iliaco');
         $nuevoMedida->pc_biciptal = $request->input('pc_biciptal');
-        $nuevoMedida->edad = $request->input('edad');
-        $nuevoMedida->imc = $request->input('imc');
         $nuevoMedida->grasa = $request->input('grasa');
         $nuevoMedida->id_cliente = $request->input("id");
         $nuevoMedida->leyenda = $request->input('leyenda');
@@ -102,8 +98,6 @@ class GrasaController extends Controller
         $medida->pc_infraescapular = $request->input('pc_infraescapular');
         $medida->pc_supra_iliaco = $request->input('pc_supra_iliaco');
         $medida->pc_biciptal = $request->input('pc_biciptal');
-        $medida->edad = $request->input('edad');
-        $medida->imc = $request->input('imc');
         $medida->grasa = $request->input('grasa');
         $medida->leyenda = $request->input('leyenda');
         $medida->id_cliente = $request->input("id_cliente");

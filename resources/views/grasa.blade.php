@@ -86,14 +86,14 @@
                     <thead class="thead-light">
                     <tr >
                         <th scope="col">N°</th>
-                        <th scope="col">Imc</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">%Grasa</th>
-                        <th scope="col">Diagnóstico</th>
+
+
                         <th scope="col">PC Tricipital</th>
                         <th scope="col">PC Infraescapular</th>
                         <th scope="col">PC Supra Ilíaco</th>
                         <th scope="col">PC Biciptal</th>
+                        <th scope="col">Porcentaje</th>
+                        <th scope="col">Clasificacion</th>
                         <th scope="col">Fecha</th>
                         <th scope="col">Acciones</th>
 
@@ -106,15 +106,15 @@
                             @foreach($grasa_corporal as $grasa)
                                 <tr style="text-align:right">
                                     <td>{{$no++}}</td>
-                                <td>{{$grasa->imc}}</td>
-                                <td>{{$grasa->edad}}</td>
-                                <td>{{$grasa->grasa}}</td>
-                                <td>{{$grasa->leyenda}}</td>
+
 
                                 <td>{{$grasa->pc_tricipital}}</td>
                                 <td>{{$grasa->pc_infraescapular}}</td>
                                 <td>{{$grasa->pc_supra_iliaco}}</td>
                                 <td>{{$grasa->pc_biciptal}}</td>
+
+                                    <td>{{$grasa->grasa}}</td>
+                                    <td>{{$grasa->leyenda}}</td>
                                 <th>{{$grasa->fecha_de_ingreso}}</th>
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2 "><a
