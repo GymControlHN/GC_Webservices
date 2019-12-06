@@ -25,6 +25,8 @@ class CreateRuffierTable extends Migration
             $table->double('mvodiagnostico');
             $table->unsignedInteger('id_cliente');
             $table->foreign('id_cliente')->references("id")->on("clientes_gym");
+            $table->unsignedInteger('id_diagnostico');
+            $table->foreign('id_diagnostico')->references("id")->on("diagnostico_ruffier");
             $table->timestamps();
 
         });

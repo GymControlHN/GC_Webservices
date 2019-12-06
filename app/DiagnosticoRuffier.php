@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Diagnostico extends Model
+class DiagnosticoRuffier extends Model
 {
-    protected $table="diagnostico";
+    protected $table="diagnostico_ruffier";
     protected $fillable =["diagnostico"];
 }

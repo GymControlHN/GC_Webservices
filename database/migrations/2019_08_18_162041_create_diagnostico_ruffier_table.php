@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDiagnosticoTable extends Migration
+class CreateDiagnosticoRuffierTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDiagnosticoTable extends Migration
      */
     public function up()
     {
-        Schema::create('diagnostico', function (Blueprint $table) {
+        Schema::create('diagnostico_ruffier', function (Blueprint $table) {
             $table->increments('id');
             $table->string('diagnostico');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateDiagnosticoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diagnostico');
+        Schema::dropIfExists('diagnostico_ruffier');
     }
 }
