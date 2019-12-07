@@ -250,10 +250,10 @@
         <div class="container2">
 
 
-            <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
-                                                                        href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
+            <a class="btn btn-primary my-2 boton"
+               href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
 
-            </button>
+
 
             <button type="submit" class="btn btn-primary  boton3">Guardar</button>
         </div>
