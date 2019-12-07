@@ -132,7 +132,7 @@
                                 <td>{{$antecedente->peso}}</td>
                                 <td>{{$antecedente->altura}}</td>
                                 <td>{{$antecedente->imc}}</td>
-                                <td>{{$antecedente->leyenda}}</td>
+                                <td>{{$antecedente->diagnostico}}</td>
                                 <td>{{$antecedente->pecho}}</td>
                                 <td>{{$antecedente->brazo}}</td>
                                 <td>{{$antecedente->ABD_A}}</td>

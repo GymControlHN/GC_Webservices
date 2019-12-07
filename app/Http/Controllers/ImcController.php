@@ -11,7 +11,11 @@ class ImcController extends Controller
 {
     public function index($id)
     {
-         $antecedentes = Imc::where("id_cliente","=",$id)
+         $antecedentes =
+             Imc::join("diagnostico_imcs",
+                 "antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+                 ->where("id_cliente","=",$id)
+                 ->select("antecedentes.*","diagnostico_imcs.diagnostico")
              ->orderBy("created_at","desc")->paginate(10);
 
 
@@ -54,7 +58,7 @@ class ImcController extends Controller
         $nuevoImc->peso = $request->input('peso');
         $nuevoImc->altura = $request->input('altura');
         $nuevoImc->imc = $request->input('imc');
-        $nuevoImc->leyenda = $request->input('leyenda');
+        $nuevoImc->id_diagnostico = $request->input('id_diagnostico');
         $nuevoImc->pecho = $request->input('pecho');
         $nuevoImc->brazo = $request->input('brazo');
         $nuevoImc->ABD_A = $request->input('ABD_A');
@@ -129,7 +133,7 @@ class ImcController extends Controller
         $nuevoImc->peso = $request->input('peso');
         $nuevoImc->altura = $request->input('altura');
         $nuevoImc->imc = $request->input('imc');
-        $nuevoImc->leyenda = $request->input('leyenda');
+        $nuevoImc->id_diagnostico = $request->input('id_diagnostico');
         $nuevoImc->pecho = $request->input('pecho');
         $nuevoImc->brazo = $request->input('brazo');
         $nuevoImc->ABD_A = $request->input('ABD_A');

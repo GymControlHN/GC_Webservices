@@ -50,8 +50,6 @@
          aria-label="Button group with nested dropdown">
 
 
-
-
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
             <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
             href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
@@ -64,7 +62,7 @@
                style="display: none;"
                     @endif >Pagos</a>
         @endif
-        <a class="btn btn-primary"  href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
+        <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
@@ -84,33 +82,34 @@
 
 
                 if (imc > 40) {
-                    leyenda = "Obesidad tipo III";
+                    leyenda =
+                        1;
                 } else if (imc > 34.99) {
                     leyenda =
-                        "Obesidad tipo II";
+                        2;
 
                 } else if (imc > 29.99) {
                     leyenda =
-                        "Obesidad tipo I";
+                        3;
 
                 } else if (imc > 24.99) {
                     leyenda =
-                        "Preobesidad";
+                        4;
 
                 } else if (imc > 18.49) {
                     leyenda =
-                        "Peso normal";
+                        5;
 
                 } else if (imc > 16.99) {
                     leyenda =
-                        "Delgadez";
+                        6;
 
                 } else if (imc > 16.00) {
                     leyenda =
-                        "Delgadez severa";
+                        7;
 
                 } else {
-                    leyenda = "Algo salio mal"
+                    leyenda = 8
                 }
                 document.getElementById("leyenda").value = leyenda;
 
@@ -145,23 +144,6 @@
                            onkeyup="calcularIMC()" value="{{old('altura')}}">
 
                 </div>
-                <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">Imc:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
-                           id="imc" name="imc" maxlength="3" value="
-                    {{old('imc')}}" readonly>
-                </div>
-
-
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">Diagnostico:</h6>
-                    <input style="width: 310px" type="text" class="form-control inputtamaño3" required
-                           id="leyenda" name="leyenda" maxlength="50" value="{{old('leyenda')}}" readonly>
-
-                </div>
 
 
                 <div class="form-group col-md-4">
@@ -175,10 +157,6 @@
                     <input style="width:310px" type="number" class="form-control inputtamaño3" required
                            name="brazo" id="brazo" value="{{old('brazo')}}" placeholder="Ingrese la talla en cm">
                 </div>
-            </div>
-
-
-            <div class="form-row">
                 <div class="form-group col-md-4">
                     <h6 class="label2" for="email">ABD-A:</h6>
                     <input style="width:310px" type="number" class="form-control inputtamaño3" required
@@ -197,10 +175,6 @@
                            name="cadera" id="cadera" value="{{old('cadera')}}" placeholder="Ingrese la talla en cm">
                 </div>
 
-            </div>
-
-
-            <div class="form-row">
                 <div class="form-group col-md-4">
                     <h6 class="label2" for="email">Muslo:</h6>
                     <input style="width:310px" type="number" class="form-control inputtamaño3" required
@@ -226,25 +200,43 @@
                            value="{{old('fecha_de_ingreso', $now->format('Y-m-d'))}}" readonly>
                 </div>
             </div>
-                </div>
-
-
-            <input name="id" value="{{$id}}" type="hidden">
-            <div class="container2">
-
-
-                <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
-                                                                            href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
-
-                </button>
-
-                <button type="submit" class="btn btn-primary  boton3">Guardar</button>
-            </div>
-
 
         </div>
 
+
+        <input name="id" value="{{$id}}" type="hidden">
+        <div class="container2">
+
+
+            <button type="button" class="btn btn-primary my-2 boton"><a style="color: white"
+                                                                        href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
+
+            </button>
+
+            <button type="submit" class="btn btn-primary  boton3">Guardar</button>
+        </div>
+
+
+        <div class="form-group col-md-4">
+            <h6 class="label2" for="email"></h6>
+            <input style="width: 310px;display: none;" type="hidden" class="form-control inputtamaño3"
+                   id="imc" name="imc" value="
+                    {{old('imc')}}">
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <h6 class="label2" for="email"></h6>
+                <input style="width: 310px" type="hidden" class="form-control inputtamaño3"
+                       id="leyenda" name="id_diagnostico" value="{{old('id_diagnostico')}}">
+
+            </div>
+        </div>
+
+
     </form>
+
     </div>
     </html>
 @endsection

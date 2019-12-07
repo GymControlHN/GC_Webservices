@@ -18,7 +18,7 @@ class CreateAntecedentesTable extends Migration
             $table->double('peso');
             $table->double('altura');
             $table->double('imc');
-            $table->string('leyenda',20);
+            $table->unsignedInteger('id_diagnostico');
             $table->double('pecho');
             $table->double('brazo');
             $table->double('ABD_A');
@@ -28,6 +28,8 @@ class CreateAntecedentesTable extends Migration
             $table->double('pierna');
             $table->unsignedInteger("id_cliente");
             $table->foreign("id_cliente")->references("id")->on("clientes_gym");
+            $table->foreign("id_diagnostico")->references("id")->on("diagnostico_imcs");
+
             $table->timestamps();
         });
     }

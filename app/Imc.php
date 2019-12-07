@@ -12,7 +12,7 @@ class Imc extends Model
         'peso',
         'altura',
         'imc',
-        'leyenda',
+        'id_diagnostico',
         'pecho',
         'brazo',
         'ABD_A',
