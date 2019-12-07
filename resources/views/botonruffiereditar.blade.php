@@ -70,7 +70,14 @@
 
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" >
         <title>FORMULARIO PESO IDEAL</title>
-        <script type="text/javascript">function calcularRuffiel() {
+        <script type="text/javascript">
+            document.onreadystatechange= function () {
+
+                if(document.readyState==="complete"){
+                    calcularMVO2();
+                }
+            };
+            function calcularRuffiel() {
                 var pulso1 = parseFloat(document.getElementById("pulso_r").value);
                 var pulso2 = parseFloat(document.getElementById("pulso_a").value);
                 var pulso3 = parseFloat(document.getElementById("pulso_d").value);
@@ -82,35 +89,31 @@
 
 
                 if (ruffiel > 16) {
-                    leyenda = "Bajo ";
+                    leyenda = 1;
 
                     // grasa<=4 && grasa >= 2
                 } else if (ruffiel > 11) {
                     leyenda =
-                        "Mediano";
+                       2;
 
                 } else if (ruffiel > 10) {
                     leyenda =
-                        "Bueno";
-
-                } else if (ruffiel > 5) {
-                    leyenda =
-                        "Muy bueno";
+                        3;
 
                 } else if (ruffiel >= 1) {
                     leyenda =
-                        "Muy Bueno";
+                       4;
 
                 } else if (ruffiel == 0) {
                     leyenda =
-                        "Muy Bueno";
+                       5;
 
                 } else {
-                    leyenda = "Algo salio mal"
+                    leyenda = 6
                 }
 
 
-                document.getElementById("leyenda").value = leyenda;
+                document.getElementById("id_diagnostico").value = leyenda;
             }
             function calcularMVO2() {
                 var mvo= parseFloat(document.getElementById("mvo").value);
@@ -190,13 +193,12 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <h6 class="label2" for="email">Diagnostico:</h6>
                     <input style="width: 310px" type="text" class="form-control inputtamaño3"
-                           id="leyenda" name="leyenda" maxlength="50"
+                           id="id_diagnostico" name="id_diagnostico" maxlength="50"
                            @isset($dato)
-                           value="{{$dato->leyenda}}"
+                           value="{{$dato->id_diagnostico}}"
                             @endisset
-                           value="{{old('leyenda')}}" readonly
+                           value="{{old('id_diagnostico')}}" readonly
                     >
                 </div>
 

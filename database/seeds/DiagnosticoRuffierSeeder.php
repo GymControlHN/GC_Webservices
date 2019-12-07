@@ -32,6 +32,10 @@ class DiagnosticoRuffierSeeder extends Seeder
         $diagnostico->diagnostico = "Excelente";
         $diagnostico->save();
 
+        $diagnostico = new DiagnosticoRuffier();
+        $diagnostico->diagnostico = "Algo salió mal";
+        $diagnostico->save();
+
 
     }
 }

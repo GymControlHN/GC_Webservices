@@ -15,7 +15,9 @@ class RuffierController extends Controller
 
     public function index($id)
     {
-        $datos = Ruffier::where("id_cliente","=",$id)
+        $datos = Ruffier ::join("diagnostico_ruffier","ruffier.id_diagnostico","=","diagnostico_ruffier.id")
+        ->where("id_cliente","=",$id)
+            ->select("diagnostico_ruffier.diagnostico","ruffier.*")
             ->orderBy("created_at","desc")->paginate(10);
         $cliente = Cliente::find($id);
         return view('ruffiel',compact("datos"))->with("cliente", $cliente)->with("no", 1);
@@ -42,7 +44,7 @@ class RuffierController extends Controller
         $nuevosDatos->pulso_a = $request->input('pulso_a');
         $nuevosDatos->pulso_d = $request->input('pulso_d');
         $nuevosDatos->ruffiel = $request->input('ruffiel');
-        $nuevosDatos->leyenda = $request->input('leyenda');
+        $nuevosDatos->id_diagnostico = $request->input('id_diagnostico');
         $nuevosDatos->mvo = $request->input('mvo');
         $nuevosDatos->mvoreal = $request->input('mvoreal');
         $nuevosDatos->mvodiagnostico = $request->input('mvodiagnostico');
@@ -86,7 +88,7 @@ class RuffierController extends Controller
         $datonuevo->pulso_a = $request->input('pulso_a');
         $datonuevo->pulso_d = $request->input('pulso_d');
         $datonuevo->ruffiel = $request->input('ruffiel');
-        $datonuevo->leyenda = $request->input('leyenda');
+        $datonuevo->id_diagnostico = $request->input('id_diagnostico');
         $datonuevo->mvo = $request->input('mvo');
         $datonuevo->mvoreal = $request->input('mvoreal');
         $datonuevo->mvodiagnostico = $request->input('mvodiagnostico');

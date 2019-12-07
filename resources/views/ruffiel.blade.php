@@ -95,7 +95,7 @@
 
 
 
-            <div class="table-responsive">
+            <div class="table-responsive ">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
                     <thead class="thead-light">
                     <tr>
@@ -125,7 +125,7 @@
                                 <td>{{$dato->pulso_a}}</td>
                                 <td>{{$dato->pulso_d}}</td>
                                 <td>{{$dato->ruffiel}}</td>
-                                <td>{{$dato->leyenda}}</td>
+                                <td style="text-align: center">{{$dato->diagnostico}}</td>
                                 <td>{{$dato->mvo}}</td>
                                 <td>{{$dato->mvoreal}}</td>
                                     <td>{{$dato->mvodiagnostico}}</td>

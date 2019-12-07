@@ -19,7 +19,6 @@ class CreateRuffierTable extends Migration
             $table->double('pulso_a');
             $table->double('pulso_d');
             $table->float('ruffiel');
-            $table->string('leyenda',20)->nullable();
             $table->double('mvo');
             $table->double('mvoreal');
             $table->double('mvodiagnostico');

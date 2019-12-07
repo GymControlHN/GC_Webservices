@@ -83,46 +83,28 @@
 
 
 
-                if (ruffiel > 16 ) {
-                    leyenda="Bajo ";
+                if (ruffiel > 16) {
+                    leyenda = 1;
 
                     // grasa<=4 && grasa >= 2
-                }
-                else if (ruffiel>11 ) {
-                    leyenda=
-                        "Mediano";
+                } else if (ruffiel > 11) {
+                    leyenda =
+                        2;
 
-                }
+                } else if (ruffiel > 10) {
+                    leyenda =
+                        3;
 
-                else if (ruffiel>10 ) {
-                    leyenda=
-                        "Bueno";
+                } else if (ruffiel >= 1) {
+                    leyenda =
+                        4;
 
-                }
+                } else if (ruffiel == 0) {
+                    leyenda =
+                        5;
 
-
-                else if (ruffiel>5) {
-                    leyenda=
-                        "Muy bueno";
-
-                }
-
-
-
-                else if ( ruffiel >=1) {
-                    leyenda=
-                        "Muy Bueno";
-
-                }
-                else if ( ruffiel==0) {
-                    leyenda=
-                        "Excelente";
-
-                }
-
-
-                else{
-                    leyenda="Algo salio mal"
+                } else {
+                    leyenda = 6
                 }
 
 
@@ -199,10 +181,9 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Diagnostico:</h6>
                         <input style="width: 310px" type="text" class="form-control inputtamaño3"
-                               id="leyenda" name="leyenda" maxlength="50"
-                            value="{{old('leyenda')}}" readonly required>
+                               id="leyenda" name="id_diagnostico" maxlength="50"
+                            value="{{old('id_diagnostico')}}" readonly required>
                     </div>
 
                    <div class="form-group col-md-6">

@@ -13,11 +13,16 @@ class Ruffier extends Model
         'pulso_r',
         'pulso_a',
         'pulso_d',
-        'ruffiel',
-        'leyenda',
+        'id_diagnostico',
         'mvo',
         'mvoreal',
         "id_cliente",
         "mvodiagnostico"
         ];
+
+    public function diagnostico()
+    {
+        return $this->belongsTo('App\Ruffier',"id_diagnostico");//modelo
+    }
 }
+
