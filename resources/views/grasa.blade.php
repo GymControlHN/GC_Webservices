@@ -80,8 +80,8 @@
 
     <div class="w3-container w3-teal mx-5">
 
-        <div class="card" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-        box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
+        <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
             <div class="table-responsive" >

@@ -105,7 +105,8 @@
         <div class="table  mx-sm-0" style="padding: 45px ">
 
             <table class="table ruler-vertical table-hover mx-sm-0 "
-                   style="  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                   style=" -moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 <thead class="thead-light">
                 <tr>
                     <th >N°</th>

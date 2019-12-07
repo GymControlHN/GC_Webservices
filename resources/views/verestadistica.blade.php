@@ -37,8 +37,8 @@
         <div class="table-responsive mb-5"
 
              @if($cliente->id_tipo_cliente==1||$cliente->id_tipo_cliente==3)
-             style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-            box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);" @endif
+             style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);" @endif
                 >
             <table class="table ruler-vertical table-hover mx-sm-0 "  @if($cliente->id_tipo_cliente==3)
             href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
@@ -149,8 +149,8 @@
         </div>
 
         <h2 class="mt-3" >IMC</h2>
-        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-            box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
+        <div class="table-responsive mb-5" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
                 <thead class="thead-light">
                 <tr>
@@ -246,8 +246,8 @@
         </div>
 
             <h2 class="mt-3" >Grasa</h2>
-        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-                box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
+        <div class="table-responsive mb-5" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
 
                     <thead class="thead-light">
@@ -332,8 +332,8 @@
             </div>
 
                 <h2 class="mt-3" >Ruffier</h2>
-        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-                box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
+        <div class="table-responsive mb-5" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <table class="table ruler-vertical table-hover mx-sm-0 ">
                         <thead class="thead-light">
                         <tr>

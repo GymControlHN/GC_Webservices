@@ -15,10 +15,10 @@
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
 
 
-        <h2 class="  mt-3" >Listado de Estudiantes</h2>
+        <h2 class=" mt-3" >Listado de Estudiantes</h2>
 
 
-        <button type="button" class="btn btn-primary float-right"  id="crearNuevo" data-toggle="modal" data-target="#exampleModalScrollable">
+        <button type="button" class="btn btn-primary float-right boton1"  id="crearNuevo" data-toggle="modal" data-target="#exampleModalScrollable">
             <i class="fas fa-user-plus"></i>
         </button>
 
@@ -403,10 +403,10 @@
         </div>
 
 
-        <div class="table-responsive mb-5" style="-moz-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);
-box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
+        <div class="table-responsive " style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
-                <thead class="thead-light">
+                <thead class="thead-light ">
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
@@ -533,3 +533,17 @@ box-shadow: 1px 1px 10px 1px rgba(161,161,161,1);">
         </div>
     </div>
 @endsection
+ <style>
+     .boton1:hover {
+         transition: all 0.2s ease;
+         transform: scaleY(1.3) scaleX(1.3);
+     }
+
+     .tabla1:hover {
+
+         box-shadow: 0 4px 16px rgba(49, 100, 50, 1);
+         transition: all 0.2s ease;
+         transform: scaleY(1.1) scaleX(1.1);
+     }
+
+ </style>
