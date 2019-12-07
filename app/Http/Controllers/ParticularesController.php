@@ -25,7 +25,7 @@ class ParticularesController extends Controller
         $this -> validate ( $request ,[
             'nombre'=>'required',
             'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
-            'identificacion'=>'required|unique:clientes_gym|max:13|numeric',
+            'identificacion'=>'required|unique:clientes_gym|max:9999999999999|numeric',
             'profesion_u_oficio'=>'required',
             'telefono'=>'required|unique:clientes_gym|max:99999999|numeric',
             'genero'=>'required',
@@ -64,7 +64,7 @@ class ParticularesController extends Controller
     public function update(Request $request) {
 
         $this -> validate ( $request ,[
-            'identificacion'=>'required|max:13|unique:clientes_gym,identificacion,'.$request->input("particular_id").'|numeric',
+            'identificacion'=>'required|max:9999999999999|unique:clientes_gym,identificacion,'.$request->input("particular_id").'|numeric',
             'telefono'=>'required|max:99999999|unique:clientes_gym,telefono,'.$request->input("particular_id").'|numeric',
             'nombre'=>'required',
             'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),

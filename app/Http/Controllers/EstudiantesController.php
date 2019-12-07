@@ -89,7 +89,7 @@ class  EstudiantesController extends Controller
 
 
         $this->validate($request, [
-            'identificacion' => 'required|max:9999999999999|numeric|unique:clientes_gym,identificacion,' . $request->input("estudiante_id") ,
+            'identificacion' => 'required|max:99999999999|numeric|unique:clientes_gym,identificacion,' . $request->input("estudiante_id") ,
             'telefono' => 'required|max:99999999|numeric|unique:clientes_gym,telefono,' . $request->input("estudiante_id") . '',
             'nombre' => 'required',
             'carrera' => 'required',
