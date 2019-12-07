@@ -100,7 +100,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary"   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Cerrar Sesión</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
             </div>
         </div>
     </div>
