@@ -95,7 +95,7 @@
 
 
 
-            <div class="table-responsive mb-5">
+            <div class="table-responsive">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
                     <thead class="thead-light">
                     <tr>

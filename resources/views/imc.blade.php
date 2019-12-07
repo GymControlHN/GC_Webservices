@@ -101,7 +101,7 @@
         box-shadow: 1px 1px 10px 1px rgba(161,161,161,1); border: none">
 
 
-            <div class="table-responsive mb-5">
+            <div class="table-responsive ">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
                     <thead class="thead-light">
                     <tr>

@@ -296,7 +296,7 @@
                     @endforeach
                     @else
                         <tr>
-                            <td colspan="9" style="text-align: center">No hay medidas ingresados</td>
+                            <td colspan="11" style="text-align: center">No hay medidas ingresados</td>
                     @endif
                             <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarGrasa">
                                 <div class="modal-dialog" role="document">
@@ -377,7 +377,7 @@
                         </tr>
                         @endforeach
                         @else
-                            <td colspan="9" style="text-align: center">No hay medidas ingresados</td>
+                            <td colspan="10" style="text-align: center">No hay medidas ingresados</td>
                         @endif
                         <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarRuffier">
                             <div class="modal-dialog" role="document">
