@@ -193,16 +193,6 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input style="width: 310px" type="text" class="form-control inputtamaño3"
-                           id="id_diagnostico" name="id_diagnostico" maxlength="50"
-                           @isset($dato)
-                           value="{{$dato->id_diagnostico}}"
-                            @endisset
-                           value="{{old('id_diagnostico')}}" readonly
-                    >
-                </div>
-
-                <div class="form-group col-md-6">
                 <h6 class="label2" for="email">MVO2:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="mvo" name="mvo" maxlength="3"
@@ -212,26 +202,36 @@
                     value="{{old('mvo')}}"
                     >
                 </div>
-            </div>
 
-            <div class="form-row">
                 <div class="form-group col-md-6">
-                <h6 class="label2" for="email">MVO2 Real:</h6>
-                <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <h6 class="label2" for="email">MVO2 Real:</h6>
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
 
                            @isset($dato)
                            value="{{$dato->mvoreal}}"
-                            @endisset
-                    value="{{old('mvoreal')}}"
+                           @endisset
+                           value="{{old('mvoreal')}}"
                     >
                 </div>
+            </div>
 
+            <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email">Diagnostico MVO:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
                            value="{{old(' mvodiagnostico')}}" readonly required >
+                </div>
+
+                <div class="form-group col-md-6">
+                    <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3"
+                           id="id_diagnostico" name="id_diagnostico" maxlength="50"
+                           @isset($dato)
+                           value="{{$dato->id_diagnostico}}"
+                           @endisset
+                           value="{{old('id_diagnostico')}}" readonly
+                    >
                 </div>
             </div>
 
