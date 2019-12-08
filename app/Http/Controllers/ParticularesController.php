@@ -133,7 +133,7 @@ class ParticularesController extends Controller
             ->orWhere("created_at","like","%".$busquedaPart."%")
             ->paginate(10);
 
-        return view('particulares')->with('particulares', $particulares);
+        return view('particulares')->with('particulares', $particulares)->with('no',1);
 
     }
 

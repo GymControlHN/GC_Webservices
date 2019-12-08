@@ -147,7 +147,7 @@ class DocentesController extends Controller
             ->orWhere("created_at", "like", "%" . $busquedaDoc . "%")
             ->paginate(10);
 
-        return view('docentes')->with('docentes', $docentes);
+        return view('docentes')->with('docentes', $docentes)->with('no',1);
     }
 
 

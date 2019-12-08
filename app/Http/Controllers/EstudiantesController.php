@@ -164,11 +164,11 @@ class  EstudiantesController extends Controller
             ->join("carreras","clientes_gym.id_carrera","=","carreras.id")
             ->select("clientes_gym.*","carreras.carrera")
         ->where("nombre","like","%".$busqueda."%")
-            ->orWhere("created_at","like","%".$busqueda."%")
+            ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
             ->paginate(10);
         $carrera = Carrera::all();
 
-        return view('estudiantes')->with('estudiantes', $clientes)->with("carreras",$carrera);
+        return view('estudiantes')->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1);
     }
 
 
