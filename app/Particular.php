@@ -14,6 +14,7 @@ class Particular extends Model
         'fecha_nacimiento',
         'numero_de_identidad',
         'profesion_u_oficio',
-        'telefono'
+        'telefono',
+        "imagen"
     ];
 }

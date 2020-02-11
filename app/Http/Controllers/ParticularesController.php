@@ -32,7 +32,14 @@ class ParticularesController extends Controller
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
-
+            $imagen = $_FILES["imagen"]["name"];
+            $ruta = $_FILES["imagen"]["tmp_name"];
+            if($_FILES["imagen"]["name"]) {
+                $destino = "clientes_imagenes/" . $imagen;
+                copy($ruta, $destino);
+            } else{
+                $imagen="";
+            }
             $nuevoParticular = new Cliente();
 
         $nuevoParticular->nombre = $request->input('nombre');
@@ -43,6 +50,7 @@ class ParticularesController extends Controller
         $nuevoParticular->id_carrera=1;
         $nuevoParticular->genero = $request->input ('genero');
         $nuevoParticular->id_tipo_cliente="3";
+            $nuevoParticular->imagen=$imagen;
         $nuevoParticular->save();
 
         //TODO redireccionar a una página con sentido.

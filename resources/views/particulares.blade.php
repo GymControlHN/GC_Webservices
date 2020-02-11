@@ -64,7 +64,8 @@
 
                         <div class="modal-body">
 
-                            <form method="post" action="{{route('particular.guardar')}}">
+                            <form method="post" action="{{route('particular.guardar')}}" name="f2"
+                                  enctype="multipart/form-data">
 
                                 <div class="form-row">
                                     <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
@@ -171,7 +172,14 @@
                                 </div>
 
 
+                                <div class="form-row">
+                                    <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
+                                        <h6>Imagen del estudiante</h6>
+                                        <input type="file" accept="image/*" class="form-control" id="imagen"
+                                               name="imagen"/>
 
+                                    </div>
+                                </div>
 
                                 <div class="modal-footer">
                                 <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -374,7 +382,14 @@
 
 
 
+                            <div class="form-row">
+                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
+                                    <h6>Imagen del estudiante</h6>
+                                    <input type="file" accept="image/*" class="form-control" id="imagen"
+                                           name="imagen"/>
 
+                                </div>
+                            </div>
 
 
                             <div class="modal-footer">
