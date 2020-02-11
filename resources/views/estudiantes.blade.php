@@ -265,7 +265,7 @@
                     <div class="modal-body">
 
 
-                        <form method="post" action="{{route('estudiante.update')}}">
+                        <form method="post" action="{{route('estudiante.update')}}" enctype="multipart/form-data">
                             <input type="hidden" name="estudiante_id" id="id" value="">
 
                             {{method_field('put')}}
@@ -399,7 +399,14 @@
                                 </div>
 
                             </div>
+                            <div class="form-row">
+                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
+                                    <h6>Imagen del estudiante</h6>
+                                    <input type="file" accept="image/*" class="form-control" id="imagen"
+                                           name="imagen"/>
 
+                                </div>
+                            </div>
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>

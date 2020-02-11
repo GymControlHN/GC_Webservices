@@ -112,6 +112,14 @@ class  EstudiantesController extends Controller
 
             $carreraExiste = Carrera::where("id", "=", $request->input('carrera'));
             if ($carreraExiste->count() > 0) {
+                $imagen = $_FILES["imagen"]["name"];
+                $ruta = $_FILES["imagen"]["tmp_name"];
+                if($_FILES["imagen"]["name"]) {
+                    $destino = "clientes_imagenes/" . $imagen;
+                    copy($ruta, $destino);
+                } else{
+                    $imagen="";
+                }
                 $nuevoEstudiante = new Cliente();
 
 
@@ -124,7 +132,7 @@ class  EstudiantesController extends Controller
                 $estudiantes->telefono = $request->input("telefono");
                 $estudiantes->id_tipo_cliente = "1";
                 $estudiantes->genero = strtoupper($request->input("genero"));
-
+                $estudiantes->imagen=$imagen;
                 $estudiantes->save();
 
                 $estudiantes1 = Cliente::paginate(10);
