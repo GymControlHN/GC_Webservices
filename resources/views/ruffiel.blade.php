@@ -29,6 +29,7 @@
 
     <div class="w3-container w3-teal mx-5">
 
+        <img style="border-radius: 50%" src="/clientes_imagenes/{{$cliente->imagen}}" width="150px" height="150px">
         <div class="card margencard" style=" border: none">
 
 

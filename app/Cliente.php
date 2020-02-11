@@ -20,7 +20,8 @@ class Cliente extends Model
         'id_carrera',
         'id_tipo_cliente',
         'genero',
-        'telefono'
+        'telefono',
+        "imagen"
     ];
 
     public function getEdadAttribute(){

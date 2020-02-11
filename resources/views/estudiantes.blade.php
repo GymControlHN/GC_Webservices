@@ -15,10 +15,11 @@
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
 
 
-        <h2 class=" mt-3" >Listado de Estudiantes</h2>
+        <h2 class=" mt-3">Listado de Estudiantes</h2>
 
 
-        <button type="button" class="btn btn-primary float-right boton1"  id="crearNuevo" data-toggle="modal" data-target="#exampleModalScrollable">
+        <button type="button" class="btn btn-primary float-right boton1" id="crearNuevo" data-toggle="modal"
+                data-target="#exampleModalScrollable">
             <i class="fas fa-user-plus"></i>
         </button>
 
@@ -28,25 +29,24 @@
         </button-->
         @if(session("errors"))
             <script>
-                document.onreadystatechange= function () {
+                document.onreadystatechange = function () {
 
-                    if(document.readyState==="complete"){
+                    if (document.readyState === "complete") {
                         document.getElementById("crearNuevo").click();
                     }
                 };
 
             </script>
-            @endif
+        @endif
         <script>
             function limpiarDatosModal() {
-                document.getElementById("nombre").value='';
-                document.getElementById("fecha_nacimiento").value='';
-                document.getElementById("identificacion").value='';
-                document.getElementById("carrera").value=1;
-                document.getElementById("telefono").value='';
-                document.getElementById("sexo1").checked=false;
-                document.getElementById("sexo2").checked=false;
-
+                document.getElementById("nombre").value = '';
+                document.getElementById("fecha_nacimiento").value = '';
+                document.getElementById("identificacion").value = '';
+                document.getElementById("carrera").value = 1;
+                document.getElementById("telefono").value = '';
+                document.getElementById("sexo1").checked = false;
+                document.getElementById("sexo2").checked = false;
 
 
             }
@@ -57,21 +57,23 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Registro Estudiantes</h5>
-                        <button type="button" class="close" onclick="limpiarDatosModal()" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" onclick="limpiarDatosModal()" data-dismiss="modal"
+                                aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
 
-                        <form method="post" action="{{route('estudiante.guardar')}}" name="f2">
+                        <form method="post" action="{{route('estudiante.guardar')}}" name="f2"
+                              enctype="multipart/form-data">
 
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
                                     <h6>Nombre Completo</h6>
                                     <input
-                                           value="{{old("nombre")}}"
-                                           class="form-control solo-letras"   id="nombre" name="nombre"
-                                           required
+                                            value="{{old("nombre")}}"
+                                            class="form-control solo-letras" id="nombre" name="nombre"
+                                            required
                                     >
                                     @if ($errors->has('nombre'))
                                         <span class="help-block">
@@ -80,18 +82,19 @@
                                     @endif
                                 </div>
 
-                                    <div class="form-group {{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
+                                <div class="form-group {{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
                                     <h6>Fecha de nacimiento</h6>
-                                    <input type="date"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                    <input type="date" class="form-control" id="fecha_nacimiento"
+                                           name="fecha_nacimiento"
 
                                            required
                                            max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                            value="{{old("fecha_nacimiento")}}">
-                                        @if ($errors->has('fecha_nacimiento'))
-                                            <span class="help-block" style="color: red">
+                                    @if ($errors->has('fecha_nacimiento'))
+                                        <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
                                     </span>
-                                        @endif
+                                    @endif
 
                                 </div>
                             </div>
@@ -100,7 +103,8 @@
                                 <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
                                     <h6>Número Cuenta</h6>
                                     <input type="text" pattern="([0-9]{1,11})"
-                                           class="form-control{{ $errors->has('identificacion') ? ' has-error' : '' }}" id="identificacion"
+                                           class="form-control{{ $errors->has('identificacion') ? ' has-error' : '' }}"
+                                           id="identificacion"
                                            name="identificacion"
                                            title="Ingrese solo números"
                                            required
@@ -123,14 +127,15 @@
                                             <option value="{{$carrera->id}}"
                                                     {{ old('carrera') == $carrera->id ? "selected" : "" }}>{{$carrera->carrera}}</option>
                                         @endforeach
-                                            @if ($errors->has('carrera'))
-                                                <span class="help-block" style="color: red">
+                                        @if ($errors->has('carrera'))
+                                            <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('carrera') }}</strong>
                                     </span>
-                                            @endif
+                                        @endif
 
                                     </select>
                                 </div>
+
                             </div>
 
 
@@ -138,11 +143,13 @@
                             <div class="form-row">
                                 <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} col-md-6">
                                     <h6> Teléfono </h6>
-                                    <input type="text" pattern="([0-9]{1,8})" class="form-control{{ $errors->has('telefono') ? ' has-error' : '' }}" id="telefono" name="telefono"
+                                    <input type="text" pattern="([0-9]{1,8})"
+                                           class="form-control{{ $errors->has('telefono') ? ' has-error' : '' }}"
+                                           id="telefono" name="telefono"
                                            title="Ingrese solo números"
                                            required
                                            value="{{old("telefono")}}"
-                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999"  >
+                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999">
                                     @if ($errors->has('telefono'))
                                         <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('telefono') }}</strong>
@@ -150,8 +157,6 @@
                                     @endif
 
                                 </div>
-
-
 
 
                                 <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
@@ -164,28 +169,38 @@
                                                name="genero" id="sexo1" value="M"
                                                required
                                                @if(old("genero")==='M')
-                                                   checked
-                                                   @endif>
-                                        <label style="color:black; margin-top: 5px"  for="sexo1">Masculino</label>
+                                               checked
+                                                @endif>
+                                        <label style="color:black; margin-top: 5px" for="sexo1">Masculino</label>
 
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F" required
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F"
+                                               required
                                                @if(old("genero")==='F')
-                                                   checked
+                                               checked
                                                 @endif>
-                                        <label style="color:black; margin-top: 5px"  for="sexo2">Femenino</label>
+                                        <label style="color:black; margin-top: 5px" for="sexo2">Femenino</label>
                                     </div>
                                 </div>
+
                             </div>
 
+                            <div class="form-row">
+                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
+                                    <h6>Imagen del estudiante</h6>
+                                    <input type="file" accept="image/*" class="form-control" id="imagen"
+                                           name="imagen"/>
 
+                                </div>
 
-
+                            </div>
 
                             <div class="modal-footer">
-                                <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary" data-dismiss="modal" >cerrar</button>
-                                <button type="submit"  class="btn btn-primary">Guardar</button>
+                                <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary"
+                                        data-dismiss="modal">cerrar
+                                </button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
 
                             </div>
                         </form>
@@ -196,9 +211,6 @@
         </div>
 
 
-
-
-
         <form class="form-inline" method="get" action="{{route('estudiante.buscar')}}">
 
 
@@ -206,7 +218,7 @@
                 <input type="text" class="form-control mb-3" id="inputText2" name="busqueda"
                        placeholder="Buscar">
             </div>
-            <button type="submit" class="btn btn-primary mb-3 "  >Buscar</button>
+            <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
 
         @if(session("exito"))
@@ -230,9 +242,9 @@
 
         @if(session("errors"))
             <script>
-                document.onreadystatechange= function () {
+                document.onreadystatechange = function () {
 
-                    if(document.readyState==="complete"){
+                    if (document.readyState === "complete") {
                         document.getElementById("crearNuevo").click();
                     }
                 };
@@ -240,13 +252,13 @@
             </script>
         @endif
 
-        <div class="modal fade  bd-example-modal-lg"  id="editarEstudiante" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalScrollableTitle" >
+        <div class="modal fade  bd-example-modal-lg" id="editarEstudiante" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalScrollableTitle">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Estudiantes</h5>
-                        <button type="button"  class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -260,66 +272,68 @@
 
                             <div class="form-row">
                                 <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
-                            <h6>Nombre Completo</h6>
-                                <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
-                                       value="{{old("nombre")}}"
-                                       @isset($estudiante)
-                                       value="{{$estudiante->nombre}}"
-                                       @endisset value="{{old('nombre')}}">
+                                    <h6>Nombre Completo</h6>
+                                    <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
+                                           value="{{old("nombre")}}"
+                                           @isset($estudiante)
+                                           value="{{$estudiante->nombre}}"
+                                           @endisset value="{{old('nombre')}}">
                                     @if ($errors->has('nombre'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('nombre') }}</strong>
                                     </span>
                                     @endif
 
-                            </div>
+                                </div>
 
-                         <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
-                            <h6>Fecha de nacimiento</h6>
-                                <input type="date" pattern="([0-9]{1,3})"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
-                                       value="{{old("fecha_nacimiento")}}"
+                                <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
+                                    <h6>Fecha de nacimiento</h6>
+                                    <input type="date" pattern="([0-9]{1,3})" class="form-control" id="fecha_nacimiento"
+                                           name="fecha_nacimiento"
+                                           value="{{old("fecha_nacimiento")}}"
 
-                                       @isset($estudiante)
-                                       value="{{$estudiante->fecha_nacimiento}}"
-                                       @endisset value="{{old('fecha_nacimiento')}}"
-                                       title="Ingresa solo numeros entre 1 a 99 años"
-                                       required
-                                       minlength="1" maxlength="2" min="1" max="99"
-                                >
-                             @if ($errors->has('fecha_nacimiento'))
-                                 <span class="help-block">
+                                           @isset($estudiante)
+                                           value="{{$estudiante->fecha_nacimiento}}"
+                                           @endisset value="{{old('fecha_nacimiento')}}"
+                                           title="Ingresa solo numeros entre 1 a 99 años"
+                                           required
+                                           minlength="1" maxlength="2" min="1" max="99"
+                                    >
+                                    @if ($errors->has('fecha_nacimiento'))
+                                        <span class="help-block">
                                         <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
                                     </span>
-                             @endif
-                            </div>
+                                    @endif
+                                </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
-                            <h6>Número Cuenta</h6>
-                                <input  type="text"  pattern="([0-9]{1,11})"  class="form-control" id="identificacion" name="identificacion"
-                                        value="{{old("identificacion")}}"
-                                        @isset($estudiante)
-                                        value="{{$estudiante->identificacion}}"
-                                        @endisset value="{{old('identificacion')}}"
-                                        title="Ingrese solo números"
-                                        required
-                                        minlength="1" maxlength="11" aria-valuemax="11" max="99999999999"
-                                >
+                                    <h6>Número Cuenta</h6>
+                                    <input type="text" pattern="([0-9]{1,11})" class="form-control" id="identificacion"
+                                           name="identificacion"
+                                           value="{{old("identificacion")}}"
+                                           @isset($estudiante)
+                                           value="{{$estudiante->identificacion}}"
+                                           @endisset value="{{old('identificacion')}}"
+                                           title="Ingrese solo números"
+                                           required
+                                           minlength="1" maxlength="11" aria-valuemax="11" max="99999999999"
+                                    >
                                     @if ($errors->has('identificacion'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('identificacion') }}</strong>
                                     </span>
                                     @endif
-                            </div>
+                                </div>
 
-                         <div class="form-group{{ $errors->has('carrera') ? ' has-error' : '' }} col-md-6">
-                            <h6>Carrera</h6>
-                                <select class="form-control" id="carrera" placeholder="seleccione" name="carrera"
-                                        required>
-                                    @foreach($carreras as $carrera)
-                                        <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
-                                    @endforeach
+                                <div class="form-group{{ $errors->has('carrera') ? ' has-error' : '' }} col-md-6">
+                                    <h6>Carrera</h6>
+                                    <select class="form-control" id="carrera" placeholder="seleccione" name="carrera"
+                                            required>
+                                        @foreach($carreras as $carrera)
+                                            <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
+                                        @endforeach
                                         @if ($errors->has('carrera'))
                                             <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('carrera') }}</strong>
@@ -327,48 +341,49 @@
                                         @endif
 
 
-                                </select>
+                                    </select>
+                                </div>
                             </div>
-                            </div>
-
-
 
 
                             <div class="form-row">
                                 <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} col-md-6">
-                            <h6> Teléfono </h6>
-                                <input input="text"  pattern="([0-9]{1,8})"   class="form-control"   id="telefono" name="telefono"
-                                       value="{{old("telefono")}}"
-                                       @isset($estudiante)
-                                       value="{{$estudiante->telefono}}"
-                                       @endisset value="{{old('telefono')}}"
-                                       title="Ingrese solo números"
-                                       required
-                                       maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
-                                >
+                                    <h6> Teléfono </h6>
+                                    <input input="text" pattern="([0-9]{1,8})" class="form-control" id="telefono"
+                                           name="telefono"
+                                           value="{{old("telefono")}}"
+                                           @isset($estudiante)
+                                           value="{{$estudiante->telefono}}"
+                                           @endisset value="{{old('telefono')}}"
+                                           title="Ingrese solo números"
+                                           required
+                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
+                                    >
                                     @if ($errors->has('telefono'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('telefono') }}</strong>
                                     </span>
                                     @endif
-                            </div>
+                                </div>
 
                                 <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
                                     <h6>Sexo</h6>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="genero" id="sexo1E" value="M" required
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo1E" value="M"
+                                               required
                                                @isset($estudiante)
                                                value="{{$estudiante->sexo1}}"
                                                @endisset value="{{old('sexo1')}}"
                                                @if(old("genero")==='M')
                                                checked
                                                 @endif>
-                                        <label style="color:black; margin-top: 5px"  for="sexo1E">Masculino</label>
+                                        <label style="color:black; margin-top: 5px" for="sexo1E">Masculino</label>
 
 
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="genero" id="sexo2E" value="F" required
+                                        <input class="form-check-input" type="radio" name="genero" id="sexo2E" value="F"
+                                               required
                                                @isset($estudiante)
                                                value="{{$estudiante->sexo2}}"
                                                @endisset value="{{old('sexo2')}}"
@@ -376,25 +391,21 @@
                                                checked
                                                 @endif
                                         >
-                                        <label style="color:black; margin-top: 5px"  for="sexo2E">Femenino</label>
+                                        <label style="color:black; margin-top: 5px" for="sexo2E">Femenino</label>
 
 
                                     </div>
+
                                 </div>
 
                             </div>
 
 
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
 
-
-
-
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                            <button type="submit"  class="btn btn-primary">Guardar</button>
-
-                        </div>
+                            </div>
                         </form>
                     </div>
 
@@ -416,7 +427,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <th scope="col">Sexo</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Fecha de Ingreso</th>
-                    <th scope="col" >Acciones</th>
+                    <th scope="col">Acciones</th>
                 </tr>
                 </thead>
 
@@ -433,7 +444,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                             <td>{{$estudiante->genero}}</td>
                             <td>{{$estudiante->edad}}
                             <td>{{date("d-m-Y",strtotime($estudiante->created_at))}}</td>
-                            <div  style="overflow: auto"></div>
+                            <div style="overflow: auto"></div>
 
 
                             <td class="form-inline " style="width: 300px">
@@ -443,7 +454,8 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                     {{ csrf_field() }}
                                 </form>
 
-                                <button class="btn btn-warning mr-xl-2" data-toggle="modal" data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
+                                <button class="btn btn-warning mr-xl-2" data-toggle="modal"
+                                        data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
                                         data-myfecha_nacimiento="{{$estudiante->fecha_nacimiento}}"
                                         data-mycuenta="{{$estudiante->identificacion}}"
                                         data-myfecha="{{$estudiante->fecha_de_ingreso}}"
@@ -452,12 +464,12 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                         data-catid="{{$estudiante->id}}" data-sexo="{{$estudiante->genero}}"><i
                                             class="fas fa-edit"></i></button>
 
-                                    <button class="btn btn-danger mr-xl-2 "
-                                            data-id="{{$estudiante->id}}"
-                                            data-nombre="{{$estudiante->nombre}}"
-                                            data-toggle="modal"
-                                            data-target="#modalBorrarEstudiante"><i class="fas fa-trash-alt"></i>
-                                    </button>
+                                <button class="btn btn-danger mr-xl-2 "
+                                        data-id="{{$estudiante->id}}"
+                                        data-nombre="{{$estudiante->nombre}}"
+                                        data-toggle="modal"
+                                        data-target="#modalBorrarEstudiante"><i class="fas fa-trash-alt"></i>
+                                </button>
 
 
                                 <a class="btn btn-info mr-xl-2 "
@@ -490,7 +502,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 @endif
 
 
-
                 </tbody>
             </table>
 
@@ -520,7 +531,9 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <div class="modal-body">
                         <input name="id" id="id" type="hidden">
 
-                        <div>¿Está seguro que desea borrar a <label style="color: black;font-weight: bold" id="nombreBorrar"></label> ?</div>
+                        <div>¿Está seguro que desea borrar a <label style="color: black;font-weight: bold"
+                                                                    id="nombreBorrar"></label> ?
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -533,17 +546,17 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
         </div>
     </div>
 @endsection
- <style>
-     .boton1:hover {
-         transition: all 0.2s ease;
-         transform: scaleY(1.3) scaleX(1.3);
-     }
+<style>
+    .boton1:hover {
+        transition: all 0.2s ease;
+        transform: scaleY(1.3) scaleX(1.3);
+    }
 
-     .tabla1:hover {
+    .tabla1:hover {
 
-         box-shadow: 0 4px 16px rgba(49, 100, 50, 1);
-         transition: all 0.2s ease;
-         transform: scaleY(1.1) scaleX(1.1);
-     }
+        box-shadow: 0 4px 16px rgba(49, 100, 50, 1);
+        transition: all 0.2s ease;
+        transform: scaleY(1.1) scaleX(1.1);
+    }
 
- </style>
+</style>
