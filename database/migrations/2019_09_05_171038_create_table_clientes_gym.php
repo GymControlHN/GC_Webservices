@@ -25,6 +25,7 @@ class CreateTableClientesGym extends Migration
             $table->unsignedInteger('id_tipo_cliente');
             $table->String('genero');
             $table->char('telefono', 8)->unique();
+            $table->string("imagen")->nullable();
             $table->foreign("id_tipo_cliente")->references("id")->on("tipo_clientes");
             $table->timestamps();
 
