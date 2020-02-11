@@ -69,6 +69,8 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get("/botonruffier",function (){
         return view("botonruffier");
     });
+    // ruta graficos
+    Route::get('/grafico/{id}/mostrar','GraficoController@index')->name('grafico.mostrar');
 
     Route::post('/nuevousuario','AuthController@crear_usuario')->name('nuevo.usuario');
     Route::get('/perfil','AuthController@index')->name('usuarios');
