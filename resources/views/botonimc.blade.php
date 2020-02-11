@@ -87,8 +87,8 @@
                 } else if (imc > 34.99) {
                     leyenda =
                         2;
-
                 } else if (imc > 29.99) {
+
                     leyenda =
                         3;
 

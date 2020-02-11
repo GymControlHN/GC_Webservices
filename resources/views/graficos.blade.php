@@ -1,6 +1,7 @@
 @extends("layouts.principal")
 
 @section("content")
+
     <!-- Header -->
     <header class="fondo" style="max-height: 150px;">
         <div class="container">
@@ -30,6 +31,13 @@
 
         </div>
 
+    </div>
+
+
+    <div>
+        <div>
+            {!! $chart->container() !!}
+        </div>
     </div>
 
 
