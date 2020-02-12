@@ -56,10 +56,11 @@
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
     </div>
-    <button class="btn btn-danger float-right" style="margin-right: 50px" data-toggle="modal" data-target="#modalPagoEstudiante" >
-        <i class="fas fa-dollar-sign"></i> Agregar pago
+    <button class="btn btn-primary float-right" style="margin-right: 50px" data-toggle="modal"
+            data-target="#modalPagoEstudiante" >Pago
     </button>
     <br><br>
+
 
     <div class=" w3-container w3-teal mx-5">
 

@@ -86,7 +86,7 @@ class EstadisticasController extends Controller
             ->orWhere("fecha_de_ingreso","like","%".$busquedaCliente."%")
             ->paginate(10);
 
-        return view('estadisticas')->with('clientes', $clientes);
+        return view('estadisticas')->with('clientes', $clientes)->with('no',1);
     }
 
     public function borrarPagoEstadistica(Request $request)

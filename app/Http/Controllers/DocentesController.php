@@ -40,6 +40,15 @@ class DocentesController extends Controller
          ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
+            $imagen = $_FILES["imagen"]["name"];
+            $ruta = $_FILES["imagen"]["tmp_name"];
+            if($_FILES["imagen"]["name"]) {
+                $destino = "clientes_imagenes/" . $imagen;
+                copy($ruta, $destino);
+            } else{
+                $imagen="";
+            }
+
         $nuevoDocente = new Cliente();
         $nuevoDocente->nombre = $request->input('nombre');
         $nuevoDocente->identificacion = $request->input('identificacion');
@@ -49,6 +58,7 @@ class DocentesController extends Controller
         $nuevoDocente->genero = $request->input('genero');
         $nuevoDocente->id_carrera=1;
         $nuevoDocente->id_tipo_cliente="2";
+        $nuevoDocente->imagen=$imagen;
 
 
         $nuevoDocente->save();

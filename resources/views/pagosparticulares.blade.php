@@ -25,7 +25,7 @@
     </div>
 
     <div class="w3-container w3-teal mx-5">
-
+        <img style="border-radius: 50%" src="/clientes_imagenes/{{$nombre->imagen}}" width="150px" height="150px">
         <div class="card margencard" style="border: none">
 
 
@@ -63,8 +63,8 @@
     </div>
 
 
-    <button class="btn btn-danger float-right" style="margin-right: 50px" data-toggle="modal" data-target="#modalPagoParticular" >
-        <i class="fas fa-dollar-sign"></i> Agregar pago
+    <button class="btn btn-primary float-right" style="margin-right: 50px"
+            data-toggle="modal" data-target="#modalPagoParticular" >Pago
     </button>
 
     <div class="w3-container w3-teal mx-5">

@@ -23,7 +23,7 @@
 
         <h5 class="card margencard"  style="all: revert;  border: none;">Graficos</h5>
         <h5>Nombre: {{$cliente->nombre}}</h5>
-        <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group " style="margin-top: 30px;" role="group" aria-label="Button group with nested dropdown">
 
 
             <a class="btn btn-secondary" href="{{route("estadistica.ver",[$cliente->id])}}">Estadisticas</a>
