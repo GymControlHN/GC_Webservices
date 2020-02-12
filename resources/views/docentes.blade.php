@@ -61,7 +61,8 @@
                         </div>
 
                         <div class="modal-body">
-                            <form method="post" action="{{route('docente.guardar')}}">
+                            <form method="post" action="{{route('docente.guardar')}}" name="f2"
+                            enctype="multipart/form-data">
 
 
                                 <div class="form-row">
@@ -174,13 +175,23 @@
                                     </div>
 
                                 </div>
+                                <div class="form-row">
+                                    <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
+                                        <h6>Imagen del docente</h6>
+                                        <input type="file" accept="image/*" class="form-control" id="imagen"
+                                               name="imagen"/>
+
+                                    </div>
+
+                                </div>
 
 
 
 
 
 
-                        <div class="modal-footer">
+
+                                <div class="modal-footer">
                                 <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit"  class="btn btn-primary">Guardar</button>
 
