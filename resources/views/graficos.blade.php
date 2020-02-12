@@ -35,10 +35,8 @@
 
 
     <div>
-        <div>
             {!! $chart->container() !!}
-        </div>
+
     </div>
-
-
+    {!! $chart->script() !!}
 @endsection

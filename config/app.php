@@ -1,5 +1,7 @@
 <?php
 
+use ConsoleTVs\Charts\ChartsServiceProvider;
+
 return [
 
     /*
@@ -226,6 +228,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Charts' => ConsoleTVs\Charts\Classes\C3\Chart::class
 
     ],
 
