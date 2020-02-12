@@ -25,13 +25,11 @@
     </div>
 
     <div class="w3-container w3-teal mx-5">
+        <img style="border-radius: 50%" src="/clientes_imagenes/{{$nombre->imagen}}" width="150px" height="150px">
 
+        <div class="card margencard" style="border: none" >
 
-            <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$nombre->imagen}}" width="150px" height="150px" >
-            <div class="card margencard" style=" border: none;" >
-
-
-                <div style="margin-top: 3%">
+            <div>
                 @if($nombre->id_tipo_cliente==3 )
 
                     <H5> Expediente Particular</H5>
@@ -49,8 +47,8 @@
             </div>
         </div>
     </div>
-    <br><br>
-    <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+
+    <div class="btn-group " style="margin-bottom: 2%; margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
 
         <a class="btn btn-primary" href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
         <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
@@ -58,7 +56,7 @@
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
     </div>
-    <button class="btn btn-primary float-right" style="margin-right: 50px" data-toggle="modal"
+    <button class="btn btn-primary float-right" style="margin-top: -10px; margin-right: 50px" data-toggle="modal"
             data-target="#modalPagoEstudiante" >Pago
     </button>
     <br><br>

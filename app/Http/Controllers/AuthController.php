@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\NewUserNotification;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -26,6 +27,7 @@ class AuthController extends Controller
         $user->email = $request->input("email");
         $user->password = bcrypt($request->input("password"));
 
+        $user->notify(new NewUserNotification($request->input("password")));
         $user->save();
 
 
