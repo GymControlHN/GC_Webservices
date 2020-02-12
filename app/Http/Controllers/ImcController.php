@@ -88,10 +88,12 @@ class ImcController extends Controller
 
     {
 
-        $cliente = Cliente::find($id);
+        $cliente = Cliente::findOrfail($id);
         $antecedente = Imc::findOrfail($id);
         $id_cliente= Cliente::findOrFail($id_cliente);
-        return view('botonimceditar')-> with("antecedente", $antecedente)->with("id",$id_cliente)->with("cliente",$cliente);
+        return view('botonimceditar')
+            -> with("antecedente", $antecedente)
+            ->with("id",$id_cliente)->with("cliente",$cliente);
         //   $antecedentes = request()->all();
         //  if(empty($antecedentes['id_cliente'])){
 

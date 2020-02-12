@@ -18,14 +18,13 @@
         </div>
     </div>
 
-
     <div class="w3-container w3-teal mx-5">
 
+        <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$cliente->imagen}}" width="150px" height="150px" >
+        <div class="card margencard" style=" border: none;" >
 
-        <div class="card margencard" style=" border: none">
 
-
-            <div>
+            <div style="margin-top: 3%">
 
 
                 @if($cliente->id_tipo_cliente==3 )
@@ -45,6 +44,7 @@
             </div>
         </div>
     </div>
+    <br><br>
     <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group"
          aria-label="Button group with nested dropdown">
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)

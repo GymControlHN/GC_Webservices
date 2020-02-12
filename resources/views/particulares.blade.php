@@ -174,7 +174,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
-                                        <h6>Imagen del estudiante</h6>
+                                        <h6>Imagen del particular</h6>
                                         <input type="file" accept="image/*" class="form-control" id="imagen"
                                                name="imagen"/>
 

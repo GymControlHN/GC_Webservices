@@ -50,7 +50,7 @@ class  EstudiantesController extends Controller
 
                 $imagen = $_FILES["imagen"]["name"];
                 $ruta = $_FILES["imagen"]["tmp_name"];
-                if($_FILES["imagen"]["name"]) {
+                if($_FILES["imagen"]["name"]!=null) {
                     $destino = "clientes_imagenes/" . $imagen;
                     copy($ruta, $destino);
                 } else{
