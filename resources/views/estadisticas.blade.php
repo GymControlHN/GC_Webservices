@@ -10,6 +10,8 @@
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
             <h2 class=" mt-3" >Listado de todos los clientes</h2>
 
+
+
         <form class="form-inline" method="get" action="{{route('cliente.buscarCliente')}}">
 
             <div class="form-group mr-sm-4 my-sm-4 ">
