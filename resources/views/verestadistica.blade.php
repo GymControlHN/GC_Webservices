@@ -22,7 +22,7 @@
 
             <h5 class="card margencard"  style="all: revert;  border: none;">Estadisticas Datos fisicos</h5>
             <h5>Nombre: {{$cliente->nombre}}</h5>
-        <div class="btn-group " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" style="margin-top: 30px;" role="group" aria-label="Button group with nested dropdown">
 
             <a class="btn btn-primary" href="{{route("estadistica.ver",[$cliente->id])}}">Estadisticas</a>
             <a class="btn btn-secondary" href="{{route("grafico.mostrar",[$cliente->id])}}">graficos</a>
