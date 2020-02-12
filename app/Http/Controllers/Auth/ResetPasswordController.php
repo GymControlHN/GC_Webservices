@@ -48,7 +48,7 @@ class ResetPasswordController extends Controller
         $this->validate($request,[
             'email' => 'required|string|email',
         ]);
-        $user = User::where('email', $request->email)->first();
+        $user = User::where('email ', $request->email)->first();
         if (!$user)
             return response()->json([
                 'message' => "We can't find a user with that e-mail address."
@@ -110,7 +110,7 @@ class ResetPasswordController extends Controller
             'password' => 'required|string|confirmed',
             'token' => 'required|string'
         ]);
-        $user = User::where('email', $request->input("email"))->first();
+        $user = User::where('email', $request->input(" email "))->first();
         if (!$user)
             return view('errorReset',["json"=>"No pudimos encontrar ese usuario con el correo ingresado"]);
         $user->password = bcrypt($request->password);
