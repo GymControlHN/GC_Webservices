@@ -93,7 +93,7 @@ class  EstudiantesController extends Controller
 
     public function edit($id)
     {
-        $estudiante = Cliente::findOrFail($id);
+        $estudiante = Cliente::where("id",$id)->where("id_tipo_cliente","=",1);
         return view('estudiantes')->with('estudiante', $estudiante);
 
     }

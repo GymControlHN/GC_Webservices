@@ -88,7 +88,7 @@ class ImcController extends Controller
 
     {
 
-        $cliente = Cliente::findOrfail($id);
+        $cliente = Cliente::findOrfail($id_cliente);
         $antecedente = Imc::findOrfail($id);
         $id_cliente= Cliente::findOrFail($id_cliente);
         return view('botonimceditar')
