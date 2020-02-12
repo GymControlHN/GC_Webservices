@@ -105,7 +105,7 @@
                                                    title="Ingrese solo números "
                                                    required
                                                    value="{{old("identificacion")}}"
-                                                   minlength="1" maxlength="13" aria-valuemax="13" max="9999999999999"
+                                                   minlength="13" maxlength="13" aria-valuemax="13" max="9999999999999"
                                             >
                                         @if ($errors->has('identificacion'))
                                             <span class="help-block" style="color: red">
@@ -137,7 +137,7 @@
                                                    title="Ingrese solo números"
                                            required
                                            value="{{old("telefono")}}"
-                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
+                                           maxlength="8" minlength="8" aria-valuemax="8" max="99999999"
                                     >
                                         @if ($errors->has('telefono'))
                                             <span class="help-block" style="color: red">
@@ -301,7 +301,7 @@
                                        value="{{$particular->identificacion}}"
                                        @endisset value="{{old('identificacion')}}"
                                        required
-                                       minlength="1" maxlength="13" aria-valuemax="13" max="9999999999999"
+                                       minlength="13" maxlength="13" aria-valuemax="13" max="9999999999999"
 
                                 >
                                     @if ($errors->has('identificacion'))
@@ -339,7 +339,7 @@
                                        id="telefono" name="telefono"
                                        title="Ingrese solo números"
                                        required
-                                       maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
+                                       maxlength="8" minlength="8" aria-valuemax="8" max="99999999"
 
                                 >
                                     @if ($errors->has('telefono'))

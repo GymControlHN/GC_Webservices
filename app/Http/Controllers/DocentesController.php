@@ -32,7 +32,7 @@ class DocentesController extends Controller
       $this -> validate ( $request ,[
              'nombre'=>'required',
              'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
-             'identificacion'=>'required|unique:clientes_gym|max:99999|numeric',
+             'identificacion'=>'required|unique:clientes_gym|max:99999|min:00000|numeric',
              'telefono'=>'required|unique:clientes_gym|max:99999999|numeric',
              'genero'=>'required',
 

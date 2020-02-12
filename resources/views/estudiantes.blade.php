@@ -12,7 +12,7 @@
 
 
 
-    <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
+    <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif ">
 
 
         <h2 class=" mt-3">Listado de Estudiantes</h2>
@@ -109,7 +109,7 @@
                                            title="Ingrese solo números"
                                            required
                                            value="{{old("identificacion")}}"
-                                           minlength="1" maxlength="11" aria-valuemax="11" max="99999999999">
+                                           minlength="11" maxlength="11" aria-valuemax="11" max="99999999999">
 
                                     @if ($errors->has('identificacion'))
                                         <span class="help-block" style="color: red">
@@ -149,7 +149,7 @@
                                            title="Ingrese solo números"
                                            required
                                            value="{{old("telefono")}}"
-                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999">
+                                           maxlength="8" minlength="8" aria-valuemax="8" max="99999999">
                                     @if ($errors->has('telefono'))
                                         <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('telefono') }}</strong>
@@ -318,7 +318,7 @@
                                            @endisset value="{{old('identificacion')}}"
                                            title="Ingrese solo números"
                                            required
-                                           minlength="1" maxlength="11" aria-valuemax="11" max="99999999999"
+                                           minlength="11" maxlength="11" aria-valuemax="11" max="99999999999"
                                     >
                                     @if ($errors->has('identificacion'))
                                         <span class="help-block">
@@ -357,7 +357,7 @@
                                            @endisset value="{{old('telefono')}}"
                                            title="Ingrese solo números"
                                            required
-                                           maxlength="8" minlength="1" aria-valuemax="8" max="99999999"
+                                           maxlength="8" minlength="8" aria-valuemax="8" max="99999999"
                                     >
                                     @if ($errors->has('telefono'))
                                         <span class="help-block">
@@ -424,7 +424,7 @@
         <div class="table-responsive " style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
-                <thead class="thead-light ">
+                <thead class="thead-dark">
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
