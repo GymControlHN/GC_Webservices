@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V16</title>
+    <title>Inicio de Sesión</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -34,7 +34,7 @@
 
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					Account Login
+					Inicio de Sesión
 				</span>
             <form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
@@ -55,16 +55,10 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="inputtamaño">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar
-                            </label>
-                            <a class="btn btn-link" href="{{ route('password.request') }}" >
-                                ¿Olvidaste tu contraseña?
-                            </a>
-                        </div>
-                    </div>
+                    <center><a class="btn btn-link" style="align-items: center" href="{{ route('password.request') }}">
+                            ¿Olvidaste tu contraseña?
+                        </a></center>
+
                 </div>
 
             </form>

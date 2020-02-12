@@ -110,7 +110,7 @@ class ResetPasswordController extends Controller
             'password' => 'required|string|confirmed',
             'token' => 'required|string'
         ]);
-        $user = User::where('email', $request->input(" email "))->first();
+        $user = User::where('email', $request->input("email"))->first();
         if (!$user)
             return view('errorReset',["json"=>"No pudimos encontrar ese usuario con el correo ingresado"]);
         $user->password = bcrypt($request->password);

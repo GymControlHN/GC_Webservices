@@ -1,72 +1,108 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Inicio de Sesión</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 
-@section('content')
-<div class="container pr-4" >
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("vendor/bootstrap/css/bootstrap.min.css")}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("fonts/font-awesome-4.7.0/css/font-awesome.min.css")}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("fonts/Linearicons-Free-v1.0.0/icon-font.min.css")}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("vendor/animate/animate.css")}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("vendor/css-hamburgers/hamburgers.min.css")}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("vendor/animsition/css/animsition.min.css")}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("vendor/select2/select2.min.css")}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("vendor/daterangepicker/daterangepicker.css")}}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset("css/util.css")}}">
+    <link rel="stylesheet" type="text/css" href="{{asset("css/main.css")}}">
+    <!--===============================================================================================-->
+</head>
+<body>
 
-        <div class="col-md-9 col-md-offset-2">
-            <div class="panel panel-default" >
-                <div class="panel-heading">Restablecer la contraseña</div>
+<div class="limiter">
+    <div class="container-login100" style="background-image: url('img/gym.jpg');">
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
+        <div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Restablecer Contraseña
+				</span>
+            <form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="{{ route('password.request') }}">
+                {{ csrf_field() }}
 
-                        <input type="hidden" name="token" value="{{ $token }}">
-                        <div class="form-row  mt-4">
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email"  style="color: #1b1e21" class="col-md-4 control-label">Dirección de correo electrónico</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" style=" width: 400px" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
-                            </div>
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
+                <input type="hidden" name="token" value="{{ $token }}">
+                <div class="wrap-input100 validate-input" data-validate="Enter username">
+                    <input class="input100" type="text" name="email"
+                           value="{{old("email")}}" placeholder="Correo Electronico">
+                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    @if ($errors->has('email'))
+                        <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
+                    @endif
 
-                        <div class="form-row  mt-4">
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" style="color: #1b1e21"  class="col-md-4 control-label">Contraseña</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" style=" width: 400px" class="form-control" name="password" required>
-                            </div>
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" type="password" name="password" placeholder="Contrasenia">
+                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    @if ($errors->has('password'))
+                        <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
+                    @endif
+                </div>
 
-                        <div class="form-row  mt-4">
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" style="color: #1b1e21"  class="col-md-4 control-label">Confirmar contraseña</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password"  style=" width: 400px" class="form-control" name="password_confirmation" required>
-                            </div>
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" type="password" name="password_confirmation" placeholder="Confirmar Contraseña">
+                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    @if ($errors->has('password_confirmation'))
+                        <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
                                     </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Restablecer la contraseña
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    @endif
                 </div>
-            </div>
+                <div class="container-login100-form-btn m-t-32">
+                    <button class="login100-form-btn">
+                        Restablecer
+                    </button>
+                </div>
+
+            </form>
         </div>
     </div>
 </div>
-@endsection
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/main.js"></script>
+
+</body>
+</html>
