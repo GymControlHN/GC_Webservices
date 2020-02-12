@@ -56,7 +56,8 @@
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
     </div>
-    <button class="btn btn-primary float-right" style="margin-right: 50px" data-toggle="modal"
+    <button class="btn btn-primary float-right" style=" margin-right: 50px ;margin-bottom: 50px"
+            data-toggle="modal"
             data-target="#modalPagoEstudiante" >Pago
     </button>
     <br><br>
