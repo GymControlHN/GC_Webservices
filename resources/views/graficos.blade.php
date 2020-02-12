@@ -16,6 +16,9 @@
         </div>
     </div>
 
+    <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$cliente->imagen}}" width="150px" height="150px" >
+
+
 
 
 

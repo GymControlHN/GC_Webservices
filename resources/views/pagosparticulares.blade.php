@@ -64,7 +64,7 @@
     </div>
 
 
-    <button class="btn btn-primary float-right" style="margin-right: 50px"
+    <button class="btn btn-primary float-right" style="margin-top: -10px; margin-right: 50px"
             data-toggle="modal" data-target="#modalPagoParticular" >Pago
     </button>
 
