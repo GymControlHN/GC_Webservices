@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div style="margin-left:35px; margin-top: 10px">
+    <div style="margin-left:35px; margin-top: 20px;">
         <img style="border-radius: 50%;float: left;margin-right: 10px ;"  src="/clientes_imagenes/{{$cliente->imagen}}" width="150px" height="150px" >
     </div>
 
@@ -25,13 +25,13 @@
 
 
 
-         <div style="margin-top: 55px;">
+         <div style="margin-top: 70px;">
              <h5 >Estadisticas Datos fisicos</h5>
              <h5>Nombre: {{$cliente->nombre}}</h5>
          </div>
 
 
-        <div class="btn-group" style="margin-top: 60px ; margin-left: -145px"  role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" style="margin-top: 70px ; margin-left: -145px"  role="group" aria-label="Button group with nested dropdown">
 
             <a class="btn btn-primary" href="{{route("estadistica.ver",[$cliente->id])}}">Estadisticas</a>
             <a class="btn btn-secondary" href="{{route("grafico.mostrar",[$cliente->id])}}">graficos</a>
