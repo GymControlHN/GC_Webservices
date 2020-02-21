@@ -59,7 +59,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);" @endif
                    @if($cliente->id_tipo_cliente ==2)
                    style="display: none;"
                     @endif>
-                <thead class="thead-light"  @if($cliente->id_tipo_cliente==3)
+                <thead class="thead-dark"  @if($cliente->id_tipo_cliente==3)
                 href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
                        @endif
                        @if($cliente->id_tipo_cliente ==1)
@@ -162,7 +162,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);" @endif
         <div class="table-responsive mb-5" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">
-                <thead class="thead-light">
+                <thead class="thead-dark">
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="row">Peso Kg</th>
@@ -260,7 +260,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
 
-                    <thead class="thead-light">
+                    <thead class="thead-dark">
                     <tr>
                         <th scope="col">N°</th>
                         <th scope="col">Imc</th>
@@ -345,7 +345,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
         <div class="table-responsive mb-5" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <table class="table ruler-vertical table-hover mx-sm-0 ">
-                        <thead class="thead-light">
+                        <thead class="thead-dark">
                         <tr>
                             <th scope="col">N°</th>
                             <th scope="col">Ruffier</th>
