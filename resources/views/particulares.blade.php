@@ -175,10 +175,36 @@
                                 <div class="form-row">
                                     <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                         <h6>Imagen del particular</h6>
-                                        <input type="file" accept="image/*" class="form-control" id="imagen"
-                                               name="imagen"/>
+                                        <img width="200px" id="previewImagen"
+                                             @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
 
+                                        <input type="file" accept="image/*"
+                                               onchange="loadFile(event)"
+                                               @if($errors->has("imagen"))
+                                               style="display: none"
+                                               required
+                                               @endif
+                                               class="form-control" id="imagen"
+                                               name="imagen"/>
+                                        @if ($errors->has('imagen'))
+                                            <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('imagen') }}</strong>
+                                    </span>
+                                        @endif
                                     </div>
+
+                                    <script>
+
+                                        var loadFile = function (event) {
+                                            var image = document.getElementById('previewImagen');
+                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                            document.getElementById("imagen").style.display = "none";
+                                        };
+                                        var seleccionarImagen = function (event) {
+                                            var element = document.getElementById("imagen");
+                                            element.click();
+                                        }
+                                    </script>
                                 </div>
 
                                 <div class="modal-footer">
@@ -252,7 +278,7 @@
 
                     <div class="modal-body ">
 
-                        <form method="post" action="{{route('particular.update')}}">
+                        <form method="post" action="{{route('particular.update')}}" enctype="multipart/form-data">
                             <input type="hidden" name="particular_id" id="id" value="">
 
                             {{method_field('put')}}
@@ -377,19 +403,39 @@
                                         <label class="form-check-label" for="inlineRadio2"></label>
                                     </div>
                                 </div>
-
                             </div>
-
-
-
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
-                                    <h6>Imagen del estudiante</h6>
-                                    <input type="file" accept="image/*" class="form-control" id="imagen"
+                                    <h6>Imagen del Particular</h6>
+                                    <input type="file" accept="image/*"
+
+                                           style="display: none"
+                                           onchange="loadFile4(event)" class="form-control"
+                                           id="imagenEditar"
                                            name="imagen"/>
 
+                                    <img width="200px" id="previewImagenEditar"
+                                         onclick="seleccionarImagenEditar(event)"/>
+
+                                    <br>
+                                    <label style="color: black">Modifica la foto si gustas</label>
+
+                                    <script>
+                                        var loadFile4 = function (event) {
+                                            var image = document.getElementById('previewImagenEditar');
+                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                            document.getElementById("imagenEditar").style.display = "none";
+                                        };
+                                        var seleccionarImagenEditar = function (event) {
+                                            var element = document.getElementById("imagenEditar");
+                                            element.click();
+                                        }
+                                    </script>
                                 </div>
                             </div>
+
+
+
 
 
                             <div class="modal-footer">
@@ -463,6 +509,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                 data-mytelefono="{{$particular->telefono}}"
                                 data-sexo="{{$particular->genero}}"
                                 data-myprofesion="{{$particular->profesion_u_oficio}}"
+                                data-imagen="{{$particular->imagen}}"
                                 data-id="{{$particular->id}}"><i class="fas fa-edit"></i></button>
 
                         <button class="btn btn-danger mr-xl-2 "

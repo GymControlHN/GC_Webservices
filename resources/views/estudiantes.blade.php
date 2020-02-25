@@ -426,13 +426,16 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del estudiante</h6>
-                                    <img width="200px" id="previewImagenEditar"  onclick="seleccionarImagenEditar(event)"/>
+                                    <img width="200px" id="previewImagenEditar"
+                                         onclick="seleccionarImagenEditar(event)"/>
 
                                     <input type="file" accept="image/*"
                                            style="display: none"
                                            onchange="loadFile2(event)"
                                            src="" class="form-control" id="imagenEditar"
                                            name="imagen"/>
+                                    <br>
+                                    <label style="color: black">Modifica la foto si gustas</label>
 
                                     <script>
                                         var loadFile2 = function (event) {

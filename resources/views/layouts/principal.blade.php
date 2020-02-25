@@ -254,6 +254,7 @@
         var telefono = button.data('mytelefono');
         var id = button.data('id');
         var genero = button.data("sexo");
+        var imagen =button.data("imagen");
         var modal = $(this);
 
         modal.find('.modal-body #nombre').val(nombre);
@@ -271,7 +272,12 @@
         if (genero === "F") {
             modal.find(".modal-body #sexo2P").prop("checked", true);
         }
-
+        if (imagen!==null){
+            modal.find(".modal-body #previewImagenEditar").attr("src","/clientes_imagenes/"+imagen);
+            console.log("imagen"+imagen);
+        }else{
+            modal.find(".modal-body #previewImagenEditar").attr("src",null);
+        }
     });
 
 

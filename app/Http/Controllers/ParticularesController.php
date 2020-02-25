@@ -29,6 +29,7 @@ class ParticularesController extends Controller
             'profesion_u_oficio'=>'required',
             'telefono'=>'required|unique:clientes_gym|max:99999999|numeric',
             'genero'=>'required',
+            "imagen" => "required"
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
@@ -81,6 +82,14 @@ class ParticularesController extends Controller
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
+            $imagen = $_FILES["imagen"]["name"];
+            $ruta = $_FILES["imagen"]["tmp_name"];
+            if ($_FILES["imagen"]["name"]) {
+                $destino = "clientes_imagenes/" . $imagen;
+                copy($ruta, $destino);
+            } else {
+                $imagen = "";
+            }
 
 
             // Asignar los nuevos valores a los diferentes campos
@@ -93,6 +102,7 @@ class ParticularesController extends Controller
         $particular->id_carrera=1;
         $particular->genero = $request->input ('genero');
         $particular->id_tipo_cliente="3";
+            $particular->imagen = $imagen;
         // Guardar los cambios
         $particular->save();
 
