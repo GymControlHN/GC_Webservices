@@ -175,6 +175,7 @@
         var carrera = button.data('mycarrera');
         var genero = button.data("sexo");
         var cat_id = button.data('catid');
+        var imagen =button.data("imagen");
         var modal = $(this);
 
         modal.find('.modal-body #nombre').val(nombre);
@@ -192,6 +193,12 @@
         if (genero === "F") {
             modal.find(".modal-body #sexo2E").prop("checked", true);
         }
+        if (imagen!==null){
+            modal.find(".modal-body #previewImagenEditar").attr("src","/clientes_imagenes/"+imagen);
+            console.log("imagen"+imagen);
+        }else{
+            modal.find(".modal-body #previewImagenEditar").attr("src",null);
+        }
     });
 
 
@@ -207,6 +214,7 @@
         var telefono = button.data('mytelefono');
         var cat_id = button.data('catid');
         var genero = button.data("sexo");
+        var imagen =button.data("imagen");
         var modal = $(this);
 
         modal.find('.modal-body #nombre').val(nombre);
@@ -223,6 +231,12 @@
 
         if (genero === "F") {
             modal.find(".modal-body #sexo2D").prop("checked", true);
+        }
+        if (imagen!==null){
+            modal.find(".modal-body #previewImagenEditar").attr("src","/clientes_imagenes/"+imagen);
+            console.log("imagen"+imagen);
+        }else{
+            modal.find(".modal-body #previewImagenEditar").attr("src",null);
         }
 
     });

@@ -39,11 +39,9 @@ class  EstudiantesController extends Controller
           'nombre'=>'required',
           'carrera'=>'required',
           'genero'=>'required',
+          "imagen"=>"required"
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
-
-
-
 
             $carreraExiste = Carrera::where("id","=", $request->input('carrera'));
             if($carreraExiste->count()>0) {

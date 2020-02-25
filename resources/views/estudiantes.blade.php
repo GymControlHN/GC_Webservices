@@ -139,7 +139,6 @@
                             </div>
 
 
-
                             <div class="form-row">
                                 <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} col-md-6">
                                     <h6> Teléfono </h6>
@@ -189,11 +188,36 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del estudiante</h6>
-                                    <input type="file" accept="image/*" class="form-control" id="imagen"
-                                           name="imagen"/>
+                                    <img width="200px" id="previewImagen"
+                                         @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
 
+                                    <input type="file" accept="image/*"
+                                           onchange="loadFile(event)"
+                                           @if($errors->has("imagen"))
+                                           style="display: none"
+                                           required
+                                           @endif
+                                           class="form-control" id="imagen"
+                                           name="imagen"/>
+                                    @if ($errors->has('imagen'))
+                                        <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('imagen') }}</strong>
+                                    </span>
+                                    @endif
                                 </div>
 
+                                <script>
+
+                                    var loadFile = function (event) {
+                                        var image = document.getElementById('previewImagen');
+                                        image.src = URL.createObjectURL(event.target.files[0]);
+                                        document.getElementById("imagen").style.display = "none";
+                                    };
+                                    var seleccionarImagen = function (event) {
+                                        var element = document.getElementById("imagen");
+                                        element.click();
+                                    }
+                                </script>
                             </div>
 
                             <div class="modal-footer">
@@ -402,9 +426,24 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del estudiante</h6>
-                                    <input type="file" accept="image/*" class="form-control" id="imagen"
+                                    <img width="200px" id="previewImagenEditar"  onclick="seleccionarImagenEditar(event)"/>
+
+                                    <input type="file" accept="image/*"
+                                           style="display: none"
+                                           onchange="loadFile2(event)"
+                                           src="" class="form-control" id="imagenEditar"
                                            name="imagen"/>
 
+                                    <script>
+                                        var loadFile2 = function (event) {
+                                            var image = document.getElementById('previewImagenEditar');
+                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                            document.getElementById("imagenEditar").style.display = "none";
+                                        };
+                                        var seleccionarImagenEditar = function (event) {
+                                            var element = document.getElementById("imagenEditar");
+                                            element.click();
+                                        }</script>
                                 </div>
                             </div>
 
@@ -468,6 +507,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                         data-myfecha="{{$estudiante->fecha_de_ingreso}}"
                                         data-mytelefono="{{$estudiante->telefono}}"
                                         data-mycarrera="{{$estudiante->id_carrera}}"
+                                        data-imagen="{{$estudiante->imagen}}"
                                         data-catid="{{$estudiante->id}}" data-sexo="{{$estudiante->genero}}"><i
                                             class="fas fa-edit"></i></button>
 
