@@ -12,7 +12,8 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
                     <div class="card card-style">
                         <div class="card-header">
-                            <span class="badge badge-warning" style="float: right">Hoy</span>
+
+                            <img src="/images/estudiante.svg" width="80px" style="margin-left: 25%">
                             <br>
                             <h5 class="text-center">Total Estudiantes </h5>
                             <h5 class="text-center"><span class="badge badge-dark">{{$estudiantes}}</span></h5>
@@ -22,7 +23,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6  card-efect" style="margin-top: 10px">
                     <div class="card card-style">
                         <div class="card-header">
-                            <span class="badge badge-warning" style="float: right">Hoy</span>
+                            <img src="/images/docente.svg" width="80px" style="margin-left: 25%">
                             <br>
                             <h5 class="text-center ">Total Docentes</h5>
                             <h5 class="text-center"><span class="badge badge-dark">{{$docentes}}</span></h5>
@@ -32,7 +33,8 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
                     <div class="card  card-style">
                         <div class="card-header">
-                            <span class="badge badge-warning" style="float: right">Hoy</span>
+
+                            <img src="/images/particulares.svg" width="80px" style="margin-left: 25%">
                             <br>
                             <h5 class="text-center ">Total Particulares</h5>
                             <h5 class="text-center"><span class="badge badge-dark">{{$particulares}}</span></h5>
@@ -42,7 +44,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px"    >
                     <div class="card card-style">
                         <div class="card-header">
-                            <span class="badge badge-warning" style="float: right">Hoy</span>
+                            <img src="/images/dinero.ico" width="80px" style="margin-left: 25%">
                             <br>
                             <h5 class="text-center ">Ingresos Totales</h5>
                             <h5 class="text-center"><span class="badge badge-dark">{{$ingresos}}</span></h5>
