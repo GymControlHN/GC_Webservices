@@ -35,6 +35,7 @@
 
             <a class="btn btn-primary" href="{{route("estadistica.ver",[$cliente->id])}}">Estadisticas</a>
             <a class="btn btn-secondary" href="{{route("grafico.mostrar",[$cliente->id])}}">graficos</a>
+            <a class="btn btn-primary" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
         </div>
 

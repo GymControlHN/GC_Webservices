@@ -60,7 +60,9 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         <td>{{date("Y-m-d",strtotime($estudiante->created_at))}}</td>
                         <td>
                             <a class="btn btn-info mr-xl-2 "
-                               href="{{route("estadistica.ver",["id"=>$estudiante->id])}}">
+                               href="{{route("grafico.mostrar",["id"=>$estudiante->id])}}">
+
+
                                 Ver Estadística
                             </a>
                         </td>

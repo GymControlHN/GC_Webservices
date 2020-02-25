@@ -60,6 +60,8 @@
         <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+        <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
+
 
     </div>
 

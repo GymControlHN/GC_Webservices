@@ -12,6 +12,7 @@ class DiagnosticoImcSeeder extends Seeder
     public function run()
     {
 
+
         $diagnosticoIMC = new \App\Diagnostico_Imc();
         $diagnosticoIMC->diagnostico="Obesidad tipo III";
         $diagnosticoIMC->save();
