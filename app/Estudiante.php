@@ -15,7 +15,7 @@ class Estudiante extends Model
         'numero_de_cuenta',
         'carrera',
         'telefono',
-        "imagen"
+
     ];
 
 }

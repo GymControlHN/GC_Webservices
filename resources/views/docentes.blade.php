@@ -474,7 +474,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
 
                 </tbody>
             </table>
-            <div class="border-top my-3"></div>
+
             @if($docentes->count()>10)
                 <div class="panel">
                     {{ $docentes->links() }}
