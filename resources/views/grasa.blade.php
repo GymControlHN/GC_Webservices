@@ -10,29 +10,9 @@
         </div>
     </header>
 
-    <div class="card"
-         style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
-        <div class="card-header" style="background: transparent;height: 50px;" >
-            @if($nombre->id_tipo_cliente==3 )
-                <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-
-            @endif
-            @if($nombre->id_tipo_cliente==2)
-                <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-
-            @endif
-            @if($nombre->id_tipo_cliente==1)
-                <a class="btn btn-default" href="/estudiantes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-            @endif
-
-        </div>
-    </div>
-
-
-
-
     <div class="container-xl clearfix px-2 mt-4">
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
+
 
         <img src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" >
 
@@ -57,7 +37,23 @@
         </div>
     </div>
     </div>
-    <br><br>
+        <div class="card"
+             style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+            <div class="card-header" style="background: transparent;height: 50px;" >
+                @if($nombre->id_tipo_cliente==3 )
+                    <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
+                @endif
+                @if($nombre->id_tipo_cliente==2)
+                    <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
+                @endif
+                @if($nombre->id_tipo_cliente==1)
+                    <a class="btn btn-default" href="/estudiantes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+                @endif
+
+            </div>
+        </div>
     <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
 
@@ -81,7 +77,7 @@
 
     </div>
     <a class="btn btn-primary" href="{{route("botongrasa",["id"=>$nombre->id])}}"
-       style="float: right; margin-right: 50px; color: white">Nuevo
+       style="float: right; margin-right: 50px;color: white">Nuevo
 
     </a>
 
@@ -182,7 +178,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                         <button type="submit" class="btn btn-primary">Aceptar</button>
                     </div>
-
                 </form>
             </div>
 
