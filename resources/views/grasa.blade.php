@@ -10,7 +10,8 @@
         </div>
     </header>
 
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+    <div class="card"
+         style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
         <div class="card-header" style="background: transparent;height: 50px;" >
             @if($nombre->id_tipo_cliente==3 )
                 <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
@@ -29,28 +30,29 @@
 
 
 
-    <div class="w3-container w3-teal mx-5">
 
+    <div class="container-xl clearfix px-2 mt-4">
+        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
-                <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$nombre->imagen}}" width="150px" height="150px" >
-                <div class="card margencard" style=" border: none;" >
+        <img src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" >
 
+        <div class="card margencard" style=" border: none;" >
 
-                    <div style="margin-top: 3%">
-
+            <div >
+                <h5 style="margin-top: 10%">{{$nombre->nombre}}</h5>
             @if($nombre->id_tipo_cliente==3 )
 
-                <H5> Expediente Particular</H5>
+                <H6> Expediente Particular</H6>
             @endif
             @if($nombre->id_tipo_cliente==2)
-                <H5> Expediente Docente</H5>
+                <H6> Expediente Docente</H6>
 
             @endif
             @if($nombre->id_tipo_cliente==1)
-                <H5> Expediente Estudiante</H5>
+                <H6> Expediente Estudiante</H6>
             @endif
-            <h5 style="all: revert">Grasa Corporal</h5>
-            <h5>Nombre: {{$nombre->nombre}}</h5>
+            <h6 style="all: revert">Grasa Corporal</h6>
+
 
         </div>
     </div>
@@ -89,7 +91,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
             <div class="table-responsive" >
-                <table class="table ruler-vertical table-hover mx-sm-0 ">
+                <table class="table table-hover">
 
                     <thead class="thead-dark">
                     <tr >

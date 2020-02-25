@@ -9,182 +9,179 @@
             </div>
         </div>
     </header>
-
-
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
-        <div class="card-header" style="background: transparent;height: 50px;">
-            @if($cliente->id_tipo_cliente==3 )
-                <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span>
-                    Regresar</a>
-
-            @endif
-            @if($cliente->id_tipo_cliente==2)
-                <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span>
-                    Regresar</a>
-
-            @endif
-            @if($cliente->id_tipo_cliente==1)
-                <a class="btn btn-default" href="/estudiantes"><span><i class="fa fa-arrow-circle-left"></i></span>
-                    Regresar</a>
-            @endif
-
-        </div>
-    </div>
-
-    <div class="w3-container w3-teal mx-5">
-
-        <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$cliente->imagen}}" width="150px" height="150px" >
-        <div class="card margencard" style=" border: none;" >
-
-
-            <div style="margin-top: 3%">
-
+    <div class="container-xl clearfix px-2 mt-4">
+        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
+            <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px"
+                 height="200px">
+            <div>
+                <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
                 @if($cliente->id_tipo_cliente==3 )
 
-                    <H5> Expediente Particular</H5>
+                    <H6> Expediente Particular</H6>
                 @endif
                 @if($cliente->id_tipo_cliente==2)
-                    <H5> Expediente Docente</H5>
+                    <H6> Expediente Docente</H6>
 
                 @endif
                 @if($cliente->id_tipo_cliente==1)
-                    <H5> Expediente Estudiante</H5>
+                    <H6> Expediente Estudiante</H6>
                 @endif
-                <h5 style="all: revert">Medida Antropometrica</h5>
-                <h5>Nombre: {{$cliente->nombre}}</h5>
+                <h6 style="all: revert">Medida Antropometrica</h6>
 
             </div>
         </div>
-    </div>
 
-    <br><br>
-    <div class="btn-group mt-3 mb-5" style="margin-left: 50px; " role="group"
-         aria-label="Button group with nested dropdown">
+        <div class="col-lg-9 col-md-10 p-r-10 col-12 pl-md-2 float-left">
+            <div class="card"
+                 style="width: 170px; border: none;background: transparent;">
+                <div class="card-header" style="background: transparent;height: 50px;">
+                    @if($cliente->id_tipo_cliente==3 )
+                        <a class="btn btn-default" href="/particulares"><span><i
+                                        class="fa fa-arrow-circle-left"></i></span>
+                            Regresar</a>
 
+                    @endif
+                    @if($cliente->id_tipo_cliente==2)
+                        <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span>
+                            Regresar</a>
 
-
-
-        @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
-            <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
-            href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
-               @endif
-               @if($cliente->id_tipo_cliente ==1)
-               href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
-
-               @if($cliente->id_tipo_cliente ==2)
-               style="display: none;"
+                    @endif
+                    @if($cliente->id_tipo_cliente==1)
+                        <a class="btn btn-default" href="/estudiantes"><span><i
+                                        class="fa fa-arrow-circle-left"></i></span>
+                            Regresar</a>
                     @endif
 
-            >Pagos</a>
-        @endif
+                </div>
+            </div>
+
+            <div class="card" style=" border: none;">
 
 
-
-        <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
-        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
-
-    </div>
-
-    <a class="btn btn-primary" href="{{route("botonimc",["id"=>$cliente->id])}}"
-       style="float: right; margin-right: 50px; color: white">Nuevo
-
-    </a>
+                <div class="btn-group" style="width: 50px; float: left" role="group"
+                     aria-label="Button group with nested dropdown">
 
 
+                    @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
+                        <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
+                        href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
+                           @endif
+                           @if($cliente->id_tipo_cliente ==1)
+                           href="{{route("pagoestudiantes",["id"=>$cliente->id])}}" @endif
 
-    <div class="w3-container w3-teal mx-5">
+                           @if($cliente->id_tipo_cliente ==2)
+                           style="display: none;"
+                                @endif
 
-        <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
-
-
-            <div class="table-responsive ">
-                <table class="table ruler-vertical table-hover mx-sm-0 ">
-                    <thead class="thead-dark">
-                    <tr>
-
-                        <th scope="col">N°</th>
-                        <th scope="col">Peso Kg</th>
-                        <th scope="col">Altura°</th>
-                        <th scope="col">Imc</th>
-                        <th scope="col">Diagnostico</th>
-                        <th scope="col">Pecho cm</th>
-                        <th scope="col">Brazo cm</th>
-                        <th scope="col">ABD A</th>
-                        <th scope="col">ABD B</th>
-                        <th scope="col">Cadera cm</th>
-                        <th scope="col">Muslo cm</th>
-                        <th scope="col">Pierna cm</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    @if($antecedentes->count()>0)
-
-                        @foreach($antecedentes as $antecedente)
-                            <tr style="text-align:right">
-                                <td>{{$no++}}</td>
-                                <td>{{$antecedente->peso}}</td>
-                                <td>{{$antecedente->altura}}</td>
-                                <td>{{$antecedente->imc}}</td>
-                                <td>{{$antecedente->diagnostico}}</td>
-                                <td>{{$antecedente->pecho}}</td>
-                                <td>{{$antecedente->brazo}}</td>
-                                <td>{{$antecedente->ABD_A}}</td>
-                                <td>{{$antecedente->ABD_B}}</td>
-                                <td>{{$antecedente->cadera}}</td>
-                                <td>{{$antecedente->muslo}}</td>
-                                <td>{{$antecedente->pierna}}</td>
-
-                                <td><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
-
-
-                                <td class="form-inline ">
-
-
-                                    <button class="btn btn-warning mr-xl-2 ">
-                                        <a style="color: white"
-                                           href="{{route('imc.editar',[$antecedente->id,$antecedente->id_cliente])}}"><i
-                                                    class="fas fa-edit" style="color: #1b1e21"></i> </a></button>
-
-
-                                    <button class="btn btn-danger mr-xl-2"
-                                            data-id="{{$antecedente->id}}"
-                                            data-id_cliente="{{$antecedente->id_cliente}}"
-                                            data-toggle="modal" data-target="#modalBorrarImc"><i
-                                                class="fas fa-trash-alt"></i></button>
-
-
-                                </td>
-                        @endforeach
-
-
-
-                    @else
-                        <tr>
-                            <td colspan="14" style="text-align: center">No hay medidas ingresadas</td>
-                        </tr>
+                        >Pagos</a>
                     @endif
 
 
-                    </tbody>
-                </table>
-                <div class="border-top my-3"></div>
+                    <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
+                    <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
+                    <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
-                @if($antecedentes->count()>10)
-                    <div class="panel">
-                        {{ $antecedentes->links() }}
+                </div>
+                <a class="btn btn-primary pull-right" href="{{route("botonimc",["id"=>$cliente->id])}}"
+                   style="float: right; width: 80px; margin-left: 92%; color: white">Nuevo
+                </a>
+            </div>
+
+
+            <div class=" mt-4">
+                <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
+
+
+                    <div class="table-responsive-lg ">
+                        <table class="table ruler-vertical table-hover">
+                            <thead class="thead-dark">
+                            <tr>
+
+                                <th scope="col">N°</th>
+                                <th scope="col">Peso Kg</th>
+                                <th scope="col">Altura°</th>
+                                <th scope="col">Imc</th>
+                                <th scope="col">Diagnostico</th>
+                                <th scope="col">Pecho cm</th>
+                                <th scope="col">Brazo cm</th>
+                                <th scope="col">ABD A</th>
+                                <th scope="col">ABD B</th>
+                                <th scope="col">Cadera cm</th>
+                                <th scope="col">Muslo cm</th>
+                                <th scope="col">Pierna cm</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            @if($antecedentes->count()>0)
+
+                                @foreach($antecedentes as $antecedente)
+                                    <tr style="text-align:right">
+                                        <td>{{$no++}}</td>
+                                        <td>{{$antecedente->peso}}</td>
+                                        <td>{{$antecedente->altura}}</td>
+                                        <td>{{$antecedente->imc}}</td>
+                                        <td>{{$antecedente->diagnostico}}</td>
+                                        <td>{{$antecedente->pecho}}</td>
+                                        <td>{{$antecedente->brazo}}</td>
+                                        <td>{{$antecedente->ABD_A}}</td>
+                                        <td>{{$antecedente->ABD_B}}</td>
+                                        <td>{{$antecedente->cadera}}</td>
+                                        <td>{{$antecedente->muslo}}</td>
+                                        <td>{{$antecedente->pierna}}</td>
+
+                                        <td><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
+
+
+                                        <td class="form-inline ">
+
+
+                                            <button class="btn btn-warning mr-xl-2 ">
+                                                <a style="color: white"
+                                                   href="{{route('imc.editar',[$antecedente->id,$antecedente->id_cliente])}}"><i
+                                                            class="fas fa-edit" style="color: #1b1e21"></i> </a>
+                                            </button>
+
+
+                                            <button class="btn btn-danger mr-xl-2"
+                                                    data-id="{{$antecedente->id}}"
+                                                    data-id_cliente="{{$antecedente->id_cliente}}"
+                                                    data-toggle="modal" data-target="#modalBorrarImc"><i
+                                                        class="fas fa-trash-alt"></i></button>
+
+
+                                        </td>
+                                @endforeach
+
+
+
+                            @else
+                                <tr>
+                                    <td colspan="14" style="text-align: center">No hay medidas ingresadas</td>
+                                </tr>
+                            @endif
+
+
+                            </tbody>
+                        </table>
+                        <div class="border-top my-3"></div>
+
+                        @if($antecedentes->count()>10)
+                            <div class="panel">
+                                {{ $antecedentes->links() }}
+                            </div>
+                        @endif
+
+
                     </div>
-                @endif
-
-
+                </div>
             </div>
+
         </div>
     </div>
-
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarImc">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
