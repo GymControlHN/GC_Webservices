@@ -13,6 +13,7 @@
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
             <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px"
                  height="200px">
+            <div class="card margencard" style=" border: none;" >
             <div>
                 <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
                 @if($cliente->id_tipo_cliente==3 )
@@ -30,8 +31,7 @@
 
             </div>
         </div>
-
-        <div class="col-lg-9 col-md-10 p-r-10 col-12 pl-md-2 float-left">
+        </div>
             <div class="card"
                  style="width: 170px; border: none;background: transparent;">
                 <div class="card-header" style="background: transparent;height: 50px;">
@@ -55,11 +55,7 @@
                 </div>
             </div>
 
-            <div class="card" style=" border: none;">
-
-
-                <div class="btn-group" style="width: 50px; float: left" role="group"
-                     aria-label="Button group with nested dropdown">
+        <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
 
 
                     @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
@@ -84,19 +80,17 @@
 
 
                 </div>
-                <a class="btn btn-primary pull-right" href="{{route("botonimc",["id"=>$cliente->id])}}"
-                   style="float: right; width: 80px; margin-left: 92%; color: white">Nuevo
+                <a class="btn btn-primary " href="{{route("botonimc",["id"=>$cliente->id])}}"
+                   style="float: right; margin-right: 50px; color: white">Nuevo
                 </a>
-            </div>
+        <div class="w3-container w3-teal mx-5">
 
-
-            <div class=" mt-4">
                 <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
 
-                    <div class="table-responsive-lg ">
-                        <table class="table ruler-vertical table-hover">
+                    <div class="table-responsive">
+                        <table class="table  table-hover">
                             <thead class="thead-dark">
                             <tr>
 
@@ -183,7 +177,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
             </div>
 
         </div>
-    </div>
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarImc">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

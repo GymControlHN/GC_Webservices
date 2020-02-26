@@ -9,10 +9,14 @@
             </div>
         </div>
     </header>
+    <div class="container-xl clearfix px-2 mt-4">
+        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
+
+        <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
         <div class="card-header" style="background: transparent;height: 50px;">
-            <a class="btn btn-default" href="{{route("ruffier.uni",[$cliente->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+            <a class="btn btn-default" href="{{route("ruffier.uni",[$cliente->id])}}"><span>
+                    <i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
 
         </div>
     </div>

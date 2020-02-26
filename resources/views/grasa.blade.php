@@ -54,7 +54,7 @@
 
             </div>
         </div>
-    <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
 
             <a class="btn btn-secondary" @if($nombre->id_tipo_cliente==3)
@@ -73,7 +73,6 @@
         <a class="btn btn-primary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
             <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
-
 
     </div>
     <a class="btn btn-primary" href="{{route("botongrasa",["id"=>$nombre->id])}}"
@@ -138,7 +137,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                     @endforeach
                     @else
                         <tr>
-                            <td colspan="11" style="text-align: center">No hay medidas ingresados</td>
+                            <td colspan="11" style="text-align: center">No hay medidas ingresadas</td>
                     @endif
 
                     </tbody>
@@ -150,7 +149,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         {{ $grasa_corporal->links() }}
                     </div>
                 @endif
-
+            </div>
             </div>
 
         </div>

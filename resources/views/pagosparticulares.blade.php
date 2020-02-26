@@ -7,7 +7,32 @@
         </div>
     </header>
 
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+    <div class="container-xl clearfix px-2 mt-4">
+        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
+            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" >
+            <div class="card margencard" style=" border: none;" >
+                <div >
+                    <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
+                    @if($nombre->id_tipo_cliente==3 )
+
+                        <H6> Expediente Particular</H6>
+                    @endif
+                    @if($nombre->id_tipo_cliente==2)
+                        <H6> Expediente Docente</H6>
+
+                    @endif
+                    @if($nombre->id_tipo_cliente==1)
+                        <H6> Expediente Estudiante</H6>
+                    @endif
+                    <h6 style="all: revert">Pagos</h6>
+
+
+                </div>
+            </div>
+        </div>
+
+
+            <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
         <div class="card-header" style="background: transparent;height: 50px;" >
             @if($nombre->id_tipo_cliente==3 )
                 <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
@@ -25,33 +50,8 @@
     </div>
 
 
-        <div class="w3-container w3-teal mx-5">
 
-            <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$nombre->imagen}}" width="150px" height="150px" >
-            <div class="card margencard" style=" border: none;" >
-
-
-                <div style="margin-top: 3%">
-
-                @if($nombre->id_tipo_cliente==3 )
-
-                    <H5> Expediente Particular</H5>
-                @endif
-                @if($nombre->id_tipo_cliente==2)
-                    <H5> Expediente Docente</H5>
-
-                @endif
-                @if($nombre->id_tipo_cliente==1)
-                    <H5> Expediente Estudiante</H5>
-                @endif
-                    <h5 style="all: revert">Pagos</h5>
-                <h5>Nombre: {{$nombre->nombre}}</h5>
-
-            </div>
-        </div>
-    </div>
-    <br><br>
-    <div class="btn-group mt-3 mb-5 " style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         <a class="btn btn-primary" @if($nombre->id_tipo_cliente!==1)
         href="{{route("pagoparticulares",["id"=>$nombre->id])}}"
            @else
@@ -181,7 +181,7 @@
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <table class="table ruler-vertical table-hover mx-sm-0 ">
 
-                        <thead class="thead-light">
+                        <thead class="thead-dark">
                         <tr>
                             <th >N°</th>
                             <th>Mes</th>

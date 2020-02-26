@@ -10,42 +10,39 @@
         </div>
     </header>
 
+    <div class="container-xl clearfix px-2 mt-4">
+        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" >
 
-        <div class="card-header" style="background: transparent;height: 50px;" >
+            <div class="card margencard" style=" border: none;" >
+
+                <div >
+                    @if($cliente->id_tipo_cliente==3 )
+
+                        <H5> Expediente Particular</H5>
+                    @endif
+                    @if($cliente->id_tipo_cliente==2)
+                        <H5> Expediente Docente</H5>
+
+                    @endif
+                    @if($cliente->id_tipo_cliente==1)
+                        <H5> Expediente Estudiante</H5>
+                    @endif
+
+                </div>
+
+                </div>
+            </div>
+
+        <div class="card"
+             style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
+            <div class="card-header" style="background: transparent;height: 50px;" >
             <a class="btn btn-default" href="/estadisticas"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
         </div>
     </div>
 
-    <div class="w3-container w3-teal mx-5">
-
-    <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$cliente->imagen}}" width="150px" height="150px" >
-
-        <div class="card margencard" style=" border: none;" >
-
-        <div style="margin-top: 3%">
-
-            @if($cliente->id_tipo_cliente==3 )
-
-                <H5> Expediente Particular</H5>
-            @endif
-            @if($cliente->id_tipo_cliente==2)
-                <H5> Expediente Docente</H5>
-
-            @endif
-            @if($cliente->id_tipo_cliente==1)
-                <H5> Expediente Estudiante</H5>
-            @endif
-            <h5 style="all: revert">Grafico</h5>
-            <h5>Nombre: {{$cliente->nombre}}</h5>
-
-        </div>
-        </div>
-    <br><br>
-
-
-    <div class="btn-group mt-3 mb-5 " role="group" aria-label="Button group with nested dropdown">
+    <div class="btn-group mt-3 mb-5 " role="group" aria-label="Button group with nested dropdown" >
 
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
 
@@ -69,18 +66,13 @@
         <a class="btn btn-primary" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
     </div>
-
-
-
     </div>
 
-
-
-
-
-    <div>
+    <div class="w3-container w3-teal mx-30" style="margin-top: -12%; margin-left: 21%;
+     margin-right: 10%; margin-bottom: 10%">
             {!! $chart->container() !!}
 
     </div>
     {!! $chart->script() !!}
+        </div>
 @endsection
