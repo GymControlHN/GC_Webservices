@@ -229,14 +229,14 @@
             </div>
 
 
-        <form class="form-inline" method="get" action="{{route('docente.buscarDoc')}}">
+        <form class="form-inline" method="get" action="{{route('docente.buscarDocente')}}">
 
             <div class="input-group mb-3 mr-2">
 
-                <input type="text" class="form-control " name="busquedaDoc"
-                       id="inputText2"  value="{{old("busquedaDoc")}}"
+                <input type="text" class="form-control " name="busquedaDeDocente"
+                       id="inputText2"  value="{{old("busquedaDeDocente")}}"
                        placeholder="Buscar">
-                @if(old("busquedaDoc"))
+                @if(old("busquedaDeDocente"))
                     <div class="input-group-prepend">
                         <a class="btn btn-danger" onclick="window.location.href='/docentes'" style="color:white;" type="button">&times;</a>
                     </div>

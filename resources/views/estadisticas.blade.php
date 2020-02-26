@@ -14,11 +14,23 @@
 
         <form class="form-inline" method="get" action="{{route('cliente.buscarCliente')}}">
 
-            <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control" id="inputText2" placeholder="Buscar" name="busquedaCliente">
+            <div class="input-group mb-3 mr-2">
+
+                <input type="text" class="form-control" name="busquedaCliente"
+                       id="inputText2" value="{{old("busquedaCliente")}}"
+                       placeholder="Buscar">
+                @if(old("busquedaCliente"))
+                    <div class="input-group-prepend">
+                        <a class="btn btn-danger" onclick="window.location.href='/estadisticas'" style="color:white;" type="button">&times;</a>
+                    </div>
+                @endif
+
             </div>
-            <button type="submit" class="btn btn-primary my-3 ">Buscar</button>
+            <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
+
+
+
         <div class="table-responsive mt-4"  style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">

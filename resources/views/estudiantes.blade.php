@@ -237,15 +237,15 @@
         </div>
 
 
-        <form class="form-inline" method="get" action="{{route('estudiante.buscar')}}">
+        <form class="form-inline" method="get" action="{{route('estudiante.buscarEstudiante')}}">
 
 
             <div class="input-group mb-3 mr-2">
 
-                <input type="text" class="form-control" id="inputText2" name="busqueda"
-                       value="{{old("busqueda")}}"
+                <input type="text" class="form-control" id="inputText2" name="busquedaDeEstudiante"
+                       value="{{old("busquedaDeEstudiante")}}"
                        placeholder="Buscar">
-                @if(old("busqueda"))
+                @if(old("busquedaDeEstudiante"))
                     <div class="input-group-prepend">
                         <a class="btn btn-danger" onclick="window.location.href='/estudiantes'" style="color:white;" type="button">&times;</a>
                     </div>

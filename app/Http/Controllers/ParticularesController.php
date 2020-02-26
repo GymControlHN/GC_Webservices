@@ -145,11 +145,11 @@ class ParticularesController extends Controller
     }
 
     public function buscarParticular(Request $request){
-        $busquedaPart = $request->input("busquedaPart");
+        $busquedaDePartarticular = $request->input("busquedaDeParticular");
 
         $particulares=Cliente::where("id_tipo_cliente","=","3")
-        ->where("nombre","like","%".$busquedaPart."%")
-            ->orWhere("created_at","like","%".$busquedaPart."%")
+        ->where("nombre","like","%".$busquedaDePartarticular."%")
+            ->orWhere("created_at","like","%".$busquedaDePartarticular."%")
             ->paginate(10);
         session()->flashInput($request->input());
 

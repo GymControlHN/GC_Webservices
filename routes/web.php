@@ -100,7 +100,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('particulares/{id}/editar','ParticularesController@edit')->name('particular.editar');
     Route::put('particulares/editar','ParticularesController@update')->name('particular.update');
 
-    Route::get("buscar","EstudiantesController@buscarEstudiante")->name("estudiante.buscar");
+    Route::get("buscarEstudiante","EstudiantesController@buscarEstudiante")->name("estudiante.buscarEstudiante");
 
     Route::get('pagosestudiantes/{id}', 'PagoEstudianteController@index')->name('pagoestudiantes');
     Route::get('pagosestudiantes/crear', 'PagoEstudianteController@create')->name('pagoestudiantes.formulario');
@@ -110,9 +110,9 @@ Route::group(["middleware"=>"auth"],function (){
     Route::put('pagosestudiantes/editar','PagoEstudianteController@update')->name('pagoestudiantes.update');
 
 
-    Route::get("buscarPart","ParticularesController@buscarParticular")->name("particular.buscarPart");
+    Route::get("buscarParticular","ParticularesController@buscarParticular")->name("particular.buscarParticular");
     Route::get("buscarCliente","EstadisticasController@buscarCliente")->name("cliente.buscarCliente");
-    Route::get("buscarDoc","DocentesController@buscarDocente")->name("docente.buscarDoc");
+    Route::get("buscarDocente","DocentesController@buscarDocente")->name("docente.buscarDocente");
 
     Route::get('pagosparticulares/{id}', 'PagoParticularController@index')->name('pagoparticulares');
     Route::get('pagosparticulares/crear', 'PagoParticularController@create')->name('pagoparticulares.formulario');

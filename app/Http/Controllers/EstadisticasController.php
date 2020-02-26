@@ -21,6 +21,7 @@ class EstadisticasController extends Controller
             ->paginate(10);
 
 
+        session()->flashInput([]);
         return view('estadisticas')->with('clientes', $clientes)->with('no',1);
     }
 
@@ -85,6 +86,7 @@ class EstadisticasController extends Controller
             ->where("nombre","like","%".$busquedaCliente."%")
             ->orWhere("fecha_de_ingreso","like","%".$busquedaCliente."%")
             ->paginate(10);
+        session()->flashInput($request->input());
 
         return view('estadisticas')->with('clientes', $clientes)->with('no',1);
     }
