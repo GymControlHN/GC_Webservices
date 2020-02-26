@@ -224,12 +224,21 @@
 
         <form class="form-inline" method="get" action="{{route('particular.buscarPart')}}">
 
-            <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control mb-3" name="busquedaPart"
-                       id="inputText2" placeholder="Buscar">
+            <div class="input-group mb-3 mr-2">
+
+                <input type="text" class="form-control" name="busquedaPart"
+                       id="inputText2" value="{{old("busquedaPart")}}"
+                       placeholder="Buscar">
+                @if(old("busquedaPart"))
+                    <div class="input-group-prepend">
+                        <a class="btn btn-danger" onclick="window.location.href='/particulares'" style="color:white;" type="button">&times;</a>
+                    </div>
+                @endif
             </div>
             <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
+
+
 
         @if(session("exito"))
             <div class="alert alert-success alert-dismissible fade show" role="alert">

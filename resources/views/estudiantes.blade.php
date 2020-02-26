@@ -125,7 +125,9 @@
                                             required>
                                         @foreach($carreras as $carrera)
                                             <option value="{{$carrera->id}}"
-                                                    {{ old('carrera') == $carrera->id ? "selected" : "" }}>{{$carrera->carrera}}</option>
+                                                    {{ old('carrera') == $carrera->id ? "selected" : "" }}>
+                                                {{$carrera->carrera}}
+                                            </option>
                                         @endforeach
                                         @if ($errors->has('carrera'))
                                             <span class="help-block" style="color: red">
@@ -238,10 +240,18 @@
         <form class="form-inline" method="get" action="{{route('estudiante.buscar')}}">
 
 
-            <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control mb-3" id="inputText2" name="busqueda"
+            <div class="input-group mb-3 mr-2">
+
+                <input type="text" class="form-control" id="inputText2" name="busqueda"
+                       value="{{old("busqueda")}}"
                        placeholder="Buscar">
+                @if(old("busqueda"))
+                    <div class="input-group-prepend">
+                        <a class="btn btn-danger" onclick="window.location.href='/estudiantes'" style="color:white;" type="button">&times;</a>
+                    </div>
+                @endif
             </div>
+
             <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
 

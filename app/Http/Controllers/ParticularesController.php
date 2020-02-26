@@ -14,6 +14,7 @@ class ParticularesController extends Controller
     public function index () {
         $clientes = Cliente::where("id_tipo_cliente","=",3)
             ->paginate(10);
+        session()->flashInput([]);
         return view('particulares')->with('particulares' , $clientes)->with('no',1);
     }
 
@@ -150,6 +151,8 @@ class ParticularesController extends Controller
         ->where("nombre","like","%".$busquedaPart."%")
             ->orWhere("created_at","like","%".$busquedaPart."%")
             ->paginate(10);
+        session()->flashInput($request->input());
+
 
         return view('particulares')->with('particulares', $particulares)->with('no',1);
 

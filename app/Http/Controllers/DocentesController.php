@@ -16,6 +16,8 @@ class DocentesController extends Controller
     {
         $clientes = Cliente::where("id_tipo_cliente", "=", "2")
             ->paginate(10);
+        session()->flashInput([]);
+        return view('docentes')->with('docentes', $clientes)->with('no',1);
         return view('docentes')->with('docentes', $clientes)->with('no', 1);
     }
 
@@ -163,6 +165,7 @@ class DocentesController extends Controller
             ->where("nombre", "like", "%" . $busquedaDoc . "%")
             ->orWhere("created_at", "like", "%" . $busquedaDoc . "%")
             ->paginate(10);
+        session()->flashInput($request->input());
 
         return view('docentes')->with('docentes', $docentes)->with('no', 1);
     }

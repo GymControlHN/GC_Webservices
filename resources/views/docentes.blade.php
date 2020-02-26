@@ -231,9 +231,16 @@
 
         <form class="form-inline" method="get" action="{{route('docente.buscarDoc')}}">
 
-            <div class="form-group mr-sm-4 my-sm-4 ">
-                <input type="text" class="form-control mb-3" name="busquedaDoc"
-                       id="inputText2" placeholder="Buscar">
+            <div class="input-group mb-3 mr-2">
+
+                <input type="text" class="form-control " name="busquedaDoc"
+                       id="inputText2"  value="{{old("busquedaDoc")}}"
+                       placeholder="Buscar">
+                @if(old("busquedaDoc"))
+                    <div class="input-group-prepend">
+                        <a class="btn btn-danger" onclick="window.location.href='/docentes'" style="color:white;" type="button">&times;</a>
+                    </div>
+                @endif
             </div>
             <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>

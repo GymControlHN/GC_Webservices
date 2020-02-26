@@ -11,6 +11,7 @@ use App\Ruffier;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Cliente;
+use mysql_xdevapi\Session;
 
 class  EstudiantesController extends Controller
 {
@@ -22,6 +23,7 @@ class  EstudiantesController extends Controller
             ->paginate(10);
 
         $carrera = Carrera::all();
+        session()->flashInput([]);
         return view('estudiantes')->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1);
     }
 
@@ -187,8 +189,9 @@ class  EstudiantesController extends Controller
             ->orWhere("fecha_de_ingreso","like","%".$busqueda."%")
             ->paginate(10);
         $carrera = Carrera::all();
-
-        return view('estudiantes')->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1);
+        session()->flashInput($request->input());
+        return view("estudiantes")->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1)
+            ->with("busqueda",$busqueda);
     }
 
 
