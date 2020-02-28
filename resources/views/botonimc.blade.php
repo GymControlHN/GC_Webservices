@@ -10,9 +10,36 @@
         </div>
     </header>
     <!-- Header -->
+    <div class="container-xl clearfix px-2 mt-4">
+        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
 
 
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" >
+            <div class="card margencard" style=" border: none;" >
+
+
+
+                <div style="margin-top: 10%">
+                    <h5>{{$cliente->nombre}}</h5>
+
+                @if($cliente->id_tipo_cliente==3 )
+
+                    <H6> Expediente Particular</H6>
+                @endif
+                @if($cliente->id_tipo_cliente==2)
+                    <H6> Expediente Docente</H6>
+
+                @endif
+                @if($cliente->id_tipo_cliente==1)
+                    <H6> Expediente Estudiante</H6>
+                @endif
+                <h6 style="all: revert">Medida Antropometrica</h6>
+
+            </div>
+
+    </div>
+        </div>
     <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
         <div class="card-header" style="background: transparent;height: 50px;">
             <a class="btn btn-default" href="{{route("imc.ini",[$cliente->id])}}"><span><i
@@ -21,34 +48,7 @@
         </div>
     </div>
 
-    <div class="w3-container w3-teal mx-5">
-
-
-            <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$cliente->imagen}}" width="150px" height="150px" >
-            <div class="card margencard" style=" border: none;" >
-
-
-                <div style="margin-top: 3%">
-                @if($cliente->id_tipo_cliente==3 )
-
-                    <H5> Expediente Particular</H5>
-                @endif
-                @if($cliente->id_tipo_cliente==2)
-                    <H5> Expediente Docente</H5>
-
-                @endif
-                @if($cliente->id_tipo_cliente==1)
-                    <H5> Expediente Estudiante</H5>
-                @endif
-                <h5 style="all: revert">Medida Antropometrica</h5>
-                <h5>Nombre: {{$cliente->nombre}}</h5>
-
-            </div>
-        </div>
-    </div>
-    <br><br>
-    <div class="btn-group mt-3 mb-5" style="margin-left: 3%;" role="group"
-         aria-label="Button group with nested dropdown">
+        <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
 
 
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
@@ -129,8 +129,8 @@
 
 
         <div class="margeneditar">
-            <h5 class="label2" style="margin-left: 3%">Agregar medidas antropometricas</h5>
-            <div class="form-row mt-4">
+            <h5 class="label2" style="margin-left: 8%; margin-top: -1%">Agregar medidas antropometricas</h5>
+            <div class="form-row mt-4" >
                 <div class="form-group col-md-4">
                     <h6 class=" label2" for="email">Peso kg:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" id="peso" required

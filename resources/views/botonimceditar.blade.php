@@ -259,7 +259,6 @@
         </div>
 
 
-        </div>
 
         <div class="form-group col-md-4">
             <h6 class="label2" for="email"></h6>
@@ -269,7 +268,6 @@
                    value="{{$antecedente->imc}}"
                    @endisset
                    value="{{old('imc')}}" readonly>
-        </div>
         </div>
 
         <div class="form-row">
@@ -285,6 +283,6 @@
 
         </div>
     </form>
-    </div>
     </html>
+    </div>
 @endsection
