@@ -13,38 +13,38 @@
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
 
-            <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" >
+        <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" >
             <div class="card margencard" style=" border: none;" >
 
 
-                <div style="margin-top: 3%">
+                <div >
 
-
+                    <h5 style="margin-top: 10%">{{$cliente->nombre}}</h5>
 
                     @if($cliente->id_tipo_cliente==3 )
 
-                        <H5> Expediente Particular</H5>
+                        <H6> Expediente Particular</H6>
                     @endif
                     @if($cliente->id_tipo_cliente==2)
-                        <H5> Expediente Docente</H5>
+                        <H6> Expediente Docente</H6>
 
                     @endif
                     @if($cliente->id_tipo_cliente==1)
-                        <H5> Expediente Estudiante</H5>
+                        <H6> Expediente Estudiante</H6>
                     @endif
-                    <h5 style="all: revert">Ruffier</h5>
-                    <h5>Nombre: {{$cliente->nombre}}</h5>
+                    <h6 style="all: revert">Ruffier</h6>
+
 
                 </div>
-
-        <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
-        <div class="card-header" style="background: transparent;height: 50px;">
-            <a class="btn btn-default" href="{{route("ruffier.uni",[$cliente->id])}}"><span>
-                    <i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-
         </div>
     </div>
-                <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
+        <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
+                    <div class="card-header" style="background: transparent;height: 50px;">
+                        <a class="btn btn-default" href="{{route("ruffier.uni",[$cliente->id])}}"><span>
+                    <i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+                    </div>
+        </div>
+        <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
             @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
 
             <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
@@ -141,7 +141,7 @@
 
             {{method_field('put')}}
 
-            <h5 class=" ml-5 mt-4" >Editar Calculo de Ruffier</h5>
+            <h5 style="margin-top: -1%">Editar Calculo de Ruffier</h5>
 
             <div class="form-row mt-4">
                 <div class="form-group col-md-6">
@@ -193,8 +193,8 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <h6 class="label2" for="email">MVO2:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                <h6 class="label2" for="email" style="margin-left: 49%">MVO2:</h6>
+                    <input style="width: 310px;margin-left: 49%" type="number" class="form-control inputtamaño3"
                            id="mvo" name="mvo" maxlength="3"
                            @isset($dato)
                            value="{{$dato->mvo}}"
@@ -204,8 +204,8 @@
                 </div>
 
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">MVO2 Real:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <h6 class="label2" for="email" style="margin-left: 28%">MVO2 Real:</h6>
+                    <input style="width: 310px; margin-left: 28%" type="number" class="form-control inputtamaño3"
                            id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
 
                            @isset($dato)
@@ -218,8 +218,8 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Diagnostico MVO:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <h6 class="label2" for="email" style="margin-left: 49%">Diagnostico MVO:</h6>
+                    <input style="width: 310px; margin-left: 49%" type="number" class="form-control inputtamaño3"
                            id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
                            value="{{old(' mvodiagnostico')}}" readonly required >
                 </div>

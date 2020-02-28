@@ -9,44 +9,42 @@
             </div>
         </div>
     </header>
-
-    <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
-        <div class="card-header" style="background: transparent;height: 50px;">
-            <a class="btn btn-default" href="{{route("grasa.uni",[$nombre->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-
-        </div>
-    </div>
+    <div class="container-xl clearfix px-2 mt-4">
+        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
 
-
-        <div class="w3-container w3-teal mx-5">
-
-            <img style="border-radius: 50%;float: left;margin-right: 10px" src="/clientes_imagenes/{{$nombre->imagen}}" width="150px" height="150px" >
+            <img src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" >
             <div class="card margencard" style=" border: none;" >
 
 
-                <div style="margin-top: 3%">
-
+                <div>
+                    <h5 style="margin-top: 10%">{{$nombre->nombre}}</h5>
 
             @if($nombre->id_tipo_cliente==3 )
 
-                <H5> Expediente Particular</H5>
+                <H6> Expediente Particular</H6>
             @endif
             @if($nombre->id_tipo_cliente==2)
-                <H5> Expediente Docente</H5>
+                <H6> Expediente Docente</H6>
 
             @endif
             @if($nombre->id_tipo_cliente==1)
-                <H5> Expediente Estudiante</H5>
+                <H6> Expediente Estudiante</H6>
             @endif
             <h5 style="all: revert">Grasa Corporal</h5>
-            <h5>Nombre: {{$nombre->nombre}}</h5>
+
 
         </div>
     </div>
     </div>
-    <br><br>
-    <div class="btn-group mt-3 mb-5" style="margin-left: 50px;" role="group" aria-label="Button group with nested dropdown">
+        <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
+            <div class="card-header" style="background: transparent;height: 50px;">
+                <a class="btn btn-default" href="{{route("grasa.uni",[$nombre->id])}}"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+
+            </div>
+        </div>
+
+        <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
 
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
 
@@ -143,7 +141,7 @@
 
     <input id="sexo" value="{{$nombre->genero}}" type="hidden">
 
-        <form name="id_imc" id="id_imc"
+        <div name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
               method="post"
               action="@isset($grasa)
@@ -153,13 +151,7 @@
             {{method_field('put')}}
 
 
-            <h5 class="mt-4 ml-5">Editar medidas de la grasa corporal</h5>
-
-
-
-
-
-
+            <h5  style="margin-top: -1%;">Editar medidas de la grasa corporal</h5>
 
 
             <div class="form-row">
@@ -211,8 +203,8 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Porcentaje:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <h6 class="label2" for="email" style="margin-left: 10%">Porcentaje:</h6>
+                    <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3"
                            id="grasa" name="grasa" maxlength="3"
                            @isset($grasa)
                            value="{{$grasa->grasa}}"
@@ -232,8 +224,7 @@
             </div>
 
 
-
-                </div>
+        </div>
 
             <input name="id_cliente" value="{{$id->id}}" type="hidden">
 
@@ -248,7 +239,7 @@
 
                 <button type="submit" class="btn btn-primary  boton3">Guardar</button>
             </div>
-
+    </html>
     </form>
     </div>
 
