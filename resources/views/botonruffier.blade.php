@@ -16,7 +16,7 @@
 
 
             <div >
-                <h5 style="margin-top: 3%">{{$cliente->nombre}}</h5>
+                <h5 style="margin-top: 10%">{{$cliente->nombre}}</h5>
             @if($cliente->id_tipo_cliente==3 )
 
                 <H6> Expediente Particular</H6>
@@ -143,7 +143,7 @@
 
             <div class="form-row mt-4">
                 <div class="form-group col-md-6">
-                    <h6 class=" label2" for="email">Pulso en reposo</h6>
+                    <h6 class=" label2" for="email" style="margin-top: -1%">Pulso en reposo</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso_r"
                                name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                               value="{{old('pulso_r')}}" required
@@ -153,7 +153,7 @@
 
 
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Pulso en accion:</h6>
+                    <h6 class="label2" for="email" style="margin-top: -1%">Pulso en accion:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                               value="{{old('pulso_a')}}" required>
@@ -162,14 +162,14 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Pulso en descanso:</h6>
+                    <h6 class="label2" for="email" style="margin-top: 1%">Pulso en descanso:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="pulso_d" name="pulso_d" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
                               value="{{old('pulso_d')}}" required>
                 </div>
 
                     <div class="form-group col-md-6">
-                    <h6 class="label2" for="email">Ruffier:</h6>
+                    <h6 class="label2" for="email" style="margin-top: 1%">Ruffier:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3"
                                id="ruffiel" name="ruffiel" maxlength="3"
                              value="{{old('ruffiel')}}" readonly required>
@@ -178,13 +178,13 @@
 
                 <div class="form-row">
                    <div class="form-group col-md-6">
-                    <h6 class="label2" for="email" style="margin-left: 49%">MVO2:</h6>
+                    <h6 class="label2" for="email" style="margin-left: 49%; margin-top: 1%">MVO2:</h6>
                         <input style="width: 310px; margin-left: 49%" type="number" class="form-control inputtamaño3"
                                id="mvo" name="mvo" maxlength="3"
                               value="{{old('mvo')}}" required placeholder="Ingrese fuerza pulmonar">
                     </div>
                     <div class="form-group col-md-6">
-                        <h6 class="label2" for="email" style="margin-left: 28%">MVO2 Real:</h6>
+                        <h6 class="label2" for="email" style="margin-left: 28%; margin-top: 1%">MVO2 Real:</h6>
                         <input style="width: 310px; margin-left: 28%" type="number" class="form-control inputtamaño3"
                                id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
 
@@ -195,7 +195,7 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <h6 class="label2" for="email" style="margin-left: 49%">Diagnostico MVO:</h6>
+                            <h6 class="label2" for="email" style="margin-left: 49%; margin-top: 1%">Diagnostico MVO:</h6>
                             <input style="width: 310px; margin-left: 49%" type="number" class="form-control inputtamaño3"
                                    id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
                                    value="{{old(' mvodiagnostico')}}" readonly required >

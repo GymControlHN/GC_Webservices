@@ -135,10 +135,10 @@
         {{method_field('put')}}
 
 
-        <h5  style="margin-left: 3%;margin-top: -2%">Editar medidas antropometricas</h5>
+        <h5  style="margin-left: 3%;margin-top: -1%">Editar medidas antropometricas</h5>
         <div class="form-row mt-4">
             <div class="form-group col-md-4">
-                <h6 class=" label2" for="email">Peso kg:</h6>
+                <h6 class=" label2" for="email" style="margin-top: -1%">Peso kg:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3" id="peso"
                        name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos"
                        onkeyup="calcularIMC()"
@@ -149,7 +149,7 @@
             </div>
 
             <div class="form-group col-md-4">
-                <h6 class="label2" for="email">Altura:</h6>
+                <h6 class="label2" for="email" style="margin-top: -1%">Altura:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3"
                        id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla"
                        onkeyup="calcularIMC()"
@@ -161,7 +161,7 @@
 
 
             <div class="form-group col-md-4">
-                <h6 class="label2" for="email">Pecho:</h6>
+                <h6 class="label2" for="email" style="margin-top: -1%">Pecho:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3"
                        name="pecho" id="pecho"
                        @isset($antecedente)
@@ -172,7 +172,7 @@
 
 
             <div class="form-group col-md-4">
-                <h6 class="label2" for="email">Brazo:</h6>
+                <h6 class="label2" for="email" style="margin-top: 1%">Brazo:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3" name="brazo" id="brazo"
                        @isset($antecedente)
                        value="{{$antecedente->brazo}}"
@@ -182,7 +182,7 @@
 
 
             <div class="form-group col-md-4">
-                <h6 class="label2" for="email">ABD-A:</h6>
+                <h6 class="label2" for="email" style="margin-top: 1%">ABD-A:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3"
                        name="ABD_A" id="ABD_A"
                        @isset($antecedente)
@@ -193,7 +193,7 @@
             </div>
 
             <div class="form-group col-md-4">
-                <h6 class="label2" for="email">ABD-B:</h6>
+                <h6 class="label2" for="email" style="margin-top: 1%">ABD-B:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3"
                        name="ABD_B" id="ABD_B"
                        @isset($antecedente)
@@ -203,7 +203,7 @@
             </div>
 
             <div class="form-group col-md-4">
-                <h6 class="label2" for="email">Cadera:</h6>
+                <h6 class="label2" for="email" style="margin-top: 2%">Cadera:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3"
                        name="cadera" id="cadera"
                        @isset($antecedente)
@@ -212,7 +212,7 @@
                        value="{{old('cadera')}}">
             </div>
             <div class="form-group col-md-4">
-                <h6 class="label2" for="email">Muslo:</h6>
+                <h6 class="label2" for="email" style="margin-top: 2%">Muslo:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3"
                        name="muslo" id="muslo"
                        @isset($antecedente)
@@ -222,7 +222,7 @@
             </div>
 
             <div class="form-group col-md-4">
-                <h6 class="label2" for="email">Pierna:</h6>
+                <h6 class="label2" for="email" style="margin-top: 2%">Pierna:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3"
                        name="pierna" id="pierna"
                        @isset($antecedente)

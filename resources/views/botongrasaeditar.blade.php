@@ -156,7 +156,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <h6 class="label2" for="email">Pc_tricipital:</h6>
+                <h6 class="label2" for="email" style="margin-top: 1%">Pc tricipital:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" onkeyup="calcularGrasa()"
                            id="pc_tricipital" name="pc_tricipital" maxlength="3"
                            @isset($grasa)
@@ -167,7 +167,7 @@
 
 
                     <div class="form-group col-md-6">
-                <h6 class="label2" for="email">Pc Infraescrupural:</h6>
+                <h6 class="label2" for="email" style="margin-top: 1%">Pc Infraescrupural:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" onkeyup="calcularGrasa()"
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
@@ -179,7 +179,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                <h6 class="label2" for="email">Pc Biciptal:</h6>
+                <h6 class="label2" for="email" style="margin-top: 2%">Pc Biciptal:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" onkeyup="calcularGrasa()"
                            id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
@@ -190,7 +190,7 @@
 
 
                     <div class="form-group col-md-6">
-                <h6 class="label2" for="email">Pc Suprailiaco:</h6>
+                <h6 class="label2" for="email" style="margin-top: 2%">Pc Suprailiaco:</h6>
 
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" onkeyup="calcularGrasa()"
                            id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50" placeholder="Ingrese medicas en cm"
@@ -203,8 +203,8 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email" style="margin-left: 10%">Porcentaje:</h6>
-                    <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3"
+                    <h6 class="label2" for="email" style="margin-left: 363px; margin-top: 1% ">Porcentaje:</h6>
+                    <input style="width: 310px; margin-left: 363px" type="number" class="form-control inputtamaño3"
                            id="grasa" name="grasa" maxlength="3"
                            @isset($grasa)
                            value="{{$grasa->grasa}}"

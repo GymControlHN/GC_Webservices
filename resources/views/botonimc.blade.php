@@ -132,14 +132,14 @@
             <h5 class="label2" style="margin-left: 8%; margin-top: -1%">Agregar medidas antropometricas</h5>
             <div class="form-row mt-4" >
                 <div class="form-group col-md-4">
-                    <h6 class=" label2" for="email">Peso kg:</h6>
+                    <h6 class=" label2" for="email" style=" margin-top: -1%">Peso kg:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" id="peso" required
                            name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos"
                            onkeyup="calcularIMC()" value="{{old('peso')}}">
                 </div>
 
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">Altura:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: -1%">Altura:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3"
                            id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla en cm" required
                            onkeyup="calcularIMC()" value="{{old('altura')}}">
@@ -148,43 +148,43 @@
 
 
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">Pecho:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: -1%">Pecho:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" required
                            name="pecho" id="pecho" value="{{old('peso')}}" placeholder="Ingrese la talla en cm">
                 </div>
 
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">Brazo:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: 1%">Brazo:</h6>
                     <input style="width:310px" type="number" class="form-control inputtamaño3" required
                            name="brazo" id="brazo" value="{{old('brazo')}}" placeholder="Ingrese la talla en cm">
                 </div>
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">ABD-A:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: 1%">ABD-A:</h6>
                     <input style="width:310px" type="number" class="form-control inputtamaño3" required
                            name="ABD_A" id="ABD_A" value="{{old('ABD_A')}}" placeholder="Ingrese la talla en cm">
                 </div>
 
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">ABD-B:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: 1%">ABD-B:</h6>
                     <input style="width:310px" type="number" class="form-control inputtamaño3"
                            required name="ABD_B" id="ABD_B" value="{{old('ABD_B')}}"
                            placeholder="Ingrese la talla en cm">
                 </div>
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">Cadera:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: 2%">Cadera:</h6>
                     <input style="width:310px" type="number" class="form-control inputtamaño3" required
                            name="cadera" id="cadera" value="{{old('cadera')}}" placeholder="Ingrese la talla en cm">
                 </div>
 
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">Muslo:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: 2%">Muslo:</h6>
                     <input style="width:310px" type="number" class="form-control inputtamaño3" required
                            name="muslo" id="muslo" value="{{old('muslo')}}" placeholder="Ingrese la talla en cm">
                 </div>
 
 
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email">Pierna:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: 2%">Pierna:</h6>
                     <input style="width:310px" type="number" class="form-control inputtamaño3" required
                            name="pierna" id="pierna" value="{{old('pierna')}}" placeholder="Ingrese la talla en cm">
                 </div>
@@ -227,6 +227,5 @@
 
     </form>
 
-    </div>
     </html>
 @endsection
