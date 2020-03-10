@@ -120,7 +120,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 @if($usuarios->count()>0)
                     @foreach($usuarios as $usuario)
                         <tr>
-                            <td>{{$no++}}</td>
+                            <td><b>{{$no++}}</b></td>
                             <th>{{$usuario->name}}</th>
                             <th>{{$usuario->email}}</th>
                             <th><i class="fas fa-exclamation-triangle" data-toggle="tooltip"

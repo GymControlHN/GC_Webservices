@@ -9,8 +9,18 @@
             </div>
         </div>
     </header>
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:80%;">
+        <ol class="breadcrumb" style="background-color: white">
+            <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
+            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}}">Imc</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Editar</li>
+        </ol>
+    </nav>
     <div class="container-xl clearfix px-2 mt-4">
-        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
+        @if($cliente->id_tipo_cliente==1)
+            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+        @endif
+        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
 
 
         <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" >
@@ -28,20 +38,11 @@
                     <H6> Expediente Docente</H6>
 
                 @endif
-                @if($cliente->id_tipo_cliente==1)
-                    <H6> Expediente Estudiante</H6>
-                @endif
-                <h6 style="all: revert">Medida antropometrica</h6>
-
 
             </div>
         </div>
     </div> <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
-            <div class="card-header" style="background: transparent;height: 50px;">
-                <a class="btn btn-default" href="{{route("imc.ini",[$cliente->id])}}"><span><i
-                                class="fa fa-arrow-circle-left"></i></span> Regresar</a>
 
-            </div>
         </div>
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">

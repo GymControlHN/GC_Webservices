@@ -13,7 +13,7 @@
 
 
     <div class="container-xl clearfix px-2 mt-4">
-        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
+        <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-5 pr-xl-6">
 
 
             <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" >
@@ -197,6 +197,20 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
         </div>
     </div>
 
+    <style>
+        .perfil{
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            overflow-y: hidden;
+            top: 10%;
+        }
+    </style>
 
+    <script>
+        window.addEventListener('scroll', function() {
+            document.querySelector('.perfil').style.marginTop =
+                Math.max(5, 100 - this.scrollY) + 'px';
+        }, false);
+    </script>
 
 @endsection
