@@ -202,8 +202,8 @@
 
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
-                                    <h6>Imagen del estudiante</h6>
-                                    <img width="200px" style="max-height:150px; object-fit: contain"  id="previewImagen"
+                                    <h6>Imagen del Estudiante</h6>
+                                    <img width="300px" style="max-height:150px; object-fit: contain"  id="previewImagen"
                                          @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
 
                                     <label id="labelImagen" for="imagen" class="btn btn-large"><span><i class="fa fa-user fa-4x"></i></span></label>
@@ -453,10 +453,10 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del estudiante</h6>
-                                    <img width="200px" style="max-height:150px; object-fit: contain" id="previewImagenEditar"
+                                    <img width="200px" style="max-height:100px; object-fit: contain" id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>
                                     <input type="file" accept="image/*"
-                                           style="opacity: 0;object-fit: contain"
+                                           style="display: none";
                                            onchange="loadFile2(event)"
                                            src="" class="form-control" id="imagenEditar"
                                            name="imagen"/>
@@ -468,7 +468,7 @@
                                             var image = document.getElementById('previewImagenEditar');
                                             image.src = URL.createObjectURL(event.target.files[0]);
                                             document.getElementById("labelFoto").style.display="none";
-                                            document.getElementById("imagenEditar").style.opacity = "0";
+
                                         };
                                         var seleccionarImagenEditar = function (event) {
                                             var element = document.getElementById("imagenEditar");
