@@ -10,10 +10,10 @@
         </div>
     </header>
 
-    <nav aria-label="breadcrumb" style="margin:1%; margin-right:85%;">
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white" >
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Imc</li>
+            <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
         </ol>
 
     </nav>
@@ -27,7 +27,7 @@
 
         <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-5 pr-xl-6">
             <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px"
-                 height="200px">
+                 height="200px" >
             <div class="card margencard" style=" border: none;" >
             <div>
                 <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>

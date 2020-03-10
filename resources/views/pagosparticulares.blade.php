@@ -6,17 +6,24 @@
         <div class="container">
         </div>
     </header>
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:85%;">
+        <ol class="breadcrumb" style="background-color: white" >
+            <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pagos</li>
+        </ol>
+
+    </nav>
+
 
     <div class="container-xl clearfix px-2 mt-4">
+        @if($nombre->id_tipo_cliente==3)
+            <h2 style="margin-left: 1%">Expediente Particular</h2>
+        @endif
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
-            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" >
+            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" style="margin-top: 20%">
             <div class="card margencard" style=" border: none;" >
                 <div >
                     <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
-                    @if($nombre->id_tipo_cliente==3 )
-
-                        <H6> Expediente Particular</H6>
-                    @endif
                     @if($nombre->id_tipo_cliente==2)
                         <H6> Expediente Docente</H6>
 
@@ -31,22 +38,11 @@
             </div>
         </div>
 
+            <div class="card"
+                 style="width: 170px; border: none">
+                <div  style="background: transparent;">
 
-            <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
-        <div class="card-header" style="background: transparent;height: 50px;" >
-            @if($nombre->id_tipo_cliente==3 )
-                <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-
-            @endif
-            @if($nombre->id_tipo_cliente==2)
-                <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-
-            @endif
-            @if($nombre->id_tipo_cliente==1)
-                <a class="btn btn-default" href="/estudiantes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-            @endif
-
-        </div>
+                </div>
     </div>
 
 
@@ -57,7 +53,7 @@
            @else
            href="{{route("pagoestudiantes",["id"=>$nombre->id])}}" @endif >Pagos</a>
 
-        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntropometicas</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
         <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>

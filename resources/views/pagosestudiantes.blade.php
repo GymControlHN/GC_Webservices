@@ -6,10 +6,20 @@
         <div class="container">
         </div>
     </header>
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:85%;">
+        <ol class="breadcrumb" style="background-color: white" >
+            <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pagos</li>
+        </ol>
+
+    </nav>
 
     <div class="container-xl clearfix px-2 mt-4">
-        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
-            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" >
+        @if($nombre->id_tipo_cliente==1)
+            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+        @endif
+        <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
+            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px"  style="margin-top: 20%">
             <div class="card margencard" style=" border: none;" >
 
 
@@ -23,10 +33,8 @@
                         <H6> Expediente Docente</H6>
 
                     @endif
-                    @if($nombre->id_tipo_cliente==1)
-                        <H6> Expediente Estudiante</H6>
-                    @endif
-                    <h6 style="all: revert">Pago</h6>
+
+                    <h6 style="all: revert">Pagos </h6>
 
 
                 </div>
@@ -35,21 +43,10 @@
 
 
         <div class="card"
-             style="width: 170px; border: none;background: transparent;margin-left: 50px;margin-top: 5px">
-            <div class="card-header" style="background: transparent;height: 50px;" >
-            @if($nombre->id_tipo_cliente==3 )
-                <a class="btn btn-default" href="/particulares"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+             style="width: 170px; border: none">
+            <div  style="background: transparent;">
 
-            @endif
-            @if($nombre->id_tipo_cliente==2)
-                <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-
-            @endif
-            @if($nombre->id_tipo_cliente==1)
-                <a class="btn btn-default" href="/estudiantes"><span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
-            @endif
-
-        </div>
+            </div>
     </div>
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
@@ -208,6 +205,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
         </div>
     </div>
+            <style>
+                .perfil{
+                    position: -webkit-sticky; /* Safari */
+                    position: sticky;
+                    overflow-y: hidden;
+                    top: 10%;
+                }
+            </style>
 @endsection
 
 
