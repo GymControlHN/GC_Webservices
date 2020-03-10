@@ -67,9 +67,9 @@
                     @endif >Pagos</a>
 
         @endif
-        <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
+        <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
 
     </div>
@@ -147,7 +147,7 @@
         <div class="form-row mt-4">
             <div class="form-group col-md-4">
                 <h6 class=" label2" for="email" style="margin-top: -1%">Peso kg:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" id="peso"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" id="peso"
                        name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos"
                        onkeyup="calcularIMC()"
                        @isset($antecedente)
@@ -158,7 +158,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: -1%">Altura:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
                        id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla"
                        onkeyup="calcularIMC()"
                        @isset($antecedente)
@@ -170,7 +170,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: -1%">Pecho:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
                        name="pecho" id="pecho"
                        @isset($antecedente)
                        value="{{$antecedente->pecho}}"
@@ -181,7 +181,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">Brazo:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" name="brazo" id="brazo"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" name="brazo" id="brazo"
                        @isset($antecedente)
                        value="{{$antecedente->brazo}}"
                        @endisset
@@ -191,7 +191,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">ABD-A:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
                        name="ABD_A" id="ABD_A"
                        @isset($antecedente)
                        value="{{$antecedente->ABD_A}}"
@@ -202,7 +202,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">ABD-B:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
                        name="ABD_B" id="ABD_B"
                        @isset($antecedente)
                        value="{{$antecedente->ABD_B}}"
@@ -212,7 +212,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Cadera:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
                        name="cadera" id="cadera"
                        @isset($antecedente)
                        value="{{$antecedente->cadera}}"
@@ -221,7 +221,7 @@
             </div>
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Muslo:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
                        name="muslo" id="muslo"
                        @isset($antecedente)
                        value="{{$antecedente->muslo}}"
@@ -231,7 +231,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Pierna:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
                        name="pierna" id="pierna"
                        @isset($antecedente)
                        value="{{$antecedente->pierna}}"

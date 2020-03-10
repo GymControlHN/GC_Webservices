@@ -61,7 +61,7 @@
 
 
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
-            <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
+            <a class="btn btn-secondary btn-sm" @if($cliente->id_tipo_cliente==3)
             href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
                @endif
                @if($cliente->id_tipo_cliente ==1)
@@ -72,9 +72,9 @@
                style="display: none;"
                     @endif >Pagos</a>
         @endif
-        <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
+        <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
 
     </div>

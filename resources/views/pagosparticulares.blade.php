@@ -6,7 +6,7 @@
         <div class="container">
         </div>
     </header>
-    @if($cliente->id_tipo_cliente==1)
+    @if($nombre->id_tipo_cliente==1)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
@@ -16,7 +16,7 @@
         </nav>
     @endif
 
-    @if($cliente->id_tipo_cliente==2)
+    @if($nombre->id_tipo_cliente==2)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
@@ -27,7 +27,7 @@
 
     @endif
 
-    @if($cliente->id_tipo_cliente==3 )
+    @if($nombre->id_tipo_cliente==3 )
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/particulares">Particular</a></li>

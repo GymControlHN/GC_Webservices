@@ -6,7 +6,7 @@
         <div class="container">
         </div>
     </header>
-    @if($cliente->id_tipo_cliente==1)
+    @if($nombre->id_tipo_cliente==1)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
@@ -16,7 +16,7 @@
         </nav>
     @endif
 
-    @if($cliente->id_tipo_cliente==2)
+    @if($nombre->id_tipo_cliente==2)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
@@ -27,7 +27,7 @@
 
     @endif
 
-    @if($cliente->id_tipo_cliente==3 )
+    @if($nombre->id_tipo_cliente==3 )
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/particulares">Particular</a></li>
@@ -81,14 +81,14 @@
     </div>
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
-        <a class="btn btn-primary  " href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
-        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntroPometricos</a>
-        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
-        <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
+        <a class="btn btn-primary btn-sm  " href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntroPometricos</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
     </div>
-        <button class="btn btn-primary   float-right mt-3" style="margin-top: -10px; margin-right: 50px"
+        <button class="btn btn-primary btn-sm  float-right mt-3" style="margin-top: -10px; margin-right: 50px"
                 data-toggle="modal" data-target="#modalPagoEstudiante" >Nuevo
         </button>
 

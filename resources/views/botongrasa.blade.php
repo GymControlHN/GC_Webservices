@@ -63,7 +63,7 @@
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
 
 
-        <a class="btn btn-secondary" @if($nombre->id_tipo_cliente==3)
+        <a class="btn btn-secondary btn-sm" @if($nombre->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$nombre->id])}}"
            @endif
            @if($nombre->id_tipo_cliente ==1)
@@ -75,9 +75,9 @@
 
 
         @endif
-        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
-        <a class="btn btn-primary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+        <a class="btn btn-primary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
 
     </div>
@@ -185,7 +185,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 1%">Pc tricipital:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
                            id="pc_tricipital" name="pc_tricipital" maxlength="3" placeholder="Ingrese medicas en cm"
                            value="{{old('pc_tricipital')}}" onkeyup="calcularGrasa()">
 
@@ -194,7 +194,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 1%">Pc Infraescrupural:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_infraescapular')}}"  onkeyup="calcularGrasa()">
 
@@ -204,7 +204,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 2%">Pc Biciptal:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
                            id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medida en cm"
                            value="{{old('pc_biciptal')}}"  onkeyup="calcularGrasa()">
 
@@ -213,7 +213,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 2%">Pc SupraIliaco:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
                            id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_supra_iliaco')}}"  onkeyup="calcularGrasa()">
 
@@ -222,7 +222,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <h6 class="label2" for="email" style=" margin-top: 1%; margin-left: 10%">Porcentaje:</h6>
-                        <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" required
+                        <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001" required
                                id="grasa" name="grasa" maxlength="3"
                                value="{{old('grasa')}}" readonly>
 
@@ -230,7 +230,7 @@
 
 
                     <div class="form-group col-md-6">
-                        <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3"
+                        <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3" step="0.0001"
                                id="id_diagnostico" name="id_diagnostico"
                                value="{{old('id_diagnostico')}}" >
                     </div>

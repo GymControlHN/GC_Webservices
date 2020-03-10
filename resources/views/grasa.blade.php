@@ -9,7 +9,7 @@
             </div>
         </div>
     </header>
-    @if($cliente->id_tipo_cliente==1)
+    @if($nombre->id_tipo_cliente==1)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
@@ -19,7 +19,7 @@
         </nav>
     @endif
 
-    @if($cliente->id_tipo_cliente==2)
+    @if($nombre->id_tipo_cliente==2)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
@@ -30,7 +30,7 @@
 
     @endif
 
-    @if($cliente->id_tipo_cliente==3 )
+    @if($nombre->id_tipo_cliente==3 )
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/particulares">Particular</a></li>
@@ -80,7 +80,7 @@
     <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
 
-            <a class="btn btn-secondary" @if($nombre->id_tipo_cliente==3)
+            <a class="btn btn-secondary btn-sm" @if($nombre->id_tipo_cliente==3)
             href="{{route("pagoparticulares",["id"=>$nombre->id])}}"
            @endif
            @if($nombre->id_tipo_cliente ==1)
@@ -92,13 +92,13 @@
         @endif
 
 
-        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
-        <a class="btn btn-primary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
-            <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+        <a class="btn btn-primary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+            <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
     </div>
-    <a class="btn btn-primary  mt-3" href="{{route("botongrasa",["id"=>$nombre->id])}}"
+    <a class="btn btn-primary btn-sm mt-3" href="{{route("botongrasa",["id"=>$nombre->id])}}"
        style="float: right; margin-right: 50px;color: white">Nuevo
 
     </a>
