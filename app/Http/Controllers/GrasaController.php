@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Charts\UserChart;
 use App\Cliente;
 
 use App\Estudiante;
@@ -10,7 +11,9 @@ use App\Imc;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Grasa;
-use DB;
+use Illuminate\Support\Facades\DB;
+
+
 
 class GrasaController extends Controller
 {
@@ -23,8 +26,23 @@ class GrasaController extends Controller
             ->select("diagnostico_grasas.diagnostico","grasa_corporal.*")
             ->orderBy("created_at","desc")->paginate(10);
 
+        $grasa = Grasa::select(DB::raw("COUNT(*) as count , grasa"))
+            ->whereYear('created_at', date('Y'))
+            ->where("id_cliente", '=', $id)
+            ->groupBy(DB::raw("Month(created_at)"))
+            ->pluck('grasa');
+
         $nombre = Cliente::findOrfail($id);
-        return view('grasa', compact("grasa_corporal"))->with("nombre", $nombre)->with('no',1);
+
+        $chart = new UserChart();
+        $chart->title("Estadisticas del usuario: " . $nombre->value("nombre"));
+        $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+
+        $chart->dataset('Grasa', 'line', $grasa)->options([
+            'fill' => 'true',
+            'borderColor' => '#CD5C5C',
+        ]);
+        return view('grasa', compact("grasa_corporal","chart"))->with("nombre", $nombre)->with('no',1);
 
         //$grasa_corporal = Grasa
         // ::where("id_cliente", "=", $request->input("id_cliente"));

@@ -9,10 +9,10 @@
             </div>
         </div>
     </header>
-    <nav aria-label="breadcrumb" style="margin:1%; margin-right:80%;">
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}}">Imc</a></li>
+            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}}">Medidas Antropometricas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Editar</li>
         </ol>
     </nav>

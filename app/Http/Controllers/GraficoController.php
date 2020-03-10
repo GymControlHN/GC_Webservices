@@ -39,18 +39,19 @@ class GraficoController extends Controller
         $chart = new UserChart();
         $chart->title("Estadisticas del usuario: " . $cliente->value("nombre"));
         $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+
         $chart->dataset('imc', 'line', $imc)->options([
             'fill' => 'true',
-            'borderColor' => '#51C1C0',
+            'borderColor' => '#00FF00',
         ]);
         $chart->dataset('Grasa', 'line', $grasa)->options([
             'fill' => 'true',
-            'borderColor' => $chart->loaderColor,
+            'borderColor' => '#CD5C5C',
         ]);
 
         $chart->dataset('Ruffiel', 'line', $ruffier)->options([
             'fill' => 'true',
-            'borderColor' => '#71C1C5',
+            'borderColor' => '#0000FF',
         ]);
         return view('graficos', compact('chart'))->with("cliente", $cliente);
     }
