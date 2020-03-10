@@ -80,12 +80,15 @@
         <a class="btn btn-primary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
             <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
+
     </div>
 
-    <a class="btn btn-primary"  href="{{route("botonruffier",["id"=>$cliente->id])}}"
-       style="float: right; margin-right: 50px; color: white">Nuevo
+        <a class="btn btn-primary mt-3"   href="{{route("botonruffier",["id"=>$cliente->id])}}"
+           style="float: right; margin-right: 50px; color: white">Nuevo
 
-    </a>
+        </a>
+
+
 
 
 
@@ -102,15 +105,17 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">N°</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Diagnostico</th>
                         <th scope="col">Pulso en reposo</th>
                         <th scope="col">Pulso en acción</th>
                         <th scope="col">Pulso en descanso</th>
                         <th scope="col">Ruffier</th>
-                        <th scope="col">Diagnostico</th>
+
                         <th scope="col">MVO2</th>
                         <th scope="col">MVOReal</th>
                         <th scope="col">Diagnostico MVO2</th>
-                        <th scope="col">Fecha</th>
+
                         <th scope="col">Acciones</th>
 
                     </tr>
@@ -123,15 +128,17 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                             @foreach($datos as $dato)
                                 <tr style="text-align:right">
                                     <td>{{$no++}}</td>
+                                    <th>{{date("d-m-Y",strtotime($dato->created_at))}}</th>
+                                    <td style="text-align: center">{{$dato->diagnostico}}</td>
                                 <td>{{$dato->pulso_r}}</td>
                                 <td>{{$dato->pulso_a}}</td>
                                 <td>{{$dato->pulso_d}}</td>
                                 <td>{{$dato->ruffiel}}</td>
-                                <td style="text-align: center">{{$dato->diagnostico}}</td>
+
                                 <td>{{$dato->mvo}}</td>
                                 <td>{{$dato->mvoreal}}</td>
                                     <td>{{$dato->mvodiagnostico}}</td>
-                                <th>{{date("d-m-Y",strtotime($dato->created_at))}}</th>
+
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2"><a
                                                 href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i

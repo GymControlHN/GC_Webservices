@@ -66,8 +66,8 @@
     </div>
 
 
-    <button class="btn btn-primary float-right" style="margin-top: -10px; margin-right: 50px"
-            data-toggle="modal" data-target="#modalPagoParticular" >Pago
+    <button class="btn btn-primary   float-right mt-3" style="margin-top: -10px; margin-right: 50px"
+            data-toggle="modal" data-target="#modalPagoParticular" >Nuevo
     </button>
 
     <div class="w3-container w3-teal mx-5">

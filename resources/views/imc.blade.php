@@ -80,7 +80,7 @@
 
 
                 </div>
-                <a class="btn btn-primary " href="{{route("botonimc",["id"=>$cliente->id])}}"
+                <a class="btn btn-primary  mt-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
                    style="float: right; margin-right: 50px; color: white">Nuevo
                 </a>
         <div class="w3-container w3-teal mx-5">
@@ -95,10 +95,11 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                             <tr>
 
                                 <th scope="col">N°</th>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Diagnostico</th>
                                 <th scope="col">Peso Kg</th>
                                 <th scope="col">Altura°</th>
                                 <th scope="col">Imc</th>
-                                <th scope="col">Diagnostico</th>
                                 <th scope="col">Pecho cm</th>
                                 <th scope="col">Brazo cm</th>
                                 <th scope="col">ABD A</th>
@@ -106,7 +107,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                 <th scope="col">Cadera cm</th>
                                 <th scope="col">Muslo cm</th>
                                 <th scope="col">Pierna cm</th>
-                                <th scope="col">Fecha</th>
+
                                 <th scope="col">Acciones</th>
                             </tr>
                             </thead>
@@ -117,10 +118,13 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                 @foreach($antecedentes as $antecedente)
                                     <tr style="text-align:right">
                                         <td>{{$no++}}</td>
+                                        <td><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
+                                        <td>{{$antecedente->diagnostico}}</td>
+
                                         <td>{{$antecedente->peso}}</td>
                                         <td>{{$antecedente->altura}}</td>
                                         <td>{{$antecedente->imc}}</td>
-                                        <td>{{$antecedente->diagnostico}}</td>
+
                                         <td>{{$antecedente->pecho}}</td>
                                         <td>{{$antecedente->brazo}}</td>
                                         <td>{{$antecedente->ABD_A}}</td>
@@ -129,7 +133,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                         <td>{{$antecedente->muslo}}</td>
                                         <td>{{$antecedente->pierna}}</td>
 
-                                        <td><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
 
 
                                         <td class="form-inline ">

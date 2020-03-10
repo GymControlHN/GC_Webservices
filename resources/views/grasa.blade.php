@@ -75,7 +75,7 @@
             <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
     </div>
-    <a class="btn btn-primary" href="{{route("botongrasa",["id"=>$nombre->id])}}"
+    <a class="btn btn-primary  mt-3" href="{{route("botongrasa",["id"=>$nombre->id])}}"
        style="float: right; margin-right: 50px;color: white">Nuevo
 
     </a>
@@ -93,14 +93,15 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                     <tr >
                         <th scope="col">N°</th>
 
-
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Clasificacion</th>
                         <th scope="col">PC Tricipital</th>
                         <th scope="col">PC Infraescapular</th>
                         <th scope="col">PC Supra Ilíaco</th>
                         <th scope="col">PC Biciptal</th>
                         <th scope="col">Porcentaje</th>
-                        <th scope="col">Clasificacion</th>
-                        <th scope="col">Fecha</th>
+
+
                         <th scope="col">Acciones</th>
 
                     </tr>
@@ -112,6 +113,8 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                             @foreach($grasa_corporal as $grasa)
                                 <tr style="text-align:right">
                                     <td>{{$no++}}</td>
+                                    <th>{{date("d-m-Y",strtotime($grasa->created_at))}}</th>
+                                    <td style="text-align: center">{{$grasa->diagnostico}}</td>
 
 
                                 <td>{{$grasa->pc_tricipital}}</td>
@@ -120,8 +123,8 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                 <td>{{$grasa->pc_biciptal}}</td>
 
                                     <td>{{$grasa->grasa}}</td>
-                                    <td style="text-align: center">{{$grasa->diagnostico}}</td>
-                                <th>{{date("d-m-Y",strtotime($grasa->created_at))}}</th>
+
+
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2 "><a
                                                 href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i
