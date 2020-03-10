@@ -105,7 +105,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                 <th scope="col">Cadera cm</th>
                                 <th scope="col">Muslo cm</th>
                                 <th scope="col">Pierna cm</th>
-                                <th scope="col">Fecha</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                             </thead>
