@@ -20,6 +20,13 @@
         @if($cliente->id_tipo_cliente==1)
             <h2 style="margin-left: 1%">Expediente Estudiante</h2>
         @endif
+        @if($cliente->id_tipo_cliente==3 )
+
+            <h2 style="margin-left: 1%">Expediente Particular</h2>
+        @endif
+        @if($cliente->id_tipo_cliente==2)
+            <h2 style="margin-left: 1%">Expediente Docente</h2>
+        @endif
 
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
 
