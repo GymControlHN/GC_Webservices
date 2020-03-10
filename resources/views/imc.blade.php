@@ -73,8 +73,8 @@
                     @endif
 
 
-                    <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
-                    <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
+                    <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
+                    <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
                     <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
                         <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
@@ -166,7 +166,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
                             </tbody>
                         </table>
-                        <div class="border-top my-3"></div>
+
 
                         @if($antecedentes->count()>10)
                             <div class="panel">

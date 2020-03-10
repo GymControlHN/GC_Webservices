@@ -59,7 +59,7 @@
                     @endif >Pagos</a>
 
         @endif
-        <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
+        <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
