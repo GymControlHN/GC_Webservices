@@ -10,8 +10,22 @@
         </div>
     </header>
 
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:85%;">
+        <ol class="breadcrumb" style="background-color: white" >
+            <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Imc</li>
+        </ol>
+
+    </nav>
+
     <div class="container-xl clearfix px-2 mt-4">
-        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
+
+        @if($cliente->id_tipo_cliente==1)
+            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+        @endif
+
+
+        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-5 pr-xl-6">
             <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px"
                  height="200px">
             <div class="card margencard" style=" border: none;" >
@@ -25,39 +39,20 @@
                     <H6> Expediente Docente</H6>
 
                 @endif
-                @if($cliente->id_tipo_cliente==1)
-                    <H6> Expediente Estudiante</H6>
-                @endif
+
                 <h6 style="all: revert">Medida Antropometrica</h6>
 
             </div>
         </div>
         </div>
-
             <div class="card"
-                 style="width: 170px; border: none;background: transparent;">
-                <div class="card-header" style="background: transparent;height: 50px;">
-                    @if($cliente->id_tipo_cliente==3 )
-                        <a class="btn btn-default" href="/particulares"><span><i
-                                        class="fa fa-arrow-circle-left"></i></span>
-                            Regresar</a>
-
-                    @endif
-                    @if($cliente->id_tipo_cliente==2)
-                        <a class="btn btn-default" href="/docentes"><span><i class="fa fa-arrow-circle-left"></i></span>
-                            Regresar</a>
-
-                    @endif
-                    @if($cliente->id_tipo_cliente==1)
-                        <a class="btn btn-default" href="/estudiantes"><span><i
-                                        class="fa fa-arrow-circle-left"></i></span>
-                            Regresar</a>
-                    @endif
+                 style="width: 170px; border: none">
+                <div  style="background: transparent;">
 
                 </div>
             </div>
 
-        <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group mt-3 mb-5" style="margin-left: .1%" role="group" aria-label="Button group with nested dropdown">
 
 
                     @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
@@ -102,6 +97,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                 <th scope="col">Peso Kg</th>
                                 <th scope="col">Altura°</th>
                                 <th scope="col">Imc</th>
+                                <th scope="col">Diagnostico</th>
                                 <th scope="col">Pecho cm</th>
                                 <th scope="col">Brazo cm</th>
                                 <th scope="col">ABD A</th>
@@ -109,7 +105,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                 <th scope="col">Cadera cm</th>
                                 <th scope="col">Muslo cm</th>
                                 <th scope="col">Pierna cm</th>
-
+                                <th scope="col">Fecha</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                             </thead>
@@ -126,7 +122,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                         <td>{{$antecedente->peso}}</td>
                                         <td>{{$antecedente->altura}}</td>
                                         <td>{{$antecedente->imc}}</td>
-
+                                        <td>{{$antecedente->diagnostico}}</td>
                                         <td>{{$antecedente->pecho}}</td>
                                         <td>{{$antecedente->brazo}}</td>
                                         <td>{{$antecedente->ABD_A}}</td>
@@ -211,5 +207,13 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
         </div>
     </div>
 
+    <style>
+        .perfil{
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            overflow-y: hidden;
+            top: 10%;
+        }
+    </style>
 
 @endsection
