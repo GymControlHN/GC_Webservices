@@ -51,7 +51,7 @@
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         <a class="btn btn-primary  " href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
-        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntroPometricos</a>
+        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntroPometricas</a>
         <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
         <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
         <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
