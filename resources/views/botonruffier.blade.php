@@ -41,6 +41,7 @@
 
             </div>
         </div>
+        </div>
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
 
@@ -224,10 +225,10 @@
 
                 <button type="submit" class="btn btn-primary  boton3" onclick="medir()">Guardar</button>
             </div>
-        </form>
+
 </div>
 
-
+    </form>
     </html>
 
 

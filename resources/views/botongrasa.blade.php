@@ -9,7 +9,7 @@
             </div>
         </div>
     </header>
-    <div class="container-xl clearfix px-2 mt-4">
+    <br class="container-xl clearfix px-2 mt-4">
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
             <img src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" >
@@ -35,6 +35,7 @@
         </div>
         </div>
         </div>
+        <br><br>
         <div class="card" style="width: 170px; border: none;background: transparent;margin-left:3%;margin-top: 5px">
             <div class="card-header" style="background: transparent;height: 50px;">
                 <a class="btn btn-default" href="{{route("grasa.uni",[$nombre->id])}}">
@@ -42,7 +43,7 @@
 
             </div>
         </div>
-
+    </div>
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
 
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)

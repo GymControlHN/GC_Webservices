@@ -39,6 +39,19 @@
             </script>
         @endif
         <script>
+            $('#imageUpload').change(function() {
+                readImgUrlAndPreview(this);
+
+                function readImgUrlAndPreview(input) {
+                    if (input.files && input.files[0]) {
+                        var reader = new FileReader();
+                        reader.onload = function(e) {
+                            $('#imagePreview').attr('src', e.target.result);
+                        }
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            });
             function limpiarDatosModal() {
                 document.getElementById("nombre").value = '';
                 document.getElementById("fecha_nacimiento").value = '';
@@ -190,16 +203,19 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del estudiante</h6>
-                                    <img width="200px" id="previewImagen"
+                                    <img width="200px" style="max-height:150px; object-fit: contain"  id="previewImagen"
                                          @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
 
+                                    <label id="labelImagen" for="imagen" class="btn btn-large"><span><i class="fa fa-user fa-4x"></i></span></label>
                                     <input type="file" accept="image/*"
                                            onchange="loadFile(event)"
                                            @if($errors->has("imagen"))
                                            style="display: none"
                                            required
                                            @endif
-                                           class="form-control" id="imagen"
+                                           class="form-control"
+                                           style="opacity: 0"
+                                           id="imagen"
                                            name="imagen"/>
                                     @if ($errors->has('imagen'))
                                         <span class="help-block" style="color: red">
@@ -214,6 +230,7 @@
                                         var image = document.getElementById('previewImagen');
                                         image.src = URL.createObjectURL(event.target.files[0]);
                                         document.getElementById("imagen").style.display = "none";
+                                        document.getElementById("labelImagen").style.display="none";
                                     };
                                     var seleccionarImagen = function (event) {
                                         var element = document.getElementById("imagen");
@@ -436,11 +453,10 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del estudiante</h6>
-                                    <img width="200px" id="previewImagenEditar"
+                                    <img width="200px" style="max-height:150px; object-fit: contain" id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>
-
                                     <input type="file" accept="image/*"
-                                           style="display: none"
+                                           style="opacity: 0;object-fit: contain"
                                            onchange="loadFile2(event)"
                                            src="" class="form-control" id="imagenEditar"
                                            name="imagen"/>
@@ -451,7 +467,8 @@
                                         var loadFile2 = function (event) {
                                             var image = document.getElementById('previewImagenEditar');
                                             image.src = URL.createObjectURL(event.target.files[0]);
-                                            document.getElementById("imagenEditar").style.display = "none";
+                                            document.getElementById("labelFoto").style.display="none";
+                                            document.getElementById("imagenEditar").style.opacity = "0";
                                         };
                                         var seleccionarImagenEditar = function (event) {
                                             var element = document.getElementById("imagenEditar");
@@ -607,6 +624,36 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
     </div>
 @endsection
 <style>
+
+    .btn {
+        display: inline-block;
+        padding: 4px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333333;
+        text-align: center;
+        cursor: pointer;
+        border: 1px solid #bbbbbb;
+        border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        border-bottom-color: #a2a2a2;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
+
+    .btn {
+        border-color: #c5c5c5;
+        border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+    }
+
+    .btn-large {
+        font-size: 24px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+    }
     .boton1:hover {
         transition: all 0.2s ease;
         transform: scaleY(1.3) scaleX(1.3);
