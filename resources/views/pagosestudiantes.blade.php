@@ -61,7 +61,7 @@
 
     </div>
         <button class="btn btn-primary   float-right mt-3" style="margin-top: -10px; margin-right: 50px"
-                data-toggle="modal" data-target="#modalPagoParticular" >Nuevo
+                data-toggle="modal" data-target="#modalPagoEstudiante" >Nuevo
         </button>
 
 
