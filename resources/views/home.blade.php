@@ -10,7 +10,7 @@
         <div class="container" style="margin-top: 60px">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                    <div class="card card-style">
+                    <div class="card card-style" style="background: #f5f5f5 ">
                         <div class="card-header">
 
                             <img src="/images/estudiante.svg" width="80px" style="margin-left: 25%">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6  card-efect" style="margin-top: 10px">
-                    <div class="card card-style">
+                    <div class="card card-style" style="background: #f5f5f5 ">
                         <div class="card-header">
                             <img src="/images/docente.svg" width="80px" style="margin-left: 25%">
                             <br>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                    <div class="card  card-style">
+                    <div class="card  card-style" style="background: #f5f5f5 ">
                         <div class="card-header">
 
                             <img src="/images/particulares.svg" width="80px" style="margin-left: 25%">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px"    >
-                    <div class="card card-style">
+                    <div class="card card-style" style="background: #f5f5f5 ">
                         <div class="card-header">
                             <img src="/images/dinero.ico" width="80px" style="margin-left: 25%">
                             <br>
@@ -60,7 +60,7 @@
 @endsection
 
 <style>
-    .card-style{
+   /* .card-style{
         transition: all 0.2s ease-in-out;
     }
     .card-efect{
@@ -74,5 +74,5 @@
         box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
         background: #3a3a3a;
         color: white;
-    }
+    }*/
 </style>
