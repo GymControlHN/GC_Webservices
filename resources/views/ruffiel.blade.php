@@ -34,6 +34,7 @@
                     <H6> Expediente Estudiante</H6>
                 @endif
                 <h6 style="all: revert">Ruffier</h6>
+                <div style="max-height: 250px;">{!! $chart->container() !!}</div>
 
             </div>
 
@@ -167,6 +168,12 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
             </div>
             </div>
         </div>
+
+        <div class="container" style="margin: 50px">
+
+        </div>
+    </div>
+    {!! $chart->script() !!}
     </div>
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarRuffier">
         <div class="modal-dialog" role="document">

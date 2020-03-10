@@ -41,7 +41,7 @@
                 @endif
 
                 <h6 style="all: revert">Medida Antropometrica</h6>
-
+                <div style="max-height: 250px;">{!! $chart->container() !!}</div>
             </div>
         </div>
         </div>
@@ -56,7 +56,7 @@
 
 
                     @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
-                        <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
+                        <a class="btn btn-secondary btn-sm" @if($cliente->id_tipo_cliente==3)
                         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
                            @endif
                            @if($cliente->id_tipo_cliente ==1)
@@ -70,14 +70,14 @@
                     @endif
 
 
-                    <a class="btn btn-primary" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-                    <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
-                    <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
-                        <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
+                    <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
+                    <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
+                    <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
+                        <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
 
                 </div>
-                <a class="btn btn-primary  mt-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
+                <a class="btn btn-primary btn-sm  mt-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
                    style="float: right; margin-right: 50px; color: white">Nuevo
                 </a>
         <div class="w3-container w3-teal mx-5">
@@ -175,8 +175,12 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                     </div>
                 </div>
             </div>
+        <div class="container" style="margin: 280px; height: 8%; width: 35%">
 
         </div>
+    </div>
+    {!! $chart->script() !!}
+
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarImc">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

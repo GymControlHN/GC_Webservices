@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\UserChart;
 use App\Cliente;
 use App\Imc;
 use App\Ruffier;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class RuffierController extends Controller
@@ -19,8 +21,23 @@ class RuffierController extends Controller
         ->where("id_cliente","=",$id)
             ->select("diagnostico_ruffier.diagnostico","ruffier.*")
             ->orderBy("created_at","desc")->paginate(10);
+
+        $ruffier = Ruffier::select(DB::raw("COUNT(*) as count , ruffiel"))
+            ->whereYear('created_at', date('Y'))
+            ->where("id_cliente", '=', $id)
+            ->groupBy(DB::raw("Month(created_at)"))
+            ->pluck('ruffiel');
         $cliente = Cliente::find($id);
-        return view('ruffiel',compact("datos"))->with("cliente", $cliente)->with("no", 1);
+
+        $chart = new UserChart();
+        $chart->title("Estadisticas del usuario: " . $cliente->value("nombre"));
+        $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+
+        $chart->dataset('Ruffiel', 'line', $ruffier)->options([
+            'fill' => 'true',
+            'borderColor' => '#0000FF',
+        ]);
+        return view('ruffiel',compact("datos","chart"))->with("cliente", $cliente)->with("no", 1);
 
 
     }
