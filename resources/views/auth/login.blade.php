@@ -34,18 +34,23 @@
 
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					Inicio de Sesión
+                    <strong>Gym Control</strong>
 				</span>
             <form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
+                <label class="pl-4 mt-lg-1" style="color: #6c757d">
+                    <strong>Correo Electrónico</strong>
+				</label>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input class="input100" type="text" name="email" placeholder="Correo Electrónico">
-                    <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+                    <input class="input100" type="text" name="email" placeholder="">
+                    <span class="focus-input100" data-placeholder="&#9993;"></span>
                 </div>
-
+                <label class="pl-4 mt-lg-1" style="color: #6c757d">
+                    <strong>Contraseña</strong>
+				</label>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="password" placeholder="Contraseña">
-                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    <input class="input100" type="password" name="password" placeholder="">
+                    <span class="focus-input100" data-placeholder="	&#128274;"></span>
                 </div>
 
                 <div class="container-login100-form-btn m-t-32">

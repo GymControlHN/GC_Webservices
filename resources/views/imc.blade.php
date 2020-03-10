@@ -9,6 +9,7 @@
             </div>
         </div>
     </header>
+
     <div class="container-xl clearfix px-2 mt-4">
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
             <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px"
@@ -32,6 +33,7 @@
             </div>
         </div>
         </div>
+
             <div class="card"
                  style="width: 170px; border: none;background: transparent;">
                 <div class="card-header" style="background: transparent;height: 50px;">
