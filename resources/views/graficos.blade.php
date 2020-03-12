@@ -53,7 +53,7 @@
         @endif
         <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
-            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" style ="margin-top: 22%">
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" style ="margin-top: 22%; object-fit: cover">
 
             <div class="card margencard" style=" border: none;" >
 

@@ -9,41 +9,44 @@
             </div>
         </div>
     </header>
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+        <ol class="breadcrumb" style="background-color: white">
+            <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
+            <li class="breadcrumb-item"><a href="{{route("grasa.uni",[$nombre->id])}}}">Grasa Corporal</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Editar</li>
+        </ol>
+    </nav>
     <div class="container-xl clearfix px-2 mt-4">
+        @if($nombre->id_tipo_cliente==1)
+            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+        @endif
+        @if($nombre->id_tipo_cliente==3 )
+
+            <h2 style="margin-left: 1%">Expediente Particular</h2>
+        @endif
+        @if($nombre->id_tipo_cliente==2)
+            <h2 style="margin-left: 1%">Expediente Docente</h2>
+        @endif
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
 
-            <img src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px">
+            <img src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" style="margin-top: 10%; object-fit: cover">
             <div class="card margencard" style=" border: none;">
 
 
                 <div>
                     <h5 style="margin-top: 10%">{{$nombre->nombre}}</h5>
 
-                    @if($nombre->id_tipo_cliente==3 )
-
-                        <H6> Expediente Particular</H6>
-                    @endif
-                    @if($nombre->id_tipo_cliente==2)
-                        <H6> Expediente Docente</H6>
-
-                    @endif
-                    @if($nombre->id_tipo_cliente==1)
-                        <H6> Expediente Estudiante</H6>
-                    @endif
                     <h5 style="all: revert">Grasa Corporal</h5>
 
 
                 </div>
             </div>
+
         </div>
-        <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
-            <div class="card-header" style="background: transparent;height: 50px;">
-                <a class="btn btn-default" href="{{route("grasa.uni",[$nombre->id])}}"><span><i
-                                class="fa fa-arrow-circle-left"></i></span> Regresar</a>
+            <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
 
             </div>
-        </div>
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group"
              aria-label="Button group with nested dropdown">
@@ -206,8 +209,8 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email" style="margin-left: 363px; margin-top: 1% ">Porcentaje:</h6>
-                    <input style="width: 310px; margin-left: 363px" type="number" class="form-control inputtamaño3" step="0.0001"
+                    <h6 class="label2" for="email" style="margin-left:10% ; margin-top: 1% ">Porcentaje:</h6>
+                    <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="grasa" name="grasa" maxlength="3"
                            @isset($grasa)
                            value="{{$grasa->grasa}}"

@@ -12,7 +12,7 @@
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}}">Ruffier</a></li>
+            <li class="breadcrumb-item"><a href="{{route("ruffier.uni",[$cliente->id])}}}">Ruffier</a></li>
             <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
         </ol>
     </nav>
@@ -28,7 +28,7 @@
             <h2 style="margin-left: 1%">Expediente Docente</h2>
         @endif
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
-            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" style="margin-top: 10%">
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" style="margin-top: 10%; object-fit: cover">
             <div class="card margencard" style=" border: none;" >
 
 

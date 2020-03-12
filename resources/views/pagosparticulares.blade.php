@@ -49,7 +49,7 @@
             <h2 style="margin-left: 1%">Expediente Docente</h2>
         @endif
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
-            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" style="margin-top: 20%">
+            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" style="margin-top: 20%; object-fit: cover">
             <div class="card margencard" style=" border: none;" >
                 <div >
                     <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
