@@ -43,14 +43,26 @@
 				</label>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
                     <input class="input100" type="text" name="email" placeholder="">
-                    <span class="focus-input100" data-placeholder="&#9993;"></span>
+                    <span class="focus-input100" data-placeholder="&#x2709;"></span>
                 </div>
                 <label class="pl-4 mt-lg-1" style="color: #6c757d">
                     <strong>Contraseña</strong>
 				</label>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
                     <input class="input100" type="password" name="password" placeholder="">
-                    <span class="focus-input100" data-placeholder="	&#128274;"></span>
+                    <span class="focus-input100" data-placeholder="	&#x1F512;"></span>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-md-8 offset-md-1">
+                        <div class="checkbox">
+                           <strong>
+                            <label style="color: #818182">
+                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> {{ __('Recordar Contraseña') }}
+                            </label>
+                           </strong>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="container-login100-form-btn m-t-32">
