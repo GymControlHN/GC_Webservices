@@ -189,7 +189,7 @@
                                 <div class="form-row">
                                     <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                         <h6>Imagen del particular</h6>
-                                        <img width="200px" style="max-height:100px; object-fit: contain"  id="previewImagen"
+                                        <img width="300px" style="max-height:100px; object-fit: contain"  id="previewImagen"
                                              @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
 
                                         <label id="labelImagen" for="imagen" class="btn btn-large"><span><i class="fa fa-user fa-4x"></i></span></label>
@@ -436,7 +436,7 @@
                                     <h6>Imagen del Particular</h6>
                                     <input type="file" accept="image/*"
 
-                                           style="opacity: 0;object-fit: contain"
+                                           style="display: none"
                                            onchange="loadFile4(event)" class="form-control"
                                             id="imagenEditar"
                                            name="imagen"/>

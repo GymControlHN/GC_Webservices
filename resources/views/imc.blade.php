@@ -9,21 +9,50 @@
             </div>
         </div>
     </header>
+    @if($cliente->id_tipo_cliente==1)
+        <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+            <ol class="breadcrumb" style="background-color: white" >
+                <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
+            </ol>
 
-    <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
-        <ol class="breadcrumb" style="background-color: white" >
-            <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
-        </ol>
+        </nav>
+    @endif
 
-    </nav>
+    @if($cliente->id_tipo_cliente==2)
+        <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+            <ol class="breadcrumb" style="background-color: white" >
+                <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
+            </ol>
+
+        </nav>
+
+    @endif
+
+    @if($cliente->id_tipo_cliente==3 )
+        <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+            <ol class="breadcrumb" style="background-color: white" >
+                <li class="breadcrumb-item"><a href="/particulares">Particular</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
+            </ol>
+
+        </nav>
+
+    @endif
 
     <div class="container-xl clearfix px-2 mt-4">
 
         @if($cliente->id_tipo_cliente==1)
             <h2 style="margin-left: 1%">Expediente Estudiante</h2>
         @endif
+            @if($cliente->id_tipo_cliente==3 )
 
+                <h2 style="margin-left: 1%">Expediente Particular</h2>
+            @endif
+            @if($cliente->id_tipo_cliente==2)
+                <h2 style="margin-left: 1%">Expediente Docente</h2>
+            @endif
 
         <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-5 pr-xl-6">
             <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px"
@@ -31,15 +60,6 @@
             <div class="card margencard" style=" border: none;" >
             <div>
                 <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
-                @if($cliente->id_tipo_cliente==3 )
-
-                    <H6> Expediente Particular</H6>
-                @endif
-                @if($cliente->id_tipo_cliente==2)
-                    <H6> Expediente Docente</H6>
-
-                @endif
-
                 <h6 style="all: revert">Medida Antropometrica</h6>
                 <div style="max-height: 250px;">{!! $chart->container() !!}</div>
             </div>

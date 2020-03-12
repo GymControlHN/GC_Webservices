@@ -20,9 +20,33 @@ class EstadisticasController extends Controller
             ->select("clientes_gym.*", "tipo_clientes.descripcion","carreras.carrera")
             ->paginate(10);
 
+        $obesidadTipoIII= Imc::
+        join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+        ->where("diagnostico_imcs.diagnostico","=","Obesidad tipo III")->get();
+
+
+        $obesidadTipoII= Imc::  join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","Obesidad tipo II")->get();
+
+
+        $obesidadTipoI= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","Obesidad tipo I")->get();
+
+
+        $preobesidad= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","preobesidad")->get();
+
+
+        $pesoNormal= Imc::all()->where("diagnostico","=","Peso normal");
+        $delgadez= Imc::all()->where("diagnostico","=","Delgadez");
+        $delgadezSevera= Imc::all()->where("diagnostico","=","Delgadez severa");
+
 
         session()->flashInput([]);
-        return view('estadisticas')->with('clientes', $clientes)->with('no',1);
+        return view('estadisticas',["obesidadTipoIII"=>$obesidadTipoIII,"obesidadTipoII"=>$obesidadTipoII,
+            "obesidadTipoI"=>$obesidadTipoI, "preobesidad"=>$preobesidad, "pesoNormal"=>$pesoNormal,
+            "delgadez"=>$delgadez, "delgadezSevera"=>$delgadezSevera])->with('clientes', $clientes)->with('no',1);
+
     }
 
     public function create()
@@ -117,4 +141,6 @@ class EstadisticasController extends Controller
 
         return $this->show($request->input("id_cliente"));
     }
+
+
 }

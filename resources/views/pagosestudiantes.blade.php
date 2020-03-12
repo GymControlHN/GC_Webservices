@@ -6,18 +6,49 @@
         <div class="container">
         </div>
     </header>
-    <nav aria-label="breadcrumb" style="margin:1%; margin-right:85%;">
-        <ol class="breadcrumb" style="background-color: white" >
-            <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Pagos</li>
-        </ol>
+    @if($nombre->id_tipo_cliente==1)
+        <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+            <ol class="breadcrumb" style="background-color: white" >
+                <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Pagos</li>
+            </ol>
 
-    </nav>
+        </nav>
+    @endif
+
+    @if($nombre->id_tipo_cliente==2)
+        <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+            <ol class="breadcrumb" style="background-color: white" >
+                <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Pagos</li>
+            </ol>
+
+        </nav>
+
+    @endif
+
+    @if($nombre->id_tipo_cliente==3 )
+        <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+            <ol class="breadcrumb" style="background-color: white" >
+                <li class="breadcrumb-item"><a href="/particulares">Particular</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Pagos</li>
+            </ol>
+
+        </nav>
+
+    @endif
 
     <div class="container-xl clearfix px-2 mt-4">
-        @if($nombre->id_tipo_cliente==1)
-            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
-        @endif
+            @if($nombre->id_tipo_cliente==1)
+                <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+            @endif
+            @if($nombre->id_tipo_cliente==3 )
+
+                <h2 style="margin-left: 1%">Expediente Particular</h2>
+            @endif
+            @if($nombre->id_tipo_cliente==2)
+                <h2 style="margin-left: 1%">Expediente Docente</h2>
+            @endif
         <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
             <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px"  style="margin-top: 20%">
             <div class="card margencard" style=" border: none;" >
@@ -50,14 +81,14 @@
     </div>
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
-        <a class="btn btn-primary  " href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
-        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntroPometricas</a>
-        <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
-        <a class="btn btn-secondary" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
+        <a class="btn btn-primary btn-sm  " href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntroPometricos</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
     </div>
-        <button class="btn btn-primary   float-right mt-3" style="margin-top: -10px; margin-right: 50px"
+        <button class="btn btn-primary btn-sm  float-right mt-3" style="margin-top: -10px; margin-right: 50px"
                 data-toggle="modal" data-target="#modalPagoEstudiante" >Nuevo
         </button>
 

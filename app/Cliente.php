@@ -32,7 +32,7 @@ class Cliente extends Model
         if($edad==1){
             return "".$edad." año";
         }else{
-            return "".$edad." años";
+            return Carbon::parse($this->fecha_nacimiento)->age ." años";
         }
     }
 }

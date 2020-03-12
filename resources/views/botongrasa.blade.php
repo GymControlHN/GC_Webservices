@@ -9,10 +9,27 @@
             </div>
         </div>
     </header>
-    <br class="container-xl clearfix px-2 mt-4">
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+        <ol class="breadcrumb" style="background-color: white">
+            <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
+            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$nombre->id])}}}">Grasa Corporal</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
+        </ol>
+    </nav>
+    <div class="container-xl clearfix px-2 mt-4">
+        @if($nombre->id_tipo_cliente==1)
+            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+        @endif
+        @if($nombre->id_tipo_cliente==3 )
+
+            <h2 style="margin-left: 1%">Expediente Particular</h2>
+        @endif
+        @if($nombre->id_tipo_cliente==2)
+            <h2 style="margin-left: 1%">Expediente Docente</h2>
+        @endif
         <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 pr-xl-6">
 
-            <img src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" >
+            <img src="/clientes_imagenes/{{$nombre->imagen}}" width="200px" height="200px" style="margin-top: 10%">
             <div class="card margencard" style=" border: none;" >
 
             <div >
@@ -34,22 +51,19 @@
 
         </div>
         </div>
-        </div>
-        <br><br>
-        <div class="card" style="width: 170px; border: none;background: transparent;margin-left:3%;margin-top: 5px">
-            <div class="card-header" style="background: transparent;height: 50px;">
-                <a class="btn btn-default" href="{{route("grasa.uni",[$nombre->id])}}">
-                    <span><i class="fa fa-arrow-circle-left"></i></span> Regresar</a>
 
-            </div>
-        </div>
     </div>
-        <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
+            <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
+
+    </div>
+
+
+    <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
 
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
 
 
-        <a class="btn btn-secondary" @if($nombre->id_tipo_cliente==3)
+        <a class="btn btn-secondary btn-sm" @if($nombre->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$nombre->id])}}"
            @endif
            @if($nombre->id_tipo_cliente ==1)
@@ -61,9 +75,9 @@
 
 
         @endif
-        <a class="btn btn-secondary" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
-        <a class="btn btn-primary" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
-        <a class="btn btn-secondary" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Imc</a>
+        <a class="btn btn-primary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
 
     </div>
@@ -171,7 +185,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 1%">Pc tricipital:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
                            id="pc_tricipital" name="pc_tricipital" maxlength="3" placeholder="Ingrese medicas en cm"
                            value="{{old('pc_tricipital')}}" onkeyup="calcularGrasa()">
 
@@ -180,7 +194,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 1%">Pc Infraescrupural:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_infraescapular')}}"  onkeyup="calcularGrasa()">
 
@@ -190,7 +204,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 2%">Pc Biciptal:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
                            id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medida en cm"
                            value="{{old('pc_biciptal')}}"  onkeyup="calcularGrasa()">
 
@@ -199,7 +213,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 2%">Pc SupraIliaco:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
                            id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_supra_iliaco')}}"  onkeyup="calcularGrasa()">
 
@@ -207,8 +221,8 @@
             </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <h6 class="label2" for="email" style=" margin-top: 1%; margin-left: 333px">Porcentaje:</h6>
-                        <input style="width: 310px; margin-left: 333px" type="number" class="form-control inputtamaño3" required
+                        <h6 class="label2" for="email" style=" margin-top: 1%; margin-left: 10%">Porcentaje:</h6>
+                        <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001" required
                                id="grasa" name="grasa" maxlength="3"
                                value="{{old('grasa')}}" readonly>
 
@@ -216,7 +230,7 @@
 
 
                     <div class="form-group col-md-6">
-                        <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3"
+                        <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3" step="0.0001"
                                id="id_diagnostico" name="id_diagnostico"
                                value="{{old('id_diagnostico')}}" >
                     </div>

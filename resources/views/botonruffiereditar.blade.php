@@ -48,7 +48,7 @@
              aria-label="Button group with nested dropdown">
             @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
 
-                <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
+                <a class="btn btn-secondary btn-sm" @if($cliente->id_tipo_cliente==3)
                 href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
                    @endif
                    @if($cliente->id_tipo_cliente ==1)
@@ -59,9 +59,9 @@
                         @endif >Pagos</a>
 
             @endif
-            <a class="btn btn-secondary" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
-            <a class="btn btn-secondary" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
-            <a class="btn btn-primary" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
+            <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Imc</a>
+            <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa</a>
+            <a class="btn btn-primary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
 
         </div>
@@ -139,7 +139,7 @@
             <div class="form-row mt-4">
                 <div class="form-group col-md-6">
                     <h6 class=" label2" for="email" style="margin-top: -1%">Pulso en reposo</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" id="pulso_r"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" id="pulso_r"
                            name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso_r}}"
@@ -151,7 +151,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-top: -1%">Pulso en accion:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso"
                            onkeyup="calcularRuffiel()"
                            @isset($dato)
@@ -164,7 +164,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-top: 1%">Pulso en descanso:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="pulso_d" name="pulso_d" maxlength="3" placeholder="Ingrese el pulso"
                            onkeyup="calcularRuffiel()"
                            @isset($dato)
@@ -176,7 +176,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-top: 1%">Ruffier:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="ruffiel" name="ruffiel" maxlength="3"
                            @isset($dato)
                            value="{{$dato->ruffiel}}"
@@ -189,7 +189,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-left: 49% ; margin-top: 1%">MVO2:</h6>
-                    <input style="width: 310px;margin-left: 49%" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px;margin-left: 49%" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="mvo" name="mvo" maxlength="3"
                            @isset($dato)
                            value="{{$dato->mvo}}"
@@ -200,7 +200,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-left: 28%; margin-top: 1%">MVO2 Real:</h6>
-                    <input style="width: 310px; margin-left: 28%" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px; margin-left: 28%" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
 
                            @isset($dato)
@@ -214,13 +214,13 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-left: 49%; margin-top: 1%">Diagnostico MVO:</h6>
-                    <input style="width: 310px; margin-left: 49%" type="number" class="form-control inputtamaño3"
+                    <input style="width: 310px; margin-left: 49%" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
                            value="{{old(' mvodiagnostico')}}" readonly required>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3"
+                    <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3" step="0.0001"
                            id="id_diagnostico" name="id_diagnostico" maxlength="50"
                            @isset($dato)
                            value="{{$dato->id_diagnostico}}"

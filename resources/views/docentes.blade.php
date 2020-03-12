@@ -191,8 +191,8 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
-                                        <h6>Imagen del docente</h6>
-                                        <img width="200px" style="max-height:150px; object-fit: contain" id="previewImagen"
+                                        <h6>Imagen del Docente</h6>
+                                        <img width="300px" style="max-height:150px; object-fit: contain" id="previewImagen"
                                              @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
 
                                         <label id="labelImagen" for="imagen" class="btn btn-large"><span><i class="fa fa-user fa-4x"></i></span></label>
