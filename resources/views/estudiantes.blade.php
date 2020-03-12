@@ -558,7 +558,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                     <button class="dropdown-item" type="button"><a
                                                 class="nav-link js-scroll-trigger"
-                                                href="{{route("imc.ini",$estudiante->id)}}">Imc</a>
+                                                href="{{route("imc.ini",$estudiante->id)}}">MedidasAntropometricas</a>
                                     </button>
                                     <button class="dropdown-item" type="button"><a
                                                 class="nav-link js-scroll-trigger"
