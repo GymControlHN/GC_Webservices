@@ -202,10 +202,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 <form method="POST" action="{{ route('password.email') }}">
 
                     <div class="modal-body">
+                        <h6>Se enviara un correo a la siguiente direccion </h6><h6 id="correoInfo"></h6>
                         <div class="form-group ">
-                            <label style="color: #1b1e21" for="inputEmail4">Correo Electrónico</label>
-                            <input type="email" name="email" class="form-control" value="{{ old('email') }}" id="email" placeholder="ingrese el correo"
-                                   required>
+                            <input type="hidden" name="email"
+                                   class="form-control" value="{{ old('email') }}" id="email" placeholder="ingrese el correo" required>
                             @if ($errors->has('email'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>

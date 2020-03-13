@@ -443,6 +443,7 @@
         var modal = $(this);
 
         modal.find('.modal-body #email').val(correo);
+        modal.find(".modal-body #correoInfo").text(correo);
     });
 
 

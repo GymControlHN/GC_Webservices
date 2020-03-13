@@ -35,7 +35,7 @@
 
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					Restablecer Contraseña
+                    <strong>Restablecer Contraseña</strong>
 				</span>
             <form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="{{ route('password.request') }}">
                 {{ csrf_field() }}
@@ -44,7 +44,7 @@
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
                     <input class="input100" type="text" name="email"
                            value="{{old("email")}}" placeholder="Correo Electronico">
-                    <span class="focus-input100" data-placeholder="&#xe82a;">q</span>
+                    <span class="focus-input100" data-placeholder="&#x2709;"></span>
                     @if ($errors->has('email'))
                         <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -55,8 +55,8 @@
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="password" placeholder="Contrasenia">
-                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    <input class="input100" type="password" name="password" placeholder="Contraseña">
+                    <span class="focus-input100" data-placeholder="&#x1F512;"></span>
                     @if ($errors->has('password'))
                         <span class="help-block">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -66,7 +66,7 @@
 
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
                     <input class="input100" type="password" name="password_confirmation" placeholder="Confirmar Contraseña">
-                    <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    <span class="focus-input100" data-placeholder="&#x1F512;"></span>
                     @if ($errors->has('password_confirmation'))
                         <span class="help-block">
                                         <strong>{{ $errors->first('password_confirmation') }}</strong>
