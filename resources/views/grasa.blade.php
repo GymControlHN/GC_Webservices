@@ -77,7 +77,12 @@
                 </div>
             </div>
         </div>
-    <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
+            <a class="btn btn-primary btn-sm mt-sm-3" href="{{route("botongrasa",["id"=>$nombre->id])}}"
+               style="float: right; margin-right: 50px;color: white">Nuevo
+
+            </a>
+    <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group"
+         aria-label="Button group with nested dropdown">
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
 
             <a class="btn btn-secondary btn-sm" @if($nombre->id_tipo_cliente==3)
@@ -98,10 +103,7 @@
             <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
     </div>
-    <a class="btn btn-primary btn-sm mt-sm-3" href="{{route("botongrasa",["id"=>$nombre->id])}}"
-       style="float: right; margin-right: 50px;color: white">Nuevo
 
-    </a>
 
     <div class="w3-container w3-teal mx-5">
 
@@ -109,7 +111,8 @@
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
-            <div class="table-responsive" >
+
+            <div class="table-responsive-lg" style="font-size: 12px" >
                 <table class="table table-hover">
 
                     <thead class="thead-dark">
@@ -148,22 +151,32 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                     <td>{{$grasa->grasa}}</td>
 
 
-                                <td class="form-inline ">
-                                    <button class="btn btn-warning mr-xl-2 "><a
+                                <td class="row">
+
+                                    <button class="btn btn-warning btn-sm" style="margin-right: 5px ">
+                                        <a style="color: white"
                                                 href="{{route('grasa.editar',["id_grasa"=>$grasa->id,"id_cliente"=>$grasa->id_cliente])}}"><i
-                                                    class="fas fa-edit" style="color: #1b1e21"></i></a></button>
-                                        <button class="btn btn-danger mr-xl-2"
+                                                    class="fas fa-edit" style="color: #1b1e21"></i> </a>
+
+                                    </button>
+
+                                        <button class="btn btn-danger btn-sm"
                                                 data-id="{{$grasa->id}}"
                                                 data-id_cliente="{{$grasa->id_cliente}}"
-                                        data-toggle="modal" data-target="#modalBorrarGrasa"><i class="fas fa-trash-alt"></i></button>
+                                        data-toggle="modal" data-target="#modalBorrarGrasa"><i
+                                                    class="fas fa-trash-alt"></i></button>
                                     
                                 </td>
 
+
+
                     </tr>
+
                     @endforeach
                     @else
                         <tr>
-                            <td colspan="11" style="text-align: center">No hay medidas ingresadas</td>
+
+                            <td colspan="14" style="text-align: center">No hay medidas ingresadas</td>
                     @endif
 
                     </tbody>
@@ -180,10 +193,13 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
         </div>
-        <div class="container" style="margin: 50px">
+        <div class="container" style="margin: 280px; height: 8%; width: 35%">
 
         </div>
     </div>
+
+
+
     {!! $chart->script() !!}
     </div>
 
@@ -215,18 +231,38 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
         </div>
     </div>
     <style>
-        .perfil{
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            overflow-y: hidden;
-            top: 10%;
+
+        @media (min-width: 768px) {
+            .pl-md-2, .px-md-2 {
+                padding-left: 8px !important;
+            }
+
+            @media (min-width: 768px) {
+                .perfil {
+                    float: left !important;
+                }
+
+                @media (min-width: 768px) {
+                    .perfil {
+                        width: 66.66667%;
+                    }
+                }
+                .perfil{
+                    position: -webkit-sticky; /* Safari */
+                    position: sticky;
+                    overflow-y: hidden;
+                    top: 10%;
+                }
+            }
         }
     </style>
-
     <script>
         window.addEventListener('scroll', function() {
             document.querySelector('.perfil').style.marginTop =
                 Math.max(5, 100 - this.scrollY) + 'px';
         }, false);
     </script>
+
+
 @endsection
+

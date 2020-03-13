@@ -83,7 +83,7 @@
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         <a class="btn btn-primary btn-sm  " href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
         <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntroPometricos</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">GrasaCorporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
         <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
@@ -162,7 +162,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
                 <div class="table-responsive" >
-                    <table class="table table-hover">
+                    <table class="table table-hover" style="font-size: 12px" >
 
                         <thead class="thead-dark">
             <tr>
@@ -187,7 +187,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
                         <th>
-                            <button class="btn btn-danger mr-xl-2"
+                            <button class="btn btn-danger btn-sm"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"
                                     data-toggle="modal" data-target="#modalBorrarPagoEstudiante"><i class="fas fa-trash-alt"></i></button>

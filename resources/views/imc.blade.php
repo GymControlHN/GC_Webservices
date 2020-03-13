@@ -54,7 +54,8 @@
                 <h2 style="margin-left: 1%">Expediente Docente</h2>
             @endif
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-5 pr-xl-6">
+
+                <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-5 pr-xl-6">
             <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px"
                  height="200px" style="; object-fit: cover" >
             <div class="card margencard" style=" border: none;" >
@@ -72,7 +73,10 @@
                 </div>
             </div>
 
-        <div class="btn-group mt-3 mb-5" style="margin-left: .1%" role="group" aria-label="Button group with nested dropdown">
+            <a class="btn btn-primary btn-sm  mt-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
+               style="float: right; margin-right: 50px; color: white">Nuevo
+            </a>
+        <div class="btn-group mt-3 mb-5" style="margin-left: .1%; font-size: 14px" role="group" aria-label="Button group with nested dropdown">
 
 
                     @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
@@ -97,27 +101,24 @@
 
 
                 </div>
-                <a class="btn btn-primary btn-sm  mt-m-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
-                   style="float: right; margin-right: 50px; color: white">Nuevo
-                </a>
-        <div class="w3-container w3-teal mx-5">
+
+        <div class="w3-container w3-teal mx-5" >
 
                 <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
 
-                    <div class="table-responsive">
-                        <table class="table  table-hover">
+                    <div class="table-responsive-lg">
+                        <table class="table  table-hover" style="font-size: 12px">
                             <thead class="thead-dark">
-                            <tr>
+                            <tr >
 
                                 <th scope="col">N°</th>
-                                <th scope="col">Fecha</th>
+                                <th scope="">Fecha</th>
                                 <th scope="col">Diagnostico</th>
                                 <th scope="col">Peso Kg</th>
                                 <th scope="col">Altura°</th>
                                 <th scope="col">Imc</th>
-
                                 <th scope="col">Pecho cm</th>
                                 <th scope="col">Brazo cm</th>
                                 <th scope="col">ABD A</th>
@@ -141,7 +142,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                         <td>{{$antecedente->peso}}</td>
                                         <td>{{$antecedente->altura}}</td>
                                         <td>{{$antecedente->imc}}</td>
-
                                         <td>{{$antecedente->pecho}}</td>
                                         <td>{{$antecedente->brazo}}</td>
                                         <td>{{$antecedente->ABD_A}}</td>
@@ -152,17 +152,18 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
 
 
-                                        <td class="form-inline ">
+                                        <td class="row">
 
 
-                                            <button class="btn btn-warning mr-xl-2 ">
+                                            <button class="btn btn-warning btn-sm" style="margin-right: 5px">
                                                 <a style="color: white"
                                                    href="{{route('imc.editar',[$antecedente->id,$antecedente->id_cliente])}}"><i
                                                             class="fas fa-edit" style="color: #1b1e21"></i> </a>
                                             </button>
 
 
-                                            <button class="btn btn-danger mr-xl-2"
+
+                                            <button class="btn btn-danger btn-sm"
                                                     data-id="{{$antecedente->id}}"
                                                     data-id_cliente="{{$antecedente->id_cliente}}"
                                                     data-toggle="modal" data-target="#modalBorrarImc"><i
@@ -170,6 +171,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
 
                                         </td>
+                                    </tr>
                                 @endforeach
 
 
@@ -231,11 +233,29 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
     </div>
 
     <style>
-        .perfil{
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            overflow-y: hidden;
-            top: 10%;
+
+        @media (min-width: 768px) {
+            .pl-md-2, .px-md-2 {
+                padding-left: 8px !important;
+            }
+
+            @media (min-width: 768px) {
+                .perfil {
+                    float: left !important;
+                }
+
+                @media (min-width: 768px) {
+                    .perfil {
+                        width: 66.66667%;
+                    }
+                }
+                .perfil{
+                    position: -webkit-sticky; /* Safari */
+                    position: sticky;
+                    overflow-y: hidden;
+                    top: 10%;
+                }
+            }
         }
     </style>
 

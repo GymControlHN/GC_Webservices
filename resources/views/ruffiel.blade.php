@@ -75,7 +75,10 @@
 
                 </div>
             </div>
+            <a class="btn btn-primary btn-sm mt-sm-3"   href="{{route("botonruffier",["id"=>$cliente->id])}}"
+               style="float: right; margin-right: 50px; color: white">Nuevo
 
+            </a>
 
             <div class="btn-group mt-3 mb-5 " style="margin-left: 0px;" role="group" aria-label="Button group with nested dropdown">
 
@@ -103,10 +106,7 @@
 
     </div>
 
-        <a class="btn btn-primary btn-sm mt-sm-3"   href="{{route("botonruffier",["id"=>$cliente->id])}}"
-           style="float: right; margin-right: 50px; color: white">Nuevo
 
-        </a>
 
 
 
@@ -120,7 +120,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
 
 
 
-            <div class="table-responsive ">
+            <div class="table-responsive-lg" style="font-size: 12px">
                 <table class="table ruler-vertical table-hover mx-sm-0 ">
                     <thead class="thead-dark">
                     <tr>
@@ -159,17 +159,21 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                                 <td>{{$dato->mvoreal}}</td>
                                     <td>{{$dato->mvodiagnostico}}</td>
 
-                                <td class="form-inline ">
-                                    <button class="btn btn-warning mr-xl-2"><a
+                                <td class="row ">
+                                    <button class="btn btn-warning btn-sm" style="margin-right: 5px">
+                                        <a style="color: white"
                                                 href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i
                                                     class="fas fa-edit" style="color: #1b1e21"></i></a></button>
 
-                                    <button class="btn btn-danger mr-xl-2"
+
+                                    <button class="btn btn-danger btn-sm"
                                             data-id="{{$dato->id}}"
                                             data-id_cliente="{{$dato->id_cliente}}"
-                                            data-toggle="modal" data-target="#modalBorrarRuffier"><i class="fas fa-trash-alt"></i></button>
+                                            data-toggle="modal" data-target="#modalBorrarRuffier"><i
+                                                class="fas fa-trash-alt"></i></button>
 
                                 </td>
+
                     </tr>
                     @endforeach
                     @else
@@ -224,11 +228,29 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
     </div>
 
     <style>
-        .perfil{
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            overflow-y: hidden;
-            top: 10%;
+
+        @media (min-width: 768px) {
+            .pl-md-2, .px-md-2 {
+                padding-left: 8px !important;
+            }
+
+            @media (min-width: 768px) {
+                .perfil {
+                    float: left !important;
+                }
+
+                @media (min-width: 768px) {
+                    .perfil {
+                        width: 66.66667%;
+                    }
+                }
+                .perfil{
+                    position: -webkit-sticky; /* Safari */
+                    position: sticky;
+                    overflow-y: hidden;
+                    top: 10%;
+                }
+            }
         }
     </style>
 
