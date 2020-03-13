@@ -259,10 +259,10 @@
 
             <div class="input-group mb-3 mr-2">
 
-                <input type="text" class="form-control" id="inputText2" name="busquedaDeEstudiante"
-                       value="{{old("busquedaDeEstudiante")}}"
+                <input type="text" class="form-control" id="inputText2" name="busquedaEstudiante"
+                       value="{{old("busquedaEstudiante")}}"
                        placeholder="Buscar">
-                @if(old("busquedaDeEstudiante"))
+                @if(old("busquedaEstudiante"))
                     <div class="input-group-prepend">
                         <a class="btn btn-danger" onclick="window.location.href='/estudiantes'" style="color:white;" type="button">&times;</a>
                     </div>

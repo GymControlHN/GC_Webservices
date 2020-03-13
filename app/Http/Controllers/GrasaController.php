@@ -88,7 +88,7 @@ class GrasaController extends Controller
 
     }
 
-    public function edit($id, $id_cliente)
+    public function edit($id_cliente,$id)
 
     {
 

@@ -150,7 +150,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                                 <td class="form-inline ">
                                     <button class="btn btn-warning mr-xl-2 "><a
-                                                href="{{route('grasa.editar',[$grasa->id,$grasa->id_cliente])}}"><i
+                                                href="{{route('grasa.editar',["id_grasa"=>$grasa->id,"id_cliente"=>$grasa->id_cliente])}}"><i
                                                     class="fas fa-edit" style="color: #1b1e21"></i></a></button>
                                         <button class="btn btn-danger mr-xl-2"
                                                 data-id="{{$grasa->id}}"

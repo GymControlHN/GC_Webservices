@@ -159,11 +159,11 @@ class DocentesController extends Controller
 
     public function buscarDocente(Request $request)
     {
-        $busquedaDeDocente = $request->input("busquedaDeDocente");
+        $busquedaDocente = $request->input("busquedaDocente");
 
         $docentes = Cliente::where("id_tipo_cliente", "=", "2")
-            ->where("nombre", "like", "%" . $busquedaDeDocente . "%")
-            ->orWhere("created_at", "like", "%" . $busquedaDeDocente . "%")
+            ->where("nombre", "like", "%" . $busquedaDocente . "%")
+            ->orWhere("created_at", "like", "%" . $busquedaDocente . "%")
             ->paginate(10);
         session()->flashInput($request->input());
 
