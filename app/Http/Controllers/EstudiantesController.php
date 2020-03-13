@@ -177,7 +177,7 @@ class  EstudiantesController extends Controller
     }
 
     public function buscarEstudiante(Request $request){
-        $busquedaDeEstudiante = $request->input("busquedaDeEstudiante");
+        $busquedaEstudiante = $request->input("busquedaEstudiante");
 
 
         $carrera = Carrera::all();
@@ -185,13 +185,13 @@ class  EstudiantesController extends Controller
         $clientes = Cliente:: where("id_tipo_cliente","=","1")
             ->join("carreras","clientes_gym.id_carrera","=","carreras.id")
             ->select("clientes_gym.*","carreras.carrera")
-        ->where("nombre","like","%".$busquedaDeEstudiante."%")
-            ->orWhere("fecha_de_ingreso","like","%".$busquedaDeEstudiante."%")
+        ->where("nombre","like","%".$busquedaEstudiante."%")
+            ->orWhere("fecha_de_ingreso","like","%".$busquedaEstudiante."%")
             ->paginate(10);
         $carrera = Carrera::all();
         session()->flashInput($request->input());
         return view("estudiantes")->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1)
-            ->with("busqueda",$busquedaDeEstudiante);
+            ->with("busqueda",$busquedaEstudiante);
     }
 
 

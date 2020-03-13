@@ -37,9 +37,18 @@ class EstadisticasController extends Controller
             ->where("diagnostico_imcs.diagnostico","=","preobesidad")->get();
 
 
-        $pesoNormal= Imc::all()->where("diagnostico","=","Peso normal");
-        $delgadez= Imc::all()->where("diagnostico","=","Delgadez");
-        $delgadezSevera= Imc::all()->where("diagnostico","=","Delgadez severa");
+        $pesoNormal= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","peso normal")->get();
+
+
+
+        $delgadez= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","delgadez")->get();
+
+
+
+        $delgadezSevera= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","delgadez severa")->get();
 
 
         session()->flashInput([]);
@@ -112,8 +121,43 @@ class EstadisticasController extends Controller
             ->paginate(10);
         session()->flashInput($request->input());
 
-        return view('estadisticas')->with('clientes', $clientes)->with('no',1);
+        $obesidadTipoIII= Imc::
+        join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","Obesidad tipo III")->get();
+
+
+        $obesidadTipoII= Imc::  join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","Obesidad tipo II")->get();
+
+
+        $obesidadTipoI= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","Obesidad tipo I")->get();
+
+
+        $preobesidad= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","preobesidad")->get();
+
+
+        $pesoNormal= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","peso normal")->get();
+
+
+
+        $delgadez= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","delgadez")->get();
+
+
+
+        $delgadezSevera= Imc:: join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","delgadez severa")->get();
+
+
+        return view('estadisticas',["obesidadTipoIII"=>$obesidadTipoIII,"obesidadTipoII"=>$obesidadTipoII,
+            "obesidadTipoI"=>$obesidadTipoI, "preobesidad"=>$preobesidad, "pesoNormal"=>$pesoNormal,
+            "delgadez"=>$delgadez, "delgadezSevera"=>$delgadezSevera])->with('clientes', $clientes)->with('no',1);
     }
+
+
 
     public function borrarPagoEstadistica(Request $request)
     {

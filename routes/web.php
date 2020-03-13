@@ -127,34 +127,36 @@ Route::group(["middleware"=>"auth"],function (){
     Route::delete("grasa/estadistica/borrar","EstadisticasController@borrarGrasaEstadistica")->name("grasa.estadistica.borrar");
     Route::delete("imc/estadistica/borrar","EstadisticasController@borrarImcEstadistica")->name("imc.estadistica.borrar");
     Route::delete("ruffier/estadistica/borrar","EstadisticasController@borrarRuffierEstadistica")->name("ruffier.estadistica.borrar");
-    Route::get('grasa/{id}', 'GrasaController@index')->name('grasa.uni');
-    Route::get('grasa/nuevo/{id}', 'GrasaController@Create')->name('botongrasa');
-    Route::post('grasa/crear', 'GrasaController@store')->name('grasa.guardar');
+
+    Route::get('cliente/grasa/{id}/index', 'GrasaController@index')->name('grasa.uni');
+    Route::get('cliente/grasa/{id}/nuevo', 'GrasaController@Create')->name('botongrasa');
+    Route::post('cliente/grasa/crear', 'GrasaController@store')->name('grasa.guardar');
 
 Route::get("buscarPago","PagoEstudianteController@buscarPagos")->name("pagosestudiantes.buscarPago");
 
 
     Route::delete('grasa/borrar','GrasaController@destroy')->name('grasa.borrar');
-    Route::get('grasa/{id}/{cliente}/editar','GrasaController@edit')->name('grasa.editar');
-    Route::put('grasa/{id}/edit','GrasaController@update')->name('grasa.update');
+    Route::get('cliente/{id_cliente}/grasa/{id}/editar','GrasaController@edit')->name('grasa.editar');
+    Route::put('cliente/grasa/{id}/edit','GrasaController@update')->name('grasa.update');
 
-    Route::get('ruffier/{id}', 'RuffierController@index')->name('ruffier.uni');
-    Route::get('ruffier/nuevo/{id}', 'RuffierController@Create')->name('botonruffier');
-    Route::post('ruffier/crear', 'RuffierController@store')->name('ruffier.guardar');
+    Route::get('cliente/ruffier/{id}/index', 'RuffierController@index')->name('ruffier.uni');
+    Route::get('cliente/ruffier/{id}/nuevo', 'RuffierController@Create')->name('botonruffier');
+    Route::post('cliente/ruffier/crear', 'RuffierController@store')->name('ruffier.guardar');
 
 
     Route::delete('ruffier/borrar','RuffierController@destroy')->name('ruffier.borrar');
-    Route::get('ruffier/{id}/{id_cliente}/editar','RuffierController@edit')->name('ruffier.editar');
-    Route::put('ruffier/{id}/edit','RuffierController@update')->name('ruffier.update');
+    Route::get('cliente/{id_cliente}/rufier/{id}/editar','RuffierController@edit')->name('ruffier.editar');
+    Route::put('cliente/ruffier/{id}/edit','RuffierController@update')->name('ruffier.update');
 
-    Route::get('imc/{id}','ImcController@index')->name('imc.ini');
-    Route::get('imc/nuevo/{id}','ImcController@create')->name('botonimc');
-    Route::post('imc/crear','ImcController@store')->name('imc.guardar');
+    Route::get('cliente/imc/{id}/index','ImcController@index')->name('imc.ini');
+
+    Route::get('cliente/imc/{id}/nuevo','ImcController@create')->name('botonimc');
+    Route::post('cliente/imc/crear','ImcController@store')->name('imc.guardar');
 
 
     Route::delete('imc/borrar','ImcController@destroy')->name('imc.borrar');
 
-    Route::get('imc/{id}/{id_cliente}/editar','ImcController@edit')->name('imc.editar');
+    Route::get('cliente/{id_cliente}/imc/{id}/editar','ImcController@edit')->name('imc.editar');
     Route::put('imc/{id}/edit','ImcController@update')->name('imc.update');
 //Route::get('imc/{id}/mostrar','ImcController@mostrarIMCCliente')->name('botomostrar');
 
