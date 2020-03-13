@@ -88,7 +88,7 @@
         <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
     </div>
-        <button class="btn btn-primary btn-sm  float-right mt-3" style="margin-top: -10px; margin-right: 50px"
+        <button class="btn btn-primary btn-sm  float-right mt-sm-3" style="margin-top: -10px; margin-right: 50px"
                 data-toggle="modal" data-target="#modalPagoEstudiante" >Nuevo
         </button>
 

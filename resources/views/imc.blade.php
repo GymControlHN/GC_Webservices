@@ -97,7 +97,7 @@
 
 
                 </div>
-                <a class="btn btn-primary btn-sm  mt-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
+                <a class="btn btn-primary btn-sm  mt-m-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
                    style="float: right; margin-right: 50px; color: white">Nuevo
                 </a>
         <div class="w3-container w3-teal mx-5">
@@ -117,7 +117,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                 <th scope="col">Peso Kg</th>
                                 <th scope="col">Altura°</th>
                                 <th scope="col">Imc</th>
-                                <th scope="col">Diagnostico</th>
+
                                 <th scope="col">Pecho cm</th>
                                 <th scope="col">Brazo cm</th>
                                 <th scope="col">ABD A</th>
@@ -141,7 +141,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                         <td>{{$antecedente->peso}}</td>
                                         <td>{{$antecedente->altura}}</td>
                                         <td>{{$antecedente->imc}}</td>
-                                        <td>{{$antecedente->diagnostico}}</td>
+
                                         <td>{{$antecedente->pecho}}</td>
                                         <td>{{$antecedente->brazo}}</td>
                                         <td>{{$antecedente->ABD_A}}</td>

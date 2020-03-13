@@ -98,7 +98,7 @@
             <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
     </div>
-    <a class="btn btn-primary btn-sm mt-3" href="{{route("botongrasa",["id"=>$nombre->id])}}"
+    <a class="btn btn-primary btn-sm mt-sm-3" href="{{route("botongrasa",["id"=>$nombre->id])}}"
        style="float: right; margin-right: 50px;color: white">Nuevo
 
     </a>

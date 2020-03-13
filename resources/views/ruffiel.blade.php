@@ -103,7 +103,7 @@
 
     </div>
 
-        <a class="btn btn-primary btn-sm mt-3"   href="{{route("botonruffier",["id"=>$cliente->id])}}"
+        <a class="btn btn-primary btn-sm mt-sm-3"   href="{{route("botonruffier",["id"=>$cliente->id])}}"
            style="float: right; margin-right: 50px; color: white">Nuevo
 
         </a>
