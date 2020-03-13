@@ -128,7 +128,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::delete("imc/estadistica/borrar","EstadisticasController@borrarImcEstadistica")->name("imc.estadistica.borrar");
     Route::delete("ruffier/estadistica/borrar","EstadisticasController@borrarRuffierEstadistica")->name("ruffier.estadistica.borrar");
 
-    Route::get('cliente/grasa/{id}/index', 'GrasaController@index')->name('grasa.uni');
+    Route::get('cliente/grasa/{id_grasa}/index', 'GrasaController@index')->name('grasa.uni');
     Route::get('cliente/grasa/{id}/nuevo', 'GrasaController@Create')->name('botongrasa');
     Route::post('cliente/grasa/crear', 'GrasaController@store')->name('grasa.guardar');
 
@@ -136,7 +136,7 @@ Route::get("buscarPago","PagoEstudianteController@buscarPagos")->name("pagosestu
 
 
     Route::delete('grasa/borrar','GrasaController@destroy')->name('grasa.borrar');
-    Route::get('cliente/{id_cliente}/grasa/{id}/editar','GrasaController@edit')->name('grasa.editar');
+    Route::get('cliente/{id_cliente}/grasa/{id_grasa}/editar','GrasaController@edit')->name('grasa.editar');
     Route::put('cliente/grasa/{id}/edit','GrasaController@update')->name('grasa.update');
 
     Route::get('cliente/ruffier/{id}/index', 'RuffierController@index')->name('ruffier.uni');

@@ -12,7 +12,7 @@
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-            <li class="breadcrumb-item"><a href="{{route("grasa.uni",[$nombre->id])}}}">Grasa Corporal</a></li>
+            <li class="breadcrumb-item"><a href="{{route("grasa.uni",["id_grasa"=>$nombre->id])}}">Grasa Corporal</a></li>
             <li class="breadcrumb-item active" aria-current="page">Editar</li>
         </ol>
     </nav>
