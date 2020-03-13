@@ -496,10 +496,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Id de Empleado</th>
-                    <th scope="col">Edad</th>
+                    <th scope="col">Profesión</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Sexo</th>
-                    <th scope="col">Profesión</th>
+                    <th scope="col">Edad</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
                 </tr>
@@ -512,10 +512,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <td>{{$no++}}</td>
                     <td>{{$docente->nombre}}</td>
                     <td>{{$docente->identificacion}}</td>
-                    <td width="100px">{{$docente->edad}}</td>
+                    <td>{{$docente->profesion_u_oficio}}</td>
                     <td>{{$docente->telefono}}</td>
                     <td>{{$docente->genero}}</td>
-                    <td>{{$docente->profesion_u_oficio}}</td>
+                    <td width="100px">{{$docente->edad}}</td>
 
                     <td>{{date("d-m-Y",strtotime($docente->created_at))}}</td>
                     <div  style="overflow: auto"></div>

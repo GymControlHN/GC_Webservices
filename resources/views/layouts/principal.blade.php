@@ -59,11 +59,11 @@
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown" role="button"
                        aria-expanded="false">
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                         Perfil <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/perfil">
-                            Usuarios
+                            Seguridad
                         </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#cerrarSesionModal">

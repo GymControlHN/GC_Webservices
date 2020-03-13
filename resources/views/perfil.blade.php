@@ -9,13 +9,19 @@
             </div>
         </div>
     </header>
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%; margin-left: 2%">
+        <ol class="breadcrumb" style="background-color: white">
+            <li class="breadcrumb-item">Perfil</li>
+            <li class="breadcrumb-item">Seguridad</li>
+        </ol>
+    </nav>
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
 
         <h3 class="mt-4" style="all: revert">Listado de Usuarios</h3>
 
-
-        <button class="btn btn-primary float-right" data-toggle="modal" style="margin-bottom: 3%"
-                data-target="#modalañadirnuevousuario">Agregar Usuario
+        <button type="button" class="btn btn-primary float-right boton1 " data-toggle="modal" style="margin-bottom: 3%"
+                data-target="#modalañadirnuevousuario">
+            <i class="fas fa-user-plus"></i>
         </button>
 
         <div class="modal fade" id="modalañadirnuevousuario" tabindex="-1" role="dialog"

@@ -497,7 +497,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <th scope="col">Número de Identidad</th>
                     <th scope="col">Profesión U Oficio</th>
                     <th scope="col">Teléfono</th>
-                    <th scope="col">Genero</th>
+                    <th scope="col">Sexo</th>
                     <th scope="col">Edad</th>
                     <th scope="col">Fecha de Ingreso</th>
                     <th scope="col">Acciones</th>
