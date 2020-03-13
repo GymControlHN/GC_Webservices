@@ -521,7 +521,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <div  style="overflow: auto"></div>
 
 
-                    <td class="form-inline " style="width: 300px">
+                    <td class="form-inline " style="width: auto">
                         <form style="display: none" id="pago2_form" method="GET" action="{{route("pagoparticulares",["id"=>$particular->id])}}">
                             <input name="id_cliente" value="{{$particular->id}}" type="hidden">
                             {{ csrf_field() }}

@@ -14,6 +14,8 @@
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
         <h2 class=" mt-3">Listado de todos los clientes</h2>
 
+        <button class="btn btn-outline-dark mb-3" style="float: right"
+                data-toggle="collapse" href="#cardCollapses" data-target="#cardCollapses"><span><i class="fas fa-arrow-down"></i></span></button>
 
         <form class="form-inline" method="get" action="{{route('cliente.buscarCliente')}}">
 
@@ -30,103 +32,103 @@
                 @endif
 
             </div>
-            <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
-
+            <button type="submit" class="btn btn-primary mb-3">Buscar</button>
         </form>
 
 
-        <div class="row">
+        <div class="collapse" id="cardCollapses">
+            <div class="row" >
 
-            <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                <div class="card card-style">
-                    <div class="card-header">
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
+                    <div class="card card-style">
+                        <div class="card-header">
 
-                        <img src="/images/obeso.svg" width="40px" style="margin-left: 42%">
-                        <br>
-                        <h6 class="text-center"># Obesidad Tipo III </h6>
-                        <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoIII->count()}}</span></h5>
+                            <img src="/images/obeso.svg" width="40px" style="margin-left: 42%">
+                            <br>
+                            <h6 class="text-center"># Obesidad Tipo III </h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoIII->count()}}</span></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                <div class="card card-style">
-                    <div class="card-header">
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
+                    <div class="card card-style">
+                        <div class="card-header">
 
-                        <img src="/images/exceso-de-peso.svg" width="40px" style="margin-left: 42%">
-                        <br>
-                        <h6 class="text-center"># Obesidad Tipo II </h6>
-                        <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoII->count()}}</span></h5>
+                            <img src="/images/exceso-de-peso.svg" width="40px" style="margin-left: 42%">
+                            <br>
+                            <h6 class="text-center"># Obesidad Tipo II </h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoII->count()}}</span></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                <div class="card card-style">
-                    <div class="card-header">
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
+                    <div class="card card-style">
+                        <div class="card-header">
 
-                        <img src="/images/obe1.svg" width="40px" style="margin-left: 50%">
-                        <br>
-                        <h6 class="text-center"># Obesidad Tipo I </h6>
-                        <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoI->count()}}</span></h5>
+                            <img src="/images/obe1.svg" width="40px" style="margin-left: 50%">
+                            <br>
+                            <h6 class="text-center"># Obesidad Tipo I </h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoI->count()}}</span></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                <div class="card card-style">
-                    <div class="card-header">
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
+                    <div class="card card-style">
+                        <div class="card-header">
 
-                        <img src="/images/fat.svg" width="40px" style="margin-left: 42%">
-                        <br>
-                        <h6 class="text-center"># Preobesidad </h6>
-                        <h5 class="text-center"><span class="badge badge-dark">{{$preobesidad->count()}}</span></h5>
+                            <img src="/images/fat.svg" width="40px" style="margin-left: 42%">
+                            <br>
+                            <h6 class="text-center"># Preobesidad </h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$preobesidad->count()}}</span></h5>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
+            <div class="row" style="margin-left: 20%">
+
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
+                    <div class="card card-style">
+                        <div class="card-header">
+
+                            <img src="/images/pesoNormal.svg" width="40px" style="margin-left: 42%">
+                            <br>
+                            <h6 class="text-center"># Peso Normal </h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$pesoNormal->count()}}</span></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
+                    <div class="card card-style">
+                        <div class="card-header">
+
+                            <img src="/images/deladezsevera.svg" width="40px" style="margin-left: 42%">
+                            <br>
+                            <h6 class="text-center"># Delgadez </h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$delgadez->count()}}</span></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
+                    <div class="card card-style">
+                        <div class="card-header">
+
+                            <img src="/images/delgado.svg" width="40px" style="margin-left: 42%">
+                            <br>
+                            <h6 class="text-center"># Delgadez severa </h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$delgadezSevera->count()}}</span></h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="row" style="margin-left: 20%">
-
-            <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                <div class="card card-style">
-                    <div class="card-header">
-
-                        <img src="/images/pesoNormal.svg" width="40px" style="margin-left: 42%">
-                        <br>
-                        <h6 class="text-center"># Peso Normal </h6>
-                        <h5 class="text-center"><span class="badge badge-dark">{{$pesoNormal->count()}}</span></h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                <div class="card card-style">
-                    <div class="card-header">
-
-                        <img src="/images/deladezsevera.svg" width="40px" style="margin-left: 42%">
-                        <br>
-                        <h6 class="text-center"># Delgadez </h6>
-                        <h5 class="text-center"><span class="badge badge-dark">{{$delgadez->count()}}</span></h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
-                <div class="card card-style">
-                    <div class="card-header">
-
-                        <img src="/images/delgado.svg" width="40px" style="margin-left: 42%">
-                        <br>
-                        <h6 class="text-center"># Delgadez severa </h6>
-                        <h5 class="text-center"><span class="badge badge-dark">{{$delgadezSevera->count()}}</span></h5>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
         <div class="table-responsive mt-4" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">

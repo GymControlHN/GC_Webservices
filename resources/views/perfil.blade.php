@@ -17,12 +17,12 @@
     </nav>
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
 
-        <h3 class="mt-4" style="all: revert " >Listado de Usuarios <button type="button" class="btn btn-primary float-right boton1   " data-toggle="modal" style="margin-bottom: 3%"
-                                                                           data-target="#modalañadirnuevousuario">
-                <i class="fas fa-user-plus "></i>
-            </button></h3>
+        <h3 class="mt-4" style="all: revert" style="margin-bottom: 1%" >Listado de Usuarios</h3>
 
-
+        <button type="button" class="btn btn-primary float-right boton1 " data-toggle="modal" style="margin-bottom: 3%"
+                data-target="#modalañadirnuevousuario">
+            <i class="fas fa-user-plus"></i>
+        </button>
 
         <div class="modal fade" id="modalañadirnuevousuario" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitleE" aria-hidden="true">
