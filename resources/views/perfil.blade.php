@@ -9,6 +9,12 @@
             </div>
         </div>
     </header>
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%; margin-left: 2%">
+        <ol class="breadcrumb" style="background-color: white">
+            <li class="breadcrumb-item">Perfil</li>
+            <li class="breadcrumb-item">Seguridad</li>
+        </ol>
+    </nav>
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
 
         <h3 class="mt-4" style="all: revert">Listado de Usuarios</h3>
