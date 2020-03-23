@@ -18,7 +18,7 @@
     </nav>
     <div class="container-xl clearfix px-2 mt-4">
         @if($cliente->id_tipo_cliente==1)
-            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+            <h2 style="margin-left: 40%">Expediente Estudiante</h2>
         @endif
         @if($cliente->id_tipo_cliente==3 )
 
@@ -28,11 +28,11 @@
             <h2 style="margin-left: 1%">Expediente Docente</h2>
         @endif
 
-        <div class="col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
+        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
 
 
 
-            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" style="; object-fit: cover">
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="300px" height="300px" style="; object-fit: cover">
             <div class="card margencard" style=" border: none;" >
 
 
@@ -237,4 +237,30 @@
     </form>
 
     </html>
+            <style>
+
+                @media (min-width: 768px) {
+                    .pl-md-2, .px-md-2 {
+                        padding-left: 8px !important;
+                    }
+
+                    @media (min-width: 768px) {
+                        .perfil {
+                            float: left !important;
+                        }
+
+                        @media (min-width: 768px) {
+                            .perfil {
+                                width: 66.66667%;
+                            }
+                        }
+                        .perfil{
+                            position: -webkit-sticky; /* Safari */
+                            position: sticky;
+                            overflow-y: hidden;
+                            top: 10%;
+                        }
+                    }
+                }
+            </style>
 @endsection
