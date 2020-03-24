@@ -2,6 +2,7 @@
 
 @section("content")
     <!-- Header -->
+
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
@@ -9,6 +10,7 @@
             </div>
         </div>
     </header>
+
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
@@ -16,35 +18,27 @@
             <li class="breadcrumb-item active" aria-current="page">Editar</li>
         </ol>
     </nav>
-    <div class="container-xl clearfix px-2 mt-4">
+
+    <div class="container-xl clearfix px-2 mt-4  " >
         @if($cliente->id_tipo_cliente==1)
-            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+            <h5 style="margin-left: 1%">Expediente Estudiante</h5>
         @endif
         @if($cliente->id_tipo_cliente==3 )
 
-            <h2 style="margin-left: 1%">Expediente Particular</h2>
+            <h5 style="margin-left: 1%">Expediente Particular</h5>
         @endif
         @if($cliente->id_tipo_cliente==2)
-            <h2 style="margin-left: 1%">Expediente Docente</h2>
+            <h5 style="margin-left: 1%">Expediente Docente</h5>
         @endif
         <div class=" perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
 
 
-        <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" style="; object-fit: cover">
+        <img src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" style="; object-fit: cover">
         <div class="card margencard" style=" border: none;" >
 
 
             <div >
                 <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
-
-                @if($cliente->id_tipo_cliente==3 )
-
-                    <H6> Expediente Particular</H6>
-                @endif
-                @if($cliente->id_tipo_cliente==2)
-                    <H6> Expediente Docente</H6>
-
-                @endif
 
             </div>
         </div>
@@ -72,6 +66,7 @@
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
 
+    </div>
     </div>
 
 
@@ -293,12 +288,5 @@
     </form>
     </html>
     </div>
-    <style>
-        .perfil{
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            overflow-y: hidden;
-            top: 10%;
-        }
-    </style>
+
 @endsection
