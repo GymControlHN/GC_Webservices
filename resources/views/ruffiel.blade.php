@@ -45,19 +45,19 @@
 
     <div class="container-xl clearfix px-2 mt-4">
         @if($cliente->id_tipo_cliente==1)
-            <h2 style="margin-left: 1%">Expediente Estudiante</h2>
+            <h5 style="margin-left: 1%">Expediente Estudiante</h5>
         @endif
         @if($cliente->id_tipo_cliente==3 )
 
-            <h2 style="margin-left: 1%">Expediente Particular</h2>
+            <h5 style="margin-left: 1%">Expediente Particular</h5>
         @endif
         @if($cliente->id_tipo_cliente==2)
-            <h2 style="margin-left: 1%">Expediente Docente</h2>
+            <h5 style="margin-left: 1%">Expediente Docente</h5>
         @endif
         <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-5 pr-xl-6">
 
 
-            <img src="/clientes_imagenes/{{$cliente->imagen}}" width="200px" height="200px" style="; object-fit: cover" >
+            <img src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" style="; object-fit: cover" >
             <div class="card margencard" style=" border: none;" >
 
 
