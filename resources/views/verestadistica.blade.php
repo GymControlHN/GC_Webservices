@@ -16,7 +16,7 @@
     </div>
 
     <div style="margin-left:35px; margin-top: 20px;">
-        <img style="border-radius: 50%;float: left;margin-right: 10px ;"  src="/clientes_imagenes/{{$cliente->imagen}}" width="150px" height="150px" >
+        <img style="border-radius: 50%;float: left;margin-right: 10px ;"  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="200px" >
     </div>
 
 
@@ -42,7 +42,7 @@
 
 
 
-        <h2 class="mt-3"  @if($cliente->id_tipo_cliente==3)
+        <h5 class="mt-3"  @if($cliente->id_tipo_cliente==3)
         href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
             @endif
             @if($cliente->id_tipo_cliente ==1)
@@ -50,7 +50,7 @@
 
             @if($cliente->id_tipo_cliente ==2)
             style="display: none;"
-                @endif>Pagos</h2>
+                @endif>Pagos</h5>
 
         <div class="table-responsive mb-5"
 
