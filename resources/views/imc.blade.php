@@ -43,7 +43,7 @@
 
     <div class="container-xl clearfix px-1 mt-3 ">
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-2 pr-md-8 mt-lg-2 pr-xl-6 ">
+        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-2 pr-md-8 mt-lg-3 pr-xl-6 ">
 
             <div class="card-header">
                 @if($cliente->id_tipo_cliente==1)

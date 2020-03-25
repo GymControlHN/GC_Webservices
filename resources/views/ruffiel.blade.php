@@ -44,24 +44,26 @@
 
 
     <div class="container-xl clearfix px-2 mt-4">
-        @if($cliente->id_tipo_cliente==1)
-            <h5 style="margin-left: 1%">Expediente Estudiante</h5>
-        @endif
-        @if($cliente->id_tipo_cliente==3 )
 
-            <h5 style="margin-left: 1%">Expediente Particular</h5>
-        @endif
-        @if($cliente->id_tipo_cliente==2)
-            <h5 style="margin-left: 1%">Expediente Docente</h5>
-        @endif
-        <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-5 pr-xl-6">
+        <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6">
+      <div class="card-header" >
+          @if($cliente->id_tipo_cliente==1)
+              <h6 style="margin-left: 1%">Expediente Estudiante</h6>
+          @endif
+          @if($cliente->id_tipo_cliente==3 )
 
+              <h6 style="margin-left: 1%">Expediente Particular</h6>
+          @endif
+          @if($cliente->id_tipo_cliente==2)
+              <h6 style="margin-left: 1%">Expediente Docente</h6>
+          @endif
+      </div>
 
-            <img src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" style="; object-fit: cover" >
+            <img class="card-img-top" src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" style="; object-fit: cover" >
             <div class="card margencard" style=" border: none;" >
 
 
-                <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
+                <h6 style="margin-top: 10%"> {{$cliente->nombre}}</h6>
 
                 <h6 style="all: revert">Ruffier</h6>
                 <div style="max-height: 250px;">{!! $chart->container() !!}</div>
@@ -195,7 +197,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
         <div class="container" style="margin: 50px">
 
         </div>
-    </div>
+
     {!! $chart->script() !!}
     </div>
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarRuffier">
