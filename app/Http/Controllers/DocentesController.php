@@ -161,9 +161,9 @@ class DocentesController extends Controller
     {
         $busquedaDocente = $request->input("busquedaDocente");
 
-        $docentes = Cliente::where("id_tipo_cliente", "=", "2")
+        $docentes = Cliente::where("id_tipo_cliente", "=", 2)
             ->where("nombre", "like", "%" . $busquedaDocente . "%")
-            ->orWhere("created_at", "like", "%" . $busquedaDocente . "%")
+
             ->paginate(10);
         session()->flashInput($request->input());
 

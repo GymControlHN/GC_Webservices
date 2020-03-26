@@ -176,14 +176,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                                 <td class="row">
 
-                                    <button class="btn btn-warning btn-sm" style="margin-right: 5px ">
-                                        <a style="color: white"
-                                                href="{{route('grasa.editar',["id_grasa"=>$grasa->id,"id_cliente"=>$grasa->id_cliente])}}"><i
-                                                    class="fas fa-edit" style="color: #1b1e21"></i> </a>
+                                    <a class="btn btn-outline-warning btn-sm" style="margin-right: 5px "
+                                            href="{{route('grasa.editar',["id_grasa"=>$grasa->id,"id_cliente"=>$grasa->id_cliente])}}"><i
+                                                class="fas fa-edit" ></i>
 
-                                    </button>
 
-                                        <button class="btn btn-danger btn-sm"
+                                    </a>
+
+                                        <button class="btn btn-outline-danger btn-sm"
                                                 data-id="{{$grasa->id}}"
                                                 data-id_cliente="{{$grasa->id_cliente}}"
                                         data-toggle="modal" data-target="#modalBorrarGrasa"><i

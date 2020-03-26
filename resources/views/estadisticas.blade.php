@@ -23,6 +23,7 @@
 
                 <input type="text" class="form-control" name="busquedaCliente"
                        id="inputText2" value="{{old("busquedaCliente")}}"
+                       required
                        placeholder="Buscar">
                 @if(old("busquedaCliente"))
                     <div class="input-group-prepend">
@@ -169,7 +170,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                             <td>{{$estudiante->descripcion}}</td>
                             <td>{{date("Y-m-d",strtotime($estudiante->created_at))}}</td>
                             <td>
-                                <a class="btn btn-info mr-xl-2 "
+                                <a class="btn  btn-outline-info  mr-xl-2 "
                                    href="{{route("grafico.mostrar",["id"=>$estudiante->id])}}">
 
 

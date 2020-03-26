@@ -252,6 +252,7 @@
 
                 <input type="text" class="form-control " name="busquedaDocente"
                        id="inputText2"  value="{{old("busquedaDocente")}}"
+                       required
                        placeholder="Buscar">
                 @if(old("busquedaDocente"))
                     <div class="input-group-prepend">
@@ -522,21 +523,21 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
 
                     <td class="form-inline">
 
-                        <button class="btn btn-warning  mr-2" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myfecha_nacimiento="{{$docente->fecha_nacimiento}}"
+                        <button class="btn btn-outline-warning mr-2" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myfecha_nacimiento="{{$docente->fecha_nacimiento}}"
                                 data-mynumero="{{$docente->identificacion}}"
                                 data-imagen="{{$docente->imagen}}"
                                 data-myfecha="{{$docente->fecha_de_ingreso}}" data-myprofesion="{{$docente->profesion_u_oficio}}"
                                 data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}" data-sexo="{{$docente->genero}}"><i class="fas fa-edit"></i></button>
 
-                        <button class="btn btn-danger mr-xl-2 "
+                        <button class="btn btn-outline-danger mr-xl-2 "
                                 data-id="{{$docente->id}}"
                                 data-nombre="{{$docente->nombre}}"
                                 data-toggle="modal"
                                 data-target="#modalBorrarDocente"><i class="fas fa-trash-alt"></i>
                         </button>
-                        <a class="btn btn-info mr-xl-2 "
+                        <a class="btn btn-outline-dark mr-xl-2 "
                            href="{{route("imc.ini",$docente->id)}}">
-                            Expediente
+                            <i class="fas fa-info-circle"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$docente->id)}}">MedidasAntropometricas</a></button>

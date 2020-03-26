@@ -245,6 +245,7 @@
 
                 <input type="text" class="form-control" name="busquedaParticular"
                        id="inputText2" value="{{old("busquedaParticular")}}"
+                       required
                        placeholder="Buscar">
                 @if(old("busquedaParticular"))
                     <div class="input-group-prepend">
@@ -528,7 +529,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         </form>
 
 
-                        <button class="btn btn-warning mr-xl-2" data-toggle="modal"
+                        <button class="btn btn-outline-warning mr-xl-2" data-toggle="modal"
                                 data-target="#editarParticular"
                                 data-mynombre="{{$particular->nombre}}" data-myfecha_nacimiento="{{$particular->fecha_nacimiento}}"
                                 data-myidentidad="{{$particular->identificacion}}"
@@ -539,16 +540,16 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                 data-imagen="{{$particular->imagen}}"
                                 data-id="{{$particular->id}}"><i class="fas fa-edit"></i></button>
 
-                        <button class="btn btn-danger mr-xl-2 "
+                        <button class="btn btn-outline-danger  mr-xl-2 "
                                 data-id="{{$particular->id}}"
                                 data-nombre="{{$particular->nombre}}"
                                 data-toggle="modal"
                                 data-target="#modalBorrarParticular"><i class="fas fa-trash-alt"></i>
                         </button>
 
-                        <a class="btn btn-info mr-xl-2 "
+                        <a class="btn btn-outline-dark mr-xl-2 "
                            href="{{route("imc.ini",$particular->id)}}">
-                            Expediente
+                            <i class="fas fa-info-circle"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button" > <a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$particular->id)}}">Imc</a>

@@ -149,7 +149,6 @@ class ParticularesController extends Controller
 
         $particulares=Cliente::where("id_tipo_cliente","=","3")
         ->where("nombre","like","%".$busquedaPartarticular."%")
-            ->orWhere("created_at","like","%".$busquedaPartarticular."%")
             ->paginate(10);
         session()->flashInput($request->input());
 

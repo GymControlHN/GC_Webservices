@@ -135,11 +135,11 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                    data-title="La contraseña no se puede mostrar"></i> confidencial
                             </th>
                             <th class="form-inline mr-xl-n2 ">
-                                <button class="btn btn-danger mr-xl-2 "
+                                <button class="btn btn-outline-danger mr-xl-2 "
                                         data-toggle="modal"
                                         data-target="#modalBorrarUsuario">
                                     <i class="fas fa-trash-alt"></i></button>
-                                <button class="btn btn-info mr-xl-2 " type="button"
+                                <button class="btn btn-outline-info mr-xl-2 " type="button"
                                         data-correo="{{$usuario->email}}"
                                         data-toggle="modal"
                                         data-target="#modalRecuperar">Restablecer

@@ -186,7 +186,6 @@ class  EstudiantesController extends Controller
             ->join("carreras","clientes_gym.id_carrera","=","carreras.id")
             ->select("clientes_gym.*","carreras.carrera")
         ->where("nombre","like","%".$busquedaEstudiante."%")
-            ->orWhere("fecha_de_ingreso","like","%".$busquedaEstudiante."%")
             ->paginate(10);
         $carrera = Carrera::all();
         session()->flashInput($request->input());

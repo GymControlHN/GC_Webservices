@@ -261,6 +261,7 @@
 
                 <input type="text" class="form-control" id="inputText2" name="busquedaEstudiante"
                        value="{{old("busquedaEstudiante")}}"
+                       required
                        placeholder="Buscar">
                 @if(old("busquedaEstudiante"))
                     <div class="input-group-prepend">
@@ -530,7 +531,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                     {{ csrf_field() }}
                                 </form>
 
-                                <button class="btn btn-warning mr-xl-2" data-toggle="modal"
+                                <button class="btn btn-outline-warning mr-xl-2" data-toggle="modal"
                                         data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
                                         data-myfecha_nacimiento="{{$estudiante->fecha_nacimiento}}"
                                         data-mycuenta="{{$estudiante->identificacion}}"
@@ -541,7 +542,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                         data-catid="{{$estudiante->id}}" data-sexo="{{$estudiante->genero}}"><i
                                             class="fas fa-edit"></i></button>
 
-                                <button class="btn btn-danger mr-xl-2 "
+                                <button class="btn btn-outline-danger mr-xl-2 "
                                         data-id="{{$estudiante->id}}"
                                         data-nombre="{{$estudiante->nombre}}"
                                         data-toggle="modal"
@@ -549,9 +550,9 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                 </button>
 
 
-                                <a class="btn btn-info mr-xl-2 "
+                                <a class="btn btn-outline-dark mr-xl-2 "
                                    href="{{route("imc.ini",$estudiante->id)}}">
-                                    Expediente
+                                    <i class="fas fa-info-circle"></i>
                                 </a>
 
 

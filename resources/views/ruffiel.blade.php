@@ -169,13 +169,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                                     <td>{{$dato->mvodiagnostico}}</td>
 
                                 <td class="row ">
-                                    <button class="btn btn-warning btn-sm" style="margin-right: 5px">
-                                        <a style="color: white"
-                                                href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i
-                                                    class="fas fa-edit" style="color: #1b1e21"></i></a></button>
+                                    <a class="btn btn-outline-warning btn-sm" style="margin-right: 5px"
+                                       href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i
+                                                class="fas fa-edit" ></i>
+
+                                                </a>
 
 
-                                    <button class="btn btn-danger btn-sm"
+                                    <button class="btn btn-outline-danger btn-sm"
                                             data-id="{{$dato->id}}"
                                             data-id_cliente="{{$dato->id_cliente}}"
                                             data-toggle="modal" data-target="#modalBorrarRuffier"><i

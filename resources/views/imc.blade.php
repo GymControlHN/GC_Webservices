@@ -164,14 +164,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                     <td class="row">
 
 
-                                        <button class="btn btn-warning btn-sm" style="margin-right: 5px">
-                                            <a style="color: white"
-                                               href="{{route('imc.editar',[$antecedente->id,$antecedente->id_cliente])}}"><i
-                                                        class="fas fa-edit" style="color: #1b1e21"></i> </a>
-                                        </button>
+                                        <a class="btn btn-outline-warning btn-sm " style="margin-right: 5px"
+                                           href="{{route('imc.editar',[$antecedente->id,$antecedente->id_cliente])}}"><i
+                                                    class="fas fa-edit" ></i>
+
+                                        </a>
 
 
-                                        <button class="btn btn-danger btn-sm"
+                                        <button class="btn btn-outline-danger btn-sm"
                                                 data-id="{{$antecedente->id}}"
                                                 data-id_cliente="{{$antecedente->id_cliente}}"
                                                 data-toggle="modal" data-target="#modalBorrarImc"><i

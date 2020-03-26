@@ -191,7 +191,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
                         <th>
-                            <button class="btn btn-danger btn-sm"
+                            <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"
                                     data-toggle="modal" data-target="#modalBorrarPagoEstudiante"><i class="fas fa-trash-alt"></i></button>
