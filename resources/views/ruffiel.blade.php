@@ -63,7 +63,7 @@
             <div class="card margencard" style=" border: none;" >
 
 
-                <h6 style="margin-top: 10%"> {{$cliente->nombre}}</h6>
+                <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
 
                 <h6 style="all: revert">Ruffier</h6>
                 <div style="max-height: 250px;">{!! $chart->container() !!}</div>

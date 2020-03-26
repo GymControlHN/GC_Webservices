@@ -45,7 +45,7 @@
 
     <div class="container-xl clearfix px-2 mt-4">
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6">
+        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6">
 
             <div class="card-header">
 
@@ -65,7 +65,7 @@
 
         <div class="card margencard" style=" border: none;" >
 
-            <div class="card-body" >
+            <div >
                 <h5 style="margin-top: 10%">{{$nombre->nombre}}</h5>
             <h6 style="all: revert">Grasa Corporal</h6>
                 <div style="max-height: 250px;">{!! $chart->container() !!}</div>

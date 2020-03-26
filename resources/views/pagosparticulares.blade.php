@@ -41,20 +41,20 @@
         <div class="col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8  mt-lg-3 pr-xl-6">
             <div class="card-header">
                 @if($nombre->id_tipo_cliente==1)
-                    <h5 style="margin-left: 1%">Expediente Estudiante</h5>
+                    <h6 style="margin-left: 1%">Expediente Estudiante</h6>
                 @endif
                 @if($nombre->id_tipo_cliente==3 )
 
-                    <h5 style="margin-left: 1%">Expediente Particular</h5>
+                    <h6 style="margin-left: 1%">Expediente Particular</h6>
                 @endif
                 @if($nombre->id_tipo_cliente==2)
-                    <h5 style="margin-left: 1%">Expediente Docente</h5>
+                    <h6 style="margin-left: 1%">Expediente Docente</h6>
                 @endif
             </div>
 
             <img class="card-img-top"  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="300px" style="margin-top: 20%; object-fit: cover">
             <div class="card margencard" style=" border: none;" >
-                <div class="card-body">
+                <div >
                     <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
                     @if($nombre->id_tipo_cliente==2)
                         <H6> Expediente Docente</H6>

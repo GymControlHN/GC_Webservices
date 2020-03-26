@@ -43,7 +43,7 @@
 
     <div class="container-xl clearfix px-1 mt-3 ">
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-2 pr-md-8 mt-lg-3 pr-xl-6 ">
+        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ">
 
             <div class="card-header">
                 @if($cliente->id_tipo_cliente==1)
@@ -61,7 +61,7 @@
             <img class="card-img-top" src="/clientes_imagenes/{{$cliente->imagen}}" width="250px"
                  height="300px" style=" object-fit: cover">
             <div class="card margencard" style=" border: none;">
-                <div class="card-body">
+                <div >
                     <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
                     <h6 style="all: revert">Medida Antropometrica</h6>
                     <div style="max-height: 250px;">{!! $chart->container() !!}</div>
@@ -105,7 +105,7 @@
 
         </div>
 
-        <div class="w3-container w3-teal mx-8">
+        <div class="w3-container w3-teal mx-5">
 
             <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">

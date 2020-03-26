@@ -16,23 +16,26 @@
             <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
         </ol>
     </nav>
-    <div class="container-xl clearfix px-2 mt-4">
+    <div class="container-xl clearfix px-1 mt-3">
+        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
+            <div class="card-header">
         @if($cliente->id_tipo_cliente==1)
-            <h5 style="margin-left: 1%">Expediente Estudiante</h5>
+            <h6 style="margin-left: 1%">Expediente Estudiante</h6>
         @endif
         @if($cliente->id_tipo_cliente==3 )
 
-            <h5 style="margin-left: 1%">Expediente Particular</h5>
+            <h6 style="margin-left: 1%">Expediente Particular</h6>
         @endif
         @if($cliente->id_tipo_cliente==2)
-            <h5 style="margin-left: 1%">Expediente Docente</h5>
+            <h6 style="margin-left: 1%">Expediente Docente</h6>
         @endif
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
+            </div>
 
 
 
-            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" style="; object-fit: cover">
+            <img class="card-img-top" src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px"
+                 style=" object-fit: cover">
             <div class="card margencard" style=" border: none;" >
 
 
@@ -208,7 +211,7 @@
         <div class="container2">
 
 
-            <a class="btn btn-primary my-2 boton"
+            <a class="btn btn-primary my-2 boton" style="margin-left: 29%"
                href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
 
 

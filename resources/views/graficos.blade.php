@@ -45,23 +45,24 @@
         <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12  card float-md-left mr-5 pr-md-8   mt-lg-3 pr-xl-6">
       <div class="card-header">
           @if($cliente->id_tipo_cliente==1)
-              <h5 style="margin-left: 1%">Expediente Estudiante</h5>
+              <h6 style="margin-left: 1%">Expediente Estudiante</h6>
           @endif
           @if($cliente->id_tipo_cliente==3 )
 
-              <h5 style="margin-left: 1%">Expediente Particular</h5>
+              <h6 style="margin-left: 1%">Expediente Particular</h6>
           @endif
           @if($cliente->id_tipo_cliente==2)
-              <h5 style="margin-left: 1%">Expediente Docente</h5>
+              <h6 style="margin-left: 1%">Expediente Docente</h6>
           @endif
 
 
    </div>
-            <img class="card-img-top"  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" style ="margin-top: 22%; object-fit: cover">
+            <img class="card-img-top"  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px"
+                 style =" object-fit: cover">
 
             <div class="card margencard" style=" border: none;" >
 
-                <div class="card-body">
+                <div >
                     <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
                     <h6 style="all: revert">Graficos</h6>
                 </div>
@@ -103,7 +104,7 @@
     </div>
     </div>
 
-    <div class="w3-container w3-teal mx-30" style="margin-top: -20%; margin-left: 21%;
+    <div class="w3-container w3-teal mx-30" style="margin-top: -23%; margin-left: 21%;
      margin-right: 10%; margin-bottom: 10%">
             {!! $chart->container() !!}
 

@@ -19,21 +19,22 @@
         </ol>
     </nav>
 
-    <div class="container-xl clearfix px-2 mt-4  " >
+    <div class="container-xl clearfix px-1 mt-3  " >
+        <div class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
+            <div class="card-header">
         @if($cliente->id_tipo_cliente==1)
-            <h5 style="margin-left: 1%">Expediente Estudiante</h5>
+            <h6 style="margin-left: 1%">Expediente Estudiante</h6>
         @endif
         @if($cliente->id_tipo_cliente==3 )
 
-            <h5 style="margin-left: 1%">Expediente Particular</h5>
+            <h6 style="margin-left: 1%">Expediente Particular</h6>
         @endif
         @if($cliente->id_tipo_cliente==2)
-            <h5 style="margin-left: 1%">Expediente Docente</h5>
+            <h6 style="margin-left: 1%">Expediente Docente</h6>
         @endif
-        <div class=" perfil col-md-1 col-md-2 col-12 float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6">
+            </div>
 
-
-        <img src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" style="; object-fit: cover">
+        <img src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" style="object-fit: cover">
         <div class="card margencard" style=" border: none;" >
 
 
@@ -138,7 +139,7 @@
         {{method_field('put')}}
 
 
-        <h5  style="margin-left: 3%;margin-top: -1%">Editar medidas antropometricas</h5>
+        <h5  style="margin-left: 3%;margin-top: -21%">Editar medidas antropometricas</h5>
         <div class="form-row mt-4">
             <div class="form-group col-md-4">
                 <h6 class=" label2" for="email" style="margin-top: -1%">Peso kg:</h6>
@@ -253,7 +254,7 @@
         <div class="container2">
 
 
-            <a class="btn btn-primary my-2 boton"
+            <a class="btn btn-primary my-2 boton" style="margin-left: 29%"
                href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
 
 
