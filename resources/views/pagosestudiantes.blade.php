@@ -40,7 +40,7 @@
 
     <div class="container-xl clearfix px-1 mt-3">
         <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 mt-lg-3 pr-xl-6">
-            <div class="card-header">
+            <div class="card-header" style="background: #8addff">
             @if($nombre->id_tipo_cliente==1)
                 <h6 style="margin-left: 1%">Expediente Estudiante</h6>
             @endif
@@ -182,7 +182,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
             @foreach ($pagos as $day => $users_list)
                 <tr>
                     <th colspan="5"
-                        style="background-color: #7086f7; color: white;">Registro del año {{ $day }}</th>
+                        style="background-color: #85d6f7; color: white;">Registro del año {{ $day }}</th>
                 </tr>
                 @foreach ($users_list as $user)
                     <tr>

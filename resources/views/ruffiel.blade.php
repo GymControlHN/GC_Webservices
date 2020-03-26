@@ -46,7 +46,7 @@
     <div class="container-xl clearfix px-2 mt-4">
 
         <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6">
-      <div class="card-header" >
+      <div class="card-header" style="background: #4996fa" >
           @if($cliente->id_tipo_cliente==1)
               <h6 style="margin-left: 1%">Expediente Estudiante</h6>
           @endif
