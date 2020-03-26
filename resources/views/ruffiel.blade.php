@@ -151,7 +151,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                                 <tr style="text-align:right">
                                     <td>{{$no++}}</td>
                                     <th>{{date("d-m-Y",strtotime($dato->created_at))}}</th>
-                                    <td style="text-align: center">{{$dato->diagnostico}}</td>
+
+                                    <td @if($dato->ruffiel>=16)
+                                        style="color: red"
+                                        @elseif($dato->ruffiel>=0&& $dato->ruffiel<=9)
+                                        style="color: green"
+                                        @elseif($dato->ruffiel<=15&& $dato->ruffiel>=10)
+                                        style="color: blue;"
+                                        @endif style="text-align: center">{{$dato->diagnostico}}</td>
                                 <td>{{$dato->pulso_r}}</td>
                                 <td>{{$dato->pulso_a}}</td>
                                 <td>{{$dato->pulso_d}}</td>

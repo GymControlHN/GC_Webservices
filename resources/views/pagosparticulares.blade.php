@@ -116,7 +116,7 @@
                                 <h6>Fecha</h6>
                                 <div class="form-group">
                                     <input type="date" class="form-control"
-                                           id="fecha" name="fecha_pago">
+                                           id="fecha" name="fecha_pago" required>
                                     <input type="hidden" id="mes" name="mes">
                                 </div>
 

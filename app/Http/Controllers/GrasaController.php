@@ -35,7 +35,6 @@ class GrasaController extends Controller
         $nombre = Cliente::findOrfail($id);
 
         $chart = new UserChart();
-        $chart->title("Estadisticas del usuario: " . $nombre->value("nombre"));
         $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
 
         $chart->dataset('Grasa', 'line', $grasa)->options([

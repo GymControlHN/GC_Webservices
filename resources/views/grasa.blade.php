@@ -144,7 +144,26 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                 <tr style="text-align:right">
                                     <td>{{$no++}}</td>
                                     <th>{{date("d-m-Y",strtotime($grasa->created_at))}}</th>
-                                    <td style="text-align: center">{{$grasa->diagnostico}}</td>
+
+
+                                    <td  if(genero==="M"){ @if($grasa->grasa>=26)
+                                        style="color: red"
+                                        @elseif($grasa->grasa>=18&& $grasa->grasa<=25)
+                                        style="color: blue"
+                                        @elseif($grasa->grasa<=14&& $grasa->grasa>=2)
+                                        style="color: green;"
+                                        @endif }
+                                         else {
+
+                                         @if($grasa->grasa>=32)
+                                         style="color: red"
+                                         @elseif($grasa->grasa>=21&& $grasa->grasa<=31)
+                                         style="color: blue"
+                                         @elseif($grasa->grasa<=20&& $grasa->grasa>=10)
+                                         style="color: green;"
+                                         @endif
+
+                                         }style="text-align: center">{{$grasa->diagnostico}}</td>
 
 
                                 <td>{{$grasa->pc_tricipital}}</td>

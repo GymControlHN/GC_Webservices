@@ -31,7 +31,6 @@ class ImcController extends Controller
          $cliente = Cliente::findOrfail($id);
 
         $chart = new UserChart();
-        $chart->title("Estadisticas del usuario: " . $cliente->value("nombre"));
         $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
 
         $chart->dataset('imc', 'line', $imc)->options([

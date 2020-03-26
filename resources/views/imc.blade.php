@@ -140,7 +140,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                 <tr style="text-align:right">
                                     <td>{{$no++}}</td>
                                     <td><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
-                                    <td>{{$antecedente->diagnostico}}</td>
+                                    <td @if($antecedente->imc>30)
+                                        style="color: red"
+                                        @elseif($antecedente->imc>18.49&& $antecedente->imc<29.99)
+                                        style="color: green"
+                                        @elseif($antecedente->imc<18.48&& $antecedente->imc>16.00)
+                                            style="color: blue;"
+                                            @endif
+                                        >{{$antecedente->diagnostico}}</td>
 
                                     <td>{{$antecedente->peso}}</td>
                                     <td>{{$antecedente->altura}}</td>
