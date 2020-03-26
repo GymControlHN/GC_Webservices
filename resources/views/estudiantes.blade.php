@@ -552,7 +552,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
 
                                 <a class="btn btn-outline-dark mr-xl-2 "
                                    href="{{route("imc.ini",$estudiante->id)}}">
-                                    <i class="fas fa-info-circle"></i>
+                                    <i class="fas fa-running"></i>
                                 </a>
 
 

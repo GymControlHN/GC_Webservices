@@ -537,7 +537,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         </button>
                         <a class="btn btn-outline-dark mr-xl-2 "
                            href="{{route("imc.ini",$docente->id)}}">
-                            <i class="fas fa-info-circle"></i>
+                            <i class="fas fa-running"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                             <button class="dropdown-item" type="button"><a class="nav-link js-scroll-trigger" href="{{route("imc.ini",$docente->id)}}">MedidasAntropometricas</a></button>
