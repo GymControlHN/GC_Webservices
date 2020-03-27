@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 class RuffierController extends Controller
 {
     //
-
+    public  $alerta=0;
     public function index($id)
     {
         $datos = Ruffier ::join("diagnostico_ruffier","ruffier.id_diagnostico","=","diagnostico_ruffier.id")
@@ -36,7 +36,21 @@ class RuffierController extends Controller
             'fill' => 'true',
             'borderColor' => '#0000FF',
         ]);
-        return view('ruffiel',compact("datos","chart"))->with("cliente", $cliente)->with("no", 1);
+        if(($this->alerta)==1) {
+            $this->alerta=0;
+
+        return view('ruffiel',compact("datos","chart"))->with("cliente", $cliente)->with("no", 1)
+            ->withExito("Registro ruffier creado con exito")->withError(null);
+
+    }
+        if(($this->alerta) ==2){
+            $this->alerta=0;
+
+            return view('ruffiel', compact("datos", "chart"))->with("cliente", $cliente)->with('no', 1)->withError("no se pudo realizar la acción");
+        }
+
+
+        return view('ruffiel', compact("datos", "chart"))->with("cliente", $cliente)->with('no', 1)->withExito(null)->withError(null);
 
 
     }
@@ -71,7 +85,7 @@ class RuffierController extends Controller
         //TODO redireccionar a una página con sentido.
         //Seccion::flash('message','ingreso correcto');
         //   return redirect('ruffiel');
-
+        $this->alerta=1;
         return $this->index( $request->input("id"));
 
     }
