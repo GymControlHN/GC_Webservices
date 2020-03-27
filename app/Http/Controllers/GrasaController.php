@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\DB;
 
 class GrasaController extends Controller
 {
+    public  $alerta=0;
     public function index($id)
     {
 
@@ -41,12 +42,26 @@ class GrasaController extends Controller
             'fill' => 'true',
             'borderColor' => '#CD5C5C',
         ]);
-        return view('grasa', compact("grasa_corporal","chart"))->with("nombre", $nombre)->with('no',1);
+        if(($this->alerta)==1) {
+            $this->alerta = 0;
 
+            return view('grasa', compact("grasa_corporal", "chart"))->with("nombre", $nombre)->with('no', 1)
+           -> withExito("Registro grasa creado con exito")->withError(null);
+        }
         //$grasa_corporal = Grasa
         // ::where("id_cliente", "=", $request->input("id_cliente"));
         //$nombre = Cliente::findOrfail($id);
         // return view('grasa', compact("grasa_corporal"))->with("nombre", $nombre);
+        if(($this->alerta) ==2){
+            $this->alerta=0;
+
+            return view('grasa', compact("grasa_corporal", "chart"))->with("nombre", $nombre)->with('no', 1)->withError("no se pudo realizar la acción");
+        }
+
+
+        return view('grasa', compact("grasa_corporal", "chart"))->with("nombre", $nombre)->with('no', 1)->withExito(null)->withError(null);
+
+
     }
 
 
@@ -82,7 +97,7 @@ class GrasaController extends Controller
         $nuevoMedida->save();
 
         // TODO redireccionar a una página con sentido.
-
+        $this->alerta=1;
         return $this->index( $request->input("id"));
 
     }

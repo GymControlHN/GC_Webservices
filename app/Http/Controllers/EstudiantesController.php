@@ -134,7 +134,9 @@ class  EstudiantesController extends Controller
                 $estudiantes->telefono = $request->input("telefono");
                 $estudiantes->id_tipo_cliente = "1";
                 $estudiantes->genero = strtoupper($request->input("genero"));
-                $estudiantes->imagen=$imagen;
+                if($imagen!=="") {
+                    $estudiantes->imagen = $imagen;
+                }
                 $estudiantes->save();
 
                 $estudiantes1 = Cliente::paginate(10);

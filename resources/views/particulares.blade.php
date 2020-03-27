@@ -442,7 +442,9 @@
                                             id="imagenEditar"
                                            name="imagen"/>
 
-                                    <img width="200px" style="max-height:100px; object-fit: contain"  id="previewImagenEditar"
+                                    <img width="200px" style="max-height:100px; object-fit: contain"
+                                         onerror="this.src='/img/user.png'"
+                                         id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>
 
                                     <br>

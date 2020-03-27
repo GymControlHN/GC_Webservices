@@ -8,9 +8,11 @@ use App\Imc;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class ImcController extends Controller
 {
+  public  $alerta=0;
     public function index($id)
     {
          $antecedentes =
@@ -40,10 +42,21 @@ class ImcController extends Controller
 
 
 
+        if(($this->alerta)==1) {
+            $this->alerta=0;
 
-         return view('imc',compact("antecedentes","chart"))->with("cliente",$cliente)->with('no',1);
+            return view('imc', compact("antecedentes", "chart"))->with("cliente", $cliente)->with('no', 1)
+                ->withExito("Registro imc creado con exito")->withError(null);
+
+        }
+        if(($this->alerta) ==2){
+            $this->alerta=0;
+
+            return view('imc', compact("antecedentes", "chart"))->with("cliente", $cliente)->with('no', 1)->withError("no se pudo realizar la acción");
+        }
 
 
+        return view('imc', compact("antecedentes", "chart"))->with("cliente", $cliente)->with('no', 1)->withExito(null)->withError(null);
 
 
     }
@@ -92,6 +105,7 @@ class ImcController extends Controller
 
         $nuevoImc->save();
 
+        $this->alerta=1;
         return $this->index( $request->input("id"));
 
        //->route('imc.ini');

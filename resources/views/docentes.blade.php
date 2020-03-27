@@ -444,13 +444,14 @@
                                     <h6>Imagen del Docente</h6>
 
                                     <input type="file" accept="image/*"
-
                                            style="display: none"
                                            onchange="loadFile4(event)" class="form-control"
                                            id="imagenEditarDocente"
                                            name="imagen"/>
 
-                                    <img width="200px" style="max-height:100px; object-fit: contain"  id="previewImagenEditar"
+                                    <img width="200px" style="max-height:100px; object-fit: contain"
+                                         onerror="this.src='/img/user.png'"
+                                         id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>
 
                                     <br>

@@ -116,11 +116,12 @@ class DocentesController extends Controller
             $docente->identificacion = $request->input('identificacion');
             $docente->telefono = $request->input('telefono');
             $docente->profesion_u_oficio = $request->input("profesion_u_oficio");
-            $docente->genero = $request->input('genero');
+            $docente->genero = strtoupper($request->input('genero'));
             $docente->id_carrera = 1;
             $docente->id_tipo_cliente = "2";
-
-            $docente->imagen = $imagen;
+            if($imagen!=="") {
+                $docente->imagen = $imagen;
+            }
             $docente->save();
 
 

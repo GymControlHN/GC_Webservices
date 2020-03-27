@@ -105,10 +105,30 @@
 
         </div>
 
+
         <div class="w3-container w3-teal mx-5">
 
             <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
+
+                @if($exito)
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{$exito }}
+                    </div>
+
+                @endif
+                @if($error)
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" id="crearNuevo" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ $error }}
+                    </div>
+
+                @endif
 
 
                 <div class="table-responsive-lg">

@@ -101,9 +101,11 @@ class ParticularesController extends Controller
         $particular->profesion_u_oficio = $request->input('profesion_u_oficio');
         $particular->telefono = $request->input ('telefono');
         $particular->id_carrera=1;
-        $particular->genero = $request->input ('genero');
+        $particular->genero = strtoupper( $request->input ('genero'));
         $particular->id_tipo_cliente="3";
-            $particular->imagen = $imagen;
+            if($imagen!=="") {
+                $particular->imagen = $imagen;
+            }
         // Guardar los cambios
         $particular->save();
 
