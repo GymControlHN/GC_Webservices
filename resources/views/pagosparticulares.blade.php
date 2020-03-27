@@ -181,32 +181,33 @@
 
                 </div>
 
-            @if(session("exito"))
-                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-left: 20%; margin-right: 4%;">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-
-                    {{ session('exito') }}
-                </div>
-
-            @endif
-
-                @if(session("error"))
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-left: 20%; margin-right: 4%">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-
-
-                        {{ session('error') }}
-                    </div>
-
-                @endif
 
 
                 <div class="table-responsive mb-5"  style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
+
+                    @if(session("exito"))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-left: 0%; margin-right: 0%;">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+                            {{ session('exito') }}
+                        </div>
+
+                    @endif
+
+                    @if(session("error"))
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-left: 0%; margin-right: 0%;">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+
+                            {{ session('error') }}
+                        </div>
+
+                    @endif
                     <table class="table ruler-vertical table-hover mx-sm-0 " style="font-size: 12px">
 
                         <thead class="thead-dark">
