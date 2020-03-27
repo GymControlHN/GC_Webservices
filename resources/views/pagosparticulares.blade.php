@@ -52,7 +52,7 @@
                 @endif
             </div>
 
-            <img class="card-img-top"  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="300px" style="margin-top: 20%; object-fit: cover">
+            <img class="card-img-top"  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="300px" style=" object-fit: cover">
             <div class="card margencard" style=" border: none;" >
                 <div >
                     <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
