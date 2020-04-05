@@ -35,7 +35,7 @@
 
 
             <img class="card-img-top" src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px"
-                 style=" object-fit: cover">
+                 >
             <div class="card margencard" style=" border: none;" >
 
 

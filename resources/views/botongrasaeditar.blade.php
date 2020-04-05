@@ -32,7 +32,7 @@
 
 </div>
 
-            <img src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="300px" style=" object-fit: cover">
+            <img src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="300px" >
             <div class="card margencard" style=" border: none;">
 
 
