@@ -207,8 +207,8 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                             {{ session('error') }}
                         </div>
 
-                    @endif
-                    <table class="table ruler-vertical table-hover mx-sm-0 " style="font-size: 12px">
+                @endif
+                        <table class="table table-hover mx-sm-0 " style="font-size: 12px">
 
                         <thead class="thead-dark">
                         <tr>

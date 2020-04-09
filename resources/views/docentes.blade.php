@@ -497,7 +497,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 <tr>
                     <th scope="col">N°</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Id de Empleado</th>
+                    <th scope="col">Número de Empleado</th>
                     <th scope="col">Profesión</th>
                     <th scope="col">Teléfono</th>
                     <th scope="col">Sexo</th>

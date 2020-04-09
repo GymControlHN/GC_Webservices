@@ -19,7 +19,6 @@ class CreateTableClientesGym extends Migration
             $table->date('fecha_nacimiento');
             $table->char('identificacion', 13)->unique()->nullable();
             $table->string('profesion_u_oficio', 100)->nullable();
-            $table->date('fecha_de_ingreso');
             $table->unsignedInteger('id_carrera');
             $table->foreign("id_carrera")->references("id")->on("carreras");
             $table->unsignedInteger('id_tipo_cliente');

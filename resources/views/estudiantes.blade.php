@@ -114,7 +114,7 @@
 
                             <div class="form-row">
                                 <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
-                                    <h6>Número Cuenta</h6>
+                                    <h6>Número de Cuenta</h6>
                                     <input type="text" pattern="([0-9]{1,11})"
                                            class="form-control{{ $errors->has('identificacion') ? ' has-error' : '' }}"
                                            id="identificacion"
@@ -361,7 +361,7 @@
 
                             <div class="form-row">
                                 <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
-                                    <h6>Número Cuenta</h6>
+                                    <h6>Número de Cuenta</h6>
                                     <input type="text" pattern="([0-9]{1,11})" class="form-control" id="identificacion"
                                            name="identificacion"
                                            value="{{old("identificacion")}}"
