@@ -119,7 +119,10 @@
                                            id="fecha" name="fecha_pago" required>
                                     <input type="hidden" id="mes" name="mes">
                                 </div>
-
+                                <h6>Agregar Nota</h6>
+                                <div class="form-group">
+                                    <input type="name" class="form-control">
+                                </div>
 
                                 <div class="modal-footer">
                                     <input name="id" value="{{$nombre->id}}" type="hidden">
@@ -208,7 +211,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         </div>
 
                     @endif
-                    <table class="table ruler-vertical table-hover mx-sm-0 " style="font-size: 12px">
+                    <table class="table  table-hover " style="font-size: 12px">
 
                         <thead class="thead-dark">
                         <tr>
@@ -216,6 +219,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                             <th>Mes</th>
                             <th>Fecha</th>
                             <th>Estado</th>
+                            <th>Nota</th>
                             <th>Acciones</th>
                         <tr>
                         </thead>
@@ -224,7 +228,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             @if($pagos->count()>0)
             @foreach ($pagos as $day => $users_list)
                 <tr>
-                    <th colspan="5"
+                    <th colspan="6"
                         style="background-color: #85d6f7; color: white;">Registros del año {{ $day }}</th>
                 </tr>
                 @foreach ($users_list as $user)
@@ -233,6 +237,9 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
+                        <th>
+
+                        </th>
                         <th class="form-inline mr-xl-n2 ">
                             <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"

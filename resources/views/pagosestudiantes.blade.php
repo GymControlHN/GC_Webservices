@@ -118,6 +118,11 @@
                                        id="fecha" name="fecha_pago">
                                 <input type="hidden" id="mes" name="mes">
                             </div>
+                            <h6>Agregar Nota</h6>
+                            <div class="form-group">
+                                <input type="name" class="form-control">
+                                <input type="hidden" id="mes" name="mes">
+                            </div>
                             <div class="modal-footer">
                                 <input name="id" value="{{$nombre->id}}" type="hidden">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -175,14 +180,16 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                 <th>Mes</th>
                 <th>Fecha</th>
                 <th>Estado</th>
+                <th>Nota</th>
                 <th>Acciones</th>
+
             <tr>
             </thead>
             <tbody>
             @if($pagos->count()>0)
             @foreach ($pagos as $day => $users_list)
                 <tr>
-                    <th colspan="5"
+                    <th colspan="6"
                         style="background-color: #85d6f7; color: white;">Registro del año {{ $day }}</th>
                 </tr>
                 @foreach ($users_list as $user)
@@ -192,6 +199,9 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
                         <th>
+
+                        </th>
+                        <th>
                             <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"
@@ -199,12 +209,13 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                         </th>
 
+
                     </tr>
                         @endforeach
             @endforeach
             @else
                 <tr>
-                    <td colspan="5" style="text-align: center">No hay pagos ingresados</td>
+                    <td colspan="6" style="text-align: center">No hay pagos ingresados</td>
             @endif
 
 
