@@ -26,7 +26,7 @@ class  EstudiantesController extends Controller
         $totalPagosEstudiantes = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
 
         $totalIngresoEstudiante= $totalPagosEstudiantes *100;
-        $totalIngresos = $totalIngresoEstudiante * $totalEstudiantes;
+        $totalIngresos = $totalIngresoEstudiante;
 
         $carrera = Carrera::all();
         session()->flashInput([]);
