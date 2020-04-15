@@ -42,14 +42,14 @@
         <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 mt-lg-3 pr-xl-6 ml-lg-4">
             <div class="card-header" style="background: #8addff">
             @if($nombre->id_tipo_cliente==1)
-                <h6 style="margin-left: 1%">Expediente Estudiante</h6>
+                <h7>Expediente Estudiante</h7>
             @endif
             @if($nombre->id_tipo_cliente==3 )
 
-                <h6 style="margin-left: 1%">Expediente Particular</h6>
+                <h7 style="margin-left: 1%">Expediente Particular</h7>
             @endif
             @if($nombre->id_tipo_cliente==2)
-                <h6 style="margin-left: 1%">Expediente Docente</h6>
+                <h7 style="margin-left: 1%">Expediente Docente</h7>
             @endif
             </div>
 
@@ -57,17 +57,8 @@
                  height="300px"  >
             <div class="card margencard" style=" border: none;" >
 
-
-                <div class="card-body">
+                <div >
                     <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
-                    @if($nombre->id_tipo_cliente==3 )
-
-                        <H6> Expediente Particular</H6>
-                    @endif
-                    @if($nombre->id_tipo_cliente==2)
-                        <H6> Expediente Docente</H6>
-
-                    @endif
 
                     <h6 style="all: revert">Pagos </h6>
 
@@ -95,6 +86,11 @@
         <button class="btn btn-primary btn-sm  float-right mt-sm-3" style="margin-top: -10px; margin-right: 50px"
                 data-toggle="modal" data-target="#modalPagoEstudiante" >Nuevo
         </button>
+
+        <button class="btn btn-outline-dark mb-3" style="float: right; margin-top: 1%;margin-right: 1%;
+                     padding-top: -2%;padding-bottom: -8%"
+                data-toggle="collapse" href="#cardCollapses" data-target="#cardCollapses">
+            <span><i class="fas fa-arrow-down"></i></span></button>
 
 
         <div class="modal fade" id="modalPagoEstudiante" tabindex="-1" role="dialog"
@@ -143,6 +139,22 @@
 
 
         <div class="w3-container w3-teal mx-5">
+            <div class="collapse" id="cardCollapses">
+                <div class="row" >
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px;margin-bottom: 2%;margin-left: -1%">
+                        <div class="card card-style">
+                            <div class="card-header">
+
+                                <img src="/images/pago.png" width="40px" style="margin-left: 42%">
+                                <br>
+                                <h6 class="text-center">Total Pagos</h6>
+                                <h5 class="text-center"><span class="badge badge-dark">{{$ingresos}}</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
@@ -171,6 +183,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         </div>
 
                     @endif
+
 
                     <table class="table table-hover" style="font-size: 12px" >
 

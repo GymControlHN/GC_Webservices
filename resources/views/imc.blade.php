@@ -47,14 +47,14 @@
 
             <div class="card-header" style="background: #8affa5">
                 @if($cliente->id_tipo_cliente==1)
-                    <h6 style="margin-left: 1% ">Expediente Estudiante</h6>
+                    <h7 style="margin-left: 1% ">Expediente Estudiante</h7>
                 @endif
                 @if($cliente->id_tipo_cliente==3 )
 
-                    <h6 style="margin-left: 1%">Expediente Particular</h6>
+                    <h7 style="margin-left: 1%">Expediente Particular</h7>
                 @endif
                 @if($cliente->id_tipo_cliente==2)
-                    <h6 style="margin-left: 1%">Expediente Docente</h6>
+                    <h7 style="margin-left: 1%">Expediente Docente</h7>
                 @endif
             </div>
 

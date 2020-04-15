@@ -22,14 +22,14 @@
              class="perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6 ml-lg-4">
             <div class="card-header" style="background: #8affa5">
                 @if($cliente->id_tipo_cliente==1)
-                    <h6 style="margin-left: 1%">Expediente Estudiante</h6>
+                    <h7 style="margin-left: 1%">Expediente Estudiante</h7>
                 @endif
                 @if($cliente->id_tipo_cliente==3 )
 
-                    <h6 style="margin-left: 1%">Expediente Particular</h6>
+                    <h7 style="margin-left: 1%">Expediente Particular</h7>
                 @endif
                 @if($cliente->id_tipo_cliente==2)
-                    <h6 style="margin-left: 1%">Expediente Docente</h6>
+                    <h7 style="margin-left: 1%">Expediente Docente</h7>
                 @endif
 
             </div>

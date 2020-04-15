@@ -19,10 +19,16 @@ class PagoEstudianteController extends Controller
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
 
+        $totalPagosEstudiantes = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
+
+        $totalIngresoEstudiante= $totalPagosEstudiantes *100;
+
+
+
         $nombre = Cliente::findOrfail($id);
 
         return view('pagosestudiantes', compact("pagos"))
-            ->with("nombre", $nombre)->with('no',1);
+            ->with("nombre", $nombre)->with('no',1)->withIngresos($totalIngresoEstudiante);
     }
 
     public function create()
