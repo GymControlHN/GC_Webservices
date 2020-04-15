@@ -41,6 +41,7 @@
 
             </script>
         @endif
+        @section("script")
         <script>
             $('#imageUpload').change(function() {
                 readImgUrlAndPreview(this);
@@ -67,6 +68,7 @@
 
             }
         </script>
+        @endsection
         <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -287,7 +289,7 @@
                             <br>
                             <h6 class="text-center">Total Pagos</h6>
                             <h6 class="text-center">Estudiates</h6>
-                            <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoIII->count()}}</span></h5>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$ingresos}}</span></h5>
                         </div>
                     </div>
                 </div>
