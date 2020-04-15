@@ -18,11 +18,14 @@
         <h2 class=" mt-3">Listado de Estudiantes</h2>
 
 
-        <button type="button" class="btn btn-primary float-right boton1" id="crearNuevo" data-toggle="modal"
+        <button type="button" class="btn btn-primary float-right boton1" style="margin-left: 1%" id="crearNuevo" data-toggle="modal"
                 data-target="#exampleModalScrollable">
             <i class="fas fa-user-plus"></i>
         </button>
 
+        <button class="btn btn-outline-dark mb-3" style="float: right"
+                data-toggle="collapse" href="#cardCollapses" data-target="#cardCollapses">
+            <span><i class="fas fa-arrow-down"></i></span></button>
         <!--button type="button"  class="btn btn-warning float-right" data-dismiss="alert"
                 data-toggle="modal" data-target="#exampleModalScrollable">
 
@@ -272,6 +275,24 @@
 
             <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
+
+        <div class="collapse" id="cardCollapses">
+            <div class="row" >
+
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px;margin-bottom: 2%">
+                    <div class="card card-style">
+                        <div class="card-header">
+
+                            <img src="/images/pago.png" width="40px" style="margin-left: 42%">
+                            <br>
+                            <h6 class="text-center">Total Pagos</h6>
+                            <h6 class="text-center">Estudiates</h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoIII->count()}}</span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         @if(session("exito"))
             <div class="alert alert-success alert-dismissible fade show" role="alert">

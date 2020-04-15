@@ -22,9 +22,14 @@ class  EstudiantesController extends Controller
             ->select("clientes_gym.*","carreras.carrera")
             ->paginate(10);
 
+        $obesidadTipoIII= Imc::
+        join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
+            ->where("diagnostico_imcs.diagnostico","=","Obesidad tipo III")->get();
+
+
         $carrera = Carrera::all();
         session()->flashInput([]);
-        return view('estudiantes')->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1);
+        return view('estudiantes',["obesidadTipoIII"=>$obesidadTipoIII])->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1);
     }
 
     public function create($id)
