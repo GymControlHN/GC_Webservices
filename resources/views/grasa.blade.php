@@ -47,7 +47,7 @@
 
         <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ml-lg-4">
 
-            <div class="card-header" style="background-color: #f27961;margin-left: -7%;margin-right: -7%">
+            <div class="card-header" style="background-color: #f27961;margin-left: -7%;margin-right: -7%;text-align: center">
 
                 @if($nombre->id_tipo_cliente==1)
                     <h7 style="margin-left: 1%">Expediente Estudiante</h7>
@@ -101,8 +101,8 @@
         @endif
 
 
-        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntropometricas</a>
-        <a class="btn btn-primary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">GrasaCorporal</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Medidas Antropometricas</a>
+        <a class="btn btn-primary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
             <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
