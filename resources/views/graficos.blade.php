@@ -96,8 +96,8 @@
 
 
         @endif
-        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
         <a class="btn btn-primary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
