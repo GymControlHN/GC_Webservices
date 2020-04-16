@@ -19,7 +19,7 @@ class PagoParticularController extends Controller
             });
         $totalPagosParticulares = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
 
-        $totalIngresoParticular= $totalPagosParticulares *100;
+        $totalIngresoParticular= $totalPagosParticulares *200;
 
         $nombre = Cliente::findOrfail($id);
 
