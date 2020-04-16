@@ -17,10 +17,14 @@ class PagoParticularController extends Controller
             ->groupBy(function ($item) {
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
+        $totalPagosParticulares = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
+
+        $totalIngresoParticular= $totalPagosParticulares *100;
+
         $nombre = Cliente::findOrfail($id);
 
         return view('pagosparticulares', compact("pagos"))
-            ->with("nombre", $nombre)->with('no',1);
+            ->with("nombre", $nombre)->with('no',1)->withIngresos($totalIngresoParticular);
     }
 
     public function create()
@@ -33,6 +37,7 @@ class PagoParticularController extends Controller
         $nuevoPagoClientee = new PagoClientesp();
 
         $nuevoPagoClientee->mes = $request->input('mes');
+        $nuevoPagoClientee->nota = $request->input('nota');
         $verificarFecha = PagoClientesP::where("fecha_pago",
             "like", "%" . $request->input('fecha_pago') . "%")
 
@@ -74,7 +79,7 @@ class PagoParticularController extends Controller
         $user = PagoClientesP::findOrfail($request->input("pagoPart_id"));
         $user->mes = $request->input("mes");
         $user->fecha_pago = $request->input("fecha_pago");
-
+        $user->nota = $request->input("nota");
         $user->save();
 
         $pagosparticular1 = PagoClientesP::paginate(10);

@@ -116,8 +116,11 @@
                             </div>
                             <h6>Agregar Nota</h6>
                             <div class="form-group">
-                                <input type="name" class="form-control">
-                                <input type="hidden" id="mes" name="mes">
+                                <input type="text" class="form-control" id="nota" name="nota"
+                                       @isset($user)
+                                       value="{{$user->nota}}"
+                                        @endisset
+                                >
                             </div>
                             <div class="modal-footer">
                                 <input name="id" value="{{$nombre->id}}" type="hidden">
@@ -184,8 +187,60 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                     @endif
 
+                        <div class="modal fade  bd-example-modal-lg" id="editarPagoEstudiante" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalScrollableTitle">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Pago Estudiantes</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
 
-                    <table class="table table-hover" style="font-size: 12px" >
+                                        <form method="post" action="{{route('pagoestudiantes.update')}}" enctype="multipart/form-data">
+                                            <input type="hidden" name="estudiante_id" id="id" value="">
+
+                                            {{method_field('put')}}
+
+                                            <h6>Agregar Nota</h6>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="nota" name="nota"
+                                                       @isset($user)
+                                                       value="{{$user->nota}}"
+                                                       @endisset value="{{old('nota')}}"
+                                                >
+                                            </div>
+
+                                            <h6>Fecha</h6>
+                                            <div class="form-group">
+                                                <input type="date" class="form-control" id="fecha_pago" name="fecha_pago"
+                                                       @isset($user)
+                                                       value="{{$user->fecha_pago}}"
+                                                       @endisset value="{{old('fecha_pago')}}"
+                                                >
+                                            </div>
+
+
+
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                                <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <table class="table table-hover" style="font-size: 14px" >
 
                         <thead class="thead-dark">
             <tr>
@@ -211,10 +266,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
-                        <th>
+                        <th>{{ $user->nota }}</th>
 
-                        </th>
-                        <th>
+
+
+                      <th>
+                            <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editarPagoEstudiante" data-myfecha="{{$user->fecha_pago}}"
+                                    data-mynota="{{$user->nota}}" ><i class="fas fa-edit"></i></button>
+
                             <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"

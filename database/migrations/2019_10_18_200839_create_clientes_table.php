@@ -17,6 +17,7 @@ class CreateClientesTable extends Migration
             $table->increments('id');
             $table->string('mes');
             $table->date('fecha_pago');
+            $table->string('nota')->nullable();
             $table->unsignedInteger("id_cliente");
             $table->foreign("id_cliente")->references("id")->on("clientes_gym");
             $table->timestamps();
