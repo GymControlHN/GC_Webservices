@@ -80,7 +80,7 @@
         <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Medidas AntroPometricas</a>
         <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}"> Gráfico</a>
 
     </div>
         <button class="btn btn-primary btn-sm  float-right mt-sm-3" style="margin-top: -10px; margin-right: 50px"

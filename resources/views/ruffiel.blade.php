@@ -104,7 +104,7 @@
         <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a>
         <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
         <a class="btn btn-primary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
-            <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
+            <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}"> Gráfico</a>
 
 
     </div>
@@ -146,7 +146,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                     <tr>
                         <th scope="col">N°</th>
                         <th scope="col">Fecha</th>
-                        <th scope="col">Diagnostico</th>
+                        <th scope="col">Diagnóstico</th>
                         <th scope="col">Pulso en reposo</th>
                         <th scope="col">Pulso en acción</th>
                         <th scope="col">Pulso en descanso</th>
@@ -154,7 +154,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
 
                         <th scope="col">MVO2</th>
                         <th scope="col">MVOReal</th>
-                        <th scope="col">Diagnostico MVO2</th>
+                        <th scope="col">Diagnóstico MVO2</th>
 
                         <th scope="col">Acciones</th>
 
