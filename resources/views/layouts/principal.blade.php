@@ -292,15 +292,17 @@
 
 
 <script>
-    $('#editarPagosEstudiantes').on('show.bs.modal', function (event) {
+    $('#editarPagoEstudiante').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var mes = button.data('mymes');
         var fecha_pago = button.data('myfecha');
-        var cat_id = button.data('cat_id');
+        var nota = button.data('mynota');
+        var cat_id = button.data('catid');
         var modal = $(this);
 
 
         modal.find('.modal-body #mes').val(mes);
+        modal.find('.modal-body #nota').val(nota);
         modal.find('.modal-body #fecha_pago').val(fecha_pago);
         modal.find('.modal-body #id').val(cat_id);
 
@@ -407,15 +409,17 @@
     });
 
 
-    $('#editarPagosParticulares').on('show.bs.modal', function (event) {
+    $('#editarPagoParticular').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var mes = button.data('mymes');
         var fecha_pago = button.data('myfecha');
+        var nota = button.data('mynota');
         var cat_id = button.data('cat_id');
         var modal = $(this);
 
         modal.find('.modal-body #mes').val(mes);
         modal.find('.modal-body #fecha_pago').val(fecha_pago);
+        modal.find('.modal-body #nota').val(nota);
         modal.find('.modal-body #id').val(cat_id);
 
 

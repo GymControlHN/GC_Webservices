@@ -98,7 +98,10 @@
             data-toggle="modal" data-target="#modalPagoParticular" >Nuevo
     </button>
 
-    <div class="w3-container w3-teal mx-5">
+        <button class="btn btn-outline-dark mb-3" style="float: right; margin-top: 1%;margin-right: 1%;
+                     padding-top: -2%;padding-bottom: -8%"
+                data-toggle="collapse" href="#cardCollapses" data-target="#cardCollapses">
+            <span><i class="fas fa-arrow-down"></i></span></button>
 
             <div class="modal fade" id="modalPagoParticular" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
@@ -121,9 +124,12 @@
                                 </div>
                                 <h6>Agregar Nota</h6>
                                 <div class="form-group">
-                                    <input type="name" class="form-control">
+                                    <input type="text" class="form-control" id="nota" name="nota"
+                                           @isset($user)
+                                           value="{{$user->nota}}"
+                                            @endisset
+                                    >
                                 </div>
-
                                 <div class="modal-footer">
                                     <input name="id" value="{{$nombre->id}}" type="hidden">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -138,56 +144,33 @@
                 </div>
 
             </div>
-            <div class="form-inline">
 
+        <div class="w3-container w3-teal mx-5">
+            <div class="collapse" id="cardCollapses">
+                <div class="row" >
 
-                <div class="modal fade" id="editarPagosParticulares" tabindex="-1" role="dialog"
-                     aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Pago</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
+                    <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px;margin-bottom: 2%;margin-left: -1%">
+                        <div class="card card-style">
+                            <div class="card-header">
+
+                                <img src="/images/pago.png" width="40px" style="margin-left: 42%">
+                                <br>
+                                <h6 class="text-center">Total Pagos</h6>
+                                <h5 class="text-center"><span class="badge badge-dark">{{$ingresos}}</span></h5>
                             </div>
-
-                            <div class="modal-body">
-                                <form method="post">
-                                    <input type="hidden" name="pagoPart_id" id="id" value="">
-
-                                    {{method_field('put')}}
-
-                                    <h6>Fecha</h6>
-                                    <div class="form-group">
-                                        <input type="date" class="form-control" id="fecha_pago" name="fecha_pago"
-                                               max="{{ date("Y-m-d")}}"
-                                               @isset($user)
-                                               value="{{$user->fecha_pago}}"
-                                               @endisset value="{{old('fecha_pago')}}"
-
-
-                                        >
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar
-                                        </button>
-                                        <button type="submit" class="btn btn-primary ">Guardar Cambios</button>
-
-                                    </div>
-                                </form>
-
-                            </div>
-
                         </div>
                     </div>
-
                 </div>
+            </div>
 
 
+            <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
+box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
-                <div class="table-responsive mb-5"  style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
+
+                <div class="table-responsive" >
+
+
 
                     @if(session("exito"))
                         <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-left: 0%; margin-right: 0%;">
@@ -211,6 +194,57 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         </div>
 
                     @endif
+                        <div class="modal fade  bd-example-modal-lg" id="editarPagoParticular" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalScrollableTitle">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Pago Particular</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <form method="post" action="{{route('pagoparticulares.update')}}" enctype="multipart/form-data">
+                                            <input type="hidden" name="estudiante_id" id="id" value="">
+
+                                            {{method_field('put')}}
+
+                                            <h6>Agregar Nota</h6>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="nota" name="nota"
+                                                       @isset($user)
+                                                       value="{{$user->nota}}"
+                                                       @endisset value="{{old('nota')}}"
+                                                >
+                                            </div>
+
+                                            <h6>Fecha</h6>
+                                            <div class="form-group">
+                                                <input type="date" class="form-control" id="fecha_pago" name="fecha_pago"
+                                                       @isset($user)
+                                                       value="{{$user->fecha_pago}}"
+                                                       @endisset value="{{old('fecha_pago')}}"
+                                                >
+                                            </div>
+
+
+
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                                <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
                     <table class="table  table-hover " style="font-size: 12px">
 
                         <thead class="thead-dark">
@@ -237,10 +271,12 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
-                        <th>
+                        <th>{{ $user->nota }}</th>
 
-                        </th>
-                        <th class="form-inline mr-xl-n2 ">
+                        <th>
+                            <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editarPagoParticular" data-myfecha="{{$user->fecha_pago}}"
+                                    data-mynota="{{$user->nota}}" ><i class="fas fa-edit"></i></button>
+
                             <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"

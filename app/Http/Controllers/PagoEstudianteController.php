@@ -38,10 +38,15 @@ class PagoEstudianteController extends Controller
 
     public function store(Request $request)
     {
-        $nuevoPagoCliente = new PagoClientesp();
+        $this->validate($request,[
+            'nota'=>'required',
+
+    ]);
+
+        $nuevoPagoCliente = new PagoClientesP();
 
         $nuevoPagoCliente->mes = $request->input('mes');
-
+        $nuevoPagoCliente->nota = $request->input('nota');
         $verificarFecha = PagoClientesP::where("fecha_pago",
             "like", "%" . $request->input('fecha_pago') . "%")
         ->where("id_cliente","=",$request->input("id"));
@@ -63,7 +68,7 @@ class PagoEstudianteController extends Controller
         }
     }
 
-    public function show(PagoClientesp $pagoClientes)
+    public function show(PagoClientesP $pagoClientes)
     {
 
     }
@@ -78,10 +83,12 @@ class PagoEstudianteController extends Controller
 
     public function update(Request $request)
     {
-
+        $this->validate($request, [
+            'nota' => 'required',
+            ]);
         $user = PagoClientesP::findOrfail($request->input("pagoEst_id"));
         $user->fecha_pago = $request->input("fecha_pago");
-
+        $user->nota = $request->input("nota");
         $user->save();
 
         $pagosestudiante1 = PagoClientesP::paginate(10);
@@ -103,7 +110,7 @@ class PagoEstudianteController extends Controller
     {
         $busquedaPagos = $request->input("busquedaPago");
 
-        $pagoestudiantes = PagoClientes::where("mes", "like", "%" . $busquedaPagos . "%")
+        $pagoestudiantes = PagoClientesP::where("mes", "like", "%" . $busquedaPagos . "%")
             ->orWhere("fecha_pago", "like", "%" . $busquedaPagos . "%")
             ->paginate(10);
 

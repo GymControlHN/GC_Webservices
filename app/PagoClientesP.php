@@ -11,7 +11,7 @@ class PagoClientesP extends Model
     protected $fillable =[
         'mes',
         'fecha_pago',
-
+        'nota',
         "id_cliente"
     ];
 }
