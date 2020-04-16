@@ -43,7 +43,7 @@
     <div class="container-xl clearfix px-2 mt-4">
 
         <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12  card float-md-left mr-5 pr-md-8   mt-lg-3 pr-xl-6 ml-lg-4">
-      <div class="card-header" style="background: #bafa98" >
+      <div class="card-header" style="background: #bafa98;margin-left: -7%;margin-right: -7%" >
           @if($cliente->id_tipo_cliente==1)
               <h7 style="margin-left: 1%">Expediente Estudiante</h7>
           @endif
@@ -57,7 +57,8 @@
 
 
    </div>
-            <img class="card-img-top"  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px">
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="260px"
+                 style="margin-left: -7%">
 
             <div class="card " style=" border: none;" >
 
