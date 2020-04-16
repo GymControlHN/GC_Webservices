@@ -34,7 +34,12 @@ class PagoParticularController extends Controller
 
     public function store(Request $request)
     {
-        $nuevoPagoClientee = new PagoClientesp();
+        $this->validate($request,[
+            'nota'=>'required',
+
+        ]);
+
+        $nuevoPagoClientee = new PagoClientesP();
 
         $nuevoPagoClientee->mes = $request->input('mes');
         $nuevoPagoClientee->nota = $request->input('nota');
@@ -61,23 +66,25 @@ class PagoParticularController extends Controller
 
     }
 
-    public function show(PagoClientesp $pagoClientes)
+    public function show(PagoClientesP $pagoClientes)
     {
 
     }
 
     public function edit($id)
     {
-        $pagoPart = PagoClientesP::findOrFail($id);
-        return view('pagosparticulares')->with('pagos', $pagoPart);
+        $pagos = PagoClientesP::findOrFail($id);
+        return view('pagosparticulares')->with('pagos', $pagos);
 
     }
 
     public function update(Request $request)
     {
-
-        $user = PagoClientesP::findOrfail($request->input("pagoPart_id"));
-        $user->mes = $request->input("mes");
+        $this->validate($request, [
+            'nota' => 'required',
+            'fecha_pago' => 'required',
+        ]);
+        $user = PagoClientesP::findOrfail($request->input("particularpago_id"));
         $user->fecha_pago = $request->input("fecha_pago");
         $user->nota = $request->input("nota");
         $user->save();
