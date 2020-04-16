@@ -104,7 +104,7 @@
             <span><i class="fas fa-arrow-down"></i></span></button>
 
             <div class="modal fade" id="modalPagoParticular" tabindex="-1" role="dialog"
-                 aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                 aria-labelledby="exampleModalScrollableTitle" >
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -194,9 +194,9 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         </div>
 
                     @endif
-                        <div class="modal fade  bd-example-modal-lg" id="editarPagoParticular" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalScrollableTitle">
-                            <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal fade" id="editarPagoParticular" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalScrollableTitle" >
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Pago Particular</h5>
@@ -211,14 +211,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                                             {{method_field('put')}}
 
-                                            <h6>Agregar Nota</h6>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="nota" name="nota"
-                                                       @isset($user)
-                                                       value="{{$user->nota}}"
-                                                       @endisset value="{{old('nota')}}"
-                                                >
-                                            </div>
+
 
                                             <h6>Fecha</h6>
                                             <div class="form-group">
@@ -229,12 +222,19 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                                 >
                                             </div>
 
-
+                                            <h6>Agregar Nota</h6>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="nota" name="nota"
+                                                       @isset($user)
+                                                       value="{{$user->nota}}"
+                                                       @endisset value="{{old('nota')}}"
+                                                >
+                                            </div>
 
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                                                <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
+                                                <button type="submit"  class="btn btn-primary">Guardar</button>
 
                                             </div>
                                         </form>
@@ -245,7 +245,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         </div>
 
 
-                    <table class="table  table-hover " style="font-size: 12px">
+                    <table class="table  table-hover " style="font-size: 14px">
 
                         <thead class="thead-dark">
                         <tr>

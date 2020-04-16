@@ -414,7 +414,7 @@
         var mes = button.data('mymes');
         var fecha_pago = button.data('myfecha');
         var nota = button.data('mynota');
-        var cat_id = button.data('cat_id');
+        var cat_id = button.data('catid');
         var modal = $(this);
 
         modal.find('.modal-body #mes').val(mes);

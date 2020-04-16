@@ -187,16 +187,19 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                     @endif
 
-                        <div class="modal fade  bd-example-modal-lg" id="editarPagoEstudiante" tabindex="-1" role="dialog"
-                             aria-labelledby="exampleModalScrollableTitle">
-                            <div class="modal-dialog modal-lg" role="document">
+
+                        <div class="modal fade" id="editarPagoEstudiante" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalScrollableTitle" >
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Pago Estudiantes</h5>
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Pago Estudiante</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
+
+
                                     <div class="modal-body">
 
                                         <form method="post" action="{{route('pagoestudiantes.update')}}" enctype="multipart/form-data">
@@ -204,14 +207,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                                             {{method_field('put')}}
 
-                                            <h6>Agregar Nota</h6>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="nota" name="nota"
-                                                       @isset($user)
-                                                       value="{{$user->nota}}"
-                                                       @endisset value="{{old('nota')}}"
-                                                >
-                                            </div>
+
 
                                             <h6>Fecha</h6>
                                             <div class="form-group">
@@ -222,12 +218,19 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                                 >
                                             </div>
 
-
+                                            <h6>Agregar Nota</h6>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="nota" name="nota"
+                                                       @isset($user)
+                                                       value="{{$user->nota}}"
+                                                       @endisset value="{{old('nota')}}"
+                                                >
+                                            </div>
 
 
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
-                                                <button type="submit"  class="btn btn-primary">Guardar Cambios</button>
+                                                <button type="submit"  class="btn btn-primary">Guardar</button>
 
                                             </div>
                                         </form>
@@ -272,7 +275,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                       <th>
                             <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editarPagoEstudiante" data-myfecha="{{$user->fecha_pago}}"
-                                    data-mynota="{{$user->nota}}" ><i class="fas fa-edit"></i></button>
+                                    data-mynota="{{$user->nota}}" data-catid="{{$user->id}}"><i class="fas fa-edit"></i></button>
 
                             <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"
