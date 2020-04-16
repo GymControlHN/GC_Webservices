@@ -477,7 +477,7 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del estudiante</h6>
-                                    <img width="200px" style="max-height:100px; object-fit: contain"
+                                    <img width="200px" style="  max-height:100px; object-fit: contain"
                                          onerror="this.src='/img/user.png'"
                                          id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>

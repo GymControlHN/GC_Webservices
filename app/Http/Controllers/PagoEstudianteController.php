@@ -76,8 +76,8 @@ class PagoEstudianteController extends Controller
 
     public function edit($id)
     {
-        $pagoEst = PagoClientesP::findOrFail($id);
-        return view('pagosestudiantes')->with('pagos', $pagoEst);
+        $pagos = PagoClientesP::findOrFail($id);
+        return view('pagosestudiantes')->with('pagos', $pagos);
 
     }
 
@@ -85,9 +85,12 @@ class PagoEstudianteController extends Controller
     {
         $this->validate($request, [
             'nota' => 'required',
+            'fecha_pago' => 'required',
+            'mes'=> 'required'
             ]);
-        $user = PagoClientesP::findOrfail($request->input("pagoEst_id"));
+        $user = PagoClientesP::findOrfail($request->input("estudiantepago_id"));
         $user->fecha_pago = $request->input("fecha_pago");
+        $user->mes = $request->input("mes");
         $user->nota = $request->input("nota");
         $user->save();
 

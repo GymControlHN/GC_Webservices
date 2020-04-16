@@ -203,7 +203,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                     <div class="modal-body">
 
                                         <form method="post" action="{{route('pagoestudiantes.update')}}" enctype="multipart/form-data">
-                                            <input type="hidden" name="estudiante_id" id="id" value="">
+                                            <input type="hidden" name="estudiantepago_id" id="id" value="">
 
                                             {{method_field('put')}}
 
@@ -216,6 +216,8 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                                        value="{{$user->fecha_pago}}"
                                                        @endisset value="{{old('fecha_pago')}}"
                                                 >
+                                                <input type="hidden" id="mes" name="mes">
+
                                             </div>
 
                                             <h6>Agregar Nota</h6>
@@ -275,7 +277,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                       <th>
                             <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editarPagoEstudiante" data-myfecha="{{$user->fecha_pago}}"
-                                    data-mynota="{{$user->nota}}" data-catid="{{$user->id}}"><i class="fas fa-edit"></i></button>
+                                    data-mynota="{{$user->nota}}" data-mymes="{{$user->mes}}" data-catid="{{$user->id}}"><i class="fas fa-edit"></i></button>
 
                             <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"
