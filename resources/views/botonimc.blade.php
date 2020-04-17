@@ -1,9 +1,10 @@
 @extends("layouts.principal")
 
 @section("content")
+    <div class="scroll">
     <!-- Header -->
-    <header class="fondo" style="max-height: 100px;">
-        <div class="container">
+    <header class=" fondo" style="max-height: 100px;">
+        <div class=" container">
             <div class="intro-text">
                 <div class="intro-lead-in">Estudiantes</div>
             </div>
@@ -16,26 +17,26 @@
             <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
         </ol>
     </nav>
-    <div class="container-xl clearfix px-1 mt-3">
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-4 pr-xl-6 ml-lg-4">
-            <div class="card-header" style="background: #8affa5">
+    <div class="scroll container-xl clearfix px-1 mt-3">
+        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ml-lg-4">
+            <div class="card-header" style="background: #8affa5;margin-left: -7%;margin-right: -7%;text-align: center">
                 @if($cliente->id_tipo_cliente==1)
-                    <h6 style="margin-left: 1%">Expediente Estudiante</h6>
+                    <h7 style="margin-left: 1%">Expediente Estudiante</h7>
                 @endif
                 @if($cliente->id_tipo_cliente==3 )
 
-                    <h6 style="margin-left: 1%">Expediente Particular</h6>
+                    <h7 style="margin-left: 1%">Expediente Particular</h7>
                 @endif
                 @if($cliente->id_tipo_cliente==2)
-                    <h6 style="margin-left: 1%">Expediente Docente</h6>
+                    <h7 style="margin-left: 1%">Expediente Docente</h7>
                 @endif
 
             </div>
 
 
 
-            <img class="card-img-top" src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px"
-            >
+            <img src="/clientes_imagenes/{{$cliente->imagen}}" width="247px" height="260px"
+                 style="margin-left: -7%">
             <div class="card margencard" style=" border: none;" >
 
 
@@ -82,6 +83,7 @@
 
 
         </div>
+
 
         <!DOCTYPE html>
         <html>
@@ -211,7 +213,7 @@
             <div class="container2">
 
 
-                <a class="btn btn-primary my-2 boton" style="margin-left: 29%"
+                <a class="btn btn-primary my-2 boton" style="margin-left: 29%; margin-bottom: -200%"
                    href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
 
 
@@ -237,9 +239,17 @@
                 </div>
             </div>
 
-
         </form>
 
         </html>
+    </div>
+    </div>
+        <style>
+            .scroll{
+                overflow: hidden;
+
+
+            }
+        </style>
 
 @endsection
