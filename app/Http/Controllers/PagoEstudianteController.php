@@ -19,10 +19,16 @@ class PagoEstudianteController extends Controller
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
 
+        $totalPagosEstudiantes = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
+
+        $totalIngresoEstudiante= $totalPagosEstudiantes *100;
+
+
+
         $nombre = Cliente::findOrfail($id);
 
         return view('pagosestudiantes', compact("pagos"))
-            ->with("nombre", $nombre)->with('no',1);
+            ->with("nombre", $nombre)->with('no',1)->withIngresos($totalIngresoEstudiante);
     }
 
     public function create()
@@ -32,10 +38,15 @@ class PagoEstudianteController extends Controller
 
     public function store(Request $request)
     {
-        $nuevoPagoCliente = new PagoClientesp();
+        $this->validate($request,[
+            'nota'=>'required',
+
+    ]);
+
+        $nuevoPagoCliente = new PagoClientesP();
 
         $nuevoPagoCliente->mes = $request->input('mes');
-
+        $nuevoPagoCliente->nota = $request->input('nota');
         $verificarFecha = PagoClientesP::where("fecha_pago",
             "like", "%" . $request->input('fecha_pago') . "%")
         ->where("id_cliente","=",$request->input("id"));
@@ -57,7 +68,7 @@ class PagoEstudianteController extends Controller
         }
     }
 
-    public function show(PagoClientesp $pagoClientes)
+    public function show(PagoClientesP $pagoClientes)
     {
 
     }
@@ -65,17 +76,22 @@ class PagoEstudianteController extends Controller
 
     public function edit($id)
     {
-        $pagoEst = PagoClientesP::findOrFail($id);
-        return view('pagosestudiantes')->with('pagos', $pagoEst);
+        $pagos = PagoClientesP::findOrFail($id);
+        return view('pagosestudiantes')->with('pagos', $pagos);
 
     }
 
     public function update(Request $request)
     {
-
-        $user = PagoClientesP::findOrfail($request->input("pagoEst_id"));
+        $this->validate($request, [
+            'nota' => 'required',
+            'fecha_pago' => 'required',
+            'mes'=> 'required'
+            ]);
+        $user = PagoClientesP::findOrfail($request->input("estudiantepago_id"));
         $user->fecha_pago = $request->input("fecha_pago");
-
+        $user->mes = $request->input("mes");
+        $user->nota = $request->input("nota");
         $user->save();
 
         $pagosestudiante1 = PagoClientesP::paginate(10);
@@ -97,7 +113,7 @@ class PagoEstudianteController extends Controller
     {
         $busquedaPagos = $request->input("busquedaPago");
 
-        $pagoestudiantes = PagoClientes::where("mes", "like", "%" . $busquedaPagos . "%")
+        $pagoestudiantes = PagoClientesP::where("mes", "like", "%" . $busquedaPagos . "%")
             ->orWhere("fecha_pago", "like", "%" . $busquedaPagos . "%")
             ->paginate(10);
 

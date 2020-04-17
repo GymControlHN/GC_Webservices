@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
 
 <head>
     <meta charset="utf-8">
@@ -16,9 +16,6 @@
     <link href="{{asset("/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway+Serif:400,700,400italic,700italic' rel='stylesheet'
-          type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Raleway+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <!-- Custom styles for this template -->
     <link href="{{asset("css/agency.min.css")}}" rel="stylesheet">
@@ -26,7 +23,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" >
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -295,15 +292,17 @@
 
 
 <script>
-    $('#editarPagosEstudiantes').on('show.bs.modal', function (event) {
+    $('#editarPagoEstudiante').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var mes = button.data('mymes');
         var fecha_pago = button.data('myfecha');
-        var cat_id = button.data('cat_id');
+        var nota = button.data('mynota');
+        var cat_id = button.data('catid');
         var modal = $(this);
 
 
         modal.find('.modal-body #mes').val(mes);
+        modal.find('.modal-body #nota').val(nota);
         modal.find('.modal-body #fecha_pago').val(fecha_pago);
         modal.find('.modal-body #id').val(cat_id);
 
@@ -410,15 +409,17 @@
     });
 
 
-    $('#editarPagosParticulares').on('show.bs.modal', function (event) {
+    $('#editarPagoParticular').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var mes = button.data('mymes');
         var fecha_pago = button.data('myfecha');
-        var cat_id = button.data('cat_id');
+        var nota = button.data('mynota');
+        var cat_id = button.data('catid');
         var modal = $(this);
 
         modal.find('.modal-body #mes').val(mes);
         modal.find('.modal-body #fecha_pago').val(fecha_pago);
+        modal.find('.modal-body #nota').val(nota);
         modal.find('.modal-body #id').val(cat_id);
 
 

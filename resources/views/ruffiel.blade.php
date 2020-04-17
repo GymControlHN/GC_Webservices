@@ -46,20 +46,21 @@
     <div class="container-xl clearfix px-2 mt-4">
 
         <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ml-lg-4">
-      <div class="card-header" style="background: #4996fa" >
+      <div class="card-header" style="background: #4996fa;margin-left: -7%;margin-right: -7%;text-align: center">
           @if($cliente->id_tipo_cliente==1)
-              <h6 style="margin-left: 1%">Expediente Estudiante</h6>
+              <h7 style="margin-left: 1%">Expediente Estudiante</h7>
           @endif
           @if($cliente->id_tipo_cliente==3 )
 
-              <h6 style="margin-left: 1%">Expediente Particular</h6>
+              <h7 style="margin-left: 1%">Expediente Particular</h7>
           @endif
           @if($cliente->id_tipo_cliente==2)
-              <h6 style="margin-left: 1%">Expediente Docente</h6>
+              <h7 style="margin-left: 1%">Expediente Docente</h7>
           @endif
       </div>
 
-            <img class="card-img-top" src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px" >
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="260px"
+            style="margin-left: -7%">
             <div class="card margencard" style=" border: none;" >
 
 
@@ -100,8 +101,8 @@
 
 
 @endif
-        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
         <a class="btn btn-primary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
             <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
@@ -275,6 +276,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                     position: -webkit-sticky; /* Safari */
                     position: sticky;
                     overflow-y: hidden;
+                    overflow-x: hidden;
                     top: 10%;
                 }
             }

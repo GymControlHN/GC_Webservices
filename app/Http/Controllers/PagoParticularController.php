@@ -17,10 +17,14 @@ class PagoParticularController extends Controller
             ->groupBy(function ($item) {
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
+        $totalPagosParticulares = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
+
+        $totalIngresoParticular= $totalPagosParticulares *200;
+
         $nombre = Cliente::findOrfail($id);
 
         return view('pagosparticulares', compact("pagos"))
-            ->with("nombre", $nombre)->with('no',1);
+            ->with("nombre", $nombre)->with('no',1)->withIngresos($totalIngresoParticular);
     }
 
     public function create()
@@ -30,9 +34,15 @@ class PagoParticularController extends Controller
 
     public function store(Request $request)
     {
-        $nuevoPagoClientee = new PagoClientesp();
+        $this->validate($request,[
+            'nota'=>'required',
+
+        ]);
+
+        $nuevoPagoClientee = new PagoClientesP();
 
         $nuevoPagoClientee->mes = $request->input('mes');
+        $nuevoPagoClientee->nota = $request->input('nota');
         $verificarFecha = PagoClientesP::where("fecha_pago",
             "like", "%" . $request->input('fecha_pago') . "%")
 
@@ -56,25 +66,27 @@ class PagoParticularController extends Controller
 
     }
 
-    public function show(PagoClientesp $pagoClientes)
+    public function show(PagoClientesP $pagoClientes)
     {
 
     }
 
     public function edit($id)
     {
-        $pagoPart = PagoClientesP::findOrFail($id);
-        return view('pagosparticulares')->with('pagos', $pagoPart);
+        $pagos = PagoClientesP::findOrFail($id);
+        return view('pagosparticulares')->with('pagos', $pagos);
 
     }
 
     public function update(Request $request)
     {
-
-        $user = PagoClientesP::findOrfail($request->input("pagoPart_id"));
-        $user->mes = $request->input("mes");
+        $this->validate($request, [
+            'nota' => 'required',
+            'fecha_pago' => 'required',
+        ]);
+        $user = PagoClientesP::findOrfail($request->input("particularpago_id"));
         $user->fecha_pago = $request->input("fecha_pago");
-
+        $user->nota = $request->input("nota");
         $user->save();
 
         $pagosparticular1 = PagoClientesP::paginate(10);

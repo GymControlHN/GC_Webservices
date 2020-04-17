@@ -69,7 +69,7 @@
                     <div class="card card-style">
                         <div class="card-header">
 
-                            <img src="/images/obe1.svg" width="40px" style="margin-left: 50%">
+                            <img src="/images/obe1.svg" width="40px" style="margin-left: 42%">
                             <br>
                             <h6 class="text-center"># Obesidad Tipo I </h6>
                             <h5 class="text-center"><span class="badge badge-dark">{{$obesidadTipoI->count()}}</span></h5>

@@ -18,11 +18,14 @@
         <h2 class=" mt-3">Listado de Estudiantes</h2>
 
 
-        <button type="button" class="btn btn-primary float-right boton1" id="crearNuevo" data-toggle="modal"
+        <button type="button" class="btn btn-primary float-right boton1" style="margin-left: 1%" id="crearNuevo" data-toggle="modal"
                 data-target="#exampleModalScrollable">
             <i class="fas fa-user-plus"></i>
         </button>
 
+        <button class="btn btn-outline-dark mb-3" style="float: right"
+                data-toggle="collapse" href="#cardCollapses" data-target="#cardCollapses">
+            <span><i class="fas fa-arrow-down"></i></span></button>
         <!--button type="button"  class="btn btn-warning float-right" data-dismiss="alert"
                 data-toggle="modal" data-target="#exampleModalScrollable">
 
@@ -38,6 +41,7 @@
 
             </script>
         @endif
+        @section("script")
         <script>
             $('#imageUpload').change(function() {
                 readImgUrlAndPreview(this);
@@ -64,6 +68,7 @@
 
             }
         </script>
+        @endsection
         <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -203,7 +208,7 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del Estudiante</h6>
-                                    <img width="300px" style="max-height:150px; object-fit: contain"  id="previewImagen"
+                                    <img width="200px"   id="previewImagen"
                                          @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
 
                                     <label id="labelImagen" for="imagen" class="btn btn-large"><span><i class="fa fa-user fa-4x"></i></span></label>
@@ -272,6 +277,24 @@
 
             <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
+
+        <div class="collapse" id="cardCollapses">
+            <div class="row" >
+
+                <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px;margin-bottom: 2%">
+                    <div class="card card-style">
+                        <div class="card-header">
+
+                            <img src="/images/pago.png" width="40px" style="margin-left: 42%">
+                            <br>
+                            <h6 class="text-center">Total Pagos</h6>
+                            <h6 class="text-center">Estudiates</h6>
+                            <h5 class="text-center"><span class="badge badge-dark">{{$ingresos}}</span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         @if(session("exito"))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -454,7 +477,7 @@
                             <div class="form-row">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del estudiante</h6>
-                                    <img width="200px" style="max-height:100px; object-fit: contain"
+                                    <img width="200px" style="  max-height:100px; object-fit: contain"
                                          onerror="this.src='/img/user.png'"
                                          id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>

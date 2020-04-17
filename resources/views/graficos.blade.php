@@ -42,32 +42,32 @@
     @endif
     <div class="container-xl clearfix px-2 mt-4">
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12  card float-md-left mr-5 pr-md-8   mt-lg-3 pr-xl-6 ml-lg-4">
-      <div class="card-header" style="background: #bafa98" >
+        <div  class="perfil col-md-1 col-md-2 col-12  card float-md-left mr-5 pr-md-8   mt-lg-3 pr-xl-6 ml-lg-4">
+      <div class="card-header" style="background: #bafa98;margin-left: -7%;margin-right: -7%;text-align: center" >
           @if($cliente->id_tipo_cliente==1)
-              <h6 style="margin-left: 1%">Expediente Estudiante</h6>
+              <h7 style="margin-left: 1%">Expediente Estudiante</h7>
           @endif
           @if($cliente->id_tipo_cliente==3 )
 
-              <h6 style="margin-left: 1%">Expediente Particular</h6>
+              <h7 style="margin-left: 1%">Expediente Particular</h7>
           @endif
           @if($cliente->id_tipo_cliente==2)
-              <h6 style="margin-left: 1%">Expediente Docente</h6>
+              <h7 style="margin-left: 1%">Expediente Docente</h7>
           @endif
 
 
    </div>
-            <img class="card-img-top"  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="300px"
-                >
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="260px"
+                 style="margin-left: -7%">
 
-            <div class="card margencard" style=" border: none;" >
+            <div class="card " style=" border: none;" >
 
-                <div >
-                    <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
-                    <h6 style="all: revert">Graficos</h6>
+                <div style="margin-top: 10%" >
+                    <h5 > {{$cliente->nombre}}</h5>
+                    <h6 style="all: revert;">Graficos</h6>
                 </div>
 
-                </div>
+            </div>
             </div>
 
             <div class="card"
@@ -96,27 +96,29 @@
 
 
         @endif
-        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
         <a class="btn btn-primary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
     </div>
-    </div>
-
-    <div class="w3-container w3-teal mx-30" style="margin-top: -21%; margin-left: 21%;
-     margin-right: 10%; margin-bottom: 10%">
+        <div class="w3-container mt-lg-2" style="margin-top: 2%; margin-left: 25%;
+         margin-right: 5%">
             {!! $chart->container() !!}
 
 
-    {!! $chart->script() !!}
+            {!! $chart->script() !!}
         </div>
+
+    </div>
+
 
     <style>
         .perfil{
             position: -webkit-sticky; /* Safari */
             position: sticky;
             overflow-y: hidden;
+            overflow-x: hidden;
             top: 10%;
         }
     </style>

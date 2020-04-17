@@ -118,7 +118,7 @@ Route::group(["middleware"=>"auth"],function (){
     Route::get('pagosparticulares/crear', 'PagoParticularController@create')->name('pagoparticulares.formulario');
     Route::post('pagosparticulares/guardar', 'PagoParticularController@store')->name('pagoparticulares.guardar');
     Route::delete('pagosparticulares/borrar', 'PagoParticularController@destroy')->name('pagoparticulares.borrar');
-
+    Route::put('pagosparticulares/editar','PagoParticularController@update')->name('pagoparticulares.update');
     Route::get('estadisticas/', 'EstadisticasController@index')->name('estadisticas');
     Route::get('estadisticas/crear', 'EstadisticasController@create')->name('estadisticas.crear');
 

@@ -2,7 +2,7 @@
 
 @section("content")
     <!-- Header -->
-    <header class="fondo" style="max-height: 100px;">
+    <header class=" fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
 
@@ -41,25 +41,25 @@
 
     @endif
 
-    <div class="container-xl clearfix px-1 mt-lg-2">
+    <div class="container-xl clearfix px-2 mt-4">
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ml-lg-4">
+        <div  class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ml-lg-4">
 
-            <div class="card-header" style="background: #8affa5">
+            <div class="card-header" style="background: #8affa5;margin-left: -7%;margin-right: -7%;text-align: center">
                 @if($cliente->id_tipo_cliente==1)
-                    <h6 style="margin-left: 1% ">Expediente Estudiante</h6>
+                    <h7 style="margin-left: 1% ">Expediente Estudiante</h7>
                 @endif
                 @if($cliente->id_tipo_cliente==3 )
 
-                    <h6 style="margin-left: 1%">Expediente Particular</h6>
+                    <h7 style="margin-left: 1%">Expediente Particular</h7>
                 @endif
                 @if($cliente->id_tipo_cliente==2)
-                    <h6 style="margin-left: 1%">Expediente Docente</h6>
+                    <h7 style="margin-left: 1%">Expediente Docente</h7>
                 @endif
             </div>
 
-            <img class="card-img-top" src="/clientes_imagenes/{{$cliente->imagen}}" width="250px"
-                 height="300px" >
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px"
+                 height="260px" style="margin-left: -7%" >
             <div class="card margencard" style=" border: none;">
                 <div >
                     <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
@@ -97,8 +97,8 @@
             @endif
 
 
-            <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-            <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
+            <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a>
+            <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
             <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
             <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Grafico</a>
 
@@ -131,7 +131,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                 @endif
 
 
-                <div class="table-responsive-lg">
+                <div class=" table-responsive-lg">
                     <table class="table  table-hover" style="font-size: 12px">
                         <thead class="thead-dark">
                         <tr>
@@ -262,30 +262,20 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
     <style>
 
-        @media (min-width: 768px) {
-            .pl-md-2, .px-md-2 {
-                padding-left: 8px !important;
-            }
+        .scroll{
+            /* Safari */
+            overflow-y: scroll;
 
-            @media (min-width: 768px) {
-                .perfil {
-                    float: left !important;
-                }
-
-                @media (min-width: 768px) {
-                    .perfil {
-                        width: 66.66667%;
-                    }
-                }
+        }
                 .perfil {
                     /* Safari */
-                    position: sticky;
+                    position: static;
                     overflow-y: hidden;
-                    top: 10%;
+                    overflow-x: hidden;
+                    top: 80%;
 
                 }
-            }
-        }
+
     </style>
 
 @endsection

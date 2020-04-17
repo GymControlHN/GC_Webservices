@@ -38,36 +38,27 @@
 
     @endif
 
-    <div class="container-xl clearfix px-1 mt-3">
+    <div class="container-xl clearfix px-2 mt-4">
         <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 mt-lg-3 pr-xl-6 ml-lg-4">
-            <div class="card-header" style="background: #8addff">
+            <div class="card-header" style="background: #8addff;margin-left: -7%;margin-right: -7%;text-align: center">
             @if($nombre->id_tipo_cliente==1)
-                <h6 style="margin-left: 1%">Expediente Estudiante</h6>
+                <h7 >Expediente Estudiante</h7>
             @endif
             @if($nombre->id_tipo_cliente==3 )
 
-                <h6 style="margin-left: 1%">Expediente Particular</h6>
+                <h7 style="margin-left: 1%">Expediente Particular</h7>
             @endif
             @if($nombre->id_tipo_cliente==2)
-                <h6 style="margin-left: 1%">Expediente Docente</h6>
+                <h7 style="margin-left: 1%">Expediente Docente</h7>
             @endif
             </div>
 
-            <img class="card-img-top" src="/clientes_imagenes/{{$nombre->imagen}}" width="250px"
-                 height="300px"  >
+            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px"
+                 height="260px" style="margin-left: -7%" >
             <div class="card margencard" style=" border: none;" >
 
-
-                <div class="card-body">
+                <div >
                     <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
-                    @if($nombre->id_tipo_cliente==3 )
-
-                        <H6> Expediente Particular</H6>
-                    @endif
-                    @if($nombre->id_tipo_cliente==2)
-                        <H6> Expediente Docente</H6>
-
-                    @endif
 
                     <h6 style="all: revert">Pagos </h6>
 
@@ -86,8 +77,8 @@
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         <a class="btn btn-primary btn-sm  " href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntroPometricos</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">GrasaCorporal</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Medidas AntroPometricas</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
         <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
@@ -95,6 +86,11 @@
         <button class="btn btn-primary btn-sm  float-right mt-sm-3" style="margin-top: -10px; margin-right: 50px"
                 data-toggle="modal" data-target="#modalPagoEstudiante" >Nuevo
         </button>
+
+        <button class="btn btn-outline-dark mb-3" style="float: right; margin-top: 1%;margin-right: 1%;
+                     padding-top: -2%;padding-bottom: -8%"
+                data-toggle="collapse" href="#cardCollapses" data-target="#cardCollapses">
+            <span><i class="fas fa-arrow-down"></i></span></button>
 
 
         <div class="modal fade" id="modalPagoEstudiante" tabindex="-1" role="dialog"
@@ -118,6 +114,14 @@
                                        id="fecha" name="fecha_pago">
                                 <input type="hidden" id="mes" name="mes">
                             </div>
+                            <h6>Agregar Nota</h6>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="nota" name="nota"
+                                       @isset($user)
+                                       value="{{$user->nota}}"
+                                        @endisset
+                                >
+                            </div>
                             <div class="modal-footer">
                                 <input name="id" value="{{$nombre->id}}" type="hidden">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -138,6 +142,22 @@
 
 
         <div class="w3-container w3-teal mx-5">
+            <div class="collapse" id="cardCollapses">
+                <div class="row" >
+
+                    <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px;margin-bottom: 2%;margin-left: -1%">
+                        <div class="card card-style">
+                            <div class="card-header">
+
+                                <img src="/images/pago.png" width="40px" style="margin-left: 42%">
+                                <br>
+                                <h6 class="text-center">Total Pagos</h6>
+                                <h5 class="text-center"><span class="badge badge-dark">{{$ingresos}}</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
@@ -167,7 +187,65 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                     @endif
 
-                    <table class="table table-hover" style="font-size: 12px" >
+
+                        <div class="modal fade" id="editarPagoEstudiante" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalScrollableTitle" >
+                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Pago Estudiante</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+
+                                    <div class="modal-body">
+
+                                        <form method="post" action="{{route('pagoestudiantes.update')}}" enctype="multipart/form-data">
+                                            <input type="hidden" name="estudiantepago_id" id="id" value="">
+
+                                            {{method_field('put')}}
+
+
+
+                                            <h6>Fecha</h6>
+                                            <div class="form-group">
+                                                <input type="date" class="form-control" id="fecha_pago" name="fecha_pago"
+                                                       @isset($user)
+                                                       value="{{$user->fecha_pago}}"
+                                                       @endisset value="{{old('fecha_pago')}}"
+                                                >
+                                                <input type="hidden" id="mes" name="mes">
+
+                                            </div>
+
+                                            <h6>Agregar Nota</h6>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="nota" name="nota"
+                                                       @isset($user)
+                                                       value="{{$user->nota}}"
+                                                       @endisset value="{{old('nota')}}"
+                                                >
+                                            </div>
+
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                                <button type="submit"  class="btn btn-primary">Guardar</button>
+
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <table class="table table-hover" style="font-size: 14px" >
 
                         <thead class="thead-dark">
             <tr>
@@ -175,14 +253,16 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                 <th>Mes</th>
                 <th>Fecha</th>
                 <th>Estado</th>
+                <th>Nota</th>
                 <th>Acciones</th>
+
             <tr>
             </thead>
             <tbody>
             @if($pagos->count()>0)
             @foreach ($pagos as $day => $users_list)
                 <tr>
-                    <th colspan="5"
+                    <th colspan="6"
                         style="background-color: #85d6f7; color: white;">Registro del año {{ $day }}</th>
                 </tr>
                 @foreach ($users_list as $user)
@@ -191,7 +271,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
-                        <th>
+                        <th>{{ $user->nota }}</th>
+
+
+
+                      <th>
+                            <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editarPagoEstudiante" data-myfecha="{{$user->fecha_pago}}"
+                                    data-mynota="{{$user->nota}}" data-mymes="{{$user->mes}}" data-catid="{{$user->id}}"><i class="fas fa-edit"></i></button>
+
                             <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"
@@ -199,12 +286,13 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                         </th>
 
+
                     </tr>
                         @endforeach
             @endforeach
             @else
                 <tr>
-                    <td colspan="5" style="text-align: center">No hay pagos ingresados</td>
+                    <td colspan="6" style="text-align: center">No hay pagos ingresados</td>
             @endif
 
 
@@ -246,6 +334,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                     position: -webkit-sticky; /* Safari */
                     position: sticky;
                     overflow-y: hidden;
+                    overflow-x: hidden;
                     top: 10%;
                 }
             </style>
