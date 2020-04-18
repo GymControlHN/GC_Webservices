@@ -54,10 +54,99 @@
                     </div>
                 </div>
             </div>
+            <button class="btn btn-light"
+                    data-target="#modalPruebaRapida"
+                    data-toggle="modal"
+               style="margin-left: 43%;margin-top: 10px"><span class="badge
+ badge-danger">Prueba</span> Peso ideal</button>
         </div>
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="modalPruebaRapida" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Peso Ideal</h5>
+                        <button type="button" class="close"
+                                onclick="limpiarDatosModal()" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <h6 class="" for="femeninoRB">Seleccione su sexo:</h6>
+                            <br><br>
+                            <div class="form-check" style="margin-left: 5px">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femeninoRB" value="F">
+                                <label class="form-check-label" style="color: black" for="femeninoRB">Femenino</label>
+                            </div>
+                            <div class="form-check ml-1">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="masculinoRB" value="M">
+                                <label class="form-check-label" for="masculinoRB" style="color: black;">Masculino</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row " >
+                        <div class="form-group col-md-4">
+                            <h6 class=" " for="email" style=" margin-top: -1%">Altura:</h6>
+                            <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" id="altura" required
+                                   name="altura" maxlength="3" placeholder="Ingrese su altura"
+                            >
+                        </div>
+
+                        </div>
+
+                        <div class="alert alert-success" role="alert">
+
+                            <h6>Tu peso ideal es:</h6> <h5 id="pesoIdeal"></h5>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="limpiarDatosModal()" data-dismiss="modal">cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="calcularPesoIdeal()">Calcular</button>
+                    </div>
+                </div>
+            </div>
+
+
     </div>
+        <script>
+            function limpiarDatosModal() {
+                var femeninoRB = document.getElementById("femeninoRB").checked =false;
+                var masculinoRB = document.getElementById("masculinoRB").checked=false;
+                var altura = document.getElementById("altura").value="";
+                var pesoIdeal=document.getElementById("pesoIdeal").innerText="";
+            }
+            function calcularPesoIdeal() {
+                var femeninoRB = document.getElementById("femeninoRB").checked;
+                var masculinoRB = document.getElementById("masculinoRB").checked;
+                var altura = document.getElementById("altura").value;
+                var pesoIdeal=document.getElementById("pesoIdeal");
+
+                if (!femeninoRB&&!masculinoRB) {
+                    pesoIdeal.innerText="Selecciona el sexo"
+                }else {
+                    if (altura) {
+
+                        if (femeninoRB) {
+                            var pesoidealF = (0.67 * altura) - 52;
+                            pesoIdeal.innerText = pesoidealF.toFixed(2) +"Kg";
+                        }
+                        if (masculinoRB) {
+
+                            var pesoidealM = (0.75 * altura) - 62.5;
+                            pesoIdeal.innerText = pesoidealM.toFixed(2) +"Kg";
+
+                        }
+
+                    } else {
+                        pesoIdeal.innerText = "Ingrese la altura es requerido";
+                    }
+                }
+
+            }
+        </script>
 @endsection
 
 <style>
