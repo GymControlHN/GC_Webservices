@@ -219,14 +219,14 @@
                 </div>
 
 
-                <div class="form-group col-md-6">
+
                     <input style="width: 310px; display: none " type="hidden" class="form-control inputtamaño3" step="0.0001"
                            id="id_diagnostico" name="id_diagnostico" maxlength="50"
                            @isset($grasa)
                            value="{{$grasa->leyenda}}"
                            @endisset
                            readonly>
-                </div>
+
             </div>
 
 

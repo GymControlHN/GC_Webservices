@@ -83,12 +83,7 @@
 
         </div>
 
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-            <title>FORMULARIO PESO IDEAL</title>
-            <script type="text/javascript">function calcularIMC() {
+        <script type="text/javascript">function calcularIMC() {
                     peso = document.getElementById("peso").value;
                     altura = document.getElementById("altura").value / 100;
                     imc = peso / (altura * altura);
@@ -130,7 +125,6 @@
 
                 }</script>
 
-        </head>
 
 
         <form name="f1" id="f1"
@@ -211,7 +205,7 @@
             <div class="container2">
 
 
-                <a class="btn btn-primary my-2 boton" style="margin-left: 29%"
+                <a class="btn btn-primary boton" style="margin-left: 29%"
                    href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
 
 
@@ -220,26 +214,17 @@
             </div>
 
 
-            <div class="form-group col-md-4">
-                <h6 class="label2" for="email"></h6>
                 <input style="width: 310px;display: none;" type="hidden" class="form-control inputtamaño3"
                        id="imc" name="imc" value="
                     {{old('imc')}}">
-            </div>
 
-
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <h6 class="label2" for="email"></h6>
                     <input style="width: 310px" type="hidden" class="form-control inputtamaño3"
                            id="leyenda" name="id_diagnostico" value="{{old('id_diagnostico')}}">
-
-                </div>
-            </div>
 
 
         </form>
 
-        </html>
+
+    </div>
 
 @endsection

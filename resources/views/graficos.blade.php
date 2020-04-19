@@ -42,7 +42,7 @@
     @endif
     <div class="container-xl clearfix px-2 mt-4">
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12  card float-md-left mr-5 pr-md-8   mt-lg-3 pr-xl-6 ml-lg-4">
+        <div  class="perfil col-md-1 col-md-2 col-12  card float-md-left mr-5 pr-md-8   mt-lg-3 pr-xl-6 ml-lg-4">
       <div class="card-header" style="background: #bafa98;margin-left: -7%;margin-right: -7%;text-align: center" >
           @if($cliente->id_tipo_cliente==1)
               <h7 style="margin-left: 1%">Expediente Estudiante</h7>
@@ -118,6 +118,7 @@
             position: -webkit-sticky; /* Safari */
             position: sticky;
             overflow-y: hidden;
+            overflow-x: hidden;
             top: 10%;
         }
     </style>

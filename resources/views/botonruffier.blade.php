@@ -207,12 +207,12 @@
                                    value="{{old(' mvodiagnostico')}}" readonly required >
                         </div>
 
-                        <div class="form-group col-md-6">
+
                             <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3" step="0.0001"
                                    id="leyenda" name="id_diagnostico" maxlength="50"
                                    value="{{old('id_diagnostico')}}" readonly required>
                         </div>
-                    </div>
+
 
 
 

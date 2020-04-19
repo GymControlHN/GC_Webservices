@@ -19,7 +19,7 @@
         </ol>
     </nav>
 
-    <div class="container-xl clearfix px-2 mt-4 " >
+    <div class="container-xl clearfix px-1 mt-3">
         <div class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ml-lg-4">
             <div class="card-header" style="background: #8affa5;margin-left: -7%;margin-right: -7%;text-align: center">
         @if($cliente->id_tipo_cliente==1)
@@ -51,7 +51,7 @@
 
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
 
-            <a class="btn btn-secondary" @if($cliente->id_tipo_cliente==3)
+            <a class="btn btn-secondary btn-sm" @if($cliente->id_tipo_cliente==3)
             href="{{route("pagoparticulares",["id"=>$cliente->id])}}"
                @endif
                @if($cliente->id_tipo_cliente ==1)
@@ -68,11 +68,10 @@
 
 
     </div>
-    </div>
 
 
-    <!DOCTYPE html>
-    <html>
+
+
     <head>
 
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
@@ -138,8 +137,8 @@
 
         {{method_field('put')}}
 
-
-        <h5  style="margin-left: 3%;margin-top: -21%">Editar medidas antropometricas</h5>
+        <div class="margeneditar">
+        <h5  class="label2" style="margin-left: 8%; margin-top: -1%">Editar medidas antropometricas</h5>
         <div class="form-row mt-4">
             <div class="form-group col-md-4">
                 <h6 class=" label2" for="email" style="margin-top: -1%">Peso kg:</h6>
@@ -236,13 +235,6 @@
             </div>
         </div>
 
-        <div class="form-row">
-
-
-        </div>
-
-
-        <div class="form-row">
 
 
         </div>
@@ -251,10 +243,12 @@
         <input name="id_cliente" value="{{$id->id}}" type="hidden">
 
 
+
+
         <div class="container2">
 
 
-            <a class="btn btn-primary my-2 boton" style="margin-left: 29%"
+            <a class="btn btn-primary boton" style="margin-left: 29%"
                href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
 
 
@@ -264,7 +258,7 @@
 
 
 
-        <div class="form-group col-md-4">
+
             <h6 class="label2" for="email"></h6>
             <input style="width:310px" type="hidden" class="form-control inputtamaño3"
                    id="imc" name="imc" maxlength="3"
@@ -272,22 +266,14 @@
                    value="{{$antecedente->imc}}"
                    @endisset
                    value="{{old('imc')}}" readonly>
-        </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-4">
-                <h6 class="label2" for="email"></h6>
                 <input style="width:310px" type="hidden" class="form-control inputtamaño3"
                        id="leyenda" name="id_diagnostico"
                        @isset($antecedente)
                        value="{{$antecedente->leyenda}}"
                        @endisset
                        value="{{old('leyenda')}}" readonly>
-            </div>
-
-        </div>
     </form>
-    </html>
     </div>
 
 @endsection
