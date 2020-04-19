@@ -441,7 +441,9 @@
                                            @endisset value="{{old('fecha_nacimiento')}}"
                                            title="Ingresa solo numeros entre 1 a 99 años"
                                            required
-                                           minlength="1" maxlength="2" min="1" max="99"
+
+                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+
                                     >
                                     @if ($errors->has('fecha_nacimiento'))
                                         <span class="help-block">
@@ -480,7 +482,7 @@
                                     <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
                                     <h6 style="text-align: start">Imagen del estudiante</h6>
-                                    <img width="220px" style="  object-fit: contain"
+                                    <img width="200px" style="  object-fit: contain"
                                          onerror="this.src='/img/user.png'"
                                          id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>
