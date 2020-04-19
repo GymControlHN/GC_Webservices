@@ -83,8 +83,6 @@
                             <form method="post" action="{{route('docente.guardar')}}"name="f2"
                             enctype="multipart/form-data">
 
-
-
                             <div class="form-row">
                                     <div class="form-group {{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
                                     <h6>Nombre Completo</h6>
@@ -97,10 +95,8 @@
                                         <strong>{{ $errors->first('nombre') }}</strong>
                                     </span>
                                         @endif
-
-                                </div>
-
-                                    <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
+                                    </div>
+                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                         <h6>Imagen del Docente</h6>
                                         <img width="300px" style="max-height:150px; object-fit: contain" id="previewImagen"
                                              @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
@@ -327,6 +323,8 @@
                             <input type="hidden" name="docente_id" id="id" value="">
                             {{method_field('put')}}
 
+
+
                             <div class="form-row">
                                 <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
                             <h6>Nombre Completo</h6>
@@ -342,8 +340,13 @@
                                         <strong>{{ $errors->first('nombre') }}</strong>
                                     </span>
                                     @endif
+                                </div>
+
 
                             </div>
+
+                            <div class="form-row">
+
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
                                     <h6>Imagen del Docente</h6>
 
@@ -418,6 +421,9 @@
                                     @endif
                                 </div>
                             </div>
+
+
+
                                 <div class="form-row">
 
                             <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
@@ -459,6 +465,10 @@
                                     </span>
                                     @endif
                                 </div>
+                            </div>
+
+
+                            <div class="form-row">
 
                                 <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
                                     <h6>Sexo</h6>
@@ -489,13 +499,6 @@
                                 </div>
 
                             </div>
-
-
-
-
-
-
-
 
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
