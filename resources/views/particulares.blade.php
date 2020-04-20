@@ -182,7 +182,7 @@
                                         <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                     <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
                                         <h6 style="text-align: start">Imagen del particular</h6>
-                                        <img width="200px"  id="previewImagen"
+                                        <img width="200px" style=" max-height:250px" id="previewImagen"
                                              src="/images/addphoto.ico"
                                              @if($errors->has("imagen"))  src="/images/addphoto.ico"
                                              @endif onclick="seleccionarImagen(event)"/>
@@ -477,7 +477,7 @@
                                             id="imagenEditar"
                                            name="imagen"/>
 
-                                    <img width="300px" style=" max-height:250px; object-fit: contain"
+                                    <img width="200px" style=" max-height:250px"
                                          onerror="this.src='/img/user.png'"
                                          id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>
