@@ -22,7 +22,7 @@
     @if($cliente->id_tipo_cliente==2)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
-                <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
+                <li class="breadcrumb-item"><a href="/docentes">Docente</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Graficos</li>
             </ol>
 
@@ -42,7 +42,7 @@
     @endif
     <div class="container-xl clearfix px-2 mt-4">
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12  card float-md-left mr-5 pr-md-8   mt-lg-3 pr-xl-6 ml-lg-4">
+        <div  class="perfil col-md-1 col-md-2 col-12  card float-md-left mr-5 pr-md-8   mt-lg-3 pr-xl-6 ml-lg-4">
       <div class="card-header" style="background: #bafa98;margin-left: -7%;margin-right: -7%;text-align: center" >
           @if($cliente->id_tipo_cliente==1)
               <h7 style="margin-left: 1%">Expediente Estudiante</h7>
@@ -114,11 +114,26 @@
 
 
     <style>
-        .perfil{
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            overflow-y: hidden;
-            top: 10%;
+
+        @media (min-width: 768px) {
+            .perfil {
+                float: left !important;
+            }
+
+            @media (min-width: 768px) {
+                .perfil {
+                    width: 66.66667%;
+                }
+            }
+            .perfil{
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                top: 10%;
+            }
         }
+
     </style>
+
 @endsection

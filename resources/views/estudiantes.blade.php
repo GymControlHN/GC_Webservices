@@ -56,6 +56,10 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             });
+
+        </script>
+        @endsection
+        <script>
             function limpiarDatosModal() {
                 document.getElementById("nombre").value = '';
                 document.getElementById("fecha_nacimiento").value = '';
@@ -64,11 +68,11 @@
                 document.getElementById("telefono").value = '';
                 document.getElementById("sexo1").checked = false;
                 document.getElementById("sexo2").checked = false;
+                document.getElementById("previewImagen").src="/images/addphoto.ico";
 
 
             }
         </script>
-        @endsection
         <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -85,8 +89,12 @@
                         <form method="post" action="{{route('estudiante.guardar')}}" name="f2"
                               enctype="multipart/form-data">
 
-                            <div class="form-row">
-                                <div class="form-group {{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
+                            <div class="row" style="width:100%;height: 100%;color: black;margin: 0px;">
+                                <div class="col" style="text-align: start;padding: 10px;">
+
+
+                            <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group {{ $errors->has('nombre') ? ' has-error' : '' }} " style="width: 90%">
                                     <h6>Nombre Completo</h6>
                                     <input
                                             value="{{old("nombre")}}"
@@ -99,8 +107,52 @@
                                     </span>
                                     @endif
                                 </div>
+                            </div>
 
-                                <div class="form-group {{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
+                            <div class="form-row">
+                            <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} " style="width: 90%">
+                                    <h6>Número de Cuenta</h6>
+                                    <input type="text" pattern="([0-9]{1,11})"
+                                           class="form-control{{ $errors->has('identificacion') ? ' has-error' : '' }}"
+                                           id="identificacion"
+                                           name="identificacion"
+                                           title="Ingrese solo números"
+                                           required
+                                           value="{{old("identificacion")}}"
+                                           minlength="11" maxlength="11" aria-valuemax="11" max="99999999999">
+
+                                    @if ($errors->has('identificacion'))
+                                        <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('identificacion') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} " style="width: 90%">
+                                    <h6> Teléfono </h6>
+                                    <input type="text" pattern="([0-9]{1,8})" style="width: 100%"
+                                           class="form-control{{ $errors->has('telefono') ? ' has-error' : '' }}"
+                                           id="telefono" name="telefono"
+                                           title="Ingrese solo números"
+                                           required
+                                           value="{{old("telefono")}}"
+                                           maxlength="8" minlength="8" aria-valuemax="8" max="99999999">
+                                    @if ($errors->has('telefono'))
+                                        <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                    </span>
+                                    @endif
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group {{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} " style="width: 90%">
                                     <h6>Fecha de nacimiento</h6>
                                     <input type="date" class="form-control" id="fecha_nacimiento"
                                            name="fecha_nacimiento"
@@ -117,27 +169,8 @@
                                 </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
-                                    <h6>Número Cuenta</h6>
-                                    <input type="text" pattern="([0-9]{1,11})"
-                                           class="form-control{{ $errors->has('identificacion') ? ' has-error' : '' }}"
-                                           id="identificacion"
-                                           name="identificacion"
-                                           title="Ingrese solo números"
-                                           required
-                                           value="{{old("identificacion")}}"
-                                           minlength="11" maxlength="11" aria-valuemax="11" max="99999999999">
-
-                                    @if ($errors->has('identificacion'))
-                                        <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('identificacion') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-
-
-                                <div class="form-group {{ $errors->has('carrera') ? ' has-error' : '' }}col-md-6">
+                            <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group {{ $errors->has('carrera') ? ' has-error' : '' }}" style="width: 90%">
                                     <h6>Carrera</h6>
                                     <select class="form-control" id="carrera" name="carrera"
                                             required>
@@ -155,30 +188,62 @@
 
                                     </select>
                                 </div>
+                                </div>
 
                             </div>
 
 
-                            <div class="form-row">
-                                <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} col-md-6">
-                                    <h6> Teléfono </h6>
-                                    <input type="text" pattern="([0-9]{1,8})"
-                                           class="form-control{{ $errors->has('telefono') ? ' has-error' : '' }}"
-                                           id="telefono" name="telefono"
-                                           title="Ingrese solo números"
+                            <div class="col" style="padding: 10px;">
+                            <div class="row" style="text-align: center;height: 80%;margin: 0px;">
+                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
+                                    <h6 style="text-align: start">Imagen del Estudiante (Opcional)</h6>
+                                    <img width="200px"   id="previewImagen" style=" max-height:250px;"
+                                         src="/images/addphoto.ico"
+                                         @if($errors->has("imagen")) src="/images/addphoto.ico"
+                                         @endif onclick="seleccionarImagen(event)"/>
+
+                                    <label id="labelImagen" for="imagen" class="btn btn-large" ><span style="font-size: 60px">
+
+                                        </span></label>
+                                    <input type="file" accept="image/*"
+                                           onchange="loadFile(event)"
+                                           @if($errors->has("imagen"))
+                                           style="display: none"
                                            required
-                                           value="{{old("telefono")}}"
-                                           maxlength="8" minlength="8" aria-valuemax="8" max="99999999">
-                                    @if ($errors->has('telefono'))
+                                           @endif
+                                           class="form-control"
+                                           style="opacity: 0"
+                                           id="imagen"
+                                           name="imagen"/>
+                                    @if ($errors->has('imagen'))
                                         <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                       <h6> <strong>{{ $errors->first('imagen') }}</strong></h6>
                                     </span>
                                     @endif
-
                                 </div>
 
+                                <script>
 
-                                <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
+                                    var loadFile = function (event) {
+                                        var image = document.getElementById('previewImagen');
+                                        image.src = URL.createObjectURL(event.target.files[0]);
+                                        document.getElementById("imagen").style.display = "none";
+                                        document.getElementById("labelImagen").style.display="none";
+                                    };
+                                    var seleccionarImagen = function (event) {
+                                        var element = document.getElementById("imagen");
+                                        element.click();
+                                    }
+                                </script>
+                            </div>
+
+
+
+
+
+
+                            <div class="row" style="text-align: start;height: 20%;margin: 0px;">
+                                <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} ">
                                     <h6>Sexo</h6>
 
                                     <div class="form-check form-check-inline">
@@ -204,45 +269,10 @@
                                 </div>
 
                             </div>
-
-                            <div class="form-row">
-                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
-                                    <h6>Imagen del Estudiante</h6>
-                                    <img width="200px"   id="previewImagen"
-                                         @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
-
-                                    <label id="labelImagen" for="imagen" class="btn btn-large"><span><i class="fa fa-user fa-4x"></i></span></label>
-                                    <input type="file" accept="image/*"
-                                           onchange="loadFile(event)"
-                                           @if($errors->has("imagen"))
-                                           style="display: none"
-                                           required
-                                           @endif
-                                           class="form-control"
-                                           style="opacity: 0"
-                                           id="imagen"
-                                           name="imagen"/>
-                                    @if ($errors->has('imagen'))
-                                        <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('imagen') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-
-                                <script>
-
-                                    var loadFile = function (event) {
-                                        var image = document.getElementById('previewImagen');
-                                        image.src = URL.createObjectURL(event.target.files[0]);
-                                        document.getElementById("imagen").style.display = "none";
-                                        document.getElementById("labelImagen").style.display="none";
-                                    };
-                                    var seleccionarImagen = function (event) {
-                                        var element = document.getElementById("imagen");
-                                        element.click();
-                                    }
-                                </script>
                             </div>
+                                </div>
+                            </div>
+
 
                             <div class="modal-footer">
                                 <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary"
@@ -288,7 +318,7 @@
                             <img src="/images/pago.png" width="40px" style="margin-left: 42%">
                             <br>
                             <h6 class="text-center">Total Pagos</h6>
-                            <h6 class="text-center">Estudiates</h6>
+                            <h6 class="text-center">Estudiantes</h6>
                             <h5 class="text-center"><span class="badge badge-dark">{{$ingresos}}</span></h5>
                         </div>
                     </div>
@@ -345,8 +375,11 @@
 
                             {{method_field('put')}}
 
-                            <div class="form-row">
-                                <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }} col-md-6">
+                            <div class="row" style="width:100%;height: 100%;color: black;margin: 0px;">
+                                <div class="col" style="text-align: start;padding: 10px;">
+
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }}" style="width: 90%">
                                     <h6>Nombre Completo</h6>
                                     <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                            value="{{old("nombre")}}"
@@ -360,30 +393,10 @@
                                     @endif
 
                                 </div>
-
-                                <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} col-md-6">
-                                    <h6>Fecha de nacimiento</h6>
-                                    <input type="date" pattern="([0-9]{1,3})" class="form-control" id="fecha_nacimiento"
-                                           name="fecha_nacimiento"
-                                           value="{{old("fecha_nacimiento")}}"
-
-                                           @isset($estudiante)
-                                           value="{{$estudiante->fecha_nacimiento}}"
-                                           @endisset value="{{old('fecha_nacimiento')}}"
-                                           title="Ingresa solo numeros entre 1 a 99 años"
-                                           required
-                                           minlength="1" maxlength="2" min="1" max="99"
-                                    >
-                                    @if ($errors->has('fecha_nacimiento'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} col-md-6">
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} " style="width: 90%">
                                     <h6>Número Cuenta</h6>
                                     <input type="text" pattern="([0-9]{1,11})" class="form-control" id="identificacion"
                                            name="identificacion"
@@ -401,28 +414,10 @@
                                     </span>
                                     @endif
                                 </div>
-
-                                <div class="form-group{{ $errors->has('carrera') ? ' has-error' : '' }} col-md-6">
-                                    <h6>Carrera</h6>
-                                    <select class="form-control" id="carrera" placeholder="seleccione" name="carrera"
-                                            required>
-                                        @foreach($carreras as $carrera)
-                                            <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
-                                        @endforeach
-                                        @if ($errors->has('carrera'))
-                                            <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('carrera') }}</strong>
-                                    </span>
-                                        @endif
-
-
-                                    </select>
-                                </div>
                             </div>
 
-
-                            <div class="form-row">
-                                <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} col-md-6">
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} " style="width: 90%">
                                     <h6> Teléfono </h6>
                                     <input input="text" pattern="([0-9]{1,8})" class="form-control" id="telefono"
                                            name="telefono"
@@ -440,44 +435,64 @@
                                     </span>
                                     @endif
                                 </div>
-
-                                <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} col-md-6">
-                                    <h6>Sexo</h6>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="genero" id="sexo1E" value="M"
-                                               required
-                                               @isset($estudiante)
-                                               value="{{$estudiante->sexo1}}"
-                                               @endisset value="{{old('sexo1')}}"
-                                               @if(old("genero")==='M')
-                                               checked
-                                                @endif>
-                                        <label style="color:black; margin-top: 5px" for="sexo1E">Masculino</label>
+                            </div>
 
 
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="genero" id="sexo2E" value="F"
-                                               required
-                                               @isset($estudiante)
-                                               value="{{$estudiante->sexo2}}"
-                                               @endisset value="{{old('sexo2')}}"
-                                               @if(old("genero")==='F')
-                                               checked
-                                                @endif
-                                        >
-                                        <label style="color:black; margin-top: 5px" for="sexo2E">Femenino</label>
+
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} " style="width: 90%">
+                                    <h6>Fecha de nacimiento</h6>
+                                    <input type="date" pattern="([0-9]{1,3})" class="form-control" id="fecha_nacimiento"
+                                           name="fecha_nacimiento"
+                                           value="{{old("fecha_nacimiento")}}"
+
+                                           @isset($estudiante)
+                                           value="{{$estudiante->fecha_nacimiento}}"
+                                           @endisset value="{{old('fecha_nacimiento')}}"
+                                           title="Ingresa solo numeros entre 1 a 99 años"
+                                           required
+
+                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+
+                                    >
+                                    @if ($errors->has('fecha_nacimiento'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
 
 
-                                    </div>
+                                    <div class="row" style="height: 20%;margin: 0px;">
 
+                                <div class="form-group{{ $errors->has('carrera') ? ' has-error' : '' }} "style="width: 90%">
+                                    <h6>Carrera</h6>
+                                    <select class="form-control" id="carrera" placeholder="seleccione" name="carrera"
+                                            required>
+                                        @foreach($carreras as $carrera)
+                                            <option value="{{$carrera->id}}">{{$carrera->carrera}}</option>
+                                        @endforeach
+                                        @if ($errors->has('carrera'))
+                                            <span class="help-block" style="color: red">
+                                        <strong>{{ $errors->first('carrera') }}</strong>
+                                    </span>
+                                        @endif
+
+
+                                    </select>
+                                </div>
+                            </div>
                                 </div>
 
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}col-md-6">
-                                    <h6>Imagen del estudiante</h6>
-                                    <img width="200px" style="  max-height:100px; object-fit: contain"
+
+
+
+                                <div class="col" style="padding: 10px;">
+                                    <div class="row" style="text-align: center;height: 80%;margin: 0px;">
+                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
+                                    <h6 style="text-align: start">Imagen del estudiante</h6>
+                                    <img width="200px" style=" max-height:250px"
                                          onerror="this.src='/img/user.png'"
                                          id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>
@@ -500,6 +515,43 @@
                                             var element = document.getElementById("imagenEditar");
                                             element.click();
                                         }</script>
+                                </div>
+
+                                        <div class="row" style="text-align: start;height: 20%;margin: 0px;">
+                                        <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }}" >
+                                            <h6>Sexo</h6>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="genero" id="sexo1E" value="M"
+                                                       required
+                                                       @isset($estudiante)
+                                                       value="{{$estudiante->sexo1}}"
+                                                       @endisset value="{{old('sexo1')}}"
+                                                       @if(old("genero")==='M')
+                                                       checked
+                                                        @endif>
+                                                <label style="color:black; margin-top: 5px" for="sexo1E">Masculino</label>
+
+
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="genero" id="sexo2E" value="F"
+                                                       required
+                                                       @isset($estudiante)
+                                                       value="{{$estudiante->sexo2}}"
+                                                       @endisset value="{{old('sexo2')}}"
+                                                       @if(old("genero")==='F')
+                                                       checked
+                                                        @endif
+                                                >
+                                                <label style="color:black; margin-top: 5px" for="sexo2E">Femenino</label>
+
+
+                                            </div>
+
+                                        </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 

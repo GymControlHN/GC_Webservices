@@ -19,7 +19,9 @@ class PagoEstudianteController extends Controller
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
 
-        $totalPagosEstudiantes = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
+        $totalPagosEstudiantes = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")
+            ->where("id_cliente","=",$id)
+            ->count();
 
         $totalIngresoEstudiante= $totalPagosEstudiantes *100;
 
@@ -38,10 +40,6 @@ class PagoEstudianteController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'nota'=>'required',
-
-    ]);
 
         $nuevoPagoCliente = new PagoClientesP();
 
@@ -84,7 +82,6 @@ class PagoEstudianteController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, [
-            'nota' => 'required',
             'fecha_pago' => 'required',
             'mes'=> 'required'
             ]);
@@ -95,7 +92,7 @@ class PagoEstudianteController extends Controller
         $user->save();
 
         $pagosestudiante1 = PagoClientesP::paginate(10);
-        return back();
+        return back()->with(["exito" => "Se editó exitosamente el pago"]);
 
 
     }
@@ -105,7 +102,7 @@ class PagoEstudianteController extends Controller
 
         PagoClientesP::destroy($request->input("id"));
 
-        return $this->index($request->input("id_cliente"));
+        return back()->with(["exito" => "Se borró exitosamente el pago"]);
 
     }
 

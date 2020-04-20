@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" >
 
 <head>
     <meta charset="utf-8">
@@ -300,8 +300,28 @@
         var cat_id = button.data('catid');
         var modal = $(this);
 
+        const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
 
-        modal.find('.modal-body #mes').val(mes);
+
+        const partesfecha = fecha_pago.split("-");
+        const d = new Date(partesfecha[0], partesfecha[1] - 1, partesfecha[2]);
+        modal.find('.modal-body #mes').val(monthNames[d.getMonth()]);
+
+        modal.find('.modal-body #fecha_pago').on("change", function () {
+            const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
+
+
+            var valorfecha = $(this).val();
+            const partesfecha = valorfecha.split("-");
+            const d = new Date(partesfecha[0], partesfecha[1] - 1, partesfecha[2]);
+            modal.find('.modal-body #mes').val(monthNames[d.getMonth()]);
+
+        });
+
         modal.find('.modal-body #nota').val(nota);
         modal.find('.modal-body #fecha_pago').val(fecha_pago);
         modal.find('.modal-body #id').val(cat_id);
@@ -416,6 +436,27 @@
         var nota = button.data('mynota');
         var cat_id = button.data('catid');
         var modal = $(this);
+
+        const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+        ];
+
+
+        const partesfecha = fecha_pago.split("-");
+        const d = new Date(partesfecha[0], partesfecha[1] - 1, partesfecha[2]);
+        modal.find('.modal-body #mes').val(monthNames[d.getMonth()]);
+
+        modal.find('.modal-body #fecha_pago').on("change", function () {
+            const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
+
+            var valorfecha = $(this).val();
+            const partesfecha = valorfecha.split("-");
+            const d = new Date(partesfecha[0], partesfecha[1] - 1, partesfecha[2]);
+            modal.find('.modal-body #mes').val(monthNames[d.getMonth()]);
+
+        });
 
         modal.find('.modal-body #mes').val(mes);
         modal.find('.modal-body #fecha_pago').val(fecha_pago);

@@ -22,7 +22,7 @@
     @if($nombre->id_tipo_cliente==2)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
-                <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
+                <li class="breadcrumb-item"><a href="/docentes">Docente</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Grasa Corporal</li>
             </ol>
 
@@ -45,7 +45,7 @@
 
     <div class="container-xl clearfix px-2 mt-4">
 
-        <div id="divPerfil" class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ml-lg-4">
+        <div  class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5  mt-lg-3 pr-xl-6 ml-lg-4">
 
             <div class="card-header" style="background-color: #f27961;margin-left: -7%;margin-right: -7%;text-align: center">
 
@@ -272,11 +272,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
     </div>
     <style>
 
-        @media (min-width: 768px) {
-            .pl-md-2, .px-md-2 {
-                padding-left: 8px !important;
-            }
-
             @media (min-width: 768px) {
                 .perfil {
                     float: left !important;
@@ -291,6 +286,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                     position: -webkit-sticky; /* Safari */
                     position: sticky;
                     overflow-y: hidden;
+                    overflow-x: hidden;
                     top: 10%;
                 }
             }

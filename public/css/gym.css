@@ -17,6 +17,13 @@
     height: 100vh;
     background-position: center center;
 }
+.fondo3{
+
+    background-image: url("../img/fondomenu.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center center;
+}
 
 .usuario{
     background-image: url("../img/user.png");
@@ -158,7 +165,7 @@ header.fondo
     margin-top: 5%;
 }
 .margeneditar{
-    margin-left: 2%;
+    margin-left: 10%;
 }
 
  .h{

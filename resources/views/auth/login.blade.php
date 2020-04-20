@@ -31,28 +31,26 @@
 
 <div class="limiter">
     <div class="container-login100" style="background-image: url('img/gym.jpg');">
-
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
                     <strong>Gym Control</strong>
 				</span>
             <form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
-                <label class="pl-4 mt-lg-1" style="color: #6c757d">
+                <label class="pl-4 mt-lg-1" style="color: #6c757d; font-size: 17px">
                     <strong>Correo Electrónico</strong>
 				</label>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input class="input100" type="text" name="email" placeholder="">
+                    <input class="input100" type="text" name="email" placeholder="Ingrese su correo">
                     <span class="focus-input100" data-placeholder="&#x2709;"></span>
                 </div>
-                <label class="pl-4 mt-lg-1" style="color: #6c757d">
+                <label class="pl-4 mt-lg-1" style="color: #6c757d; font-size: 17px">
                     <strong>Contraseña</strong>
 				</label>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="password" placeholder="">
+                    <input class="input100" type="password" name="password" placeholder="Ingrese su clave">
                     <span class="focus-input100" data-placeholder="	&#x1F512;"></span>
                 </div>
-
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-1">
                         <div class="checkbox">
@@ -64,7 +62,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container-login100-form-btn m-t-32">
                     <button class="login100-form-btn">
                         Entrar
@@ -75,13 +72,11 @@
                     <center><a class="btn btn-link" style="align-items: center" href="{{ route('password.request') }}">
                             ¿Olvidaste tu contraseña?
                         </a></center>
-
-                </div>
-
-            </form>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 
 <div id="dropDownSelect1"></div>
