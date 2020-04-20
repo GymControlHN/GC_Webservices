@@ -338,7 +338,6 @@
                             {{method_field('put')}}
 
 
-
                             <div class="row" style="width:100%;height: 100%;color: black;margin: 0px;">
                                 <div class="col" style="text-align: start;padding: 10px;">
 
@@ -489,8 +488,6 @@
 
 
 
-
-
                                         <div class="row" style="text-align: start;height: 20%;margin: 0px;">
 
                                 <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} ">
@@ -597,8 +594,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         </div>
                     </td>
                 </tr>
-
-
 @endforeach
                 @else
                     <tr>

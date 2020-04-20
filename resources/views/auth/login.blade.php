@@ -31,7 +31,6 @@
 
 <div class="limiter">
     <div class="container-login100" style="background-image: url('img/gym.jpg');">
-
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
                     <strong>Gym Control</strong>
@@ -52,7 +51,6 @@
                     <input class="input100" type="password" name="password" placeholder="Ingrese su clave">
                     <span class="focus-input100" data-placeholder="	&#x1F512;"></span>
                 </div>
-
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-1">
                         <div class="checkbox">
@@ -64,7 +62,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="container-login100-form-btn m-t-32">
                     <button class="login100-form-btn">
                         Entrar
@@ -75,13 +72,11 @@
                     <center><a class="btn btn-link" style="align-items: center" href="{{ route('password.request') }}">
                             ¿Olvidaste tu contraseña?
                         </a></center>
-
-                </div>
-
-            </form>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
 
 <div id="dropDownSelect1"></div>

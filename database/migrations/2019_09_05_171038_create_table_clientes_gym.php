@@ -13,7 +13,7 @@ class CreateTableClientesGym extends Migration
      */
     public function up()
     {
-        Schema::create('clientes_gym', function (Blueprint $table) {
+        Schema::create('clientes_gym', function (Blueprint $table){
             $table->increments('id');
             $table->string('nombre',50);
             $table->date('fecha_nacimiento');
@@ -27,8 +27,6 @@ class CreateTableClientesGym extends Migration
             $table->string("imagen")->nullable();
             $table->foreign("id_tipo_cliente")->references("id")->on("tipo_clientes");
             $table->timestamps();
-
-
 
         });
         //
