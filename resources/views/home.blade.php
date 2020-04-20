@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <div class=" fondo" style="font-family: 'Raleway', sans-serif">
+    <div class=" fondo2" style="font-family: 'Raleway', sans-serif">
         <div class="intro-lead-in text-center ">Bienvenido al control del gimnasio</div>
         <div class="intro-heading text-uppercase text-center ">UNAH-TEC Danli</div>
 
