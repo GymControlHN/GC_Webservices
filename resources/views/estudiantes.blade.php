@@ -93,185 +93,185 @@
                                 <div class="col" style="text-align: start;padding: 10px;">
 
 
-                            <div class="row" style="height: 20%;margin: 0px;">
-                                <div class="form-group {{ $errors->has('nombre') ? ' has-error' : '' }} " style="width: 90%">
-                                    <h6>Nombre Completo</h6>
-                                    <input
-                                            value="{{old("nombre")}}"
-                                            class="form-control solo-letras" id="nombre" name="nombre"
-                                            required
-                                    >
-                                    @if ($errors->has('nombre'))
-                                        <span class="help-block">
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                        <div class="form-group {{ $errors->has('nombre') ? ' has-error' : '' }} " style="width: 90%">
+                                            <h6>Nombre Completo</h6>
+                                            <input
+                                                    value="{{old("nombre")}}"
+                                                    class="form-control solo-letras" id="nombre" name="nombre"
+                                                    required
+                                            >
+                                            @if ($errors->has('nombre'))
+                                                <span class="help-block">
                                         <strong>{{ $errors->first('nombre') }}</strong>
                                     </span>
-                                    @endif
-                                </div>
-                            </div>
+                                            @endif
+                                        </div>
+                                    </div>
 
-                            <div class="form-row">
-                            <div class="row" style="height: 20%;margin: 0px;">
-                                <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} " style="width: 90%">
-                                    <h6>Número de Cuenta</h6>
-                                    <input type="text" pattern="([0-9]{1,11})"
-                                           class="form-control{{ $errors->has('identificacion') ? ' has-error' : '' }}"
-                                           id="identificacion"
-                                           name="identificacion"
-                                           title="Ingrese solo números"
-                                           required
-                                           value="{{old("identificacion")}}"
-                                           minlength="11" maxlength="11" aria-valuemax="11" max="99999999999">
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                        <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} " style="width: 90%">
+                                            <h6>Número Cuenta</h6>
+                                            <input type="text" pattern="([0-9]{1,11})"
+                                                   class="form-control{{ $errors->has('identificacion') ? ' has-error' : '' }}"
+                                                   id="identificacion"
+                                                   name="identificacion"
+                                                   title="Ingrese solo números"
+                                                   required
+                                                   value="{{old("identificacion")}}"
+                                                   minlength="11" maxlength="11" aria-valuemax="11" max="99999999999">
 
-                                    @if ($errors->has('identificacion'))
-                                        <span class="help-block" style="color: red">
+                                            @if ($errors->has('identificacion'))
+                                                <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('identificacion') }}</strong>
                                     </span>
-                                    @endif
-                                </div>
-                            </div>
+                                            @endif
+                                        </div>
+                                    </div>
 
-                            <div class="row" style="height: 20%;margin: 0px;">
-                                <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} " style="width: 90%">
-                                    <h6> Teléfono </h6>
-                                    <input type="text" pattern="([0-9]{1,8})" style="width: 100%"
-                                           class="form-control{{ $errors->has('telefono') ? ' has-error' : '' }}"
-                                           id="telefono" name="telefono"
-                                           title="Ingrese solo números"
-                                           required
-                                           value="{{old("telefono")}}"
-                                           maxlength="8" minlength="8" aria-valuemax="8" max="99999999">
-                                    @if ($errors->has('telefono'))
-                                        <span class="help-block" style="color: red">
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                        <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} " style="width: 90%">
+                                            <h6> Teléfono </h6>
+                                            <input type="text" pattern="([0-9]{1,8})" style="width: 100%"
+                                                   class="form-control{{ $errors->has('telefono') ? ' has-error' : '' }}"
+                                                   id="telefono" name="telefono"
+                                                   title="Ingrese solo números"
+                                                   required
+                                                   value="{{old("telefono")}}"
+                                                   maxlength="8" minlength="8" aria-valuemax="8" max="99999999">
+                                            @if ($errors->has('telefono'))
+                                                <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('telefono') }}</strong>
                                     </span>
-                                    @endif
+                                            @endif
 
-                                </div>
+                                        </div>
 
-                            </div>
+                                    </div>
 
 
-                            <div class="row" style="height: 20%;margin: 0px;">
-                                <div class="form-group {{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} " style="width: 90%">
-                                    <h6>Fecha de nacimiento</h6>
-                                    <input type="date" class="form-control" id="fecha_nacimiento"
-                                           name="fecha_nacimiento"
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                        <div class="form-group {{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} " style="width: 90%">
+                                            <h6>Fecha de nacimiento</h6>
+                                            <input type="date" class="form-control" id="fecha_nacimiento"
+                                                   name="fecha_nacimiento"
 
-                                           required
-                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
-                                           value="{{old("fecha_nacimiento")}}">
-                                    @if ($errors->has('fecha_nacimiento'))
-                                        <span class="help-block" style="color: red">
+                                                   required
+                                                   max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+                                                   value="{{old("fecha_nacimiento")}}">
+                                            @if ($errors->has('fecha_nacimiento'))
+                                                <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('fecha_nacimiento') }}</strong>
                                     </span>
-                                    @endif
+                                            @endif
 
-                                </div>
-                            </div>
+                                        </div>
+                                    </div>
 
-                            <div class="row" style="height: 20%;margin: 0px;">
-                                <div class="form-group {{ $errors->has('carrera') ? ' has-error' : '' }}" style="width: 90%">
-                                    <h6>Carrera</h6>
-                                    <select class="form-control" id="carrera" name="carrera"
-                                            required>
-                                        @foreach($carreras as $carrera)
-                                            <option value="{{$carrera->id}}"
-                                                    {{ old('carrera') == $carrera->id ? "selected" : "" }}>
-                                                {{$carrera->carrera}}
-                                            </option>
-                                        @endforeach
-                                        @if ($errors->has('carrera'))
-                                            <span class="help-block" style="color: red">
+                                    <div class="row" style="height: 20%;margin: 0px;">
+                                        <div class="form-group {{ $errors->has('carrera') ? ' has-error' : '' }}" style="width: 90%">
+                                            <h6>Carrera</h6>
+                                            <select class="form-control" id="carrera" name="carrera"
+                                                    required>
+                                                @foreach($carreras as $carrera)
+                                                    <option value="{{$carrera->id}}"
+                                                            {{ old('carrera') == $carrera->id ? "selected" : "" }}>
+                                                        {{$carrera->carrera}}
+                                                    </option>
+                                                @endforeach
+                                                @if ($errors->has('carrera'))
+                                                    <span class="help-block" style="color: red">
                                         <strong>{{ $errors->first('carrera') }}</strong>
                                     </span>
-                                        @endif
+                                                @endif
 
-                                    </select>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                 </div>
-                                </div>
-
-                            </div>
 
 
-                            <div class="col" style="padding: 10px;">
-                            <div class="row" style="text-align: center;height: 80%;margin: 0px;">
-                                <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
-                                    <h6 style="text-align: start">Imagen del Estudiante (Opcional)</h6>
-                                    <img width="200px"   id="previewImagen" style=" max-height:250px;"
-                                         src="/images/addphoto.ico"
-                                         @if($errors->has("imagen")) src="/images/addphoto.ico"
-                                         @endif onclick="seleccionarImagen(event)"/>
+                                <div class="col" style="padding: 10px;">
+                                    <div class="row" style="text-align: center;height: 80%;margin: 0px;">
+                                        <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
+                                            <h6 style="text-align: start">Imagen del Estudiante (Opcional)</h6>
+                                            <img width="200px"   id="previewImagen" style=" max-height:250px;"
+                                                 src="/images/addphoto.ico"
+                                                 @if($errors->has("imagen")) src="/images/addphoto.ico"
+                                                 @endif onclick="seleccionarImagen(event)"/>
 
-                                    <label id="labelImagen" for="imagen" class="btn btn-large" ><span style="font-size: 60px">
+                                            <label id="labelImagen" for="imagen" class="btn btn-large" ><span style="font-size: 60px">
 
                                         </span></label>
-                                    <input type="file" accept="image/*"
-                                           onchange="loadFile(event)"
-                                           @if($errors->has("imagen"))
-                                           style="display: none"
-                                           required
-                                           @endif
-                                           class="form-control"
-                                           style="opacity: 0"
-                                           id="imagen"
-                                           name="imagen"/>
-                                    @if ($errors->has('imagen'))
-                                        <span class="help-block" style="color: red">
+                                            <input type="file" accept="image/*"
+                                                   onchange="loadFile(event)"
+                                                   @if($errors->has("imagen"))
+                                                   style="display: none"
+                                                   required
+                                                   @endif
+                                                   class="form-control"
+                                                   style="opacity: 0"
+                                                   id="imagen"
+                                                   name="imagen"/>
+                                            @if ($errors->has('imagen'))
+                                                <span class="help-block" style="color: red">
                                        <h6> <strong>{{ $errors->first('imagen') }}</strong></h6>
                                     </span>
-                                    @endif
-                                </div>
+                                            @endif
+                                        </div>
 
-                                <script>
+                                        <script>
 
-                                    var loadFile = function (event) {
-                                        var image = document.getElementById('previewImagen');
-                                        image.src = URL.createObjectURL(event.target.files[0]);
-                                        document.getElementById("imagen").style.display = "none";
-                                        document.getElementById("labelImagen").style.display="none";
-                                    };
-                                    var seleccionarImagen = function (event) {
-                                        var element = document.getElementById("imagen");
-                                        element.click();
-                                    }
-                                </script>
-                            </div>
-
-
+                                            var loadFile = function (event) {
+                                                var image = document.getElementById('previewImagen');
+                                                image.src = URL.createObjectURL(event.target.files[0]);
+                                                document.getElementById("imagen").style.display = "none";
+                                                document.getElementById("labelImagen").style.display="none";
+                                            };
+                                            var seleccionarImagen = function (event) {
+                                                var element = document.getElementById("imagen");
+                                                element.click();
+                                            }
+                                        </script>
+                                    </div>
 
 
 
 
-                            <div class="row" style="text-align: start;height: 20%;margin: 0px;">
-                                <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} ">
-                                    <h6>Sexo</h6>
 
-                                    <div class="form-check form-check-inline">
 
-                                        <input class="form-check-input" type="radio"
-                                               title="Masculino"
-                                               name="genero" id="sexo1" value="M"
-                                               required
-                                               @if(old("genero")==='M')
-                                               checked
-                                                @endif>
-                                        <label style="color:black; margin-top: 5px" for="sexo1">Masculino</label>
+                                    <div class="row" style="text-align: start;height: 20%;margin: 0px;">
+                                        <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} ">
+                                            <h6>Sexo</h6>
+
+                                            <div class="form-check form-check-inline">
+
+                                                <input class="form-check-input" type="radio"
+                                                       title="Masculino"
+                                                       name="genero" id="sexo1" value="M"
+                                                       required
+                                                       @if(old("genero")==='M')
+                                                       checked
+                                                        @endif>
+                                                <label style="color:black; margin-top: 5px" for="sexo1">Masculino</label>
+
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F"
+                                                       required
+                                                       @if(old("genero")==='F')
+                                                       checked
+                                                        @endif>
+                                                <label style="color:black; margin-top: 5px" for="sexo2">Femenino</label>
+                                            </div>
+                                        </div>
 
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="genero" id="sexo2" value="F"
-                                               required
-                                               @if(old("genero")==='F')
-                                               checked
-                                                @endif>
-                                        <label style="color:black; margin-top: 5px" for="sexo2">Femenino</label>
-                                    </div>
                                 </div>
+                            </div>
 
-                            </div>
-                            </div>
-                                </div>
-                            </div>
+
 
 
                             <div class="modal-footer">
