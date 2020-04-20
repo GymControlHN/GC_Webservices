@@ -224,8 +224,6 @@ iframe {
 
   display: block;
 }
-
-
 /*------------------------------------------------------------------
 [ Input ]*/
 
@@ -235,7 +233,6 @@ iframe {
   border-bottom: 1px solid #e6e6e6;
   margin-top: 15px;
   margin-bottom: 10px;
-
 
 }
 
@@ -280,7 +277,6 @@ iframe {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
   background: #FF8800;
   background: -webkit-linear-gradient(left,#ffb300, #FF8800, #fdd835);
   background: -o-linear-gradient(left, #ffb300, #FF8800, #fdd835);
