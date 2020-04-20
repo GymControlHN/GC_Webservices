@@ -477,7 +477,7 @@
                                             id="imagenEditar"
                                            name="imagen"/>
 
-                                    <img width="200px" style=" max-height:250px; object-fit: contain"
+                                    <img width="300px" style=" max-height:250px; object-fit: contain"
                                          onerror="this.src='/img/user.png'"
                                          id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>
