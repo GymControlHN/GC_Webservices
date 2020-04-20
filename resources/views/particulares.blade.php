@@ -37,7 +37,7 @@
 
             </script>
         @endif
-
+        @section("script")
         <script>
             $('#imageUpload').change(function() {
                 readImgUrlAndPreview(this);
@@ -52,7 +52,9 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             });
-
+        </script>
+        @endsection
+        <script>
             function limpiarDatosModal() {
                 document.getElementById("nombre").value='';
                 document.getElementById("fecha_nacimiento").value='';
@@ -61,7 +63,7 @@
                 document.getElementById("telefono").value='';
                 document.getElementById("sexo1").checked=false;
                 document.getElementById("sexo2").checked=false;
-
+        document.getElementById("previewImagen").src="/images/addphoto.ico";
 
 
             }
@@ -180,10 +182,14 @@
                                         <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                     <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
                                         <h6 style="text-align: start">Imagen del particular</h6>
-                                        <img width="200px"  id="previewImagen"
-                                             @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
+                                        <img width="300px"  id="previewImagen"
+                                             src="/images/addphoto.ico"
+                                             @if($errors->has("imagen"))  src="/images/addphoto.ico"
+                                             @endif onclick="seleccionarImagen(event)"/>
 
-                                        <label id="labelImagen" for="imagen" class="btn btn-large"><span><img style="width: 230px;" src="/images/addphoto.ico"></img></span></label>
+                                        <label id="labelImagen" for="imagen" class="btn btn-large" ><span style="font-size: 60px">
+
+                                        </span></label>
                                         <input type="file" accept="image/*"
                                                onchange="loadFile(event)"
                                                @if($errors->has("imagen"))

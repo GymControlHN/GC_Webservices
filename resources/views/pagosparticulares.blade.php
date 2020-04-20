@@ -220,7 +220,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                                        value="{{$user->fecha_pago}}"
                                                        @endisset value="{{old('fecha_pago')}}"
                                                 >
-
+                                                <input type="hidden" id="mes" name="mes">
                                             </div>
 
                                             <h6>Agregar Nota</h6>
@@ -272,8 +272,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
-                        <th>{{ $user->nota }}</th>
-
+                        @if($user->nota)
+                            <th >{{ $user->nota }}</th>
+                        @else<th> n/a</th>
+                        @endif
                         <th>
                             <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editarPagoParticular" data-myfecha="{{$user->fecha_pago}}"
                                     data-mynota="{{$user->nota}}"  data-catid="{{$user->id}}" ><i class="fas fa-edit"></i></button>

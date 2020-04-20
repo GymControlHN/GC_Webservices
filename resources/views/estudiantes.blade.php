@@ -56,6 +56,10 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             });
+
+        </script>
+        @endsection
+        <script>
             function limpiarDatosModal() {
                 document.getElementById("nombre").value = '';
                 document.getElementById("fecha_nacimiento").value = '';
@@ -64,11 +68,11 @@
                 document.getElementById("telefono").value = '';
                 document.getElementById("sexo1").checked = false;
                 document.getElementById("sexo2").checked = false;
+                document.getElementById("previewImagen").src="/images/addphoto.ico";
 
 
             }
         </script>
-        @endsection
         <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -191,11 +195,15 @@
                             <div class="col" style="padding: 10px;">
                             <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
-                                    <h6 style="text-align: start">Imagen del Estudiante</h6>
-                                    <img width="200px"   id="previewImagen" style="text-align: start"
-                                         @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
+                                    <h6 style="text-align: start">Imagen del Estudiante (Opcional)</h6>
+                                    <img width="300px"   id="previewImagen" style="text-align: start"
+                                         src="/images/addphoto.ico"
+                                         @if($errors->has("imagen")) src="/images/addphoto.ico"
+                                         @endif onclick="seleccionarImagen(event)"/>
 
-                                    <label id="labelImagen" for="imagen" class="btn btn-large" ><span style="font-size: 60px"><img style="width: 230px;" src="/images/addphoto.ico"></img></span></label>
+                                    <label id="labelImagen" for="imagen" class="btn btn-large" ><span style="font-size: 60px">
+
+                                        </span></label>
                                     <input type="file" accept="image/*"
                                            onchange="loadFile(event)"
                                            @if($errors->has("imagen"))
@@ -208,7 +216,7 @@
                                            name="imagen"/>
                                     @if ($errors->has('imagen'))
                                         <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('imagen') }}</strong>
+                                       <h6> <strong>{{ $errors->first('imagen') }}</strong></h6>
                                     </span>
                                     @endif
                                 </div>
@@ -308,7 +316,7 @@
                             <img src="/images/pago.png" width="40px" style="margin-left: 42%">
                             <br>
                             <h6 class="text-center">Total Pagos</h6>
-                            <h6 class="text-center">Estudiates</h6>
+                            <h6 class="text-center">Estudiantes</h6>
                             <h5 class="text-center"><span class="badge badge-dark">{{$ingresos}}</span></h5>
                         </div>
                     </div>
@@ -482,7 +490,7 @@
                                     <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                 <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
                                     <h6 style="text-align: start">Imagen del estudiante</h6>
-                                    <img width="200px" style="  object-fit: contain"
+                                    <img width="300px" style="  object-fit: contain"
                                          onerror="this.src='/img/user.png'"
                                          id="previewImagenEditar"
                                          onclick="seleccionarImagenEditar(event)"/>

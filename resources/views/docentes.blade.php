@@ -34,6 +34,7 @@
 
             </script>
         @endif
+        @section("script")
         <script>
             $('#imageUpload').change(function() {
                 readImgUrlAndPreview(this);
@@ -48,7 +49,9 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             });
-
+        </script>
+        @endsection
+        <script>
             function limpiarDatosModal() {
                 document.getElementById("nombre").value='';
                 document.getElementById("fecha_nacimiento").value='';
@@ -60,6 +63,7 @@
                 document.getElementById("labelImagen").value='';
                 document.getElementById("previewImagen").value='';
                 document.getElementById("imagen").value='';
+                document.getElementById("previewImagen").src="/images/addphoto.ico";
 
 
 
@@ -178,11 +182,14 @@
                                         <div class="col" style="padding: 10px;">
                                             <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                         <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}"style="width: 90%">
-                                        <h6 style="text-align: start">Imagen del Docente</h6>
-                                        <img width="300px" style="max-height:250px; object-fit: contain" id="previewImagen"
-                                             @if($errors->has("imagen")) src="{{old("imagen")}}" @endif onclick="seleccionarImagen(event)"/>
+                                        <h6 style="text-align: start">Imagen del Docente (Opcional)</h6>
+                                        <img width="300px"  id="previewImagen" style="text-align: start"
+                                             src="/images/addphoto.ico"
+                                             @if($errors->has("imagen"))  src="/images/addphoto.ico"
+                                             @endif onclick="seleccionarImagen(event)"/>
 
-                                        <label id="labelImagen" for="imagen" class="btn btn-large"><span><img style="width: 230px;" src="/images/addphoto.ico"></img></span></label>
+                                            <label id="labelImagen" for="imagen" class="btn btn-large" ><span style="font-size: 60px">
+                                                    </span></label>
                                         <input type="file" accept="image/*"
                                                onchange="loadFile(event)"
                                                @if($errors->has("imagen"))
@@ -194,7 +201,7 @@
                                                name="imagen"/>
                                         @if ($errors->has('imagen'))
                                             <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('imagen') }}</strong>
+                                        <h6> <strong>{{ $errors->first('imagen') }}</strong></h6>
                                     </span>
                                         @endif
                                     </div>

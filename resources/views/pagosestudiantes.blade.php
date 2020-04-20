@@ -271,8 +271,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
-                        <th>{{ $user->nota }}</th>
-
+                        @if($user->nota)
+                        <th >{{ $user->nota }}</th>
+                            @else<th> n/a</th>
+                        @endif
 
 
                       <th>
