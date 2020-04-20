@@ -23,7 +23,7 @@
     @if($cliente->id_tipo_cliente==2)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
-                <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
+                <li class="breadcrumb-item"><a href="/docentes">Docente</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Ruffier</li>
             </ol>
 
@@ -257,11 +257,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
 
     <style>
 
-        @media (min-width: 768px) {
-            .pl-md-2, .px-md-2 {
-                padding-left: 8px !important;
-            }
-
             @media (min-width: 768px) {
                 .perfil {
                     float: left !important;
@@ -280,7 +275,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                     top: 10%;
                 }
             }
-        }
+
     </style>
 
     <script>

@@ -337,12 +337,24 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
     </div>
     </div>
     <style>
-        .perfil{
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            overflow-y: hidden;
-            overflow-x: hidden;
-            top: 10%;
+
+        @media (min-width: 768px) {
+            .perfil {
+                float: left !important;
+            }
+
+            @media (min-width: 768px) {
+                .perfil {
+                    width: 66.66667%;
+                }
+            }
+            .perfil{
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                top: 10%;
+            }
         }
     </style>
 @endsection
