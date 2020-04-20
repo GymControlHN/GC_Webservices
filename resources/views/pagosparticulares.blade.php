@@ -220,7 +220,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                                        value="{{$user->fecha_pago}}"
                                                        @endisset value="{{old('fecha_pago')}}"
                                                 >
-
+                                                <input type="hidden" id="mes" name="mes">
                                             </div>
 
                                             <h6>Agregar Nota</h6>
@@ -245,8 +245,6 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                             </div>
                         </div>
 
-                @endif
-                        <table class="table table-hover mx-sm-0 " style="font-size: 12px">
 
                     <table class="table  table-hover " style="font-size: 14px">
 
@@ -265,7 +263,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
             @if($pagos->count()>0)
             @foreach ($pagos as $day => $users_list)
                 <tr>
-                    <th colspan="5"
+                    <th colspan="6"
                         style="background-color: #85d6f7; color: white;">Registros del año {{ $day }}</th>
                 </tr>
                 @foreach ($users_list as $user)
@@ -274,7 +272,14 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
-                        <th class="form-inline mr-xl-n2 ">
+                        @if($user->nota)
+                            <th >{{ $user->nota }}</th>
+                        @else<th> n/a</th>
+                        @endif
+                        <th>
+                            <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editarPagoParticular" data-myfecha="{{$user->fecha_pago}}"
+                                    data-mynota="{{$user->nota}}"  data-catid="{{$user->id}}" ><i class="fas fa-edit"></i></button>
+
                             <button class="btn btn-outline-danger btn-sm"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"
@@ -287,7 +292,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
             @endforeach
             @else
                 <tr>
-                    <td colspan="5" style="text-align: center">No hay pagos ingresados</td>
+                    <td colspan="6" style="text-align: center">No hay pagos ingresados</td>
             @endif
 
 
@@ -331,4 +336,25 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
         </div>
     </div>
     </div>
+    <style>
+
+        @media (min-width: 768px) {
+            .perfil {
+                float: left !important;
+            }
+
+            @media (min-width: 768px) {
+                .perfil {
+                    width: 66.66667%;
+                }
+            }
+            .perfil{
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                top: 10%;
+            }
+        }
+    </style>
 @endsection

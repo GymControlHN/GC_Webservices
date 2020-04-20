@@ -20,7 +20,7 @@ class ParticularesController extends Controller
         $totalIngresos = $totalIngresoParticulares;
 
 
-        session()->flashInput([]);
+        //session()->flashInput([]);
         return view('particulares')->with('particulares' , $clientes)->with('no',1)->with("totalParticulares",$totalParticulares)
             ->withIngresos($totalIngresos);;
 
@@ -39,7 +39,7 @@ class ParticularesController extends Controller
             'profesion_u_oficio'=>'required',
             'telefono'=>'required|unique:clientes_gym|max:99999999|numeric',
             'genero'=>'required',
-            "imagen" => "required"
+
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
@@ -49,7 +49,11 @@ class ParticularesController extends Controller
                 $destino = "clientes_imagenes/" . $imagen;
                 copy($ruta, $destino);
             } else{
-                $imagen="";
+                if(strtoupper($request->input("genero"))==="F"){
+                    $imagen="woman.png";
+                }else{
+                    $imagen="young.png";
+                }
             }
             $nuevoParticular = new Cliente();
 
@@ -98,7 +102,11 @@ class ParticularesController extends Controller
                 $destino = "clientes_imagenes/" . $imagen;
                 copy($ruta, $destino);
             } else {
-                $imagen = "";
+                if(strtoupper($request->input("genero"))==="F"){
+                    $imagen="woman.png";
+                }else{
+                    $imagen="young.png";
+                }
             }
 
 

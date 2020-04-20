@@ -17,11 +17,16 @@ class PagoParticularController extends Controller
             ->groupBy(function ($item) {
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
-        $totalPagosParticulares = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
+        $totalPagosParticulares = PagoClientesP::where("tipo_pago","=","Pago_Particular")
+            ->where("id_cliente","=",$id)
+            ->count();
 
         $totalIngresoParticular= $totalPagosParticulares *200;
 
         $nombre = Cliente::findOrfail($id);
+
+
+
 
         return view('pagosparticulares', compact("pagos"))
             ->with("nombre", $nombre)->with('no',1)->withIngresos($totalIngresoParticular);
@@ -34,10 +39,7 @@ class PagoParticularController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'nota'=>'required',
 
-        ]);
 
         $nuevoPagoClientee = new PagoClientesP();
 
@@ -81,16 +83,17 @@ class PagoParticularController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, [
-            'nota' => 'required',
+            'mes' => 'required',
             'fecha_pago' => 'required',
         ]);
         $user = PagoClientesP::findOrfail($request->input("particularpago_id"));
         $user->fecha_pago = $request->input("fecha_pago");
+        $user->mes = $request->input("mes");
         $user->nota = $request->input("nota");
         $user->save();
 
         $pagosparticular1 = PagoClientesP::paginate(10);
-        return back();
+        return back()->with(["exito" => "Se editó exitosamente el pago"]);
     }
 
 
@@ -98,7 +101,7 @@ class PagoParticularController extends Controller
     {
         PagoClientesP::destroy($request->input("id"));
 
-        return $this->index($request->input("id_cliente"));
+        return back()->with(["exito" => "Se borró exitosamente el pago"]);
     }
 
 }

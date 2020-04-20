@@ -22,7 +22,7 @@
     @if($cliente->id_tipo_cliente==2)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
-                <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
+                <li class="breadcrumb-item"><a href="/docentes">Docente</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Graficos</li>
             </ol>
 
@@ -114,12 +114,26 @@
 
 
     <style>
-        .perfil{
-            position: -webkit-sticky; /* Safari */
-            position: sticky;
-            overflow-y: hidden;
-            overflow-x: hidden;
-            top: 10%;
+
+        @media (min-width: 768px) {
+            .perfil {
+                float: left !important;
+            }
+
+            @media (min-width: 768px) {
+                .perfil {
+                    width: 66.66667%;
+                }
+            }
+            .perfil{
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                top: 10%;
+            }
         }
+
     </style>
+
 @endsection

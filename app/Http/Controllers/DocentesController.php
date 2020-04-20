@@ -16,7 +16,7 @@ class DocentesController extends Controller
     {
         $clientes = Cliente::where("id_tipo_cliente", "=", "2")
             ->paginate(10);
-        session()->flashInput([]);
+        //session()->flashInput([]);
         return view('docentes')->with('docentes', $clientes)->with('no',1);
         return view('docentes')->with('docentes', $clientes)->with('no', 1);
     }
@@ -38,7 +38,7 @@ class DocentesController extends Controller
             'identificacion' => 'required|unique:clientes_gym|max:99999|min:00000|numeric',
             'telefono' => 'required|unique:clientes_gym|max:99999999|numeric',
             'genero' => 'required',
-            "imagen" => "required"
+
 
         ]);
         if (strtoupper($request->input("genero")) === "F" || strtoupper($request->input("genero")) === "M") {
@@ -49,7 +49,11 @@ class DocentesController extends Controller
                 $destino = "clientes_imagenes/" . $imagen;
                 copy($ruta, $destino);
             } else {
-                $imagen = "";
+                if(strtoupper($request->input("genero"))==="F"){
+                    $imagen="woman.png";
+                }else{
+                    $imagen="young.png";
+                }
             }
 
             $nuevoDocente = new Cliente();
@@ -104,7 +108,11 @@ class DocentesController extends Controller
                 $destino = "clientes_imagenes/" . $imagen;
                 copy($ruta, $destino);
             } else {
-                $imagen = "";
+                if(strtoupper($request->input("genero"))==="F"){
+                    $imagen="woman.png";
+                }else{
+                    $imagen="young.png";
+                }
             }
             // Buscar la instancia en la base de datos.
 

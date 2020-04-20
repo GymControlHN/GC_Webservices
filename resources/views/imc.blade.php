@@ -22,7 +22,7 @@
     @if($cliente->id_tipo_cliente==2)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white">
-                <li class="breadcrumb-item"><a href="/particulares">Docente</a></li>
+                <li class="breadcrumb-item"><a href="/docentes">Docente</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
             </ol>
 
@@ -43,7 +43,7 @@
 
     <div class="container-xl clearfix px-2 mt-4">
 
-        <div  class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5 pr-md-8 mt-lg-3 pr-xl-6 ml-lg-4">
+        <div id="divPerfil"  class="perfil col-md-1 col-md-2 col-12 card  float-md-left mr-5  mt-lg-3 pr-xl-6 ml-lg-4">
 
             <div class="card-header" style="background: #8affa5;margin-left: -7%;margin-right: -7%;text-align: center">
                 @if($cliente->id_tipo_cliente==1)
@@ -78,7 +78,7 @@
         <a class="btn btn-primary btn-sm  mt-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
            style="float: right; margin-right: 50px; color: white">Nuevo
         </a>
-        <div class="btn-group mt-3 mb-5" style="margin-left: .1%; font-size: 14px" role="group"
+        <div class=" btn-group mt-3 mb-5" style="margin-left: .1%; font-size: 14px" role="group"
              aria-label="Button group with nested dropdown">
 
 
@@ -262,20 +262,26 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
     <style>
 
-        .scroll{
-            /* Safari */
-            overflow-y: scroll;
+        @media (min-width: 768px) {
+            .perfil {
+                float: left !important;
+            }
 
-        }
+            @media (min-width: 768px) {
                 .perfil {
-                    /* Safari */
-                    position: static;
-                    overflow-y: hidden;
-                    overflow-x: hidden;
-                    top: 80%;
-
+                    width: 66.66667%;
                 }
+            }
+            .perfil{
+                position: -webkit-sticky; /* Safari */
+                position: sticky;
+                overflow-y: hidden;
+                overflow-x: hidden;
+                top: 10%;
+            }
+        }
 
     </style>
+
 
 @endsection

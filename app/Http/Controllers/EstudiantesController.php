@@ -23,13 +23,14 @@ class  EstudiantesController extends Controller
             ->paginate(10);
 
         $totalEstudiantes= Cliente::where("id_tipo_cliente","=",1)->count();
-        $totalPagosEstudiantes = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")->count();
+        $totalPagosEstudiantes = PagoClientesP::where("tipo_pago",
+            "=","Pago_Estudiante")->count();
 
         $totalIngresoEstudiante= $totalPagosEstudiantes *100;
         $totalIngresos = $totalIngresoEstudiante;
 
         $carrera = Carrera::all();
-        session()->flashInput([]);
+       // session()->flashInput([]);
         return view('estudiantes')->with('estudiantes', $clientes)
             ->with("carreras",$carrera)->with("no", 1)
             ->with("totalEstudiantes",$totalEstudiantes)
@@ -50,7 +51,6 @@ class  EstudiantesController extends Controller
           'nombre'=>'required',
           'carrera'=>'required',
           'genero'=>'required',
-          "imagen"=>"required"
         ]);
         if(strtoupper($request->input("genero"))==="F"||strtoupper($request->input("genero"))==="M") {
 
@@ -63,7 +63,12 @@ class  EstudiantesController extends Controller
                     $destino = "clientes_imagenes/" . $imagen;
                     copy($ruta, $destino);
                 } else{
-                    $imagen="";
+                    if(strtoupper($request->input("genero"))==="F"){
+                        $imagen="woman.png";
+                    }else{
+                        $imagen="young.png";
+                    }
+
                 }
 
                 $nuevoEstudiante = new Cliente();
@@ -129,7 +134,12 @@ class  EstudiantesController extends Controller
                     $destino = "clientes_imagenes/" . $imagen;
                     copy($ruta, $destino);
                 } else{
-                    $imagen="";
+                    if(strtoupper($request->input("genero"))==="F"){
+                        $imagen="woman.png";
+                    }else{
+                        $imagen="young.png";
+                    }
+
                 }
                 $nuevoEstudiante = new Cliente();
 

@@ -33,7 +33,7 @@
 
 
 
-            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="245px" height="260px"
+            <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="248px" height="260px"
                  style="margin-left: -7%">
             <div class="card margencard" style=" border: none;">
 
@@ -144,7 +144,7 @@
             <h5 style="margin-top: -1%">Editar Calculo de Ruffier</h5>
 
             <div class="form-row mt-4">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <h6 class=" label2" for="email" style="margin-top: -1%">Pulso en reposo</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" id="pulso_r"
                            name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
@@ -156,7 +156,7 @@
                 </div>
 
 
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style="margin-top: -1%">Pulso en accion:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso"
@@ -169,7 +169,7 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style="margin-top: 1%">Pulso en descanso:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="pulso_d" name="pulso_d" maxlength="3" placeholder="Ingrese el pulso"
@@ -181,7 +181,7 @@
                     >
                 </div>
 
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style="margin-top: 1%">Ruffier:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="ruffiel" name="ruffiel" maxlength="3"
@@ -194,7 +194,7 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style=" margin-top: 1%">MVO2:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="mvo" name="mvo" maxlength="3"
@@ -205,7 +205,7 @@
                     >
                 </div>
 
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style=" margin-top: 1%">MVO2 Real:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                            id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
@@ -219,9 +219,9 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
-                    <h6 class="label2" for="email" style="margin-left: 10%; margin-top: 1%">Diagnostico MVO:</h6>
-                    <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001"
+                <div class="form-group col-md-4">
+                    <h6 class="label2" for="email" style="margin-left: 215%; margin-top: -21%;width: 310px">Diagnostico MVO:</h6>
+                    <input style="width: 310px; margin-left: 215%"  type="number" class="form-control inputtamaño3" step="0.0001"
                            id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
                            value="{{old(' mvodiagnostico')}}" readonly required>
                 </div>
