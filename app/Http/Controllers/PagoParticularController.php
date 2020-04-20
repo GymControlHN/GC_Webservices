@@ -17,13 +17,16 @@ class PagoParticularController extends Controller
             ->groupBy(function ($item) {
                 return strtolower(Carbon::createFromFormat("Y-m-d", $item->fecha_pago, null)->year);
             });
-        $totalPagosParticulares = PagoClientesP::where("tipo_pago","=","Pago_Estudiante")
+        $totalPagosParticulares = PagoClientesP::where("tipo_pago","=","Pago_Particular")
             ->where("id_cliente","=",$id)
             ->count();
 
         $totalIngresoParticular= $totalPagosParticulares *200;
 
         $nombre = Cliente::findOrfail($id);
+
+
+
 
         return view('pagosparticulares', compact("pagos"))
             ->with("nombre", $nombre)->with('no',1)->withIngresos($totalIngresoParticular);

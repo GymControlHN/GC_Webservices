@@ -69,13 +69,6 @@
 
     </div>
 
-
-
-
-    <head>
-
-        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-        <title>FORMULARIO PESO IDEAL</title>
         <script type="text/javascript">
             document.onreadystatechange = function () {
 
@@ -126,7 +119,6 @@
 
             }</script>
 
-    </head>
 
 
     <form name="id_imc" id="id_imc"
@@ -257,9 +249,6 @@
         </div>
 
 
-
-
-            <h6 class="label2" for="email"></h6>
             <input style="width:310px" type="hidden" class="form-control inputtamaño3"
                    id="imc" name="imc" maxlength="3"
                    @isset($antecedente)
