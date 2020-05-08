@@ -5,6 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
+//clase que representa la informacion con la cual va operar el sistemas
 class Cliente extends Model
 {
     protected $table = 'clientes_gym';
@@ -23,6 +24,7 @@ class Cliente extends Model
         'telefono',
         "imagen"
     ];
+    // metodo par obtener la edad
 
     public function getEdadAttribute(){
         $anioActual= Carbon::now()->format("Y") ;

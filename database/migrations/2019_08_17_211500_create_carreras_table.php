@@ -11,6 +11,7 @@ class CreateCarrerasTable extends Migration
      *
      * @return void
      */
+    //Metodo para agregar nuevas tablas
     public function up()
     {
         Schema::create('carreras', function (Blueprint $table) {
@@ -25,6 +26,7 @@ class CreateCarrerasTable extends Migration
      *
      * @return void
      */
+    //Metodo para borrar tablas
     public function down()
     {
         Schema::dropIfExists('carreras');

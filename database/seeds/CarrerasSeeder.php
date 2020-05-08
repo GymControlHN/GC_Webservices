@@ -10,6 +10,7 @@ class CarrerasSeeder extends Seeder
      *
      * @return void
      */
+//Metodo utilizado para la accion de los sub procesos
     public function run()
     {
         $carrera = new Carrera();

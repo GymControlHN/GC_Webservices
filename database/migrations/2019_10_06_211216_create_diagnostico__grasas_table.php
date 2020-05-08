@@ -11,6 +11,7 @@ class CreateDiagnosticoGrasasTable extends Migration
      *
      * @return void
      */
+    //Metodo para agregar nuevas tablas
     public function up()
     {
         Schema::create('diagnostico_grasas', function (Blueprint $table) {
@@ -25,6 +26,7 @@ class CreateDiagnosticoGrasasTable extends Migration
      *
      * @return void
      */
+    //Metodo para borrar
     public function down()
     {
         Schema::dropIfExists('diagnostico_grasas');

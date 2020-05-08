@@ -9,6 +9,7 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+    //Metodo utilizado para la accion de los sub procesos
     public function run()
     {
         // $this->call(UsersTableSeeder::class);

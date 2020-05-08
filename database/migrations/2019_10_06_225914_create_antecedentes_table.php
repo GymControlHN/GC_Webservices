@@ -11,6 +11,7 @@ class CreateAntecedentesTable extends Migration
      *
      * @return void
      */
+    //Metodo para agregar nuevas tablas
     public function up()
     {
         Schema::create('antecedentes', function (Blueprint $table) {
@@ -39,6 +40,7 @@ class CreateAntecedentesTable extends Migration
      *
      * @return void
      */
+    //Metodo para borrar tablas
     public function down()
     {
         Schema::dropIfExists('antecedentes');

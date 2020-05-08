@@ -11,6 +11,7 @@ class CreateDiagnosticoRuffierTable extends Migration
      *
      * @return void
      */
+   // Metodo para  agregar  nuevas tablas
     public function up()
     {
         Schema::create('diagnostico_ruffier', function (Blueprint $table) {
@@ -25,6 +26,7 @@ class CreateDiagnosticoRuffierTable extends Migration
      *
      * @return void
      */
+    // Metodo para borrar tablas
     public function down()
     {
         Schema::dropIfExists('diagnostico_ruffier');

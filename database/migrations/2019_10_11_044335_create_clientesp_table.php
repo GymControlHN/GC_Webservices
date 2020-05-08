@@ -6,6 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateClientespTable extends Migration
 {
+    //Metodo para agregar nuevas tablas
     public function up()
     {
         Schema::create('clientesp', function (Blueprint $table) {
@@ -19,7 +20,7 @@ class CreateClientespTable extends Migration
             $table->timestamps();
         });
     }
-
+   // Metodo para borrar tablas
     public function down()
     {
         Schema::dropIfExists('clientesp');

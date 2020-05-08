@@ -154,7 +154,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
 
                         <th scope="col">MVO2</th>
                         <th scope="col">MVOReal</th>
-                        <th scope="col">Diagnóstico MVO2</th>
+                        <th scope="col">Diagnóstico: MVO2</th>
 
                         <th scope="col">Acciones</th>
 

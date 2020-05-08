@@ -11,6 +11,7 @@ class CreateRuffierTable extends Migration
      *
      * @return void
      */
+    //Metodo para agregar nuevas tablas
     public function up()
     {
         Schema::create('ruffier', function (Blueprint $table) {
@@ -36,6 +37,7 @@ class CreateRuffierTable extends Migration
      *
      * @return void
      */
+    //Metodo para borrar tablas
     public function down()
     {
         Schema::dropIfExists('ruffier');

@@ -10,7 +10,9 @@ class CreateUsersTable extends Migration
      * Run the migrations.
      *
      * @return void
+     * //
      */
+    //metodo para  agregar  nuevas tablas
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -28,6 +30,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
+    //metodo para eliminar tablas
     public function down()
     {
         Schema::dropIfExists('users');

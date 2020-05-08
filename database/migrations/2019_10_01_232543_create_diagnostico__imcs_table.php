@@ -11,6 +11,7 @@ class CreateDiagnosticoImcsTable extends Migration
      *
      * @return void
      */
+    //Metodo utilizado para agregar nuevas tablas
     public function up()
     {
         Schema::create('diagnostico_imcs', function (Blueprint $table) {
@@ -25,6 +26,7 @@ class CreateDiagnosticoImcsTable extends Migration
      *
      * @return void
      */
+    //Metodo utilizado para borrar tablas
     public function down()
     {
         Schema::dropIfExists('diagnostico_imcs');

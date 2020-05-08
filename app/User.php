@@ -5,6 +5,7 @@ namespace App;
 use App\Notifications\PasswordResetNotification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+// confirmacion de la contrasena
 
 class User extends Authenticatable
 {

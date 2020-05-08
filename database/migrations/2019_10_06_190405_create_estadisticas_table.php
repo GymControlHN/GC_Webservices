@@ -11,6 +11,7 @@ class CreateEstadisticasTable extends Migration
      *
      * @return void
      */
+    //Metodo para agregar nuevas tablas
     public function up()
     {
         Schema::create('estadisticas', function (Blueprint $table) {
@@ -28,6 +29,7 @@ class CreateEstadisticasTable extends Migration
      *
      * @return void
      */
+    //Metodo para borrar tablas
     public function down()
     {
         Schema::dropIfExists('estadisticas');

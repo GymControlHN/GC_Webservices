@@ -10,6 +10,7 @@ class DiagnosticoRuffierSeeder extends Seeder
      *
      * @return void
      */
+    //Metodo utilizado para la accion de los sub procesos
     public function run()
     {
         $diagnostico = new DiagnosticoRuffier();

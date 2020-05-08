@@ -11,6 +11,7 @@ class CreateTableClientesGym extends Migration
      *
      * @return void
      */
+    // Metodo para agregar nuevas tablas
     public function up()
     {
         Schema::create('clientes_gym', function (Blueprint $table){
@@ -37,6 +38,7 @@ class CreateTableClientesGym extends Migration
      *
      * @return void
      */
+    //Metodo para borrar tablas
     public function down()
     {
         Schema::dropIfExists('clientes_gym');

@@ -11,6 +11,7 @@ class CreateClientesTable extends Migration
      *
      * @return void
      */
+    //metodo para agregar nuevas tablas
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
@@ -29,6 +30,7 @@ class CreateClientesTable extends Migration
      *
      * @return void
      */
+    //Metodo para borrar tablas
     public function down()
     {
         Schema::dropIfExists('clientes');
