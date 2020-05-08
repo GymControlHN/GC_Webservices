@@ -25,15 +25,27 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="css/util.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+
     <!--===============================================================================================-->
+    <link href="{{asset("/vendor/bootstrap/css/bootstrap.min.css")}}" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="{{asset("/vendor/fontawesome-free/css/all.min.css")}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="{{asset("css/agency.min.css")}}" rel="stylesheet">
+    <link href="{{asset("/css/gym.css")}}" rel="stylesheet">
 </head>
-<body>
+<body id="page-top">
+
 
 <div class="limiter">
     <div class="container-login100" style="background-image: url('img/gym.jpg');">
         <div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-                    <strong>Gym Control</strong>
+                    <strong style="color: #c69500;font-size: 150%">Gym Control</strong>
 				</span>
             <form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
