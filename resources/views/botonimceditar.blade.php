@@ -38,7 +38,7 @@
 
             <!-- Codigo para mostrar la imagen en cada vista -->
 
-        <img src="/clientes_imagenes/{{$cliente->imagen}}" width="248px" height="260px" style="margin-left: -7%" >
+        <img src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="260px" style="margin-left: -7%" >
         <div class="card margencard" style=" border: none;" >
 
 
