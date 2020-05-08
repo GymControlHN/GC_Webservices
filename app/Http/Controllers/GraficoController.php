@@ -13,10 +13,9 @@ use Illuminate\Support\Facades\DB;
 
 class GraficoController extends Controller
 {
+    //mostrar el registro de la grafica por cada imc,rufier y grasa de cada cliente
     public function index($id)
     {
-
-
         $cliente = Cliente::findOrFail($id);
 
         $imc = Imc::select(DB::raw("COUNT(*) as count , imc"))

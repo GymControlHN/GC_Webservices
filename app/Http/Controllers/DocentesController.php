@@ -12,6 +12,7 @@ use App\Cliente;
 
 class DocentesController extends Controller
 {
+    //funcion para mostrar la vista de docentes
     public function index()
     {
         $clientes = Cliente::where("id_tipo_cliente", "=", "2")
@@ -21,24 +22,23 @@ class DocentesController extends Controller
         return view('docentes')->with('docentes', $clientes)->with('no', 1);
     }
 
+   //funcion para crear un nuevo  estudiante
     public function create()
 
     {
-
-
         return view('docentes');
     }
 
+    //funcion para habilitar la creacion de cada dato
     public function store(Request $request)
     {
-
+        // Validar los datos al momento de ingresarlos
         $this->validate($request, [
             'nombre' => 'required',
             'fecha_nacimiento' => 'required|max:' . date("Y-m-d", strtotime("-1825 days")),
             'identificacion' => 'required|unique:clientes_gym|max:99999|min:00000|numeric',
             'telefono' => 'required|unique:clientes_gym|max:99999999|numeric',
             'genero' => 'required',
-
 
         ]);
         if (strtoupper($request->input("genero")) === "F" || strtoupper($request->input("genero")) === "M") {
@@ -80,7 +80,7 @@ class DocentesController extends Controller
         }
     }
 
-
+    //funcion para editar los datos un docente
     public function edit($id)
     {
         $clientes = Cliente::findOrFail($id);
@@ -88,11 +88,12 @@ class DocentesController extends Controller
 
     }
 
+    //funcion para actualizar los datos editados
     public function update(Request $request)
     {
 
-        // Validar los datos
 
+        // Validar los datos actualizados
         $this->validate($request, [
             'identificacion' => 'required|max:99999|numeric|unique:clientes_gym,identificacion,' . $request->input("docente_id"),
             'telefono' => 'required|max:99999999|numeric|unique:clientes_gym,telefono,' . $request->input("docente_id") . '',
@@ -114,8 +115,8 @@ class DocentesController extends Controller
                     $imagen="young.png";
                 }
             }
-            // Buscar la instancia en la base de datos.
 
+            // Buscar la instancia en la base de datos.
 
             // Asignar los nuevos valores a los diferentes campos
             $docente = Cliente::findOrfail($request->input("docente_id"));
@@ -142,6 +143,7 @@ class DocentesController extends Controller
         }
     }
 
+    //funcion para eliminar los registros del docente
     public function destroy(Request $request)
     {
         $imc = Imc::where("id_cliente", "=", $request->input("id"));
@@ -166,6 +168,7 @@ class DocentesController extends Controller
 
     }
 
+    //funcion para la busqueda de un docente
     public function buscarDocente(Request $request)
     {
         $busquedaDocente = $request->input("busquedaDocente");

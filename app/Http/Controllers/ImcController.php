@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Session;
 class ImcController extends Controller
 {
   public  $alerta=0;
+
+    //funcion para mostrar la vista de imc
     public function index($id)
     {
          $antecedentes =
@@ -67,7 +69,7 @@ class ImcController extends Controller
 
 
 
-
+    //funcion para crear el calculo del imc de cada cliente
     public function create($id)
 
     {
@@ -79,6 +81,7 @@ class ImcController extends Controller
 
     }
 
+    //funcion para habilitar la creacion de cada dato
     public function store(Request $request)
 
     {
@@ -118,7 +121,7 @@ class ImcController extends Controller
 
   //  }
 
-
+    //funcion para editar los datos de imc
     public function edit($id,$id_cliente)
 
     {
@@ -160,7 +163,7 @@ class ImcController extends Controller
 
 
     }
-
+    //funcion para actualizar los datos editados
     public function update(Request $request, $id)
     {
 
@@ -185,6 +188,7 @@ class ImcController extends Controller
 
 
     }
+    //funcion para eliminar los registros de imc
     public function destroy(Request $request)
     {
         Imc::destroy($request->input("id"));

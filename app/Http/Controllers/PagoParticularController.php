@@ -9,6 +9,7 @@ use App\PagoClientesP;
 
 class PagoParticularController extends Controller
 {
+    //funcion para mostrar los pagos registrados de cada particular
     public function index($id){
         $pagos = PagoClientesP::where("tipo_pago","=","Pago_Particular")
             ->where("id_cliente","=",$id)
@@ -32,11 +33,14 @@ class PagoParticularController extends Controller
             ->with("nombre", $nombre)->with('no',1)->withIngresos($totalIngresoParticular);
     }
 
+    //funcion para crear un nuevo pago
     public function create()
     {
         return view('pagosparticulares');
     }
 
+    //funcion para habilitar la creacion de cada dato
+    // y verificar que la fecha de pago no sea igual a una que ya esta
     public function store(Request $request)
     {
 
@@ -68,11 +72,13 @@ class PagoParticularController extends Controller
 
     }
 
+    //funcion para mostrar un pago de un estudiante
     public function show(PagoClientesP $pagoClientes)
     {
 
     }
 
+    //funcion para editar un pago
     public function edit($id)
     {
         $pagos = PagoClientesP::findOrFail($id);
@@ -80,6 +86,7 @@ class PagoParticularController extends Controller
 
     }
 
+    //funcion para actualizar  un pago editado
     public function update(Request $request)
     {
         $this->validate($request, [
@@ -97,6 +104,7 @@ class PagoParticularController extends Controller
     }
 
 
+    //funcion para borrar los pagos registrados de un particular
     public function destroy(Request $request)
     {
         PagoClientesP::destroy($request->input("id"));

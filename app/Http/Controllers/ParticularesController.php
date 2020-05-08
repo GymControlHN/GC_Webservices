@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class ParticularesController extends Controller
 {
+    //funcion para mostrar la vista de particulares
     public function index () {
         $clientes = Cliente::where("id_tipo_cliente","=",3)
             ->paginate(10);
@@ -27,11 +28,14 @@ class ParticularesController extends Controller
 
     }
 
+    //funcion para crear un nuevo  particular
     public function create() {
         return view('particulares');
     }
 
+    //funcion para habilitar la creacion de cada dato
     public function store(Request $request) {
+        // Validar los datos al momento de ingresarlos
         $this -> validate ( $request ,[
             'nombre'=>'required',
             'fecha_nacimiento'=>'required|max:'.date("Y-m-d",strtotime("-1825 days")),
@@ -77,15 +81,18 @@ class ParticularesController extends Controller
         }
     }
 
-
+    //funcion para editar los datos un particular
     public function edit($id) {
         $clientes = Cliente::findOrFail($id);
         return view('particulares')->with('particulares',$clientes);
 
     }
 
+    //funcion para actualizar los datos editados
     public function update(Request $request) {
 
+
+        // Validar los datos actualizados
         $this -> validate ( $request ,[
             'identificacion'=>'required|max:9999999999999|unique:clientes_gym,identificacion,'.$request->input("particular_id").'|numeric',
             'telefono'=>'required|max:99999999|unique:clientes_gym,telefono,'.$request->input("particular_id").'|numeric',
@@ -136,6 +143,7 @@ class ParticularesController extends Controller
         }
     }
 
+    //funcion para eliminar los registros del particular
     public function destroy(Request $request)
     {
 
@@ -162,7 +170,7 @@ class ParticularesController extends Controller
         }
 
     }
-
+    //funcion para la busqueda de un particular
     public function buscarParticular(Request $request){
         $busquedaPartarticular = $request->input("busquedaParticular");
 

@@ -12,6 +12,7 @@ use App\Cliente;
 
 class EstadisticasController extends Controller
 {
+    //funcion para mostrar los clientes en general(estudiantes,docentes y particulares)
     public function index()
     {
         $clientes = Cliente::join("tipo_clientes",
@@ -58,12 +59,14 @@ class EstadisticasController extends Controller
 
     }
 
+
     public function create()
     {
 
         return view('estadisticas');
     }
 
+    //funcion para mostrar los pagos de los clientes
     public  function  show($id){
         $cliente = Cliente::findOrfail($id);
 
@@ -110,6 +113,8 @@ class EstadisticasController extends Controller
            ->with('no2',1)->with('no3',1)->with('no4',1);
     }
 
+
+    //funcion para buscar los clientes en general
     public function buscarCliente(Request $request){
         $busquedaCliente = $request->input("busquedaCliente");
 

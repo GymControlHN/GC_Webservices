@@ -15,6 +15,8 @@ class RuffierController extends Controller
 {
     //
     public  $alerta=0;
+
+    //funcion para mostrar la vista de ruffier
     public function index($id)
     {
         $datos = Ruffier ::join("diagnostico_ruffier","ruffier.id_diagnostico","=","diagnostico_ruffier.id")
@@ -55,6 +57,7 @@ class RuffierController extends Controller
 
     }
 
+    //funcion para crear el calculo de ruffier de cada cliente
     public function create($id)
     {
 
@@ -65,6 +68,7 @@ class RuffierController extends Controller
 
     }
 
+    //funcion para habilitar la creacion de cada dato
     public function store(Request $request)
     {
 
@@ -94,7 +98,7 @@ class RuffierController extends Controller
        {
 
        }*/
-
+    //funcion para editar los datos de ruffier
     public function edit($id,$id_cliente)
     {
 
@@ -105,6 +109,7 @@ class RuffierController extends Controller
 
     }
 
+    //funcion para actualizar los datos editados
     public function update(Request $request, $id)
     {
 
@@ -133,6 +138,7 @@ class RuffierController extends Controller
 
     }
 
+    //funcion para eliminar los registros de ruffier
     public function destroy(Request $request)
     {
         Ruffier::destroy($request->input("id"));

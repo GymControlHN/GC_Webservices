@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class PagoEstudianteController extends Controller
 {
+    //funcion para mostrar los pagos registrados de cada estudiante
     public function index($id)
     {
         $pagos = PagoClientesP::where("tipo_pago", "=", "Pago_Estudiante")
@@ -33,11 +34,14 @@ class PagoEstudianteController extends Controller
             ->with("nombre", $nombre)->with('no',1)->withIngresos($totalIngresoEstudiante);
     }
 
+    //funcion para crear un nuevo pago
     public function create()
     {
         return view('pagosestudiantes');
     }
 
+    //funcion para habilitar la creacion de cada dato
+    // y verificar que la fecha de pago no sea igual a una que ya esta
     public function store(Request $request)
     {
 
@@ -66,12 +70,13 @@ class PagoEstudianteController extends Controller
         }
     }
 
+    //funcion para mostrar un pago de un estudiante
     public function show(PagoClientesP $pagoClientes)
     {
 
     }
 
-
+    //funcion para editar un pago
     public function edit($id)
     {
         $pagos = PagoClientesP::findOrFail($id);
@@ -79,6 +84,7 @@ class PagoEstudianteController extends Controller
 
     }
 
+    //funcion para actualizar  un pago editado
     public function update(Request $request)
     {
         $this->validate($request, [
@@ -97,6 +103,7 @@ class PagoEstudianteController extends Controller
 
     }
 
+   //funcion para borrar los pagos registrados de un estudiante
     public function destroy(Request $request)
     {
 

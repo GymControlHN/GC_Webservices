@@ -15,6 +15,7 @@ use mysql_xdevapi\Session;
 
 class  EstudiantesController extends Controller
 {
+    //funcion para mostrar la vista de estudiantes
     public function index()
     {
         $clientes = Cliente::where("id_tipo_cliente","=","1")
@@ -37,14 +38,17 @@ class  EstudiantesController extends Controller
             ->withIngresos($totalIngresos);
     }
 
+    //funcion para crear un nuevo  estudiante
     public function create($id)
     {
         $now = Carbon::now();
         return view('estudiantes')->with("id", $id)->with("now", $now);
     }
 
+   //funcion para habilitar la creacion de cada dato
     public function store(Request $request)
     {
+        // Validar los datos al momento de ingresarlos
       $this->validate($request,[
           'identificacion'=>'required|unique:clientes_gym|max:99999999999|numeric',
          'telefono'=>'required|unique:clientes_gym|max:99999999|numeric',
@@ -105,6 +109,7 @@ class  EstudiantesController extends Controller
 
     }
 
+    //funcion para editar los datos un estudiante
     public function edit($id)
     {
         $estudiante = Cliente::where("id",$id)->where("id_tipo_cliente","=",1);
@@ -112,10 +117,13 @@ class  EstudiantesController extends Controller
 
     }
 
+    //funcion para actualizar los datos editados
     public function update(Request $request)
     {
 
 
+
+        // Validar los datos actualizados
         $this->validate($request, [
             'identificacion' => 'required|max:99999999999|numeric|unique:clientes_gym,identificacion,' . $request->input("estudiante_id") ,
             'telefono' => 'required|max:99999999|numeric|unique:clientes_gym,telefono,' . $request->input("estudiante_id") . '',
@@ -171,7 +179,7 @@ class  EstudiantesController extends Controller
             }
         }
 
-
+    //funcion para eliminar los registros del estudiante
     public function destroy(Request $request)
     {
         $imc=Imc::where("id_cliente","=",$request->input("id"));
@@ -197,6 +205,7 @@ class  EstudiantesController extends Controller
 
     }
 
+    //funcion para la busqueda de un estudiante
     public function buscarEstudiante(Request $request){
         $busquedaEstudiante = $request->input("busquedaEstudiante");
 

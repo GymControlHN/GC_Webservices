@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\DB;
 class GrasaController extends Controller
 {
     public  $alerta=0;
+    //funcion para mostrar la vista de grasa corporal
     public function index($id)
     {
 
@@ -60,18 +61,12 @@ class GrasaController extends Controller
 
 
         return view('grasa', compact("grasa_corporal", "chart"))->with("nombre", $nombre)->with('no', 1)->withExito(null)->withError(null);
-
-
     }
 
 
+    //funcion para crear el calculo de la grasa corporal de cada cliente
     public function create($id)
-
     {
-
-
-
-
 
         $now = Carbon::now();
         $nombre = Cliente::find($id);
@@ -80,11 +75,9 @@ class GrasaController extends Controller
 
     }
 
-
+    //funcion para habilitar la creacion de cada dato
     public function store(Request $request)
     {
-
-
         $nuevoMedida = new Grasa();
 
         $nuevoMedida->pc_tricipital = $request->input('pc_tricipital');
@@ -102,6 +95,7 @@ class GrasaController extends Controller
 
     }
 
+    //funcion para editar los datos de grasa corporal
     public function edit($id_cliente,$id)
 
     {
@@ -113,6 +107,7 @@ class GrasaController extends Controller
 
     }
 
+    //funcion para actualizar los datos editados
     public function update(request $request, $id)
     {
         /* $this -> validate ( $request ,[
@@ -141,6 +136,8 @@ class GrasaController extends Controller
         return $this->index($request->input("id_cliente"));
     }
 
+
+    //funcion para eliminar los registros de grasa corporal
     public function destroy(Request $request)
     {
         Grasa::destroy($request->input("id"));

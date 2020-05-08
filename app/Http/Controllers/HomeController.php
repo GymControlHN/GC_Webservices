@@ -23,6 +23,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //funcion para mostrar los totales de estudiantes,particulares,docentes y pagos en las card de
+    //la vista de inicio
     public function index()
     {
         $totalEstudiantes= Cliente::where("id_tipo_cliente","=",1)->count();
