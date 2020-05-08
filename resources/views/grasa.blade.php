@@ -104,7 +104,7 @@
         <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Medidas Antropometricas</a>
         <a class="btn btn-primary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
-            <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}"> Gráfico</a>
+            <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}">Grafico</a>
 
     </div>
 
@@ -241,7 +241,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
     {!! $chart->script() !!}
-
+    </div>
 
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarGrasa">
         <div class="modal-dialog" role="document">

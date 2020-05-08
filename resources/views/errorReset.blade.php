@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <!-- Codigo para alertar si la contrase;a de inicio de sesion esta mal -->
     <div class="nav side-menu">
         <div class="row justify-content-center">
             <div class="col-md-8">

@@ -1,11 +1,12 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- MOSTRAR EL FONDO DE LA IMAGEN EN  LA PARTE SUPERIOR DE CADA VISTA -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
         </div>
     </header>
+    <!-- COdigo para diferenciar el pago de estudiante, docente y particulares -->
     @if($nombre->id_tipo_cliente==1)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
@@ -37,7 +38,7 @@
         </nav>
 
     @endif
-
+    <!-- codigo para diferenciar el id de cada cliente  -->
     <div class="container-xl clearfix px-2 mt-4">
         <div id="divPerfil" class=" perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 mt-lg-3 pr-xl-6 ml-lg-4">
             <div class="card-header" style="background: #8addff;margin-left: -7%;margin-right: -7%;text-align: center">
@@ -52,11 +53,11 @@
                 <h7 style="margin-left: 1%">Expediente Docente</h7>
             @endif
             </div>
-
+            <!--codigo para mostrar la imagen de cada cliente -->
             <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px"
                  height="260px" style="margin-left: -7%" >
             <div class="card margencard" style=" border: none;" >
-
+                <!-- codigo para mostrar el nombre de cada cliente -->
                 <div >
                     <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
 
@@ -74,7 +75,7 @@
 
             </div>
     </div>
-
+        <!-- codigo para mostrar el menu -->
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         <a class="btn btn-primary btn-sm  " href="{{route("pagoestudiantes",["id"=>$nombre->id])}}">Pagos</a>
         <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Medidas AntroPometricas</a>
@@ -103,7 +104,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-
+                    <!-- modal para guardar los pagos -->
 
                     <div class="modal-body">
                         <form method="post" action="{{route('pagoestudiantes.guardar')}}">
@@ -144,7 +145,7 @@
         <div class="w3-container w3-teal mx-5">
             <div class="collapse" id="cardCollapses">
                 <div class="row" >
-
+                    <!-- imagen para los pagos ingresado por ese cliente -->
                     <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px;margin-bottom: 2%;margin-left: -1%">
                         <div class="card card-style">
                             <div class="card-header">
@@ -162,7 +163,7 @@
             <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
-
+                <!-- alerta de exito o error -->
                 <div class="table-responsive" >
                     @if(session("exito"))
                         <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-left: 0%; margin-right: 0%;" >
@@ -187,7 +188,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                     @endif
 
-
+                    <!-- editar los datos agregados -->
                         <div class="modal fade" id="editarPagoEstudiante" tabindex="-1" role="dialog"
                              aria-labelledby="exampleModalScrollableTitle" >
                             <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -246,6 +247,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
                         <table class="table table-hover" style="font-size: 14px" >
+                            <!-- creacion de la tabla -->
 
                         <thead class="thead-dark">
             <tr>
@@ -303,6 +305,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
         </div>
 
     </div>
+            <!-- Modal para alerta de borrar pagos -->
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarPagoEstudiante">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

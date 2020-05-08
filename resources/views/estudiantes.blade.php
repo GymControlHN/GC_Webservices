@@ -1,7 +1,7 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- codigo para la parte superior del fondo de la imagen en todas las vistas -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <!--div class="intro-text">
@@ -17,7 +17,7 @@
 
         <h2 class=" mt-3">Listado de Estudiantes</h2>
 
-
+        <!-- Codigo para crear una un estudiante -->
         <button type="button" class="btn btn-primary float-right boton1" style="margin-left: 1%" id="crearNuevo" data-toggle="modal"
                 data-target="#exampleModalScrollable">
             <i class="fas fa-user-plus"></i>
@@ -30,6 +30,8 @@
                 data-toggle="modal" data-target="#exampleModalScrollable">
 
         </button-->
+
+        <!-- Codigo para condicionar si se creo bien o dar un error  -->
         @if(session("errors"))
             <script>
                 document.onreadystatechange = function () {
@@ -59,6 +61,7 @@
 
         </script>
         @endsection
+    <!-- Function pata limpiar los campos -->
         <script>
             function limpiarDatosModal() {
                 document.getElementById("nombre").value = '';
@@ -73,6 +76,8 @@
 
             }
         </script>
+
+
         <div class="modal fade  bd-example-modal-lg" id="exampleModalScrollable" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -84,6 +89,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                    <!-- metodo para guardar un estudiante -->
                     <div class="modal-body">
 
                         <form method="post" action="{{route('estudiante.guardar')}}" name="f2"
@@ -288,7 +294,7 @@
             </div>
         </div>
 
-
+        <!-- codigo para buscar los estudiantes -->
         <form class="form-inline" method="get" action="{{route('estudiante.buscarEstudiante')}}">
 
 
@@ -310,7 +316,7 @@
 
         <div class="collapse" id="cardCollapses">
             <div class="row" >
-
+                <!-- codigo para sumar los ingresos ingresos totales en dinero -->
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px;margin-bottom: 2%">
                     <div class="card card-style">
                         <div class="card-header">
@@ -356,7 +362,7 @@
 
             </script>
         @endif
-
+    <!-- modal para editar  -->
         <div class="modal fade  bd-example-modal-lg" id="editarEstudiante" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle">
             <div class="modal-dialog modal-lg" role="document">
@@ -369,7 +375,7 @@
                     </div>
                     <div class="modal-body">
 
-
+                        <!-- metodo y ruta para editar. -->
                         <form method="post" action="{{route('estudiante.update')}}" enctype="multipart/form-data">
                             <input type="hidden" name="estudiante_id" id="id" value="">
 
@@ -554,7 +560,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            <!-- boton para guardar y cerrar -->
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit" class="btn btn-primary">Guardar</button>

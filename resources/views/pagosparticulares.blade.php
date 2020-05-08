@@ -1,11 +1,13 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- MOSTRAR EL FONDO DE LA IMAGEN EN  LA PARTE SUPERIOR DE CADA VISTA -->
+
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
         </div>
     </header>
+    <!-- COdigo para diferenciar el pago de estudiante, docente y particulares -->
     @if($nombre->id_tipo_cliente==1)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
@@ -37,6 +39,8 @@
         </nav>
 
     @endif
+    <!-- codigo para diferenciar el id de cada cliente  -->
+
     <div class="container-xl clearfix px-2 mt-4">
         <div class="perfil col-md-1 col-md-2 col-12 card float-md-left mr-5 pr-md-8  mt-lg-3 pr-xl-6 ml-lg-4">
             <div class="card-header" style="background: #8addff;margin-left: -7%;margin-right: -7%;text-align: center"">
@@ -51,6 +55,7 @@
                     <h7 style="margin-left: 1%">Expediente Docente</h7>
                 @endif
             </div>
+        <!--codigo para mostrar la imagen de cada cliente -->
 
             <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px" style="margin-left: -7%">
             <div class="card margencard" style=" border: none;" >
@@ -77,7 +82,7 @@
                 </div>
     </div>
 
-
+    <!-- codigo para mostrar el nombre de cada cliente -->
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
         <a class="btn btn-primary btn-sm" @if($nombre->id_tipo_cliente!==1)
@@ -85,7 +90,9 @@
            @else
            href="{{route("pagoestudiantes",["id"=>$nombre->id])}}" @endif >Pagos</a>
 
-        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Medidas Antropometicas</a>
+            <!-- codigo para mostrar el menu -->
+
+            <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">Medidas Antropometicas</a>
         <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
         <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$nombre->id])}}"> Gráfico</a>
@@ -97,6 +104,7 @@
     <button class="btn btn-primary   float-right mt-sm-3" style="margin-top: -10px; margin-right: 50px"
             data-toggle="modal" data-target="#modalPagoParticular" >Nuevo
     </button>
+    <!-- modal para guardar los pagos -->
 
         <button class="btn btn-outline-dark mb-3" style="float: right; margin-top: 1%;margin-right: 1%;
                      padding-top: -2%;padding-bottom: -8%"
@@ -152,7 +160,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px;margin-bottom: 2%;margin-left: -1%">
                         <div class="card card-style">
                             <div class="card-header">
-
+                                <!-- imagen para los pagos ingresado por ese cliente -->
                                 <img src="/images/pago.png" width="40px" style="margin-left: 42%">
                                 <br>
                                 <h6 class="text-center">Total Pagos</h6>
@@ -170,7 +178,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                 <div class="table-responsive" >
 
-
+                    <!-- alerta de exito o error -->
 
                     @if(session("exito"))
                         <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin-left: 0%; margin-right: 0%;">
@@ -194,6 +202,8 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         </div>
 
                     @endif
+
+                    <!-- editar los datos agregados -->
                         <div class="modal fade" id="editarPagoParticular" tabindex="-1" role="dialog"
                              aria-labelledby="exampleModalScrollableTitle" >
                             <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -247,6 +257,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
                     <table class="table  table-hover " style="font-size: 14px">
+                        <!-- creacion de la tabla -->
 
                         <thead class="thead-dark">
                         <tr>
@@ -305,7 +316,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
             </div>
 
         </div>
-
+    <!-- Modal para alerta de borrar pagos -->
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarPagoParticular">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

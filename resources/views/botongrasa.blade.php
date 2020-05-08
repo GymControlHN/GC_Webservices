@@ -1,7 +1,7 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- Codigo para mostrar el fondo del proyecto en parte superior de la vista -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
@@ -9,6 +9,8 @@
             </div>
         </div>
     </header>
+
+    <!-- codigo para retornar de acuardo el id de cada cliente -->
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
@@ -31,8 +33,11 @@
         @endif
             </div>
 
+            <!-- Codigo para mostrar la imagen en cada vista -->
+
             <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px" style="margin-left: -7%" >
             <div class="card margencard" style=" border: none;" >
+
 
                 <div >
 
@@ -47,7 +52,7 @@
 
     </div>
 
-
+        <!-- Codigo para mostrar el menu de expediente -->
     <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
 
         @if($nombre->id_tipo_cliente==3||$nombre->id_tipo_cliente==1)
@@ -74,7 +79,9 @@
 
     <input id="sexo" value="{{$nombre->genero}}" type="hidden">
 
-    <html>
+        <!-- Codigo para la funcion logica de los formularios -->
+
+        <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
         <title>FORMULARIO PESO IDEAL</title>
@@ -155,6 +162,7 @@
 
 
 
+    <!-- Metodo para guaradar  -->
 
 
         <form name="f1" id="f1"
@@ -169,7 +177,7 @@
             <div class="margeneditar" >
             <h5 class="label2" style="margin-left: 8%; margin-top: -1%">Calculo de la grasa corporal</h5>
 
-
+                <!-- Formulario para ingresar datos -->
 
 
             <div class="form-row">
@@ -232,7 +240,7 @@
 
 
 
-
+                <!--Botonones para guardar y cancelar  -->
             <div class="container2">
 
 

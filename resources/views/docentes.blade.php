@@ -1,7 +1,8 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- Codigo para ver el fonde la imagen del proyecto en la parte superior de la vista -->
+
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
         </div>
@@ -13,6 +14,7 @@
             <h2 class=" mt-3">Listado de Docentes</h2>
 
 
+        <!-- codigo para crear un nuevo docente -->
 
 
             <button type="button" class="btn btn-primary float-right boton1" id="crearNuevo" data-toggle="modal" data-target="#exampleModalScrollable">
@@ -34,7 +36,9 @@
 
             </script>
         @endif
-        @section("script")
+    <!-- funcion para cargar la imagen -->
+
+    @section("script")
         <script>
             $('#imageUpload').change(function() {
                 readImgUrlAndPreview(this);
@@ -51,6 +55,7 @@
             });
         </script>
         @endsection
+    <!--  limpiar-->
         <script>
             function limpiarDatosModal() {
                 document.getElementById("nombre").value='';
@@ -82,7 +87,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-
+                        <!-- Guardar datos del docente -->
                         <div class="modal-body">
                             <form method="post" action="{{route('docente.guardar')}}"name="f2"
                             enctype="multipart/form-data">
@@ -104,7 +109,7 @@
                                         @endif
                                     </div>
                             </div>
-
+                                        <!-- Codificacion para la validación del cada campo del modal -->
                                         <div class="row" style="height: 20%;margin: 0px;">
                                     <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} " style="width: 90%">
                                         <h6>Número de Empleado</h6>
@@ -267,7 +272,7 @@
                 </div>
             </div>
 
-
+        <!--Codificacion para la busqueda de los clientes  -->
         <form class="form-inline" method="get" action="{{route('docente.buscarDocente')}}">
 
             <div class="input-group mb-3 mr-2">
@@ -284,7 +289,7 @@
             </div>
             <button type="submit" class="btn btn-primary mb-3 ">Buscar</button>
         </form>
-
+        <!-- codigo de la alerta de registro con exito -->
         @if(session("exito"))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <button type="button"  class="close" data-dismiss="alert" aria-label="Close">
@@ -330,7 +335,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-
+                    <!--  metodo para editar-->
                     <div class="modal-body">
 
                         <form method="post" action="{{route('docente.update')}}"  enctype="multipart/form-data">
@@ -340,7 +345,7 @@
 
                             <div class="row" style="width:100%;height: 100%;color: black;margin: 0px;">
                                 <div class="col" style="text-align: start;padding: 10px;">
-
+                                    <!-- codigo para validar los campos en editar y poner los errores -->
                                     <div class="row" style="height: 20%;margin: 0px;">
                                 <div class="form-group{{ $errors->has('nombre') ? ' has-error' : '' }} " style="width: 90%">
                             <h6>Nombre Completo</h6>
@@ -523,6 +528,8 @@
                                 </div>
                             </div>
 
+                            <!-- bonotes para guardar y cerrar -->
+
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                                 <button type="submit"  class="btn btn-primary">Guardar</button>
@@ -535,7 +542,7 @@
             </div>
         </div>
 
-
+        <!-- Creacion de la tabla  -->
 
         <div class="table-responsive " style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
@@ -554,6 +561,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 </tr>
                 </thead>
 
+
                 <tbody>
                 @if($docentes->count()>0)
                     @foreach($docentes as $docente)
@@ -570,13 +578,13 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <div  style="overflow: auto"></div>
 
                     <td class="form-inline">
-
+                        <!-- Editar los datos de docentes -->
                         <button class="btn btn-outline-warning mr-2" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myfecha_nacimiento="{{$docente->fecha_nacimiento}}"
                                 data-mynumero="{{$docente->identificacion}}"
                                 data-imagen="{{$docente->imagen}}"
                                 data-myfecha="{{$docente->fecha_de_ingreso}}" data-myprofesion="{{$docente->profesion_u_oficio}}"
                                 data-mytelefono="{{$docente->telefono}}" data-catid="{{$docente->id}}" data-sexo="{{$docente->genero}}"><i class="fas fa-edit"></i></button>
-
+                        <!--Borrar docente  -->
                         <button class="btn btn-outline-danger mr-xl-2 "
                                 data-id="{{$docente->id}}"
                                 data-nombre="{{$docente->nombre}}"
@@ -609,19 +617,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     {{ $docentes->links() }}
                 </div>
             @endif
-            <!--nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-end">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Siguiente</a>
-                    </li>
-                </ul>
-            </nav-->
+
     </div>
 </div>
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarDocente">

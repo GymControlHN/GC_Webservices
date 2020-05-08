@@ -2,13 +2,16 @@
 
 @section("content")
 
-    <!-- Header -->
+
+    <!-- codigo para la parte superior del fondo de la imagen en todas las vistas -->
+
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
             </div>
         </div>
     </header>
+    <!-- codigo para seleccionar el graficon de cada cliente por el id -->
     @if($cliente->id_tipo_cliente==1)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
@@ -57,6 +60,7 @@
 
 
    </div>
+            <!-- Codigo para ver la imagen en cada grafico -->
             <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="260px"
                  style="margin-left: -7%">
 
@@ -77,7 +81,7 @@
                 </div>
 
     </div>
-
+        <!-- codigo para diferenciar los pagos en la barra del menu -->
     <div class="btn-group mt-3 mb-5 " role="group" aria-label="Button group with nested dropdown" >
 
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
@@ -96,12 +100,14 @@
 
 
         @endif
+        <!-- barra del menu en expediente -->
         <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a>
         <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
         <a class="btn btn-primary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}">Gráfico</a>
 
     </div>
+        <!-- codigo de los graficos -->
         <div class="w3-container mt-lg-2" style="margin-top: 2%; margin-left: 25%;
          margin-right: 5%">
             {!! $chart->container() !!}

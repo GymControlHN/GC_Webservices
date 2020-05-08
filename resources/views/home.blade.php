@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+    <!--LETRAS DE PRESENTACION  -->
     <div class=" fondo2" style="font-family: 'Raleway', sans-serif">
         <div class="intro-lead-in text-center ">Bienvenido al control del gimnasio</div>
         <div class="intro-heading text-uppercase text-center ">UNAH-TEC Danli</div>
@@ -12,7 +12,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 10px">
                     <div class="card card-style" style="background: #f5f5f5 ">
                         <div class="card-header">
-
+                            <!-- CONTEO DE LOS INGRESO ESTUDIANTES, DOCENTESN Y PARTICULARES -->
                             <img src="/images/estudiante.svg" width="80px" style="margin-left:30%">
                             <br>
                             <h5 class="text-center">Total Estudiantes </h5>
@@ -62,7 +62,7 @@
         </div>
 
 
-        <!-- Modal -->
+        <!-- Modal DEL PESO IDEAL -->
         <div class="modal fade" id="modalPruebaRapida" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -111,6 +111,7 @@
 
 
     </div>
+        <!--FUNCIONES DEL MODAL DEL PESO IDEAL COMO LIMPIAR,CALCULAR Y CONDICIONAR  -->
         <script>
             function limpiarDatosModal() {
                 var femeninoRB = document.getElementById("femeninoRB").checked =false;

@@ -1,7 +1,7 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- Codigo del fondo de la imagen en la parte superior de la imagen  -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
         </div>
@@ -14,6 +14,7 @@
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
         <h2 class=" mt-3">Listado de todos los clientes</h2>
 
+        <!-- Codigo de la busqueda de los clientes en general -->
         <button class="btn btn-outline-dark mb-3" style="float: right"
                 data-toggle="collapse" href="#cardCollapses" data-target="#cardCollapses"><span><i class="fas fa-arrow-down"></i></span></button>
 
@@ -36,7 +37,7 @@
             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
         </form>
 
-
+        <!-- Codigo de la agrupacion de los clientes segun su estado de peso -->
         <div class="collapse" id="cardCollapses">
             <div class="row" >
 
@@ -130,6 +131,7 @@
 
             </div>
         </div>
+        <!-- Codigo de la creacion de la tabla de los clientes en general -->
         <div class="table-responsive mt-4" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             <table class="table ruler-vertical table-hover mx-sm-0 ">

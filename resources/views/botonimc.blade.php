@@ -1,7 +1,7 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- Codigo para ver el fonde la imagen del proyecto en la parte superior de la vista -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
@@ -9,7 +9,8 @@
             </div>
         </div>
     </header>
-    <!-- Header --> <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
+    <!-- codigo para retornar de acuerdo el id de cada cliente en este caso -->
+    <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
             <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a></li>
@@ -33,7 +34,7 @@
             </div>
 
 
-
+            <!-- Codigo para mostrar la imagen en cada vista -->
             <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="260px"
                   style="margin-left: -7%">
             <div class="card margencard" style=" border: none;" >
@@ -60,7 +61,7 @@
         <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
 
         </div>
-
+        <!-- Codigo para mostrar el menu de expediente -->
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
 
 
@@ -82,7 +83,7 @@
 
 
         </div>
-
+        <!-- Codigo para la funcion logica de los formularios -->
         <script type="text/javascript">function calcularIMC() {
                     peso = document.getElementById("peso").value;
                     altura = document.getElementById("altura").value / 100;
@@ -126,7 +127,7 @@
                 }</script>
 
 
-
+        <!-- Metodo para guardar-->
         <form name="f1" id="f1"
               style="font-family: 'Montserrat', -apple-system,
            BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
@@ -134,7 +135,7 @@
               method="POST" action="{{route('imc.guardar')}}">
             {{csrf_field()}}
 
-
+            <!-- Formulario para ingresar datos -->
             <div class="margeneditar">
                 <h5 class="label2" style="margin-left: 8%; margin-top: -1%">Agregar medidas antropometricas</h5>
                 <div class="form-row mt-4" >
@@ -204,7 +205,7 @@
             <input name="id" value="{{$id}}" type="hidden">
             <div class="container2">
 
-
+                <!--Botonones para guardar y cancelar  -->
                 <a class="btn btn-primary boton" style="margin-left: 29%"
                    href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
 

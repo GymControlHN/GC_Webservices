@@ -1,7 +1,8 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- Codigo para ver el fonde la imagen del proyecto en la parte superior de la vista -->
+
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
         </div>
@@ -13,7 +14,7 @@
             <h2 class=" mt-3">Listado de Particulares</h2>
 
 
-
+        <!-- codigo para crear un nuevo docente -->
 
             <button type="button" class="btn btn-primary float-right boton1" style="margin-left: 1%" id="crearNuevo" data-toggle="modal" data-target="#exampleModalScrollable">
                 <i class="fas fa-user-plus"></i>
@@ -38,6 +39,7 @@
             </script>
         @endif
         @section("script")
+        <!-- funcion para cargar la imagen -->
         <script>
             $('#imageUpload').change(function() {
                 readImgUrlAndPreview(this);
@@ -54,7 +56,9 @@
             });
         </script>
         @endsection
+    <!--  limpiar los campos-->
         <script>
+
             function limpiarDatosModal() {
                 document.getElementById("nombre").value='';
                 document.getElementById("fecha_nacimiento").value='';
@@ -83,6 +87,7 @@
 
 
                         <div class="modal-body">
+                            <!-- Guardar datos del particulares -->
 
                             <form method="post" action="{{route('particular.guardar')}}" name="f2"
                                   enctype="multipart/form-data">
@@ -104,6 +109,7 @@
                                         @endif
                                 </div>
                                 </div>
+                                        <!-- Codificacion para la validación del cada campo del modal -->
 
 
                                         <div class="row" style="height: 20%;margin: 0px;">
@@ -265,6 +271,7 @@
             </div>
 
 
+        <!--Codificacion para la busqueda de los clientes  -->
 
 
         <form class="form-inline" method="get" action="{{route('particular.buscarParticular')}}">
@@ -292,6 +299,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 card-efect" style="margin-top: 5px; margin-bottom: 2%">
                     <div class="card card-style">
                         <div class="card-header">
+                            <!-- imagen del pago que sumara cada ingreso de los particulares -->
 
                             <img src="/images/pago.png" width="40px" style="margin-left: 42%">
                             <br>
@@ -305,6 +313,7 @@
             </div>
         </div>
 
+        <!-- codigo de la alerta de registro con exito -->
 
         @if(session("exito"))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -350,7 +359,7 @@
                     </div>
 
 
-
+                    <!--  metodo para editar-->
                     <div class="modal-body ">
 
                         <form method="post" action="{{route('particular.update')}}" enctype="multipart/form-data">
@@ -533,7 +542,7 @@
                                 </div>
                             </div>
 
-
+                            <!-- Metodo para guardar y cerrar -->
 
 
 
@@ -552,7 +561,7 @@
 
 
 
-
+        <!-- Creacion de la tabla  -->
 
 
 
@@ -599,7 +608,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                             {{ csrf_field() }}
                         </form>
 
-
+                        <!-- Editar los datos de particular -->
                         <button class="btn btn-outline-warning mr-xl-2" data-toggle="modal"
                                 data-target="#editarParticular"
                                 data-mynombre="{{$particular->nombre}}" data-myfecha_nacimiento="{{$particular->fecha_nacimiento}}"
@@ -610,7 +619,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                 data-myprofesion="{{$particular->profesion_u_oficio}}"
                                 data-imagen="{{$particular->imagen}}"
                                 data-id="{{$particular->id}}"><i class="fas fa-edit"></i></button>
-
+                        <!--Borrar particular  -->
                         <button class="btn btn-outline-danger  mr-xl-2 "
                                 data-id="{{$particular->id}}"
                                 data-nombre="{{$particular->nombre}}"

@@ -1,7 +1,7 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- Codigo para ver el fonde la imagen del proyecto en la parte superior de la vista -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
@@ -9,6 +9,7 @@
             </div>
         </div>
     </header>
+    <!-- codigo para retornar de acuerdo el id de cada cliente en este caso -->
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
@@ -31,7 +32,7 @@
         @endif
 
 </div>
-
+            <!-- Codigo para mostrar la imagen en cada vista -->
             <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px"
                  style="margin-left: -7%">
             <div class="card margencard" style=" border: none;">
@@ -47,6 +48,7 @@
             <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
 
             </div>
+        <!-- Codigo para mostrar el menu de expediente -->
 
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group"
              aria-label="Button group with nested dropdown">
@@ -79,6 +81,9 @@
                     calcularGrasa();
                 }
             };
+
+            <!-- Codigo para la funcion logica de los formularios -->
+
 
             function calcularGrasa() {
                 pc_tricipital = document.getElementById("pc_tricipital").value;
@@ -140,7 +145,7 @@
 
 
         <input id="sexo" value="{{$nombre->genero}}" type="hidden">
-
+        <!-- Metodo para guardar lo editado  -->
         <form name="id_imc" id="id_imc"
               style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
               method="post"
@@ -152,6 +157,7 @@
 
 
             <h5 style="margin-top: -1%;">Editar medidas de la grasa corporal</h5>
+            <!-- Formulario para ingresar datos -->
 
 
             <div class="form-row">
@@ -235,7 +241,7 @@
 
             <div class="container2">
 
-
+                <!--Botonones para guardar y cancelar  -->
                 <a class="btn btn-primary my-2 boton" style="margin-left: 28%"
                    href="{{route("grasa.uni",["id"=>$id])}}">Cancelar</a>
 

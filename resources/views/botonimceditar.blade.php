@@ -1,7 +1,7 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- Codigo para ver el fonde la imagen del proyecto en la parte superior de la vista -->
 
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
@@ -10,6 +10,7 @@
             </div>
         </div>
     </header>
+    <!-- codigo para retornar de acuerdo el id de cada cliente en este caso -->
 
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
@@ -34,6 +35,9 @@
         @endif
             </div>
 
+
+            <!-- Codigo para mostrar la imagen en cada vista -->
+
         <img src="/clientes_imagenes/{{$cliente->imagen}}" width="248px" height="260px" style="margin-left: -7%" >
         <div class="card margencard" style=" border: none;" >
 
@@ -46,7 +50,7 @@
     </div> <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
 
         </div>
-
+        <!-- Codigo para mostrar el menu de expediente -->
         <div class="btn-group mt-3 mb-5" style="margin-left: .1%;" role="group" aria-label="Button group with nested dropdown">
 
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
@@ -68,6 +72,7 @@
 
 
     </div>
+        <!-- Codigo para la funcion logica de los formularios -->
 
         <script type="text/javascript">
             document.onreadystatechange = function () {
@@ -120,6 +125,7 @@
             }</script>
 
 
+        <!-- Metodo para guardar lo editado-->
 
     <form name="id_imc" id="id_imc"
           style="font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'"
@@ -129,6 +135,7 @@
 
         {{method_field('put')}}
 
+        <!-- Formulario para ingresar datos -->
         <div class="margeneditar">
         <h5  class="label2" style="margin-left: 8%; margin-top: -1%">Editar medidas antropometricas</h5>
         <div class="form-row mt-4">
@@ -239,7 +246,7 @@
 
         <div class="container2">
 
-
+            <!--Botonones para guardar y cancelar  -->
             <a class="btn btn-primary boton" style="margin-left: 29%"
                href="{{route("imc.ini",["id"=>$id])}}">Cancelar</a>
 

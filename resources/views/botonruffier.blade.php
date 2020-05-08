@@ -1,7 +1,7 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- Codigo para ver el fonde la imagen del proyecto en la parte superior de la vista -->
     <header class="fondo" style="max-height: 100px;">
         <div class="container">
             <div class="intro-text">
@@ -9,6 +9,8 @@
             </div>
         </div>
     </header>
+
+    <!-- codigo para retornar de acuerdo el id de cada cliente en este caso -->
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
@@ -30,6 +32,7 @@
             <h7 style="margin-left: 1%">Expediente Docente</h7>
         @endif
             </div>
+            <!-- Codigo para mostrar la imagen en cada vista -->
 
             <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="248px" height="260px"
                  style="margin-left: -7%">
@@ -43,6 +46,7 @@
         </div>
     </div>
     </div>
+        <!-- Codigo para mostrar el menu de expediente de acuerdo con el id del cliente -->
 
     <div class="card" style="width: 170px; border: none;background: transparent;margin-left: 3%;margin-top: 5px">
 
@@ -61,6 +65,7 @@
                 @endif >Pagos</a>
 
         @endif
+
         <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
         <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
         <a class="btn btn-primary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
@@ -68,6 +73,7 @@
 
     </div>
 
+        <!-- Codigo para mostrar el menu de expediente de acuerdo con el id del cliente -->
 
     <html>
     <head>
@@ -138,13 +144,13 @@
 
 </script>
 
-
+    <!-- Metodo para guardar -->
 
         <form name="f1" id="f1" method="POST" action="{{route('ruffier.guardar')}}" onsubmit="return medir()">
 
             <input name="_token" value="{{csrf_token()}}" type="hidden">
 
-
+            <!-- Formulario para ingresar datos -->
             <h5 style="margin-top: -1%">Calculo de Ruffier</h5>
 
             <div class="form-row mt-4">
@@ -223,7 +229,7 @@
 
             <div class="container2">
 
-
+                <!--Botonones para guardar y cancelar  -->
                 <a class="btn btn-primary my-2 boton" style="margin-left: 48%"
                    href="{{route("ruffier.uni",["id"=>$id])}}">Cancelar</a>
 

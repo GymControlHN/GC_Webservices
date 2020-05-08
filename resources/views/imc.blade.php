@@ -1,7 +1,8 @@
 @extends("layouts.principal")
 
 @section("content")
-    <!-- Header -->
+    <!-- codigo para la parte superior del fondo de la imagen en todas las vistas -->
+
     <header class=" fondo" style="max-height: 100px;">
         <div class=" container">
             <div class="intro-text">
@@ -9,6 +10,8 @@
             </div>
         </div>
     </header>
+    <!-- codigo para diferenciar el id de los clientes -->
+
     @if($cliente->id_tipo_cliente==1)
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white">
@@ -57,13 +60,18 @@
                     <h7 style="margin-left: 1%">Expediente Docente</h7>
                 @endif
             </div>
+            <!-- codigo para ver la imagen en cada vista de la grasa -->
 
             <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px"
                  height="260px" style="margin-left: -7%" >
             <div class="card margencard" style=" border: none;">
+                <!-- Codigo para mostrar el nombre de cada cliente -->
+
                 <div >
                     <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
                     <h6 style="all: revert">Medida Antropometrica</h6>
+                    <!-- PARA MOSTRAR LA GRAFICA-->
+
                     <div style="max-height: 250px;">{!! $chart->container() !!}</div>
                 </div>
             </div>
@@ -78,6 +86,8 @@
         <a class="btn btn-primary btn-sm  mt-3 " href="{{route("botonimc",["id"=>$cliente->id])}}"
            style="float: right; margin-right: 50px; color: white">Nuevo
         </a>
+        <!-- codigo para difereciar la barra de menu de acuerdo por el id de cada cliente -->
+
         <div class=" btn-group mt-3 mb-5" style="margin-left: .1%; font-size: 14px" role="group"
              aria-label="Button group with nested dropdown">
 
@@ -95,7 +105,7 @@
 
                 >Pagos</a>
             @endif
-
+            <!-- mostrar la barra del menu -->
 
             <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a>
             <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
@@ -110,6 +120,7 @@
 
             <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
 box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
+                <!-- Mensaje de confirmacion -->
 
                 @if($exito)
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -130,6 +141,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
                 @endif
 
+            <!-- CODIGO DE LA CREACCION DE LA TABLA  -->
 
                 <div class=" table-responsive-lg">
                     <table class="table  table-hover" style="font-size: 12px">
@@ -182,6 +194,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
 
                                     <td class="row">
+                                        <!-- CODIGO DE LA RUTA PARA EDITAR -->
 
 
                                         <a class="btn btn-outline-warning btn-sm " style="margin-right: 5px"
@@ -189,6 +202,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                                     class="fas fa-edit" ></i>
 
                                         </a>
+                                        <!-- CODIGO PARA ELIMINAR -->
 
 
                                         <button class="btn btn-outline-danger btn-sm"
@@ -229,8 +243,9 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
         </div>
     </div>
+    <!-- CODIGO DE GRAFICOS -->
     {!! $chart->script() !!}
-
+    <!-- CODIGO DE MODAL DE LA ALERTA DE LA ELIMINACION -->
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarImc">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -240,6 +255,8 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
+                <!-- METODO DE BORRAR -->
                 <form method="post" action="{{route('imc.borrar')}}">
                     {{method_field('delete')}}
 
