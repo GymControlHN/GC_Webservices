@@ -170,55 +170,53 @@
                                id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                               value="{{old('pulso_a')}}" required>
                     </div>
+                <div class="form-group col-md-4">
+                    <h6 class="label2" for="email" style="margin-left: 10%; margin-top: -1%">Pulso en descanso:</h6>
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                           id="pulso_d" name="pulso_d" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
+                           value="{{old('pulso_d')}}" required>
+                </div>
                 </div>
 
             <div class="form-row">
-                <div class="form-group col-md-4">
-                    <h6 class="label2" for="email" style="margin-top: 1%">Pulso en descanso:</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
-                               id="pulso_d" name="pulso_d" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
-                              value="{{old('pulso_d')}}" required>
-                </div>
-
                     <div class="form-group col-md-4">
-                    <h6 class="label2" for="email" style="margin-top: 1%">Ruffier:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: 1%">Ruffier:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                                id="ruffiel" name="ruffiel" maxlength="3"
                              value="{{old('ruffiel')}}" readonly required>
                     </div>
+                <div class="form-group col-md-4">
+                <h6 class="label2" for="email" style=" margin-top: 1%">MVO2:</h6>
+                <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                       id="mvo" name="mvo" maxlength="3"
+                       value="{{old('mvo')}}" required placeholder="Ingrese fuerza pulmonar">
+            </div>
+            <div class="form-group col-md-4">
+                <h6 class="label2" for="email" style="margin-left: 10%; margin-top: 1%">MVO2 Real:</h6>
+                <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001"
+                       id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
+
+                       value="{{old('mvoreal')}}" required placeholder="Ingrese fuerza pulmonar">
+            </div>
                 </div>
 
                 <div class="form-row">
                    <div class="form-group col-md-4">
-                    <h6 class="label2" for="email" style="margin-left: 10%; margin-top: 1%">MVO2:</h6>
-                        <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001"
-                               id="mvo" name="mvo" maxlength="3"
-                              value="{{old('mvo')}}" required placeholder="Ingrese fuerza pulmonar">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <h6 class="label2" for="email" style="margin-left: 10%; margin-top: 1%">MVO2 Real:</h6>
-                        <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001"
-                               id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
+                       <h6 class="label2" for="email" style="margin-left: 10%; margin-top: -0%;width: 310px">
+                           Diagnostico MVO:</h6>
+                       <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001"
+                              id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
+                              value="{{old(' mvodiagnostico')}}" readonly required >
+                   </div>
 
-                               value="{{old('mvoreal')}}" required placeholder="Ingrese fuerza pulmonar">
-                    </div>
+
+                    <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3" step="0.0001"
+                           id="leyenda" name="id_diagnostico" maxlength="50"
+                           value="{{old('id_diagnostico')}}" readonly required>
 
                 </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <h6 class="label2" for="email" style="margin-left: 215%; margin-top: -21%;width: 310px">
-                                Diagnostico MVO:</h6>
-                            <input style="width: 310px; margin-left: 215%" type="number" class="form-control inputtamaño3" step="0.0001"
-                                   id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
-                                   value="{{old(' mvodiagnostico')}}" readonly required >
-                        </div>
 
-
-                            <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3" step="0.0001"
-                                   id="leyenda" name="id_diagnostico" maxlength="50"
-                                   value="{{old('id_diagnostico')}}" readonly required>
-                        </div>
 
 
 
@@ -230,7 +228,7 @@
             <div class="container2">
 
                 <!--Botonones para guardar y cancelar  -->
-                <a class="btn btn-primary my-2 boton" style="margin-left: 48%"
+                <a class="btn btn-primary my-2 boton" style="margin-left: 32.5%"
                    href="{{route("ruffier.uni",["id"=>$id])}}">Cancelar</a>
 
 
