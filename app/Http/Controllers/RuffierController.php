@@ -32,7 +32,8 @@ class RuffierController extends Controller
         $cliente = Cliente::find($id);
 
         $chart = new UserChart();
-        $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+        $chart->labels(['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']);
 
         $chart->dataset('Ruffiel', 'line', $ruffier)->options([
             'fill' => 'true',

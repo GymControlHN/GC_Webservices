@@ -37,7 +37,8 @@ class GraficoController extends Controller
 
         $chart = new UserChart();
         $chart->title("Estadisticas del usuario: " . $cliente->value("nombre"));
-        $chart->labels(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
+        $chart->labels(['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']);
 
         $chart->dataset('imc', 'line', $imc)->options([
             'fill' => 'true',
