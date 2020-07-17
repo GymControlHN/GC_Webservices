@@ -30,7 +30,7 @@ class CarrerasSeeder extends Seeder
         $carrera->save();
 
         $carrera = new Carrera();
-        $carrera->carrera = "TUATEC";
+        $carrera->carrera = "TUAEC";
         $carrera->save();
 
         $carrera = new Carrera();
