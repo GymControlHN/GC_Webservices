@@ -108,7 +108,7 @@
 
     </div>
         <!-- codigo de los graficos -->
-        <div class="w3-container mt-lg-2" style="margin-top: 2%; margin-left: 25%;
+        <div class="w3-container " style=" margin-left: 25%;
          margin-right: 5%">
             {!! $chart->container() !!}
 

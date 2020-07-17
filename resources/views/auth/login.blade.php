@@ -56,13 +56,23 @@
                     <input class="input100" type="text" name="email" placeholder="Ingrese su correo">
                     <span class="focus-input100" data-placeholder="&#x2709;"></span>
                 </div>
+
                 <label class="pl-4 mt-lg-1" style="color: #6c757d; font-size: 17px">
                     <strong>Contraseña</strong>
 				</label>
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="password" placeholder="Ingrese su clave">
-                    <span class="focus-input100" data-placeholder="	&#x1F512;"></span>
+
+                    <div class="input-group-append">
+                        <input ID="txtPassword" class="input100" type="password" name="password" placeholder="Ingrese su clave">
+                        <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()">
+                            <span class="fa fa-eye-slash icon"></span> </button>
+                        <span class="focus-input100" data-placeholder="	&#x1F512;"></span>
+                    </div>
+
+
                 </div>
+
+
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-1">
                         <div class="checkbox">
@@ -89,6 +99,25 @@
             </div>
         </div>
     </div>
+<script type="text/javascript">
+    function mostrarPassword(){
+        var cambio = document.getElementById("txtPassword");
+        if(cambio.type == "password"){
+            cambio.type = "text";
+            $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        }else{
+            cambio.type = "password";
+            $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+        }
+    }
+
+    $(document).ready(function () {
+        //CheckBox mostrar contraseña
+        $('#ShowPassword').click(function () {
+            $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
+        });
+    });
+</script>
 
 
 <div id="dropDownSelect1"></div>
