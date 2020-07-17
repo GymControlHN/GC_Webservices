@@ -171,7 +171,7 @@
 
                                     <div class="form-group{{ $errors->has('profesion_u_oficio') ? ' has-error' : '' }} "  style="width: 90%">
                                     <h6>Profesión u Oficio</h6>
-                                        <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                        <input type="text" maxlength="32" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
                                                required
                                                value="{{old("profesion_u_oficio")}}"
                                         >
@@ -457,7 +457,7 @@
                                     <div class="row" style="height: 20%;margin: 0px;">
                                 <div class="form-group{{ $errors->has('profesion_u_oficio') ? ' has-error' : '' }} "style="width: 90%">
                             <h6>Profesión u Oficio</h6>
-                                <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                <input type="text" maxlength="32" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
                                        value="{{old("profesion_u_oficio")}}"
                                        @isset($particular)
                                        value="{{$particular->profesion_u_oficio}}"
@@ -602,7 +602,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <div  style="overflow: auto"></div>
 
 
-                    <td class="form-inline " style="width: auto">
+                    <td class="form-inline " style="width: auto;  text-align:center;"  colspan="2" >
                         <form style="display: none" id="pago2_form" method="GET" action="{{route("pagoparticulares",["id"=>$particular->id])}}">
                             <input name="id_cliente" value="{{$particular->id}}" type="hidden">
                             {{ csrf_field() }}

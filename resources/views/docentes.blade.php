@@ -436,7 +436,7 @@
                                     <div class="row" style="height: 20%;margin: 0px;">
                                 <div class="form-group{{ $errors->has('profesion_u_oficio') ? ' has-error' : '' }} "style="width: 90%">
                                     <h6>Profesión</h6>
-                                    <input type="text" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                    <input type="text"  class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
                                            value="{{old("profesion_u_oficio")}}"
                                            @isset($docente)
                                            value="{{$docente->profesion_u_oficio}}"
