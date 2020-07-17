@@ -16,7 +16,7 @@
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white">
                 <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
+                <li class="breadcrumb-item active" aria-current="page">Medidas Antropométricas</li>
             </ol>
 
         </nav>
@@ -26,7 +26,7 @@
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white">
                 <li class="breadcrumb-item"><a href="/docentes">Docente</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
+                <li class="breadcrumb-item active" aria-current="page">Medidas Antropométricas</li>
             </ol>
 
         </nav>
@@ -37,7 +37,7 @@
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white">
                 <li class="breadcrumb-item"><a href="/particulares">Particular</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Medidas Antropometricas</li>
+                <li class="breadcrumb-item active" aria-current="page">Medidas Antropométricas</li>
             </ol>
 
         </nav>
@@ -107,7 +107,7 @@
             @endif
             <!-- mostrar la barra del menu -->
 
-            <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a>
+            <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropométricas</a>
             <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
             <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
             <a class="btn btn-secondary btn-sm" href="{{route("grafico.mostrar",["id"=>$cliente->id])}}"> Gráfico</a>
