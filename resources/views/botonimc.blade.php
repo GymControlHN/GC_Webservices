@@ -77,7 +77,7 @@
                    style="display: none;"
                         @endif >Pagos</a>
             @endif
-            <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
+            <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropométricas</a>
             <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
             <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
@@ -137,7 +137,7 @@
 
             <!-- Formulario para ingresar datos -->
             <div class="margeneditar">
-                <h5 class="label2" style="margin-left: 8%; margin-top: -1%">Agregar medidas antropometricas</h5>
+                <h5 class="label2" style="margin-left: 8%; margin-top: -1%">Agregar medidas antropométricas</h5>
                 <div class="form-row mt-4" >
                     <div class="form-group col-md-4">
                         <h6 class=" label2" for="email" style=" margin-top: -1%">Peso kg:</h6>
