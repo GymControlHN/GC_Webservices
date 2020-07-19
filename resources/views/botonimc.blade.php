@@ -84,6 +84,8 @@
 
         </div>
         <!-- Codigo para la funcion logica de los formularios -->
+
+
         <script type="text/javascript">function calcularIMC() {
                     peso = document.getElementById("peso").value;
                     altura = document.getElementById("altura").value / 100;
@@ -149,11 +151,10 @@
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: -1%">Altura:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01"
-                               id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla en cm" required
+                               id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla en cm" required min="20" max="300" pattern="^[0-9]+"
                                onkeyup="calcularIMC()" value="{{old('altura')}}">
 
                     </div>
-
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: -1%">Pecho:</h6>
