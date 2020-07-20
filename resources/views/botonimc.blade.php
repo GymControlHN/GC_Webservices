@@ -143,7 +143,7 @@
                 <div class="form-row mt-4" >
                     <div class="form-group col-md-4">
                         <h6 class=" label2" for="email" style=" margin-top: -1%">Peso kg:</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01" id="peso" required
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01" id="peso" required min="1" pattern="^[0-9]+"
                                name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos"
                                onkeyup="calcularIMC()" value="{{old('peso')}}">
                     </div>

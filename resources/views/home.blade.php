@@ -150,7 +150,7 @@
                         }
 
                     } else {
-                        pesoIdeal.innerText = "Ingrese la altura es requerido";
+                        pesoIdeal.innerText = "Ingrese la altura requerida";
                     }
                 }
 
