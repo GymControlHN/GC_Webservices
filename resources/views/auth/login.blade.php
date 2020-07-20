@@ -53,7 +53,7 @@
                     <strong>Correo Electrónico</strong>
 				</label>
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input class="input100" type="text" name="email" placeholder="Ingrese su correo">
+                    <input class="input100" type="text" name="email" placeholder="Ingrese su correo"  >
                     <span class="focus-input100" data-placeholder="&#x2709;"></span>
                 </div>
 
@@ -63,7 +63,7 @@
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
 
                     <div class="input-group-append">
-                        <input id ="txtPassword" class="input100" type="password" name="password" placeholder="Ingrese su clave">
+                        <input id ="txtPassword" class="input100" type="password" name="password" placeholder="Ingrese su clave"   required pattern="[a-z]{1,6}" >
                         <button id ="show_password" class="btn btn-primary" type="button" onclick="mostrarContrasena()">
                             <span class="fa fa-eye-slash icon"></span> </button>
                         <span class="focus-input100" data-placeholder="	&#x1F512;"></span>
