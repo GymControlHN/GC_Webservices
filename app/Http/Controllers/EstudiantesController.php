@@ -217,10 +217,18 @@ class  EstudiantesController extends Controller
             ->select("clientes_gym.*","carreras.carrera")
         ->where("nombre","like","%".$busquedaEstudiante."%")
             ->paginate(10);
+
+        $totalEstudiantes= Cliente::where("id_tipo_cliente","=",1)->count();
+        $totalPagosEstudiantes = PagoClientesP::where("tipo_pago",
+            "=","Pago_Estudiante")->count();
+
+        $totalIngresoEstudiante= $totalPagosEstudiantes *100;
+        $totalIngresos = $totalIngresoEstudiante;
+
         $carrera = Carrera::all();
         session()->flashInput($request->input());
         return view("estudiantes")->with('estudiantes', $clientes)->with("carreras",$carrera)->with("no", 1)
-            ->with("busqueda",$busquedaEstudiante);
+            ->with("busqueda",$busquedaEstudiante)->withIngresos($totalIngresos);
     }
 
 
