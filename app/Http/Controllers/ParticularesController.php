@@ -179,8 +179,13 @@ class ParticularesController extends Controller
             ->paginate(10);
         session()->flashInput($request->input());
 
+        $totalParticulares= Cliente::where("id_tipo_cliente","=",3)->count();
+        $totalPagosParticulares  =PagoClientesP::where("tipo_pago","=","Pago_Particular")->count();
+        $totalIngresoParticulares= $totalPagosParticulares *200;
+        $totalIngresos = $totalIngresoParticulares;
 
-        return view('particulares')->with('particulares', $particulares)->with('no',1);
+
+        return view('particulares')->with('particulares', $particulares)->with('no',1)->withIngresos($totalIngresos);
 
     }
 
