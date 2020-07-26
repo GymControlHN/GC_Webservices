@@ -17,7 +17,7 @@
     </nav>
     <div class="w3-container w3-teal mx-5" style="font-family: 'Raleway', sans-serif">
 
-        <h3 class="mt-4" style="all: revert" style="margin-bottom: 1%" >Listado de Usuarios</h3>
+        <h2 class="mt-4" style="all: revert" style="margin-bottom: 1%" >Listado de Usuarios</h2>
 
         <button type="button" class="btn btn-primary float-right boton1 " data-toggle="modal" style="margin-bottom: 3%"
                 data-target="#modalañadirnuevousuario">
