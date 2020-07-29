@@ -64,7 +64,7 @@
 
                     <div class="input-group-append">
                         <input id ="txtPassword" class="input100" type="password" name="password" placeholder="Ingrese su clave"
-                               required pattern="[a-z]{1,6}">
+                               pattern="^[a-z]{1,6}" title="Contraseña incorrecta">
                         <button id ="show_password" class="btn btn-primary" type="button" onclick="mostrarContrasena()">
 
                             <span class="fa fa-eye-slash icon"></span> </button>
@@ -115,12 +115,7 @@
 
 
 </script>
-<script type="text/javascript">
-    var input = document.getElementById('txtPassword');
-    input.oninvalid = function(event) {
-        event.target.setCustomValidity('Contraseña incorrecta');
-    }
-</script>
+
 
 
 <div id="dropDownSelect1"></div>
