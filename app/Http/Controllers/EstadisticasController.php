@@ -122,7 +122,7 @@ class EstadisticasController extends Controller
             "clientes_gym.id_tipo_cliente", "=", "tipo_clientes.id")
             ->select("clientes_gym.*", "tipo_clientes.descripcion")
             ->where("nombre","like","%".$busquedaCliente."%")
-            ->orWhere("fecha_de_ingreso","like","%".$busquedaCliente."%")
+
             ->paginate(10);
         session()->flashInput($request->input());
 

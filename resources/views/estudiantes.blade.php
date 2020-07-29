@@ -115,7 +115,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row" style="height: 20%;margin: 0px;">
+                                    <div class="row" style="height: 22%;margin: 0px;">
                                         <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} " style="width: 90%">
                                             <h6>Número Cuenta</h6>
                                             <input type="text" pattern="([0-9]{1,11})"
@@ -135,7 +135,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row" style="height: 20%;margin: 0px;">
+                                    <div class="row" style="height: 22%;margin: 0px;">
                                         <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} " style="width: 90%">
                                             <h6> Teléfono </h6>
                                             <input type="text" pattern="([0-9]{1,8})" style="width: 100%"
@@ -199,7 +199,7 @@
 
 
                                 <div class="col" style="padding: 10px;">
-                                    <div class="row" style="text-align: center;height: 80%;margin: 0px;">
+                                    <div class="row" style="text-align: center;height: 85%;margin: 0px;">
                                         <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
                                             <h6 style="text-align: start">Imagen del Estudiante (Opcional)</h6>
                                             <img width="200px"   id="previewImagen" style=" max-height:250px;"
@@ -247,7 +247,7 @@
 
 
 
-                                    <div class="row" style="text-align: start;height: 20%;margin: 0px;">
+                                    <div class="row" style="text-align: start;height:20% ;margin: 0px;">
                                         <div class="form-group{{ $errors->has('sexo') ? ' has-error' : '' }} ">
                                             <h6>Sexo</h6>
 

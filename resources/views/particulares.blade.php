@@ -112,7 +112,7 @@
                                         <!-- Codificacion para la validación del cada campo del modal -->
 
 
-                                        <div class="row" style="height: 20%;margin: 0px;">
+                                        <div class="row" style="height: 22%;margin: 0px;">
                                     <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }}"  style="width: 90%">
                                         <h6>Número de Identidad</h6>
                                         <input type="text"  pattern="([0-9]{1,13})" class="form-control" id="identificacion" name="identificacion"
@@ -129,7 +129,7 @@
                                     </div>
                                 </div>
 
-                                        <div class="row" style="height: 20%;margin: 0px;">
+                                        <div class="row" style="height: 22%;margin: 0px;">
                                     <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} " style="width: 90%">
                                         <h6> Teléfono </h6>
                                         <input type="text" pattern="([0-9]{1,8})" class="form-control"
@@ -185,7 +185,7 @@
                                     </div>
 
                                     <div class="col" style="padding: 10px;">
-                                        <div class="row" style="text-align: center;height: 80%;margin: 0px;">
+                                        <div class="row" style="text-align: center;height: 85%;margin: 0px;">
                                     <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
                                         <h6 style="text-align: start">Imagen del particular</h6>
                                         <img width="200px" style=" max-height:250px" id="previewImagen"
