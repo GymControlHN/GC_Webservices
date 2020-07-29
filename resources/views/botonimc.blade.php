@@ -13,7 +13,7 @@
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a></li>
+            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropométricas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Nuevo</li>
         </ol>
     </nav>
@@ -77,8 +77,8 @@
                    style="display: none;"
                         @endif >Pagos</a>
             @endif
-            <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropométricas</a>
-            <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
+            <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropométricas</a>
+            <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
             <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
 
@@ -158,43 +158,43 @@
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: -1%">Pecho:</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01" required
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
                                name="pecho" id="pecho" value="{{old('peso')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 1%">Brazo:</h6>
-                        <input style="width:310px" type="text" class="form-control inputtamaño3" step="0.01"  required
-                               name="brazo" id="brazo" value="{{old('brazo')}}" placeholder="Ingrese la talla en cm">
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01"  required
+                               min="1" pattern="^[0-9]+" name="brazo" id="brazo" value="{{old('brazo')}}" placeholder="Ingrese la talla en cm">
                     </div>
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 1%">ABD-A:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
                                name="ABD_A" id="ABD_A" value="{{old('ABD_A')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 1%">ABD-B:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01"
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" min="1" pattern="^[0-9]+"
                                required name="ABD_B" id="ABD_B" value="{{old('ABD_B')}}"
                                placeholder="Ingrese la talla en cm">
                     </div>
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 2%">Cadera:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
                                name="cadera" id="cadera" value="{{old('cadera')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 2%">Muslo:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
                                name="muslo" id="muslo" value="{{old('muslo')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 2%">Pierna:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
                                name="pierna" id="pierna" value="{{old('pierna')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
