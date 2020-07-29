@@ -279,7 +279,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                 </tr>
                 @foreach ($users_list as $user)
                     <tr>
-                        <td>{{$no++}}</td>
+                        <td><strong>{{$no++}}</strong></td>
                         <th>{{ $user->mes }}</th>
                         <th>{{ $user->fecha_pago }}</th>
                         <th>Cancelado</th>
