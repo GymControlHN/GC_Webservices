@@ -16,7 +16,7 @@
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Graficos</li>
+                <li class="breadcrumb-item active" aria-current="page">Gráficos</li>
             </ol>
 
         </nav>
@@ -26,7 +26,7 @@
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/docentes">Docente</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Graficos</li>
+                <li class="breadcrumb-item active" aria-current="page">Gráficos</li>
             </ol>
 
         </nav>
@@ -37,7 +37,7 @@
         <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
             <ol class="breadcrumb" style="background-color: white" >
                 <li class="breadcrumb-item"><a href="/particulares">Particular</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Graficos</li>
+                <li class="breadcrumb-item active" aria-current="page">Gráficos</li>
             </ol>
 
         </nav>
@@ -68,7 +68,7 @@
 
                 <div style="margin-top: 10%" >
                     <h5 > {{$cliente->nombre}}</h5>
-                    <h6 style="all: revert;">Graficos</h6>
+                    <h6 style="all: revert;">Gráficos</h6>
                 </div>
 
             </div>

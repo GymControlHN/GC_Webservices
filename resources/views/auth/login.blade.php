@@ -63,8 +63,10 @@
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
 
                     <div class="input-group-append">
-                        <input id ="txtPassword" class="input100" type="password" name="password" placeholder="Ingrese su clave"   required pattern="[a-z]{1,6}" >
+                        <input id ="txtPassword" class="input100" type="password" name="password" placeholder="Ingrese su clave"
+                               required pattern="[a-z]{1,6}">
                         <button id ="show_password" class="btn btn-primary" type="button" onclick="mostrarContrasena()">
+
                             <span class="fa fa-eye-slash icon"></span> </button>
                         <span class="focus-input100" data-placeholder="	&#x1F512;"></span>
                     </div>
@@ -112,6 +114,12 @@
     }
 
 
+</script>
+<script type="text/javascript">
+    var input = document.getElementById('txtPassword');
+    input.oninvalid = function(event) {
+        event.target.setCustomValidity('Contraseña incorrecta');
+    }
 </script>
 
 

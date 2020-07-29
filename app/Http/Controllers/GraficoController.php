@@ -36,7 +36,7 @@ class GraficoController extends Controller
             ->pluck('ruffiel');
 
         $chart = new UserChart();
-        $chart->title("Estadisticas del usuario: " . $cliente->value("nombre"));
+        $chart->title("Estadísticas del usuario");
         $chart->labels(['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
             'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']);
 
@@ -49,7 +49,7 @@ class GraficoController extends Controller
             'borderColor' => '#CD5C5C',
         ]);
 
-        $chart->dataset('Ruffiel', 'line', $ruffier)->options([
+        $chart->dataset('Ruffier', 'line', $ruffier)->options([
             'fill' => 'true',
             'borderColor' => '#0000FF',
         ]);

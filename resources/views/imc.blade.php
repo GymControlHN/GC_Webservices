@@ -69,7 +69,7 @@
 
                 <div >
                     <h5 style="margin-top: 10%"> {{$cliente->nombre}}</h5>
-                    <h6 style="all: revert">Medida Antropometrica</h6>
+                    <h6 style="all: revert">Medida Antropométrica</h6>
                     <!-- PARA MOSTRAR LA GRAFICA-->
 
                     <div style="max-height: 250px;">{!! $chart->container() !!}</div>

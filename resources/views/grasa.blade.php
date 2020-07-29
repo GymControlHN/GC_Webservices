@@ -144,7 +144,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         <th scope="col">Clasificacion</th>
                         <th scope="col">PC Tricipital</th>
                         <th scope="col">PC Infraescapular</th>
-                        <th scope="col">PC Supra Ilíaco</th>
+                        <th scope="col">PC Suprailíaco</th>
                         <th scope="col">PC Biciptal</th>
                         <th scope="col">Porcentaje</th>
 

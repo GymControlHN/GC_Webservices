@@ -67,7 +67,7 @@
 
             @endif
             <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$nombre->id])}}">MedidasAntropometricas</a>
-            <a class="btn btn-primary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">GrasaCorporal</a>
+            <a class="btn btn-primary btn-sm" href="{{route("grasa.uni",["id"=>$nombre->id])}}">Grasa Corporal</a>
             <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$nombre->id])}}">Ruffier</a>
 
 
@@ -188,7 +188,7 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email" style="margin-top: 2%">Pc Biciptal:</h6>
+                    <h6 class="label2" for="email" style="margin-top: 2%">Pc Bicipital:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                            onkeyup="calcularGrasa()"
                            id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medicas en cm"
@@ -200,7 +200,7 @@
 
 
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email" style="margin-top: 2%">Pc Suprailiaco:</h6>
+                    <h6 class="label2" for="email" style="margin-top: 2%">Pc Suprailíaco:</h6>
 
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                            onkeyup="calcularGrasa()"
