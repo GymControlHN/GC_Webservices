@@ -101,7 +101,7 @@
 
                         <div class="alert alert-success" role="alert">
 
-                            <h6>Tu peso ideal es:</h6> <h5 id="pesoIdeal"></h5>
+                             <h5 id="pesoIdeal"> Tu peso ideal es:</h5>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -128,6 +128,7 @@
                 var pesoIdeal=document.getElementById("pesoIdeal");
 
                 if (!femeninoRB&&!masculinoRB) {
+
                     pesoIdeal.innerText="Selecciona el sexo"
                 }else {
                     if (altura) {
@@ -155,6 +156,7 @@
                 }
 
             }
+
         </script>
 @endsection
 
