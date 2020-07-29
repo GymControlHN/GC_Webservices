@@ -183,7 +183,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 1%">Pc tricipital:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="1" pattern="^[0-9]+"
                            id="pc_tricipital" name="pc_tricipital" maxlength="3" placeholder="Ingrese medicas en cm"
                            value="{{old('pc_tricipital')}}" onkeyup="calcularGrasa()">
 
@@ -192,7 +192,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 1%">Pc Infraescrupural:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="1" pattern="^[0-9]+"
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_infraescapular')}}"  onkeyup="calcularGrasa()">
 
@@ -202,7 +202,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 2%">Pc Biciptal:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="1" pattern="^[0-9]+"
                            id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medida en cm"
                            value="{{old('pc_biciptal')}}"  onkeyup="calcularGrasa()">
 
@@ -211,7 +211,7 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style=" margin-top: 2%">Pc SupraIliaco:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="1" pattern="^[0-9]+"
                            id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_supra_iliaco')}}"  onkeyup="calcularGrasa()">
 
@@ -228,7 +228,7 @@
 
 
                     <div class="form-group col-md-6">
-                        <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3" step="0.0001"
+                        <input style="width: 310px; display: none" type="hidden" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                                id="id_diagnostico" name="id_diagnostico"
                                value="{{old('id_diagnostico')}}" >
                     </div>

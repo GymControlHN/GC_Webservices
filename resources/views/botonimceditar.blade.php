@@ -142,7 +142,7 @@
             <div class="form-group col-md-4">
                 <h6 class=" label2" for="email" style="margin-top: -1%">Peso kg:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" id="peso"
-                       name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos"
+                       name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos" min="1" pattern="^[0-9]+"
                        onkeyup="calcularIMC()"
                        @isset($antecedente)
                        value="{{$antecedente->peso}}"
@@ -152,7 +152,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: -1%">Altura:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="20" max="300" pattern="^[0-9]+"
                        id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla"
                        onkeyup="calcularIMC()"
                        @isset($antecedente)
@@ -164,7 +164,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: -1%">Pecho:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                        name="pecho" id="pecho"
                        @isset($antecedente)
                        value="{{$antecedente->pecho}}"
@@ -175,7 +175,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">Brazo:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" name="brazo" id="brazo"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" name="brazo" id="brazo" min="1" pattern="^[0-9]+"
                        @isset($antecedente)
                        value="{{$antecedente->brazo}}"
                        @endisset
@@ -185,7 +185,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">ABD-A:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                        name="ABD_A" id="ABD_A"
                        @isset($antecedente)
                        value="{{$antecedente->ABD_A}}"
@@ -196,7 +196,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">ABD-B:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                        name="ABD_B" id="ABD_B"
                        @isset($antecedente)
                        value="{{$antecedente->ABD_B}}"
@@ -206,7 +206,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Cadera:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                        name="cadera" id="cadera"
                        @isset($antecedente)
                        value="{{$antecedente->cadera}}"
@@ -215,7 +215,7 @@
             </div>
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Muslo:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                        name="muslo" id="muslo"
                        @isset($antecedente)
                        value="{{$antecedente->muslo}}"
@@ -225,7 +225,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Pierna:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                        name="pierna" id="pierna"
                        @isset($antecedente)
                        value="{{$antecedente->pierna}}"
