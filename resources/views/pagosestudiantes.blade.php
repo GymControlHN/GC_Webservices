@@ -125,7 +125,7 @@
                             </div>
                             <div class="modal-footer">
                                 <input name="id" value="{{$nombre->id}}" type="hidden">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 <button type="submit"  class="btn btn-primary ">Guardar</button>
 
                             </div>
@@ -232,7 +232,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                                 <button type="submit"  class="btn btn-primary">Guardar</button>
 
                                             </div>
