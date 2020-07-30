@@ -108,7 +108,9 @@ class ParticularesController extends Controller
             if ($_FILES["imagen"]["name"]) {
                 $destino = "clientes_imagenes/" . $imagen;
                 copy($ruta, $destino);
-            } else {
+            }
+
+            /**  else {
                 if(strtoupper($request->input("genero"))==="F"){
                     $imagen="woman.png";
                 }else{
@@ -116,7 +118,7 @@ class ParticularesController extends Controller
                 }
             }
 
-
+            * */
             // Asignar los nuevos valores a los diferentes campos
         $particular = Cliente::findOrFail($request->input("particular_id"));
         $particular->nombre = $request->input('nombre');
@@ -127,7 +129,7 @@ class ParticularesController extends Controller
         $particular->id_carrera=1;
         $particular->genero = strtoupper( $request->input ('genero'));
         $particular->id_tipo_cliente="3";
-            if($imagen!=="") {
+            if($imagen) {
                 $particular->imagen = $imagen;
             }
         // Guardar los cambios
@@ -135,7 +137,7 @@ class ParticularesController extends Controller
 
         // Redirigir a la lista de todos los estudiantes.
         $particular1 = Cliente::paginate(10);
-        return back();
+            return redirect()->route("particulares")->withExito('Se editó exitosamente el particular');
 
 
         }else{

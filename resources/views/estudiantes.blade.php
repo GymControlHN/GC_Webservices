@@ -109,7 +109,7 @@
                                             >
                                             @if ($errors->has('nombre'))
                                                 <span class="help-block">
-                                        <strong>{{ $errors->first('nombre') }}</strong>
+                                        <strong id="nombreError">{{ $errors->first('nombre') }}</strong>
                                     </span>
                                             @endif
                                         </div>
@@ -379,7 +379,7 @@
                         <form method="post" action="{{route('estudiante.update')}}" enctype="multipart/form-data">
                             <input type="hidden" name="estudiante_id" id="id" value="">
 
-                            {{method_field('put')}}
+                            {{method_field('PUT')}}
 
                             <div class="row" style="width:100%;height: 100%;color: black;margin: 0px;">
                                 <div class="col" style="text-align: start;padding: 10px;">
