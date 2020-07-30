@@ -103,7 +103,7 @@ class RuffierController extends Controller
     public function edit($id,$id_cliente)
     {
 
-        $cliente = Cliente::find($id);
+        $cliente = Cliente::find($id_cliente);
         $rufierr = Ruffier::findOrFail($id);
         $id_cliente = Cliente::findOrFail($id_cliente);
         return view('botonruffiereditar')-> with("dato", $rufierr)->with("id",$id_cliente)->with("cliente",$cliente);
