@@ -282,7 +282,7 @@
 
                             <div class="modal-footer">
                                 <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary"
-                                        data-dismiss="modal">cerrar
+                                        data-dismiss="modal">Cerrar
                                 </button>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
 
@@ -562,7 +562,7 @@
                             </div>
                             <!-- boton para guardar y cerrar -->
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
 
                             </div>
