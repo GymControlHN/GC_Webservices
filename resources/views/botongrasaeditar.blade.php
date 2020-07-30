@@ -174,7 +174,7 @@
 
 
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email" style="margin-top: 1%">Pc Infraescrupural:</h6>
+                    <h6 class="label2" for="email" style="margin-top: 1%">Pc Infraescapularl:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
                            onkeyup="calcularGrasa()"
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50"

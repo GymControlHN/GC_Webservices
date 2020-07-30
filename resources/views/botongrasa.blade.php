@@ -191,7 +191,7 @@
 
 
                 <div class="form-group col-md-6">
-                    <h6 class="label2" for="email" style=" margin-top: 1%">Pc Infraescrupural:</h6>
+                    <h6 class="label2" for="email" style=" margin-top: 1%">Pc Infraescapular:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="1" pattern="^[0-9]+"
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50" placeholder="Ingrese medida en cm"
                            value="{{old('pc_infraescapular')}}"  onkeyup="calcularGrasa()">
