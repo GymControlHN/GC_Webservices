@@ -69,8 +69,8 @@
                 document.getElementById("previewImagen").value='';
                 document.getElementById("imagen").value='';
                 document.getElementById("previewImagen").src="/images/addphoto.ico";
-
-
+                document.getElementById("identificacionError").innerText="";
+                document.getElementById("telefonoError").innerText="";
 
 
 
@@ -110,7 +110,7 @@
                                     </div>
                             </div>
                                         <!-- Codificacion para la validación del cada campo del modal -->
-                                        <div class="row" style="height: 22%;margin: 0px;">
+                                        <div class="row" style="height: 20%;margin: 0px;">
                                     <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} " style="width: 90%">
                                         <h6>Número de Empleado</h6>
                                         <input type="text" pattern="([0-9]{1,5})" class="form-control" id="identificacion" name="identificacion"
@@ -121,14 +121,14 @@
                                         >
                                         @if ($errors->has('identificacion'))
                                             <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('identificacion') }}</strong>
+                                        <strong id="identificacionError">El valor identicación ya está en uso</strong>
                                     </span>
                                         @endif
                                     </div>
 
                                 </div>
 
-                                        <div class="row" style="height: 22%;margin: 0px;">
+                                        <div class="row" style="height: 20%;margin: 0px;">
                                     <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} " style="width: 90%">
                                         <h6> Teléfono </h6>
                                         <input type="text" pattern="([0-9]{1,8})" class="form-control" id="telefono" name="telefono"
@@ -140,7 +140,7 @@
                                         >
                                         @if ($errors->has('telefono'))
                                             <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                        <strong id="identificacionError">El valor teléfono ya está en uso</strong>
                                     </span>
                                         @endif
                                     </div>
@@ -185,7 +185,7 @@
 
 
                                         <div class="col" style="padding: 10px;">
-                                            <div class="row" style="text-align: center;height: 85%;margin: 0px;">
+                                            <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                         <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}"style="width: 90%">
                                         <h6 style="text-align: start">Imagen del Docente (Opcional)</h6>
                                         <img width="200px"  id="previewImagen" style="max-height:250px"

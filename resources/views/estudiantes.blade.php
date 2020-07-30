@@ -72,7 +72,8 @@
                 document.getElementById("sexo1").checked = false;
                 document.getElementById("sexo2").checked = false;
                 document.getElementById("previewImagen").src="/images/addphoto.ico";
-
+                document.getElementById("identificacionError").innerText="";
+                document.getElementById("telefonoError").innerText="";
 
             }
         </script>
@@ -115,7 +116,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="row" style="height: 22%;margin: 0px;">
+                                    <div class="row" style="height: 20%;margin: 0px;">
                                         <div class="form-group{{ $errors->has('identificacion') ? ' has-error' : '' }} " style="width: 90%">
                                             <h6>Número de Cuenta</h6>
                                             <input type="text" pattern="([0-9]{1,11})"
@@ -129,13 +130,13 @@
 
                                             @if ($errors->has('identificacion'))
                                                 <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('identificacion') }}</strong>
+                                        <strong id="identificacionError">El valor identicación ya está en uso</strong>
                                     </span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="row" style="height: 22%;margin: 0px;">
+                                    <div class="row" style="height: 20%;margin: 0px;">
                                         <div class="form-group{{ $errors->has('telefono') ? ' has-error' : '' }} " style="width: 90%">
                                             <h6> Teléfono </h6>
                                             <input type="text" pattern="([0-9]{1,8})" style="width: 100%"
@@ -147,7 +148,7 @@
                                                    maxlength="8" minlength="8" aria-valuemax="8" max="99999999">
                                             @if ($errors->has('telefono'))
                                                 <span class="help-block" style="color: red">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                        <strong id="identificacionError">El valor teléfono ya está en uso</strong>
                                     </span>
                                             @endif
 
@@ -199,7 +200,7 @@
 
 
                                 <div class="col" style="padding: 10px;">
-                                    <div class="row" style="text-align: center;height: 85%;margin: 0px;">
+                                    <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                         <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
                                             <h6 style="text-align: start">Imagen del Estudiante (Opcional)</h6>
                                             <img width="200px"   id="previewImagen" style=" max-height:250px;"
@@ -282,7 +283,7 @@
 
                             <div class="modal-footer">
                                 <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary"
-                                        data-dismiss="modal">Cerrar
+                                        data-dismiss="modal">cerrar
                                 </button>
                                 <button type="submit" class="btn btn-primary">Guardar</button>
 
@@ -293,6 +294,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- codigo para buscar los estudiantes -->
         <form class="form-inline" method="get" action="{{route('estudiante.buscarEstudiante')}}">
@@ -362,6 +364,9 @@
 
             </script>
         @endif
+
+
+
     <!-- modal para editar  -->
         <div class="modal fade  bd-example-modal-lg" id="editarEstudiante" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalScrollableTitle">
@@ -369,7 +374,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Estudiantes</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="close"  data-dismiss="modal"  aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -416,7 +421,7 @@
                                     >
                                     @if ($errors->has('identificacion'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('identificacion') }}</strong>
+                                        <strong id="identificacionError" >{{ $errors->first('identificacion') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -437,7 +442,7 @@
                                     >
                                     @if ($errors->has('telefono'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                        <strong id="telefonoError">{{ $errors->first('telefono') }}</strong>
                                     </span>
                                     @endif
                                 </div>
@@ -562,8 +567,8 @@
                             </div>
                             <!-- boton para guardar y cerrar -->
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="button"  onclick="limpiarLosDatosModal()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="submit"   class="btn btn-primary">Guardar</button>
 
                             </div>
                         </form>
