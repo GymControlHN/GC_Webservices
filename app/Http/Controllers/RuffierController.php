@@ -43,7 +43,7 @@ class RuffierController extends Controller
             $this->alerta=0;
 
         return view('ruffiel',compact("datos","chart"))->with("cliente", $cliente)->with("no", 1)
-            ->withExito("Registro ruffier creado con exito")->withError(null);
+            ->withExito("Registro ruffier creado con éxito")->withError(null);
 
     }
         if(($this->alerta) ==2){

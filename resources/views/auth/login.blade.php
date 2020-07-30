@@ -115,7 +115,12 @@
 
 
 </script>
-
+<script type="text/javascript">
+    var input = document.getElementById('txtPassword');
+    input.oninvalid = function(event) {
+        event.target.setCustomValidity('Contraseña incorrecta');
+    }
+</script>
 
 
 <div id="dropDownSelect1"></div>

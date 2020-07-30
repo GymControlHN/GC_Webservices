@@ -34,7 +34,7 @@ class DiagnosticoGrasaTableSeeder extends Seeder
         $diagnostico->save();
 
         $diagnostico = new Diagnostico_Grasas();
-        $diagnostico->diagnostico = "Algo salio mal";
+        $diagnostico->diagnostico = "Algo salió mal";
         $diagnostico->save();
     }
 }

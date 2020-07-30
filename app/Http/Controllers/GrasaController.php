@@ -48,7 +48,7 @@ class GrasaController extends Controller
             $this->alerta = 0;
 
             return view('grasa', compact("grasa_corporal", "chart"))->with("nombre", $nombre)->with('no', 1)
-           -> withExito("Registro grasa creado con exito")->withError(null);
+           -> withExito("Registro grasa creado con éxito")->withError(null);
         }
         //$grasa_corporal = Grasa
         // ::where("id_cliente", "=", $request->input("id_cliente"));
@@ -101,7 +101,7 @@ class GrasaController extends Controller
 
     {
 
-        $nombre = Cliente::find($id);
+        $nombre = Cliente::find($id_cliente);
         $grasa = Grasa::findOrfail($id);
         $id_cliente = Cliente::findOrFail($id_cliente);
         return view('botongrasaeditar')->with("grasa", $grasa)->with("id", $id_cliente)->with("nombre",$nombre);
