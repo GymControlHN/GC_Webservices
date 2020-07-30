@@ -47,8 +47,20 @@
 				<span class="login100-form-title p-b-41">
                     <strong style="color: #c69500;font-size: 150%">Gym Control</strong>
 				</span>
+
             <form class="login100-form validate-form p-b-33 p-t-5" method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
+                @if($errors->any())
+                    <div class="alert alert-warning alert-dismissible fade show " role="alert">
+
+                        @foreach ($errors->all() as $error)
+                           <span class="fa fa-exclamation-triangle"></span> {{ $error }}
+                        @endforeach
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                @endif
                 <label class="pl-4 mt-lg-1" style="color: #6c757d; font-size: 17px">
                     <strong>Correo Electrónico</strong>
 				</label>
@@ -64,7 +76,7 @@
 
                     <div class="input-group-append">
                         <input id ="txtPassword" class="input100" type="password" name="password" placeholder="Ingrese su clave"
-                               pattern="^[a-z]{1,6}" title="Contraseña incorrecta">
+                              required>
                         <button id ="show_password" class="btn btn-primary" type="button" onclick="mostrarContrasena()">
 
                             <span class="fa fa-eye-slash icon"></span> </button>
@@ -115,23 +127,19 @@
 
 
 </script>
-<script type="text/javascript">
-    var input = document.getElementById('txtPassword');
-    input.oninvalid = function(event) {
-        event.target.setCustomValidity('Contraseña incorrecta');
-    }
-</script>
+
 
 
 <div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+<script src="vendor/jquery/jquery.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 <script src="vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
 <script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 <!--===============================================================================================-->
 <script src="vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->

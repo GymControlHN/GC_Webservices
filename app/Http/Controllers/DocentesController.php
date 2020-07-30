@@ -19,7 +19,7 @@ class DocentesController extends Controller
             ->paginate(10);
         //session()->flashInput([]);
         return view('docentes')->with('docentes', $clientes)->with('no',1);
-        return view('docentes')->with('docentes', $clientes)->with('no', 1);
+        //return view('docentes')->with('docentes', $clientes)->with('no', 1);
     }
 
    //funcion para crear un nuevo  estudiante
@@ -108,12 +108,6 @@ class DocentesController extends Controller
             if ($_FILES["imagen"]["name"]) {
                 $destino = "clientes_imagenes/" . $imagen;
                 copy($ruta, $destino);
-            } else {
-                if(strtoupper($request->input("genero"))==="F"){
-                    $imagen="woman.png";
-                }else{
-                    $imagen="young.png";
-                }
             }
 
             // Buscar la instancia en la base de datos.
@@ -128,14 +122,14 @@ class DocentesController extends Controller
             $docente->genero = strtoupper($request->input('genero'));
             $docente->id_carrera = 1;
             $docente->id_tipo_cliente = "2";
-            if($imagen!=="") {
+            if($imagen) {
                 $docente->imagen = $imagen;
             }
             $docente->save();
 
 
             $docente = Cliente::paginate(10);
-            return back();
+            return redirect()->route("docentes")->withExito("Se editó exitosamente el docente");
 
 
         } else {

@@ -94,7 +94,7 @@ class  EstudiantesController extends Controller
                 //TODO redireccionar a una página con sentido.
                 //Seccion::flash('message','Estudiante creado correctamente');
 
-                return back()->with(["exito" => "Se agregó exitosamente"]);
+                return redirect()->route("estudiantes")->withExito("Se agregó exitosamente");
             }else{
 
                 return back()->with(["error" => "La carrera ingresada no existe"]);
@@ -143,14 +143,17 @@ class  EstudiantesController extends Controller
                 if($_FILES["imagen"]["name"]) {
                     $destino = "clientes_imagenes/" . $imagen;
                     copy($ruta, $destino);
-                } else{
+                }
+                /**else{
                     if(strtoupper($request->input("genero"))==="F"){
                         $imagen="woman.png";
                     }else{
                         $imagen="young.png";
                     }
 
+                 *
                 }
+                 * */
                 $nuevoEstudiante = new Cliente();
 
 
@@ -163,13 +166,13 @@ class  EstudiantesController extends Controller
                 $estudiantes->telefono = $request->input("telefono");
                 $estudiantes->id_tipo_cliente = "1";
                 $estudiantes->genero = strtoupper($request->input("genero"));
-                if($imagen!=="") {
+                if($imagen) {
                     $estudiantes->imagen = $imagen;
                 }
                 $estudiantes->save();
 
                 $estudiantes1 = Cliente::paginate(10);
-                return back();
+                return redirect()->route("estudiantes")->withExito('Se editó exitosamente el estudiante');
             }else{
 
                 return back()->with(["error" => "La carrera ingresada no existe"]);
