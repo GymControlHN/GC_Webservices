@@ -175,7 +175,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
 
                         @if($datos->count()>0)
                             @foreach($datos as $dato)
-                                <tr style="text-align:right">
+                                <tr style="text-align:left">
                                     <td>{{$no++}}</td>
                                     <th>{{date("d-m-Y",strtotime($dato->created_at))}}</th>
 

@@ -144,7 +144,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
             <!-- CODIGO DE LA CREACCION DE LA TABLA  -->
 
                 <div class=" table-responsive-lg">
-                    <table class="table  table-hover" style="font-size: 12px">
+                    <table class="table  table-hover" style="font-size: 11.5px">
                         <thead class="thead-dark">
                         <tr>
 
@@ -169,9 +169,9 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                         @if($antecedentes->count()>0)
 
                             @foreach($antecedentes as $antecedente)
-                                <tr style="text-align:right">
-                                    <td>{{$no++}}</td>
-                                    <td><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
+                                <tr style="text-align:left">
+                                    <td style="text-align: left">{{$no++}}</td>
+                                    <td style="text-align: left"><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
                                     <td @if($antecedente->imc>30)
                                         style="color: red"
                                         @elseif($antecedente->imc>18.49&& $antecedente->imc<29.99)
