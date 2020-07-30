@@ -140,9 +140,14 @@
 
     </head>
 
-<script type="text/javascript">
-
-</script>
+    <!--limitar el numero de digitos a poder ingresar en los imputs-->
+    <script type="text/javascript">
+        function limitText(limitField, limitNum) {
+            if (limitField.value.length > limitNum) {
+                limitField.value = limitField.value.substring(0, limitNum);
+            }
+        }
+    </script>
 
     <!-- Metodo para guardar -->
 
@@ -157,7 +162,8 @@
                 <div class="form-group col-md-4">
                     <h6 class=" label2" for="email" style="margin-top: -1%">Pulso en reposo</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" id="pulso_r"
-                               name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
+                               name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" autofocus onKeyDown="limitText(this,5);"
+                               onkeyup="calcularRuffiel();limitText(this,5)"
                               value="{{old('pulso_r')}}" required min="30" max="300" pattern="^[0-9]+"
 
                         >
@@ -167,13 +173,15 @@
                 <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style="margin-top: -1%">Pulso en acción:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
-                               id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
+                               id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso"
+                               autofocus onKeyDown="limitText(this,5);" onkeyup="calcularRuffiel();limitText(this,5)"
                               value="{{old('pulso_a')}}" required min="30" max="300" pattern="^[0-9]+">
                     </div>
                 <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style="margin-left: 10%; margin-top: -1%">Pulso en descanso:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
-                           id="pulso_d" name="pulso_d" maxlength="3"  placeholder="Ingrese el pulso" onkeyup="calcularRuffiel()"
+                           id="pulso_d" name="pulso_d" maxlength="3"  placeholder="Ingrese el pulso"
+                           autofocus onKeyDown="limitText(this,5);" onkeyup="calcularRuffiel();limitText(this,5)"
                            value="{{old('pulso_d')}}" required min="30" max="300" pattern="^[0-9]+">
                 </div>
                 </div>
@@ -188,14 +196,15 @@
                 <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style=" margin-top: 1%">MVO2:</h6>
                 <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
-                       id="mvo" name="mvo" maxlength="3"
+                       id="mvo" name="mvo" maxlength="3" autofocus onKeyDown="limitText(this,5);"
+                       onkeyup="limitText(this,5)"
                        value="{{old('mvo')}}" required placeholder="Ingrese fuerza pulmonar" min="1"  pattern="^[0-9]+">
             </div>
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-left: 10%; margin-top: 1%">MVO2 Real:</h6>
                 <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001"
                        id="mvoreal" name="mvoreal" maxlength="3" onkeyup="calcularMVO2()"
-
+                             autofocus onKeyDown="limitText(this,5);limitText(this,5)"
                        value="{{old('mvoreal')}}" required placeholder="Ingrese fuerza pulmonar" min="1" pattern="^[0-9]+">
             </div>
                 </div>

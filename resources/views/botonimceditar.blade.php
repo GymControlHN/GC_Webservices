@@ -161,7 +161,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: -1%">Altura:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="20" max="300" pattern="^[0-9]+"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="20" max="2500" pattern="^[0-9]+"
                        id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla" autofocus onKeyDown="limitText(this,5);"
                        onkeyup="calcularIMC();limitText(this,5)"
                        @isset($antecedente)
@@ -216,7 +216,7 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Cadera:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="300" pattern="^[0-9]+"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="500" pattern="^[0-9]+"
                        name="cadera" id="cadera" autofocus onKeyDown="limitText(this,5);" onkeyup="limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->cadera}}"

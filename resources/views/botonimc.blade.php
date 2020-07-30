@@ -160,7 +160,7 @@
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: -1%">Altura:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01"
-                               id="altura" name="altura" maxlength="4" placeholder="Ingrese la talla en cm" required min="20" max="300" pattern="^[0-9]+"
+                               id="altura" name="altura" maxlength="4" placeholder="Ingrese la talla en cm" required min="20" max="2500" pattern="^[0-9]+"
                                onkeyup="calcularIMC();limitText(this,5)"  autofocus onKeyDown="limitText(this,5);" value="{{old('altura')}}">
 
                     </div>
@@ -190,7 +190,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 2%">Cadera:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1"  max="300" pattern="^[0-9]+"
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1"  max="500" pattern="^[0-9]+"
                                name="cadera" id="cadera" maxlength="4"  onkeyup="limitText(this,5)"  autofocus onKeyDown="limitText(this,5);"  value="{{old('cadera')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
