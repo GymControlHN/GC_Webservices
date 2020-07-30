@@ -49,6 +49,8 @@ class  EstudiantesController extends Controller
     public function store(Request $request)
     {
         // Validar los datos al momento de ingresarlos
+
+
       $this->validate($request,[
           'identificacion'=>'required|unique:clientes_gym|max:99999999999|numeric',
          'telefono'=>'required|unique:clientes_gym|max:99999999|numeric',

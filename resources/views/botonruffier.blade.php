@@ -66,8 +66,8 @@
 
         @endif
 
-        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropométricas</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
         <a class="btn btn-primary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
 
@@ -151,7 +151,7 @@
             <input name="_token" value="{{csrf_token()}}" type="hidden">
 
             <!-- Formulario para ingresar datos -->
-            <h5 style="margin-top: -1%">Calculo de Ruffier</h5>
+            <h5 style="margin-top: -1%">Cálculo de Ruffier</h5>
 
             <div class="form-row mt-4">
                 <div class="form-group col-md-4">
@@ -165,7 +165,7 @@
 
 
                 <div class="form-group col-md-4">
-                    <h6 class="label2" for="email" style="margin-top: -1%">Pulso en accion:</h6>
+                    <h6 class="label2" for="email" style="margin-top: -1%">Pulso en acción:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"
                                id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                               value="{{old('pulso_a')}}" required min="30" max="300" pattern="^[0-9]+">
@@ -203,7 +203,7 @@
                 <div class="form-row">
                    <div class="form-group col-md-4">
                        <h6 class="label2" for="email" style="margin-left: 10%; margin-top: -0%;width: 310px">
-                           Diagnostico MVO:</h6>
+                           Diagnóstico MVO:</h6>
                        <input style="width: 310px; margin-left: 10%" type="number" class="form-control inputtamaño3" step="0.0001"
                               id="mvodiagnostico" name="mvodiagnostico" maxlength="3"
                               value="{{old(' mvodiagnostico')}}" readonly required >
