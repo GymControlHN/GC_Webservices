@@ -125,6 +125,15 @@
             }</script>
 
 
+        <!--limitar el numero de digitos a poder ingresar en los imputs-->
+        <script type="text/javascript">
+            function limitText(limitField, limitNum) {
+                if (limitField.value.length > limitNum) {
+                    limitField.value = limitField.value.substring(0, limitNum);
+                }
+            }
+        </script>
+
         <!-- Metodo para guardar lo editado-->
 
     <form name="id_imc" id="id_imc"
@@ -142,8 +151,8 @@
             <div class="form-group col-md-4">
                 <h6 class=" label2" for="email" style="margin-top: -1%">Peso kg:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" id="peso"
-                       name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos" min="1" pattern="^[0-9]+"
-                       onkeyup="calcularIMC()"
+                       name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos" min="1" max="400" pattern="^[0-9]+" autofocus onKeyDown="limitText(this,5);"
+                       onkeyup="calcularIMC();limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->peso}}"
                        @endisset
@@ -153,8 +162,8 @@
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: -1%">Altura:</h6>
                 <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" required min="20" max="300" pattern="^[0-9]+"
-                       id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla"
-                       onkeyup="calcularIMC()"
+                       id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla" autofocus onKeyDown="limitText(this,5);"
+                       onkeyup="calcularIMC();limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->altura}}"
                        @endisset
@@ -164,8 +173,8 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: -1%">Pecho:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                       name="pecho" id="pecho"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="300" pattern="^[0-9]+"
+                       name="pecho" id="pecho" autofocus onKeyDown="limitText(this,5);" onkeyup="limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->pecho}}"
                        @endisset
@@ -175,7 +184,8 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">Brazo:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" name="brazo" id="brazo" min="1" pattern="^[0-9]+"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" name="brazo" id="brazo" min="1" max="300" pattern="^[0-9]+"
+                       autofocus onKeyDown="limitText(this,5);" onkeyup="limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->brazo}}"
                        @endisset
@@ -185,8 +195,8 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">ABD-A:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                       name="ABD_A" id="ABD_A"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="999" pattern="^[0-9]+"
+                       name="ABD_A" id="ABD_A" autofocus onKeyDown="limitText(this,5);" onkeyup="limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->ABD_A}}"
                        @endisset
@@ -196,8 +206,8 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 1%">ABD-B:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                       name="ABD_B" id="ABD_B"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="999" pattern="^[0-9]+"
+                       name="ABD_B" id="ABD_B" autofocus onKeyDown="limitText(this,5);" onkeyup="limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->ABD_B}}"
                        @endisset
@@ -206,8 +216,8 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Cadera:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                       name="cadera" id="cadera"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="300" pattern="^[0-9]+"
+                       name="cadera" id="cadera" autofocus onKeyDown="limitText(this,5);" onkeyup="limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->cadera}}"
                        @endisset
@@ -215,8 +225,8 @@
             </div>
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Muslo:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                       name="muslo" id="muslo"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="300" pattern="^[0-9]+"
+                       name="muslo" id="muslo" autofocus onKeyDown="limitText(this,5);" onkeyup="limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->muslo}}"
                        @endisset
@@ -225,8 +235,8 @@
 
             <div class="form-group col-md-4">
                 <h6 class="label2" for="email" style="margin-top: 2%">Pierna:</h6>
-                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                       name="pierna" id="pierna"
+                <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="300" pattern="^[0-9]+"
+                       name="pierna" id="pierna" autofocus onKeyDown="limitText(this,5);" onkeyup="limitText(this,5)"
                        @isset($antecedente)
                        value="{{$antecedente->pierna}}"
                        @endisset

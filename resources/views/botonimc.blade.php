@@ -128,6 +128,14 @@
 
                 }</script>
 
+<!--limitar el numero de digitos a poder ingresar en los imputs-->
+        <script type="text/javascript">
+            function limitText(limitField, limitNum) {
+                if (limitField.value.length > limitNum) {
+                    limitField.value = limitField.value.substring(0, limitNum);
+                }
+            }
+        </script>
 
         <!-- Metodo para guardar-->
         <form name="f1" id="f1"
@@ -143,59 +151,60 @@
                 <div class="form-row mt-4" >
                     <div class="form-group col-md-4">
                         <h6 class=" label2" for="email" style=" margin-top: -1%">Peso kg:</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01" id="peso" required min="1" pattern="^[0-9]+"
-                               name="peso" maxlength="3" placeholder="Ingrese el peso en kilogramos"
-                               onkeyup="calcularIMC()" value="{{old('peso')}}">
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01" id="peso" required min="1" max='400' pattern="^[0-9]+"
+                               name="peso" maxlength="4" placeholder="Ingrese el peso en kilogramos" autofocus onKeyDown="limitText(this,5);"
+                               onKeyUp=""
+                               onkeyup="calcularIMC();limitText(this,5)" value="{{old('peso')}}">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: -1%">Altura:</h6>
                         <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01"
-                               id="altura" name="altura" maxlength="3" placeholder="Ingrese la talla en cm" required min="20" max="300" pattern="^[0-9]+"
-                               onkeyup="calcularIMC()" value="{{old('altura')}}">
+                               id="altura" name="altura" maxlength="4" placeholder="Ingrese la talla en cm" required min="20" max="300" pattern="^[0-9]+"
+                               onkeyup="calcularIMC();limitText(this,5)"  autofocus onKeyDown="limitText(this,5);" value="{{old('altura')}}">
 
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: -1%">Pecho:</h6>
-                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
-                               name="pecho" id="pecho" value="{{old('peso')}}" placeholder="Ingrese la talla en cm">
+                        <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" max="300" pattern="^[0-9]+"
+                               name="pecho" id="pecho" maxlength="4"  onkeyup="limitText(this,5)"  autofocus onKeyDown="limitText(this,5);" value="{{old('peso')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 1%">Brazo:</h6>
                         <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01"  required
-                               min="1" pattern="^[0-9]+" name="brazo" id="brazo" value="{{old('brazo')}}" placeholder="Ingrese la talla en cm">
+                               min="1" max="300" pattern="^[0-9]+" maxlength="4" name="brazo" id="brazo"  onkeyup="limitText(this,5)"  autofocus onKeyDown="limitText(this,5);"  value="{{old('brazo')}}" placeholder="Ingrese la talla en cm">
                     </div>
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 1%">ABD-A:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
-                               name="ABD_A" id="ABD_A" value="{{old('ABD_A')}}" placeholder="Ingrese la talla en cm">
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" max="300" pattern="^[0-9]+"
+                               name="ABD_A" id="ABD_A" maxlength="4"  onkeyup="limitText(this,5)"  autofocus onKeyDown="limitText(this,5);"  value="{{old('ABD_A')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 1%">ABD-B:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" min="1" pattern="^[0-9]+"
-                               required name="ABD_B" id="ABD_B" value="{{old('ABD_B')}}"
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" min="1" max= "300" pattern="^[0-9]+"
+                               required name="ABD_B" id="ABD_B" maxlength="4"  onkeyup="limitText(this,5)"  autofocus onKeyDown="limitText(this,5);"  value="{{old('ABD_B')}}"
                                placeholder="Ingrese la talla en cm">
                     </div>
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 2%">Cadera:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
-                               name="cadera" id="cadera" value="{{old('cadera')}}" placeholder="Ingrese la talla en cm">
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1"  max="300" pattern="^[0-9]+"
+                               name="cadera" id="cadera" maxlength="4"  onkeyup="limitText(this,5)"  autofocus onKeyDown="limitText(this,5);"  value="{{old('cadera')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 2%">Muslo:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
-                               name="muslo" id="muslo" value="{{old('muslo')}}" placeholder="Ingrese la talla en cm">
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" max="300" pattern="^[0-9]+"
+                               name="muslo" id="muslo" maxlength="4"  onkeyup="limitText(this,5)"  autofocus onKeyDown="limitText(this,5);"  value="{{old('muslo')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
 
                     <div class="form-group col-md-4">
                         <h6 class="label2" for="email" style=" margin-top: 2%">Pierna:</h6>
-                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" pattern="^[0-9]+"
-                               name="pierna" id="pierna" value="{{old('pierna')}}" placeholder="Ingrese la talla en cm">
+                        <input style="width:310px" type="number" class="form-control inputtamaño3" step="0.01" required min="1" max="300" pattern="^[0-9]+"
+                               name="pierna" id="pierna" maxlength="4"  onkeyup="limitText(this,5)"  autofocus onKeyDown="limitText(this,5);"  value="{{old('pierna')}}" placeholder="Ingrese la talla en cm">
                     </div>
 
                 </div>
