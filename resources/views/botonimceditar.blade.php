@@ -15,7 +15,7 @@
     <nav aria-label="breadcrumb" style="margin:1%; margin-right:70%;">
         <ol class="breadcrumb" style="background-color: white">
             <li class="breadcrumb-item"><a href="/estudiantes">Estudiante</a></li>
-            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropometricas</a></li>
+            <li class="breadcrumb-item"><a href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropométricas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Editar</li>
         </ol>
     </nav>
@@ -66,8 +66,8 @@
                     @endif >Pagos</a>
 
         @endif
-        <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">MedidasAntropometricas</a>
-        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">GrasaCorporal</a>
+        <a class="btn btn-primary btn-sm" href="{{route("imc.ini",[$cliente->id])}}">Medidas Antropométricas</a>
+        <a class="btn btn-secondary btn-sm" href="{{route("grasa.uni",["id"=>$cliente->id])}}">Grasa Corporal</a>
         <a class="btn btn-secondary btn-sm" href="{{route("ruffier.uni",["id"=>$cliente->id])}}">Ruffier</a>
 
 
