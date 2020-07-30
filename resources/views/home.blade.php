@@ -91,7 +91,7 @@
                         <div class="form-group col-md-4">
                             <h6 class=" " for="email" style=" margin-top: -1%">Altura:</h6>
                             <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" id="altura"
-                                   name="altura" maxlength="3" placeholder="Ingrese su altura" required min="20"  max="300" pattern="^[0-9]+"
+                                   name="altura" maxlength="3" placeholder="Ingrese su altura" required min="100"  max="300" pattern="^[0-9]+"
 
                             >
                         </div>
@@ -143,8 +143,8 @@
                             pesoIdeal.innerText = pesoidealM.toFixed(2) +"Kg";
 
                         }
-                        if(altura<20){
-                            pesoIdeal.innerText = "Ingrese la altura superior a 20 cm";
+                        if(altura<100){
+                            pesoIdeal.innerText = "Ingrese la altura superior a 100 cm";
                         }
                         if(altura>300){
                             pesoIdeal.innerText = "Ingrese la altura inferior a 300 cm";
