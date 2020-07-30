@@ -49,7 +49,7 @@ class ImcController extends Controller
             $this->alerta=0;
 
             return view('imc', compact("antecedentes", "chart"))->with("cliente", $cliente)->with('no', 1)
-                ->withExito("Registro imc creado con exito")->withError(null);
+                ->withExito("Registro imc creado con éxito")->withError(null);
 
         }
         if(($this->alerta) ==2){
