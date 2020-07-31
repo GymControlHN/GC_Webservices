@@ -74,8 +74,9 @@
                 document.getElementById("previewImagen").src="/images/addphoto.ico";
                 document.getElementById("identificacionError").innerText="";
                 document.getElementById("telefonoError").innerText="";
-
             }
+
+
         </script>
 
 
@@ -108,7 +109,7 @@
                                                     class="form-control solo-letras" id="nombre" name="nombre"
                                                     required
                                             >
-                                            @if ($errors->has('nombre'))
+                                           @if ($errors->has('nombre'))
                                                 <span class="help-block">
                                         <strong id="nombreError">{{ $errors->first('nombre') }}</strong>
                                     </span>
@@ -148,7 +149,7 @@
                                                    maxlength="8" minlength="8" aria-valuemax="8" max="99999999">
                                             @if ($errors->has('telefono'))
                                                 <span class="help-block" style="color: red">
-                                        <strong id="identificacionError">El valor teléfono ya está en uso</strong>
+                                        <strong id="telefonoError">El valor teléfono ya está en uso</strong>
                                     </span>
                                             @endif
 
@@ -285,7 +286,7 @@
                                 <button type="button" onclick="limpiarDatosModal()" class="btn btn-secondary"
                                         data-dismiss="modal">cerrar
                                 </button>
-                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <button type="submit" class="btn btn-primary" >Guardar</button>
 
                             </div>
                         </form>
@@ -364,7 +365,14 @@
 
             </script>
         @endif
+        <script>
+            function limpiarDatosDeModal() {
+                document.getElementById("identificacionError1").innerText="";
+                document.getElementById("telefonoError1").innerText="";
+            }
 
+
+        </script>
 
 
     <!-- modal para editar  -->
@@ -374,7 +382,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Estudiantes</h5>
-                        <button type="button" class="close"  data-dismiss="modal"  aria-label="Close">
+                        <button type="button" class="close" onclick="limpiarDatosDeModal()" data-dismiss="modal"  aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
@@ -421,7 +429,7 @@
                                     >
                                     @if ($errors->has('identificacion'))
                                         <span class="help-block">
-                                        <strong id="identificacionError" >{{ $errors->first('identificacion') }}</strong>
+                                        <strong id="identificacionError1" ></strong>
                                     </span>
                                     @endif
                                 </div>
@@ -442,7 +450,7 @@
                                     >
                                     @if ($errors->has('telefono'))
                                         <span class="help-block">
-                                        <strong id="telefonoError">{{ $errors->first('telefono') }}</strong>
+                                        <strong id="telefonoError1"></strong>
                                     </span>
                                     @endif
                                 </div>
@@ -567,8 +575,8 @@
                             </div>
                             <!-- boton para guardar y cerrar -->
                             <div class="modal-footer">
-                                <button type="button"  onclick="limpiarLosDatosModal()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="submit"   class="btn btn-primary">Guardar</button>
+                                <button type="button"  onclick="limpiarDatosDeModal()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="submit"  class="btn btn-primary">Guardar</button>
 
                             </div>
                         </form>

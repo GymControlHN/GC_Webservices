@@ -73,7 +73,6 @@
                 document.getElementById("telefonoError").innerText="";
 
 
-
             }
         </script>
 
@@ -140,7 +139,7 @@
                                         >
                                         @if ($errors->has('telefono'))
                                             <span class="help-block" style="color: red">
-                                        <strong id="identificacionError">El valor teléfono ya está en uso</strong>
+                                        <strong id="telefonoError">El valor teléfono ya está en uso</strong>
                                     </span>
                                         @endif
                                     </div>
@@ -335,6 +334,15 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
+                    <script>
+                        function limpiarDatosDeModal() {
+                            document.getElementById("identificacionError1").innerText="";
+                            document.getElementById("telefonoError1").innerText="";
+                        }
+
+
+                    </script>
                     <!--  metodo para editar-->
                     <div class="modal-body">
 
@@ -381,7 +389,7 @@
                                     >
                                     @if ($errors->has('identificacion'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('identificacion') }}</strong>
+                                        <strong id="identificacionError1"></strong>
                                     </span>
                                     @endif
                                 </div>
@@ -402,7 +410,7 @@
                                     >
                                     @if ($errors->has('telefono'))
                                         <span class="help-block">
-                                        <strong>{{ $errors->first('telefono') }}</strong>
+                                        <strong id="telefonoError1"></strong>
                                     </span>
                                     @endif
                                 </div>

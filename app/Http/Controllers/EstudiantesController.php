@@ -95,6 +95,7 @@ class  EstudiantesController extends Controller
                 //Seccion::flash('message','Estudiante creado correctamente');
 
                 return redirect()->route("estudiantes")->withExito("Se agregó exitosamente");
+
             }else{
 
                 return back()->with(["error" => "La carrera ingresada no existe"]);
