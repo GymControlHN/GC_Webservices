@@ -142,14 +142,6 @@
         </head>
         <!-- Metodo para guardar -->
 
-        <!--limitar el numero de digitos a poder ingresar en los imputs-->
-        <script type="text/javascript">
-            function limitText(limitField, limitNum) {
-                if (limitField.value.length > limitNum) {
-                    limitField.value = limitField.value.substring(0, limitNum);
-                }
-            }
-        </script>
 
 
         <form name="id_imc" id="id_imc"
@@ -166,8 +158,8 @@
                 <div class="form-group col-md-4">
                     <h6 class=" label2" for="email" style="margin-top: -1%">Pulso en reposo</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"  min="30" max="300" pattern="^[0-9]+"
-                           id="pulso_r" autofocus onKeyDown="limitText(this,5);"
-                           name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel();limitText(this,5)"
+                           id="pulso_r"
+                           name="pulso_r" maxlength="3" placeholder="Ingrese su pulso" onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso_r}}"
                            @endisset
@@ -179,8 +171,8 @@
                 <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style="margin-top: -1%">Pulso en acción:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"  min="30" max="300" pattern="^[0-9]+"
-                           id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso" autofocus onKeyDown="limitText(this,5);"
-                           onkeyup="calcularRuffiel();limitText(this,5)"
+                           id="pulso_a" name="pulso_a" maxlength="3" placeholder="Ingrese su pulso"
+                           onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso_a}}"
                            @endisset
@@ -190,8 +182,8 @@
                 <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style="margin-top: -1%">Pulso en descanso:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"  min="30" max="300" pattern="^[0-9]+"
-                           id="pulso_d" name="pulso_d" maxlength="3" placeholder="Ingrese el pulso" autofocus onKeyDown="limitText(this,5);"
-                           onkeyup="calcularRuffiel();limitText(this,5)"
+                           id="pulso_d" name="pulso_d" maxlength="3" placeholder="Ingrese el pulso"
+                           onkeyup="calcularRuffiel()"
                            @isset($dato)
                            value="{{$dato->pulso_d}}"
                            @endisset
@@ -228,8 +220,8 @@
                 <div class="form-group col-md-4">
                     <h6 class="label2" for="email" style=" margin-top: 1%">MVO2 Real:</h6>
                     <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001"  min="1" pattern="^[0-9]+"
-                           id="mvoreal" name="mvoreal" maxlength="3" autofocus onKeyDown="limitText(this,5);"
-                           onkeyup="calcularMVO2();limitText(this,5)"
+                           id="mvoreal" name="mvoreal" maxlength="3"
+                           onkeyup="calcularMVO2()"
 
                            @isset($dato)
                            value="{{$dato->mvoreal}}"
