@@ -44,7 +44,7 @@ class DiagnosticoImcSeeder extends Seeder
         $diagnosticoIMC->save();
 
         $diagnosticoIMC = new \App\Diagnostico_Imc();
-        $diagnosticoIMC->diagnostico="Algo salio mal";
+        $diagnosticoIMC->diagnostico="Algo salió mal";
         $diagnosticoIMC->save();
 
 

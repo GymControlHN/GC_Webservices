@@ -115,7 +115,6 @@
 
         </div>
 
-
         <div class="w3-container w3-teal mx-5">
 
             <div class="card" style="-moz-box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);
@@ -153,7 +152,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                             <th scope="col">Diagnóstico</th>
                             <th scope="col">Peso Kg</th>
                             <th scope="col">Altura°</th>
-                            <th scope="col">Imc</th>
+                            <th scope="col">IMC</th>
                             <th scope="col">Pecho cm</th>
                             <th scope="col">Brazo cm</th>
                             <th scope="col">ABD A</th>
