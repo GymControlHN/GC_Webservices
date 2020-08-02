@@ -145,15 +145,17 @@
                                     </div>
                                 </div>
 
+
                                         <div class="row" style="height: 20%;margin: 0px;">
                                     <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }}  " style="width: 90%">
                                         <h6>Fecha de nacimiento</h6>
-                                        <input type="date"  pattern="([0-9]{1,3})" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
+                                        <input type="date"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
                                                title="Ingrese solo números entre 1 a 99 años"
 
                                                required
-                                               minlength="1" maxlength="2" min="1"
+
                                                max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+                                               min="{{date("Y-m-d",strtotime("-36500 days"))}}"
                                                value="{{old("fecha_nacimiento")}}"
                                         >
                                         @if ($errors->has('fecha_nacimiento'))
@@ -417,21 +419,21 @@
                             </div>
 
 
-
                                     <div class="row" style="height: 20%;margin: 0px;">
 
                                 <div class="form-group{{ $errors->has('fecha_nacimiento') ? ' has-error' : '' }} "style="width: 90%">
                                     <h6>Fecha de nacimiento</h6>
                                     <input type="date"  pattern="([0-9]{1,3})"  class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"
-                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                            value="{{old("fecha_nacimiento")}}"
+
                                            @isset($docente)
                                            value="{{$docente->fecha_nacimiento}}"
-                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
                                            @endisset value="{{old('fecha_nacimiento')}}"
                                            title="Ingrese solo números entre 1 a 99 años"
                                            required
-                                           minlength="1" maxlength="2" min="1" max="99"
+                                           max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+                                           min="{{date("Y-m-d",strtotime("-36500 days"))}}"
+
                                     >
                                     @if ($errors->has('fecha_nacimiento'))
                                         <span class="help-block">

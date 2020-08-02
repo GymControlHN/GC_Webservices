@@ -40,7 +40,7 @@ class GraficoController extends Controller
         $chart->labels(['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
             'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']);
 
-        $chart->dataset('imc', 'line', $imc)->options([
+        $chart->dataset('Imc', 'line', $imc)->options([
             'fill' => 'true',
             'borderColor' => '#00FF00',
         ]);
