@@ -190,7 +190,7 @@
                                     <div class="col" style="padding: 10px;">
                                         <div class="row" style="text-align: center;height: 80%;margin: 0px;">
                                     <div class="form-group {{ $errors->has('imagen') ? ' has-error' : '' }}" style="width: 90%">
-                                        <h6 style="text-align: start">Imagen del particular</h6>
+                                        <h6 style="text-align: start">Imagen del particular (Opcional)</h6>
                                         <img width="200px" style=" max-height:250px" id="previewImagen"
                                              src="/images/addphoto.ico"
                                              @if($errors->has("imagen"))  src="/images/addphoto.ico"

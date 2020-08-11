@@ -15,11 +15,13 @@ class EstadisticasController extends Controller
     //funcion para mostrar los clientes en general(estudiantes,docentes y particulares)
     public function index()
     {
+
         $clientes = Cliente::join("tipo_clientes",
             "clientes_gym.id_tipo_cliente", "=", "tipo_clientes.id")
             ->join('carreras','clientes_gym.id_carrera','=','carreras.id')
             ->select("clientes_gym.*", "tipo_clientes.descripcion","carreras.carrera")
-            ->paginate(10);
+        ->paginate(10);
+
 
         $obesidadTipoIII= Imc::
         join("diagnostico_imcs","antecedentes.id_diagnostico","=","diagnostico_imcs.id")
@@ -56,6 +58,7 @@ class EstadisticasController extends Controller
         return view('estadisticas',["obesidadTipoIII"=>$obesidadTipoIII,"obesidadTipoII"=>$obesidadTipoII,
             "obesidadTipoI"=>$obesidadTipoI, "preobesidad"=>$preobesidad, "pesoNormal"=>$pesoNormal,
             "delgadez"=>$delgadez, "delgadezSevera"=>$delgadezSevera])->with('clientes', $clientes)->with('no',1);
+
 
     }
 
