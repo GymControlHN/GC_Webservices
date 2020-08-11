@@ -60,8 +60,8 @@
                     <h7 style="margin-left: 1%">Expediente Docente</h7>
                 @endif
             </div>
-
-        <img src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px" style="margin-left: -7%"  >
+            <!-- codigo para ver la imagen en cada vista de la grasa -->
+        <img src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px" style="margin-left: -16%"  >
 
         <div class="card margencard" style=" border: none;" >
 
