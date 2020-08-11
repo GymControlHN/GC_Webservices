@@ -246,7 +246,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
 
-                        <table class="table table-hover" style="font-size: 14px" >
+                        <table class="table table-hover" style="font-size: 11.5px" >
                             <!-- creacion de la tabla -->
 
                         <thead class="thead-dark">
@@ -355,6 +355,8 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                     }
                 }
             </style>
+        </div>
+    </div>
 @endsection
 
 

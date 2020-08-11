@@ -143,6 +143,14 @@
 
         </head>
 
+        !--limitar el numero de digitos a poder ingresar en los imputs-->
+        <script type="text/javascript">
+            function limitText(limitField, limitNum) {
+                if (limitField.value.length > limitNum) {
+                    limitField.value = limitField.value.substring(0, limitNum);
+                }
+            }
+        </script>
 
         <input id="sexo" value="{{$nombre->genero}}" type="hidden">
         <!-- Metodo para guardar lo editado  -->
@@ -163,8 +171,8 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-top: 1%">Pc tricipital:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                           onkeyup="calcularGrasa()"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="400"  pattern="^[0-9]+"
+                           autofocus onKeyDown="limitText(this,5);" onkeyup="calcularGrasa();limitText(this,5)"
                            id="pc_tricipital" name="pc_tricipital" maxlength="3"
                            @isset($grasa)
                            value="{{$grasa->pc_tricipital}}"
@@ -175,8 +183,8 @@
 
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-top: 1%">Pc Infraescapular:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                           onkeyup="calcularGrasa()"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="400"  pattern="^[0-9]+"
+                           autofocus onKeyDown="limitText(this,5);" onkeyup="calcularGrasa();limitText(this,5)"
                            id="pc_infraescapular" name="pc_infraescapular" maxlength="50"
                            placeholder="Ingrese medicas en cm"
                            @isset($grasa)
@@ -189,8 +197,8 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-top: 2%">Pc Bicipital:</h6>
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                           onkeyup="calcularGrasa()"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="400"  pattern="^[0-9]+"
+                           autofocus onKeyDown="limitText(this,5);" onkeyup="calcularGrasa();limitText(this,5)"
                            id="pc_biciptal" name="pc_biciptal" maxlength="3" placeholder="Ingrese medicas en cm"
                            @isset($grasa)
                            value="{{$grasa->pc_biciptal}}"
@@ -202,8 +210,8 @@
                 <div class="form-group col-md-6">
                     <h6 class="label2" for="email" style="margin-top: 2%">Pc Suprailíaco:</h6>
 
-                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" pattern="^[0-9]+"
-                           onkeyup="calcularGrasa()"
+                    <input style="width: 310px" type="number" class="form-control inputtamaño3" step="0.0001" min="1" max="400" pattern="^[0-9]+"
+                           autofocus onKeyDown="limitText(this,5);" onkeyup="calcularGrasa();limitText(this,5)"
                            id="pc_supra_iliaco" name="pc_supra_iliaco" maxlength="50"
                            placeholder="Ingrese medicas en cm"
                            @isset($grasa)
