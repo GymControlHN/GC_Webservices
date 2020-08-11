@@ -14,7 +14,7 @@ class DiagnosticoGrasaTableSeeder extends Seeder
     public function run()
     {
         $diagnostico = new Diagnostico_Grasas();
-        $diagnostico->diagnostico ="Estas Obeso";
+        $diagnostico->diagnostico ="Estás Obeso";
         $diagnostico->save();
 
         $diagnostico = new Diagnostico_Grasas();

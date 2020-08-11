@@ -21,7 +21,7 @@ class  EstudiantesController extends Controller
         $clientes = Cliente::where("id_tipo_cliente","=","1")
             ->join("carreras","clientes_gym.id_carrera","=","carreras.id")
             ->select("clientes_gym.*","carreras.carrera")
-            ->paginate(10);
+            ->paginate(11);
 
         $totalEstudiantes= Cliente::where("id_tipo_cliente","=",1)->count();
         $totalPagosEstudiantes = PagoClientesP::where("tipo_pago",
