@@ -166,6 +166,7 @@
 
                                                    required
                                                    max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+                                                   min="{{date("Y-m-d",strtotime("-36500 days"))}}"
                                                    value="{{old("fecha_nacimiento")}}">
                                             @if ($errors->has('fecha_nacimiento'))
                                                 <span class="help-block" style="color: red">
@@ -472,6 +473,7 @@
                                            required
 
                                            max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+                                           min="{{date("Y-m-d",strtotime("-36500 days"))}}"
 
                                     >
                                     @if ($errors->has('fecha_nacimiento'))

@@ -158,6 +158,7 @@
                                                    title="Ingrese solo números entre 1 a 99 años"
                                                    required
                                                    max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+                                                   min="{{date("Y-m-d",strtotime("-36500 days"))}}"
                                                    value="{{old("fecha_nacimiento")}}"
                                                    minlength="1" maxlength="2" min="1" max="99">
                                         @if ($errors->has('fecha_nacimiento'))
@@ -452,6 +453,7 @@
                                        title="Ingrese solo números entre 1 a 99 años"
                                        required
                                        max="{{date("Y-m-d",strtotime("-1825 days"))}}"
+                                       min="{{date("Y-m-d",strtotime("-36500 days"))}}"
                                        minlength="1" maxlength="2" min="1" max="99"
                                 >
                                     @if ($errors->has('fecha_nacimiento'))
