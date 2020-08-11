@@ -45,7 +45,7 @@
                 {{ csrf_field() }}
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
                     <input class="input100" type="text" name="email"  value="{{old("email")}}" placeholder="Correo Electronico">
-                    <span class="focus-input100"  data-placeholder="&#xe82a;"></span>
+                    <span class="focus-input100"  data-placeholder="&#x2709;"></span>
                     @if ($errors->has('email'))
                         <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
