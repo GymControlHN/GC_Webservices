@@ -280,10 +280,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
 
                       <th>
-                            <button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editarPagoEstudiante" data-myfecha="{{$user->fecha_pago}}"
+                            <button class="btn btn-outline-warning btn-sm" style="padding-left: 8px; padding-right: 8px" data-toggle="modal" data-target="#editarPagoEstudiante" data-myfecha="{{$user->fecha_pago}}"
                                     data-mynota="{{$user->nota}}" data-mymes="{{$user->mes}}" data-catid="{{$user->id}}"><i class="fas fa-edit"></i></button>
 
-                            <button class="btn btn-outline-danger btn-sm"
+                            <button class="btn btn-outline-danger btn-sm" style="padding-left: 10px; padding-right: 10px"
                                     data-id="{{$user->id}}"
                                     data-id_cliente="{{$user->id_cliente}}"
                                     data-toggle="modal" data-target="#modalBorrarPagoEstudiante"><i class="fas fa-trash-alt"></i></button>

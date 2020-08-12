@@ -624,7 +624,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                         </form>
 
                         <!-- Editar los datos de particular -->
-                        <button class="btn btn-outline-warning mr-xl-2" data-toggle="modal"
+                        <button class="btn btn-outline-warning mr-xl-2" style="padding-left: 10px; padding-right: 10px" data-toggle="modal"
                                 data-target="#editarParticular"
                                 data-mynombre="{{$particular->nombre}}" data-myfecha_nacimiento="{{$particular->fecha_nacimiento}}"
                                 data-myidentidad="{{$particular->identificacion}}"

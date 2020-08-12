@@ -193,7 +193,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
 
                                 <td class="row">
 
-                                    <a class="btn btn-outline-warning btn-sm" style="margin-right: 5px "
+                                    <a class="btn btn-outline-warning btn-sm" style="margin-right: 5px; padding-left: 6px; padding-right: 6px "
                                             href="{{route('grasa.editar',["id_grasa"=>$grasa->id,"id_cliente"=>$grasa->id_cliente])}}"><i
                                                 class="fas fa-edit" ></i>
 

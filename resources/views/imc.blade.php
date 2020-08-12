@@ -196,7 +196,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
                                         <!-- CODIGO DE LA RUTA PARA EDITAR -->
 
 
-                                        <a class="btn btn-outline-warning btn-sm " style="margin-right: 5px"
+                                        <a class="btn btn-outline-warning btn-sm " style="margin-right: 5px; padding-left: 6px; padding-right: 6px"
                                            href="{{route('imc.editar',[$antecedente->id,$antecedente->id_cliente])}}"><i
                                                     class="fas fa-edit" ></i>
 

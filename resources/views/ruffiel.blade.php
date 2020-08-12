@@ -90,7 +90,7 @@
 
         <!-- codigo para difereciar la barra de menu de acuerdo por el id de cada cliente -->
 
-        <div class="btn-group mt-3 mb-5 " style="margin-left: 0px;" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group mt-3 mb-5 " style="margin-left: 0px" role="group" aria-label="Button group with nested dropdown">
 
         @if($cliente->id_tipo_cliente==3||$cliente->id_tipo_cliente==1)
 
@@ -197,7 +197,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1); border: none">
                                     <!-- CODIGO DE LA RUTA PARA EDITAR -->
 
                                 <td class="row ">
-                                    <a class="btn btn-outline-warning btn-sm" style="margin-right: 5px"
+                                    <a class="btn btn-outline-warning btn-sm" style="margin-right: 5px; padding-left: 6px; padding-right: 6px"
                                        href="{{route('ruffier.editar',[$dato->id,$dato->id_cliente])}}"><i
                                                 class="fas fa-edit" ></i>
 

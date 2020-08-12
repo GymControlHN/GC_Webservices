@@ -632,7 +632,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                     {{ csrf_field() }}
                                 </form>
 
-                                <button class="btn btn-outline-warning mr-xl-2" data-toggle="modal"
+                                <button class="btn btn-outline-warning mr-xl-2" style="padding-left: 10px; padding-right: 10px" data-toggle="modal"
                                         data-target="#editarEstudiante" data-mynombre="{{$estudiante->nombre}}"
                                         data-myfecha_nacimiento="{{$estudiante->fecha_nacimiento}}"
                                         data-mycuenta="{{$estudiante->identificacion}}"

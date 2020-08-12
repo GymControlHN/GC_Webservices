@@ -591,7 +591,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
 
                     <td class="form-inline">
                         <!-- Editar los datos de docentes -->
-                        <button class="btn btn-outline-warning mr-2" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myfecha_nacimiento="{{$docente->fecha_nacimiento}}"
+                        <button class="btn btn-outline-warning mr-2" style="padding-left: 10px; padding-right: 10px" data-toggle="modal" data-target="#editarDocente" data-mynombre="{{$docente->nombre}}" data-myfecha_nacimiento="{{$docente->fecha_nacimiento}}"
                                 data-mynumero="{{$docente->identificacion}}"
                                 data-imagen="{{$docente->imagen}}"
                                 data-myfecha="{{$docente->fecha_de_ingreso}}" data-myprofesion="{{$docente->profesion_u_oficio}}"
