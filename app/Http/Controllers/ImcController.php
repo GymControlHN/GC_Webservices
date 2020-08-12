@@ -22,7 +22,7 @@ class ImcController extends Controller
                  "antecedentes.id_diagnostico","=","diagnostico_imcs.id")
                  ->where("id_cliente","=",$id)
                  ->select("antecedentes.*","diagnostico_imcs.diagnostico")
-             ->orderBy("created_at","desc")->paginate(10);
+             ->orderBy("created_at","desc")->paginate(11);
 
 
         $imc = Imc::select(DB::raw("COUNT(*) as count , imc"))

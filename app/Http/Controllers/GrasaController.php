@@ -26,7 +26,7 @@ class GrasaController extends Controller
         join("diagnostico_grasas","grasa_corporal.id_diagnostico","=","diagnostico_grasas.id")
             ->where("id_cliente", "=", $id)
             ->select("diagnostico_grasas.diagnostico","grasa_corporal.*")
-            ->orderBy("created_at","desc")->paginate(10);
+            ->orderBy("created_at","desc")->paginate(11);
 
         $grasa = Grasa::select(DB::raw("COUNT(*) as count , grasa"))
             ->whereYear('created_at', date('Y'))

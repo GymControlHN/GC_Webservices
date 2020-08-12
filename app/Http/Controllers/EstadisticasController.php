@@ -20,7 +20,7 @@ class EstadisticasController extends Controller
             "clientes_gym.id_tipo_cliente", "=", "tipo_clientes.id")
             ->join('carreras','clientes_gym.id_carrera','=','carreras.id')
             ->select("clientes_gym.*", "tipo_clientes.descripcion","carreras.carrera")
-        ->paginate(10);
+        ->paginate(40);
 
 
         $obesidadTipoIII= Imc::

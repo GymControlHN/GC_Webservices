@@ -30,9 +30,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitleE">Crear un nuevo usuario</h5>
-                        <button type="button" class="close margin-top=" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+
                     </div>
 
                     <div class="modal-body">
@@ -140,9 +138,11 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                             </th>
                             <th class="form-inline mr-xl-n2 ">
                                 <button class="btn btn-outline-danger mr-xl-2 "
+                                        data-id="{{$usuario->id}}"
                                         data-toggle="modal"
                                         data-target="#modalBorrarUsuario">
                                     <i class="fas fa-trash-alt"></i></button>
+
                                 <button class="btn btn-outline-info mr-xl-2 " type="button"
                                         data-correo="{{$usuario->email}}"
                                         data-toggle="modal"
@@ -169,9 +169,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Atención Eliminación</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+
                 </div>
                 <form method="post" action="{{route('usuario.borrar')}}">
                     {{method_field('delete')}}
@@ -179,7 +177,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     <div class="modal-body">
                         <input name="id" id="id" type="hidden">
 
-                        <p>Está seguro que desea borrar el usuario?</p>
+                        <p>¿Estás seguro que desea borrar el usuario?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

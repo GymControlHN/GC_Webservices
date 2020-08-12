@@ -425,7 +425,16 @@
         modal.find('.modal-body #id_cliente').val(id_cliente);
 
     });
+    $('#modalBorrarUsuario').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var id = button.data('id');
+        var id_cliente =button.data("id_cliente")
+        var modal = $(this);
 
+        modal.find('.modal-body #id').val(id);
+        modal.find('.modal-body #id_cliente').val(id_cliente);
+
+    });
 
     $('#editarPagoParticular').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
