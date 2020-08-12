@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <h6 for="email">Direccion de correo electronico</h6>
+                                <h6 for="email">Dirección de correo electrónico</h6>
 
                                 <div>
                                     <input id="email" type="email" class="form-control" name="email"
@@ -74,23 +74,27 @@
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                                 <h6 for="password">Contraseña</h6>
 
-                                <div>
+                                <div class="input-group-append">
                                     <input id="password" type="password" class="form-control" name="password" required>
+                                    <button  class="btn btn-primary" type="button" onclick="mostrarContrasena()">
+                                        <span class="fa fa-eye-slash icon"></span> </button>
 
                                     @if ($errors->has('password'))
                                         <span class="help-block">
                                                         <strong>{{ $errors->first('password') }}</strong>
                                                         </span>
                                     @endif
-                                </div>
+                                    </div>
                             </div>
 
                             <div class="form-group">
                                 <h6 for="password-confirm">Confirmar contraseña</h6>
 
-                                <div>
+                                <div class="input-group-append">
                                     <input id="password-confirm" type="password" class="form-control"
                                            name="password_confirmation" required>
+                                    <button class="btn btn-primary" type="button" onclick="mostrarContrasena2()">
+                                        <span class="fa fa-eye-slash icon"></span> </button>
                                 </div>
                             </div>
 
@@ -223,3 +227,31 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
     </div>
 
 @endsection
+
+<script type="text/javascript">
+    function mostrarContrasena(){
+        var cambio = document.getElementById("password");
+        if(cambio.type == "password"){
+            cambio.type = "text";
+            $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        }else{
+            cambio.type = "password";
+            $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function mostrarContrasena2(){
+        var cambio2 = document.getElementById("password-confirm");
+        if(cambio2.type == "password"){
+            cambio2.type = "text";
+            $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        }else{
+            cambio2.type = "password";
+            $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+        }
+    }
+</script>
+
+

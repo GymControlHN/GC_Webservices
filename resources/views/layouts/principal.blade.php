@@ -60,11 +60,11 @@
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/perfil">
-                            Seguridad
+                            Usuarios
                         </a>
 
                         <a class="dropdown-item" href="{{ route('logout') }}" data-toggle="modal" data-target="#cerrarSesionModal">
-                            Cerrar sesion
+                            Cerrar sesión
                         </a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

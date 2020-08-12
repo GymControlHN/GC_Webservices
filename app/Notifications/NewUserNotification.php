@@ -43,9 +43,9 @@ class NewUserNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Bienvenido al sistema de administración de Gym Control')
+            ->subject('Bienvenido al sistema de administración del Gimnasio UNAH-TEC Danlí')
             ->greeting("Hola! ".$notifiable->name)
-            ->line('Bienvenido al sistema de administración de Gym Control')
+            ->line('Bienvenido al sistema de administración Gym Control')
             ->line("Ingresa al sistema con tu correo y con la siguiente contraseña:" . $this->contrasenia)
             ->action('Ir al sitio', url(env("APP_URL")))
             ->line('Gracias por usar nuestra aplicación');
