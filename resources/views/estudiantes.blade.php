@@ -108,7 +108,7 @@
                                                     value="{{old("nombre")}}"
                                                     class="form-control solo-letras" id="nombre" name="nombre"
                                                     required
-                                                    minlength="1" maxlength="40"
+                                                    minlength="1" maxlength="30"
 
                                             >
                                            @if ($errors->has('nombre'))
@@ -407,7 +407,7 @@
                                            @isset($estudiante)
                                            value="{{$estudiante->nombre}}"
                                            @endisset value="{{old('nombre')}}"
-                                           minlength="1" maxlength="40">
+                                           minlength="1" maxlength="30">
 
                                     @if ($errors->has('nombre'))
                                         <span class="help-block">

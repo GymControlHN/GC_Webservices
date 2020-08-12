@@ -103,7 +103,7 @@
                                             <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                                    required
                                                    value="{{old("nombre")}}"
-                                                   minlength="1" maxlength="40"
+                                                   minlength="1" maxlength="30"
                                             >
                                         @if ($errors->has('nombre'))
                                             <span class="help-block">
@@ -175,7 +175,7 @@
 
                                     <div class="form-group{{ $errors->has('profesion_u_oficio') ? ' has-error' : '' }} "  style="width: 90%">
                                     <h6>Profesión u Oficio</h6>
-                                        <input type="text" maxlength="32" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
+                                        <input type="text" maxlength="30" class="form-control solo-letras" id="profesion_u_oficio" name="profesion_u_oficio"
                                                required
                                                value="{{old("profesion_u_oficio")}}"
                                         >
@@ -391,7 +391,7 @@
                                        @isset($particular)
                                        value="{{$particular->nombre}}"
                                        @endisset value="{{old('nombre')}}"
-                                       minlength="1" maxlength="40"
+                                       minlength="1" maxlength="30"
                                 >
                                     @if ($errors->has('nombre'))
                                         <span class="help-block" style="color: red">
@@ -477,7 +477,7 @@
                                        @isset($particular)
                                        value="{{$particular->profesion_u_oficio}}"
                                        @endisset value="{{old('profesion_u_oficio')}}"
-                                       required
+                                       required minlength="1" maxlength="30"
                                 >
                                     @if ($errors->has('profesion_u_oficio'))
                                         <span class="help-block" style="color: red">
