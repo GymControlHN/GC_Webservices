@@ -88,7 +88,7 @@
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Registro Estudiantes</h5>
                         <button type="button" class="close" onclick="limpiarDatosModal()" data-dismiss="modal"
                                 aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+
                         </button>
                     </div>
                     <!-- metodo para guardar un estudiante -->
@@ -108,6 +108,8 @@
                                                     value="{{old("nombre")}}"
                                                     class="form-control solo-letras" id="nombre" name="nombre"
                                                     required
+                                                    minlength="1" maxlength="40"
+
                                             >
                                            @if ($errors->has('nombre'))
                                                 <span class="help-block">
@@ -384,7 +386,6 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Estudiantes</h5>
                         <button type="button" class="close" onclick="limpiarDatosDeModal()" data-dismiss="modal"  aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
@@ -405,7 +406,9 @@
                                            value="{{old("nombre")}}"
                                            @isset($estudiante)
                                            value="{{$estudiante->nombre}}"
-                                           @endisset value="{{old('nombre')}}">
+                                           @endisset value="{{old('nombre')}}"
+                                           minlength="1" maxlength="40">
+
                                     @if ($errors->has('nombre'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('nombre') }}</strong>

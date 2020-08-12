@@ -83,7 +83,7 @@
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Docentes</h5>
                             <button type="button" onclick="limpiarDatosModal()" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+
                             </button>
                         </div>
                         <!-- Guardar datos del docente -->
@@ -100,6 +100,7 @@
                                     <input type="text" class="form-control solo-letras" id="nombre" name="nombre"
                                            required
                                            value="{{old("nombre")}}"
+                                           minlength="1" maxlength="40"
                                     >
                                         @if ($errors->has('nombre'))
                                             <span class="help-block">
@@ -333,7 +334,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalScrollableTitle">Registro de Docentes</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+
                         </button>
                     </div>
 
@@ -365,6 +366,7 @@
                                        value="{{$docente->nombre}}"
                                        @endisset value="{{old('nombre')}}"
                                        required
+                                       minlength="1" maxlength="40"
                                 >
                                     @if ($errors->has('nombre'))
                                         <span class="help-block">
