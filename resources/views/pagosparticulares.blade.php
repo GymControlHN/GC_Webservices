@@ -57,7 +57,7 @@
             </div>
         <!--codigo para mostrar la imagen de cada cliente -->
 
-            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px" style="margin-left: -7%">
+            <img  src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px" style="margin-left: -15%">
             <div class="card margencard" style=" border: none;" >
                 <div >
                     <h5 style="margin-top: 10%"> {{$nombre->nombre}}</h5>
