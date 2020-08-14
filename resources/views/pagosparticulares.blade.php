@@ -236,6 +236,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                                             <h6>Agregar Nota</h6>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" id="nota" name="nota"
+                                                       maxlength="50"
                                                        @isset($user)
                                                        value="{{$user->nota}}"
                                                        @endisset value="{{old('nota')}}"
