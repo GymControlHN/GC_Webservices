@@ -159,7 +159,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                         @if($grasa_corporal->count()>0)
                             @foreach($grasa_corporal as $grasa)
                                 <tr style="text-align:left">
-                                    <td>{{$no++}}</td>
+                                    <td>{{intval($grasa_corporal->firstItem())+$no++}}</td>
                                     <th>{{date("d-m-Y",strtotime($grasa->created_at))}}</th>
 
 
@@ -223,11 +223,11 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none">
                 </table>
 
 
-                @if($grasa_corporal->count()>10)
+
                     <div class="panel">
                         {{ $grasa_corporal->links() }}
                     </div>
-                @endif
+
             </div>
             </div>
 

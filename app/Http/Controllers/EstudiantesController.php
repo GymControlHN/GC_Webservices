@@ -21,7 +21,7 @@ class  EstudiantesController extends Controller
         $clientes = Cliente::where("id_tipo_cliente","=","1")
             ->join("carreras","clientes_gym.id_carrera","=","carreras.id")
             ->select("clientes_gym.*","carreras.carrera")
-            ->paginate(11);
+            ->paginate(10);
 
         $totalEstudiantes= Cliente::where("id_tipo_cliente","=",1)->count();
         $totalPagosEstudiantes = PagoClientesP::where("tipo_pago",
@@ -33,7 +33,7 @@ class  EstudiantesController extends Controller
         $carrera = Carrera::all();
        // session()->flashInput([]);
         return view('estudiantes')->with('estudiantes', $clientes)
-            ->with("carreras",$carrera)->with("no", 1)
+            ->with("carreras",$carrera)->with("no", 0)
             ->with("totalEstudiantes",$totalEstudiantes)
             ->withIngresos($totalIngresos);
     }

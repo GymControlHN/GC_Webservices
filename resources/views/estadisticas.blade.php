@@ -151,9 +151,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
 
                 <tbody>
                 @if($clientes->count()>0)
-                    @foreach($clientes as $estudiante)
+                    @foreach($clientes as $estudiante )
+
                         <tr>
-                            <td>{{$no++}}</td>
+                            <td>{{intval($clientes->firstItem())+$no++}}</td>
                             <td>{{$estudiante->nombre}}</td>
                             <td>{{$estudiante->identificacion}}</td>
                             <td>{{$estudiante->edad}}</td>
@@ -187,6 +188,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 @endif
                 </tbody>
             </table>
+            {{$clientes->links()}}
 
         </div>
     </div>

@@ -606,7 +606,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                 @foreach($particulares as $particular)
 
                 <tr>
-                    <td>{{$no++}}</td>
+                    <td>{{intval($particulares->firstItem())+$no++}}</td>
                     <td>{{$particular->nombre}}</td>
                     <td>{{$particular->identificacion}}</td>
                     <td>{{$particular->profesion_u_oficio}}</td>
@@ -665,11 +665,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
             </table>
 
 
-            @if($particulares->count()>10)
+
                 <div class="panel">
                     {{ $particulares->links() }}
                 </div>
-                @endif
             </div>
             </div>
     <div class="modal fade" tabindex="-1" role="dialog" id="modalBorrarParticular">

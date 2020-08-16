@@ -22,7 +22,7 @@ class RuffierController extends Controller
         $datos = Ruffier ::join("diagnostico_ruffier","ruffier.id_diagnostico","=","diagnostico_ruffier.id")
         ->where("id_cliente","=",$id)
             ->select("diagnostico_ruffier.diagnostico","ruffier.*")
-            ->orderBy("created_at","desc")->paginate(11);
+            ->orderBy("created_at","desc")->paginate(10);
 
         $ruffier = Ruffier::select(DB::raw("COUNT(*) as count , ruffiel"))
             ->whereYear('created_at', date('Y'))
@@ -91,7 +91,8 @@ class RuffierController extends Controller
         //Seccion::flash('message','ingreso correcto');
         //   return redirect('ruffiel');
         $this->alerta=1;
-        return $this->index( $request->input("id"));
+
+        return redirect()->route("ruffier.uni",["id"=>$request->input("id")]);
 
     }
 

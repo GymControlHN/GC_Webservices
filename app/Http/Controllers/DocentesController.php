@@ -16,9 +16,9 @@ class DocentesController extends Controller
     public function index()
     {
         $clientes = Cliente::where("id_tipo_cliente", "=", "2")
-            ->paginate(11);
+            ->paginate(10);
         //session()->flashInput([]);
-        return view('docentes')->with('docentes', $clientes)->with('no',1);
+        return view('docentes')->with('docentes', $clientes)->with('no',0);
         //return view('docentes')->with('docentes', $clientes)->with('no', 1);
     }
 

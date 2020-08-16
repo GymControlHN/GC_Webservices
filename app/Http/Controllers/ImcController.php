@@ -22,7 +22,7 @@ class ImcController extends Controller
                  "antecedentes.id_diagnostico","=","diagnostico_imcs.id")
                  ->where("id_cliente","=",$id)
                  ->select("antecedentes.*","diagnostico_imcs.diagnostico")
-             ->orderBy("created_at","desc")->paginate(11);
+             ->orderBy("created_at","desc")->paginate(10);
 
 
         $imc = Imc::select(DB::raw("COUNT(*) as count , imc"))
@@ -110,7 +110,7 @@ class ImcController extends Controller
         $nuevoImc->save();
 
         $this->alerta=1;
-        return $this->index( $request->input("id"));
+        return redirect()->route("imc.ini",["id"=>$request->input("id")]);
 
        //->route('imc.ini');
     }

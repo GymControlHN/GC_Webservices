@@ -14,7 +14,7 @@ class ParticularesController extends Controller
     //funcion para mostrar la vista de particulares
     public function index () {
         $clientes = Cliente::where("id_tipo_cliente","=",3)
-            ->paginate(11);
+            ->paginate(10);
         $totalParticulares= Cliente::where("id_tipo_cliente","=",3)->count();
         $totalPagosParticulares  =PagoClientesP::where("tipo_pago","=","Pago_Particular")->count();
         $totalIngresoParticulares= $totalPagosParticulares *200;
@@ -22,7 +22,7 @@ class ParticularesController extends Controller
 
 
         //session()->flashInput([]);
-        return view('particulares')->with('particulares' , $clientes)->with('no',1)->with("totalParticulares",$totalParticulares)
+        return view('particulares')->with('particulares' , $clientes)->with('no',0)->with("totalParticulares",$totalParticulares)
             ->withIngresos($totalIngresos);;
 
 

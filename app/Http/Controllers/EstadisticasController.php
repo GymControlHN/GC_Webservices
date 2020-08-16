@@ -20,7 +20,7 @@ class EstadisticasController extends Controller
             "clientes_gym.id_tipo_cliente", "=", "tipo_clientes.id")
             ->join('carreras','clientes_gym.id_carrera','=','carreras.id')
             ->select("clientes_gym.*", "tipo_clientes.descripcion","carreras.carrera")
-        ->paginate(40);
+        ->paginate(10);
 
 
         $obesidadTipoIII= Imc::
@@ -57,7 +57,7 @@ class EstadisticasController extends Controller
         session()->flashInput([]);
         return view('estadisticas',["obesidadTipoIII"=>$obesidadTipoIII,"obesidadTipoII"=>$obesidadTipoII,
             "obesidadTipoI"=>$obesidadTipoI, "preobesidad"=>$preobesidad, "pesoNormal"=>$pesoNormal,
-            "delgadez"=>$delgadez, "delgadezSevera"=>$delgadezSevera])->with('clientes', $clientes)->with('no',1);
+            "delgadez"=>$delgadez, "delgadezSevera"=>$delgadezSevera])->with('clientes', $clientes)->with('no',0);
 
 
     }

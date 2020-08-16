@@ -614,7 +614,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                     @foreach($estudiantes as $estudiante)
 
                         <tr>
-                            <td>{{$no++}}</td>
+                            <td>{{intval($estudiantes->firstItem())+$no++}}</td>
                             <td>{{$estudiante->nombre}}</td>
                             <td>{{$estudiante->identificacion}}</td>
                             <td>{{$estudiante->carrera}}</td>
@@ -686,11 +686,10 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
 
 
 
-            @if($estudiantes->count()>10)
+
                 <div class="panel">
                     {{ $estudiantes->links() }}
                 </div>
-            @endif
 
         </div>
     </div>

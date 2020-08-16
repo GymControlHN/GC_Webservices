@@ -137,12 +137,21 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);">
                                    data-title="La contraseña no se puede mostrar"></i> confidencial
                             </th>
                             <th class="form-inline mr-xl-n2 ">
+
+                                @if(\Illuminate\Support\Facades\Auth::user()->getEmailUser()==$usuario->email)
+                                   <span class="fa fa-exclamation-triangle"
+                                         style="margin-right: 25px"
+                                         title="No se puede borrar el usuario logueado">
+
+                                   </span>
+
+                                    @else
                                 <button class="btn btn-outline-danger mr-xl-2 "
                                         data-id="{{$usuario->id}}"
                                         data-toggle="modal"
                                         data-target="#modalBorrarUsuario">
                                     <i class="fas fa-trash-alt"></i></button>
-
+                                @endif
                                 <button class="btn btn-outline-info mr-xl-2 " type="button"
                                         data-correo="{{$usuario->email}}"
                                         data-toggle="modal"

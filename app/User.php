@@ -29,6 +29,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getEmailUser(){
+        return $this->email;
+    }
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new PasswordResetNotification($token));

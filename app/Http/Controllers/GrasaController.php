@@ -26,7 +26,7 @@ class GrasaController extends Controller
         join("diagnostico_grasas","grasa_corporal.id_diagnostico","=","diagnostico_grasas.id")
             ->where("id_cliente", "=", $id)
             ->select("diagnostico_grasas.diagnostico","grasa_corporal.*")
-            ->orderBy("created_at","desc")->paginate(11);
+            ->orderBy("created_at","desc")->paginate(10);
 
         $grasa = Grasa::select(DB::raw("COUNT(*) as count , grasa"))
             ->whereYear('created_at', date('Y'))
@@ -61,7 +61,7 @@ class GrasaController extends Controller
         }
 
 
-        return view('grasa', compact("grasa_corporal", "chart"))->with("nombre", $nombre)->with('no', 1)->withExito(null)->withError(null);
+        return view('grasa', compact("grasa_corporal", "chart"))->with("nombre", $nombre)->with('no', 0)->withExito(null)->withError(null);
     }
 
 
@@ -92,7 +92,7 @@ class GrasaController extends Controller
 
         // TODO redireccionar a una página con sentido.
         $this->alerta=1;
-        return $this->index( $request->input("id"));
+        return redirect()->route("grasa.uni",["id"=>$request->input("id")]);
 
     }
 
