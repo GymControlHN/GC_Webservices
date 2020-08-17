@@ -169,7 +169,7 @@ box-shadow: 0px 5px 3px 3px rgba(194,194,194,1);border: none ">
 
                             @foreach($antecedentes as $antecedente)
                                 <tr style="text-align:left">
-                                    <td style="text-align: left">{{$no++}}</td>
+                                    <td>{{intval($antecedentes->firstItem())+$no++}}</td>
                                     <td style="text-align: left"><strong>{{date("d-m-Y",strtotime($antecedente->created_at))}}</strong></td>
                                     <td @if($antecedente->imc>30)
                                         style="color: red"

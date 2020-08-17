@@ -53,7 +53,7 @@ class RuffierController extends Controller
         }
 
 
-        return view('ruffiel', compact("datos", "chart"))->with("cliente", $cliente)->with('no', 1)->withExito(null)->withError(null);
+        return view('ruffiel', compact("datos", "chart"))->with("cliente", $cliente)->with('no', 0)->withExito(null)->withError(null);
 
 
     }
