@@ -143,7 +143,7 @@
 
         </head>
 
-        !--limitar el numero de digitos a poder ingresar en los imputs-->
+        <!--limitar el numero de digitos a poder ingresar en los imputs-->
         <script type="text/javascript">
             function limitText(limitField, limitNum) {
                 if (limitField.value.length > limitNum) {

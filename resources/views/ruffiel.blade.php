@@ -63,7 +63,7 @@
             <!-- codigo para ver la imagen en cada vista del ruffier -->
 
             <img  src="/clientes_imagenes/{{$cliente->imagen}}" width="250px" height="260px"
-            style="margin-left: -16%">
+            style="margin-left: -7%">
             <div class="card margencard" style=" border: none;" >
 
 

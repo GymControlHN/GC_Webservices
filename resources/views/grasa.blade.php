@@ -61,7 +61,7 @@
                 @endif
             </div>
             <!-- codigo para ver la imagen en cada vista de la grasa -->
-        <img src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px" style="margin-left: -16%"  >
+        <img src="/clientes_imagenes/{{$nombre->imagen}}" width="250px" height="260px" style="margin-left: -7%"  >
 
         <div class="card margencard" style=" border: none;" >
 
